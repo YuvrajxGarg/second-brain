@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Second Brain Quick Capture",
+  "version": "1.0.0",
+  "description": "Save links, notes, images and videos to your second-brain repo inbox in one click.",
+  "permissions": ["storage", "activeTab", "contextMenus", "notifications"],
+  "host_permissions": ["https://api.github.com/*"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Save to Second Brain",
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": { "default": "Alt+Shift+S", "mac": "Command+Shift+Y" },
+      "description": "Open quick capture"
+    }
+  }
+}

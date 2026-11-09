@@ -16,6 +16,7 @@ inbox/             only when a dump is genuinely unclear; sort it later
 topics/<topic>/    one folder per group, created on demand
 templates/entry.md the frontmatter template
 scripts/build_index.py  regenerates INDEX.md and TAGS.md
+tools/quick-capture/    browser extension that drops captures into inbox/
 ```
 
 Starter topics: `ai`, `tech`, `business`, `design`, `productivity`, `health`,
@@ -45,6 +46,23 @@ X/Twitter can't be fetched, so screenshots are the main source for those posts.
 
 Never drop what he sent. Keep his own words verbatim under `## Raw` so nothing is
 lost to summarising.
+
+## Quick-capture inbox
+
+Yuvraj also captures from a browser extension (`tools/quick-capture/`), which
+commits straight to `inbox/` as `inbox/YYYY-MM-DD-HHMMSS-<slug>.md` (plus any
+images/videos with the same name), with `status: unsorted`. These never show up
+in chat, so:
+
+- At the start of every thread in this project, `git pull` and check `inbox/`
+  for `status: unsorted` files. Also do it whenever Yuvraj says "sort my inbox".
+- File each one like a normal dump: pick topic, type, tags, write the summary
+  (fetch the link if there is one), keep `## Raw` exactly as captured, keep the
+  `captured:` line, and set `status: unread`.
+- `git mv` the `.md` and its attachments to `topics/<topic>/YYYY-MM-DD-<slug>.md`
+  (drop the time part, fix the image embeds to the new names).
+- Rebuild the index, commit `file: N inbox captures`, push to `main`, and reply
+  with one line per entry as usual.
 
 ## Entry format
 
