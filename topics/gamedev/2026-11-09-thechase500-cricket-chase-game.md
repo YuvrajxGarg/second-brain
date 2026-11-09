@@ -1,5 +1,5 @@
 ---
-title: "TheChase500, chase 500 with an all-time World Cup XI"
+title: "500-0 game"
 type: bookmark
 topic: gamedev
 tags: [browser-game, cricket, game-inspiration, to-try]

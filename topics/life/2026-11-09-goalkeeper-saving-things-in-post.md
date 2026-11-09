@@ -1,5 +1,5 @@
 ---
-title: "Joke: call me a goalkeeper, the way I save things in post"
+title: "Goalkeeper editor joke"
 type: idea
 topic: life
 tags: [joke, video-editing, pun, own-thought]

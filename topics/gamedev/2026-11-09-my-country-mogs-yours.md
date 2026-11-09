@@ -1,5 +1,5 @@
 ---
-title: "MyCountryMogsYours"
+title: "MyCountryMogsYours game"
 type: bookmark
 topic: gamedev
 tags: [browser-game, game-inspiration, fun, to-try]

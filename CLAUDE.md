@@ -71,7 +71,7 @@ in chat, so:
 
 ```markdown
 ---
-title: Short human title
+title: Name plus what it is, 2-4 words
 type: link
 topic: ai
 tags: [llm, agents, prompting]
@@ -97,6 +97,14 @@ Optional: follow-ups, related entries as [[slug]] links.
 - Mix of what it's **about** (`llm`, `marketing`) and what it's **for**
   (`to-read`, `to-try`, `inspiration`, `reference`).
 - Related entries: link with `[[slug]]` in `## Notes`, both ways if it helps.
+
+### Short titles (Yuvraj's rule, 2026-11-09)
+
+- `title` is a short label of **2 to 4 words**: the name plus what it is.
+  Examples: `500-0 game`, `Cricle game`, `Pixel sprite search`,
+  `Godot waterfall shader`, `Goalkeeper editor joke`.
+- No subtitles, commas, colons or descriptions in the title. The detail goes in
+  `## Summary`. Titles show as labels on the graph site, so long ones get cut off.
 
 ### Accuracy first (Yuvraj's feedback, 2026-11-09)
 

@@ -1,5 +1,5 @@
 ---
-title: "Dynamic 2D waterfall in Godot with a texture array shader"
+title: "Godot waterfall shader"
 type: bookmark
 topic: gamedev
 tags: [godot, shader, vfx, 2d, water, tutorial]

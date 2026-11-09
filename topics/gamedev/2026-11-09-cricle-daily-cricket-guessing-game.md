@@ -1,5 +1,5 @@
 ---
-title: "Cricle, daily Wordle-style cricketer guessing game"
+title: "Cricle game"
 type: bookmark
 topic: gamedev
 tags: [browser-game, cricket, daily-challenge, game-inspiration, to-try]

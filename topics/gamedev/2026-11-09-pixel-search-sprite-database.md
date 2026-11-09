@@ -1,5 +1,5 @@
 ---
-title: "Pixel Search, semantic search over pixel art sprites"
+title: "Pixel sprite search"
 type: tool
 topic: gamedev
 tags: [pixel-art, sprites, game-assets, semantic-search, hugging-face, reference]

@@ -1,5 +1,5 @@
 ---
-title: "Visual design inspiration, post by @ayushsoni_io"
+title: "Ayush Soni design post"
 type: bookmark
 topic: design
 tags: [visual-design, inspiration, ui, x-post]

@@ -1,5 +1,5 @@
 ---
-title: "Build and animate a storybook hero in Blender with Claude via MCP"
+title: "Blender storybook hero"
 type: bookmark
 topic: gamedev
 tags: [blender, mcp, 3d-character, animation, rigging, workflow]
