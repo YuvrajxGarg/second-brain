@@ -19,7 +19,7 @@ def parse(path):
                 meta[k.strip()] = v.split(" #")[0].strip()
     tags = meta.get("tags", "").strip("[]")
     meta["tags"] = [t.strip().strip("'\"") for t in tags.split(",") if t.strip()]
-    meta.setdefault("title", path.stem)
+    meta["title"] = meta.get("title", path.stem).strip("'\"")
     meta.setdefault("added", "")
     meta["path"] = path.relative_to(ROOT).as_posix()
     return meta

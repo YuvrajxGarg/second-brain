@@ -20,7 +20,6 @@ scripts/build_index.py  regenerates INDEX.md and TAGS.md
 
 Starter topics: `ai`, `tech`, `business`, `design`, `productivity`, `health`,
 `finance`, `learning`, `life`, `misc`, plus `gamedev` (game building, assets). Create a new topic folder when 3 or more
-`finance`, `learning`, `life`, `misc`. Create a new topic folder when 3 or more
 entries clearly share a theme that no existing topic fits. Prefer an existing
 topic over a new one. Topic names are short, lowercase, kebab-case.
 
