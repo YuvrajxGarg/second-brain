@@ -1,11 +1,9 @@
 ---
 title: "MyCountryMogsYours"
-type: link
+type: bookmark
 topic: gamedev
 tags: [browser-game, country, game-inspiration, fun, to-try]
 source: https://mycountrymogsyours.com/
-
-Follow-up: this was a cool browser game i found
 added: 2026-11-09
 status: unread
 ---
@@ -15,5 +13,9 @@ A browser game Yuvraj found and liked, titled "MyCountryMogsYours". Going by the
 
 ## Raw
 https://mycountrymogsyours.com/
+
+this was a cool browser game i found
+
+not misc
 
 ## Notes
