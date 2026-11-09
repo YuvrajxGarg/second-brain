@@ -17,6 +17,9 @@ topics/<topic>/    one folder per group, created on demand
 templates/entry.md the frontmatter template
 scripts/build_index.py  regenerates INDEX.md and TAGS.md
 tools/quick-capture/    browser extension that drops captures into inbox/
+scripts/build_graph.mjs builds site/data/graph.json for the graph site
+site/                   the graph website (static, deployed on Vercel)
+vercel.json             Vercel build config (runs build_graph.mjs, serves site/)
 ```
 
 Starter topics: `ai`, `tech`, `business`, `design`, `productivity`, `health`,
@@ -110,6 +113,15 @@ When Yuvraj asks "what was that thing about X":
 Nothing in this repo is sensitive. Every change (new entries, edits, moves,
 index rebuilds, rule tweaks) is committed and pushed straight to `main` as soon
 as it's done. No branches, no PRs, no asking for confirmation first.
+
+## Graph site
+
+`site/` is a static, Obsidian-style graph of the whole brain (notes, tags and
+topics as nodes; links from tags, topics and `[[slug]]` references). Vercel runs
+`node scripts/build_graph.mjs` on every push to `main`, so new entries appear on
+their own; nothing to do when filing. `site/data/` is generated and gitignored.
+Add a colour for a new topic in `PALETTE` at the top of `site/app.js` (unknown
+topics get a fallback colour automatically).
 
 ## Housekeeping
 

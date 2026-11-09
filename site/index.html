@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Second Brain</title>
+  <meta name="description" content="Yuvraj's second brain as a living graph: every note, tag and topic, connected." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23050505'/%3E%3Cpath d='M6 26 Q16 -2 26 26' stroke='white' stroke-width='1.6' fill='none'/%3E%3Crect x='13' y='9' width='6' height='6' fill='%2339ff6a'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="stage" aria-label="Graph of notes, tags and topics"></canvas>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+
+  <header class="hud hud-tl">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <span class="brand-name" data-scramble>SECOND BRAIN</span>
+      <span class="brand-sub mono">/ yuvraj</span>
+    </div>
+    <label class="search">
+      <span class="search-key mono">/</span>
+      <input id="q" type="search" placeholder="search notes, tags, topics" autocomplete="off" spellcheck="false" />
+    </label>
+    <ul id="results" class="results" hidden></ul>
+  </header>
+
+  <aside class="hud hud-tr mono">
+    <div class="stat"><span class="stat-k">NOTES</span><span class="stat-v" id="s-notes">000</span></div>
+    <div class="stat"><span class="stat-k">TAGS</span><span class="stat-v" id="s-tags">000</span></div>
+    <div class="stat"><span class="stat-k">LINKS</span><span class="stat-v" id="s-links">000</span></div>
+  </aside>
+
+  <nav class="hud hud-bl">
+    <div class="legend-h mono">TOPICS</div>
+    <ul id="legend" class="legend"></ul>
+  </nav>
+
+  <div class="hud hud-br mono">
+    <div class="coords" id="coords">X 000.00 · Y 000.00 · Z 1.00</div>
+    <div class="controls">
+      <button id="b-signals" class="on" title="Signals (S)">SIGNALS</button>
+      <button id="b-labels" class="on" title="Labels (L)">LABELS</button>
+      <button id="b-reset" title="Reset view (R)">RESET</button>
+    </div>
+    <div class="build" id="build"></div>
+  </div>
+
+  <div class="tooltip mono" id="tip" hidden></div>
+
+  <section id="panel" class="panel" aria-hidden="true">
+    <button class="panel-close mono" id="panel-close" aria-label="Close">ESC ✕</button>
+    <div class="panel-inner" id="panel-inner"></div>
+  </section>
+
+  <div id="intro" class="intro mono">
+    <div class="intro-line" data-scramble>INITIALISING MEMORY</div>
+    <div class="intro-bar"><span></span></div>
+  </div>
+
+  <script src="vendor/d3.min.js"></script>
+  <script src="vendor/marked.min.js"></script>
+  <script src="vendor/purify.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
