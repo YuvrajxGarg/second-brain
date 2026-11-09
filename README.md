@@ -8,7 +8,7 @@ one small markdown file, grouped by topic and tagged so it can be found again.
 - **Rules:** [CLAUDE.md](CLAUDE.md) explains how entries are filed, tagged and searched.
 - **Quick capture:** [tools/quick-capture](tools/quick-capture/) is a browser
   extension that saves links, notes, images and videos to `inbox/` in one click.
-- **Graph:** [site/](site/) is an Obsidian-style graph of every note, tag and topic,
+- **Graph:** [second-brain-wine-six.vercel.app](https://second-brain-wine-six.vercel.app). [site/](site/) is an Obsidian-style graph of every note, tag and topic,
   deployed on Vercel. It rebuilds itself from the markdown on every push to `main`.
 - **Entries:** `topics/<topic>/YYYY-MM-DD-<slug>.md`, each with YAML frontmatter
   (`title`, `type`, `topic`, `tags`, `source`, `added`).
