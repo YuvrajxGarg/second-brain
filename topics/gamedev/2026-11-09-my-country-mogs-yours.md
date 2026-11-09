@@ -2,7 +2,7 @@
 title: "MyCountryMogsYours"
 type: bookmark
 topic: gamedev
-tags: [browser-game, country, game-inspiration, fun, to-try]
+tags: [browser-game, game-inspiration, fun, to-try]
 source: https://mycountrymogsyours.com/
 added: 2026-11-09
 status: unread
