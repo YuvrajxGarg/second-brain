@@ -35,7 +35,7 @@ topic over a new one. Topic names are short, lowercase, kebab-case.
    below. `slug` is 3 to 6 kebab-case words from the title.
 6. Run `python3 scripts/build_index.py` to refresh `INDEX.md` and `TAGS.md`.
 7. Commit with message `add: <short title>` (or `add: N entries` for a batch) and
-   push to `main`. No PRs: this repo is a log, commit straight to main.
+   push to `main` right away. See "Auto-merge" below.
 8. Reply to Yuvraj with one line per entry: title, topic, tags.
 
 Never drop what he sent. Keep his own words verbatim under `## Raw` so nothing is
@@ -81,6 +81,12 @@ When Yuvraj asks "what was that thing about X":
 3. Browse `INDEX.md` by topic, or `TAGS.md` by tag.
 4. Answer with the title, the summary, the source link and the file path.
    If several match, list the best 5 with one line each.
+
+## Auto-merge (standing rule from Yuvraj, 2026-11-09)
+
+Nothing in this repo is sensitive. Every change (new entries, edits, moves,
+index rebuilds, rule tweaks) is committed and pushed straight to `main` as soon
+as it's done. No branches, no PRs, no asking for confirmation first.
 
 ## Housekeeping
 
