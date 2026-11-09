@@ -390,7 +390,7 @@
     for (const n of nodes) {
       if (n.p < 0.6 || n.a < 0.05) continue;
       const rr = n.r * k + 2;
-      placed.push({ x: n.dx * k + transform.x - rr, y: n.dy * k + transform.y - rr, w: rr * 2, h: rr * 2, node: n.id });
+      placed.push({ x: n.dx * k + transform.x - rr, y: n.dy * k + transform.y - rr, w: rr * 2, h: rr * 2, node: n.id, dot: n.kind === "tag" });
     }
     const primary = hoverId || selectedId;
     ctx.textBaseline = "middle";
@@ -413,12 +413,25 @@
       const kw = ctx.measureText(kick).width;
       const mw = ctx.measureText(main).width;
       const gap = n.kind === "tag" ? 1 : 7;
-      const x = sx + n.r * k * (1 + n.h * 0.35) + 8, y = sy;
-      const rect = { x: x - 2, y: y - fs * 0.7, w: kw + gap + mw + 4, h: fs * 1.4 };
-      if (n.id !== primary && placed.some((p) => p.node !== n.id && !(p.node && n.kind === "topic") && rect.x < p.x + p.w && rect.x + rect.w > p.x && rect.y < p.y + p.h && rect.y + rect.h > p.y)) continue;
+      const off = n.r * k * (1 + n.h * 0.35) + 8, y = sy, tw = kw + gap + mw;
+      // note and topic labels only dodge other labels and squares, not tag dots
+      const blocks = (r) => placed.some((p) => p.node !== n.id && !(p.dot && n.kind !== "tag") && !(p.node && n.kind === "topic") &&
+        r.x < p.x + p.w && r.x + r.w > p.x && r.y < p.y + p.h && r.y + r.h > p.y);
+      let x = sx + off;
+      let rect = { x: x - 2, y: y - fs * 0.7, w: tw + 4, h: fs * 1.4 };
+      if (n.id !== primary && blocks(rect)) {
+        // try the left side before giving up
+        x = sx - off - tw;
+        rect = { x: x - 2, y: y - fs * 0.7, w: tw + 4, h: fs * 1.4 };
+        if (blocks(rect)) continue;
+      }
       placed.push(rect);
 
       const alpha = n.a * clamp((n.p - 0.6) / 0.4, 0, 1) * (n.kind === "tag" && !focused ? 0.62 : 1);
+      // dark plate behind the text so arcs don't run through the letters
+      ctx.globalAlpha = alpha * 0.82;
+      ctx.fillStyle = "#050505";
+      ctx.fillRect(x - 3, y - fs * 0.72, kw + gap + mw + 6, fs * 1.44);
       ctx.globalAlpha = alpha;
       ctx.fillStyle = n.kind === "topic" ? n.color : "rgba(242,242,242,0.5)";
       ctx.fillText(scrambled(n.id + ":k", kick, now), x, y);
