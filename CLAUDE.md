@@ -98,6 +98,18 @@ Optional: follow-ups, related entries as [[slug]] links.
   (`to-read`, `to-try`, `inspiration`, `reference`).
 - Related entries: link with `[[slug]]` in `## Notes`, both ways if it helps.
 
+### Accuracy first (Yuvraj's feedback, 2026-11-09)
+
+- Tag and file by **what the thing actually is**, never by words that happen to
+  be in its name or URL. (A game called "MyCountryMogsYours" is a browser game,
+  not a `country` entry.)
+- If the content can't be read (JS-only site, X post without a screenshot) and
+  the type or topic isn't obvious, **ask Yuvraj in one line** before guessing.
+  File it in `inbox/` meanwhile, then move it once he answers.
+- Games, game tools, game assets and game-dev techniques all go in `gamedev`.
+  Never park something in `misc` when a real topic fits.
+- Fewer, accurate tags beat six padded ones. 3 tags is fine.
+
 ## Finding things later
 
 When Yuvraj asks "what was that thing about X":
