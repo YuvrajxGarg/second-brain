@@ -38,6 +38,11 @@ topic over a new one. Topic names are short, lowercase, kebab-case.
    push to `main` right away. See "Auto-merge" below.
 8. Reply to Yuvraj with one line per entry: title, topic, tags.
 
+Screenshots and images: save them next to the entry with the same name
+(`topics/<topic>/YYYY-MM-DD-<slug>.png`), embed with `![screenshot](./<file>)`
+in `## Summary`, and describe what's in the image in words so it's searchable.
+X/Twitter can't be fetched, so screenshots are the main source for those posts.
+
 Never drop what he sent. Keep his own words verbatim under `## Raw` so nothing is
 lost to summarising.
 
