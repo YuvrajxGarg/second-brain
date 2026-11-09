@@ -9,7 +9,7 @@ status: unread
 ---
 
 ## Summary
-Shaders Bible Series (@ushadersbible) shows an animated 2D waterfall in Godot: a Sprite2D with a ShaderMaterial (`using_texture.gdshader`) that takes a tiled waterfall texture array, a `noise_64.png` noise texture and a `speed` parameter (2.0). It's a teaser for their Complete Godot VFX Handbook at jettelly.com. Handy reference for stylised water in Yuvraj's games.
+Shaders Bible Series (@ushadersbible) shows an animated 2D waterfall in Godot: a Sprite2D with a ShaderMaterial (`using_texture`) that takes a tiled waterfall texture array, a `noise_64.png` noise texture and a `speed` parameter (2.0). It's a teaser for their Complete Godot VFX Handbook at jettelly.com. Handy reference for stylised water in Yuvraj's games.
 
 ![screenshot](./2026-11-09-godot-waterfall-texture-array-shader.png)
 
