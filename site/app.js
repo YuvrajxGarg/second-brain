@@ -382,7 +382,6 @@
   function drawLabels(now, F) {
     const k = transform.k;
     const placed = [];
-    const small = nodes.length < 70;
     const order = [...nodes].sort((a, b) => b.h - a.h || rank(a) - rank(b));
     function rank(n) { return n.kind === "topic" ? 0 : n.kind === "note" ? 1 : 2; }
 
@@ -399,8 +398,8 @@
       const focused = n.h > 0.2;
       const show =
         focused || n.kind === "topic" ||
-        (n.kind === "note" && k > (small ? 0.35 : 0.8)) ||
-        (n.kind === "tag" && k > (small ? 0.75 : 1.6));
+        (n.kind === "note" && k > 2.6) ||
+        (n.kind === "tag" && k > 3.4);
       if (!show) continue;
       const sx = n.dx * k + transform.x, sy = n.dy * k + transform.y;
       if (sx < -200 || sx > W + 50 || sy < -20 || sy > H + 20) continue;
