@@ -45,7 +45,13 @@ topic over a new one. Topic names are short, lowercase, kebab-case.
 Screenshots and images: save them next to the entry with the same name
 (`topics/<topic>/YYYY-MM-DD-<slug>.png`), embed with `![screenshot](./<file>)`
 in `## Summary`, and describe what's in the image in words so it's searchable.
-X/Twitter can't be fetched, so screenshots are the main source for those posts.
+### X/Twitter and Instagram links (Yuvraj's standing rule, 2026-11-11)
+
+Every X/Twitter post or thread link and every Instagram post or reel link is read
+with the **Social Reader** connector (`read_social_link`, load it via ToolSearch
+"social reader"). It returns the post text, the author's full thread and video
+frames. Save one useful frame or photo next to the entry and describe it. Only
+fall back to asking for a screenshot if the connector fails.
 
 Never drop what he sent. Keep his own words verbatim under `## Raw` so nothing is
 lost to summarising.
