@@ -176,7 +176,7 @@ const brain = {
     .sort((a, b) => (b.added || "").localeCompare(a.added || "")),
 };
 fs.writeFileSync(path.join(OUT, "brain.json"), JSON.stringify(brain));
-for (const f of ["llms.txt", "llms-full.txt", "AGENTS.md", "TASTE.md", "IDEAS.md"]) {
+for (const f of ["llms.txt", "llms-full.txt", "AGENTS.md", "TASTE.md", "IDEAS.md", "ME.md"]) {
   if (fs.existsSync(path.join(ROOT, f))) fs.copyFileSync(path.join(ROOT, f), path.join(ROOT, "site", f));
 }
 console.log(`brain: ${brain.notes.length} notes, ${Object.keys(catalogs).length} catalogs`);

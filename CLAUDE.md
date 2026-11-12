@@ -11,7 +11,8 @@ per entry, so it stays easy to append to and easy to grep.
 CLAUDE.md          these rules
 README.md          short human overview
 AGENTS.md          entry point for other AIs: what to read, fields, access (hand-written)
-TASTE.md           taste profile: curated top part + generated evidence block
+TASTE.md           taste profile for agents: curated top part + generated evidence block
+ME.md              Yuvraj's own page: curated personality read + insights, generated stats
 IDEAS.md           generated: his ideas and to-dos by stage
 catalog/           generated: entries grouped by kind (libraries, style-refs, tools...)
 llms.txt           generated: llmstxt.org index for AI tools
@@ -131,6 +132,11 @@ every note carries these, and `AGENTS.md` explains them to outside agents:
   `dropped`. When he says he started, finished or dropped an idea, update it.
 - `TASTE.md`: keep the curated profile honest and short. Only claim a taste
   that at least one saved note shows; link the evidence by title.
+- `ME.md` is for **him**, not agents: a personality read, insights and nudges
+  (curated, above the GENERATED marker) and stats (generated). Refresh the curated
+  part when the picture shifts (roughly every 15-20 new notes, or when he asks),
+  update its "Last curated" line, and keep it honest and specific, never
+  flattering filler. Rendered with charts at https://brainy.pxlvzn.in/me.html.
 - When he asks "what ideas did I have" or "what's on my list", answer from
   `IDEAS.md` (open = new, exploring, doing).
 
@@ -184,8 +190,8 @@ as it's done. No branches, no PRs, no asking for confirmation first.
   `https://brainy.pxlvzn.in/mcp` (tools: get_taste_profile, search, fetch,
   list_notes, get_catalog, recall_ideas). It reads `/data/brain.json`, which
   `scripts/build_graph.mjs` writes on every deploy, so new notes show up on their own.
-- The build also copies `llms.txt`, `llms-full.txt`, `AGENTS.md`, `TASTE.md` and
-  `IDEAS.md` to the site root.
+- The build also copies `llms.txt`, `llms-full.txt`, `AGENTS.md`, `TASTE.md`,
+  `IDEAS.md` and `ME.md` to the site root. `site/me.html` renders ME.md with charts.
 - If you add a new `kind`, add it to `CATALOGS` in `scripts/build_index.py`,
   `KINDS` in `api/mcp.js`, and the table in `AGENTS.md`.
 
@@ -204,4 +210,4 @@ topics get a fallback colour automatically).
   `ai-tools` and `ai-research`) and move files with `git mv`.
 - Empty `inbox/` whenever you can by moving entries to a topic.
 - Never edit `INDEX.md`, `TAGS.md`, `IDEAS.md`, `catalog/`, `llms*.txt` or the
-  generated block of `TASTE.md` by hand; regenerate them.
+  generated blocks of `TASTE.md` and `ME.md` by hand; regenerate them.

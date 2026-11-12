@@ -6,6 +6,8 @@ Writes:
   TAGS.md             every tag with its entries
   catalog/*.md        entries grouped by `kind` (libraries, style refs, tools...)
   IDEAS.md            his ideas and to-dos by stage (new/exploring/doing/done/dropped)
+  ME.md               only the GENERATED block (stats); the personality read and
+                      insights above it are curated by hand (by Claude)
   TASTE.md            only the block between the GENERATED markers; the curated
                       profile above it is written by hand (by Claude) and kept
   llms.txt            entry point for AI tools (llmstxt.org format)
@@ -102,6 +104,94 @@ def write(path, lines):
     path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
 
 
+def platform(e):
+    src = e.get("source") or ""
+    if not src:
+        return "own words"
+    if re.search(r"//(www\.)?(x|twitter)\.com", src):
+        return "x"
+    if "instagram.com" in src:
+        return "instagram"
+    if "github.com" in src:
+        return "github"
+    return "web"
+
+
+def commented(e):
+    """True when his ## Raw holds his own words, not just a link or a screenshot note."""
+    m = re.search(r"## Raw\n(.*?)(\n## |$)", e["body"], re.S)
+    if not m:
+        return False
+    for line in m.group(1).splitlines():
+        line = re.sub(r"https?://\S+", "", line).strip()
+        if line and not line.startswith("(") and len(line) > 2:
+            return True
+    return False
+
+
+def streaks(days):
+    from datetime import date, timedelta
+    ds = sorted({date.fromisoformat(d) for d in days if re.match(r"\d{4}-\d\d-\d\d$", d)})
+    if not ds:
+        return 0, 0
+    longest = run = 1
+    for a, b in zip(ds, ds[1:]):
+        run = run + 1 if b - a == timedelta(days=1) else 1
+        longest = max(longest, run)
+    cur = 1
+    for a, b in zip(reversed(ds[:-1]), reversed(ds[1:])):
+        if b - a != timedelta(days=1):
+            break
+        cur += 1
+    return cur, longest
+
+
+def bar(n, total, width=20):
+    return "█" * max(1, round(width * n / max(total, 1))) if n else ""
+
+
+def write_me(entries, by_topic, by_tag, by_kind, by_stage):
+    path = ROOT / "ME.md"
+    cur = path.read_text(encoding="utf-8") if path.exists() else "# Me\n\n"
+    if GEN_START in cur:
+        cur = cur[:cur.index(GEN_START)] + cur[cur.index(GEN_END) + len(GEN_END):].lstrip("\n")
+    n = len(entries)
+    per_day = Counter(e["added"] for e in entries if e["added"])
+    cur_streak, long_streak = streaks(per_day)
+    plats = Counter(platform(e) for e in entries)
+    status = Counter(e.get("status") or "none" for e in entries)
+    own = sum(1 for e in entries if commented(e))
+    to_try = len(by_tag.get("to-try", []))
+    g = [GEN_START, "", "## Stats (generated)", "",
+         f"_Rebuilt on every filing from {n} notes._", "",
+         "| | |", "|---|---|",
+         f"| Notes saved | {n} |",
+         f"| Active days | {len(per_day)} ({min(per_day) if per_day else '-'} to {max(per_day) if per_day else '-'}) |",
+         f"| Average per active day | {n / max(len(per_day), 1):.1f} |",
+         f"| Current streak | {cur_streak} day{'s' if cur_streak != 1 else ''} |",
+         f"| Longest streak | {long_streak} day{'s' if long_streak != 1 else ''} |",
+         f"| Notes with his own comment | {own} ({100 * own // max(n, 1)}%) |",
+         f"| Open ideas and to-dos | {sum(len(by_stage[s]) for s in STAGES[:3])} |",
+         f"| Tagged to-try | {to_try} |",
+         f"| Marked read or done | {status.get('read', 0) + status.get('done', 0)} of {n} |", "",
+         "### Saves per day", "", "```"]
+    top = max(per_day.values()) if per_day else 1
+    g += [f"{d}  {bar(c, top)} {c}" for d, c in sorted(per_day.items())]
+    g += ["```", "", "### By topic", "", "```"]
+    g += [f"{t:<13} {bar(len(v), n)} {len(v)}" for t, v in sorted(by_topic.items(), key=lambda kv: -len(kv[1]))]
+    g += ["```", "", "### By kind", "", "```"]
+    g += [f"{k:<13} {bar(len(by_kind[k]), n)} {len(by_kind[k])}" for k in KINDS if by_kind.get(k)]
+    g += ["```", "", "### Where it comes from", "", "```"]
+    g += [f"{p:<13} {bar(c, n)} {c}" for p, c in plats.most_common()]
+    g += ["```", "", "### Ideas by stage", ""]
+    g += [f"- {st}: {len(by_stage.get(st, []))}" for st in STAGES]
+    empty = [t for t in ("ai", "tech", "business", "design", "productivity", "health", "finance", "learning", "life", "gamedev") if t not in by_topic]
+    if empty:
+        g += ["", f"Topics with nothing saved yet: {', '.join(empty)}."]
+    g += ["", GEN_END]
+    path.write_text(cur.rstrip() + "\n\n" + "\n".join(g) + "\n", encoding="utf-8")
+
+
 def main():
     entries = [parse(p) for d in DIRS if d.exists() for p in d.rglob("*.md")]
     entries.sort(key=lambda e: (e["added"], e["title"]), reverse=True)
@@ -161,6 +251,9 @@ def main():
             out.append(f"- {link(e)} · `{e['kind']}` · {e['topic']} · {e['added']}: {e.get('why') or e['summary'][:140]}")
         out.append("")
     write(ROOT / "IDEAS.md", out)
+
+    # ME.md generated block: stats for Yuvraj himself
+    write_me(entries, by_topic, by_tag, by_kind, by_stage)
 
     # TASTE.md generated block
     style_refs = [e for e in entries if e["style"]]

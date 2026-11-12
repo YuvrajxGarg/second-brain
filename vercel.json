@@ -15,7 +15,7 @@
       ]
     },
     {
-      "source": "/(llms.txt|llms-full.txt|AGENTS.md|TASTE.md)",
+      "source": "/(llms.txt|llms-full.txt|AGENTS.md|TASTE.md|IDEAS.md|ME.md)",
       "headers": [
         {
           "key": "Content-Type",
