@@ -37,21 +37,37 @@
     <div class="stat"><span class="stat-k">LINKS</span><span class="stat-v" id="s-links">000</span></div>
   </aside>
 
-  <nav class="hud hud-bl">
-    <div class="legend-h mono">TOPICS</div>
-    <ul id="legend" class="legend"></ul>
+  <nav class="hud hud-bl" id="dock">
+    <section class="dock" data-dock="topics">
+      <button class="dock-h mono" type="button" aria-expanded="true" title="Collapse or expand (T)"><span class="caret"></span>TOPICS<span class="dock-n" id="topics-n"></span></button>
+      <div class="dock-body">
+        <ul id="legend" class="legend"></ul>
+        <div class="dock-foot mono"><button id="b-all" type="button" hidden>SHOW ALL</button><span class="hint">click hide · double-click solo</span></div>
+      </div>
+    </section>
+    <section class="dock" data-dock="filters">
+      <button class="dock-h mono" type="button" aria-expanded="true" title="Collapse or expand"><span class="caret"></span>SHOW<span class="dock-n" id="filters-n"></span></button>
+      <div class="dock-body"><ul id="groups" class="legend"></ul></div>
+    </section>
   </nav>
 
   <div class="hud hud-br mono">
     <div class="coords" id="coords">X 000.00 · Y 000.00 · Z 1.00</div>
-    <div class="controls">
-      <button id="b-signals" class="on" title="Signals (S)">SIGNALS</button>
-      <button id="b-labels" class="on" title="Labels (L)">LABELS</button>
-      <button id="b-reset" title="Reset view (R)">RESET</button>
-      <button id="b-edit" title="Unlock edit mode (E)">EDIT</button>
+    <div class="controls dock" data-dock="controls">
+      <div class="dock-body controls-row">
+        <button id="b-signals" class="on" title="Signals (S)">SIGNALS</button>
+        <button id="b-labels" class="on" title="Labels (L)">LABELS</button>
+        <button id="b-random" title="Open a random note (N)">RANDOM</button>
+        <button id="b-reset" title="Reset view (R)">RESET</button>
+        <button id="b-edit" title="Unlock edit mode (E)">EDIT</button>
+        <button id="b-help" title="Keyboard shortcuts (?)">?</button>
+      </div>
+      <button class="dock-h ctrl-toggle" type="button" aria-expanded="true" title="Collapse or expand the controls"><span class="caret"></span></button>
     </div>
     <div class="build" id="build"></div>
   </div>
+
+  <button id="b-hud" class="hud-restore mono" type="button" title="Show panels (H)" hidden>SHOW PANELS</button>
 
   <div class="tooltip mono" id="tip" hidden></div>
   <div class="toast mono" id="toast" role="status" hidden></div>

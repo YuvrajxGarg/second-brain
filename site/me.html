@@ -43,6 +43,8 @@
     .bars { display: grid; gap: 8px; }
     .row { display: grid; grid-template-columns: 110px 1fr 28px; align-items: center; gap: 10px; font-size: 13px; padding: 2px 0; }
     .row:hover .fill { filter: brightness(1.25); }
+    a.row { color: inherit; text-decoration: none; }
+    a.row:hover .lab { color: var(--fg); text-decoration: underline; text-decoration-color: var(--faint); text-underline-offset: 3px; }
     .row .lab { display: flex; align-items: center; gap: 8px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
     .row .lab i { width: 8px; height: 8px; flex: none; }
     .row .val { font: 400 12px/1 var(--mono); color: var(--dim); text-align: right; font-variant-numeric: tabular-nums; }
@@ -149,13 +151,15 @@
       document.getElementById("per-day-x").innerHTML = `<span>${all[0]}</span><span>${all[all.length - 1]}</span>`;
     }
 
-    const bars = (el, rows, colorOf) => {
+    const bars = (el, rows, colorOf, hrefOf) => {
       const max = Math.max(1, ...rows.map((r) => r[1]));
-      document.getElementById(el).innerHTML = rows.map(([k, v]) =>
-        `<div class="row" title="${esc(k)}: ${v}"><span class="lab">${colorOf ? `<i style="background:${colorOf(k)}"></i>` : ""}${esc(k)}</span>` +
-        `<div class="track"><div class="fill" style="width:${(v / max) * 100}%"></div></div><span class="val">${v}</span></div>`).join("");
+      document.getElementById(el).innerHTML = rows.map(([k, v]) => {
+        const tag = hrefOf ? "a" : "div";
+        return `<${tag} class="row"${hrefOf ? ` href="${hrefOf(k)}"` : ""} title="${esc(k)}: ${v}${hrefOf ? " · open in the graph" : ""}"><span class="lab">${colorOf ? `<i style="background:${colorOf(k)}"></i>` : ""}${esc(k)}</span>` +
+        `<div class="track"><div class="fill" style="width:${(v / max) * 100}%${colorOf ? `;background:${colorOf(k)}` : ""}"></div></div><span class="val">${v}</span></${tag}>`;
+      }).join("");
     };
-    bars("by-topic", sorted(count(notes, (n) => n.topic)), (t) => PALETTE[t] || "#a0a4ab");
+    bars("by-topic", sorted(count(notes, (n) => n.topic)), (t) => PALETTE[t] || "#a0a4ab", (t) => `./#/t/${encodeURIComponent(t)}`);
     bars("by-kind", sorted(count(notes, (n) => n.kind || "unsorted")));
     const plat = (n) => !n.source ? "own words" : /\/\/(www\.)?(x|twitter)\.com/.test(n.source) ? "x" : /instagram\.com/.test(n.source) ? "instagram" : /github\.com/.test(n.source) ? "github" : "web";
     bars("by-source", sorted(count(notes, plat)));

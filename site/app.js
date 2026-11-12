@@ -16,6 +16,12 @@
   };
   // what a note is, in words: things he made, places he works, his own thoughts, or saves
   const OWN_KINDS = new Set(["idea", "thought", "todo"]);
+  const GROUPS = [
+    { id: "made", label: "MADE BY ME", test: (n) => n.noteKind === "project" || n.noteKind === "org" },
+    { id: "mine", label: "MY IDEAS + THOUGHTS", test: (n) => OWN_KINDS.has(n.noteKind) },
+    { id: "saved", label: "SAVED REFS", test: () => true },
+  ];
+  const groupOf = (n) => GROUPS.find((g) => g.test(n)).id;
   const typeLabel = (n) =>
     n.noteKind === "project" ? `${n.type} · made by me` :
     n.noteKind === "org" ? (n.type === "company" ? "company" : n.type) :
@@ -57,7 +63,15 @@
   let hoverId = null, selectedId = null;
   let searchSet = null;
   const hiddenTopics = new Set();
-  let showSignals = !reduceMotion, showLabels = true;
+  const hiddenGroups = new Set();
+  // remembered UI choices (collapsed panels, toggles); per browser
+  const UI_KEY = "sb-ui";
+  const ui = (() => {
+    const def = { collapsed: { topics: isMobile(), filters: true, controls: isMobile() }, signals: !reduceMotion, labels: true, hud: true };
+    try { const v = JSON.parse(localStorage.getItem(UI_KEY) || "null"); return v ? { ...def, ...v, collapsed: { ...def.collapsed, ...(v.collapsed || {}) } } : def; } catch { return def; }
+  })();
+  const saveUi = () => { try { localStorage.setItem(UI_KEY, JSON.stringify(ui)); } catch {} };
+  let showSignals = ui.signals, showLabels = ui.labels;
   let introStart = 0;
   let mouse = { x: -1, y: -1, inside: false };
   const signals = [];
@@ -193,9 +207,9 @@
   }
   function visible(n) {
     if (n.deleted) return false;
-    if (n.kind === "note") return !hiddenTopics.has(n.topic);
+    if (n.kind === "note") return !hiddenTopics.has(n.topic) && !hiddenGroups.has(groupOf(n));
     if (n.kind === "topic") return !hiddenTopics.has(n.topic);
-    for (const m of adj.get(n.id)) { const x = byId.get(m); if (!x.deleted && !hiddenTopics.has(x.topic)) return true; }
+    for (const m of adj.get(n.id)) { const x = byId.get(m); if (x.kind === "note" && visible(x)) return true; }
     return false;
   }
 
@@ -407,8 +421,8 @@
       const focused = n.h > 0.2;
       const show =
         focused || n.kind === "topic" ||
-        (n.kind === "note" && k > 2.6) ||
-        (n.kind === "tag" && k > 3.4);
+        (n.kind === "note" && k > 1.1) ||
+        (n.kind === "tag" && k > 2.6);
       if (!show) continue;
       const sx = n.dx * k + transform.x, sy = n.dy * k + transform.y;
       if (sx < -200 || sx > W + 50 || sy < -20 || sy > H + 20) continue;
@@ -497,16 +511,20 @@
         const n = nodeAt(e.x, e.y);
         return n ? { n, x: e.x, y: e.y } : null;
       })
-      .on("start", (e) => {
-        canvas.classList.add("dragging");
-        sim.alphaTarget(0.25).restart();
-        e.subject.n.fx = e.subject.n.x; e.subject.n.fy = e.subject.n.y;
-      })
+      .on("start", (e) => { e.subject.moved = false; })
       .on("drag", (e) => {
+        const s = e.subject;
+        if (!s.moved) {
+          if (Math.hypot(e.x - s.x, e.y - s.y) < 4) return;
+          s.moved = true;
+          canvas.classList.add("dragging");
+          sim.alphaTarget(0.25).restart();
+        }
         const [x, y] = worldAt(e.x, e.y);
-        e.subject.n.fx = x; e.subject.n.fy = y;
+        s.n.fx = x; s.n.fy = y;
       })
       .on("end", (e) => {
+        if (!e.subject.moved) return;
         canvas.classList.remove("dragging");
         sim.alphaTarget(0);
         e.subject.n.fx = null; e.subject.n.fy = null;
@@ -536,6 +554,9 @@
     $("b-reset").addEventListener("click", () => { go(null); fit(); });
     $("b-signals").addEventListener("click", toggleSignals);
     $("b-labels").addEventListener("click", toggleLabels);
+    $("b-random").addEventListener("click", randomNote);
+    $("b-help").addEventListener("click", showHelp);
+    $("b-hud").addEventListener("click", () => toggleHud(true));
 
     addEventListener("keydown", (e) => {
       const typing = document.activeElement === q;
@@ -547,19 +568,46 @@
         if (typing) { q.value = ""; onSearch(); q.blur(); } else go(null);
         return;
       }
-      if (typing) return;
+      if (typing || e.metaKey || e.ctrlKey || e.altKey) return;
       if (e.key === "/") { e.preventDefault(); q.focus(); }
       else if (e.key === "r" || e.key === "R") { go(null); fit(); }
       else if (e.key === "s" || e.key === "S") toggleSignals();
       else if (e.key === "l" || e.key === "L") toggleLabels();
+      else if (e.key === "n" || e.key === "N") randomNote();
+      else if (e.key === "h" || e.key === "H") toggleHud();
+      else if (e.key === "t" || e.key === "T") toggleDock("topics");
+      else if (e.key === "?") showHelp();
     });
 
     addEventListener("resize", () => { resize(); });
     addEventListener("hashchange", route);
   }
 
-  function toggleSignals() { showSignals = !showSignals; $("b-signals").classList.toggle("on", showSignals); if (!showSignals) signals.length = 0; }
-  function toggleLabels() { showLabels = !showLabels; $("b-labels").classList.toggle("on", showLabels); }
+  function toggleSignals() { showSignals = !showSignals; ui.signals = showSignals; saveUi(); syncToggles(); if (!showSignals) signals.length = 0; }
+  function toggleLabels() { showLabels = !showLabels; ui.labels = showLabels; saveUi(); syncToggles(); }
+  function syncToggles() { $("b-signals").classList.toggle("on", showSignals); $("b-labels").classList.toggle("on", showLabels); }
+
+  function randomNote() {
+    const pool = nodes.filter((n) => n.kind === "note" && visible(n) && n.id !== selectedId);
+    if (pool.length) go(pool[(Math.random() * pool.length) | 0]);
+  }
+  function toggleHud(force) {
+    ui.hud = typeof force === "boolean" ? force : !ui.hud;
+    saveUi();
+    document.body.classList.toggle("hud-hidden", !ui.hud);
+    $("b-hud").hidden = ui.hud;
+    if (!ui.hud) toast("Panels hidden. Press H or use SHOW PANELS to bring them back.", 3500);
+  }
+  function showHelp() {
+    const rows = [
+      ["/", "Search notes, tags and topics"], ["Esc", "Close the note or clear search"], ["N", "Open a random note"],
+      ["R", "Reset the view"], ["T", "Collapse or expand topics"], ["H", "Hide or show all panels"],
+      ["S", "Signals on or off"], ["L", "Labels on or off"], ["E", "Edit mode"],
+      ["Click", "Open a node · drag to move it"], ["Topic", "Click to hide · double-click to show only it"],
+    ];
+    openModal(`<div class="m-h">SHORTCUTS</div><dl class="help-grid">${rows.map(([k, d]) => `<dt><kbd>${esc(k)}</kbd></dt><dd>${esc(d)}</dd>`).join("")}</dl>
+      <div class="m-row"><button type="submit">GOT IT</button></div>`, () => closeModal());
+  }
 
   function updateCoords() {
     const [x, y] = mouse.inside ? worldAt(mouse.x, mouse.y) : [0, 0];
@@ -607,7 +655,14 @@
     const m = location.hash.match(/^#\/(n|g|t)\/(.+)$/);
     if (!m) { select(null); return; }
     const id = (m[1] === "n" ? "n:" : m[1] === "g" ? "g:" : "t:") + decodeURIComponent(m[2]);
-    select(byId.get(id) || null);
+    const n = byId.get(id);
+    if (!n || n.deleted) {
+      toast(`Couldn't find <b>${esc(decodeURIComponent(m[2]))}</b>. It may have been renamed or deleted.`, 5000);
+      history.replaceState(null, "", "#/");
+      select(null);
+      return;
+    }
+    select(n);
   }
   function select(n) {
     if (!n) {
@@ -616,6 +671,7 @@
       return;
     }
     if (n.topic && hiddenTopics.has(n.topic)) { hiddenTopics.delete(n.topic); renderLegend(); }
+    if (n.kind === "note" && hiddenGroups.has(groupOf(n))) { hiddenGroups.delete(groupOf(n)); renderGroups(); }
     selectedId = n.id;
     scrambles.set(n.id, performance.now());
     burstFrom(n.id);
@@ -945,6 +1001,7 @@
       });
     n.search = [n.label, n.tags.join(" "), n.topic, n.type, n.noteKind || "", n.why || "", n.style.join(" "), n.body].join(" ").toLowerCase();
     scrambles.set(n.id, performance.now());
+    renderGroups();
   }
 
   function confirmDelete(n) {
@@ -960,6 +1017,7 @@
         closeModal();
         n.deleted = true;
         editor.node = null;
+        renderGroups();
         go(null);
         toast(`Deleted · <a href="${esc(graph.repo)}/commit/${esc(r.commit)}" target="_blank" rel="noopener">${esc(r.commit.slice(0, 7))}</a>. The graph rebuilds in about a minute.`, 8000);
       } catch (e) {
@@ -971,22 +1029,24 @@
 
   $("b-edit").addEventListener("click", () => toggleEdit());
   addEventListener("keydown", (e) => {
-    if ((e.key === "e" || e.key === "E") && !e.metaKey && !e.ctrlKey && document.activeElement === document.body && !editor.modal) toggleEdit();
+    // works after clicking any button too (it used to need focus on the page body)
+    if ((e.key === "e" || e.key === "E") && !e.metaKey && !e.ctrlKey && !e.altKey && !editor.modal &&
+      !(e.target.closest && e.target.closest("input, textarea, select, [contenteditable]"))) toggleEdit();
   });
   syncEditButton();
 
   // ---------- search ----------
-  let activeIdx = 0, hitsList = [];
+  let activeIdx = 0, hitsList = [], hitsTotal = 0;
   function onSearch() {
     const s = q.value.trim().toLowerCase();
     if (!s) { searchSet = null; results.hidden = true; return; }
     const terms = s.split(/\s+/);
-    hitsList = nodes
-      .filter((n) => visible(n) && terms.every((t) => n.search.includes(t)))
-      .map((n) => ({ n, score: (n.label.toLowerCase().startsWith(s) ? 4 : 0) + (n.label.toLowerCase().includes(s) ? 2 : 0) + (n.kind === "note" ? 1 : 0) }))
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 8)
-      .map((h) => h.n);
+    const all = nodes
+      .filter((n) => !n.deleted && terms.every((t) => n.search.includes(t)))
+      .map((n) => ({ n, score: (n.label.toLowerCase().startsWith(s) ? 4 : 0) + (n.label.toLowerCase().includes(s) ? 2 : 0) + (n.kind === "note" ? 1 : 0) + (visible(n) ? 0.5 : 0) }))
+      .sort((a, b) => b.score - a.score);
+    hitsTotal = all.length;
+    hitsList = all.slice(0, 12).map((h) => h.n);
     searchSet = new Set(hitsList.map((n) => n.id));
     activeIdx = 0;
     renderResults();
@@ -994,8 +1054,8 @@
   function renderResults() {
     results.hidden = false;
     if (!hitsList.length) { results.innerHTML = `<li class="empty">NO MATCHES</li>`; return; }
-    results.innerHTML = hitsList.map((n, i) =>
-      `<li data-i="${i}" class="${i === activeIdx ? "active" : ""}"><span class="sq ${n.kind === "tag" ? "ring" : ""}" style="background:${n.color}"></span>${n.kind === "tag" ? "#" : ""}${esc(trunc(n.label, 38))}<span class="k">${n.kind.toUpperCase()}</span></li>`
+    results.innerHTML = `<li class="count">${hitsTotal} MATCH${hitsTotal === 1 ? "" : "ES"}${hitsTotal > hitsList.length ? ` · TOP ${hitsList.length}` : ""} · ↑↓ ENTER</li>` + hitsList.map((n, i) =>
+      `<li data-i="${i}" class="${i === activeIdx ? "active" : ""}"><span class="sq ${n.kind === "tag" ? "ring" : ""}" style="background:${n.color}"></span>${n.kind === "tag" ? "#" : ""}${esc(trunc(n.label, 38))}<span class="k">${n.kind === "note" ? esc(n.topic.toUpperCase()) : n.kind.toUpperCase()}</span></li>`
     ).join("");
   }
   function pick(i) {
@@ -1006,8 +1066,8 @@
   }
   q.addEventListener("input", onSearch);
   q.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowDown") { e.preventDefault(); activeIdx = Math.min(hitsList.length - 1, activeIdx + 1); renderResults(); }
-    else if (e.key === "ArrowUp") { e.preventDefault(); activeIdx = Math.max(0, activeIdx - 1); renderResults(); }
+    if (e.key === "ArrowDown") { e.preventDefault(); activeIdx = Math.min(hitsList.length - 1, activeIdx + 1); renderResults(); results.querySelector(".active")?.scrollIntoView({ block: "nearest" }); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); activeIdx = Math.max(0, activeIdx - 1); renderResults(); results.querySelector(".active")?.scrollIntoView({ block: "nearest" }); }
     else if (e.key === "Enter") pick(activeIdx);
   });
   results.addEventListener("mousedown", (e) => {
@@ -1015,33 +1075,76 @@
     if (li) { e.preventDefault(); pick(+li.dataset.i); }
   });
   q.addEventListener("blur", () => setTimeout(() => { if (!q.value) results.hidden = true; }, 120));
+  q.addEventListener("focus", () => { if (q.value.trim()) onSearch(); });
 
   // ---------- HUD ----------
+  const topicNames = () => nodes.filter((n) => n.kind === "topic").map((n) => n.label);
   function renderLegend() {
     const topics = nodes.filter((n) => n.kind === "topic").sort((a, b) => b.count - a.count);
     $("legend").innerHTML = topics.map((t) =>
-      `<li data-topic="${esc(t.label)}" class="${hiddenTopics.has(t.label) ? "off" : ""}" style="color:${t.color}"><span class="sq" style="background:${t.color}"></span><span style="color:var(--fg)">${esc(t.label.toUpperCase())}</span><span class="n">${pad(t.count, 2)}</span></li>`
+      `<li data-topic="${esc(t.label)}" class="${hiddenTopics.has(t.label) ? "off" : ""}" style="color:${t.color}" title="Click to hide · double-click to show only ${esc(t.label)}"><span class="sq" style="background:${t.color}"></span><span style="color:var(--fg)">${esc(t.label.toUpperCase())}</span><span class="n">${pad(t.count, 2)}</span></li>`
     ).join("");
+    const shown = topics.length - hiddenTopics.size;
+    $("topics-n").textContent = hiddenTopics.size ? `${shown}/${topics.length}` : String(topics.length);
+    $("b-all").hidden = !hiddenTopics.size;
+  }
+  function renderGroups() {
+    const notes = nodes.filter((n) => n.kind === "note" && !n.deleted);
+    $("groups").innerHTML = GROUPS.map((g) => {
+      const c = notes.filter((n) => groupOf(n) === g.id).length;
+      return `<li data-group="${g.id}" class="${hiddenGroups.has(g.id) ? "off" : ""}" title="Click to hide · double-click to show only these"><span class="sq ${g.id === "saved" ? "ring" : ""}" style="background:${g.id === "made" ? "var(--accent)" : g.id === "mine" ? "#f2f2f2" : "transparent"}"></span><span>${g.label}</span><span class="n">${pad(c, 2)}</span></li>`;
+    }).join("");
+    $("filters-n").textContent = hiddenGroups.size ? `${GROUPS.length - hiddenGroups.size}/${GROUPS.length}` : "ALL";
+  }
+  function afterFilter() {
+    renderLegend(); renderGroups();
+    const sel = selectedId && byId.get(selectedId);
+    if (sel && !visible(sel)) go(null);
+    if (q.value.trim()) onSearch();
+    clearTimeout(afterFilter.t);
+    afterFilter.t = setTimeout(() => fit(900), 250);
+  }
+  // click = hide/show one; double-click = show only that one (again = show all)
+  function filterClick(set, all, key, e) {
+    if (e.detail >= 2) {
+      const soloed = set.size === all.length - 1 && !set.has(key);
+      set.clear();
+      if (!soloed) for (const x of all) if (x !== key) set.add(x);
+    } else if (set.has(key)) set.delete(key);
+    else {
+      set.add(key);
+      if (set.size === all.length) set.delete(key); // never hide everything
+    }
+    afterFilter();
   }
   $("legend").addEventListener("click", (e) => {
     const li = e.target.closest("[data-topic]");
-    if (!li) return;
-    const t = li.dataset.topic;
-    const topics = nodes.filter((n) => n.kind === "topic").map((n) => n.label);
-    // click = solo that topic; click it again (or the only visible one) = show all
-    const soloed = hiddenTopics.size === topics.length - 1 && !hiddenTopics.has(t);
-    hiddenTopics.clear();
-    if (!soloed) for (const x of topics) if (x !== t) hiddenTopics.add(x);
-    renderLegend();
-    const sel = selectedId && byId.get(selectedId);
-    if (sel && !visible(sel)) go(null);
-    setTimeout(() => fit(900), 60);
+    if (li) filterClick(hiddenTopics, topicNames(), li.dataset.topic, e);
   });
+  $("groups").addEventListener("click", (e) => {
+    const li = e.target.closest("[data-group]");
+    if (li) filterClick(hiddenGroups, GROUPS.map((g) => g.id), li.dataset.group, e);
+  });
+  $("b-all").addEventListener("click", () => { hiddenTopics.clear(); afterFilter(); });
   $("legend").addEventListener("mouseover", (e) => {
     const li = e.target.closest("[data-topic]");
     setHover(li ? byId.get("t:" + li.dataset.topic) : null);
   });
   $("legend").addEventListener("mouseleave", () => setHover(null));
+
+  // collapsible panels, remembered per browser
+  function syncDocks() {
+    document.querySelectorAll("[data-dock]").forEach((d) => {
+      const c = !!ui.collapsed[d.dataset.dock];
+      d.classList.toggle("collapsed", c);
+      d.querySelector(".dock-h").setAttribute("aria-expanded", String(!c));
+    });
+  }
+  function toggleDock(name) { ui.collapsed[name] = !ui.collapsed[name]; saveUi(); syncDocks(); }
+  document.querySelectorAll("[data-dock] > .dock-h").forEach((b) => b.addEventListener("click", () => toggleDock(b.parentElement.dataset.dock)));
+  syncDocks();
+  syncToggles();
+  if (!ui.hud) { document.body.classList.add("hud-hidden"); $("b-hud").hidden = false; }
 
   function countUp(el, to) {
     const t0 = performance.now();
@@ -1066,6 +1169,7 @@
   }
   function setupHud() {
     renderLegend();
+    renderGroups();
     const c = graph.counts;
     countUp($("s-notes"), c.notes);
     countUp($("s-tags"), c.tags);
