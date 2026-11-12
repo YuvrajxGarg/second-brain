@@ -41,5 +41,11 @@
       "source": "/mcp/(.*)",
       "destination": "/api/mcp"
     }
-  ]
+  ],
+  "git": {
+    "deploymentEnabled": {
+      "*": false,
+      "main": true
+    }
+  }
 }

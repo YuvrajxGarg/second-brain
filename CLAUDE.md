@@ -201,6 +201,9 @@ as it's done. No branches, no PRs, no asking for confirmation first.
 topics as nodes; links from tags, topics and `[[slug]]` references). Vercel runs
 `node scripts/build_graph.mjs` on every push to `main`, so new entries appear on
 their own; nothing to do when filing. `site/data/` is generated and gitignored.
+Only `main` deploys: preview builds are off (`git.deploymentEnabled` in
+`vercel.json`, Yuvraj's rule 2026-11-12) because they eat the deploy limit. Never
+push other branches expecting a preview, and batch filings into one push where you can.
 Add a colour for a new topic in `PALETTE` at the top of `site/app.js` (unknown
 topics get a fallback colour automatically).
 
