@@ -3,6 +3,8 @@ title: "Cricle game"
 type: bookmark
 topic: gamedev
 tags: [browser-game, cricket, daily-challenge, game-inspiration, to-try]
+kind: game-ref
+why: fun cricket browser games
 source: https://playcricle.com
 added: 2026-11-09
 status: unread

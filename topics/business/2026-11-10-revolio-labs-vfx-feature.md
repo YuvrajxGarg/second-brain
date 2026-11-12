@@ -3,6 +3,9 @@ title: Revolio VFX feature
 type: todo
 topic: business
 tags: [revolio-labs, vfx, product-idea]
+kind: todo
+stage: new
+why: build a Ladybug-style VFX feature for the Revolio Labs website
 source: https://theladybug.app/
 added: 2026-11-10
 status: unread

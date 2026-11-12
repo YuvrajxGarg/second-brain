@@ -2,3 +2,7 @@ __pycache__/
 .DS_Store
 site/data/
 .vercel
+site/llms.txt
+site/llms-full.txt
+site/AGENTS.md
+site/TASTE.md

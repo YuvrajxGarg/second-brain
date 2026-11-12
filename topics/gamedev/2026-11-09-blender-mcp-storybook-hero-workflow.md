@@ -3,6 +3,9 @@ title: "Blender storybook hero"
 type: bookmark
 topic: gamedev
 tags: [blender, mcp, 3d-character, animation, rigging, workflow]
+kind: technique
+why: repeatable Blender MCP character workflow for my games
+style: [stylised storybook 3d, big-head proportions]
 source: https://x.com/rewind02/status/2119821740058546282
 added: 2026-11-09
 status: unread

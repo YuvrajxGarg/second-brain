@@ -3,6 +3,8 @@ title: Astryx design system
 type: tool
 topic: design
 tags: [design-system, ui, react, open-source, agents]
+kind: library
+why: hand to coding agents so they build better UI
 source: https://github.com/meta/astryx
 added: 2026-11-10
 status: unread

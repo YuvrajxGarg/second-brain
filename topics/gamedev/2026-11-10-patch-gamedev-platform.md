@@ -3,6 +3,8 @@ title: Patch gamedev tool
 type: tool
 topic: gamedev
 tags: [game-engine, mcp, game-assets, open-source, to-try]
+kind: tool
+why: game dev tools as one CLI and MCP, plus open-source assets
 source: https://patch.gg
 added: 2026-11-10
 status: unread

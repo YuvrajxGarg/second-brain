@@ -53,6 +53,10 @@ function parse(file) {
     source: unq(meta.source) || null,
     added: unq(meta.added) || slug.slice(0, 10),
     status: unq(meta.status) || null,
+    kind: unq(meta.kind) || null,
+    why: unq(meta.why) || null,
+    stage: unq(meta.stage) || null,
+    style: unq(meta.style).replace(/^\[|\]$/g, "").split(",").map((t) => unq(t)).filter(Boolean),
     body: m ? text.slice(m[0].length) : text,
   };
 }
@@ -126,6 +130,10 @@ for (const n of notes) {
     source: n.source,
     added: n.added,
     status: n.status,
+    noteKind: n.kind, // "kind" is taken by the node kind (note|tag|topic)
+    why: n.why,
+    stage: n.stage,
+    style: n.style,
     body,
     related: [...related],
   });
@@ -144,3 +152,31 @@ const graph = {
 };
 fs.writeFileSync(path.join(OUT, "graph.json"), JSON.stringify(graph));
 console.log(`graph: ${notes.length} notes, ${graph.counts.topics} topics, ${graph.counts.tags} tags, ${links.length} links`);
+
+// ---------- AI-facing files ----------
+// brain.json feeds the MCP server (api/mcp.js); the text files are served at the
+// site root so any agent can fetch /llms.txt, /AGENTS.md, /TASTE.md.
+const readRoot = (f) => (fs.existsSync(path.join(ROOT, f)) ? fs.readFileSync(path.join(ROOT, f), "utf8") : "");
+const summaryOf = (body) => ((body.match(/## Summary\n+([\s\S]*?)(\n\n|\n##|$)/) || [])[1] || "").trim().replace(/\n/g, " ");
+const catalogs = {};
+for (const f of fs.existsSync(path.join(ROOT, "catalog")) ? fs.readdirSync(path.join(ROOT, "catalog")) : []) {
+  if (f.endsWith(".md")) catalogs[f.replace(/\.md$/, "")] = readRoot(path.join("catalog", f));
+}
+const brain = {
+  generated: graph.generated,
+  commit: graph.commit,
+  site: "https://brainy.pxlvzn.in",
+  repo: graph.repo,
+  agents: readRoot("AGENTS.md"),
+  taste: readRoot("TASTE.md"),
+  ideas: readRoot("IDEAS.md"),
+  catalogs,
+  notes: notes
+    .map(({ body, ...n }) => ({ ...n, summary: summaryOf(body), body: body.trim() }))
+    .sort((a, b) => (b.added || "").localeCompare(a.added || "")),
+};
+fs.writeFileSync(path.join(OUT, "brain.json"), JSON.stringify(brain));
+for (const f of ["llms.txt", "llms-full.txt", "AGENTS.md", "TASTE.md", "IDEAS.md"]) {
+  if (fs.existsSync(path.join(ROOT, f))) fs.copyFileSync(path.join(ROOT, f), path.join(ROOT, "site", f));
+}
+console.log(`brain: ${brain.notes.length} notes, ${Object.keys(catalogs).length} catalogs`);

@@ -3,6 +3,8 @@ title: App growth checklist
 type: bookmark
 topic: business
 tags: [mobile-app, marketing, growth, reference]
+kind: advice
+why: what to try before giving up on an app
 source: https://x.com/freddyfvng/status/2120257766543512041
 added: 2026-11-11
 status: unread

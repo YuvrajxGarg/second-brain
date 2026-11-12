@@ -3,6 +3,8 @@ title: Claude Code agent tree
 type: bookmark
 topic: ai
 tags: [claude, agents, workflow, reference]
+kind: technique
+why: cost-efficient Claude Code agent setup to copy
 source: https://x.com/voxyz_ai/status/2120199820887593304
 added: 2026-11-11
 status: unread

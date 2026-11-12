@@ -3,6 +3,9 @@ title: ARC 3D art dataset
 type: link
 topic: design
 tags: [3d-art, creative-commons, free-assets, inspiration]
+kind: asset-source
+why: free Creative Commons 3D art files to remix
+style: [glossy abstract 3d, metallic gold and rose gold, pastel blocks]
 source: https://arc.art/dataset/
 added: 2026-11-10
 status: unread

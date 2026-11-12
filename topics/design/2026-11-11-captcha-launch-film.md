@@ -3,6 +3,9 @@ title: Captcha launch film
 type: video
 topic: design
 tags: [visual-design, pixel-art, inspiration]
+kind: style-ref
+why: cool visuals, launch film
+style: [chunky flat pixel art, orange and blue palette, pixel cursors and ui, launch film motion]
 source: https://x.com/AustinBauwens/status/2119800432797118696
 added: 2026-11-11
 status: unread

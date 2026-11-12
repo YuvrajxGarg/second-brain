@@ -3,6 +3,9 @@ title: "Godot waterfall shader"
 type: bookmark
 topic: gamedev
 tags: [godot, shader, vfx, 2d, water, tutorial]
+kind: technique
+why: stylised water for my games
+style: [stylised 2d water]
 source: https://x.com/ushadersbible/status/2119673988464922969
 added: 2026-11-09
 status: unread

@@ -3,6 +3,8 @@ title: Roboflow re-ID tool
 type: tool
 topic: ai
 tags: [computer-vision, object-tracking, python, open-source, to-try]
+kind: library
+why: track one player across clips for sports video edits
 source: https://github.com/roboflow/re-ID
 added: 2026-11-10
 status: unread

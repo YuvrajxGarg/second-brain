@@ -3,6 +3,8 @@ title: Native Swift tip
 type: quote
 topic: tech
 tags: [claude, ios, reference]
+kind: advice
+why: safest way to build mobile apps solo with Claude
 source: https://x.com/lazyjakee/status/2120398348972966127
 added: 2026-11-11
 status: unread

@@ -3,6 +3,8 @@ title: "500-0 game"
 type: bookmark
 topic: gamedev
 tags: [browser-game, cricket, game-inspiration, to-try]
+kind: game-ref
+why: fun cricket browser games
 source: https://500-0.com
 added: 2026-11-09
 status: unread

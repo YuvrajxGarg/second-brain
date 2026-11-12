@@ -3,6 +3,8 @@ title: Intelligence is adaptability
 type: note
 topic: life
 tags: [mental-model, thinking, intelligence]
+kind: thought
+why: a mental model I want to keep
 added: 2026-11-10
 ---
 

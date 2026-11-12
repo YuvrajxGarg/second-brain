@@ -122,7 +122,7 @@
         const ax = anchor?.x ?? 0, ay = anchor?.y ?? 0;
         n.x = ax + (Math.random() - 0.5) * 60; n.y = ay + (Math.random() - 0.5) * 60;
       }
-      n.search = [n.label, n.kind === "note" ? n.tags.join(" ") + " " + n.topic + " " + n.type + " " + (n.body || "") : ""].join(" ").toLowerCase();
+      n.search = [n.label, n.kind === "note" ? n.tags.join(" ") + " " + n.topic + " " + n.type + " " + (n.noteKind || "") + " " + (n.why || "") + " " + (n.style || []).join(" ") + " " + (n.body || "") : ""].join(" ").toLowerCase();
     }
     // stagger the bloom from the centre outwards
     const maxD = Math.max(1, ...nodes.map((n) => Math.hypot(n.x, n.y)));
@@ -631,6 +631,9 @@
       html += `<div class="p-kicker"><span class="sq" style="background:${n.color}"></span>${esc(n.topic)} · ${esc(n.type)}</div>`;
       html += `<h1 class="p-title" data-title>${esc(n.label)}</h1>`;
       html += `<dl class="p-meta">
+        ${n.why ? `<dt>WHY</dt><dd>${esc(n.why)}</dd>` : ""}
+        ${n.noteKind ? `<dt>KIND</dt><dd>${esc(n.noteKind)}${n.stage ? " · " + esc(n.stage) : ""}</dd>` : ""}
+        ${n.style && n.style.length ? `<dt>STYLE</dt><dd>${esc(n.style.join(", "))}</dd>` : ""}
         <dt>ADDED</dt><dd>${esc(n.added)}</dd>
         ${n.status ? `<dt>STATUS</dt><dd>${esc(n.status)}</dd>` : ""}
         ${n.source ? `<dt>SOURCE</dt><dd><a href="${esc(n.source)}" target="_blank" rel="noopener">${esc(host)} ↗</a></dd>` : ""}

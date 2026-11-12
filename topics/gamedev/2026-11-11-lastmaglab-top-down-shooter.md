@@ -3,6 +3,9 @@ title: Lastmaglab shooter style
 type: video
 topic: gamedev
 tags: [godot, low-poly, game-inspiration, vfx]
+kind: game-ref
+why: cool game visual style, art style
+style: [clean stylised 3d, top-down camera, dark slate grid floor, chunky props, minimal hud]
 source: https://www.instagram.com/reel/Dfl14Swvt7W/
 added: 2026-11-11
 status: unread

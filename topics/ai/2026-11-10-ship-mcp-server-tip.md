@@ -3,6 +3,8 @@ title: Ship MCP server tip
 type: bookmark
 topic: ai
 tags: [mcp, api, documentation, agents, reference]
+kind: advice
+why: ship an MCP server and a documented API with whatever you build
 source: https://x.com/joncphillips/status/2119849328776819015
 added: 2026-11-10
 status: unread

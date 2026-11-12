@@ -1,0 +1,50 @@
+# Yuvraj's second brain
+
+> Personal knowledge base and taste profile of Yuvraj Garg, a video editor who also builds games. Every link, reference, library, tool and idea he saves is one markdown note with YAML frontmatter. Use it to personalise your answers: match his visual taste, prefer the libraries and tools he has saved, and build on his own ideas.
+
+Read TASTE.md first for the gist, then the catalog for what you need. Live graph: https://brainy.pxlvzn.in. MCP server (get_taste_profile, search, fetch, list_notes, get_catalog, recall_ideas): https://brainy.pxlvzn.in/mcp
+
+## Start here
+
+- [AGENTS.md](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/AGENTS.md): how the repo is laid out, what each field means, how to use it
+- [TASTE.md](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/TASTE.md): his taste profile (visual style, games, stack) with evidence
+- [IDEAS.md](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/IDEAS.md): his own ideas and to-dos by stage, to call back
+- [llms-full.txt](https://brainy.pxlvzn.in/llms-full.txt): every note in one file
+
+## Catalogs
+
+- [Libraries, design systems and asset sources](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/catalog/libraries.md): Code, components and assets Yuvraj wants to build with. Reach for these first.
+- [Style references](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/catalog/style-refs.md): Visual, website and game references that show Yuvraj's taste. `style` lists what to take from each.
+- [Tools and apps](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/catalog/tools.md): Apps and services he has saved to use or benchmark against.
+- [Techniques and advice](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/catalog/techniques.md): Workflows, how-tos and tips he wants to reuse.
+- [Ideas, thoughts and to-dos](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/catalog/ideas.md): His own ideas, thoughts and open to-dos.
+
+## Notes
+
+- [TikTok slideshow playbook](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/business/2026-11-11-tiktok-slideshow-app-marketing.md): `advice` · business · grow an app from zero with organic TikTok slideshows
+- [Procedural arm rig](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-11-procedural-arm-rig-demo.md): `library` · gamedev · open-source rigged arm to reuse in my games
+- [Native Swift tip](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/tech/2026-11-11-native-swift-app-tip.md): `advice` · tech · safest way to build mobile apps solo with Claude
+- [Lastmaglab shooter style](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md): `game-ref` · gamedev · cool game visual style, art style
+- [Claude Code agent tree](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-11-claude-code-agent-tree.md): `technique` · ai · cost-efficient Claude Code agent setup to copy
+- [Captcha launch film](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/2026-11-11-captcha-launch-film.md): `style-ref` · design · cool visuals, launch film
+- [App growth checklist](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/business/2026-11-11-app-growth-checklist.md): `advice` · business · what to try before giving up on an app
+- [Ace Of Frames reel](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/2026-11-11-ace-of-frames-reel.md): `style-ref` · design · cool visual design
+- [AI tween harness](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/2026-11-11-ai-tween-paint-harness.md): `technique` · design · AI-assisted 2D tweening and colouring workflow
+- [Ship MCP server tip](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-10-ship-mcp-server-tip.md): `advice` · ai · ship an MCP server and a documented API with whatever you build
+- [Roboflow re-ID tool](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-10-roboflow-reid-tool.md): `library` · ai · track one player across clips for sports video edits
+- [Revolio VFX feature](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/business/2026-11-10-revolio-labs-vfx-feature.md): `todo` · business · build a Ladybug-style VFX feature for the Revolio Labs website
+- [Polyfork 3D assets](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-10-polyfork-3d-assets.md): `library` · gamedev · open-source three.js asset library agents can use over MCP
+- [Patch gamedev tool](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-10-patch-gamedev-platform.md): `tool` · gamedev · game dev tools as one CLI and MCP, plus open-source assets
+- [Ladybug VFX app](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/2026-11-10-ladybug-vfx-app.md): `tool` · design · benchmark for the Revolio Labs VFX feature
+- [Intelligence is adaptability](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/life/2026-11-10-intelligence-is-adaptability.md): `thought` · life · a mental model I want to keep
+- [Claude code paintings](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-10-claude-code-paintings.md): `technique` · ai · idea for game art: code-placed brush strokes instead of image models
+- [Astryx design system](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/2026-11-10-astryx-design-system.md): `library` · design · hand to coding agents so they build better UI
+- [ARC 3D art dataset](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/2026-11-10-arc-3d-art-dataset.md): `asset-source` · design · free Creative Commons 3D art files to remix
+- [Second brand identity](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/2026-11-09-ayush-soni-visual-design-post.md): `style-ref` · design · cool visual design
+- [Pixel sprite search](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-09-pixel-search-sprite-database.md): `asset-source` · gamedev · sprites database for games I build
+- [MyCountryMogsYours game](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-09-my-country-mogs-yours.md): `game-ref` · gamedev · cool browser game I found
+- [Godot waterfall shader](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-09-godot-waterfall-texture-array-shader.md): `technique` · gamedev · stylised water for my games
+- [Goalkeeper editor joke](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/life/2026-11-09-goalkeeper-saving-things-in-post.md): `idea` · life · my own editor joke, could be a caption or bio line
+- [Cricle game](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-09-cricle-daily-cricket-guessing-game.md): `game-ref` · gamedev · fun cricket browser games
+- [Blender storybook hero](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-09-blender-mcp-storybook-hero-workflow.md): `technique` · gamedev · repeatable Blender MCP character workflow for my games
+- [500-0 game](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-09-thechase500-cricket-chase-game.md): `game-ref` · gamedev · fun cricket browser games

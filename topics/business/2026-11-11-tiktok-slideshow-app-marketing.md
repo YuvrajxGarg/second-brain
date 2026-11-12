@@ -3,6 +3,8 @@ title: TikTok slideshow playbook
 type: bookmark
 topic: business
 tags: [mobile-app, marketing, growth, reference]
+kind: advice
+why: grow an app from zero with organic TikTok slideshows
 source: https://x.com/g_buildz_apps/status/2115637587817955761
 added: 2026-11-11
 status: unread

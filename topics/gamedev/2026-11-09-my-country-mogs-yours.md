@@ -3,6 +3,8 @@ title: "MyCountryMogsYours game"
 type: bookmark
 topic: gamedev
 tags: [browser-game, game-inspiration, fun, to-try]
+kind: game-ref
+why: cool browser game I found
 source: https://mycountrymogsyours.com/
 added: 2026-11-09
 status: unread

@@ -3,6 +3,9 @@ title: Ace Of Frames reel
 type: video
 topic: design
 tags: [visual-design, video-editing, inspiration]
+kind: style-ref
+why: cool visual design
+style: [bold type, ui mockups in motion, pixel-art mascots, glowing cards, product launch video]
 source: https://x.com/aceoframes/status/2120280507778777140
 added: 2026-11-11
 status: unread

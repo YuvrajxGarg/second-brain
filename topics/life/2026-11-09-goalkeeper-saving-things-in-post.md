@@ -3,6 +3,9 @@ title: "Goalkeeper editor joke"
 type: idea
 topic: life
 tags: [joke, video-editing, pun, own-thought]
+kind: idea
+stage: new
+why: my own editor joke, could be a caption or bio line
 added: 2026-11-09
 ---
 
