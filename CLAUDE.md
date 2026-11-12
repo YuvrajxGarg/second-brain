@@ -28,6 +28,7 @@ tools/quick-capture/    browser extension that drops captures into inbox/
 scripts/build_graph.mjs builds site/data/graph.json for the graph site
 site/                   the graph website (static, deployed on Vercel)
 vercel.json             Vercel build config (runs build_graph.mjs, serves site/)
+suggestions/            daily build ideas from the 9 AM scheduled task (see its README)
 ```
 
 Starter topics: `ai`, `tech`, `business`, `design`, `productivity`, `health`,
@@ -206,6 +207,14 @@ Only `main` deploys: preview builds are off (`git.deploymentEnabled` in
 push other branches expecting a preview, and batch filings into one push where you can.
 Add a colour for a new topic in `PALETTE` at the top of `site/app.js` (unknown
 topics get a fallback colour automatically).
+
+## Daily build ideas
+
+A scheduled task runs every morning (~9 AM IST), follows `suggestions/README.md`,
+sends Yuvraj 1 to 3 build ideas combining his saved notes, and logs them in
+`suggestions/YYYY-MM-DD.md` so nothing repeats. Commits touching only
+`suggestions/` skip the Vercel deploy. If he says he likes one, file it as a
+`kind: idea` note and set its `**Status:**` to `picked` in the day file.
 
 ## Housekeeping
 

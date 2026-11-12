@@ -11,6 +11,8 @@ one small markdown file, grouped by topic and tagged so it can be found again.
   AI app can connect to.
 - **Me:** [ME.md](ME.md), a personality read, stats and insights for Yuvraj himself
   (with charts at [brainy.pxlvzn.in/me.html](https://brainy.pxlvzn.in/me.html)).
+- **Daily ideas:** [suggestions/](suggestions/) holds the build ideas a scheduled
+  task sends Yuvraj every morning, made from combinations of his saved notes.
 - **Rules:** [CLAUDE.md](CLAUDE.md) explains how entries are filed, tagged and searched.
 - **Quick capture:** [tools/quick-capture](tools/quick-capture/) is a browser
   extension that saves links, notes, images and videos to `inbox/` in one click.
