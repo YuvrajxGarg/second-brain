@@ -121,8 +121,12 @@ module.exports = async function handler(req, res) {
   if (req.method !== "POST") return send(res, 405, { error: "POST only" });
 
   const pass = process.env.EDIT_PASSCODE;
-  if (!pass || pass.length < 8 || !process.env.GITHUB_TOKEN) {
-    return send(res, 503, { error: "Editing is not set up yet (EDIT_PASSCODE and GITHUB_TOKEN env vars)." });
+  const missing = [!pass && "EDIT_PASSCODE", !process.env.GITHUB_TOKEN && "GITHUB_TOKEN"].filter(Boolean);
+  if (missing.length) {
+    return send(res, 503, { error: `Editing is not set up: ${missing.join(" and ")} missing in this deployment. Add it in Vercel for Production, then redeploy.` });
+  }
+  if (pass.length < 8) {
+    return send(res, 503, { error: `EDIT_PASSCODE is only ${pass.length} characters. Use at least 8 in Vercel, then redeploy.` });
   }
 
   const ip = String(req.headers["x-forwarded-for"] || "").split(",")[0].trim() || "?";
