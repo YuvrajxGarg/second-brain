@@ -98,14 +98,14 @@ _Last curated: 2026-11-12, from 73 entries (now including his own projects)._
 
 ## Evidence (generated)
 
-_From 79 entries, 33 with style notes. Rebuilt on every filing._
+_From 80 entries, 34 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
 - `library`: 4
 - `asset-source`: 2
 - `style-ref`: 6
-- `website-ref`: 1
+- `website-ref`: 2
 - `game-ref`: 4
 - `tool`: 2
 - `technique`: 7
@@ -118,7 +118,7 @@ _From 79 entries, 33 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (43), #browser-game (13), #desktop-app (13), #pxlvzn (11), #reference (9), #revolio-labs (9), #to-try (9), #agents (8), #inspiration (8), #revolio (8), #mcp (7), #threejs (7), #claude (6), #open-source (6), #vfx (6), #video-editing (6), #daily-challenge (5), #game-inspiration (5), #visual-design (5), #animation (4)
+#own-project (43), #desktop-app (14), #browser-game (13), #pxlvzn (11), #reference (10), #inspiration (9), #revolio-labs (9), #to-try (9), #agents (8), #revolio (8), #mcp (7), #threejs (7), #claude (6), #open-source (6), #vfx (6), #video-editing (6), #daily-challenge (5), #game-inspiration (5), #visual-design (5), #animation (4)
 
 ### Style notes and where they come from
 
@@ -135,8 +135,10 @@ _From 79 entries, 33 with style notes. Rebuilt on every filing._
 - **anton display type**: [Runaway Light Rig](topics/gamedev/2026-11-12-runaway-light-rig.md)
 - **ascii**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
 - **big-head proportions**: [Blender storybook hero](topics/gamedev/2026-11-09-blender-mcp-storybook-hero-workflow.md)
+- **black minimal landing page**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
 - **black stage**: [TV Stack toy](topics/gamedev/2026-11-12-tv-stack-music-toy.md)
 - **bold display type**: [Punchline party game](topics/gamedev/2026-11-12-punchline-party-game.md)
+- **bold headlines with italic emphasis**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
 - **bold orange focal length type**: [Lens focal length guide](topics/ai/2026-11-12-lens-focal-length-guide.md)
 - **bold red and blue colour pops**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
 - **bold type**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
@@ -158,6 +160,7 @@ _From 79 entries, 33 with style notes. Rebuilt on every filing._
 - **desi street shopfront**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 - **dither**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
 - **dystopian concert stage**: [Runaway Light Rig](topics/gamedev/2026-11-12-runaway-light-rig.md)
+- **expressive mascot**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
 - **georgia serif**: [Wedding co-op game](topics/gamedev/2026-11-12-wedding-co-op-game.md)
 - **giant planet skies**: [Lens focal length guide](topics/ai/2026-11-12-lens-focal-length-guide.md)
 - **glass panel ui**: [TV Stack toy](topics/gamedev/2026-11-12-tv-stack-music-toy.md)
@@ -204,6 +207,8 @@ _From 79 entries, 33 with style notes. Rebuilt on every filing._
 - **stylised cartoon 3d**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 - **stylised storybook 3d**: [Blender storybook hero](topics/gamedev/2026-11-09-blender-mcp-storybook-hero-workflow.md)
 - **surreal pastel wide fields**: [Lens focal length guide](topics/ai/2026-11-12-lens-focal-length-guide.md)
+- **tap-count diagram**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
+- **testimonial wall**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
 - **textured pastel brushwork**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
 - **tick ruler numerals**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
 - **top-down camera**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
@@ -216,6 +221,7 @@ _From 79 entries, 33 with style notes. Rebuilt on every filing._
 
 ### Every reference with his reason
 
+- [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md) (`website-ref`): This is a cool app, and the website is also cool for building something similar
 - [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md) (`style-ref`): If I ever make a disk utility app to remove cache and disk cleanup, this UI is really nice for it.
 - [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md) (`style-ref`): Art style reference for Tukaram Munde game
 - [Perfolios portfolio directory](topics/design/2026-11-12-perfolios-portfolio-directory.md) (`website-ref`): A website directory. For inspiration, design, layouts, etc.
