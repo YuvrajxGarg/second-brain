@@ -48,19 +48,19 @@ _Last curated: 2026-11-12, from 27 notes over 3 days._
 
 ## Stats (generated)
 
-_Rebuilt on every filing from 27 notes._
+_Rebuilt on every filing from 29 notes._
 
 | | |
 |---|---|
-| Notes saved | 27 |
-| Active days | 3 (2026-11-09 to 2026-11-11) |
-| Average per active day | 9.0 |
-| Current streak | 3 days |
-| Longest streak | 3 days |
-| Notes with his own comment | 16 (59%) |
-| Open ideas and to-dos | 2 |
+| Notes saved | 29 |
+| Active days | 4 (2026-11-09 to 2026-11-12) |
+| Average per active day | 7.2 |
+| Current streak | 4 days |
+| Longest streak | 4 days |
+| Notes with his own comment | 18 (62%) |
+| Open ideas and to-dos | 3 |
 | Tagged to-try | 7 |
-| Marked read or done | 0 of 27 |
+| Marked read or done | 0 of 29 |
 
 ### Saves per day
 
@@ -68,12 +68,13 @@ _Rebuilt on every filing from 27 notes._
 2026-11-09  ████████████████ 8
 2026-11-10  ████████████████████ 10
 2026-11-11  ██████████████████ 9
+2026-11-12  ████ 2
 ```
 
 ### By topic
 
 ```
-gamedev       ███████ 10
+gamedev       ████████ 12
 design        █████ 7
 ai            ███ 4
 business      ██ 3
@@ -86,12 +87,12 @@ tech          █ 1
 ```
 library       ███ 4
 asset-source  █ 2
-style-ref     ██ 3
+style-ref     ███ 4
 game-ref      ███ 4
 tool          █ 2
-technique     ████ 5
+technique     ███ 5
 advice        ███ 4
-idea          █ 1
+idea          █ 2
 thought       █ 1
 todo          █ 1
 ```
@@ -99,18 +100,18 @@ todo          █ 1
 ### Where it comes from
 
 ```
-x             ██████████ 13
-web           ███████ 9
+x             █████████ 13
+web           ██████ 9
+own words     ██ 3
+instagram     █ 2
 github        █ 2
-own words     █ 2
-instagram     █ 1
 ```
 
 ### Ideas by stage
 
 - doing: 0
 - exploring: 0
-- new: 2
+- new: 3
 - done: 0
 - dropped: 0
 

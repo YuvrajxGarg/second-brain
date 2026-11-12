@@ -6,7 +6,7 @@ he already saved, and build on his own ideas. The part above the generated block
 curated by Claude and updated whenever a new entry shifts the picture; the evidence
 below is rebuilt from the notes on every filing.
 
-_Last curated: 2026-11-12, from 27 entries._
+_Last curated: 2026-11-12, from 29 entries._
 
 ## Who he is
 
@@ -31,6 +31,10 @@ _Last curated: 2026-11-12, from 27 entries._
   cameras, dark neutral floors with chunky coloured props, minimal HUDs
   (Lastmaglab shooter, Polyfork kits). Storybook proportions for characters (big
   head, small body, trailing scarf).
+- **Stylised cartoon 3D, desi setting**: caricature Indian characters (big moustache,
+  Gandhi cap, Nehru jacket) and everyday Indian street shopfronts in bottle green and
+  marigold yellow with warm light (Sharma Sweets 3D style, the look for his Tukaram
+  Munde game).
 - **Image effects as a look**: halftone, ASCII, dither, glitch, glow (Ladybug).
 - Not saved so far: photoreal, corporate stock, generic SaaS gradients.
 
@@ -65,24 +69,24 @@ _Last curated: 2026-11-12, from 27 entries._
 
 ## Evidence (generated)
 
-_From 27 entries, 12 with style notes. Rebuilt on every filing._
+_From 29 entries, 13 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
 - `library`: 4
 - `asset-source`: 2
-- `style-ref`: 3
+- `style-ref`: 4
 - `game-ref`: 4
 - `tool`: 2
 - `technique`: 5
 - `advice`: 4
-- `idea`: 1
+- `idea`: 2
 - `thought`: 1
 - `todo`: 1
 
 ### Top tags
 
-#reference (7), #to-try (7), #inspiration (5), #claude (4), #game-inspiration (4), #mcp (4), #open-source (4), #vfx (4), #agents (3), #animation (3), #browser-game (3), #game-assets (3), #video-editing (3), #visual-design (3), #workflow (3), #2d (2), #cricket (2), #godot (2), #growth (2), #low-poly (2)
+#reference (7), #to-try (7), #game-inspiration (5), #inspiration (5), #claude (4), #mcp (4), #open-source (4), #vfx (4), #agents (3), #animation (3), #browser-game (3), #game-assets (3), #video-editing (3), #visual-design (3), #workflow (3), #2d (2), #3d-art (2), #3d-character (2), #cricket (2), #godot (2)
 
 ### Style notes and where they come from
 
@@ -90,10 +94,13 @@ _From 27 entries, 12 with style notes. Rebuilt on every filing._
 - **ascii**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
 - **big-head proportions**: [Blender storybook hero](topics/gamedev/2026-11-09-blender-mcp-storybook-hero-workflow.md)
 - **bold type**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
+- **bottle green and marigold yellow**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
+- **caricature character big head**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 - **chunky flat pixel art**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
 - **chunky props**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **clean stylised 3d**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **dark slate grid floor**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
+- **desi street shopfront**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 - **dither**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
 - **glitch**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
 - **glossy abstract 3d**: [ARC 3D art dataset](topics/design/2026-11-10-arc-3d-art-dataset.md)
@@ -116,14 +123,17 @@ _From 27 entries, 12 with style notes. Rebuilt on every filing._
 - **serif plus grotesk type**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
 - **shared kit palettes**: [Polyfork 3D assets](topics/gamedev/2026-11-10-polyfork-3d-assets.md)
 - **stylised 2d water**: [Godot waterfall shader](topics/gamedev/2026-11-09-godot-waterfall-texture-array-shader.md)
+- **stylised cartoon 3d**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 - **stylised storybook 3d**: [Blender storybook hero](topics/gamedev/2026-11-09-blender-mcp-storybook-hero-workflow.md)
 - **textured pastel brushwork**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
 - **top-down camera**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **ui mockups in motion**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
 - **warm painterly palette**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
+- **warm soft lighting**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 
 ### Every reference with his reason
 
+- [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md) (`style-ref`): Art style reference for Tukaram Munde game
 - [Procedural arm rig](topics/gamedev/2026-11-11-procedural-arm-rig-demo.md) (`library`): open-source rigged arm to reuse in my games
 - [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md) (`game-ref`): cool game visual style, art style
 - [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md) (`style-ref`): cool visuals, launch film

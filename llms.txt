@@ -21,6 +21,8 @@ Read TASTE.md first for the gist, then the catalog for what you need. Live graph
 
 ## Notes
 
+- [Tukaram Munde game](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-12-tukaram-munde-game.md): `idea` · gamedev · his own game idea; collecting art style references for it
+- [Sharma Sweets 3D style](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md): `style-ref` · gamedev · Art style reference for Tukaram Munde game
 - [TikTok slideshow playbook](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/business/2026-11-11-tiktok-slideshow-app-marketing.md): `advice` · business · grow an app from zero with organic TikTok slideshows
 - [Procedural arm rig](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-11-procedural-arm-rig-demo.md): `library` · gamedev · open-source rigged arm to reuse in my games
 - [Native Swift tip](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/tech/2026-11-11-native-swift-app-tip.md): `advice` · tech · safest way to build mobile apps solo with Claude
