@@ -98,13 +98,14 @@ _Last curated: 2026-11-12, from 73 entries (now including his own projects)._
 
 ## Evidence (generated)
 
-_From 76 entries, 33 with style notes. Rebuilt on every filing._
+_From 77 entries, 33 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
 - `library`: 4
 - `asset-source`: 2
 - `style-ref`: 6
+- `website-ref`: 1
 - `game-ref`: 4
 - `tool`: 2
 - `technique`: 6
@@ -117,7 +118,7 @@ _From 76 entries, 33 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (43), #browser-game (13), #desktop-app (13), #pxlvzn (11), #revolio-labs (9), #reference (8), #revolio (8), #inspiration (7), #mcp (7), #threejs (7), #to-try (7), #agents (6), #open-source (6), #vfx (6), #video-editing (6), #daily-challenge (5), #game-inspiration (5), #animation (4), #claude (4), #game-idea (4)
+#own-project (43), #browser-game (13), #desktop-app (13), #pxlvzn (11), #reference (9), #revolio-labs (9), #inspiration (8), #revolio (8), #mcp (7), #threejs (7), #to-try (7), #agents (6), #open-source (6), #vfx (6), #video-editing (6), #daily-challenge (5), #game-inspiration (5), #visual-design (5), #animation (4), #claude (4)
 
 ### Style notes and where they come from
 
@@ -217,6 +218,7 @@ _From 76 entries, 33 with style notes. Rebuilt on every filing._
 
 - [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md) (`style-ref`): If I ever make a disk utility app to remove cache and disk cleanup, this UI is really nice for it.
 - [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md) (`style-ref`): Art style reference for Tukaram Munde game
+- [Perfolios portfolio directory](topics/design/2026-11-12-perfolios-portfolio-directory.md) (`website-ref`): A website directory. For inspiration, design, layouts, etc.
 - [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md) (`style-ref`): Brilliant art style for animations
 - [Procedural arm rig](topics/gamedev/2026-11-11-procedural-arm-rig-demo.md) (`library`): open-source rigged arm to reuse in my games
 - [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md) (`game-ref`): cool game visual style, art style
