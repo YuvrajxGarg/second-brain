@@ -192,9 +192,10 @@
     return s;
   }
   function visible(n) {
+    if (n.deleted) return false;
     if (n.kind === "note") return !hiddenTopics.has(n.topic);
     if (n.kind === "topic") return !hiddenTopics.has(n.topic);
-    for (const m of adj.get(n.id)) if (!hiddenTopics.has(byId.get(m).topic)) return true;
+    for (const m of adj.get(n.id)) { const x = byId.get(m); if (!x.deleted && !hiddenTopics.has(x.topic)) return true; }
     return false;
   }
 
@@ -214,7 +215,7 @@
     // per-node animated state
     for (const n of nodes) {
       const vis = visible(n);
-      let target = vis ? 1 : 0.035;
+      let target = n.deleted ? 0 : vis ? 1 : 0.035;
       if (vis && F) target = F.has(n.id) ? 1 : 0.1;
       if (vis && searchSet) target = searchSet.has(n.id) ? 1 : Math.min(target, 0.12);
       n.a += (target - n.a) * Math.min(1, dt * 0.012);
@@ -538,6 +539,10 @@
 
     addEventListener("keydown", (e) => {
       const typing = document.activeElement === q;
+      if (e.target.closest && e.target.closest("input, textarea, select, .modal")) {
+        if (e.key === "Escape" && editor.modal) closeModal();
+        return;
+      }
       if (e.key === "Escape") {
         if (typing) { q.value = ""; onSearch(); q.blur(); } else go(null);
         return;
@@ -620,6 +625,7 @@
 
   // ---------- panel ----------
   function closePanel() {
+    editor.node = null; editor.file = null;
     if (!panel.classList.contains("open")) return;
     panel.classList.remove("open");
     document.body.classList.remove("panel-open");
@@ -631,6 +637,7 @@
     return `<li data-go="${esc(n.id)}"><span class="sq" style="background:${n.color}"></span><span class="l-t">${esc(n.label)}</span><span class="l-k">${esc(extra || n.code)}</span></li>`;
   }
   function openPanel(n) {
+    editor.node = null; editor.file = null;
     panel.style.setProperty("--panel-accent", n.kind === "tag" ? "#f2f2f2" : n.color);
     let html = "";
     if (n.kind === "note") {
@@ -638,6 +645,7 @@
       const raw = DOMPurify.sanitize(marked.parse(n.body || ""), { ADD_ATTR: ["target"] });
       html += `<div class="p-kicker"><span class="sq" style="background:${n.color}"></span>${esc(n.topic)} · ${esc(typeLabel(n))}</div>`;
       html += `<h1 class="p-title" data-title>${esc(n.label)}</h1>`;
+      html += `<div class="p-edit mono${editor.pass ? "" : " locked"}"><button data-edit="edit">EDIT NOTE</button><button data-edit="delete" class="danger">DELETE</button></div>`;
       html += `<dl class="p-meta">
         ${n.why ? `<dt>${n.noteKind === "project" ? "MADE FOR" : n.noteKind === "org" ? "WHAT" : "WHY"}</dt><dd class="wrap">${esc(n.why)}</dd>` : ""}
         ${n.state ? `<dt>STATE</dt><dd>${esc(n.state)}</dd>` : ""}
@@ -680,6 +688,8 @@
     scrambleEl(panelInner.querySelector("[data-title]"), 520);
   }
   panelInner.addEventListener("click", (e) => {
+    const ed = e.target.closest("[data-edit]");
+    if (ed) { onEditAction(ed.dataset.edit, ed); return; }
     const el = e.target.closest("[data-go]");
     if (el) go(byId.get(el.dataset.go));
   });
@@ -688,6 +698,282 @@
     setHover(el ? byId.get(el.dataset.go) : null);
   });
   panelInner.addEventListener("mouseleave", () => setHover(null));
+
+  // ---------- edit mode ----------
+  // Unlock with the passcode (EDIT button, or press E). Saves go to /api/edit, which
+  // commits to GitHub; Vercel then rebuilds the graph in about a minute.
+  const KINDS = ["style-ref", "website-ref", "game-ref", "library", "asset-source", "tool", "technique", "advice", "idea", "thought", "todo", "project", "org"];
+  const STAGES = ["", "new", "exploring", "doing", "done", "dropped"];
+  const STATUSES = ["", "unread", "read", "done", "archived"];
+  const PASS_KEY = "sb-edit-pass";
+  const store = {
+    get() { try { return localStorage.getItem(PASS_KEY) || ""; } catch { return ""; } },
+    set(v) { try { v ? localStorage.setItem(PASS_KEY, v) : localStorage.removeItem(PASS_KEY); } catch {} },
+  };
+  const editor = { pass: store.get(), modal: null, file: null, node: null, busy: false };
+
+  async function api(action, payload = {}, pass = editor.pass) {
+    const r = await fetch("/api/edit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${pass}` },
+      body: JSON.stringify({ action, ...payload }),
+    });
+    const data = await r.json().catch(() => ({}));
+    if (r.status === 401) { editor.pass = ""; store.set(""); syncEditButton(); }
+    if (!r.ok) throw new Error(data.error || `Error ${r.status}`);
+    return data;
+  }
+
+  function syncEditButton() {
+    const b = $("b-edit");
+    b.classList.toggle("on", !!editor.pass);
+    b.textContent = editor.pass ? "EDITING" : "EDIT";
+    b.title = editor.pass ? "Edit mode is on. Click to lock (E)" : "Unlock edit mode (E)";
+    const sel = selectedId && byId.get(selectedId);
+    if (sel && panel.classList.contains("open") && !editor.node) openPanel(sel);
+  }
+
+  function toast(html, ms = 6000) {
+    const t = $("toast");
+    t.innerHTML = html;
+    t.hidden = false;
+    t.classList.remove("show"); void t.offsetWidth; t.classList.add("show");
+    clearTimeout(toast.timer);
+    toast.timer = setTimeout(() => { t.classList.remove("show"); setTimeout(() => (t.hidden = true), 400); }, ms);
+  }
+
+  function openModal(html, onSubmit) {
+    closeModal();
+    const m = document.createElement("div");
+    m.className = "modal";
+    m.innerHTML = `<form class="modal-card mono">${html}</form>`;
+    document.body.appendChild(m);
+    editor.modal = m;
+    m.addEventListener("click", (e) => { if (e.target === m || e.target.closest("[data-cancel]")) closeModal(); });
+    m.querySelector("form").addEventListener("submit", (e) => { e.preventDefault(); onSubmit(m); });
+    setTimeout(() => m.querySelector("input, button[type=submit]")?.focus(), 30);
+    return m;
+  }
+  function closeModal() { editor.modal?.remove(); editor.modal = null; }
+
+  function toggleEdit(then) {
+    if (editor.pass) {
+      openModal(`<div class="m-h">LOCK EDIT MODE?</div><p class="m-p">This browser will forget the passcode.</p>
+        <div class="m-row"><button type="button" data-cancel>CANCEL</button><button type="submit">LOCK</button></div>`, () => {
+        editor.pass = ""; store.set(""); closeModal(); closeEditor(); syncEditButton(); toast("Edit mode locked.");
+      });
+      return;
+    }
+    openModal(`<div class="m-h">UNLOCK EDIT MODE</div>
+      <p class="m-p">Changes are committed straight to GitHub and the site rebuilds in about a minute.</p>
+      <input type="password" name="pass" placeholder="passcode" autocomplete="current-password" required />
+      <div class="m-err" hidden></div>
+      <div class="m-row"><button type="button" data-cancel>CANCEL</button><button type="submit">UNLOCK</button></div>`, async (m) => {
+      const pass = m.querySelector("[name=pass]").value.trim();
+      const err = m.querySelector(".m-err");
+      try {
+        await api("check", {}, pass);
+        editor.pass = pass; store.set(pass); closeModal(); syncEditButton();
+        if (typeof then === "function") then();
+        else toast("Edit mode on. Open any note and use EDIT NOTE or DELETE.");
+      } catch (e) { err.hidden = false; err.textContent = e.message; }
+    });
+  }
+
+  // --- frontmatter helpers (keep key order and any keys the form doesn't know) ---
+  function splitNote(text) {
+    const m = text.replace(/\r\n/g, "\n").match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
+    if (!m) return { lines: [], body: text };
+    return { lines: m[1].split("\n"), body: m[2] };
+  }
+  const keyOfLine = (l) => { const i = l.indexOf(":"); return i > 0 && !/^\s/.test(l) ? l.slice(0, i).trim() : null; };
+  const unq = (v) => v.trim().replace(/^["']|["']$/g, "");
+  function fmGet(lines, key) {
+    const l = lines.find((x) => keyOfLine(x) === key);
+    return l ? l.slice(l.indexOf(":") + 1).split(" #")[0].trim() : "";
+  }
+  const listOf = (v) => unq(v).replace(/^\[|\]$/g, "").split(",").map(unq).filter(Boolean);
+  function yamlScalar(v) {
+    v = String(v).replace(/[\r\n]+/g, " ").replace(/ #/g, " ").trim();
+    if (!v) return "";
+    return /: |^[\[\]{}&*!|>'"%@`#,?:-]|^(true|false|null|yes|no)$/i.test(v) ? `"${v.replace(/"/g, "'")}"` : v;
+  }
+  function fmSet(lines, key, value, afterKey) {
+    const i = lines.findIndex((x) => keyOfLine(x) === key);
+    if (value === "" || value == null) { if (i >= 0) lines.splice(i, 1); return; }
+    const line = `${key}: ${value}`;
+    if (i >= 0) { lines[i] = line; return; }
+    let j = afterKey ? lines.findIndex((x) => keyOfLine(x) === afterKey) : -1;
+    if (j < 0) j = Math.max(0, lines.findIndex((x) => keyOfLine(x) === "added") - 1);
+    lines.splice(j + 1, 0, line);
+  }
+  const kebab = (s) => s.toLowerCase().trim().replace(/^#/, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const opts = (list, cur) => [...new Set([...list, cur].filter((x) => x != null))].map((o) => `<option value="${esc(o)}" ${o === cur ? "selected" : ""}>${esc(o || "—")}</option>`).join("");
+
+  function onEditAction(what, btn) {
+    const n = selectedId && byId.get(selectedId);
+    if (!n || n.kind !== "note") return;
+    if (!editor.pass && what !== "cancel") return toggleEdit(() => onEditAction(what));
+    if (what === "edit") return openEditor(n);
+    if (what === "delete") return confirmDelete(n);
+    if (what === "cancel") return closeEditor(true);
+  }
+
+  async function openEditor(n) {
+    if (editor.busy) return;
+    editor.busy = true;
+    const bar = panelInner.querySelector(".p-edit");
+    if (bar) bar.innerHTML = `<span class="dim">LOADING FROM GITHUB…</span>`;
+    try {
+      editor.file = await api("get", { path: n.path });
+      editor.node = n;
+      renderEditor();
+    } catch (e) {
+      toast(`Couldn't open the note: ${esc(e.message)}`);
+      openPanel(n);
+    } finally { editor.busy = false; }
+  }
+
+  function renderEditor() {
+    const n = editor.node, { lines, body } = splitNote(editor.file.content);
+    const g = (k) => unq(fmGet(lines, k));
+    const topics = [...new Set([...nodes.filter((x) => x.kind === "topic").map((x) => x.label), "ai", "tech", "business", "design", "productivity", "health", "finance", "learning", "life", "misc", "gamedev", "inbox"])].sort();
+    const kind = g("kind");
+    const field = (label, name, val, hint = "") =>
+      `<label class="f"><span>${label}${hint ? ` <i>${hint}</i>` : ""}</span><input name="${name}" value="${esc(val)}" autocomplete="off" spellcheck="false" /></label>`;
+    panelInner.innerHTML = `
+      <div class="p-kicker"><span class="sq" style="background:${n.color}"></span>EDITING · ${esc(editor.file.path)}</div>
+      <form class="editor mono" id="editor" autocomplete="off">
+        ${field("TITLE", "title", g("title"), "2 to 4 words")}
+        <label class="f"><span>${kind === "project" ? "MADE FOR" : "WHY"}</span><textarea name="why" rows="2">${esc(g("why"))}</textarea></label>
+        ${field("TAGS", "tags", listOf(fmGet(lines, "tags")).join(", "), "comma separated")}
+        <div class="f-row">
+          <label class="f"><span>TOPIC</span><select name="topic">${opts(topics, n.topic)}</select></label>
+          <label class="f"><span>KIND</span><select name="kind">${opts(["", ...KINDS], kind)}</select></label>
+        </div>
+        <div class="f-row">
+          ${field("TYPE", "type", g("type"))}
+          <label class="f"><span>STATUS</span><select name="status">${opts(STATUSES, g("status"))}</select></label>
+          <label class="f"><span>STAGE</span><select name="stage">${opts(STAGES, g("stage"))}</select></label>
+        </div>
+        ${field("STYLE", "style", listOf(fmGet(lines, "style")).join(", "), "visual notes, comma separated")}
+        ${kind === "project" || kind === "org" || g("state") ? `<div class="f-row">${field("STATE", "state", g("state"))}${field("STACK", "stack", listOf(fmGet(lines, "stack")).join(", "))}</div>` : ""}
+        ${field("SOURCE", "source", g("source"), "link")}
+        <label class="f"><span>NOTE TEXT <i>markdown: summary, raw, notes</i></span><textarea name="body" rows="16">${esc(body.replace(/^\n+/, ""))}</textarea></label>
+        <div class="m-err" hidden></div>
+        <div class="p-edit"><button type="button" data-edit="cancel">CANCEL</button><button type="submit" class="primary">SAVE TO GITHUB</button></div>
+      </form>`;
+    panelInner.scrollTop = 0;
+    $("editor").addEventListener("submit", (e) => { e.preventDefault(); saveEditor(); });
+    setTimeout(() => $("editor").querySelector("[name=title]").focus(), 30);
+  }
+
+  function closeEditor(reopen) {
+    const n = editor.node;
+    editor.node = null; editor.file = null;
+    if (reopen && n && !n.deleted) openPanel(n);
+  }
+
+  async function saveEditor() {
+    if (editor.busy || !editor.node) return;
+    const form = $("editor"), n = editor.node, file = editor.file;
+    const v = (k) => (form.elements[k] ? form.elements[k].value.trim() : null);
+    const err = form.querySelector(".m-err");
+    const title = v("title");
+    if (!title) { err.hidden = false; err.textContent = "Title can't be empty."; return; }
+    const { lines, body } = splitNote(file.content);
+    const list = (s, fn = (x) => x) => { const a = s.split(",").map((x) => fn(x.trim())).filter(Boolean); return a.length ? `[${[...new Set(a)].join(", ")}]` : ""; };
+    const topic = v("topic");
+    fmSet(lines, "title", yamlScalar(title));
+    if (v("type") != null) fmSet(lines, "type", yamlScalar(v("type")), "title");
+    fmSet(lines, "topic", yamlScalar(topic), "type");
+    fmSet(lines, "tags", list(v("tags"), kebab), "topic");
+    fmSet(lines, "kind", yamlScalar(v("kind")), "tags");
+    fmSet(lines, "why", yamlScalar(v("why")), "kind");
+    fmSet(lines, "style", list(v("style"), (x) => x.replace(/[\[\]]/g, "")), "why");
+    fmSet(lines, "stage", yamlScalar(v("stage")), "style");
+    if (v("state") != null) fmSet(lines, "state", yamlScalar(v("state")), "why");
+    if (v("stack") != null) fmSet(lines, "stack", list(v("stack")), "state");
+    fmSet(lines, "source", yamlScalar(v("source")), "stage");
+    fmSet(lines, "status", yamlScalar(v("status")), "added");
+    const newBody = "\n" + form.elements.body.value.replace(/\r\n/g, "\n").replace(/^\n+/, "").replace(/\s*$/, "\n");
+    const content = `---\n${lines.join("\n")}\n---\n${newBody}`;
+    const fileName = file.path.split("/").pop();
+    const newPath = topic === "inbox" ? `inbox/${fileName}` : `topics/${topic}/${fileName}`;
+    if (content === file.content && newPath === file.path) { closeEditor(true); return; }
+
+    editor.busy = true;
+    const btn = form.querySelector("[type=submit]");
+    btn.textContent = "SAVING…"; btn.disabled = true; err.hidden = true;
+    try {
+      const r = await api("save", { path: file.path, sha: file.sha, content, title, newPath: newPath !== file.path ? newPath : undefined });
+      applyLocal(n, content, r.path);
+      closeEditor(true);
+      toast(`Saved to GitHub · <a href="${esc(graph.repo)}/commit/${esc(r.commit)}" target="_blank" rel="noopener">${esc(r.commit.slice(0, 7))}</a>. The graph rebuilds in about a minute.`, 8000);
+    } catch (e) {
+      err.hidden = false; err.textContent = e.message;
+      btn.textContent = "SAVE TO GITHUB"; btn.disabled = false;
+    } finally { editor.busy = false; }
+  }
+
+  // Show the edit right away; links and counts catch up after the rebuild.
+  function applyLocal(n, content, newPath) {
+    const { lines, body } = splitNote(content);
+    const g = (k) => unq(fmGet(lines, k));
+    n.label = g("title") || n.label;
+    n.type = g("type") || n.type;
+    n.tags = listOf(fmGet(lines, "tags")).map((t) => t.toLowerCase());
+    n.noteKind = g("kind") || null;
+    n.why = g("why") || null;
+    n.stage = g("stage") || null;
+    n.state = g("state") || null;
+    n.status = g("status") || null;
+    n.source = g("source") || null;
+    n.style = listOf(fmGet(lines, "style"));
+    n.stack = listOf(fmGet(lines, "stack"));
+    // media stays at its old build path until the site rebuilds
+    const dir = n.path.slice(0, n.path.lastIndexOf("/"));
+    n.path = newPath;
+    const topic = g("topic");
+    if (topic && topic !== n.topic) { n.topic = topic; n.color = colorOf(topic); }
+    n.code = TYPE_CODE[n.type] || n.type.slice(0, 4).toUpperCase();
+    n.body = body
+      .replace(/(\]\()\.\/([^)\s]+)/g, (_, a, f) => `${a}data/media/${dir}/${f}`)
+      .replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (_, s, label) => {
+        const t = byId.get("n:" + s.trim());
+        return `[${label || (t ? t.label : s)}](#/n/${encodeURIComponent(s.trim())})`;
+      });
+    n.search = [n.label, n.tags.join(" "), n.topic, n.type, n.noteKind || "", n.why || "", n.style.join(" "), n.body].join(" ").toLowerCase();
+    scrambles.set(n.id, performance.now());
+  }
+
+  function confirmDelete(n) {
+    openModal(`<div class="m-h">DELETE “${esc(n.label)}”?</div>
+      <p class="m-p">Removes <b>${esc(n.path)}</b> and any images saved with it from GitHub. You can still bring it back from the repo's history.</p>
+      <div class="m-err" hidden></div>
+      <div class="m-row"><button type="button" data-cancel>CANCEL</button><button type="submit" class="danger">DELETE</button></div>`, async (m) => {
+      const btn = m.querySelector("[type=submit]"), err = m.querySelector(".m-err");
+      btn.textContent = "DELETING…"; btn.disabled = true;
+      try {
+        const file = await api("get", { path: n.path });
+        const r = await api("delete", { path: n.path, sha: file.sha, title: n.label });
+        closeModal();
+        n.deleted = true;
+        editor.node = null;
+        go(null);
+        toast(`Deleted · <a href="${esc(graph.repo)}/commit/${esc(r.commit)}" target="_blank" rel="noopener">${esc(r.commit.slice(0, 7))}</a>. The graph rebuilds in about a minute.`, 8000);
+      } catch (e) {
+        err.hidden = false; err.textContent = e.message;
+        btn.textContent = "DELETE"; btn.disabled = false;
+      }
+    });
+  }
+
+  $("b-edit").addEventListener("click", () => toggleEdit());
+  addEventListener("keydown", (e) => {
+    if ((e.key === "e" || e.key === "E") && !e.metaKey && !e.ctrlKey && document.activeElement === document.body && !editor.modal) toggleEdit();
+  });
+  syncEditButton();
 
   // ---------- search ----------
   let activeIdx = 0, hitsList = [];

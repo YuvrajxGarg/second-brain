@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "installCommand": "",
-  "buildCommand": "node scripts/build_graph.mjs",
+  "buildCommand": "(python3 scripts/build_index.py || true) && node scripts/build_graph.mjs",
   "outputDirectory": "site",
   "ignoreCommand": "git diff --quiet HEAD^ HEAD -- . ':(exclude)suggestions'",
   "headers": [

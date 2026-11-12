@@ -20,6 +20,7 @@ llms-full.txt      generated: every note in one file
 INDEX.md           generated: every entry, grouped by topic, newest first
 TAGS.md            generated: every tag with its entries
 api/mcp.js         MCP server (read-only) served at https://brainy.pxlvzn.in/mcp
+api/edit.js        edit API for the graph site (passcode-locked, commits to main)
 inbox/             only when a dump is genuinely unclear; sort it later
 topics/<topic>/    one folder per group, created on demand
 templates/entry.md the frontmatter template
@@ -27,7 +28,7 @@ scripts/build_index.py  regenerates INDEX, TAGS, IDEAS, catalog/, llms*.txt, TAS
 tools/quick-capture/    browser extension that drops captures into inbox/
 scripts/build_graph.mjs builds site/data/graph.json for the graph site
 site/                   the graph website (static, deployed on Vercel)
-vercel.json             Vercel build config (runs build_graph.mjs, serves site/)
+vercel.json             Vercel build config (runs build_index.py + build_graph.mjs, serves site/)
 suggestions/            daily build ideas from the 9 AM scheduled task (see its README)
 ```
 
@@ -221,6 +222,17 @@ Only `main` deploys: preview builds are off (`git.deploymentEnabled` in
 push other branches expecting a preview, and batch filings into one push where you can.
 Add a colour for a new topic in `PALETTE` at the top of `site/app.js` (unknown
 topics get a fallback colour automatically).
+
+## Editing from the site
+
+Yuvraj can edit or delete notes on the graph site (EDIT button, or EDIT NOTE in a
+note's panel, after entering his passcode). `api/edit.js` commits each change
+straight to `main` as `edit: <title> (from site)` or `delete: <title> (from site)`;
+changing the topic moves the file and its images. It needs two Vercel env vars:
+`EDIT_PASSCODE` and `GITHUB_TOKEN` (fine-grained, Contents read/write on this repo
+only). Because of these commits, always `git pull --rebase` before you push. The
+Vercel build also runs `build_index.py`, so the served llms/TASTE/IDEAS files stay
+fresh after site edits; the committed copies catch up the next time you rebuild.
 
 ## Daily build ideas
 

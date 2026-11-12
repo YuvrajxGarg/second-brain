@@ -276,3 +276,66 @@ body.ready .hud-br { transition-delay: 0.3s; }
 @media (prefers-reduced-motion: reduce) {
   .grain, .brand-mark { animation: none; }
 }
+
+/* ---------- edit mode ---------- */
+.p-edit { display: flex; gap: 6px; margin: -6px 0 18px; }
+.p-edit button, .modal-card button {
+  background: rgba(255, 255, 255, 0.02); border: 1px solid var(--line); color: var(--dim);
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; padding: 7px 10px; cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.p-edit button:hover, .modal-card button:hover { color: var(--fg); border-color: rgba(242, 242, 242, 0.4); }
+.p-edit button.primary, .modal-card button[type="submit"] { color: var(--fg); border-color: rgba(242, 242, 242, 0.3); }
+.p-edit button.primary::before { content: "● "; color: var(--accent); }
+.p-edit button.danger:hover, .modal-card button.danger { color: #ff5f6d; border-color: rgba(255, 95, 109, 0.5); }
+.p-edit button:disabled, .modal-card button:disabled { opacity: 0.5; cursor: wait; }
+.p-edit .dim { font-size: 10px; letter-spacing: 0.14em; color: var(--dim); padding: 7px 0; }
+
+.editor { display: grid; gap: 12px; }
+.editor .p-edit { margin: 6px 0 0; position: sticky; bottom: -48px; padding: 18px 0 48px; background: linear-gradient(rgba(6, 6, 6, 0), #060606 16px); }
+.f { display: grid; gap: 5px; min-width: 0; }
+.f > span { font-size: 9.5px; letter-spacing: 0.18em; color: var(--dim); }
+.f > span i { font-style: normal; letter-spacing: 0.04em; color: rgba(242, 242, 242, 0.3); text-transform: lowercase; }
+.f-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; }
+.editor input, .editor textarea, .editor select, .modal-card input {
+  width: 100%; font-family: var(--mono); font-size: 12px; color: var(--fg);
+  background: rgba(255, 255, 255, 0.03); border: 1px solid var(--line); border-radius: 0;
+  padding: 8px 10px; outline: none; transition: border-color 0.2s;
+}
+.editor textarea { resize: vertical; line-height: 1.55; font-size: 12px; }
+.editor select { appearance: none; -webkit-appearance: none; cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, var(--dim) 50%), linear-gradient(135deg, var(--dim) 50%, transparent 50%);
+  background-position: calc(100% - 14px) 50%, calc(100% - 10px) 50%; background-size: 4px 4px; background-repeat: no-repeat; padding-right: 24px; }
+.editor select option { background: #0b0b0b; }
+.editor input:focus, .editor textarea:focus, .editor select:focus, .modal-card input:focus { border-color: var(--panel-accent, var(--accent)); }
+.m-err { font-family: var(--mono); font-size: 11px; color: #ff5f6d; line-height: 1.5; }
+
+.modal {
+  position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: 16px;
+  background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  animation: fade 0.3s var(--ease);
+}
+@keyframes fade { from { opacity: 0; } }
+.modal-card {
+  width: min(380px, 100%); display: grid; gap: 14px; padding: 22px;
+  background: linear-gradient(180deg, rgba(14, 14, 14, 0.96), rgba(6, 6, 6, 0.98));
+  border: 1px solid var(--line); box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.6), 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+.m-h { font-size: 11px; letter-spacing: 0.2em; }
+.m-p { margin: 0; font-family: var(--sans); font-size: 13px; line-height: 1.55; color: var(--dim); }
+.m-p b { color: var(--fg); font-weight: 500; font-family: var(--mono); font-size: 11.5px; word-break: break-all; }
+.m-row { display: flex; justify-content: flex-end; gap: 6px; }
+
+.toast {
+  position: fixed; z-index: 21; left: 50%; bottom: 24px; transform: translate(-50%, 12px);
+  max-width: min(520px, calc(100vw - 32px)); padding: 10px 14px;
+  font-size: 11px; letter-spacing: 0.04em; line-height: 1.5;
+  background: var(--glass); border: 1px solid var(--line); border-left: 1px solid var(--accent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  opacity: 0; transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+.toast a { color: var(--fg); }
+@media (max-width: 720px) { .toast { bottom: auto; top: 16px; } }
+.p-edit.locked button { opacity: 0.45; }
+.p-edit.locked button:hover { opacity: 1; }
