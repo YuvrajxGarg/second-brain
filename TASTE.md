@@ -48,6 +48,9 @@ _Last curated: 2026-11-12, from 73 entries (now including his own projects)._
 - **Painterly stylised 3D animation**: animated-feature look with chunky armoured
   characters, misty desaturated scenes, red ink outlines and bold red/blue accents
   (Impossible Weapon animation, made with Krea AI).
+- **Polished dark utility UI**: a single compact dark card, glowing dot-matrix data
+  viz, colour-coded categories, plain-language copy and playful particle feedback
+  (Storage scanner UI).
 - **Image effects as a look**: halftone, ASCII, dither, glitch, glow (Ladybug).
 - **His own shipped looks** (from what he built): dark near-black UI with a single
   lime or yellow accent and hairline strokes (PXLVZN, PXL app hub, Revolio Labs,
@@ -95,18 +98,18 @@ _Last curated: 2026-11-12, from 73 entries (now including his own projects)._
 
 ## Evidence (generated)
 
-_From 74 entries, 32 with style notes. Rebuilt on every filing._
+_From 76 entries, 33 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
 - `library`: 4
 - `asset-source`: 2
-- `style-ref`: 5
+- `style-ref`: 6
 - `game-ref`: 4
 - `tool`: 2
 - `technique`: 6
 - `advice`: 4
-- `idea`: 2
+- `idea`: 3
 - `thought`: 1
 - `todo`: 1
 - `org`: 3
@@ -114,7 +117,7 @@ _From 74 entries, 32 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (43), #browser-game (13), #desktop-app (11), #pxlvzn (11), #revolio-labs (9), #reference (8), #revolio (8), #mcp (7), #threejs (7), #to-try (7), #agents (6), #inspiration (6), #open-source (6), #vfx (6), #video-editing (6), #daily-challenge (5), #game-inspiration (5), #animation (4), #claude (4), #game-idea (4)
+#own-project (43), #browser-game (13), #desktop-app (13), #pxlvzn (11), #revolio-labs (9), #reference (8), #revolio (8), #inspiration (7), #mcp (7), #threejs (7), #to-try (7), #agents (6), #open-source (6), #vfx (6), #video-editing (6), #daily-challenge (5), #game-inspiration (5), #animation (4), #claude (4), #game-idea (4)
 
 ### Style notes and where they come from
 
@@ -144,10 +147,12 @@ _From 74 entries, 32 with style notes. Rebuilt on every filing._
 - **chunky props**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **clean sans type**: [Revolio Labs](topics/business/2026-11-12-revolio-labs.md)
 - **clean stylised 3d**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
+- **colour-coded categories**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
 - **comedy club poster**: [Punchline party game](topics/gamedev/2026-11-12-punchline-party-game.md)
 - **condensed ink serif**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
 - **cozy 3d desk diorama**: [Revolio Labs site](topics/gamedev/2026-11-12-revolio-labs-site.md)
 - **cream paper editorial**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
+- **dark compact utility card**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
 - **dark slate grid floor**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **desi street shopfront**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 - **dither**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
@@ -158,6 +163,7 @@ _From 74 entries, 32 with style notes. Rebuilt on every filing._
 - **glitch**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
 - **glossy abstract 3d**: [ARC 3D art dataset](topics/design/2026-11-10-arc-3d-art-dataset.md)
 - **glowing cards**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
+- **glowing dot-matrix storage bar**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
 - **golden hour window light**: [Revolio Labs site](topics/gamedev/2026-11-12-revolio-labs-site.md)
 - **graffiti street court**: [Bonk Court game](topics/gamedev/2026-11-12-bonk-court-game.md)
 - **hairline strokes**: [PXLVZN label](topics/tech/2026-11-12-pxlvzn-label.md)
@@ -176,9 +182,11 @@ _From 74 entries, 32 with style notes. Rebuilt on every filing._
 - **painted 2d backgrounds**: [AI tween harness](topics/design/2026-11-11-ai-tween-paint-harness.md)
 - **painterly brushwork**: [Claude code paintings](topics/ai/2026-11-10-claude-code-paintings.md)
 - **painterly stylised 3d**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
+- **particle dissolve on delete**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
 - **pastel blocks**: [ARC 3D art dataset](topics/design/2026-11-10-arc-3d-art-dataset.md)
 - **pixel cursors and ui**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
 - **pixel-art mascots**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
+- **plain-language helper copy**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
 - **poster typography**: [SLANGDAQ game](topics/gamedev/2026-11-12-slangdaq-game.md)
 - **product launch video**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
 - **receipt cards**: [Meter Down concept](topics/gamedev/2026-11-12-meter-down-concept.md)
@@ -207,6 +215,7 @@ _From 74 entries, 32 with style notes. Rebuilt on every filing._
 
 ### Every reference with his reason
 
+- [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md) (`style-ref`): If I ever make a disk utility app to remove cache and disk cleanup, this UI is really nice for it.
 - [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md) (`style-ref`): Art style reference for Tukaram Munde game
 - [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md) (`style-ref`): Brilliant art style for animations
 - [Procedural arm rig](topics/gamedev/2026-11-11-procedural-arm-rig-demo.md) (`library`): open-source rigged arm to reuse in my games
