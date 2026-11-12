@@ -48,19 +48,19 @@ _Last curated: 2026-11-12, from 73 notes (29 saves plus his own projects and com
 
 ## Stats (generated)
 
-_Rebuilt on every filing from 80 notes._
+_Rebuilt on every filing from 81 notes._
 
 | | |
 |---|---|
-| Notes saved | 80 |
+| Notes saved | 81 |
 | Active days | 4 (2026-11-09 to 2026-11-12) |
-| Average per active day | 20.0 |
+| Average per active day | 20.2 |
 | Current streak | 4 days |
 | Longest streak | 4 days |
-| Notes with his own comment | 34 (42%) |
+| Notes with his own comment | 35 (43%) |
 | Open ideas and to-dos | 5 |
 | Tagged to-try | 9 |
-| Marked read or done | 42 of 80 |
+| Marked read or done | 42 of 81 |
 
 ### Saves per day
 
@@ -68,7 +68,7 @@ _Rebuilt on every filing from 80 notes._
 2026-11-09  ███ 8
 2026-11-10  ████ 10
 2026-11-11  ███ 9
-2026-11-12  ████████████████████ 53
+2026-11-12  ████████████████████ 54
 ```
 
 ### By topic
@@ -76,7 +76,7 @@ _Rebuilt on every filing from 80 notes._
 ```
 gamedev       ██████ 26
 tech          ████ 16
-design        ███ 12
+design        ███ 13
 ai            ██ 10
 business      ██ 10
 life          █ 2
@@ -91,8 +91,8 @@ health        █ 1
 ```
 library       █ 4
 asset-source  █ 2
-style-ref     ██ 6
-website-ref   █ 2
+style-ref     █ 6
+website-ref   █ 3
 game-ref      █ 4
 tool          █ 2
 technique     ██ 7
@@ -107,7 +107,7 @@ project       ██████████ 40
 ### Where it comes from
 
 ```
-web           ████████████ 48
+web           ████████████ 49
 x             ████ 15
 own words     ███ 11
 instagram     █ 4

@@ -98,14 +98,14 @@ _Last curated: 2026-11-12, from 73 entries (now including his own projects)._
 
 ## Evidence (generated)
 
-_From 80 entries, 34 with style notes. Rebuilt on every filing._
+_From 81 entries, 35 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
 - `library`: 4
 - `asset-source`: 2
 - `style-ref`: 6
-- `website-ref`: 2
+- `website-ref`: 3
 - `game-ref`: 4
 - `tool`: 2
 - `technique`: 7
@@ -118,7 +118,7 @@ _From 80 entries, 34 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (43), #desktop-app (14), #browser-game (13), #pxlvzn (11), #reference (10), #inspiration (9), #revolio-labs (9), #to-try (9), #agents (8), #revolio (8), #mcp (7), #threejs (7), #claude (6), #open-source (6), #vfx (6), #video-editing (6), #daily-challenge (5), #game-inspiration (5), #visual-design (5), #animation (4)
+#own-project (43), #desktop-app (14), #browser-game (13), #pxlvzn (11), #inspiration (10), #reference (10), #revolio-labs (9), #to-try (9), #agents (8), #revolio (8), #mcp (7), #threejs (7), #claude (6), #open-source (6), #vfx (6), #video-editing (6), #daily-challenge (5), #game-inspiration (5), #indian-setting (5), #visual-design (5)
 
 ### Style notes and where they come from
 
@@ -134,6 +134,7 @@ _From 80 entries, 34 with style notes. Rebuilt on every filing._
 - **airy off-white layouts**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
 - **anton display type**: [Runaway Light Rig](topics/gamedev/2026-11-12-runaway-light-rig.md)
 - **ascii**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
+- **big uppercase heading**: [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md)
 - **big-head proportions**: [Blender storybook hero](topics/gamedev/2026-11-09-blender-mcp-storybook-hero-workflow.md)
 - **black minimal landing page**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
 - **black stage**: [TV Stack toy](topics/gamedev/2026-11-12-tv-stack-music-toy.md)
@@ -157,6 +158,7 @@ _From 80 entries, 34 with style notes. Rebuilt on every filing._
 - **cream paper editorial**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
 - **dark compact utility card**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
 - **dark slate grid floor**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
+- **dark slate theme**: [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md)
 - **desi street shopfront**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 - **dither**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
 - **dystopian concert stage**: [Runaway Light Rig](topics/gamedev/2026-11-12-runaway-light-rig.md)
@@ -193,6 +195,7 @@ _From 80 entries, 34 with style notes. Rebuilt on every filing._
 - **plain-language helper copy**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
 - **poster typography**: [SLANGDAQ game](topics/gamedev/2026-11-12-slangdaq-game.md)
 - **product launch video**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
+- **real people as characters**: [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md)
 - **receipt cards**: [Meter Down concept](topics/gamedev/2026-11-12-meter-down-concept.md)
 - **red and black**: [Runaway Light Rig](topics/gamedev/2026-11-12-runaway-light-rig.md)
 - **red ink outline accents**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
@@ -213,6 +216,7 @@ _From 80 entries, 34 with style notes. Rebuilt on every filing._
 - **tick ruler numerals**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
 - **top-down camera**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **ui mockups in motion**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
+- **walkable stylised 3d city**: [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md)
 - **warm painterly palette**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
 - **warm soft lighting**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 - **warm toy diorama 3d**: [Munde Mode game](topics/gamedev/2026-11-12-munde-mode-game.md)
@@ -225,6 +229,7 @@ _From 80 entries, 34 with style notes. Rebuilt on every filing._
 - [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md) (`style-ref`): If I ever make a disk utility app to remove cache and disk cleanup, this UI is really nice for it.
 - [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md) (`style-ref`): Art style reference for Tukaram Munde game
 - [Perfolios portfolio directory](topics/design/2026-11-12-perfolios-portfolio-directory.md) (`website-ref`): A website directory. For inspiration, design, layouts, etc.
+- [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md) (`website-ref`): insane idea, cool website
 - [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md) (`style-ref`): Brilliant art style for animations
 - [Procedural arm rig](topics/gamedev/2026-11-11-procedural-arm-rig-demo.md) (`library`): open-source rigged arm to reuse in my games
 - [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md) (`game-ref`): cool game visual style, art style
