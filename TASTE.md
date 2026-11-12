@@ -95,7 +95,7 @@ _Last curated: 2026-11-12, from 73 entries (now including his own projects)._
 
 ## Evidence (generated)
 
-_From 73 entries, 31 with style notes. Rebuilt on every filing._
+_From 74 entries, 32 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -104,7 +104,7 @@ _From 73 entries, 31 with style notes. Rebuilt on every filing._
 - `style-ref`: 5
 - `game-ref`: 4
 - `tool`: 2
-- `technique`: 5
+- `technique`: 6
 - `advice`: 4
 - `idea`: 2
 - `thought`: 1
@@ -114,7 +114,7 @@ _From 73 entries, 31 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (43), #browser-game (13), #desktop-app (11), #pxlvzn (11), #revolio-labs (9), #revolio (8), #mcp (7), #reference (7), #threejs (7), #to-try (7), #agents (6), #inspiration (6), #open-source (6), #vfx (6), #video-editing (6), #daily-challenge (5), #game-inspiration (5), #animation (4), #claude (4), #game-idea (4)
+#own-project (43), #browser-game (13), #desktop-app (11), #pxlvzn (11), #revolio-labs (9), #reference (8), #revolio (8), #mcp (7), #threejs (7), #to-try (7), #agents (6), #inspiration (6), #open-source (6), #vfx (6), #video-editing (6), #daily-challenge (5), #game-inspiration (5), #animation (4), #claude (4), #game-idea (4)
 
 ### Style notes and where they come from
 
@@ -133,6 +133,7 @@ _From 73 entries, 31 with style notes. Rebuilt on every filing._
 - **big-head proportions**: [Blender storybook hero](topics/gamedev/2026-11-09-blender-mcp-storybook-hero-workflow.md)
 - **black stage**: [TV Stack toy](topics/gamedev/2026-11-12-tv-stack-music-toy.md)
 - **bold display type**: [Punchline party game](topics/gamedev/2026-11-12-punchline-party-game.md)
+- **bold orange focal length type**: [Lens focal length guide](topics/ai/2026-11-12-lens-focal-length-guide.md)
 - **bold red and blue colour pops**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
 - **bold type**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
 - **bottle green and marigold yellow**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
@@ -152,6 +153,7 @@ _From 73 entries, 31 with style notes. Rebuilt on every filing._
 - **dither**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
 - **dystopian concert stage**: [Runaway Light Rig](topics/gamedev/2026-11-12-runaway-light-rig.md)
 - **georgia serif**: [Wedding co-op game](topics/gamedev/2026-11-12-wedding-co-op-game.md)
+- **giant planet skies**: [Lens focal length guide](topics/ai/2026-11-12-lens-focal-length-guide.md)
 - **glass panel ui**: [TV Stack toy](topics/gamedev/2026-11-12-tv-stack-music-toy.md)
 - **glitch**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
 - **glossy abstract 3d**: [ARC 3D art dataset](topics/design/2026-11-10-arc-3d-art-dataset.md)
@@ -165,6 +167,7 @@ _From 73 entries, 31 with style notes. Rebuilt on every filing._
 - **launch film motion**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
 - **lime accent on dark**: [Punchline party game](topics/gamedev/2026-11-12-punchline-party-game.md)
 - **low-poly**: [Polyfork 3D assets](topics/gamedev/2026-11-10-polyfork-3d-assets.md)
+- **masked characters**: [Lens focal length guide](topics/ai/2026-11-12-lens-focal-length-guide.md)
 - **metallic gold and rose gold**: [ARC 3D art dataset](topics/design/2026-11-10-arc-3d-art-dataset.md)
 - **minimal hud**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **misty desaturated battlefield**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
@@ -191,6 +194,7 @@ _From 73 entries, 31 with style notes. Rebuilt on every filing._
 - **stylised 2d water**: [Godot waterfall shader](topics/gamedev/2026-11-09-godot-waterfall-texture-array-shader.md)
 - **stylised cartoon 3d**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 - **stylised storybook 3d**: [Blender storybook hero](topics/gamedev/2026-11-09-blender-mcp-storybook-hero-workflow.md)
+- **surreal pastel wide fields**: [Lens focal length guide](topics/ai/2026-11-12-lens-focal-length-guide.md)
 - **textured pastel brushwork**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
 - **tick ruler numerals**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
 - **top-down camera**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
