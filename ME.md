@@ -57,10 +57,10 @@ _Rebuilt on every filing from 73 notes._
 | Average per active day | 18.2 |
 | Current streak | 4 days |
 | Longest streak | 4 days |
-| Notes with his own comment | 27 (36%) |
+| Notes with his own comment | 28 (38%) |
 | Open ideas and to-dos | 3 |
 | Tagged to-try | 7 |
-| Marked read or done | 43 of 73 |
+| Marked read or done | 42 of 73 |
 
 ### Saves per day
 
@@ -77,9 +77,9 @@ _Rebuilt on every filing from 73 notes._
 gamedev       ███████ 26
 tech          ████ 15
 business      ███ 10
-design        ██ 8
+design        ██ 9
 ai            ██ 7
-life          █ 3
+life          █ 2
 inbox         █ 1
 productivity  █ 1
 learning      █ 1
@@ -91,7 +91,7 @@ health        █ 1
 ```
 library       █ 4
 asset-source  █ 2
-style-ref     █ 4
+style-ref     █ 5
 game-ref      █ 4
 tool          █ 2
 technique     █ 5
@@ -100,16 +100,16 @@ idea          █ 2
 thought       █ 1
 todo          █ 1
 org           █ 3
-project       ███████████ 41
+project       ███████████ 40
 ```
 
 ### Where it comes from
 
 ```
-web           █████████████ 47
+web           █████████████ 46
 x             ████ 13
 own words     ██ 9
-instagram     █ 2
+instagram     █ 3
 github        █ 2
 ```
 

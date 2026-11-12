@@ -45,6 +45,9 @@ _Last curated: 2026-11-12, from 73 entries (now including his own projects)._
   Gandhi cap, Nehru jacket) and everyday Indian street shopfronts in bottle green and
   marigold yellow with warm light (Sharma Sweets 3D style, the look for his Tukaram
   Munde game).
+- **Painterly stylised 3D animation**: animated-feature look with chunky armoured
+  characters, misty desaturated scenes, red ink outlines and bold red/blue accents
+  (Impossible Weapon animation, made with Krea AI).
 - **Image effects as a look**: halftone, ASCII, dither, glitch, glow (Ladybug).
 - **His own shipped looks** (from what he built): dark near-black UI with a single
   lime or yellow accent and hairline strokes (PXLVZN, PXL app hub, Revolio Labs,
@@ -98,7 +101,7 @@ _From 73 entries, 31 with style notes. Rebuilt on every filing._
 
 - `library`: 4
 - `asset-source`: 2
-- `style-ref`: 4
+- `style-ref`: 5
 - `game-ref`: 4
 - `tool`: 2
 - `technique`: 5
@@ -107,11 +110,11 @@ _From 73 entries, 31 with style notes. Rebuilt on every filing._
 - `thought`: 1
 - `todo`: 1
 - `org`: 3
-- `project`: 41
+- `project`: 40
 
 ### Top tags
 
-#own-project (44), #browser-game (13), #desktop-app (11), #pxlvzn (11), #revolio-labs (9), #revolio (8), #mcp (7), #reference (7), #threejs (7), #to-try (7), #agents (6), #open-source (6), #vfx (6), #video-editing (6), #daily-challenge (5), #game-inspiration (5), #inspiration (5), #claude (4), #game-idea (4), #indian-setting (4)
+#own-project (43), #browser-game (13), #desktop-app (11), #pxlvzn (11), #revolio-labs (9), #revolio (8), #mcp (7), #reference (7), #threejs (7), #to-try (7), #agents (6), #inspiration (6), #open-source (6), #vfx (6), #video-editing (6), #daily-challenge (5), #game-inspiration (5), #animation (4), #claude (4), #game-idea (4)
 
 ### Style notes and where they come from
 
@@ -130,10 +133,12 @@ _From 73 entries, 31 with style notes. Rebuilt on every filing._
 - **big-head proportions**: [Blender storybook hero](topics/gamedev/2026-11-09-blender-mcp-storybook-hero-workflow.md)
 - **black stage**: [TV Stack toy](topics/gamedev/2026-11-12-tv-stack-music-toy.md)
 - **bold display type**: [Punchline party game](topics/gamedev/2026-11-12-punchline-party-game.md)
+- **bold red and blue colour pops**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
 - **bold type**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
 - **bottle green and marigold yellow**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 - **caricature character big head**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 - **caricature indian characters**: [Munde Mode game](topics/gamedev/2026-11-12-munde-mode-game.md)
+- **chunky armoured knights**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
 - **chunky flat pixel art**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
 - **chunky props**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **clean sans type**: [Revolio Labs](topics/business/2026-11-12-revolio-labs.md)
@@ -149,10 +154,8 @@ _From 73 entries, 31 with style notes. Rebuilt on every filing._
 - **georgia serif**: [Wedding co-op game](topics/gamedev/2026-11-12-wedding-co-op-game.md)
 - **glass panel ui**: [TV Stack toy](topics/gamedev/2026-11-12-tv-stack-music-toy.md)
 - **glitch**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
-- **glitch display type**: [Sunny Sultan parody](topics/life/2026-11-12-sunny-sultan-parody.md)
 - **glossy abstract 3d**: [ARC 3D art dataset](topics/design/2026-11-10-arc-3d-art-dataset.md)
 - **glowing cards**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
-- **gold and hot pink**: [Sunny Sultan parody](topics/life/2026-11-12-sunny-sultan-parody.md)
 - **golden hour window light**: [Revolio Labs site](topics/gamedev/2026-11-12-revolio-labs-site.md)
 - **graffiti street court**: [Bonk Court game](topics/gamedev/2026-11-12-bonk-court-game.md)
 - **hairline strokes**: [PXLVZN label](topics/tech/2026-11-12-pxlvzn-label.md)
@@ -162,13 +165,14 @@ _From 73 entries, 31 with style notes. Rebuilt on every filing._
 - **launch film motion**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
 - **lime accent on dark**: [Punchline party game](topics/gamedev/2026-11-12-punchline-party-game.md)
 - **low-poly**: [Polyfork 3D assets](topics/gamedev/2026-11-10-polyfork-3d-assets.md)
-- **maximalist chaos**: [Sunny Sultan parody](topics/life/2026-11-12-sunny-sultan-parody.md)
 - **metallic gold and rose gold**: [ARC 3D art dataset](topics/design/2026-11-10-arc-3d-art-dataset.md)
 - **minimal hud**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
+- **misty desaturated battlefield**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
 - **mumbai kaali-peeli illustration**: [Meter Down concept](topics/gamedev/2026-11-12-meter-down-concept.md)
 - **orange and blue palette**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
 - **painted 2d backgrounds**: [AI tween harness](topics/design/2026-11-11-ai-tween-paint-harness.md)
 - **painterly brushwork**: [Claude code paintings](topics/ai/2026-11-10-claude-code-paintings.md)
+- **painterly stylised 3d**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
 - **pastel blocks**: [ARC 3D art dataset](topics/design/2026-11-10-arc-3d-art-dataset.md)
 - **pixel cursors and ui**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
 - **pixel-art mascots**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
@@ -176,6 +180,7 @@ _From 73 entries, 31 with style notes. Rebuilt on every filing._
 - **product launch video**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
 - **receipt cards**: [Meter Down concept](topics/gamedev/2026-11-12-meter-down-concept.md)
 - **red and black**: [Runaway Light Rig](topics/gamedev/2026-11-12-runaway-light-rig.md)
+- **red ink outline accents**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
 - **scroll side-scroller**: [Revolio Labs site](topics/gamedev/2026-11-12-revolio-labs-site.md)
 - **serif italic accents**: [Idea Archive site](topics/business/2026-11-12-idea-archive-site.md)
 - **serif plus grotesk type**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
@@ -199,6 +204,7 @@ _From 73 entries, 31 with style notes. Rebuilt on every filing._
 ### Every reference with his reason
 
 - [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md) (`style-ref`): Art style reference for Tukaram Munde game
+- [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md) (`style-ref`): Brilliant art style for animations
 - [Procedural arm rig](topics/gamedev/2026-11-11-procedural-arm-rig-demo.md) (`library`): open-source rigged arm to reuse in my games
 - [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md) (`game-ref`): cool game visual style, art style
 - [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md) (`style-ref`): cool visuals, launch film

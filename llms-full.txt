@@ -53,6 +53,9 @@ _Last curated: 2026-11-12, from 73 entries (now including his own projects)._
   Gandhi cap, Nehru jacket) and everyday Indian street shopfronts in bottle green and
   marigold yellow with warm light (Sharma Sweets 3D style, the look for his Tukaram
   Munde game).
+- **Painterly stylised 3D animation**: animated-feature look with chunky armoured
+  characters, misty desaturated scenes, red ink outlines and bold red/blue accents
+  (Impossible Weapon animation, made with Krea AI).
 - **Image effects as a look**: halftone, ASCII, dither, glitch, glow (Ladybug).
 - **His own shipped looks** (from what he built): dark near-black UI with a single
   lime or yellow accent and hairline strokes (PXLVZN, PXL app hub, Revolio Labs,
@@ -232,25 +235,6 @@ style: black stage, red accent, glass panel ui
 
 ## Summary
 TV Stack: play a wall of TVs like an instrument. Every key is a note and a screen; follow the prompted keys or play freely. Load your own song (analysed on device) to play along, step through or practise phrases, and record takes.
-
-## Raw
-(Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
-
-============================================================
-Sunny Sultan parody  (topics/life/2026-11-12-sunny-sultan-parody.md)
-============================================================
-kind: project
-type: site
-topic: life
-added: 2026-11-12
-source: https://sunnysultan.vercel.app
-status: read
-why: a private joke between friends: a chaotic fan page for a made-up pop star
-tags: own-project, joke, website
-style: maximalist chaos, gold and hot pink, glitch display type
-
-## Summary
-A deliberately chaotic satirical fan page for a fictional pop star, "Sunny Sultan", made as a private joke between friends: gossip cards, fake awards, a fan wall, fake ads, confetti and a disco mode, plus an editor page to change the text and images.
 
 ## Raw
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
@@ -854,6 +838,36 @@ Lut: drop a reference shot and your clip, get a .cube LUT and a graded copy that
 
 ## Notes
 - Label: [[2026-11-12-pxlvzn-label]].
+
+============================================================
+Impossible Weapon animation  (topics/design/2026-11-12-impossible-weapon-knight-animation.md)
+============================================================
+kind: style-ref
+type: video
+topic: design
+added: 2026-11-12
+source: https://www.instagram.com/reel/Dfm8H07Pohc/
+status: unread
+why: Brilliant art style for animations
+tags: animation, video-generation, 3d-art, inspiration
+style: painterly stylised 3d, chunky armoured knights, misty desaturated battlefield, red ink outline accents, bold red and blue colour pops
+
+## Summary
+"The Impossible Weapon", a ~34-second animated short by INK (@ink.industries_) and Pascal Gautier, made with Krea AI. Two stylised armoured knights face off on a misty, grassy battlefield: a hulking dark knight with a blue plume and a nimble silver knight with a red cape who leaps in with a sword. Saved for its art style for animation: painterly stylised 3D that feels like a hand-made animated feature.
+
+![screenshot](./2026-11-12-impossible-weapon-knight-animation.jpg)
+
+Frames: (1) the dark knight in a fur mantle and blue cape, a huge blue plume on his helmet, standing over a sword in front of rows of faded soldiers and blue banners in fog; (2) a close-up of a giant blade slamming into mud, dirt flying, with thin red ink outlines on the metal; (3) the red-caped silver knight leaping mid-air with sword raised at the still dark knight, a teal streak across the sky; (4) a low-angle shot of the silver knight with a red plume and cross belt buckle raising a fist. Muted grey-green palette, soft fog, foreground grass, punchy red and blue accents.
+
+## Raw
+https://www.instagram.com/reel/Dfm8H07Pohc/?xtok=MThoNHJsMmRzdGF5eQ==
+
+Brilliant art style for animations
+
+## Notes
+- Caption: "THE IMPOSSIBLE WEAPON. Made with @krea_ai. By INK and @pascal_gautier"
+- Read via Social Reader (caption + 4 video frames).
+- Related look: [[2026-11-09-blender-mcp-storybook-hero-workflow]]
 
 ============================================================
 Idea Archive site  (topics/business/2026-11-12-idea-archive-site.md)
