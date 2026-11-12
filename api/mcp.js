@@ -5,9 +5,9 @@
 
 const SITE = "https://brainy.pxlvzn.in";
 const PROTOCOLS = ["2025-06-18", "2025-03-26", "2024-11-05"];
-const KINDS = ["style-ref", "website-ref", "game-ref", "library", "asset-source", "tool", "technique", "advice", "idea", "thought", "todo"];
+const KINDS = ["style-ref", "website-ref", "game-ref", "library", "asset-source", "tool", "technique", "advice", "idea", "thought", "todo", "project", "org"];
 const STAGES = ["new", "exploring", "doing", "done", "dropped"];
-const CATALOGS = ["libraries", "style-refs", "tools", "techniques", "ideas"];
+const CATALOGS = ["libraries", "style-refs", "tools", "techniques", "ideas", "projects"];
 
 let cache = { at: 0, brain: null };
 
@@ -58,9 +58,10 @@ function noteText(n) {
   const head = [
     `# ${n.title}`,
     "",
-    `kind: ${n.kind || "?"}${n.stage ? ` · stage: ${n.stage}` : ""} · type: ${n.type} · topic: ${n.topic} · added: ${n.added}`,
+    `kind: ${n.kind || "?"}${n.stage ? ` · stage: ${n.stage}` : ""}${n.state ? ` · state: ${n.state}` : ""} · type: ${n.type} · topic: ${n.topic} · added: ${n.added}`,
     n.why && `why saved: ${n.why}`,
     n.style?.length && `style: ${n.style.join(", ")}`,
+    n.stack?.length && `stack: ${n.stack.join(", ")}`,
     n.tags?.length && `tags: ${n.tags.join(", ")}`,
     n.source && `source: ${n.source}`,
     `file: ${n.path}`,
@@ -102,7 +103,7 @@ const TOOLS = [
     name: "fetch",
     title: "Fetch a note",
     description:
-      "Return the full markdown of one note by id (its slug, from `search` or `list_notes`), including his own words under ## Raw. Special ids: 'taste' (TASTE.md), 'ideas' (IDEAS.md), 'agents' (AGENTS.md), 'catalog:<name>' where name is one of libraries, style-refs, tools, techniques, ideas.",
+      "Return the full markdown of one note by id (its slug, from `search` or `list_notes`), including his own words under ## Raw. Special ids: 'taste' (TASTE.md), 'ideas' (IDEAS.md), 'agents' (AGENTS.md), 'catalog:<name>' where name is one of libraries, style-refs, tools, techniques, ideas, projects.",
     inputSchema: {
       type: "object",
       properties: { id: { type: "string" } },
@@ -148,7 +149,7 @@ const TOOLS = [
     name: "get_catalog",
     title: "Get a catalog",
     description:
-      "Return one generated catalog with a short entry per note: libraries (UI libraries, design systems, asset sources), style-refs (visual, website and game references), tools, techniques, ideas.",
+      "Return one generated catalog with a short entry per note: libraries (UI libraries, design systems, asset sources), style-refs (visual, website and game references), tools, techniques, ideas, projects (games, apps and tools he has built himself, plus Revolio and Revolio Labs, the companies he works in).",
     inputSchema: {
       type: "object",
       properties: { name: { type: "string", enum: CATALOGS } },
@@ -256,7 +257,7 @@ async function handle(msg, req) {
           capabilities: { tools: { listChanged: false } },
           serverInfo: { name: "yuvraj-second-brain", title: "Yuvraj's second brain", version: "1.0.0" },
           instructions:
-            "Yuvraj's personal knowledge base and taste profile. Call get_taste_profile first to learn his visual taste, the games he likes and his preferred stack, then use search / list_notes / fetch to pull specific references and libraries, and recall_ideas to call back his own ideas and to-dos. Prefer what he has saved when suggesting designs, UI libraries, assets or tools.",
+            "Yuvraj's personal knowledge base and taste profile. Call get_taste_profile first to learn his visual taste, the games he likes and his preferred stack, then use search / list_notes / fetch to pull specific references and libraries, recall_ideas to call back his own ideas and to-dos, and get_catalog('projects') for what he has already built (his games, apps and stack). Prefer what he has saved when suggesting designs, UI libraries, assets or tools.",
         });
       case "ping":
         return ok({});

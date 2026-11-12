@@ -35,6 +35,10 @@ CATALOGS = {
     "tools": ("Tools and apps", "Apps and services he has saved to use or benchmark against.", ["tool"]),
     "techniques": ("Techniques and advice", "Workflows, how-tos and tips he wants to reuse.", ["technique", "advice"]),
     "ideas": ("Ideas, thoughts and to-dos", "His own ideas, thoughts and open to-dos.", ["idea", "thought", "todo"]),
+    "projects": ("His projects and companies",
+                 "Things Yuvraj has built himself (games, apps, tools, sites) and the companies he works in. "
+                 "Use them as context: his real stack, his shipped looks, and what already exists before suggesting something new.",
+                 ["org", "project"]),
 }
 KINDS = [k for _, _, ks in CATALOGS.values() for k in ks]
 STAGES = ["doing", "exploring", "new", "done", "dropped"]  # IDEAS.md order; open = first three
@@ -56,6 +60,7 @@ def parse(path):
     body = text[m.end():] if m else text
     meta["tags"] = as_list(meta.get("tags", ""))
     meta["style"] = as_list(meta.get("style", ""))
+    meta["stack"] = as_list(meta.get("stack", ""))
     meta["title"] = meta.get("title") or path.stem
     meta.setdefault("added", "")
     meta["path"] = path.relative_to(ROOT).as_posix()
@@ -84,12 +89,18 @@ def index_line(e):
 def catalog_entry(e, rel="../"):
     out = [f"### [{e['title']}]({rel}{e['path']})", ""]
     facts = [f"`{e.get('kind', '?')}`", e.get("topic") or e["path"].split("/")[1]]
+    if e.get("state"):
+        facts.append(f"**{e['state']}**")
     if e.get("source"):
         facts.append(f"<{e['source']}>")
     out.append(" · ".join(facts))
     out.append("")
     if e.get("why"):
         out.append(f"- **Why saved:** {e['why']}")
+    if e.get("stack"):
+        out.append(f"- **Stack:** {', '.join(e['stack'])}")
+    if e.get("repo"):
+        out.append(f"- **Repo:** {e['repo']}")
     if e["style"]:
         out.append(f"- **Style:** {', '.join(e['style'])}")
     if e["tags"]:
@@ -281,7 +292,7 @@ def main():
 
     # llms.txt
     out = ["# Yuvraj's second brain", "",
-           "> Personal knowledge base and taste profile of Yuvraj Garg, a video editor who also builds games. "
+           "> Personal knowledge base and taste profile of Yuvraj Garg, a video editor and builder at Revolio Media (Mumbai) who makes games, desktop apps and AI tools, many of them shipped (see catalog/projects.md). "
            "Every link, reference, library, tool and idea he saves is one markdown note with YAML frontmatter. "
            "Use it to personalise your answers: match his visual taste, prefer the libraries and tools he has saved, "
            "and build on his own ideas.", "",

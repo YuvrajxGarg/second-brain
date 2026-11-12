@@ -5,7 +5,7 @@ topic: gamedev
 tags: [own-thought, game-idea, indian-setting]
 kind: idea
 why: his own game idea; collecting art style references for it
-stage: new
+stage: doing
 added: 2026-11-12
 status: unread
 ---
@@ -18,4 +18,5 @@ Art style reference for Tukaram Munde game.
 
 ## Notes
 - Art style refs: [[2026-11-12-sharma-sweets-3d-shopfront]]
+- Now being built as [[2026-11-12-munde-mode-game]] (Munde Mode): a parody FDA raid simulator, prototype ready and in progress.
 - Add gameplay notes here when he shares them.

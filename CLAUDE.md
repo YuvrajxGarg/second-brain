@@ -122,7 +122,14 @@ every note carries these, and `AGENTS.md` explains them to outside agents:
 - `kind` (required), what it is useful as: `style-ref` (art/design/motion he likes
   the look of), `website-ref`, `game-ref`, `library` (UI kits, design systems,
   packages), `asset-source`, `tool`, `technique`, `advice`, `idea` (his own),
-  `thought`, `todo`. This drives `catalog/`.
+  `thought`, `todo`, `project` (something he built himself), `org` (a company or
+  label he works in). This drives `catalog/`.
+- `state`, `stack`, `repo` (kind `project`/`org` only): where it stands (`live`,
+  `prototype`, `in progress`, `concept`, `archived`...), what it's built with, and the
+  GitHub link or `private`. Private repos (Revolio Studio, Labs, Ledger...) stay at
+  product level: never copy code, prompts, providers, model names, costs, env vars,
+  emails or business IDs into this public repo. When he ships or changes a project,
+  update its note.
 - `why` (required): his reason for saving it, **in his words** when he gave one
   ("cool visual design"), otherwise a short plain reason. Never drop his comment.
 - `style` (visual things only): 2 to 5 short descriptors of what to take from it,

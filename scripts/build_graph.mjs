@@ -56,6 +56,8 @@ function parse(file) {
     kind: unq(meta.kind) || null,
     why: unq(meta.why) || null,
     stage: unq(meta.stage) || null,
+    state: unq(meta.state) || null,
+    stack: unq(meta.stack).replace(/^\[|\]$/g, "").split(",").map((t) => unq(t)).filter(Boolean),
     style: unq(meta.style).replace(/^\[|\]$/g, "").split(",").map((t) => unq(t)).filter(Boolean),
     body: m ? text.slice(m[0].length) : text,
   };

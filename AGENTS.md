@@ -17,6 +17,8 @@ generic defaults.
    - [tools.md](catalog/tools.md): apps and services
    - [techniques.md](catalog/techniques.md): workflows, how-tos, advice
    - [ideas.md](catalog/ideas.md): his own ideas, thoughts, to-dos
+   - [projects.md](catalog/projects.md): what he has built himself (games, apps, tools,
+     sites) and the companies he works in, with status, stack and links
 3. **[IDEAS.md](IDEAS.md)**: his own ideas and to-dos by stage. Call these back
    when they're relevant ("you had an idea for X on Nov 10, want to pick it up?").
 4. **Notes** in `topics/<topic>/YYYY-MM-DD-<slug>.md` for full detail. Images sit
@@ -75,11 +77,19 @@ status: unread                  # unread | read | done | archived
 | `idea` | his own idea | calling ideas back |
 | `thought` | a note or mental model | understanding how he thinks |
 | `todo` | a task he wants done | reminders, planning |
+| `project` | something he has built (game, app, tool, site) | knowing what he has made and can reuse |
+| `org` | a company or label he works in (Revolio Media, Revolio Labs, PXLVZN) | context on who he builds for |
 
 **`why`** is his reason for saving it, in his words when he gave one ("cool
 visual design"). Treat it as the most direct statement of his preference.
 
 **`stage`** (ideas and to-dos): `new`, `exploring`, `doing`, `done`, `dropped`.
+
+**Project fields** (kind `project` and `org`): `state` is where it stands in his
+words (`live`, `live (internal)`, `prototype`, `in progress`, `concept`,
+`archived`...), `stack` lists what it is built with, `source` is the live link and
+`repo` is the GitHub link or `private`. Private repos are described at product level
+only; never ask for or guess their code.
 
 ## How to use it well
 
@@ -90,6 +100,9 @@ visual design"). Treat it as the most direct statement of his preference.
 - He asks "what was that thing about X": `search` (or grep `topics/`), answer with
   title, summary, source link and file path.
 - Brainstorming: `recall_ideas` and mention relevant past ideas.
+- Suggesting what to build: check `catalog/projects.md` (or `get_catalog('projects')`)
+  first. He has shipped a lot; build on or remix his own projects before
+  proposing something from scratch, and match the stack he already uses.
 - This repo is public and contains nothing sensitive. Only Claude in his "Second
   Brain" project writes to it, following [CLAUDE.md](CLAUDE.md); other agents
   should treat it as read-only.
