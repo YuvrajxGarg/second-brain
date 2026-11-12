@@ -1,10 +1,10 @@
 ---
 title: Revolio Media studio
-type: note
+type: company
 topic: business
 tags: [revolio, own-project, video-editing, content-studio]
 kind: org
-why: the company he works at; context for everything he builds
+why: the creative studio where the day job is: video editing and the studio's tech
 state: active
 source: https://revolio.in
 added: 2026-11-12

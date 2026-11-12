@@ -1,10 +1,10 @@
 ---
 title: PXLVZN label
-type: note
+type: company
 topic: tech
 tags: [pxlvzn, own-project, desktop-app, open-source]
 kind: org
-why: his own brand for apps and side projects
+why: a home and shared look for free desktop apps and side projects
 style: [near-black surfaces, hairline strokes, single lime accent]
 state: active
 stack: [vite, vanilla-js, vercel]

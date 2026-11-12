@@ -1,10 +1,10 @@
 ---
 title: Ferry file manager
-type: note
+type: app
 topic: tech
 tags: [own-project, desktop-app, file-transfer]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: to move files between the Mac and the Windows PC as easily as dragging between folders
 state: prototype
 stack: [macos, windows-agent, tailscale]
 repo: private

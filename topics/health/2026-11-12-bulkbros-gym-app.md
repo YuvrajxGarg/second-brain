@@ -1,10 +1,10 @@
 ---
 title: BulkBros gym app
-type: note
+type: app
 topic: health
 tags: [own-project, fitness, nutrition, ai]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: to plan meals and workouts for a lean bulk with a roommate, with an AI coach
 state: live (private)
 stack: [nextjs, react, tailwind, claude-api, supabase]
 source: https://gym.pxlvzn.in

@@ -1,10 +1,10 @@
 ---
 title: Social Reader MCP
-type: note
+type: tool
 topic: ai
 tags: [own-project, mcp, agents, social-media]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: to read X and Instagram links (text, threads, video frames) so any AI can file or use them
 state: live
 stack: [python, vercel]
 source: https://social-reader-kappa.vercel.app

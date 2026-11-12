@@ -1,10 +1,10 @@
 ---
 title: Idea Archive site
-type: note
+type: site
 topic: business
 tags: [revolio, own-project, concept, interactive-film]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: to keep original concepts in one place and move the best ones toward production
 style: [acid green on near-black, film grain, serif italic accents]
 state: live
 stack: [html, vanilla-js]

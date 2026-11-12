@@ -1,10 +1,10 @@
 ---
 title: CanvasFlow whiteboard
-type: note
+type: app
 topic: tech
 tags: [pxlvzn, own-project, desktop-app, productivity]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: a whiteboard for thinking that sits behind your windows like a desk mat, with no account
 state: live
 stack: [electron, typescript, zustand, perfect-freehand]
 source: https://canvas.pxlvzn.in

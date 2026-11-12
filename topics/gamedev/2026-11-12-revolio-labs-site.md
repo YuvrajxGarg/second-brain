@@ -1,10 +1,10 @@
 ---
 title: Revolio Labs site
-type: note
+type: site
 topic: gamedev
 tags: [revolio-labs, own-project, threejs, creative-coding]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: a home for Revolio Labs: a cozy 3D desk where the games and experiments live
 style: [cozy 3d desk diorama, golden hour window light, scroll side-scroller]
 state: live
 stack: [threejs, vanilla-js, postprocessing]

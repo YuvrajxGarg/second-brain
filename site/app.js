@@ -12,7 +12,15 @@
   const TYPE_CODE = {
     link: "LNK", note: "NOTE", idea: "IDEA", bookmark: "BKMK", quote: "QUOT", video: "VID",
     tool: "TOOL", book: "BOOK", person: "PRSN", place: "PLCE", recipe: "RCPE", todo: "TODO",
+    game: "GAME", app: "APP", site: "SITE", company: "CO", concept: "CNCP",
   };
+  // what a note is, in words: things he made, places he works, his own thoughts, or saves
+  const OWN_KINDS = new Set(["idea", "thought", "todo"]);
+  const typeLabel = (n) =>
+    n.noteKind === "project" ? `${n.type} · made by me` :
+    n.noteKind === "org" ? (n.type === "company" ? "company" : n.type) :
+    OWN_KINDS.has(n.noteKind) ? (n.type === "note" ? "my note" : `my ${n.type}`) :
+    `saved ${n.type}`;
   const GLYPHS = "!<>-_\\/[]{}=+*^?#01ABCDEFXYZ";
   const MONO = '"JetBrains Mono", ui-monospace, Menlo, monospace';
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -103,7 +111,7 @@
     for (const l of links) { adj.get(l.source).add(l.target); adj.get(l.target).add(l.source); }
 
     const topics = nodes.filter((n) => n.kind === "topic").sort((a, b) => b.count - a.count);
-    const R = 60 + nodes.length * 3;
+    const R = 120 + nodes.length * 4.5;
     topics.forEach((t, i) => {
       const a = (i / topics.length) * Math.PI * 2 - Math.PI / 2;
       t.x = Math.cos(a) * R * 0.7; t.y = Math.sin(a) * R * 0.7;
@@ -148,15 +156,15 @@
       .alphaDecay(0.018)
       .velocityDecay(0.38)
       .force("link", d3.forceLink(links).id((d) => d.id)
-        .distance((l) => (l.kind === "topic" ? 110 : l.kind === "wiki" ? 80 : 58))
-        .strength((l) => (l.kind === "tag" ? 0.55 : l.kind === "wiki" ? 0.25 : 0.32)))
-      .force("charge", d3.forceManyBody().strength((d) => (d.kind === "topic" ? -620 : d.kind === "note" ? -240 : -95)).distanceMax(600))
-      .force("collide", d3.forceCollide((d) => d.r + 7).strength(0.8))
-      .force("x", d3.forceX(0).strength(0.035))
-      .force("y", d3.forceY(0).strength(0.035))
+        .distance((l) => (l.kind === "topic" ? 180 : l.kind === "wiki" ? 130 : 100))
+        .strength((l) => (l.kind === "tag" ? 0.35 : l.kind === "wiki" ? 0.2 : 0.28)))
+      .force("charge", d3.forceManyBody().strength((d) => (d.kind === "topic" ? -1200 : d.kind === "note" ? -460 : -200)).distanceMax(1100))
+      .force("collide", d3.forceCollide((d) => d.r + (d.kind === "tag" ? 10 : 18)).strength(0.9))
+      .force("x", d3.forceX(0).strength(0.022))
+      .force("y", d3.forceY(0).strength(0.022))
       .stop();
     // warm up off-screen so the bloom lands on a settled layout
-    for (let i = 0; i < 160; i++) sim.tick();
+    for (let i = 0; i < 260; i++) sim.tick();
     sim.alpha(0.12).restart();
   }
 
@@ -469,7 +477,7 @@
   function showTip(n, px, py) {
     if (!n) { tip.hidden = true; return; }
     let html;
-    if (n.kind === "note") html = `<span class="t-k">${esc(n.type.toUpperCase())}</span>${esc(n.topic.toUpperCase())} · ${esc(n.added)}`;
+    if (n.kind === "note") html = `<span class="t-k">${esc(typeLabel(n).toUpperCase())}</span>${esc(n.topic.toUpperCase())} · ${esc(n.added)}`;
     else if (n.kind === "tag") html = `<span class="t-k">TAG</span>${n.count} NOTE${n.count === 1 ? "" : "S"}`;
     else html = `<span class="t-k">TOPIC</span>${n.count} NOTE${n.count === 1 ? "" : "S"}`;
     tip.innerHTML = html;
@@ -628,10 +636,12 @@
     if (n.kind === "note") {
       const host = n.source ? (() => { try { return new URL(n.source).host.replace(/^www\./, ""); } catch { return n.source; } })() : null;
       const raw = DOMPurify.sanitize(marked.parse(n.body || ""), { ADD_ATTR: ["target"] });
-      html += `<div class="p-kicker"><span class="sq" style="background:${n.color}"></span>${esc(n.topic)} · ${esc(n.type)}</div>`;
+      html += `<div class="p-kicker"><span class="sq" style="background:${n.color}"></span>${esc(n.topic)} · ${esc(typeLabel(n))}</div>`;
       html += `<h1 class="p-title" data-title>${esc(n.label)}</h1>`;
       html += `<dl class="p-meta">
-        ${n.why ? `<dt>WHY</dt><dd>${esc(n.why)}</dd>` : ""}
+        ${n.why ? `<dt>${n.noteKind === "project" ? "MADE FOR" : n.noteKind === "org" ? "WHAT" : "WHY"}</dt><dd class="wrap">${esc(n.why)}</dd>` : ""}
+        ${n.state ? `<dt>STATE</dt><dd>${esc(n.state)}</dd>` : ""}
+        ${n.stack && n.stack.length ? `<dt>STACK</dt><dd>${esc(n.stack.join(", "))}</dd>` : ""}
         ${n.noteKind ? `<dt>KIND</dt><dd>${esc(n.noteKind)}${n.stage ? " · " + esc(n.stage) : ""}</dd>` : ""}
         ${n.style && n.style.length ? `<dt>STYLE</dt><dd>${esc(n.style.join(", "))}</dd>` : ""}
         <dt>ADDED</dt><dd>${esc(n.added)}</dd>

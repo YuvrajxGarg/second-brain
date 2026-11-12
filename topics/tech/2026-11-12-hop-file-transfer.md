@@ -1,10 +1,10 @@
 ---
 title: Hop file transfer
-type: note
+type: tool
 topic: tech
 tags: [pxlvzn, own-project, desktop-app, file-transfer]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: AirDrop between any devices: Mac, PC and phones over Wi-Fi, no cloud
 state: live
 stack: [python]
 source: https://hop.pxlvzn.in

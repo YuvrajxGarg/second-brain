@@ -1,10 +1,10 @@
 ---
 title: TV Stack toy
-type: note
+type: game
 topic: gamedev
 tags: [own-project, browser-game, music, rhythm-game]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: to play a wall of TVs like an instrument, along with any song
 style: [black stage, red accent, glass panel ui]
 state: live
 stack: [vanilla-js, web-audio, canvas]

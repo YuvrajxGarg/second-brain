@@ -1,10 +1,10 @@
 ---
 title: pxlengine 3D engine
-type: note
+type: tool
 topic: tech
 tags: [pxlvzn, own-project, agents, vfx, game-engine]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: so AI agents can make 3D and VFX shots by writing JSON, with no editor
 state: in progress
 stack: [rust, slang, vulkan-ray-tracing, python, typescript]
 repo: https://github.com/YuvrajxGarg/pxlengine

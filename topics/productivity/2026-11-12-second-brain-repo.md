@@ -1,10 +1,10 @@
 ---
 title: Second Brain repo
-type: note
+type: tool
 topic: productivity
 tags: [own-project, agents, mcp, knowledge-base]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: to keep every link, idea and reference in one place, findable later and readable by any AI
 state: live
 stack: [markdown, python, nodejs, vercel]
 source: https://brainy.pxlvzn.in

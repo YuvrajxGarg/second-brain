@@ -1,10 +1,10 @@
 ---
 title: SLANGDAQ game
-type: note
+type: game
 topic: gamedev
 tags: [revolio-labs, own-project, browser-game, daily-challenge]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: a stock market for internet slang: bet on what's rising and what's cooked
 style: [stock ticker ui, poster typography, yellow accent]
 state: live (beta)
 stack: [nextjs]

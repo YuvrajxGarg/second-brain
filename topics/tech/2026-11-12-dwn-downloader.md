@@ -1,10 +1,10 @@
 ---
 title: Dwn downloader
-type: note
+type: app
 topic: tech
 tags: [pxlvzn, own-project, desktop-app, video-editing]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: to grab videos, songs and transcripts from any site in edit-ready formats, without sketchy download sites
 state: live
 stack: [swiftui, electron, yt-dlp, ffmpeg]
 source: https://dwn.pxlvzn.in

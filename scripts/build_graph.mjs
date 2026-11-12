@@ -136,6 +136,8 @@ for (const n of notes) {
     why: n.why,
     stage: n.stage,
     style: n.style,
+    state: n.state,
+    stack: n.stack,
     body,
     related: [...related],
   });

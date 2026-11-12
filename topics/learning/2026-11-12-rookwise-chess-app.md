@@ -1,10 +1,10 @@
 ---
 title: Rookwise chess app
-type: note
+type: app
 topic: learning
 tags: [pxlvzn, own-project, chess, web-app]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: to get better at chess by training on your own mistakes
 state: live
 stack: [nextjs]
 source: https://chess.pxlvzn.in

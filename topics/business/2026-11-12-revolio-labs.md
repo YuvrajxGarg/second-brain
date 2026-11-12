@@ -1,10 +1,10 @@
 ---
 title: Revolio Labs
-type: note
+type: company
 topic: business
 tags: [revolio-labs, revolio, own-project, browser-game, ai]
 kind: org
-why: the experiments company he builds at Revolio; his main playground
+why: the experiments company under Revolio, for games, tools and toys ('Work in play')
 style: [black and yellow, r mark with animated eyes, clean sans type]
 state: active
 source: https://labs.revolio.media

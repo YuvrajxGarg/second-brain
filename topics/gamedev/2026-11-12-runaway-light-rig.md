@@ -1,10 +1,10 @@
 ---
 title: Runaway Light Rig
-type: note
+type: game
 topic: gamedev
 tags: [own-project, browser-game, music, rhythm-game]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: a rhythm game where every note you hit fires the concert lights
 style: [dystopian concert stage, red and black, film grain, anton display type]
 state: live
 stack: [vanilla-js, web-audio, webgl]

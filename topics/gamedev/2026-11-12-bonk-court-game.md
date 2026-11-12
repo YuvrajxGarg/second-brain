@@ -1,10 +1,10 @@
 ---
 title: Bonk Court game
-type: note
+type: game
 topic: gamedev
 tags: [own-project, browser-game, basketball, threejs]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: a quick street-court basketball shooting game
 style: [graffiti street court, spray paint type]
 state: live
 stack: [threejs]

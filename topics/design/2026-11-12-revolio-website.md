@@ -1,10 +1,10 @@
 ---
 title: Revolio website
-type: note
+type: site
 topic: design
 tags: [revolio, own-project, portfolio, website]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: the Revolio Media portfolio site, to show the studio's work
 state: live
 stack: [python, static-html, vanilla-js]
 source: https://revolio.in

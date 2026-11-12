@@ -1,10 +1,10 @@
 ---
 title: Lut colour matcher
-type: note
+type: tool
 topic: tech
 tags: [pxlvzn, own-project, desktop-app, color-grading]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: to match colour between shots fast, like AI shots to real footage or B-cam to A-cam
 state: live
 stack: [python]
 source: https://lut.pxlvzn.in

@@ -1,10 +1,10 @@
 ---
 title: DriveDesk file manager
-type: note
+type: app
 topic: tech
 tags: [own-project, desktop-app, google-drive]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: to browse local files and Google Drive side by side and move things between them
 state: released
 stack: [python]
 repo: https://github.com/YuvrajxGarg/DriveDesk

@@ -1,10 +1,10 @@
 ---
 title: PEAKD game
-type: note
+type: game
 topic: gamedev
 tags: [revolio-labs, own-project, browser-game, daily-challenge]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: a daily guessing game: when did this slang, show or meme peak
 style: [cream paper editorial, condensed ink serif, tick ruler numerals]
 state: live
 stack: [nextjs, typescript, playwright]

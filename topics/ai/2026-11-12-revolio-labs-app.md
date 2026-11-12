@@ -1,10 +1,10 @@
 ---
 title: Revolio Labs app
-type: note
+type: app
 topic: ai
 tags: [revolio-labs, own-project, generative-ai, video-generation, mcp]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: one studio for AI image, video and games, so the team and anyone else can create from a single place
 style: [black and yellow, r mark with animated eyes]
 state: live (waitlist)
 stack: [nextjs, typescript, vercel]

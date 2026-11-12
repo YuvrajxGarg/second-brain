@@ -1,10 +1,10 @@
 ---
 title: The Outsider concept
-type: note
+type: concept
 topic: gamedev
 tags: [own-project, game-idea, concept, party-game]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: a social deduction party game idea: blend in or get voted out
 state: concept
 stack: [html, css, vanilla-js]
 source: https://theroom-six.vercel.app

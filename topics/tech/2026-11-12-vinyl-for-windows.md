@@ -1,10 +1,10 @@
 ---
 title: Vinyl for Windows
-type: note
+type: app
 topic: tech
 tags: [own-project, desktop-app, music, threejs]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: to bring the Vinyl for Mac now-playing turntable wallpaper to Windows; sold as a paid app
 state: live (paid)
 stack: [csharp, wpf, webview2, threejs]
 repo: private (releases: https://github.com/YuvrajxGarg/vinyl-for-windows-releases)

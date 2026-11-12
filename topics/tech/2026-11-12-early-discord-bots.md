@@ -1,10 +1,10 @@
 ---
 title: Early Discord bots
-type: note
+type: tool
 topic: tech
 tags: [own-project, discord, nodejs]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: first coding projects: bots for Discord servers, where learning to code started
 state: archived
 stack: [nodejs, discord.js]
 repo: https://github.com/YuvrajxGarg/sarpanch

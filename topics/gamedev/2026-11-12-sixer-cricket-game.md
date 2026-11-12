@@ -1,10 +1,10 @@
 ---
 title: Sixer cricket game
-type: note
+type: game
 topic: gamedev
 tags: [own-project, browser-game, cricket, threejs]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: a quick cricket batting game: time the swing and hit sixes
 state: live
 stack: [threejs]
 source: https://sixer-nine.vercel.app

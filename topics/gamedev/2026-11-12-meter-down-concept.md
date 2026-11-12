@@ -1,10 +1,10 @@
 ---
 title: Meter Down concept
-type: note
+type: concept
 topic: gamedev
 tags: [own-project, game-idea, indian-setting, daily-challenge]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: a daily Mumbai taxi game about reading people and their hot takes
 style: [mumbai kaali-peeli illustration, dark teal and paper, receipt cards]
 state: concept
 stack: [html, css, vanilla-js]

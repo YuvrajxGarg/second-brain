@@ -1,10 +1,10 @@
 ---
 title: Wedding co-op game
-type: note
+type: game
 topic: gamedev
 tags: [own-project, unity, co-op, gift]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: a custom co-op game made as a wedding gift for a couple
 style: [sky blue to sand gradient, georgia serif, wine red accent]
 state: live
 stack: [unity, webgl]

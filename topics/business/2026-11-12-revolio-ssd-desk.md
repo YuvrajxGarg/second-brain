@@ -1,10 +1,10 @@
 ---
 title: Revolio SSD Desk
-type: note
+type: tool
 topic: business
 tags: [revolio, own-project, internal-tool, nfc]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: to always know who has which Revolio SSD and log handoffs with a tap
 state: live (internal)
 stack: [nextjs]
 source: https://revolio-ssd-desk.vercel.app

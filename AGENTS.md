@@ -85,7 +85,9 @@ visual design"). Treat it as the most direct statement of his preference.
 
 **`stage`** (ideas and to-dos): `new`, `exploring`, `doing`, `done`, `dropped`.
 
-**Project fields** (kind `project` and `org`): `state` is where it stands in his
+**Project fields** (kind `project` and `org`): `type` says what it is (`game`,
+`app`, `tool`, `site`, `concept`, `company`) and `why` says what it's made for.
+`state` is where it stands in his
 words (`live`, `live (internal)`, `prototype`, `in progress`, `concept`,
 `archived`...), `stack` lists what it is built with, `source` is the live link and
 `repo` is the GitHub link or `private`. Private repos are described at product level

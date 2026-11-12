@@ -1,10 +1,10 @@
 ---
 title: Saturday off tracker
-type: note
+type: tool
 topic: business
 tags: [revolio, own-project, internal-tool]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: to plan who on the Revolio team takes which Saturday off
 state: live (internal)
 stack: [html, vanilla-js, sortablejs]
 source: https://project-3pgsr.vercel.app

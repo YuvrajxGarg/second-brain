@@ -40,7 +40,10 @@ topic over a new one. Topic names are short, lowercase, kebab-case.
 
 1. Split the message into separate items. One link or idea = one entry.
 2. For each item, pick a **type**: `link`, `note`, `idea`, `bookmark`, `quote`,
-   `video`, `tool`, `book`, `person`, `place`, `recipe`, `todo`.
+   `video`, `tool`, `book`, `person`, `place`, `recipe`, `todo`. For things he made
+   himself (kind `project`) use what it is: `game`, `app`, `tool`, `site` or
+   `concept`; for a company (kind `org`) use `company`. Never `note` for these: on the
+   graph a note means a thought he wrote, not something he built.
 3. Pick **one topic** (the folder) and **3 to 6 tags**.
 3b. Fill the AI-facing fields (see "AI-readable fields" below): `kind` always,
    `why` always, `style` for anything visual, `stage: new` for ideas and to-dos.
@@ -132,6 +135,10 @@ every note carries these, and `AGENTS.md` explains them to outside agents:
   update its note.
 - `why` (required): his reason for saving it, **in his words** when he gave one
   ("cool visual design"), otherwise a short plain reason. Never drop his comment.
+  For his own projects, `why` is what the thing is made for, in plain words, e.g.
+  `to grab videos from any site in edit-ready formats`. It's his own brain, so never
+  write about him in the third person there ("his own project", "added as context
+  for agents").
 - `style` (visual things only): 2 to 5 short descriptors of what to take from it,
   e.g. `chunky flat pixel art`, `textured pastel brushwork`, `minimal hud`. Look
   at the image or video frames; describe what's actually there. No commas inside

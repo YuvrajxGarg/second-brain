@@ -1,10 +1,10 @@
 ---
 title: Revolio Studio v1
-type: note
+type: app
 topic: ai
 tags: [revolio-labs, own-project, generative-ai, video-generation]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: the first try at one AI studio for image, video and 3D generation; rebuilt as the Revolio Labs app
 state: replaced
 stack: [nextjs, typescript, tailwind, vercel]
 source: https://studio.revolio.media

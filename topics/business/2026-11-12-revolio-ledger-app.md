@@ -1,10 +1,10 @@
 ---
 title: Revolio Ledger app
-type: note
+type: app
 topic: business
 tags: [revolio, own-project, automation, internal-tool]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: to replace the messy post-shoot expense and invoice process at Revolio
 state: live (internal)
 stack: [nextjs, prisma, postgres, vercel-blob]
 source: https://ledger.revolio.media

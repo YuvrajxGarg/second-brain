@@ -1,10 +1,10 @@
 ---
 title: Frame Tracker dashboard
-type: note
+type: tool
 topic: tech
 tags: [own-project, video-editing, adobe, plugin]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: to see how much time goes into Premiere Pro and After Effects
 state: live
 stack: [nextjs]
 source: https://frametrackadobe.vercel.app

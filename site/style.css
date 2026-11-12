@@ -201,6 +201,7 @@ body.ready .hud-br { transition-delay: 0.3s; }
 }
 .p-meta dt { color: var(--dim); letter-spacing: 0.12em; }
 .p-meta dd { margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.p-meta dd.wrap { white-space: normal; overflow: visible; line-height: 1.5; }
 .p-meta a { color: var(--fg); text-decoration: none; border-bottom: 1px solid var(--faint); }
 .p-meta a:hover { border-color: var(--fg); }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 22px; }

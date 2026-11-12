@@ -100,11 +100,11 @@ _Last curated: 2026-11-12, from 73 entries (now including his own projects)._
 pxlengine 3D engine  (topics/tech/2026-11-12-pxlengine-3d-engine.md)
 ============================================================
 kind: project
-type: note
+type: tool
 topic: tech
 added: 2026-11-12
 status: read
-why: his own project, added as context so agents know what he has already built
+why: so AI agents can make 3D and VFX shots by writing JSON, with no editor
 tags: pxlvzn, own-project, agents, vfx, game-engine
 
 ## Summary
@@ -121,12 +121,12 @@ For context, should we add like all the projects that I've already made with the
 Wedding co-op game  (topics/gamedev/2026-11-12-wedding-co-op-game.md)
 ============================================================
 kind: project
-type: note
+type: game
 topic: gamedev
 added: 2026-11-12
 source: https://zoya-kaustav-wedding.vercel.app
 status: read
-why: his own project, added as context so agents know what he has already built
+why: a custom co-op game made as a wedding gift for a couple
 tags: own-project, unity, co-op, gift
 style: sky blue to sand gradient, georgia serif, wine red accent
 
@@ -140,11 +140,11 @@ A custom co-op game made for a couple's wedding, built in Unity and exported to 
 Vinyl for Windows  (topics/tech/2026-11-12-vinyl-for-windows.md)
 ============================================================
 kind: project
-type: note
+type: app
 topic: tech
 added: 2026-11-12
 status: read
-why: his own project, added as context so agents know what he has already built
+why: to bring the Vinyl for Mac now-playing turntable wallpaper to Windows; sold as a paid app
 tags: own-project, desktop-app, music, threejs
 
 ## Summary
@@ -180,12 +180,12 @@ Art style reference for Tukaram Munde game.
 The Outsider concept  (topics/gamedev/2026-11-12-the-outsider-concept.md)
 ============================================================
 kind: project
-type: note
+type: concept
 topic: gamedev
 added: 2026-11-12
 source: https://theroom-six.vercel.app
 status: read
-why: his own project, added as context so agents know what he has already built
+why: a social deduction party game idea: blend in or get voted out
 tags: own-project, game-idea, concept, party-game
 
 ## Summary
@@ -201,11 +201,11 @@ tags: own-project, game-idea, concept, party-game
 Tag AI-tag remover  (topics/tech/2026-11-12-tag-ai-tag-remover.md)
 ============================================================
 kind: project
-type: note
+type: tool
 topic: tech
 added: 2026-11-12
 status: read
-why: his own project, added as context so agents know what he has already built
+why: so one AI-assisted VFX pass doesn't get mostly human work labelled 'made with AI
 tags: pxlvzn, own-project, desktop-app, vfx
 
 ## Summary
@@ -221,12 +221,12 @@ Tag: strips C2PA Content Credentials, "made with AI" labels and generator metada
 TV Stack toy  (topics/gamedev/2026-11-12-tv-stack-music-toy.md)
 ============================================================
 kind: project
-type: note
+type: game
 topic: gamedev
 added: 2026-11-12
 source: https://tv-stack.vercel.app
 status: read
-why: his own project, added as context so agents know what he has already built
+why: to play a wall of TVs like an instrument, along with any song
 tags: own-project, browser-game, music, rhythm-game
 style: black stage, red accent, glass panel ui
 
@@ -240,12 +240,12 @@ TV Stack: play a wall of TVs like an instrument. Every key is a note and a scree
 Sunny Sultan parody  (topics/life/2026-11-12-sunny-sultan-parody.md)
 ============================================================
 kind: project
-type: note
+type: site
 topic: life
 added: 2026-11-12
 source: https://sunnysultan.vercel.app
 status: read
-why: his own project, added as context so agents know what he has already built
+why: a private joke between friends: a chaotic fan page for a made-up pop star
 tags: own-project, joke, website
 style: maximalist chaos, gold and hot pink, glitch display type
 
@@ -259,12 +259,12 @@ A deliberately chaotic satirical fan page for a fictional pop star, "Sunny Sulta
 Street 21 site  (inbox/2026-11-12-street-21-site.md)
 ============================================================
 kind: project
-type: link
+type: site
 topic: inbox
 added: 2026-11-12
 source: https://street21.pxlvzn.in
 status: unsorted
-why: one of his own deployed projects; what it is still needs confirming
+why: not known yet; waiting for confirmation
 tags: own-project, threejs
 
 ## Summary
@@ -280,12 +280,12 @@ Found while importing his Vercel projects (he asked to add everything he has bui
 Stm stem splitter  (topics/tech/2026-11-12-stm-stem-splitter.md)
 ============================================================
 kind: project
-type: note
+type: tool
 topic: tech
 added: 2026-11-12
 source: https://stm.pxlvzn.in
 status: read
-why: his own project, added as context so agents know what he has already built
+why: to split songs into vocals, drums, bass and other stems locally for edits and remixes
 tags: pxlvzn, own-project, desktop-app, audio
 
 ## Summary
@@ -301,12 +301,12 @@ Stm: split any song into vocals, drums, bass and other stems with the Demucs mod
 Social Reader MCP  (topics/ai/2026-11-12-social-reader-mcp.md)
 ============================================================
 kind: project
-type: note
+type: tool
 topic: ai
 added: 2026-11-12
 source: https://social-reader-kappa.vercel.app
 status: read
-why: his own project, added as context so agents know what he has already built
+why: to read X and Instagram links (text, threads, video frames) so any AI can file or use them
 tags: own-project, mcp, agents, social-media
 
 ## Summary
@@ -322,12 +322,12 @@ Social Reader: his own hosted MCP connector that reads X/Twitter posts and threa
 Sixer cricket game  (topics/gamedev/2026-11-12-sixer-cricket-game.md)
 ============================================================
 kind: project
-type: note
+type: game
 topic: gamedev
 added: 2026-11-12
 source: https://sixer-nine.vercel.app
 status: read
-why: his own project, added as context so agents know what he has already built
+why: a quick cricket batting game: time the swing and hit sixes
 tags: own-project, browser-game, cricket, threejs
 
 ## Summary
@@ -374,12 +374,12 @@ Art style reference for Tukaram Munde game.
 Second Brain repo  (topics/productivity/2026-11-12-second-brain-repo.md)
 ============================================================
 kind: project
-type: note
+type: tool
 topic: productivity
 added: 2026-11-12
 source: https://brainy.pxlvzn.in
 status: read
-why: his own project, added as context so agents know what he has already built
+why: to keep every link, idea and reference in one place, findable later and readable by any AI
 tags: own-project, agents, mcp, knowledge-base
 
 ## Summary
@@ -392,12 +392,12 @@ This second brain: every link, idea and reference he dumps in chat filed as one 
 Saturday off tracker  (topics/business/2026-11-12-saturday-off-tracker.md)
 ============================================================
 kind: project
-type: note
+type: tool
 topic: business
 added: 2026-11-12
 source: https://project-3pgsr.vercel.app
 status: read
-why: his own project, added as context so agents know what he has already built
+why: to plan who on the Revolio team takes which Saturday off
 tags: revolio, own-project, internal-tool
 
 ## Summary
@@ -413,12 +413,12 @@ Revolio Saturday Off Tracker: a small internal web app for planning which team m
 SLANGDAQ game  (topics/gamedev/2026-11-12-slangdaq-game.md)
 ============================================================
 kind: project
-type: note
+type: game
 topic: gamedev
 added: 2026-11-12
 source: https://slangdaq.vercel.app
 status: read
-why: his own project, added as context so agents know what he has already built
+why: a stock market for internet slang: bet on what's rising and what's cooked
 tags: revolio-labs, own-project, browser-game, daily-challenge
 style: stock ticker ui, poster typography, yellow accent
 
@@ -435,12 +435,12 @@ SLANGDAQ, "the culture exchange": a stock market for internet slang. Players get
 Runaway Light Rig  (topics/gamedev/2026-11-12-runaway-light-rig.md)
 ============================================================
 kind: project
-type: note
+type: game
 topic: gamedev
 added: 2026-11-12
 source: https://runaway-light-rig.vercel.app
 status: read
-why: his own project, added as context so agents know what he has already built
+why: a rhythm game where every note you hit fires the concert lights
 tags: own-project, browser-game, music, rhythm-game
 style: dystopian concert stage, red and black, film grain, anton display type
 
@@ -454,12 +454,12 @@ Runaway Light Rig: a rhythm game where every note you hit fires a light rig in a
 Rookwise chess app  (topics/learning/2026-11-12-rookwise-chess-app.md)
 ============================================================
 kind: project
-type: note
+type: app
 topic: learning
 added: 2026-11-12
 source: https://chess.pxlvzn.in
 status: read
-why: his own project, added as context so agents know what he has already built
+why: to get better at chess by training on your own mistakes
 tags: pxlvzn, own-project, chess, web-app
 
 ## Summary
@@ -475,12 +475,12 @@ Rookwise ("chess, understood"): a local-first chess improvement workspace. Impor
 Rohit Learns Ball  (topics/gamedev/2026-11-12-rohit-learns-ball.md)
 ============================================================
 kind: project
-type: note
+type: game
 topic: gamedev
 added: 2026-11-12
 source: https://rlb.revolio.media
 status: read
-why: his own project, added as context so agents know what he has already built
+why: a fan-made pixel game about the Kasauli Tigers teaching Rohit basketball
 tags: revolio-labs, own-project, browser-game, pixel-art
 style: pixel art
 
@@ -497,12 +497,12 @@ A fan-made pixel game: the Kasauli Tigers teach Rohit basketball the hard way. Y
 Revolio website  (topics/design/2026-11-12-revolio-website.md)
 ============================================================
 kind: project
-type: note
+type: site
 topic: design
 added: 2026-11-12
 source: https://revolio.in
 status: read
-why: his own project, added as context so agents know what he has already built
+why: the Revolio Media portfolio site, to show the studio's work
 tags: revolio, own-project, portfolio, website
 
 ## Summary
@@ -518,12 +518,12 @@ revolio.in, the Revolio Media agency portfolio: 20 project stories, a filterable
 Revolio Studio v1  (topics/ai/2026-11-12-revolio-studio-v1.md)
 ============================================================
 kind: project
-type: note
+type: app
 topic: ai
 added: 2026-11-12
 source: https://studio.revolio.media
 status: read
-why: his own project, added as context so agents know what he has already built
+why: the first try at one AI studio for image, video and 3D generation; rebuilt as the Revolio Labs app
 tags: revolio-labs, own-project, generative-ai, video-generation
 
 ## Summary
@@ -539,12 +539,12 @@ For context, should we add like all the projects that I've already made with the
 Revolio SSD Desk  (topics/business/2026-11-12-revolio-ssd-desk.md)
 ============================================================
 kind: project
-type: note
+type: tool
 topic: business
 added: 2026-11-12
 source: https://revolio-ssd-desk.vercel.app
 status: read
-why: his own project, added as context so agents know what he has already built
+why: to always know who has which Revolio SSD and log handoffs with a tap
 tags: revolio, own-project, internal-tool, nfc
 
 ## Summary
@@ -560,12 +560,12 @@ SSD Desk: an equipment tracker for Revolio's shared SSDs. Tap a drive's NFC tag 
 Revolio Media studio  (topics/business/2026-11-12-revolio-media-studio.md)
 ============================================================
 kind: org
-type: note
+type: company
 topic: business
 added: 2026-11-12
 source: https://revolio.in
 status: read
-why: the company he works at; context for everything he builds
+why: the creative studio where the day job is: video editing and the studio's tech
 tags: revolio, own-project, video-editing, content-studio
 
 ## Summary
@@ -584,12 +584,12 @@ Also for context, you can add like what Rivolio is, where it's a company that I 
 Revolio Ledger app  (topics/business/2026-11-12-revolio-ledger-app.md)
 ============================================================
 kind: project
-type: note
+type: app
 topic: business
 added: 2026-11-12
 source: https://ledger.revolio.media
 status: read
-why: his own project, added as context so agents know what he has already built
+why: to replace the messy post-shoot expense and invoice process at Revolio
 tags: revolio, own-project, automation, internal-tool
 
 ## Summary
@@ -605,12 +605,12 @@ Ledger: Revolio's post-shoot expense app for a production house. Invoices are co
 Revolio Labs site  (topics/gamedev/2026-11-12-revolio-labs-site.md)
 ============================================================
 kind: project
-type: note
+type: site
 topic: gamedev
 added: 2026-11-12
 source: https://games.revolio.media
 status: read
-why: his own project, added as context so agents know what he has already built
+why: a home for Revolio Labs: a cozy 3D desk where the games and experiments live
 tags: revolio-labs, own-project, threejs, creative-coding
 style: cozy 3d desk diorama, golden hour window light, scroll side-scroller
 
@@ -627,12 +627,12 @@ games.revolio.media: the Revolio Labs home as a scroll-driven three.js side-scro
 Revolio Labs app  (topics/ai/2026-11-12-revolio-labs-app.md)
 ============================================================
 kind: project
-type: note
+type: app
 topic: ai
 added: 2026-11-12
 source: https://studio.revolio.media
 status: read
-why: his own project, added as context so agents know what he has already built
+why: one studio for AI image, video and games, so the team and anyone else can create from a single place
 tags: revolio-labs, own-project, generative-ai, video-generation, mcp
 style: black and yellow, r mark with animated eyes
 
@@ -653,12 +653,12 @@ Also for context, you can add like what Rivolio is, where it's a company that I 
 Revolio Labs  (topics/business/2026-11-12-revolio-labs.md)
 ============================================================
 kind: org
-type: note
+type: company
 topic: business
 added: 2026-11-12
 source: https://labs.revolio.media
 status: read
-why: the experiments company he builds at Revolio; his main playground
+why: the experiments company under Revolio, for games, tools and toys ('Work in play')
 tags: revolio-labs, revolio, own-project, browser-game, ai
 style: black and yellow, r mark with animated eyes, clean sans type
 
@@ -678,12 +678,12 @@ Also for context, you can add like what Rivolio is, where it's a company that I 
 Punchline party game  (topics/gamedev/2026-11-12-punchline-party-game.md)
 ============================================================
 kind: project
-type: note
+type: game
 topic: gamedev
 added: 2026-11-12
 source: https://punchline.pxlvzn.in
 status: read
-why: his own project, added as context so agents know what he has already built
+why: a comedy party game to play with friends on their phones
 tags: pxlvzn, own-project, browser-game, party-game, daily-challenge
 style: lime accent on dark, comedy club poster, bold display type
 
@@ -700,12 +700,12 @@ Punchline: an online comedy party game for 2 to 8 friends on their own phones. T
 PXLVZN label  (topics/tech/2026-11-12-pxlvzn-label.md)
 ============================================================
 kind: org
-type: note
+type: company
 topic: tech
 added: 2026-11-12
 source: https://pxlvzn.in
 status: read
-why: his own brand for apps and side projects
+why: a home and shared look for free desktop apps and side projects
 tags: pxlvzn, own-project, desktop-app, open-source
 style: near-black surfaces, hairline strokes, single lime accent
 
@@ -723,12 +723,12 @@ PXLVZN (pxlvzn.in) is Yuvraj's own label for free, open-source desktop apps and 
 PXL app hub  (topics/tech/2026-11-12-pxl-app-hub.md)
 ============================================================
 kind: project
-type: note
+type: app
 topic: tech
 added: 2026-11-12
 source: https://pxlvzn.in
 status: read
-why: his own project, added as context so agents know what he has already built
+why: one place to install and update every PXLVZN app
 tags: pxlvzn, own-project, desktop-app, open-source
 style: near-black surfaces, single lime accent
 
@@ -746,12 +746,12 @@ For context, should we add like all the projects that I've already made with the
 PEAKD game  (topics/gamedev/2026-11-12-peakd-game.md)
 ============================================================
 kind: project
-type: note
+type: game
 topic: gamedev
 added: 2026-11-12
 source: https://peakd.revolio.media
 status: read
-why: his own project, added as context so agents know what he has already built
+why: a daily guessing game: when did this slang, show or meme peak
 tags: revolio-labs, own-project, browser-game, daily-challenge
 style: cream paper editorial, condensed ink serif, tick ruler numerals
 
@@ -769,12 +769,12 @@ For context, should we add like all the projects that I've already made with the
 NPCs on Strike  (topics/gamedev/2026-11-12-npcs-on-strike-concept.md)
 ============================================================
 kind: project
-type: note
+type: concept
 topic: gamedev
 added: 2026-11-12
 source: https://npcs-on-strike.vercel.app
 status: read
-why: his own project, added as context so agents know what he has already built
+why: a detective game idea where every NPC remembers how you treated them
 tags: own-project, game-idea, concept, narrative-game
 style: dark teal and paper, film grain, red accent
 
@@ -791,12 +791,12 @@ A concept bible for a contained detective game: you have one night to find Niko,
 Munde Mode game  (topics/gamedev/2026-11-12-munde-mode-game.md)
 ============================================================
 kind: project
-type: note
+type: game
 topic: gamedev
 added: 2026-11-12
 source: https://munde-mode.vercel.app
 status: read
-why: his own game; prototype is ready and he is still building on it
+why: the Tukaram Munde game idea made playable: a parody Mumbai food-safety raid sim
 tags: revolio-labs, own-project, browser-game, indian-setting, threejs
 style: warm toy diorama 3d, caricature indian characters
 
@@ -816,12 +816,12 @@ For context, should we add like all the projects that I've already made with the
 Meter Down concept  (topics/gamedev/2026-11-12-meter-down-concept.md)
 ============================================================
 kind: project
-type: note
+type: concept
 topic: gamedev
 added: 2026-11-12
 source: https://taxi.revolio.media
 status: read
-why: his own project, added as context so agents know what he has already built
+why: a daily Mumbai taxi game about reading people and their hot takes
 tags: own-project, game-idea, indian-setting, daily-challenge
 style: mumbai kaali-peeli illustration, dark teal and paper, receipt cards
 
@@ -838,12 +838,12 @@ Meter Down: a daily Mumbai taxi game concept. You drive a kaali-peeli for six mi
 Lut colour matcher  (topics/tech/2026-11-12-lut-colour-matcher.md)
 ============================================================
 kind: project
-type: note
+type: tool
 topic: tech
 added: 2026-11-12
 source: https://lut.pxlvzn.in
 status: read
-why: his own project, added as context so agents know what he has already built
+why: to match colour between shots fast, like AI shots to real footage or B-cam to A-cam
 tags: pxlvzn, own-project, desktop-app, color-grading
 
 ## Summary
@@ -859,12 +859,12 @@ Lut: drop a reference shot and your clip, get a .cube LUT and a graded copy that
 Idea Archive site  (topics/business/2026-11-12-idea-archive-site.md)
 ============================================================
 kind: project
-type: note
+type: site
 topic: business
 added: 2026-11-12
 source: https://revoliox.vercel.app
 status: read
-why: his own project, added as context so agents know what he has already built
+why: to keep original concepts in one place and move the best ones toward production
 tags: revolio, own-project, concept, interactive-film
 style: acid green on near-black, film grain, serif italic accents
 
@@ -882,12 +882,12 @@ The Idea Archive ("Make some noise"): a visual archive of 25 original concepts a
 Hop file transfer  (topics/tech/2026-11-12-hop-file-transfer.md)
 ============================================================
 kind: project
-type: note
+type: tool
 topic: tech
 added: 2026-11-12
 source: https://hop.pxlvzn.in
 status: read
-why: his own project, added as context so agents know what he has already built
+why: AirDrop between any devices: Mac, PC and phones over Wi-Fi, no cloud
 tags: pxlvzn, own-project, desktop-app, file-transfer
 
 ## Summary
@@ -903,12 +903,12 @@ Hop: AirDrop for every device. Send files between Mac, PC and any phone's browse
 Frame Tracker dashboard  (topics/tech/2026-11-12-frame-tracker-dashboard.md)
 ============================================================
 kind: project
-type: note
+type: tool
 topic: tech
 added: 2026-11-12
 source: https://frametrackadobe.vercel.app
 status: read
-why: his own project, added as context so agents know what he has already built
+why: to see how much time goes into Premiere Pro and After Effects
 tags: own-project, video-editing, adobe, plugin
 
 ## Summary
@@ -924,11 +924,11 @@ Frame Tracker: a dashboard for an Adobe plugin that tracks time spent in Premier
 Ferry file manager  (topics/tech/2026-11-12-ferry-file-manager.md)
 ============================================================
 kind: project
-type: note
+type: app
 topic: tech
 added: 2026-11-12
 status: read
-why: his own project, added as context so agents know what he has already built
+why: to move files between the Mac and the Windows PC as easily as dragging between folders
 tags: own-project, desktop-app, file-transfer
 
 ## Summary
@@ -944,12 +944,12 @@ Ferry: a two-pane file manager for moving files between his Mac and Windows PC o
 Emergent pitch deck  (topics/business/2026-11-12-emergent-pitch-deck.md)
 ============================================================
 kind: project
-type: note
+type: site
 topic: business
 added: 2026-11-12
 source: https://emergent-revolio-pitch.vercel.app
 status: read
-why: his own project, added as context so agents know what he has already built
+why: to pitch a content strategy to Emergent as an interactive web deck
 tags: revolio, own-project, pitch, content-strategy
 
 ## Summary
@@ -965,11 +965,11 @@ An interactive web pitch deck, "Emergent x Revolio": a content strategy built on
 Early Discord bots  (topics/tech/2026-11-12-early-discord-bots.md)
 ============================================================
 kind: project
-type: note
+type: tool
 topic: tech
 added: 2026-11-12
 status: read
-why: his own project, added as context so agents know what he has already built
+why: first coding projects: bots for Discord servers, where learning to code started
 tags: own-project, discord, nodejs
 
 ## Summary
@@ -985,12 +985,12 @@ His first coding projects (2021 to 2023): Discord bots in discord.js, including 
 Dwn downloader  (topics/tech/2026-11-12-dwn-downloader.md)
 ============================================================
 kind: project
-type: note
+type: app
 topic: tech
 added: 2026-11-12
 source: https://dwn.pxlvzn.in
 status: read
-why: his own project, added as context so agents know what he has already built
+why: to grab videos, songs and transcripts from any site in edit-ready formats, without sketchy download sites
 tags: pxlvzn, own-project, desktop-app, video-editing
 
 ## Summary
@@ -1006,11 +1006,11 @@ Dwn: download videos, songs, playlists and transcripts from YouTube, TikTok, Ins
 DriveDesk file manager  (topics/tech/2026-11-12-drivedesk-file-manager.md)
 ============================================================
 kind: project
-type: note
+type: app
 topic: tech
 added: 2026-11-12
 status: read
-why: his own project, added as context so agents know what he has already built
+why: to browse local files and Google Drive side by side and move things between them
 tags: own-project, desktop-app, google-drive
 
 ## Summary
@@ -1023,12 +1023,12 @@ DriveDesk: a desktop file manager with side-by-side local and cloud browsing. Go
 CanvasFlow whiteboard  (topics/tech/2026-11-12-canvasflow-whiteboard.md)
 ============================================================
 kind: project
-type: note
+type: app
 topic: tech
 added: 2026-11-12
 source: https://canvas.pxlvzn.in
 status: read
-why: his own project, added as context so agents know what he has already built
+why: a whiteboard for thinking that sits behind your windows like a desk mat, with no account
 tags: pxlvzn, own-project, desktop-app, productivity
 
 ## Summary
@@ -1044,12 +1044,12 @@ CanvasFlow: an infinite-canvas desktop whiteboard for thinking, not presenting. 
 BulkBros gym app  (topics/health/2026-11-12-bulkbros-gym-app.md)
 ============================================================
 kind: project
-type: note
+type: app
 topic: health
 added: 2026-11-12
 source: https://gym.pxlvzn.in
 status: read
-why: his own project, added as context so agents know what he has already built
+why: to plan meals and workouts for a lean bulk with a roommate, with an AI coach
 tags: own-project, fitness, nutrition, ai
 
 ## Summary
@@ -1065,12 +1065,12 @@ BulkBros: a private app for Yuvraj and his roommate on a lean bulk. Shared veget
 Bonk Court game  (topics/gamedev/2026-11-12-bonk-court-game.md)
 ============================================================
 kind: project
-type: note
+type: game
 topic: gamedev
 added: 2026-11-12
 source: https://bonkcourt.vercel.app
 status: read
-why: his own project, added as context so agents know what he has already built
+why: a quick street-court basketball shooting game
 tags: own-project, browser-game, basketball, threejs
 style: graffiti street court, spray paint type
 

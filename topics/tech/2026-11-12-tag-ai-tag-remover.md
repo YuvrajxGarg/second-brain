@@ -1,10 +1,10 @@
 ---
 title: Tag AI-tag remover
-type: note
+type: tool
 topic: tech
 tags: [pxlvzn, own-project, desktop-app, vfx]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: so one AI-assisted VFX pass doesn't get mostly human work labelled 'made with AI'
 state: live
 stack: [python]
 repo: https://github.com/YuvrajxGarg/tag

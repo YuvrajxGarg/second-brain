@@ -96,7 +96,8 @@ def catalog_entry(e, rel="../"):
     out.append(" · ".join(facts))
     out.append("")
     if e.get("why"):
-        out.append(f"- **Why saved:** {e['why']}")
+        label = {'project': 'Made for', 'org': 'What it is'}.get(e.get('kind'), 'Why saved')
+        out.append(f"- **{label}:** {e['why']}")
     if e.get("stack"):
         out.append(f"- **Stack:** {', '.join(e['stack'])}")
     if e.get("repo"):

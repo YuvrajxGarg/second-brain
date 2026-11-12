@@ -1,10 +1,10 @@
 ---
 title: Emergent pitch deck
-type: note
+type: site
 topic: business
 tags: [revolio, own-project, pitch, content-strategy]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: to pitch a content strategy to Emergent as an interactive web deck
 state: done
 stack: [html, vanilla-js]
 source: https://emergent-revolio-pitch.vercel.app

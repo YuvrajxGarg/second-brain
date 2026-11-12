@@ -1,10 +1,10 @@
 ---
 title: Munde Mode game
-type: note
+type: game
 topic: gamedev
 tags: [revolio-labs, own-project, browser-game, indian-setting, threejs]
 kind: project
-why: his own game; prototype is ready and he is still building on it
+why: the Tukaram Munde game idea made playable: a parody Mumbai food-safety raid sim
 style: [warm toy diorama 3d, caricature indian characters]
 state: prototype (in progress)
 stack: [threejs, vite, blender, mixamo]

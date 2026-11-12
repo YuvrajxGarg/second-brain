@@ -1,10 +1,10 @@
 ---
 title: Sunny Sultan parody
-type: note
+type: site
 topic: life
 tags: [own-project, joke, website]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: a private joke between friends: a chaotic fan page for a made-up pop star
 style: [maximalist chaos, gold and hot pink, glitch display type]
 state: live
 stack: [html, vanilla-js]

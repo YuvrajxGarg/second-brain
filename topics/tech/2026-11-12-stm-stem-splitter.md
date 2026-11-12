@@ -1,10 +1,10 @@
 ---
 title: Stm stem splitter
-type: note
+type: tool
 topic: tech
 tags: [pxlvzn, own-project, desktop-app, audio]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: to split songs into vocals, drums, bass and other stems locally for edits and remixes
 state: live
 stack: [python, demucs]
 source: https://stm.pxlvzn.in

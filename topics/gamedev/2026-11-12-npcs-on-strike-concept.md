@@ -1,10 +1,10 @@
 ---
 title: NPCs on Strike
-type: note
+type: concept
 topic: gamedev
 tags: [own-project, game-idea, concept, narrative-game]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: a detective game idea where every NPC remembers how you treated them
 style: [dark teal and paper, film grain, red accent]
 state: concept
 stack: [html, css]

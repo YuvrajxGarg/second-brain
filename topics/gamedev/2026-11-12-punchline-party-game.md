@@ -1,10 +1,10 @@
 ---
 title: Punchline party game
-type: note
+type: game
 topic: gamedev
 tags: [pxlvzn, own-project, browser-game, party-game, daily-challenge]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: a comedy party game to play with friends on their phones
 style: [lime accent on dark, comedy club poster, bold display type]
 state: live
 stack: [nextjs]

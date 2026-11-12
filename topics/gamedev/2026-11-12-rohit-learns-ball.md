@@ -1,10 +1,10 @@
 ---
 title: Rohit Learns Ball
-type: note
+type: game
 topic: gamedev
 tags: [revolio-labs, own-project, browser-game, pixel-art]
 kind: project
-why: his own project, added as context so agents know what he has already built
+why: a fan-made pixel game about the Kasauli Tigers teaching Rohit basketball
 style: [pixel art]
 state: live
 stack: [threejs]
