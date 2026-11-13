@@ -4,7 +4,7 @@ type: video
 topic: gamedev
 tags: [unity, rigging, animation, tutorial]
 kind: technique
-why: bodycam-style first-person hands in Unity with no animation clips
+why: tips for hand animation in a first person view in Unity
 style: [bodycam first person view, gloved hands with pistol, striped test room]
 source: https://www.instagram.com/reel/DfpPiVxiVWy/
 added: 2026-11-13
@@ -20,6 +20,8 @@ The frame shows the Unity Scene view: two gloved arms with orange bone joints, a
 
 ## Raw
 https://www.instagram.com/reel/DfpPiVxiVWy/?srtk=cjFtdWFjbW9tNXNy
+
+The link I just shared is tips for hand animation in a first person view in Unity.
 
 ## Notes
 - Related: [[2026-11-11-procedural-arm-rig-demo]]

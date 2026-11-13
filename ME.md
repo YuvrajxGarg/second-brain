@@ -57,7 +57,7 @@ _Rebuilt on every filing from 86 notes._
 | Average per active day | 17.2 |
 | Current streak | 5 days |
 | Longest streak | 5 days |
-| Notes with his own comment | 38 (44%) |
+| Notes with his own comment | 39 (45%) |
 | Open ideas and to-dos | 6 |
 | Tagged to-try | 11 |
 | Marked read or done | 42 of 86 |
