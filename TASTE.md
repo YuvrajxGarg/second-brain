@@ -98,14 +98,14 @@ _Last curated: 2026-11-12, from 73 entries (now including his own projects)._
 
 ## Evidence (generated)
 
-_From 81 entries, 35 with style notes. Rebuilt on every filing._
+_From 82 entries, 36 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
 - `library`: 4
 - `asset-source`: 2
 - `style-ref`: 6
-- `website-ref`: 3
+- `website-ref`: 4
 - `game-ref`: 4
 - `tool`: 2
 - `technique`: 7
@@ -118,7 +118,7 @@ _From 81 entries, 35 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (43), #desktop-app (14), #browser-game (13), #pxlvzn (11), #inspiration (10), #reference (10), #revolio-labs (9), #to-try (9), #agents (8), #revolio (8), #mcp (7), #threejs (7), #claude (6), #open-source (6), #vfx (6), #video-editing (6), #daily-challenge (5), #game-inspiration (5), #indian-setting (5), #visual-design (5)
+#own-project (43), #desktop-app (14), #browser-game (13), #inspiration (11), #pxlvzn (11), #reference (10), #revolio-labs (9), #to-try (9), #agents (8), #revolio (8), #mcp (7), #threejs (7), #claude (6), #open-source (6), #vfx (6), #video-editing (6), #visual-design (6), #animation (5), #daily-challenge (5), #game-inspiration (5)
 
 ### Style notes and where they come from
 
@@ -155,6 +155,7 @@ _From 81 entries, 35 with style notes. Rebuilt on every filing._
 - **comedy club poster**: [Punchline party game](topics/gamedev/2026-11-12-punchline-party-game.md)
 - **condensed ink serif**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
 - **cozy 3d desk diorama**: [Revolio Labs site](topics/gamedev/2026-11-12-revolio-labs-site.md)
+- **cream paper card with torn edges**: [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md)
 - **cream paper editorial**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
 - **dark compact utility card**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
 - **dark slate grid floor**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
@@ -175,6 +176,7 @@ _From 81 entries, 35 with style notes. Rebuilt on every filing._
 - **hairline strokes**: [PXLVZN label](topics/tech/2026-11-12-pxlvzn-label.md)
 - **halftone**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
 - **hand-drawn animation**: [AI tween harness](topics/design/2026-11-11-ai-tween-paint-harness.md)
+- **hand-drawn flowers growing on a dot grid**: [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md)
 - **invented artist styles**: [Claude code paintings](topics/ai/2026-11-10-claude-code-paintings.md)
 - **launch film motion**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
 - **lime accent on dark**: [Punchline party game](topics/gamedev/2026-11-12-punchline-party-game.md)
@@ -187,6 +189,7 @@ _From 81 entries, 35 with style notes. Rebuilt on every filing._
 - **orange and blue palette**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
 - **painted 2d backgrounds**: [AI tween harness](topics/design/2026-11-11-ai-tween-paint-harness.md)
 - **painterly brushwork**: [Claude code paintings](topics/ai/2026-11-10-claude-code-paintings.md)
+- **painterly landscape backdrop**: [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md)
 - **painterly stylised 3d**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
 - **particle dissolve on delete**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
 - **pastel blocks**: [ARC 3D art dataset](topics/design/2026-11-10-arc-3d-art-dataset.md)
@@ -204,6 +207,7 @@ _From 81 entries, 35 with style notes. Rebuilt on every filing._
 - **serif plus grotesk type**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
 - **shared kit palettes**: [Polyfork 3D assets](topics/gamedev/2026-11-10-polyfork-3d-assets.md)
 - **sky blue to sand gradient**: [Wedding co-op game](topics/gamedev/2026-11-12-wedding-co-op-game.md)
+- **soft serif headline**: [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md)
 - **spray paint type**: [Bonk Court game](topics/gamedev/2026-11-12-bonk-court-game.md)
 - **stock ticker ui**: [SLANGDAQ game](topics/gamedev/2026-11-12-slangdaq-game.md)
 - **stylised 2d water**: [Godot waterfall shader](topics/gamedev/2026-11-09-godot-waterfall-texture-array-shader.md)
@@ -225,6 +229,7 @@ _From 81 entries, 35 with style notes. Rebuilt on every filing._
 
 ### Every reference with his reason
 
+- [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md) (`website-ref`): nice calm website style with growing flower animation
 - [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md) (`website-ref`): This is a cool app, and the website is also cool for building something similar
 - [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md) (`style-ref`): If I ever make a disk utility app to remove cache and disk cleanup, this UI is really nice for it.
 - [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md) (`style-ref`): Art style reference for Tukaram Munde game

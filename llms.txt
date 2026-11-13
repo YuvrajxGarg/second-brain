@@ -22,6 +22,7 @@ Read TASTE.md first for the gist, then the catalog for what you need. Live graph
 
 ## Notes
 
+- [Blooming flowers site](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/2026-11-13-mohamed-siddique-flower-site.md): `website-ref` · design · nice calm website style with growing flower animation
 - [pxlengine 3D engine](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/tech/2026-11-12-pxlengine-3d-engine.md): `project` · tech · so AI agents can make 3D and VFX shots by writing JSON, with no editor
 - [Wedding co-op game](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-12-wedding-co-op-game.md): `project` · gamedev · a custom co-op game made as a wedding gift for a couple
 - [Vinyl for Windows](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/tech/2026-11-12-vinyl-for-windows.md): `project` · tech · to bring the Vinyl for Mac now-playing turntable wallpaper to Windows; sold as a paid app
