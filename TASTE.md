@@ -98,7 +98,7 @@ _Last curated: 2026-11-12, from 73 entries (now including his own projects)._
 
 ## Evidence (generated)
 
-_From 82 entries, 36 with style notes. Rebuilt on every filing._
+_From 83 entries, 36 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -108,7 +108,7 @@ _From 82 entries, 36 with style notes. Rebuilt on every filing._
 - `website-ref`: 4
 - `game-ref`: 4
 - `tool`: 2
-- `technique`: 7
+- `technique`: 8
 - `advice`: 4
 - `idea`: 3
 - `thought`: 1
@@ -118,7 +118,7 @@ _From 82 entries, 36 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (43), #desktop-app (14), #browser-game (13), #inspiration (11), #pxlvzn (11), #reference (10), #revolio-labs (9), #to-try (9), #agents (8), #revolio (8), #mcp (7), #threejs (7), #claude (6), #open-source (6), #vfx (6), #video-editing (6), #visual-design (6), #animation (5), #daily-challenge (5), #game-inspiration (5)
+#own-project (43), #desktop-app (14), #browser-game (13), #inspiration (11), #pxlvzn (11), #reference (10), #to-try (10), #revolio-labs (9), #agents (8), #revolio (8), #claude (7), #mcp (7), #threejs (7), #open-source (6), #vfx (6), #video-editing (6), #visual-design (6), #animation (5), #daily-challenge (5), #game-inspiration (5)
 
 ### Style notes and where they come from
 
