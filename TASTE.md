@@ -6,7 +6,7 @@ he already saved, and build on his own ideas. The part above the generated block
 curated by Claude and updated whenever a new entry shifts the picture; the evidence
 below is rebuilt from the notes on every filing.
 
-_Last curated: 2026-11-13 (added hand-drawn line art and mannequin prototypes)._
+_Last curated: 2026-11-13 (added hand-drawn line art, mannequin prototypes, sleep alarm UI)._
 
 ## Who he is
 
@@ -50,7 +50,8 @@ _Last curated: 2026-11-13 (added hand-drawn line art and mannequin prototypes)._
   (Impossible Weapon animation, made with Krea AI).
 - **Polished dark utility UI**: a single compact dark card, glowing dot-matrix data
   viz, colour-coded categories, plain-language copy and playful particle feedback
-  (Storage scanner UI).
+  (Storage scanner UI). Also monospace caps, one blue accent and a scrubbable
+  timeline over dot-matrix bands (Sleep alarm UI).
 - **Hand-drawn line art in motion**: wobbly black-ink stick characters on cream
   paper, animated from mocap (Line art mocap workflow). For prototypes he likes
   blocky segmented mannequins in one flat pastel colour each (Toyxyz retarget add-on).
@@ -101,13 +102,13 @@ _Last curated: 2026-11-13 (added hand-drawn line art and mannequin prototypes)._
 
 ## Evidence (generated)
 
-_From 90 entries, 41 with style notes. Rebuilt on every filing._
+_From 91 entries, 42 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
 - `library`: 4
 - `asset-source`: 2
-- `style-ref`: 6
+- `style-ref`: 7
 - `website-ref`: 4
 - `game-ref`: 4
 - `tool`: 6
@@ -121,7 +122,7 @@ _From 90 entries, 41 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (43), #desktop-app (15), #browser-game (13), #to-try (13), #inspiration (12), #pxlvzn (12), #reference (10), #video-editing (10), #agents (9), #open-source (9), #revolio-labs (9), #animation (8), #claude (8), #revolio (8), #mcp (7), #threejs (7), #game-inspiration (6), #vfx (6), #video-generation (6), #visual-design (6)
+#own-project (43), #desktop-app (15), #browser-game (13), #inspiration (13), #to-try (13), #pxlvzn (12), #reference (10), #video-editing (10), #agents (9), #open-source (9), #revolio-labs (9), #animation (8), #claude (8), #revolio (8), #mcp (7), #threejs (7), #visual-design (7), #game-inspiration (6), #vfx (6), #video-generation (6)
 
 ### Style notes and where they come from
 
@@ -170,10 +171,12 @@ _From 90 entries, 41 with style notes. Rebuilt on every filing._
 - **dark compact utility card**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
 - **dark grey blender viewport grid**: [Toyxyz retarget add-on](topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md)
 - **dark menu bar popover**: [DIT offload checker](topics/tech/2026-11-13-dit-offload-checker-idea.md)
+- **dark minimal ui**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
 - **dark slate grid floor**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **dark slate theme**: [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md)
 - **desi street shopfront**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 - **dither**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
+- **dot-matrix data viz**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
 - **dystopian concert stage**: [Runaway Light Rig](topics/gamedev/2026-11-12-runaway-light-rig.md)
 - **expressive mascot**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
 - **georgia serif**: [Wedding co-op game](topics/gamedev/2026-11-12-wedding-co-op-game.md)
@@ -198,6 +201,7 @@ _From 90 entries, 41 with style notes. Rebuilt on every filing._
 - **metallic gold and rose gold**: [ARC 3D art dataset](topics/design/2026-11-10-arc-3d-art-dataset.md)
 - **minimal hud**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **misty desaturated battlefield**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
+- **monospace type**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
 - **mumbai kaali-peeli illustration**: [Meter Down concept](topics/gamedev/2026-11-12-meter-down-concept.md)
 - **one continuous camera move**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
 - **one flat pastel colour per character**: [Toyxyz retarget add-on](topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md)
@@ -220,9 +224,11 @@ _From 90 entries, 41 with style notes. Rebuilt on every filing._
 - **red ink outline accents**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
 - **rolling counters**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
 - **scroll side-scroller**: [Revolio Labs site](topics/gamedev/2026-11-12-revolio-labs-site.md)
+- **scrubbable timeline**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
 - **serif italic accents**: [Idea Archive site](topics/business/2026-11-12-idea-archive-site.md)
 - **serif plus grotesk type**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
 - **shared kit palettes**: [Polyfork 3D assets](topics/gamedev/2026-11-10-polyfork-3d-assets.md)
+- **single blue accent**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
 - **sky blue to sand gradient**: [Wedding co-op game](topics/gamedev/2026-11-12-wedding-co-op-game.md)
 - **soft serif headline**: [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md)
 - **spray paint type**: [Bonk Court game](topics/gamedev/2026-11-12-bonk-court-game.md)
@@ -251,6 +257,7 @@ _From 90 entries, 41 with style notes. Rebuilt on every filing._
 
 - [Viggle Remake model](topics/ai/2026-11-13-viggle-remake-open-model.md) (`tool`): Viggle AI's open weights to recast anybody in a video
 - [Toyxyz retarget add-on](topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md) (`tool`): cool plugin, and also cool way to retarget motion between characters with different body proportions; also a very cool art style for showing prototype models in a game
+- [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md) (`style-ref`): cool design
 - [RelayVSR video upscaler](topics/ai/2026-11-13-relayvsr-video-upscaler.md) (`tool`): open weight video upscaler available in ComfyUI
 - [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md) (`tool`): agent skill for explainer content
 - [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md) (`website-ref`): nice calm website style with growing flower animation
