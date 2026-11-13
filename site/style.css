@@ -419,12 +419,10 @@ body.flash::after { content: ""; position: fixed; inset: 0; z-index: 30; backgro
 .ctx-sep { height: 1px; background: var(--line); margin: 4px 2px; }
 
 /* ---------- customise drawer ---------- */
-.studio-btn {
-  background: none; border: 1px solid rgba(242, 242, 242, 0.14); color: inherit; padding: 3px 6px; cursor: pointer;
-  font-size: 11px; pointer-events: auto; display: inline-flex; align-items: center; gap: 6px;
-}
-.studio-btn::before { content: ""; width: 5px; height: 5px; background: var(--accent); box-shadow: 0 0 6px var(--accent); }
-.studio-btn:hover { color: var(--fg); border-color: rgba(242, 242, 242, 0.4); }
+.dock-links { display: grid; gap: 2px; padding-top: 2px; border-top: 1px solid var(--line); }
+.dock-links .dock-h { text-decoration: none; padding-top: 6px; }
+.dock-links .mark { width: 5px; height: 5px; margin: 0 1.5px; background: var(--accent); box-shadow: 0 0 6px var(--accent); }
+.dock-links .mark.arrow { width: 8px; height: auto; margin: 0; background: none; box-shadow: none; font-size: 9px; letter-spacing: 0; line-height: 1; color: currentColor; }
 .studio {
   position: fixed; z-index: 9; top: 0; left: 0; bottom: 0; width: min(320px, 100vw);
   background: linear-gradient(180deg, rgba(12, 12, 12, 0.94), rgba(6, 6, 6, 0.97));
