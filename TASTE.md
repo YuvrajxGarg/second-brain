@@ -98,7 +98,7 @@ _Last curated: 2026-11-12, from 73 entries (now including his own projects)._
 
 ## Evidence (generated)
 
-_From 87 entries, 38 with style notes. Rebuilt on every filing._
+_From 88 entries, 39 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -107,7 +107,7 @@ _From 87 entries, 38 with style notes. Rebuilt on every filing._
 - `style-ref`: 6
 - `website-ref`: 4
 - `game-ref`: 4
-- `tool`: 4
+- `tool`: 5
 - `technique`: 9
 - `advice`: 4
 - `idea`: 4
@@ -118,7 +118,7 @@ _From 87 entries, 38 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (43), #desktop-app (15), #browser-game (13), #pxlvzn (12), #to-try (12), #inspiration (11), #reference (10), #revolio-labs (9), #video-editing (9), #agents (8), #open-source (8), #revolio (8), #claude (7), #mcp (7), #threejs (7), #animation (6), #vfx (6), #video-generation (6), #visual-design (6), #daily-challenge (5)
+#own-project (43), #desktop-app (15), #browser-game (13), #to-try (13), #pxlvzn (12), #inspiration (11), #reference (10), #video-editing (10), #agents (9), #open-source (9), #revolio-labs (9), #claude (8), #revolio (8), #mcp (7), #threejs (7), #animation (6), #vfx (6), #video-generation (6), #visual-design (6), #daily-challenge (5)
 
 ### Style notes and where they come from
 
@@ -133,6 +133,7 @@ _From 87 entries, 38 with style notes. Rebuilt on every filing._
 - **acid green on near-black**: [Idea Archive site](topics/business/2026-11-12-idea-archive-site.md)
 - **airy off-white layouts**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
 - **anton display type**: [Runaway Light Rig](topics/gamedev/2026-11-12-runaway-light-rig.md)
+- **archive photos with red string**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
 - **ascii**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
 - **big uppercase heading**: [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md)
 - **big-head proportions**: [Blender storybook hero](topics/gamedev/2026-11-09-blender-mcp-storybook-hero-workflow.md)
@@ -156,6 +157,7 @@ _From 87 entries, 38 with style notes. Rebuilt on every filing._
 - **colour-coded categories**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
 - **comedy club poster**: [Punchline party game](topics/gamedev/2026-11-12-punchline-party-game.md)
 - **condensed ink serif**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
+- **cork evidence wall**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
 - **cozy 3d desk diorama**: [Revolio Labs site](topics/gamedev/2026-11-12-revolio-labs-site.md)
 - **cream paper card with torn edges**: [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md)
 - **cream paper editorial**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
@@ -190,6 +192,7 @@ _From 87 entries, 38 with style notes. Rebuilt on every filing._
 - **minimal hud**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **misty desaturated battlefield**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
 - **mumbai kaali-peeli illustration**: [Meter Down concept](topics/gamedev/2026-11-12-meter-down-concept.md)
+- **one continuous camera move**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
 - **orange and blue palette**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
 - **painted 2d backgrounds**: [AI tween harness](topics/design/2026-11-11-ai-tween-paint-harness.md)
 - **painterly brushwork**: [Claude code paintings](topics/ai/2026-11-10-claude-code-paintings.md)
@@ -207,6 +210,7 @@ _From 87 entries, 38 with style notes. Rebuilt on every filing._
 - **receipt cards**: [Meter Down concept](topics/gamedev/2026-11-12-meter-down-concept.md)
 - **red and black**: [Runaway Light Rig](topics/gamedev/2026-11-12-runaway-light-rig.md)
 - **red ink outline accents**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
+- **rolling counters**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
 - **scroll side-scroller**: [Revolio Labs site](topics/gamedev/2026-11-12-revolio-labs-site.md)
 - **serif italic accents**: [Idea Archive site](topics/business/2026-11-12-idea-archive-site.md)
 - **serif plus grotesk type**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
@@ -214,6 +218,7 @@ _From 87 entries, 38 with style notes. Rebuilt on every filing._
 - **sky blue to sand gradient**: [Wedding co-op game](topics/gamedev/2026-11-12-wedding-co-op-game.md)
 - **soft serif headline**: [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md)
 - **spray paint type**: [Bonk Court game](topics/gamedev/2026-11-12-bonk-court-game.md)
+- **stamps and highlighter swipes**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
 - **stock ticker ui**: [SLANGDAQ game](topics/gamedev/2026-11-12-slangdaq-game.md)
 - **striped test room**: [Unity bodycam hands](topics/gamedev/2026-11-13-unity-bodycam-ik-hands.md)
 - **stylised 2d water**: [Godot waterfall shader](topics/gamedev/2026-11-09-godot-waterfall-texture-array-shader.md)
@@ -237,6 +242,7 @@ _From 87 entries, 38 with style notes. Rebuilt on every filing._
 
 - [Viggle Remake model](topics/ai/2026-11-13-viggle-remake-open-model.md) (`tool`): Viggle AI's open weights to recast anybody in a video
 - [RelayVSR video upscaler](topics/ai/2026-11-13-relayvsr-video-upscaler.md) (`tool`): open weight video upscaler available in ComfyUI
+- [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md) (`tool`): agent skill for explainer content
 - [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md) (`website-ref`): nice calm website style with growing flower animation
 - [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md) (`website-ref`): This is a cool app, and the website is also cool for building something similar
 - [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md) (`style-ref`): If I ever make a disk utility app to remove cache and disk cleanup, this UI is really nice for it.
