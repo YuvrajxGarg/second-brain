@@ -103,7 +103,7 @@ _Last curated: 2026-11-13 (added hand-drawn line art, mannequin prototypes, slee
 
 ## Evidence (generated)
 
-_From 91 entries, 43 with style notes. Rebuilt on every filing._
+_From 92 entries, 44 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -113,7 +113,7 @@ _From 91 entries, 43 with style notes. Rebuilt on every filing._
 - `website-ref`: 4
 - `game-ref`: 4
 - `tool`: 6
-- `technique`: 10
+- `technique`: 11
 - `advice`: 4
 - `idea`: 4
 - `thought`: 1
@@ -123,7 +123,7 @@ _From 91 entries, 43 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #desktop-app (15), #to-try (14), #browser-game (13), #inspiration (13), #pxlvzn (12), #open-source (10), #reference (10), #video-editing (10), #agents (9), #revolio-labs (9), #animation (8), #claude (8), #revolio (8), #mcp (7), #visual-design (7), #game-inspiration (6), #threejs (6), #ui (6), #vfx (6)
+#own-project (42), #desktop-app (15), #to-try (15), #browser-game (13), #inspiration (13), #pxlvzn (12), #open-source (11), #agents (10), #reference (10), #video-editing (10), #claude (9), #revolio-labs (9), #animation (8), #revolio (8), #mcp (7), #visual-design (7), #game-inspiration (6), #threejs (6), #ui (6), #vfx (6)
 
 ### Style notes and where they come from
 
@@ -161,6 +161,7 @@ _From 91 entries, 43 with style notes. Rebuilt on every filing._
 - **chunky armoured knights**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
 - **chunky flat pixel art**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
 - **chunky props**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
+- **cinematic letterbox grade**: [Escapement Blender film](topics/ai/2026-11-14-escapement-blender-short-film.md)
 - **clean sans type**: [Revolio Labs](topics/business/2026-11-12-revolio-labs.md)
 - **clean stylised 3d**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **colour-coded categories**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
@@ -173,6 +174,7 @@ _From 91 entries, 43 with style notes. Rebuilt on every filing._
 - **cream paper editorial**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
 - **dark compact utility card**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
 - **dark grey blender viewport grid**: [Toyxyz retarget add-on](topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md)
+- **dark macro clockwork**: [Escapement Blender film](topics/ai/2026-11-14-escapement-blender-short-film.md)
 - **dark menu bar popover**: [DIT offload checker](topics/tech/2026-11-13-dit-offload-checker-idea.md)
 - **dark minimal ui**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
 - **dark slate grid floor**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
@@ -180,6 +182,7 @@ _From 91 entries, 43 with style notes. Rebuilt on every filing._
 - **desi street shopfront**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 - **dither**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
 - **dot-matrix data viz**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
+- **dusk orange canyon**: [Escapement Blender film](topics/ai/2026-11-14-escapement-blender-short-film.md)
 - **dystopian concert stage**: [Runaway Light Rig](topics/gamedev/2026-11-12-runaway-light-rig.md)
 - **expressive mascot**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
 - **georgia serif**: [Wedding co-op game](topics/gamedev/2026-11-12-wedding-co-op-game.md)
