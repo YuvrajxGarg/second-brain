@@ -22,11 +22,11 @@ Read TASTE.md first for the gist, then the catalog for what you need. Live graph
 
 ## Notes
 
-- [toyxyz3 retarget plugin](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/inbox/2026-11-13-toyxyz3-motion-retarget.md): `technique` · inbox · cool plugin, and also cool way to retarget motion between characters with different body proportions; also a very cool art style for showing prototype models in a game
 - [Viggle Remake model](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-13-viggle-remake-open-model.md): `tool` · ai · Viggle AI's open weights to recast anybody in a video
 - [Unity bodycam hands](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-13-unity-bodycam-ik-hands.md): `technique` · gamedev · tips for hand animation in a first person view in Unity
+- [Toyxyz retarget add-on](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md): `tool` · gamedev · cool plugin, and also cool way to retarget motion between characters with different body proportions; also a very cool art style for showing prototype models in a game
 - [RelayVSR video upscaler](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-13-relayvsr-video-upscaler.md): `tool` · ai · open weight video upscaler available in ComfyUI
-- [Line art mocap workflow](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/inbox/2026-11-13-line-art-mocap-workflow.md): `technique` · inbox · cool line art animation workflow with motion capture and Mixamo integration also
+- [Line art mocap workflow](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-13-line-art-mocap-workflow.md): `technique` · gamedev · cool line art animation workflow with motion capture and Mixamo integration also
 - [DIT offload checker](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/tech/2026-11-13-dit-offload-checker-idea.md): `idea` · tech · app idea for PXL, a data transfer system checker for when DIT is happening on a shoot
 - [Claude live UI comments](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-13-claude-live-ui-comments.md): `technique` · ai · Claude using trick
 - [Cinematic film skill](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-13-cinematic-film-skill.md): `tool` · ai · agent skill for explainer content

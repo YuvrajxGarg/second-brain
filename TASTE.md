@@ -6,7 +6,7 @@ he already saved, and build on his own ideas. The part above the generated block
 curated by Claude and updated whenever a new entry shifts the picture; the evidence
 below is rebuilt from the notes on every filing.
 
-_Last curated: 2026-11-12, from 73 entries (now including his own projects)._
+_Last curated: 2026-11-13 (added hand-drawn line art and mannequin prototypes)._
 
 ## Who he is
 
@@ -51,6 +51,9 @@ _Last curated: 2026-11-12, from 73 entries (now including his own projects)._
 - **Polished dark utility UI**: a single compact dark card, glowing dot-matrix data
   viz, colour-coded categories, plain-language copy and playful particle feedback
   (Storage scanner UI).
+- **Hand-drawn line art in motion**: wobbly black-ink stick characters on cream
+  paper, animated from mocap (Line art mocap workflow). For prototypes he likes
+  blocky segmented mannequins in one flat pastel colour each (Toyxyz retarget add-on).
 - **Image effects as a look**: halftone, ASCII, dither, glitch, glow (Ladybug).
 - **His own shipped looks** (from what he built): dark near-black UI with a single
   lime or yellow accent and hairline strokes (PXLVZN, PXL app hub, Revolio Labs,
@@ -98,7 +101,7 @@ _Last curated: 2026-11-12, from 73 entries (now including his own projects)._
 
 ## Evidence (generated)
 
-_From 90 entries, 39 with style notes. Rebuilt on every filing._
+_From 90 entries, 41 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -107,8 +110,8 @@ _From 90 entries, 39 with style notes. Rebuilt on every filing._
 - `style-ref`: 6
 - `website-ref`: 4
 - `game-ref`: 4
-- `tool`: 5
-- `technique`: 11
+- `tool`: 6
+- `technique`: 10
 - `advice`: 4
 - `idea`: 4
 - `thought`: 1
@@ -118,7 +121,7 @@ _From 90 entries, 39 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (43), #desktop-app (15), #browser-game (13), #to-try (13), #pxlvzn (12), #inspiration (11), #reference (10), #video-editing (10), #agents (9), #open-source (9), #revolio-labs (9), #animation (8), #claude (8), #revolio (8), #mcp (7), #threejs (7), #game-inspiration (6), #vfx (6), #video-generation (6), #visual-design (6)
+#own-project (43), #desktop-app (15), #browser-game (13), #to-try (13), #inspiration (12), #pxlvzn (12), #reference (10), #video-editing (10), #agents (9), #open-source (9), #revolio-labs (9), #animation (8), #claude (8), #revolio (8), #mcp (7), #threejs (7), #game-inspiration (6), #vfx (6), #video-generation (6), #visual-design (6)
 
 ### Style notes and where they come from
 
@@ -135,10 +138,12 @@ _From 90 entries, 39 with style notes. Rebuilt on every filing._
 - **anton display type**: [Runaway Light Rig](topics/gamedev/2026-11-12-runaway-light-rig.md)
 - **archive photos with red string**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
 - **ascii**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
+- **beak-nosed stick characters**: [Line art mocap workflow](topics/gamedev/2026-11-13-line-art-mocap-workflow.md)
 - **big uppercase heading**: [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md)
 - **big-head proportions**: [Blender storybook hero](topics/gamedev/2026-11-09-blender-mcp-storybook-hero-workflow.md)
 - **black minimal landing page**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
 - **black stage**: [TV Stack toy](topics/gamedev/2026-11-12-tv-stack-music-toy.md)
+- **blocky segmented mannequins**: [Toyxyz retarget add-on](topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md)
 - **blue primary button**: [DIT offload checker](topics/tech/2026-11-13-dit-offload-checker-idea.md)
 - **bodycam first person view**: [Unity bodycam hands](topics/gamedev/2026-11-13-unity-bodycam-ik-hands.md)
 - **bold display type**: [Punchline party game](topics/gamedev/2026-11-12-punchline-party-game.md)
@@ -160,8 +165,10 @@ _From 90 entries, 39 with style notes. Rebuilt on every filing._
 - **cork evidence wall**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
 - **cozy 3d desk diorama**: [Revolio Labs site](topics/gamedev/2026-11-12-revolio-labs-site.md)
 - **cream paper card with torn edges**: [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md)
+- **cream paper cards on yellow grid paper**: [Line art mocap workflow](topics/gamedev/2026-11-13-line-art-mocap-workflow.md)
 - **cream paper editorial**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
 - **dark compact utility card**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
+- **dark grey blender viewport grid**: [Toyxyz retarget add-on](topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md)
 - **dark menu bar popover**: [DIT offload checker](topics/tech/2026-11-13-dit-offload-checker-idea.md)
 - **dark slate grid floor**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **dark slate theme**: [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md)
@@ -193,6 +200,7 @@ _From 90 entries, 39 with style notes. Rebuilt on every filing._
 - **misty desaturated battlefield**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
 - **mumbai kaali-peeli illustration**: [Meter Down concept](topics/gamedev/2026-11-12-meter-down-concept.md)
 - **one continuous camera move**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
+- **one flat pastel colour per character**: [Toyxyz retarget add-on](topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md)
 - **orange and blue palette**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
 - **painted 2d backgrounds**: [AI tween harness](topics/design/2026-11-11-ai-tween-paint-harness.md)
 - **painterly brushwork**: [Claude code paintings](topics/ai/2026-11-10-claude-code-paintings.md)
@@ -236,11 +244,13 @@ _From 90 entries, 39 with style notes. Rebuilt on every filing._
 - **warm soft lighting**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 - **warm toy diorama 3d**: [Munde Mode game](topics/gamedev/2026-11-12-munde-mode-game.md)
 - **wine red accent**: [Wedding co-op game](topics/gamedev/2026-11-12-wedding-co-op-game.md)
+- **wobbly hand-drawn black line art**: [Line art mocap workflow](topics/gamedev/2026-11-13-line-art-mocap-workflow.md)
 - **yellow accent**: [SLANGDAQ game](topics/gamedev/2026-11-12-slangdaq-game.md)
 
 ### Every reference with his reason
 
 - [Viggle Remake model](topics/ai/2026-11-13-viggle-remake-open-model.md) (`tool`): Viggle AI's open weights to recast anybody in a video
+- [Toyxyz retarget add-on](topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md) (`tool`): cool plugin, and also cool way to retarget motion between characters with different body proportions; also a very cool art style for showing prototype models in a game
 - [RelayVSR video upscaler](topics/ai/2026-11-13-relayvsr-video-upscaler.md) (`tool`): open weight video upscaler available in ComfyUI
 - [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md) (`tool`): agent skill for explainer content
 - [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md) (`website-ref`): nice calm website style with growing flower animation

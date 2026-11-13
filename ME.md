@@ -75,13 +75,13 @@ _Rebuilt on every filing from 90 notes._
 ### By topic
 
 ```
-gamedev       ██████ 27
+gamedev       ██████ 29
 tech          ████ 17
 ai            ███ 14
 design        ███ 14
 business      ██ 10
-inbox         █ 3
 life          █ 2
+inbox         █ 1
 productivity  █ 1
 learning      █ 1
 health        █ 1
@@ -95,8 +95,8 @@ asset-source  █ 2
 style-ref     █ 6
 website-ref   █ 4
 game-ref      █ 4
-tool          █ 5
-technique     ██ 11
+tool          █ 6
+technique     ██ 10
 advice        █ 4
 idea          █ 4
 thought       █ 1

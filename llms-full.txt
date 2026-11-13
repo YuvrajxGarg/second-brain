@@ -14,7 +14,7 @@ he already saved, and build on his own ideas. The part above the generated block
 curated by Claude and updated whenever a new entry shifts the picture; the evidence
 below is rebuilt from the notes on every filing.
 
-_Last curated: 2026-11-12, from 73 entries (now including his own projects)._
+_Last curated: 2026-11-13 (added hand-drawn line art and mannequin prototypes)._
 
 ## Who he is
 
@@ -59,6 +59,9 @@ _Last curated: 2026-11-12, from 73 entries (now including his own projects)._
 - **Polished dark utility UI**: a single compact dark card, glowing dot-matrix data
   viz, colour-coded categories, plain-language copy and playful particle feedback
   (Storage scanner UI).
+- **Hand-drawn line art in motion**: wobbly black-ink stick characters on cream
+  paper, animated from mocap (Line art mocap workflow). For prototypes he likes
+  blocky segmented mannequins in one flat pastel colour each (Toyxyz retarget add-on).
 - **Image effects as a look**: halftone, ASCII, dither, glitch, glow (Ladybug).
 - **His own shipped looks** (from what he built): dark near-black UI with a single
   lime or yellow accent and hairline strokes (PXLVZN, PXL app hub, Revolio Labs,
@@ -101,28 +104,6 @@ _Last curated: 2026-11-12, from 73 entries (now including his own projects)._
 - Building UI or games: start from the saved libraries in
   [catalog/libraries.md](catalog/libraries.md) before suggesting new ones.
 - Use his own words in each note's `why` and `## Raw` as the strongest signal.
-
-============================================================
-toyxyz3 retarget plugin  (inbox/2026-11-13-toyxyz3-motion-retarget.md)
-============================================================
-kind: technique
-type: video
-topic: inbox
-added: 2026-11-13
-source: https://x.com/toyxyz3/status/2120734403605500312
-status: unsorted
-why: cool plugin, and also cool way to retarget motion between characters with different body proportions; also a very cool art style for showing prototype models in a game
-tags: animation, rigging, game-inspiration
-
-## Summary
-Post by @toyxyz3 showing a plugin for retargeting motion between characters with different body proportions, in an art style that suits prototype models in a game. Social Reader was down when this was filed, so the post and video haven't been read yet; finish the summary and style, then move to gamedev.
-
-## Raw
-https://x.com/toyxyz3/status/2120734403605500312?a=0clsilseM9lnGap0uvo&s=20 Cool plugin, and also cool way to retarget motion between characters with different body proportions in
-
-Also, this is a very cool art style for showing prototype models in a
-
-I said in a game.
 
 ============================================================
 Viggle Remake model  (topics/ai/2026-11-13-viggle-remake-open-model.md)
@@ -182,6 +163,36 @@ The link I just shared is tips for hand animation in a first person view in Unit
 - Related: [[2026-11-11-procedural-arm-rig-demo]]
 
 ============================================================
+Toyxyz retarget add-on  (topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md)
+============================================================
+kind: tool
+type: tool
+topic: gamedev
+added: 2026-11-13
+source: https://x.com/toyxyz3/status/2120734403605500312
+status: unread
+why: cool plugin, and also cool way to retarget motion between characters with different body proportions; also a very cool art style for showing prototype models in a game
+tags: blender, animation, motion-capture, rigging, game-inspiration
+style: blocky segmented mannequins, one flat pastel colour per character, dark grey blender viewport grid
+
+## Summary
+A free Blender add-on by @toyxyz3 that retargets mocap between characters with very different body proportions (tall, short, stocky). It copies joint rotations with FK, then adjusts the root motion for each rig's limb lengths, so feet don't slide and you avoid the IK popping of IK-based retargeting. Code: https://github.com/toyxyz/toyxyz-blender-retargeter
+
+![frame](./2026-11-13-toyxyz-blender-retargeter.jpg)
+
+The video shows four mannequins walking side by side on Blender's dark grid: a tall lilac one, a teal one, a small orange one and a white bone-only rig. All are built from simple boxy segments with black hands, one flat colour each, which is the clean prototype-character look he liked.
+
+## Raw
+https://x.com/toyxyz3/status/2120734403605500312?a=0clsilseM9lnGap0uvo&s=20 Cool plugin, and also cool way to retarget motion between characters with different body proportions in
+
+Also, this is a very cool art style for showing prototype models in a
+
+I said in a game.
+
+## Notes
+- Related: [[2026-11-13-line-art-mocap-workflow]] (another mocap animation workflow)
+
+============================================================
 RelayVSR video upscaler  (topics/ai/2026-11-13-relayvsr-video-upscaler.md)
 ============================================================
 kind: tool
@@ -210,24 +221,32 @@ Open weight video upscaler available at ConfUI.
 - Reel by @asharasjad (same creator as [[2026-11-13-viggle-remake-open-model]]).
 
 ============================================================
-Line art mocap workflow  (inbox/2026-11-13-line-art-mocap-workflow.md)
+Line art mocap workflow  (topics/gamedev/2026-11-13-line-art-mocap-workflow.md)
 ============================================================
 kind: technique
 type: video
-topic: inbox
+topic: gamedev
 added: 2026-11-13
 source: https://www.instagram.com/reel/DfoIiH5R7Mo/
-status: unsorted
+status: unread
 why: cool line art animation workflow with motion capture and Mixamo integration also
-tags: animation, motion-capture, mixamo
+tags: animation, motion-capture, mixamo, creative-coding, inspiration
+style: wobbly hand-drawn black line art, beak-nosed stick characters, cream paper cards on yellow grid paper
 
 ## Summary
-Instagram reel showing a line art animation workflow driven by motion capture, with Mixamo integration. Social Reader wasn't connected when this was filed, so the reel and its frames haven't been read yet; finish the summary and style, then move it to a topic.
+Reel by @shubhastudios showing how they built the animation system for two characters, "little lady & little dude", in an ongoing series of interactive storytelling projects. The characters are animated from motion capture with Mixamo integration and drawn as hand-drawn line art.
+
+![frame](./2026-11-13-line-art-mocap-workflow.jpg)
+
+The thumbnail shows six cream paper cards on yellow grid paper, each a doorway-shaped frame with a scribbly black-ink character doing everyday things: reading in an armchair, sleeping (zzz), singing next to a speaker, typing at a desk. Only the cover image could be read; the video itself didn't download.
 
 ## Raw
 https://www.instagram.com/reel/DfoIiH5R7Mo/?psln=eG8zY2RnZG1iaHFn
 
 Cool line art animation workflow with motion capture and Mixamo integration also.
+
+## Notes
+- Related: [[2026-11-13-toyxyz-blender-retargeter]] (mocap retargeting in Blender)
 
 ============================================================
 DIT offload checker  (topics/tech/2026-11-13-dit-offload-checker-idea.md)
