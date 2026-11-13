@@ -59,7 +59,7 @@ _Rebuilt on every filing from 91 notes._
 | Longest streak | 5 days |
 | Notes with his own comment | 44 (48%) |
 | Open ideas and to-dos | 6 |
-| Tagged to-try | 13 |
+| Tagged to-try | 14 |
 | Marked read or done | 42 of 91 |
 
 ### Saves per day
@@ -68,8 +68,8 @@ _Rebuilt on every filing from 91 notes._
 2026-11-09  ███ 8
 2026-11-10  ████ 10
 2026-11-11  ███ 9
-2026-11-12  ████████████████████ 54
-2026-11-13  ████ 10
+2026-11-12  ████████████████████ 53
+2026-11-13  ████ 11
 ```
 
 ### By topic
@@ -77,11 +77,10 @@ _Rebuilt on every filing from 91 notes._
 ```
 gamedev       ██████ 29
 tech          ████ 17
-design        ███ 15
+design        ████ 16
 ai            ███ 14
 business      ██ 10
 life          █ 2
-inbox         █ 1
 productivity  █ 1
 learning      █ 1
 health        █ 1
@@ -90,7 +89,7 @@ health        █ 1
 ### By kind
 
 ```
-library       █ 4
+library       █ 5
 asset-source  █ 2
 style-ref     ██ 7
 website-ref   █ 4
@@ -102,7 +101,7 @@ idea          █ 4
 thought       █ 1
 todo          █ 2
 org           █ 3
-project       █████████ 40
+project       █████████ 39
 ```
 
 ### Where it comes from

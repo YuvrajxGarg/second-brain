@@ -14,7 +14,7 @@ he already saved, and build on his own ideas. The part above the generated block
 curated by Claude and updated whenever a new entry shifts the picture; the evidence
 below is rebuilt from the notes on every filing.
 
-_Last curated: 2026-11-13 (added hand-drawn line art, mannequin prototypes, sleep alarm UI)._
+_Last curated: 2026-11-13 (added hand-drawn line art, mannequin prototypes, sleep alarm UI, Stick It Up stickers)._
 
 ## Who he is
 
@@ -84,7 +84,8 @@ _Last curated: 2026-11-13 (added hand-drawn line art, mannequin prototypes, slee
 ## Stack and sources he reaches for
 
 - **UI:** React with an open-source design system (Astryx). Wants agents to build
-  better UI, so give them a real component library rather than ad-hoc CSS.
+  better UI, so give them a real component library rather than ad-hoc CSS. For
+  personality on his sites: draggable React stickers (Stick It Up stickers).
 - **Web apps he ships:** Next.js + TypeScript on Vercel, Tailwind, Supabase or
   Postgres/Prisma; plain HTML and vanilla JS for quick sites and concepts.
 - **Games:** three.js (most of his shipped games), Vite, Unity WebGL, Godot
@@ -192,6 +193,30 @@ I said in a game.
 
 ## Notes
 - Related: [[2026-11-13-line-art-mocap-workflow]] (another mocap animation workflow)
+
+============================================================
+Stick It Up stickers  (topics/design/2026-11-13-stick-it-up-stickers.md)
+============================================================
+kind: library
+type: tool
+topic: design
+added: 2026-11-13
+source: https://stickitupx.com
+status: unread
+why: cool component to add to my websites, stickers for personality
+tags: react, ui, open-source, to-try
+style: hand-drawn pastel stickers, 3d vinyl peel on hover, chrome emblems, pixel-art decals
+
+## Summary
+Stick It Up is an open-source (MIT, free for commercial use) npm package of React components that drop animated SVG stickers onto a site: 65+ of them, which visitors can drag, tilt and pop, with a 3D vinyl peel on hover. Works with React and Next.js (`npm i stick-it-up@latest`); meant for heroes, cards, empty states and 404 pages to give a site personality. It is a component library, not a Claude skill or plugin. Shared on X by Sam (@samirande_) with "stop making your site boring".
+
+## Raw
+https://x.com/samirande_/status/2121120167761674495?a=DOIvmc7EQR9Vkco0gNM&s=46
+
+cool component to add to my websites. Basically it's a skill or plugin to add it's basically a Claude skill, I think, to add stickers to websites for personality basically.
+
+## Notes
+- X post read via Social Reader (text and link only, no media). Site summary via web fetch; images not captured.
 
 ============================================================
 Sleep alarm UI  (topics/design/2026-11-13-sleep-alarm-ui.md)
@@ -577,27 +602,6 @@ TV Stack: play a wall of TVs like an instrument. Every key is a note and a scree
 
 ## Raw
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
-
-============================================================
-Street 21 site  (inbox/2026-11-12-street-21-site.md)
-============================================================
-kind: project
-type: site
-topic: inbox
-added: 2026-11-12
-source: https://street21.pxlvzn.in
-status: unsorted
-why: not known yet; waiting for confirmation
-tags: own-project, threejs
-
-## Summary
-A three.js site deployed under his PXLVZN label at street21.pxlvzn.in. The page ships only minified JavaScript, so what it actually is (game, toy or showcase) couldn't be read. Asked Yuvraj; move it to the right topic once he answers.
-
-## Raw
-Found while importing his Vercel projects (he asked to add everything he has built).
-
-## Notes
-- Label: [[2026-11-12-pxlvzn-label]]
 
 ============================================================
 Storage scanner UI  (topics/design/2026-11-12-storage-scanner-ui.md)

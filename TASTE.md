@@ -6,7 +6,7 @@ he already saved, and build on his own ideas. The part above the generated block
 curated by Claude and updated whenever a new entry shifts the picture; the evidence
 below is rebuilt from the notes on every filing.
 
-_Last curated: 2026-11-13 (added hand-drawn line art, mannequin prototypes, sleep alarm UI)._
+_Last curated: 2026-11-13 (added hand-drawn line art, mannequin prototypes, sleep alarm UI, Stick It Up stickers)._
 
 ## Who he is
 
@@ -76,7 +76,8 @@ _Last curated: 2026-11-13 (added hand-drawn line art, mannequin prototypes, slee
 ## Stack and sources he reaches for
 
 - **UI:** React with an open-source design system (Astryx). Wants agents to build
-  better UI, so give them a real component library rather than ad-hoc CSS.
+  better UI, so give them a real component library rather than ad-hoc CSS. For
+  personality on his sites: draggable React stickers (Stick It Up stickers).
 - **Web apps he ships:** Next.js + TypeScript on Vercel, Tailwind, Supabase or
   Postgres/Prisma; plain HTML and vanilla JS for quick sites and concepts.
 - **Games:** three.js (most of his shipped games), Vite, Unity WebGL, Godot
@@ -102,11 +103,11 @@ _Last curated: 2026-11-13 (added hand-drawn line art, mannequin prototypes, slee
 
 ## Evidence (generated)
 
-_From 91 entries, 42 with style notes. Rebuilt on every filing._
+_From 91 entries, 43 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
-- `library`: 4
+- `library`: 5
 - `asset-source`: 2
 - `style-ref`: 7
 - `website-ref`: 4
@@ -118,11 +119,11 @@ _From 91 entries, 42 with style notes. Rebuilt on every filing._
 - `thought`: 1
 - `todo`: 2
 - `org`: 3
-- `project`: 40
+- `project`: 39
 
 ### Top tags
 
-#own-project (43), #desktop-app (15), #browser-game (13), #inspiration (13), #to-try (13), #pxlvzn (12), #reference (10), #video-editing (10), #agents (9), #open-source (9), #revolio-labs (9), #animation (8), #claude (8), #revolio (8), #mcp (7), #threejs (7), #visual-design (7), #game-inspiration (6), #vfx (6), #video-generation (6)
+#own-project (42), #desktop-app (15), #to-try (14), #browser-game (13), #inspiration (13), #pxlvzn (12), #open-source (10), #reference (10), #video-editing (10), #agents (9), #revolio-labs (9), #animation (8), #claude (8), #revolio (8), #mcp (7), #visual-design (7), #game-inspiration (6), #threejs (6), #ui (6), #vfx (6)
 
 ### Style notes and where they come from
 
@@ -134,6 +135,7 @@ _From 91 entries, 42 with style notes. Rebuilt on every filing._
 - **r mark with animated eyes** ×2: [Revolio Labs app](topics/ai/2026-11-12-revolio-labs-app.md), [Revolio Labs](topics/business/2026-11-12-revolio-labs.md)
 - **red accent** ×2: [TV Stack toy](topics/gamedev/2026-11-12-tv-stack-music-toy.md), [NPCs on Strike](topics/gamedev/2026-11-12-npcs-on-strike-concept.md)
 - **single lime accent** ×2: [PXLVZN label](topics/tech/2026-11-12-pxlvzn-label.md), [PXL app hub](topics/tech/2026-11-12-pxl-app-hub.md)
+- **3d vinyl peel on hover**: [Stick It Up stickers](topics/design/2026-11-13-stick-it-up-stickers.md)
 - **acid green on near-black**: [Idea Archive site](topics/business/2026-11-12-idea-archive-site.md)
 - **airy off-white layouts**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
 - **anton display type**: [Runaway Light Rig](topics/gamedev/2026-11-12-runaway-light-rig.md)
@@ -155,6 +157,7 @@ _From 91 entries, 42 with style notes. Rebuilt on every filing._
 - **bottle green and marigold yellow**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 - **caricature character big head**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 - **caricature indian characters**: [Munde Mode game](topics/gamedev/2026-11-12-munde-mode-game.md)
+- **chrome emblems**: [Stick It Up stickers](topics/design/2026-11-13-stick-it-up-stickers.md)
 - **chunky armoured knights**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
 - **chunky flat pixel art**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
 - **chunky props**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
@@ -193,6 +196,7 @@ _From 91 entries, 42 with style notes. Rebuilt on every filing._
 - **halftone**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
 - **hand-drawn animation**: [AI tween harness](topics/design/2026-11-11-ai-tween-paint-harness.md)
 - **hand-drawn flowers growing on a dot grid**: [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md)
+- **hand-drawn pastel stickers**: [Stick It Up stickers](topics/design/2026-11-13-stick-it-up-stickers.md)
 - **invented artist styles**: [Claude code paintings](topics/ai/2026-11-10-claude-code-paintings.md)
 - **launch film motion**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
 - **lime accent on dark**: [Punchline party game](topics/gamedev/2026-11-12-punchline-party-game.md)
@@ -213,6 +217,7 @@ _From 91 entries, 42 with style notes. Rebuilt on every filing._
 - **particle dissolve on delete**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
 - **pastel blocks**: [ARC 3D art dataset](topics/design/2026-11-10-arc-3d-art-dataset.md)
 - **pixel cursors and ui**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
+- **pixel-art decals**: [Stick It Up stickers](topics/design/2026-11-13-stick-it-up-stickers.md)
 - **pixel-art mascots**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
 - **plain status sentence**: [DIT offload checker](topics/tech/2026-11-13-dit-offload-checker-idea.md)
 - **plain-language helper copy**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
@@ -257,6 +262,7 @@ _From 91 entries, 42 with style notes. Rebuilt on every filing._
 
 - [Viggle Remake model](topics/ai/2026-11-13-viggle-remake-open-model.md) (`tool`): Viggle AI's open weights to recast anybody in a video
 - [Toyxyz retarget add-on](topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md) (`tool`): cool plugin, and also cool way to retarget motion between characters with different body proportions; also a very cool art style for showing prototype models in a game
+- [Stick It Up stickers](topics/design/2026-11-13-stick-it-up-stickers.md) (`library`): cool component to add to my websites, stickers for personality
 - [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md) (`style-ref`): cool design
 - [RelayVSR video upscaler](topics/ai/2026-11-13-relayvsr-video-upscaler.md) (`tool`): open weight video upscaler available in ComfyUI
 - [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md) (`tool`): agent skill for explainer content
