@@ -23,6 +23,7 @@ Read TASTE.md first for the gist, then the catalog for what you need. Live graph
 ## Notes
 
 - [Viggle Remake model](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-13-viggle-remake-open-model.md): `tool` · ai · Viggle AI's open weights to recast anybody in a video
+- [Unity bodycam hands](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-13-unity-bodycam-ik-hands.md): `technique` · gamedev · bodycam-style first-person hands in Unity with no animation clips
 - [DIT offload checker](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/tech/2026-11-13-dit-offload-checker-idea.md): `idea` · tech · app idea for PXL, a data transfer system checker for when DIT is happening on a shoot
 - [Claude live UI comments](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-13-claude-live-ui-comments.md): `technique` · ai · Claude using trick
 - [Blooming flowers site](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/2026-11-13-mohamed-siddique-flower-site.md): `website-ref` · design · nice calm website style with growing flower animation

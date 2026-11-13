@@ -98,7 +98,7 @@ _Last curated: 2026-11-12, from 73 entries (now including his own projects)._
 
 ## Evidence (generated)
 
-_From 85 entries, 37 with style notes. Rebuilt on every filing._
+_From 86 entries, 38 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -108,7 +108,7 @@ _From 85 entries, 37 with style notes. Rebuilt on every filing._
 - `website-ref`: 4
 - `game-ref`: 4
 - `tool`: 3
-- `technique`: 8
+- `technique`: 9
 - `advice`: 4
 - `idea`: 4
 - `thought`: 1
@@ -118,7 +118,7 @@ _From 85 entries, 37 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (43), #desktop-app (15), #browser-game (13), #pxlvzn (12), #inspiration (11), #to-try (11), #reference (10), #revolio-labs (9), #agents (8), #revolio (8), #video-editing (8), #claude (7), #mcp (7), #open-source (7), #threejs (7), #vfx (6), #visual-design (6), #animation (5), #daily-challenge (5), #game-inspiration (5)
+#own-project (43), #desktop-app (15), #browser-game (13), #pxlvzn (12), #inspiration (11), #to-try (11), #reference (10), #revolio-labs (9), #agents (8), #revolio (8), #video-editing (8), #claude (7), #mcp (7), #open-source (7), #threejs (7), #animation (6), #vfx (6), #visual-design (6), #daily-challenge (5), #game-inspiration (5)
 
 ### Style notes and where they come from
 
@@ -139,6 +139,7 @@ _From 85 entries, 37 with style notes. Rebuilt on every filing._
 - **black minimal landing page**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
 - **black stage**: [TV Stack toy](topics/gamedev/2026-11-12-tv-stack-music-toy.md)
 - **blue primary button**: [DIT offload checker](topics/tech/2026-11-13-dit-offload-checker-idea.md)
+- **bodycam first person view**: [Unity bodycam hands](topics/gamedev/2026-11-13-unity-bodycam-ik-hands.md)
 - **bold display type**: [Punchline party game](topics/gamedev/2026-11-12-punchline-party-game.md)
 - **bold headlines with italic emphasis**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
 - **bold orange focal length type**: [Lens focal length guide](topics/ai/2026-11-12-lens-focal-length-guide.md)
@@ -171,6 +172,7 @@ _From 85 entries, 37 with style notes. Rebuilt on every filing._
 - **glass panel ui**: [TV Stack toy](topics/gamedev/2026-11-12-tv-stack-music-toy.md)
 - **glitch**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
 - **glossy abstract 3d**: [ARC 3D art dataset](topics/design/2026-11-10-arc-3d-art-dataset.md)
+- **gloved hands with pistol**: [Unity bodycam hands](topics/gamedev/2026-11-13-unity-bodycam-ik-hands.md)
 - **glowing cards**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
 - **glowing dot-matrix storage bar**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
 - **golden hour window light**: [Revolio Labs site](topics/gamedev/2026-11-12-revolio-labs-site.md)
@@ -213,6 +215,7 @@ _From 85 entries, 37 with style notes. Rebuilt on every filing._
 - **soft serif headline**: [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md)
 - **spray paint type**: [Bonk Court game](topics/gamedev/2026-11-12-bonk-court-game.md)
 - **stock ticker ui**: [SLANGDAQ game](topics/gamedev/2026-11-12-slangdaq-game.md)
+- **striped test room**: [Unity bodycam hands](topics/gamedev/2026-11-13-unity-bodycam-ik-hands.md)
 - **stylised 2d water**: [Godot waterfall shader](topics/gamedev/2026-11-09-godot-waterfall-texture-array-shader.md)
 - **stylised cartoon 3d**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 - **stylised storybook 3d**: [Blender storybook hero](topics/gamedev/2026-11-09-blender-mcp-storybook-hero-workflow.md)
