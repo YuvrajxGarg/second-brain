@@ -14,6 +14,9 @@
 //   { action: "save", path, content, sha, newPath?, title? }
 //                                                -> { ok, commit, path }
 //   { action: "delete", path, sha, title? }      -> { ok, commit, removed: [paths] }
+//   { action: "create", path, content, title? }  -> { ok, commit, path }   (new note)
+//   { action: "retag", paths, from, to }         -> { ok, commit, changed } (to "" removes)
+//   { action: "look", look }                     -> { ok, commit }          (site/look.json)
 // Only notes under topics/<topic>/ or inbox/ can be touched. Deleting a note also
 // removes its images/videos (files with the same name). One change = one commit.
 
@@ -24,6 +27,20 @@ const BRANCH = process.env.GITHUB_BRANCH || "main";
 const API = "https://api.github.com";
 const NOTE_PATH = /^(topics\/[a-z0-9][a-z0-9-]*|inbox)\/[A-Za-z0-9][A-Za-z0-9._-]*\.md$/;
 const MAX_BYTES = 200_000;
+const LOOK_PATH = "site/look.json";
+const TAG = /^[a-z0-9][a-z0-9-]{0,40}$/;
+
+// Change one tag inside a note's frontmatter `tags: [...]` line.
+function retagText(text, from, to) {
+  const m = text.match(/^---\n[\s\S]*?\n---\n?/);
+  if (!m) return text;
+  const fm = m[0].replace(/^tags:[ \t]*\[([^\]\n]*)\][ \t]*$/m, (line, list) => {
+    const tags = list.split(",").map((t) => t.trim().replace(/^["']|["']$/g, "")).filter(Boolean);
+    const next = [...new Set(tags.flatMap((t) => (t.toLowerCase() === from ? (to ? [to] : []) : [t])))];
+    return `tags: [${next.join(", ")}]`;
+  });
+  return fm + text.slice(m[0].length);
+}
 
 // Slow down passcode guessing: failed attempts per IP, per warm instance.
 const fails = new Map();
@@ -150,6 +167,44 @@ module.exports = async function handler(req, res) {
   }
   const { action, path, sha } = body || {};
   if (action === "check") return send(res, 200, { ok: true, repo: REPO, branch: BRANCH });
+
+  try {
+    // Site-wide default look for the graph (customise panel), kept in site/look.json.
+    if (action === "look") {
+      const look = body.look;
+      if (!look || typeof look !== "object" || Array.isArray(look)) return send(res, 400, { error: "Bad look." });
+      const content = JSON.stringify(look, null, 2) + "\n";
+      if (content.length > 20_000) return send(res, 413, { error: "Look is too big." });
+      let current = null;
+      try { current = await getFile(LOOK_PATH); } catch (e) { if (e.status !== 404) throw e; }
+      const r = await gh("PUT", `/contents/${LOOK_PATH}`, { message: "site: graph look (from site)", content: b64(content), sha: current?.sha, branch: BRANCH });
+      return send(res, 200, { ok: true, commit: r.commit.sha });
+    }
+
+    // Rename a tag (to) or remove it (to empty) across several notes, in one commit.
+    if (action === "retag") {
+      const from = String(body.from || "").toLowerCase();
+      const to = String(body.to || "").toLowerCase();
+      const paths = Array.isArray(body.paths) ? [...new Set(body.paths)] : [];
+      if (!TAG.test(from) || (to && !TAG.test(to))) return send(res, 400, { error: "Tags are lowercase words joined by dashes." });
+      if (!paths.length || paths.length > 120 || paths.some((p) => typeof p !== "string" || !NOTE_PATH.test(p) || p.includes(".."))) {
+        return send(res, 400, { error: "Bad list of notes." });
+      }
+      const writes = [];
+      for (const p of paths) {
+        const f = await getFile(p);
+        const next = retagText(f.content, from, to);
+        if (next !== f.content) writes.push({ path: p, content: next });
+      }
+      if (!writes.length) return send(res, 200, { ok: true, commit: "", changed: 0 });
+      const msg = to ? `edit: tag ${from} -> ${to} on ${writes.length} notes (from site)` : `edit: remove tag ${from} from ${writes.length} notes (from site)`;
+      const commit = await commitTree(msg, writes, []);
+      return send(res, 200, { ok: true, commit, changed: writes.length });
+    }
+  } catch (e) {
+    return send(res, e.status === 422 || e.status === 409 ? 409 : 502, { error: e.status === 422 || e.status === 409 ? "GitHub moved on while saving. Try again." : `GitHub error: ${e.message}` });
+  }
+
   if (typeof path !== "string" || !NOTE_PATH.test(path) || path.includes("..")) {
     return send(res, 400, { error: "That file can't be edited from the site." });
   }
@@ -184,6 +239,19 @@ module.exports = async function handler(req, res) {
       const newDir = newPath.slice(0, newPath.lastIndexOf("/"));
       const commit = await commitTree(`${msg}, moved to ${newDir}`, writes, [path, ...media.map((m) => m.path)]);
       return send(res, 200, { ok: true, commit, path: newPath });
+    }
+
+    // New note from the site; refuses to overwrite an existing file.
+    if (action === "create") {
+      const content = String(body.content || "").replace(/\r\n/g, "\n");
+      if (!content.startsWith("---\n")) return send(res, 400, { error: "The note must start with its --- frontmatter." });
+      if (Buffer.byteLength(content) > MAX_BYTES) return send(res, 413, { error: "Note is too big." });
+      try {
+        await getFile(path);
+        return send(res, 409, { error: "A note with that name already exists today. Pick another title." });
+      } catch (e) { if (e.status !== 404) throw e; }
+      const r = await gh("PUT", `/contents/${enc(path)}`, { message: `add: ${label(body.title, path.split("/").pop())} (from site)`, content: b64(content), branch: BRANCH });
+      return send(res, 200, { ok: true, commit: r.commit.sha, path });
     }
 
     if (action === "delete") {

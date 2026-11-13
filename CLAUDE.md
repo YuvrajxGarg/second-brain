@@ -228,7 +228,12 @@ topics get a fallback colour automatically).
 Yuvraj can edit or delete notes on the graph site (EDIT button, or EDIT NOTE in a
 note's panel, after entering his passcode). `api/edit.js` commits each change
 straight to `main` as `edit: <title> (from site)` or `delete: <title> (from site)`;
-changing the topic moves the file and its images. It needs two Vercel env vars:
+changing the topic moves the file and its images. The right-click menu can also
+rename notes, add a new note (`add: <title> (from site)`), rename or remove a tag
+across notes in one commit, and the CUSTOMISE drawer can save the graph's look to
+`site/look.json` (colours, shapes, line style, spread; per-browser tweaks stay in
+localStorage). Notes added from the site have a short summary, so tidy them
+(fields, `## Raw`) the next time you touch them. It needs two Vercel env vars:
 `EDIT_PASSCODE` and `GITHUB_TOKEN` (fine-grained, Contents read/write on this repo
 only). Because of these commits, always `git pull --rebase` before you push. The
 Vercel build also runs `build_index.py`, so the served llms/TASTE/IDEAS files stay
