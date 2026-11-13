@@ -98,7 +98,7 @@ _Last curated: 2026-11-12, from 73 entries (now including his own projects)._
 
 ## Evidence (generated)
 
-_From 83 entries, 36 with style notes. Rebuilt on every filing._
+_From 84 entries, 36 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -107,7 +107,7 @@ _From 83 entries, 36 with style notes. Rebuilt on every filing._
 - `style-ref`: 6
 - `website-ref`: 4
 - `game-ref`: 4
-- `tool`: 2
+- `tool`: 3
 - `technique`: 8
 - `advice`: 4
 - `idea`: 3
@@ -118,7 +118,7 @@ _From 83 entries, 36 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (43), #desktop-app (14), #browser-game (13), #inspiration (11), #pxlvzn (11), #reference (10), #to-try (10), #revolio-labs (9), #agents (8), #revolio (8), #claude (7), #mcp (7), #threejs (7), #open-source (6), #vfx (6), #video-editing (6), #visual-design (6), #animation (5), #daily-challenge (5), #game-inspiration (5)
+#own-project (43), #desktop-app (14), #browser-game (13), #inspiration (11), #pxlvzn (11), #to-try (11), #reference (10), #revolio-labs (9), #agents (8), #revolio (8), #claude (7), #mcp (7), #open-source (7), #threejs (7), #video-editing (7), #vfx (6), #visual-design (6), #animation (5), #daily-challenge (5), #game-inspiration (5)
 
 ### Style notes and where they come from
 
@@ -229,6 +229,7 @@ _From 83 entries, 36 with style notes. Rebuilt on every filing._
 
 ### Every reference with his reason
 
+- [Viggle Remake model](topics/ai/2026-11-13-viggle-remake-open-model.md) (`tool`): Viggle AI's open weights to recast anybody in a video
 - [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md) (`website-ref`): nice calm website style with growing flower animation
 - [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md) (`website-ref`): This is a cool app, and the website is also cool for building something similar
 - [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md) (`style-ref`): If I ever make a disk utility app to remove cache and disk cleanup, this UI is really nice for it.
