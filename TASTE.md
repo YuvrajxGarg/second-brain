@@ -98,7 +98,7 @@ _Last curated: 2026-11-12, from 73 entries (now including his own projects)._
 
 ## Evidence (generated)
 
-_From 84 entries, 36 with style notes. Rebuilt on every filing._
+_From 85 entries, 37 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -110,7 +110,7 @@ _From 84 entries, 36 with style notes. Rebuilt on every filing._
 - `tool`: 3
 - `technique`: 8
 - `advice`: 4
-- `idea`: 3
+- `idea`: 4
 - `thought`: 1
 - `todo`: 2
 - `org`: 3
@@ -118,7 +118,7 @@ _From 84 entries, 36 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (43), #desktop-app (14), #browser-game (13), #inspiration (11), #pxlvzn (11), #to-try (11), #reference (10), #revolio-labs (9), #agents (8), #revolio (8), #claude (7), #mcp (7), #open-source (7), #threejs (7), #video-editing (7), #vfx (6), #visual-design (6), #animation (5), #daily-challenge (5), #game-inspiration (5)
+#own-project (43), #desktop-app (15), #browser-game (13), #pxlvzn (12), #inspiration (11), #to-try (11), #reference (10), #revolio-labs (9), #agents (8), #revolio (8), #video-editing (8), #claude (7), #mcp (7), #open-source (7), #threejs (7), #vfx (6), #visual-design (6), #animation (5), #daily-challenge (5), #game-inspiration (5)
 
 ### Style notes and where they come from
 
@@ -138,6 +138,7 @@ _From 84 entries, 36 with style notes. Rebuilt on every filing._
 - **big-head proportions**: [Blender storybook hero](topics/gamedev/2026-11-09-blender-mcp-storybook-hero-workflow.md)
 - **black minimal landing page**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
 - **black stage**: [TV Stack toy](topics/gamedev/2026-11-12-tv-stack-music-toy.md)
+- **blue primary button**: [DIT offload checker](topics/tech/2026-11-13-dit-offload-checker-idea.md)
 - **bold display type**: [Punchline party game](topics/gamedev/2026-11-12-punchline-party-game.md)
 - **bold headlines with italic emphasis**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
 - **bold orange focal length type**: [Lens focal length guide](topics/ai/2026-11-12-lens-focal-length-guide.md)
@@ -158,6 +159,7 @@ _From 84 entries, 36 with style notes. Rebuilt on every filing._
 - **cream paper card with torn edges**: [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md)
 - **cream paper editorial**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
 - **dark compact utility card**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
+- **dark menu bar popover**: [DIT offload checker](topics/tech/2026-11-13-dit-offload-checker-idea.md)
 - **dark slate grid floor**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **dark slate theme**: [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md)
 - **desi street shopfront**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
@@ -195,6 +197,7 @@ _From 84 entries, 36 with style notes. Rebuilt on every filing._
 - **pastel blocks**: [ARC 3D art dataset](topics/design/2026-11-10-arc-3d-art-dataset.md)
 - **pixel cursors and ui**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
 - **pixel-art mascots**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
+- **plain status sentence**: [DIT offload checker](topics/tech/2026-11-13-dit-offload-checker-idea.md)
 - **plain-language helper copy**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
 - **poster typography**: [SLANGDAQ game](topics/gamedev/2026-11-12-slangdaq-game.md)
 - **product launch video**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
