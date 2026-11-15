@@ -22,6 +22,7 @@ Read TASTE.md first for the gist, then the catalog for what you need. Live graph
 
 ## Notes
 
+- [Unslop UI skill](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/2026-11-15-unslop-ui-skill.md): `tool` · design · the skill repo from the AI slop vs senior designer reel, turns AI-looking UI into a designed interface
 - [Sprite stacking technique](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-15-sprite-stacking-pixel-art.md): `technique` · gamedev · turn pixel art to any angle with sprite stacking
 - [Raea render engine](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-15-raea-render-engine.md): `tool` · ai · AI agents write the code and it renders videos, motion graphics, 3D and games on your own Mac
 - [Pixel-art gaussian splats](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md): `style-ref` · gamedev · pixel-art gaussian splats look mesmerising
