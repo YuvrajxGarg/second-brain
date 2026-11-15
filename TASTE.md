@@ -110,7 +110,7 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 96 entries, 47 with style notes. Rebuilt on every filing._
+_From 97 entries, 47 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -121,7 +121,7 @@ _From 96 entries, 47 with style notes. Rebuilt on every filing._
 - `game-ref`: 4
 - `tool`: 7
 - `technique`: 12
-- `advice`: 4
+- `advice`: 5
 - `idea`: 4
 - `thought`: 1
 - `todo`: 2
@@ -130,7 +130,7 @@ _From 96 entries, 47 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #desktop-app (16), #to-try (16), #inspiration (15), #browser-game (13), #pxlvzn (12), #agents (11), #open-source (11), #claude (10), #reference (10), #video-editing (10), #revolio-labs (9), #animation (8), #revolio (8), #mcp (7), #video-generation (7), #visual-design (7), #game-inspiration (6), #threejs (6), #ui (6)
+#own-project (42), #desktop-app (16), #to-try (16), #inspiration (15), #browser-game (13), #pxlvzn (12), #agents (11), #open-source (11), #reference (11), #claude (10), #video-editing (10), #revolio-labs (9), #animation (8), #revolio (8), #visual-design (8), #mcp (7), #ui (7), #video-generation (7), #game-inspiration (6), #threejs (6)
 
 ### Style notes and where they come from
 
