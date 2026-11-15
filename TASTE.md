@@ -6,7 +6,7 @@ he already saved, and build on his own ideas. The part above the generated block
 curated by Claude and updated whenever a new entry shifts the picture; the evidence
 below is rebuilt from the notes on every filing.
 
-_Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sprite stacking)._
+_Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sprite stacking; glyph-grid data viz)._
 
 ## Who he is
 
@@ -59,6 +59,9 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 - **Hand-drawn line art in motion**: wobbly black-ink stick characters on cream
   paper, animated from mocap (Line art mocap workflow). For prototypes he likes
   blocky segmented mannequins in one flat pastel colour each (Toyxyz retarget add-on).
+- **Generative data viz as branding**: dense grids of tiny dots, squares and crosses
+  that animate into networks, swirls and treemaps, either bright multicolour on
+  charcoal or one blue on white, with a serif title underneath (Neural network data viz).
 - **Image effects as a look**: halftone, ASCII, dither, glitch, glow (Ladybug).
 - **His own shipped looks** (from what he built): dark near-black UI with a single
   lime or yellow accent and hairline strokes (PXLVZN, PXL app hub, Revolio Labs,
@@ -107,13 +110,13 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 95 entries, 46 with style notes. Rebuilt on every filing._
+_From 96 entries, 47 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
 - `library`: 5
 - `asset-source`: 2
-- `style-ref`: 8
+- `style-ref`: 9
 - `website-ref`: 4
 - `game-ref`: 4
 - `tool`: 7
@@ -127,7 +130,7 @@ _From 95 entries, 46 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #desktop-app (16), #to-try (16), #inspiration (14), #browser-game (13), #pxlvzn (12), #agents (11), #open-source (11), #claude (10), #reference (10), #video-editing (10), #revolio-labs (9), #animation (8), #revolio (8), #mcp (7), #video-generation (7), #visual-design (7), #game-inspiration (6), #threejs (6), #ui (6)
+#own-project (42), #desktop-app (16), #to-try (16), #inspiration (15), #browser-game (13), #pxlvzn (12), #agents (11), #open-source (11), #claude (10), #reference (10), #video-editing (10), #revolio-labs (9), #animation (8), #revolio (8), #mcp (7), #video-generation (7), #visual-design (7), #game-inspiration (6), #threejs (6), #ui (6)
 
 ### Style notes and where they come from
 
@@ -159,6 +162,7 @@ _From 95 entries, 46 with style notes. Rebuilt on every filing._
 - **bold red and blue colour pops**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
 - **bold type**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
 - **bottle green and marigold yellow**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
+- **bright multicolour on charcoal**: [Neural network data viz](topics/design/2026-11-15-neural-network-data-viz.md)
 - **caricature character big head**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 - **caricature indian characters**: [Munde Mode game](topics/gamedev/2026-11-12-munde-mode-game.md)
 - **chrome emblems**: [Stick It Up stickers](topics/design/2026-11-13-stick-it-up-stickers.md)
@@ -184,6 +188,7 @@ _From 95 entries, 46 with style notes. Rebuilt on every filing._
 - **dark minimal ui**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
 - **dark slate grid floor**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **dark slate theme**: [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md)
+- **dense dots squares and crosses**: [Neural network data viz](topics/design/2026-11-15-neural-network-data-viz.md)
 - **desi street shopfront**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 - **dither**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
 - **dot-matrix data viz**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
@@ -201,6 +206,7 @@ _From 95 entries, 46 with style notes. Rebuilt on every filing._
 - **glowing cards**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
 - **glowing dot-matrix storage bar**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
 - **glowing particles**: [Pixel-art gaussian splats](topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md)
+- **glyph-grid data viz**: [Neural network data viz](topics/design/2026-11-15-neural-network-data-viz.md)
 - **golden hour window light**: [Revolio Labs site](topics/gamedev/2026-11-12-revolio-labs-site.md)
 - **graffiti street court**: [Bonk Court game](topics/gamedev/2026-11-12-bonk-court-game.md)
 - **hairline strokes**: [PXLVZN label](topics/tech/2026-11-12-pxlvzn-label.md)
@@ -245,8 +251,10 @@ _From 95 entries, 46 with style notes. Rebuilt on every filing._
 - **scrubbable timeline**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
 - **serif italic accents**: [Idea Archive site](topics/business/2026-11-12-idea-archive-site.md)
 - **serif plus grotesk type**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
+- **serif titles with small caps labels**: [Neural network data viz](topics/design/2026-11-15-neural-network-data-viz.md)
 - **shared kit palettes**: [Polyfork 3D assets](topics/gamedev/2026-11-10-polyfork-3d-assets.md)
 - **single blue accent**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
+- **single-blue swirl on white**: [Neural network data viz](topics/design/2026-11-15-neural-network-data-viz.md)
 - **sky blue to sand gradient**: [Wedding co-op game](topics/gamedev/2026-11-12-wedding-co-op-game.md)
 - **soft serif headline**: [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md)
 - **spray paint type**: [Bonk Court game](topics/gamedev/2026-11-12-bonk-court-game.md)
@@ -276,6 +284,7 @@ _From 95 entries, 46 with style notes. Rebuilt on every filing._
 
 - [Raea render engine](topics/ai/2026-11-15-raea-render-engine.md) (`tool`): AI agents write the code and it renders videos, motion graphics, 3D and games on your own Mac
 - [Pixel-art gaussian splats](topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md) (`style-ref`): pixel-art gaussian splats look mesmerising
+- [Neural network data viz](topics/design/2026-11-15-neural-network-data-viz.md) (`style-ref`): data visualization for a neural network brand exploration
 - [Viggle Remake model](topics/ai/2026-11-13-viggle-remake-open-model.md) (`tool`): Viggle AI's open weights to recast anybody in a video
 - [Toyxyz retarget add-on](topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md) (`tool`): cool plugin, and also cool way to retarget motion between characters with different body proportions; also a very cool art style for showing prototype models in a game
 - [Stick It Up stickers](topics/design/2026-11-13-stick-it-up-stickers.md) (`library`): cool component to add to my websites, stickers for personality
