@@ -110,7 +110,7 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 101 entries, 49 with style notes. Rebuilt on every filing._
+_From 102 entries, 49 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -119,7 +119,7 @@ _From 101 entries, 49 with style notes. Rebuilt on every filing._
 - `style-ref`: 9
 - `website-ref`: 4
 - `game-ref`: 4
-- `tool`: 8
+- `tool`: 9
 - `technique`: 14
 - `advice`: 6
 - `idea`: 4
@@ -130,7 +130,7 @@ _From 101 entries, 49 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (18), #desktop-app (16), #inspiration (16), #browser-game (13), #reference (13), #claude (12), #open-source (12), #pxlvzn (12), #agents (11), #video-editing (10), #revolio-labs (9), #ui (9), #visual-design (9), #animation (8), #revolio (8), #mcp (7), #video-generation (7), #3d-art (6), #game-inspiration (6)
+#own-project (42), #to-try (19), #desktop-app (16), #inspiration (16), #browser-game (13), #open-source (13), #reference (13), #agents (12), #claude (12), #pxlvzn (12), #video-editing (10), #revolio-labs (9), #ui (9), #visual-design (9), #animation (8), #revolio (8), #mcp (7), #video-generation (7), #3d-art (6), #game-inspiration (6)
 
 ### Style notes and where they come from
 
@@ -289,6 +289,7 @@ _From 101 entries, 49 with style notes. Rebuilt on every filing._
 
 ### Every reference with his reason
 
+- [Cloudflare Computer](topics/ai/2026-11-16-cloudflare-computer-agent-sandbox.md) (`tool`): Cloudflare computer
 - [Unslop UI skill](topics/design/2026-11-15-unslop-ui-skill.md) (`tool`): the skill repo from the AI slop vs senior designer reel, turns AI-looking UI into a designed interface
 - [Raea render engine](topics/ai/2026-11-15-raea-render-engine.md) (`tool`): AI agents write the code and it renders videos, motion graphics, 3D and games on your own Mac
 - [Pixel-art gaussian splats](topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md) (`style-ref`): pixel-art gaussian splats look mesmerising
