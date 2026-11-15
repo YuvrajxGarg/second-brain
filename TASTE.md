@@ -110,7 +110,7 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 99 entries, 47 with style notes. Rebuilt on every filing._
+_From 100 entries, 48 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -120,7 +120,7 @@ _From 99 entries, 47 with style notes. Rebuilt on every filing._
 - `website-ref`: 4
 - `game-ref`: 4
 - `tool`: 8
-- `technique`: 12
+- `technique`: 13
 - `advice`: 6
 - `idea`: 4
 - `thought`: 1
@@ -130,7 +130,7 @@ _From 99 entries, 47 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (17), #desktop-app (16), #inspiration (15), #browser-game (13), #open-source (12), #pxlvzn (12), #reference (12), #agents (11), #claude (11), #video-editing (10), #revolio-labs (9), #visual-design (9), #animation (8), #revolio (8), #ui (8), #mcp (7), #video-generation (7), #game-inspiration (6), #threejs (6)
+#own-project (42), #to-try (18), #desktop-app (16), #inspiration (16), #browser-game (13), #claude (12), #open-source (12), #pxlvzn (12), #reference (12), #agents (11), #video-editing (10), #revolio-labs (9), #ui (9), #visual-design (9), #animation (8), #revolio (8), #mcp (7), #video-generation (7), #game-inspiration (6), #threejs (6)
 
 ### Style notes and where they come from
 
@@ -145,6 +145,7 @@ _From 99 entries, 47 with style notes. Rebuilt on every filing._
 - **3d vinyl peel on hover**: [Stick It Up stickers](topics/design/2026-11-13-stick-it-up-stickers.md)
 - **acid green on near-black**: [Idea Archive site](topics/business/2026-11-12-idea-archive-site.md)
 - **airy off-white layouts**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
+- **animated snowfall**: [Claude Code reactive theme](topics/ai/2026-11-16-claude-code-reactive-theme.md)
 - **anton display type**: [Runaway Light Rig](topics/gamedev/2026-11-12-runaway-light-rig.md)
 - **archive photos with red string**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
 - **ascii**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
@@ -178,6 +179,7 @@ _From 99 entries, 47 with style notes. Rebuilt on every filing._
 - **condensed ink serif**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
 - **cork evidence wall**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
 - **cozy 3d desk diorama**: [Revolio Labs site](topics/gamedev/2026-11-12-revolio-labs-site.md)
+- **cozy winter night scene**: [Claude Code reactive theme](topics/ai/2026-11-16-claude-code-reactive-theme.md)
 - **cream paper card with torn edges**: [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md)
 - **cream paper cards on yellow grid paper**: [Line art mocap workflow](topics/gamedev/2026-11-13-line-art-mocap-workflow.md)
 - **cream paper editorial**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
@@ -197,6 +199,7 @@ _From 99 entries, 47 with style notes. Rebuilt on every filing._
 - **expressive mascot**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
 - **fake 3d from 2d slices**: [Sprite stacking technique](topics/gamedev/2026-11-15-sprite-stacking-pixel-art.md)
 - **floating islands on black**: [Pixel-art gaussian splats](topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md)
+- **frosted glass chat panel**: [Claude Code reactive theme](topics/ai/2026-11-16-claude-code-reactive-theme.md)
 - **georgia serif**: [Wedding co-op game](topics/gamedev/2026-11-12-wedding-co-op-game.md)
 - **giant planet skies**: [Lens focal length guide](topics/ai/2026-11-12-lens-focal-length-guide.md)
 - **glass panel ui**: [TV Stack toy](topics/gamedev/2026-11-12-tv-stack-music-toy.md)
@@ -278,6 +281,7 @@ _From 99 entries, 47 with style notes. Rebuilt on every filing._
 - **warm toy diorama 3d**: [Munde Mode game](topics/gamedev/2026-11-12-munde-mode-game.md)
 - **wine red accent**: [Wedding co-op game](topics/gamedev/2026-11-12-wedding-co-op-game.md)
 - **wobbly hand-drawn black line art**: [Line art mocap workflow](topics/gamedev/2026-11-13-line-art-mocap-workflow.md)
+- **wooden sign hud**: [Claude Code reactive theme](topics/ai/2026-11-16-claude-code-reactive-theme.md)
 - **yellow accent**: [SLANGDAQ game](topics/gamedev/2026-11-12-slangdaq-game.md)
 
 ### Every reference with his reason
