@@ -110,7 +110,7 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 100 entries, 48 with style notes. Rebuilt on every filing._
+_From 101 entries, 49 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -120,7 +120,7 @@ _From 100 entries, 48 with style notes. Rebuilt on every filing._
 - `website-ref`: 4
 - `game-ref`: 4
 - `tool`: 8
-- `technique`: 13
+- `technique`: 14
 - `advice`: 6
 - `idea`: 4
 - `thought`: 1
@@ -130,7 +130,7 @@ _From 100 entries, 48 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (18), #desktop-app (16), #inspiration (16), #browser-game (13), #claude (12), #open-source (12), #pxlvzn (12), #reference (12), #agents (11), #video-editing (10), #revolio-labs (9), #ui (9), #visual-design (9), #animation (8), #revolio (8), #mcp (7), #video-generation (7), #game-inspiration (6), #threejs (6)
+#own-project (42), #to-try (18), #desktop-app (16), #inspiration (16), #browser-game (13), #reference (13), #claude (12), #open-source (12), #pxlvzn (12), #agents (11), #video-editing (10), #revolio-labs (9), #ui (9), #visual-design (9), #animation (8), #revolio (8), #mcp (7), #video-generation (7), #3d-art (6), #game-inspiration (6)
 
 ### Style notes and where they come from
 
@@ -217,6 +217,7 @@ _From 100 entries, 48 with style notes. Rebuilt on every filing._
 - **hand-drawn animation**: [AI tween harness](topics/design/2026-11-11-ai-tween-paint-harness.md)
 - **hand-drawn flowers growing on a dot grid**: [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md)
 - **hand-drawn pastel stickers**: [Stick It Up stickers](topics/design/2026-11-13-stick-it-up-stickers.md)
+- **hand-painted 3d look**: [Blender painterly leaf shader](topics/gamedev/2026-11-16-blender-painterly-leaf-shader.md)
 - **invented artist styles**: [Claude code paintings](topics/ai/2026-11-10-claude-code-paintings.md)
 - **launch film motion**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
 - **lime accent on dark**: [Punchline party game](topics/gamedev/2026-11-12-punchline-party-game.md)
@@ -232,6 +233,7 @@ _From 100 entries, 48 with style notes. Rebuilt on every filing._
 - **one-hue monochrome palettes**: [Pixel-art gaussian splats](topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md)
 - **orange and blue palette**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
 - **painted 2d backgrounds**: [AI tween harness](topics/design/2026-11-11-ai-tween-paint-harness.md)
+- **painterly brushstroke leaves**: [Blender painterly leaf shader](topics/gamedev/2026-11-16-blender-painterly-leaf-shader.md)
 - **painterly brushwork**: [Claude code paintings](topics/ai/2026-11-10-claude-code-paintings.md)
 - **painterly landscape backdrop**: [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md)
 - **painterly stylised 3d**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
@@ -269,6 +271,7 @@ _From 100 entries, 48 with style notes. Rebuilt on every filing._
 - **stylised storybook 3d**: [Blender storybook hero](topics/gamedev/2026-11-09-blender-mcp-storybook-hero-workflow.md)
 - **surreal pastel wide fields**: [Lens focal length guide](topics/ai/2026-11-12-lens-focal-length-guide.md)
 - **tap-count diagram**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
+- **teal and lime on deep crimson**: [Blender painterly leaf shader](topics/gamedev/2026-11-16-blender-painterly-leaf-shader.md)
 - **testimonial wall**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
 - **textured pastel brushwork**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
 - **tick ruler numerals**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
