@@ -112,18 +112,18 @@ _From 94 entries, 45 with style notes. Rebuilt on every filing._
 - `style-ref`: 7
 - `website-ref`: 4
 - `game-ref`: 4
-- `tool`: 6
+- `tool`: 7
 - `technique`: 12
 - `advice`: 4
 - `idea`: 4
-- `thought`: 2
+- `thought`: 1
 - `todo`: 2
 - `org`: 3
 - `project`: 39
 
 ### Top tags
 
-#own-project (42), #desktop-app (15), #to-try (15), #browser-game (13), #inspiration (13), #pxlvzn (12), #open-source (11), #agents (10), #reference (10), #video-editing (10), #claude (9), #revolio-labs (9), #animation (8), #revolio (8), #mcp (7), #visual-design (7), #game-inspiration (6), #threejs (6), #ui (6), #vfx (6)
+#own-project (42), #desktop-app (16), #to-try (16), #browser-game (13), #inspiration (13), #pxlvzn (12), #agents (11), #open-source (11), #reference (10), #video-editing (10), #claude (9), #revolio-labs (9), #animation (8), #revolio (8), #mcp (7), #video-generation (7), #visual-design (7), #game-inspiration (6), #threejs (6), #ui (6)
 
 ### Style notes and where they come from
 
@@ -266,6 +266,7 @@ _From 94 entries, 45 with style notes. Rebuilt on every filing._
 
 ### Every reference with his reason
 
+- [Raea render engine](topics/ai/2026-11-15-raea-render-engine.md) (`tool`): AI agents write the code and it renders videos, motion graphics, 3D and games on your own Mac
 - [Viggle Remake model](topics/ai/2026-11-13-viggle-remake-open-model.md) (`tool`): Viggle AI's open weights to recast anybody in a video
 - [Toyxyz retarget add-on](topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md) (`tool`): cool plugin, and also cool way to retarget motion between characters with different body proportions; also a very cool art style for showing prototype models in a game
 - [Stick It Up stickers](topics/design/2026-11-13-stick-it-up-stickers.md) (`library`): cool component to add to my websites, stickers for personality
