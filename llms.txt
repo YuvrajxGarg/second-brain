@@ -24,6 +24,7 @@ Read TASTE.md first for the gist, then the catalog for what you need. Live graph
 
 - [Sprite stacking technique](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-15-sprite-stacking-pixel-art.md): `technique` · gamedev · turn pixel art to any angle with sprite stacking
 - [Raea render engine](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-15-raea-render-engine.md): `tool` · ai · AI agents write the code and it renders videos, motion graphics, 3D and games on your own Mac
+- [Pixel-art gaussian splats](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md): `style-ref` · gamedev · pixel-art gaussian splats look mesmerising
 - [Escapement Blender film](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-14-escapement-blender-short-film.md): `technique` · ai · cool 3D short film skill
 - [Viggle Remake model](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-13-viggle-remake-open-model.md): `tool` · ai · Viggle AI's open weights to recast anybody in a video
 - [Unity bodycam hands](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-13-unity-bodycam-ik-hands.md): `technique` · gamedev · tips for hand animation in a first person view in Unity

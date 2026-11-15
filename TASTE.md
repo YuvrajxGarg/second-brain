@@ -6,7 +6,7 @@ he already saved, and build on his own ideas. The part above the generated block
 curated by Claude and updated whenever a new entry shifts the picture; the evidence
 below is rebuilt from the notes on every filing.
 
-_Last curated: 2026-11-13 (added hand-drawn line art, mannequin prototypes, sleep alarm UI, Stick It Up stickers)._
+_Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sprite stacking)._
 
 ## Who he is
 
@@ -31,6 +31,10 @@ _Last curated: 2026-11-13 (added hand-drawn line art, mannequin prototypes, slee
 - **Chunky, flat pixel art** with a tight two or three colour palette (orange, blue,
   periwinkle), pixel cursors and UI bits. See the Captcha launch film and the pixel
   mascots in the Ace Of Frames reel.
+- **Pixel art in 3D**: small floating dioramas on black, each in one hue with a single
+  accent, that stay crisp pixel art while the camera orbits (Pixel-art gaussian
+  splats), and pixel sprites turned to any angle by stacking slices (Sprite stacking
+  technique).
 - **Textured, painterly illustration**: loose oil-pastel brushwork in warm sky blue,
   orange, ochre, olive and peach, set against calm off-white layouts with a bold
   grotesk wordmark and elegant serif copy (Second brand identity). Also code-made
@@ -103,13 +107,13 @@ _Last curated: 2026-11-13 (added hand-drawn line art, mannequin prototypes, slee
 
 ## Evidence (generated)
 
-_From 94 entries, 45 with style notes. Rebuilt on every filing._
+_From 95 entries, 46 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
 - `library`: 5
 - `asset-source`: 2
-- `style-ref`: 7
+- `style-ref`: 8
 - `website-ref`: 4
 - `game-ref`: 4
 - `tool`: 7
@@ -123,7 +127,7 @@ _From 94 entries, 45 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #desktop-app (16), #to-try (16), #browser-game (13), #inspiration (13), #pxlvzn (12), #agents (11), #open-source (11), #reference (10), #video-editing (10), #claude (9), #revolio-labs (9), #animation (8), #revolio (8), #mcp (7), #video-generation (7), #visual-design (7), #game-inspiration (6), #threejs (6), #ui (6)
+#own-project (42), #desktop-app (16), #to-try (16), #inspiration (14), #browser-game (13), #pxlvzn (12), #agents (11), #open-source (11), #claude (10), #reference (10), #video-editing (10), #revolio-labs (9), #animation (8), #revolio (8), #mcp (7), #video-generation (7), #visual-design (7), #game-inspiration (6), #threejs (6), #ui (6)
 
 ### Style notes and where they come from
 
@@ -187,6 +191,7 @@ _From 94 entries, 45 with style notes. Rebuilt on every filing._
 - **dystopian concert stage**: [Runaway Light Rig](topics/gamedev/2026-11-12-runaway-light-rig.md)
 - **expressive mascot**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
 - **fake 3d from 2d slices**: [Sprite stacking technique](topics/gamedev/2026-11-15-sprite-stacking-pixel-art.md)
+- **floating islands on black**: [Pixel-art gaussian splats](topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md)
 - **georgia serif**: [Wedding co-op game](topics/gamedev/2026-11-12-wedding-co-op-game.md)
 - **giant planet skies**: [Lens focal length guide](topics/ai/2026-11-12-lens-focal-length-guide.md)
 - **glass panel ui**: [TV Stack toy](topics/gamedev/2026-11-12-tv-stack-music-toy.md)
@@ -195,6 +200,7 @@ _From 94 entries, 45 with style notes. Rebuilt on every filing._
 - **gloved hands with pistol**: [Unity bodycam hands](topics/gamedev/2026-11-13-unity-bodycam-ik-hands.md)
 - **glowing cards**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
 - **glowing dot-matrix storage bar**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
+- **glowing particles**: [Pixel-art gaussian splats](topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md)
 - **golden hour window light**: [Revolio Labs site](topics/gamedev/2026-11-12-revolio-labs-site.md)
 - **graffiti street court**: [Bonk Court game](topics/gamedev/2026-11-12-bonk-court-game.md)
 - **hairline strokes**: [PXLVZN label](topics/tech/2026-11-12-pxlvzn-label.md)
@@ -214,6 +220,7 @@ _From 94 entries, 45 with style notes. Rebuilt on every filing._
 - **mumbai kaali-peeli illustration**: [Meter Down concept](topics/gamedev/2026-11-12-meter-down-concept.md)
 - **one continuous camera move**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
 - **one flat pastel colour per character**: [Toyxyz retarget add-on](topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md)
+- **one-hue monochrome palettes**: [Pixel-art gaussian splats](topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md)
 - **orange and blue palette**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
 - **painted 2d backgrounds**: [AI tween harness](topics/design/2026-11-11-ai-tween-paint-harness.md)
 - **painterly brushwork**: [Claude code paintings](topics/ai/2026-11-10-claude-code-paintings.md)
@@ -222,6 +229,7 @@ _From 94 entries, 45 with style notes. Rebuilt on every filing._
 - **particle dissolve on delete**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
 - **pastel blocks**: [ARC 3D art dataset](topics/design/2026-11-10-arc-3d-art-dataset.md)
 - **pixel cursors and ui**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
+- **pixel-art 3d dioramas**: [Pixel-art gaussian splats](topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md)
 - **pixel-art decals**: [Stick It Up stickers](topics/design/2026-11-13-stick-it-up-stickers.md)
 - **pixel-art mascots**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
 - **plain status sentence**: [DIT offload checker](topics/tech/2026-11-13-dit-offload-checker-idea.md)
@@ -267,6 +275,7 @@ _From 94 entries, 45 with style notes. Rebuilt on every filing._
 ### Every reference with his reason
 
 - [Raea render engine](topics/ai/2026-11-15-raea-render-engine.md) (`tool`): AI agents write the code and it renders videos, motion graphics, 3D and games on your own Mac
+- [Pixel-art gaussian splats](topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md) (`style-ref`): pixel-art gaussian splats look mesmerising
 - [Viggle Remake model](topics/ai/2026-11-13-viggle-remake-open-model.md) (`tool`): Viggle AI's open weights to recast anybody in a video
 - [Toyxyz retarget add-on](topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md) (`tool`): cool plugin, and also cool way to retarget motion between characters with different body proportions; also a very cool art style for showing prototype models in a game
 - [Stick It Up stickers](topics/design/2026-11-13-stick-it-up-stickers.md) (`library`): cool component to add to my websites, stickers for personality
