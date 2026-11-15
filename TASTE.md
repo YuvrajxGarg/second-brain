@@ -103,7 +103,7 @@ _Last curated: 2026-11-13 (added hand-drawn line art, mannequin prototypes, slee
 
 ## Evidence (generated)
 
-_From 92 entries, 44 with style notes. Rebuilt on every filing._
+_From 94 entries, 45 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -113,10 +113,10 @@ _From 92 entries, 44 with style notes. Rebuilt on every filing._
 - `website-ref`: 4
 - `game-ref`: 4
 - `tool`: 6
-- `technique`: 11
+- `technique`: 12
 - `advice`: 4
 - `idea`: 4
-- `thought`: 1
+- `thought`: 2
 - `todo`: 2
 - `org`: 3
 - `project`: 39
@@ -160,6 +160,7 @@ _From 92 entries, 44 with style notes. Rebuilt on every filing._
 - **chrome emblems**: [Stick It Up stickers](topics/design/2026-11-13-stick-it-up-stickers.md)
 - **chunky armoured knights**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
 - **chunky flat pixel art**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
+- **chunky pixel art cars**: [Sprite stacking technique](topics/gamedev/2026-11-15-sprite-stacking-pixel-art.md)
 - **chunky props**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **cinematic letterbox grade**: [Escapement Blender film](topics/ai/2026-11-14-escapement-blender-short-film.md)
 - **clean sans type**: [Revolio Labs](topics/business/2026-11-12-revolio-labs.md)
@@ -185,6 +186,7 @@ _From 92 entries, 44 with style notes. Rebuilt on every filing._
 - **dusk orange canyon**: [Escapement Blender film](topics/ai/2026-11-14-escapement-blender-short-film.md)
 - **dystopian concert stage**: [Runaway Light Rig](topics/gamedev/2026-11-12-runaway-light-rig.md)
 - **expressive mascot**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
+- **fake 3d from 2d slices**: [Sprite stacking technique](topics/gamedev/2026-11-15-sprite-stacking-pixel-art.md)
 - **georgia serif**: [Wedding co-op game](topics/gamedev/2026-11-12-wedding-co-op-game.md)
 - **giant planet skies**: [Lens focal length guide](topics/ai/2026-11-12-lens-focal-length-guide.md)
 - **glass panel ui**: [TV Stack toy](topics/gamedev/2026-11-12-tv-stack-music-toy.md)
@@ -252,6 +254,7 @@ _From 92 entries, 44 with style notes. Rebuilt on every filing._
 - **textured pastel brushwork**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
 - **tick ruler numerals**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
 - **top-down camera**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
+- **top-down racing track**: [Sprite stacking technique](topics/gamedev/2026-11-15-sprite-stacking-pixel-art.md)
 - **ui mockups in motion**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
 - **walkable stylised 3d city**: [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md)
 - **warm painterly palette**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
