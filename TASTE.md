@@ -110,13 +110,13 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 102 entries, 49 with style notes. Rebuilt on every filing._
+_From 103 entries, 50 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
 - `library`: 5
 - `asset-source`: 2
-- `style-ref`: 9
+- `style-ref`: 10
 - `website-ref`: 4
 - `game-ref`: 4
 - `tool`: 9
@@ -130,7 +130,7 @@ _From 102 entries, 49 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (19), #desktop-app (16), #inspiration (16), #browser-game (13), #open-source (13), #reference (13), #agents (12), #claude (12), #pxlvzn (12), #video-editing (10), #revolio-labs (9), #ui (9), #visual-design (9), #animation (8), #revolio (8), #mcp (7), #video-generation (7), #3d-art (6), #game-inspiration (6)
+#own-project (42), #to-try (19), #inspiration (17), #desktop-app (16), #browser-game (13), #open-source (13), #reference (13), #agents (12), #claude (12), #pxlvzn (12), #ui (10), #video-editing (10), #revolio-labs (9), #visual-design (9), #animation (8), #revolio (8), #mcp (7), #video-generation (7), #3d-art (6), #game-inspiration (6)
 
 ### Style notes and where they come from
 
@@ -187,6 +187,7 @@ _From 102 entries, 49 with style notes. Rebuilt on every filing._
 - **dark grey blender viewport grid**: [Toyxyz retarget add-on](topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md)
 - **dark macro clockwork**: [Escapement Blender film](topics/ai/2026-11-14-escapement-blender-short-film.md)
 - **dark menu bar popover**: [DIT offload checker](topics/tech/2026-11-13-dit-offload-checker-idea.md)
+- **dark minimal dashboard**: [Strawhat homelab dashboard](topics/design/2026-11-16-strawhat-homelab-dashboard.md)
 - **dark minimal ui**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
 - **dark slate grid floor**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **dark slate theme**: [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md)
@@ -228,6 +229,7 @@ _From 102 entries, 49 with style notes. Rebuilt on every filing._
 - **misty desaturated battlefield**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
 - **monospace type**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
 - **mumbai kaali-peeli illustration**: [Meter Down concept](topics/gamedev/2026-11-12-meter-down-concept.md)
+- **node map of servers**: [Strawhat homelab dashboard](topics/design/2026-11-16-strawhat-homelab-dashboard.md)
 - **one continuous camera move**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
 - **one flat pastel colour per character**: [Toyxyz retarget add-on](topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md)
 - **one-hue monochrome palettes**: [Pixel-art gaussian splats](topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md)
@@ -254,6 +256,7 @@ _From 102 entries, 49 with style notes. Rebuilt on every filing._
 - **rolling counters**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
 - **scroll side-scroller**: [Revolio Labs site](topics/gamedev/2026-11-12-revolio-labs-site.md)
 - **scrubbable timeline**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
+- **serif headings with mono stats**: [Strawhat homelab dashboard](topics/design/2026-11-16-strawhat-homelab-dashboard.md)
 - **serif italic accents**: [Idea Archive site](topics/business/2026-11-12-idea-archive-site.md)
 - **serif plus grotesk type**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
 - **serif titles with small caps labels**: [Neural network data viz](topics/design/2026-11-15-neural-network-data-viz.md)
@@ -274,6 +277,7 @@ _From 102 entries, 49 with style notes. Rebuilt on every filing._
 - **teal and lime on deep crimson**: [Blender painterly leaf shader](topics/gamedev/2026-11-16-blender-painterly-leaf-shader.md)
 - **testimonial wall**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
 - **textured pastel brushwork**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
+- **thin usage bars**: [Strawhat homelab dashboard](topics/design/2026-11-16-strawhat-homelab-dashboard.md)
 - **tick ruler numerals**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
 - **top-down camera**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **top-down racing track**: [Sprite stacking technique](topics/gamedev/2026-11-15-sprite-stacking-pixel-art.md)
@@ -289,6 +293,7 @@ _From 102 entries, 49 with style notes. Rebuilt on every filing._
 
 ### Every reference with his reason
 
+- [Strawhat homelab dashboard](topics/design/2026-11-16-strawhat-homelab-dashboard.md) (`style-ref`): clean dark dashboard design for a personal tool that tracks machines and AI subscriptions
 - [Cloudflare Computer](topics/ai/2026-11-16-cloudflare-computer-agent-sandbox.md) (`tool`): Cloudflare computer
 - [Unslop UI skill](topics/design/2026-11-15-unslop-ui-skill.md) (`tool`): the skill repo from the AI slop vs senior designer reel, turns AI-looking UI into a designed interface
 - [Raea render engine](topics/ai/2026-11-15-raea-render-engine.md) (`tool`): AI agents write the code and it renders videos, motion graphics, 3D and games on your own Mac

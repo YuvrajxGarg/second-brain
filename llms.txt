@@ -22,6 +22,7 @@ Read TASTE.md first for the gist, then the catalog for what you need. Live graph
 
 ## Notes
 
+- [Strawhat homelab dashboard](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/2026-11-16-strawhat-homelab-dashboard.md): `style-ref` · design · clean dark dashboard design for a personal tool that tracks machines and AI subscriptions
 - [Cloudflare Computer](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-16-cloudflare-computer-agent-sandbox.md): `tool` · ai · Cloudflare computer
 - [Claude Code reactive theme](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-16-claude-code-reactive-theme.md): `technique` · ai · Insane use case for custom theme or mods.
 - [Blender painterly leaf shader](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-16-blender-painterly-leaf-shader.md): `technique` · gamedev · painterly stylised shading in Blender using the Light Accumulation node
