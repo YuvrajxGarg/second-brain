@@ -1,0 +1,7 @@
+{
+  "name": "social-reader-local",
+  "owner": { "name": "Yuvraj Garg" },
+  "plugins": [
+    { "name": "social-reader", "source": "./", "description": "Read tweets, threads and Instagram reels from links." }
+  ]
+}

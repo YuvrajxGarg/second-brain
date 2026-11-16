@@ -27,6 +27,7 @@ topics/<topic>/    one folder per group, created on demand
 templates/entry.md the frontmatter template
 scripts/build_index.py  regenerates INDEX, TAGS, IDEAS, catalog/, llms*.txt, TASTE evidence
 tools/quick-capture/    browser extension that drops captures into inbox/
+tools/social-reader/    source of the Social Reader MCP connector (Instagram/X), shared via HANDOFF.md
 scripts/build_graph.mjs builds site/data/graph.json for the graph site
 site/                   the graph website (static, deployed on Vercel)
 vercel.json             Vercel build config (runs build_index.py + build_graph.mjs, serves site/)

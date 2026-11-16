@@ -1,0 +1,27 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/mcp.py": {
+      "maxDuration": 60,
+      "memory": 1024,
+      "includeFiles": "server/reader_core.py"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/mcp/:token",
+      "destination": "/api/mcp?token=:token"
+    },
+    {
+      "source": "/mcp",
+      "destination": "/api/mcp"
+    }
+  ],
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- .",
+  "git": {
+    "deploymentEnabled": {
+      "*": false,
+      "main": true
+    }
+  }
+}

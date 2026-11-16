@@ -1,0 +1,8 @@
+.claude-plugin
+skills
+.mcp.json
+server/social_reader.py
+server/__pycache__
+__pycache__
+.env*
+.vercel

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "social-reader": {
+      "command": "uv",
+      "args": ["run", "--quiet", "--script", "${CLAUDE_PLUGIN_ROOT}/server/social_reader.py"]
+    }
+  }
+}

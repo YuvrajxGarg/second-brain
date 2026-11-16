@@ -1,0 +1,6 @@
+{
+  "name": "social-reader",
+  "version": "1.0.0",
+  "description": "Read X/Twitter posts & threads (text, images, video frames) and Instagram posts/reels (caption, thumbnail, video frames) from a pasted link. Free, no API keys.",
+  "author": { "name": "Yuvraj Garg" }
+}

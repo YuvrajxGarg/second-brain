@@ -17,6 +17,87 @@ Placeholders used below:
 
 ---
 
+## 0. The simple version (no coding needed)
+
+If you only read one section, read this one. You need about an hour, a laptop, and
+free accounts on **GitHub**, **Vercel** and **Claude** (a paid Claude plan, since
+you'll use Projects and connectors). Wherever you see `<something>`, put in your own
+name or link.
+
+**A. Copy the system (5 min)**
+
+1. Sign in to GitHub. Go to **github.com/new/import**.
+2. In "Your old repository's clone URL" paste
+   `https://github.com/YuvrajxGarg/second-brain`.
+3. Name it `second-brain`, pick **Public** (easiest) or Private, click
+   **Begin import**. Wait for it to finish. It copies everything, including the
+   original owner's notes; Claude deletes those for you in step C.
+
+**B. Set up Claude (10 min)**
+
+4. On claude.ai, click **Projects → New project**, call it "Second Brain".
+5. In the project, connect GitHub when asked and add your new `second-brain` repo.
+6. Open the project's settings and paste the **project instructions** from
+   section 5a into the instructions box (change `<you>` and the repo name).
+
+**C. Let Claude make it yours (10 min)**
+
+7. Start a thread in the project and send the **first message** from section 5b
+   (fill in the bits in `<...>` and a few lines about yourself).
+8. Claude clears out the old notes, puts your name in, answers a few questions
+   with you and saves your first notes. You don't touch any code.
+
+**D. Put the graph website online (10 min)**
+
+9. Sign in to vercel.com with GitHub. Click **Add New → Project**, pick your
+   `second-brain` repo, leave every setting as it is, click **Deploy**.
+10. When it's done you get a link like `second-brain-xyz.vercel.app`. That's your
+    brain as a graph. Tell Claude the link so it can use it in your files.
+
+**E. Let Claude read Instagram and X links (15 min)**
+
+11. Make up a long random password (a password manager can make one). Call it
+    your **reader password**.
+12. On Vercel again: **Add New → Project**, pick the same `second-brain` repo.
+    Change the project name to `social-reader`, click **Edit** next to **Root
+    Directory** and choose `tools/social-reader`.
+13. Open **Environment Variables**, add the name `MCP_TOKEN` with your reader
+    password as the value, then click **Deploy**.
+14. Your reader link is
+    `https://<your-social-reader-project>.vercel.app/mcp/<your reader password>`.
+15. On claude.ai go to **Settings → Connectors → Add custom connector**, name it
+    `Social Reader`, paste that link, click **Add**.
+16. Start a **new** thread in your project (connectors only show up in new
+    threads). Paste an Instagram reel link to test it.
+
+**F. One-click saving from your browser (optional, 10 min)**
+
+17. On GitHub, open your repo, click **Code → Download ZIP**, unzip it, and move
+    the `tools/quick-capture` folder somewhere you won't delete it.
+18. In Chrome go to `chrome://extensions`, turn on **Developer mode** (top right),
+    click **Load unpacked**, pick that `quick-capture` folder. Pin it.
+19. Make a GitHub token at **github.com/settings/personal-access-tokens/new**:
+    give it access to only your `second-brain` repo, and under Permissions set
+    **Contents** to **Read and write**. Copy the token.
+20. Click the extension icon, paste the token, type your GitHub username as
+    **Owner** and `second-brain` as **Repo**, click **Test connection**, then
+    **Save**.
+
+**G. Morning ideas (optional, 2 min)**
+
+21. In your Claude project, send: *"Set up a scheduled task that runs every
+    morning at 9 AM my time, follows suggestions/README.md, and sends me the
+    ideas as a notification."*
+
+**That's it.** From now on, just paste anything into your Claude project: links,
+thoughts, reels, screenshots. Claude files it, and it shows up on your graph a
+minute later. Ask "what was that thing about X" to find it again.
+
+The rest of this guide explains the same steps in more detail, for when you're
+curious how it works or something breaks.
+
+---
+
 ## 1. What it is
 
 You dump anything in a chat with Claude: links, thoughts, ideas, quotes, tools,
@@ -91,6 +172,7 @@ site/              the static graph website (canvas + vendored d3, marked, DOMPu
 api/mcp.js         MCP server (Vercel function, no dependencies)
 api/edit.js        edit API for the site (Vercel function)
 tools/quick-capture/     the browser extension
+tools/social-reader/     the Instagram/X link reader (MCP connector, deploys on its own)
 suggestions/       daily build ideas, one file per day, plus the routine's README
 vercel.json        build command, MCP rewrite, production-only deploys
 ```
@@ -107,7 +189,8 @@ Rough time: 30 to 45 minutes for everything, 10 minutes for just the core (steps
 
 ### 3.1 Make your repo (copy the engine, not the notes)
 
-On your computer:
+No terminal? Use GitHub's importer as in section 0 (step A) and let Claude delete
+the old notes in its first session. With a terminal:
 
 ```sh
 git clone --depth 1 https://github.com/YuvrajxGarg/second-brain.git <repo>
@@ -155,28 +238,45 @@ How you use it: drop things in the project chat. Claude files them, rebuilds the
 index, commits and pushes to `main`. Ask "what was that thing about X" and it
 searches.
 
-### 3.3 A link reader for Instagram and X (Social Reader style)
+### 3.3 Social Reader: a link reader for Instagram and X
 
 Claude can fetch most web pages, but Instagram reels and X posts are behind logins
-and JavaScript, so a plain fetch gets nothing. The fix is a tiny **MCP connector**
-with one tool, `read_social_link(url)`, that returns:
+and JavaScript, so a plain fetch gets nothing. **Social Reader** fixes that. Its
+full source is in this repo at [`tools/social-reader/`](tools/social-reader/), so
+your copy already has it. It's a small MCP connector with one tool,
+`read_social_link(url)`, that returns:
 
-- the post text (and for X, the author's whole thread),
-- the author and date,
-- the photos, or a few frames sampled from the video, as images.
+- the post text (for X, the author's whole thread, plus quoted posts and stats),
+- the caption, author and counts for Instagram posts and reels, carousels included,
+- the photos, and a few frames sampled from any video, as images Claude can see.
 
-Options:
+It's free: it uses the public FxTwitter API and Instagram's public embed page, so
+there are no API keys or accounts. Limits: private, deleted and age-restricted
+posts can't be read, Instagram comments aren't included, and audio isn't
+transcribed.
 
-- **Build your own** (an afternoon): a single Vercel serverless function that
-  speaks MCP over Streamable HTTP (copy the shape of `api/mcp.js`), calls a
-  scraping or embed API for the post, extracts video frames, and returns text plus
-  images. Ask Claude to build it with you; give it this paragraph as the spec.
-- **Use an existing MCP server** from the connector directory that reads
-  X/Instagram links.
+**Host it (for claude.ai, web and mobile, and Projects):**
 
-Then add it to Claude as a **custom connector** (Settings, Connectors, Add custom
-connector, paste the URL). Note: a connector only shows up in threads started
-**after** you connect it; if a thread can't see it, start a new thread.
+1. Pick a long random secret. This is your `MCP_TOKEN`; the connector URL contains
+   it, so anyone without it gets a 404.
+2. Vercel: **Add New → Project**, import your brain repo again, name the project
+   `social-reader`, set **Root Directory** to `tools/social-reader`. Its own
+   `vercel.json` sets up the Python function, the `/mcp/<token>` route, and skips
+   rebuilding when only other parts of the repo change.
+3. Add the environment variable `MCP_TOKEN` = your secret, then **Deploy**.
+4. Connector URL: `https://<social-reader-project>.vercel.app/mcp/<MCP_TOKEN>`.
+5. claude.ai: **Settings → Connectors → Add custom connector**, name it
+   `Social Reader`, paste the URL, **Add**. No OAuth.
+6. Connectors only attach to threads started **after** you add them, so start a
+   new thread to use it.
+
+To change the secret later: change `MCP_TOKEN` in the Vercel project settings,
+redeploy, and update the URL in claude.ai.
+
+**Run it locally instead** (Claude Code or Claude Desktop): see
+[`tools/social-reader/README.md`](tools/social-reader/README.md). It needs `uv`
+and `ffmpeg`, and there's a Claude Code plugin with a skill that triggers it
+automatically on any X or Instagram link.
 
 The project instructions in section 5 tell Claude to always use it for social
 links and only fall back to asking for a screenshot if it fails.
@@ -375,9 +475,12 @@ Send this in the first thread of the project:
 
 ```text
 This repo is a copy of someone else's second-brain engine with their notes removed.
-Make it mine. My name is <you>, my GitHub repo is <github-user>/<repo>, my site will
-be at https://<site-domain>, and my time zone is <tz>.
+Make it mine. My name is <you>, my GitHub repo is <github-user>/<repo>, my site is (or
+will be) at https://<site-domain>, and my time zone is <tz>.
 
+0. If the old notes are still here (topics/*/ files other than .gitkeep, inbox/
+   captures, catalog/, suggestions/YYYY-MM-DD.md day files, site/look.json),
+   delete them. Keep the empty topic folders with a .gitkeep in each.
 1. Replace the previous owner's name, repo, site URL and company/personal details
    everywhere: CLAUDE.md, README.md, AGENTS.md, HANDOFF.md links, scripts/build_index.py
    (SITE, RAW and the description strings), scripts/build_graph.mjs, api/mcp.js
@@ -409,7 +512,7 @@ About me: <one paragraph about yourself>
 - [ ] Repo created from the engine and pushed to `main` (3.1)
 - [ ] Claude project with the repo, project instructions pasted (3.2, 5a)
 - [ ] First message sent; Claude made the repo yours (5b)
-- [ ] Social link reader connector added (3.3)
+- [ ] Social Reader deployed on Vercel and added as a connector (3.3)
 - [ ] Vercel project deployed; custom domain if you want one (3.4)
 - [ ] Optional: `EDIT_PASSCODE`, `GITHUB_TOKEN`, `GITHUB_REPO` set for site editing
 - [ ] Quick-capture extension loaded with your token, owner and repo (3.5)
@@ -427,6 +530,9 @@ About me: <one paragraph about yourself>
   `suggestions/` are skipped on purpose; branches other than `main` never deploy.
 - **A connector isn't available in a thread:** connectors attach when a thread
   starts. Start a new thread after adding or reconnecting one.
+- **Social Reader returns 404:** the token at the end of the connector URL doesn't
+  match `MCP_TOKEN` in Vercel. **Connector won't add:** make sure the URL ends in
+  `/mcp/<token>`.
 - **Extension says 401/403:** the token expired or lacks Contents read/write on
   this repo.
 - **Build fails on Vercel:** run `python3 scripts/build_index.py && node
