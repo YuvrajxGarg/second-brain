@@ -56,6 +56,15 @@ name or link.
 
 **E. Let Claude read Instagram and X links (15 min)**
 
+**Easy way (2 min):** if the person who sent you this guide gave you a ready-made
+Social Reader link, just do this and skip steps 11 to 14:
+
+- On claude.ai go to **Settings → Connectors → Add custom connector**, name it
+  `Social Reader`, paste the link, click **Add**.
+- Start a **new** thread in your project and paste an Instagram reel link to test.
+
+**Your own copy (15 min),** if you'd rather not depend on anyone else's:
+
 11. Make up a long random password (a password manager can make one). Call it
     your **reader password**.
 12. On Vercel again: **Add New → Project**, pick the same `second-brain` repo.
