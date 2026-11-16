@@ -12,6 +12,7 @@ CLAUDE.md          these rules
 README.md          short human overview
 AGENTS.md          entry point for other AIs: what to read, fields, access (hand-written)
 TASTE.md           taste profile for agents: curated top part + generated evidence block
+HANDOFF.md         guide for a friend to set up this system for themselves (hand-written)
 ME.md              Yuvraj's own page: curated personality read + insights, generated stats
 IDEAS.md           generated: his ideas and to-dos by stage
 catalog/           generated: entries grouped by kind (libraries, style-refs, tools...)
