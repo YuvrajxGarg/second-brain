@@ -48,19 +48,19 @@ _Last curated: 2026-11-12, from 73 notes (29 saves plus his own projects and com
 
 ## Stats (generated)
 
-_Rebuilt on every filing from 103 notes._
+_Rebuilt on every filing from 104 notes._
 
 | | |
 |---|---|
-| Notes saved | 103 |
-| Active days | 8 (2026-11-09 to 2026-11-16) |
-| Average per active day | 12.9 |
-| Current streak | 8 days |
+| Notes saved | 104 |
+| Active days | 9 (2026-11-09 to 2026-11-18) |
+| Average per active day | 11.6 |
+| Current streak | 1 day |
 | Longest streak | 8 days |
 | Notes with his own comment | 49 (47%) |
 | Open ideas and to-dos | 6 |
-| Tagged to-try | 19 |
-| Marked read or done | 42 of 103 |
+| Tagged to-try | 20 |
+| Marked read or done | 42 of 104 |
 
 ### Saves per day
 
@@ -73,12 +73,13 @@ _Rebuilt on every filing from 103 notes._
 2026-11-14  █ 1
 2026-11-15  ███ 7
 2026-11-16  ██ 4
+2026-11-18  █ 1
 ```
 
 ### By topic
 
 ```
-gamedev       ██████ 32
+gamedev       ██████ 33
 design        ████ 20
 ai            ███ 18
 tech          ███ 18
@@ -97,7 +98,7 @@ asset-source  █ 2
 style-ref     ██ 10
 website-ref   █ 4
 game-ref      █ 4
-tool          ██ 9
+tool          ██ 10
 technique     ███ 14
 advice        █ 6
 idea          █ 4
@@ -111,8 +112,8 @@ project       ████████ 39
 
 ```
 web           ██████████ 50
-x             █████ 24
-instagram     ███ 13
+x             █████ 25
+instagram     ██ 13
 own words     ██ 11
 github        █ 5
 ```

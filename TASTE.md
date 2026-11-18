@@ -110,7 +110,7 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 103 entries, 50 with style notes. Rebuilt on every filing._
+_From 104 entries, 51 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -119,7 +119,7 @@ _From 103 entries, 50 with style notes. Rebuilt on every filing._
 - `style-ref`: 10
 - `website-ref`: 4
 - `game-ref`: 4
-- `tool`: 9
+- `tool`: 10
 - `technique`: 14
 - `advice`: 6
 - `idea`: 4
@@ -130,7 +130,7 @@ _From 103 entries, 50 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (19), #inspiration (17), #desktop-app (16), #browser-game (13), #open-source (13), #reference (13), #agents (12), #claude (12), #pxlvzn (12), #ui (10), #video-editing (10), #revolio-labs (9), #visual-design (9), #animation (8), #revolio (8), #mcp (7), #video-generation (7), #3d-art (6), #game-inspiration (6)
+#own-project (42), #to-try (20), #inspiration (17), #desktop-app (16), #open-source (14), #agents (13), #browser-game (13), #reference (13), #claude (12), #pxlvzn (12), #ui (10), #video-editing (10), #revolio-labs (9), #visual-design (9), #animation (8), #mcp (8), #revolio (8), #video-generation (7), #3d-art (6), #game-inspiration (6)
 
 ### Style notes and where they come from
 
@@ -213,6 +213,7 @@ _From 103 entries, 50 with style notes. Rebuilt on every filing._
 - **glyph-grid data viz**: [Neural network data viz](topics/design/2026-11-15-neural-network-data-viz.md)
 - **golden hour window light**: [Revolio Labs site](topics/gamedev/2026-11-12-revolio-labs-site.md)
 - **graffiti street court**: [Bonk Court game](topics/gamedev/2026-11-12-bonk-court-game.md)
+- **gritty scarred skin detail**: [MetaHuman Maker addon](topics/gamedev/2026-11-18-metahuman-maker-agent-addon.md)
 - **hairline strokes**: [PXLVZN label](topics/tech/2026-11-12-pxlvzn-label.md)
 - **halftone**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
 - **hand-drawn animation**: [AI tween harness](topics/design/2026-11-11-ai-tween-paint-harness.md)
@@ -241,6 +242,7 @@ _From 103 entries, 50 with style notes. Rebuilt on every filing._
 - **painterly stylised 3d**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
 - **particle dissolve on delete**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
 - **pastel blocks**: [ARC 3D art dataset](topics/design/2026-11-10-arc-3d-art-dataset.md)
+- **photoreal metahuman faces**: [MetaHuman Maker addon](topics/gamedev/2026-11-18-metahuman-maker-agent-addon.md)
 - **pixel cursors and ui**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
 - **pixel-art 3d dioramas**: [Pixel-art gaussian splats](topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md)
 - **pixel-art decals**: [Stick It Up stickers](topics/design/2026-11-13-stick-it-up-stickers.md)
@@ -282,6 +284,7 @@ _From 103 entries, 50 with style notes. Rebuilt on every filing._
 - **top-down camera**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **top-down racing track**: [Sprite stacking technique](topics/gamedev/2026-11-15-sprite-stacking-pixel-art.md)
 - **ui mockups in motion**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
+- **unreal editor viewport**: [MetaHuman Maker addon](topics/gamedev/2026-11-18-metahuman-maker-agent-addon.md)
 - **walkable stylised 3d city**: [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md)
 - **warm painterly palette**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
 - **warm soft lighting**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
@@ -293,6 +296,7 @@ _From 103 entries, 50 with style notes. Rebuilt on every filing._
 
 ### Every reference with his reason
 
+- [MetaHuman Maker addon](topics/gamedev/2026-11-18-metahuman-maker-agent-addon.md) (`tool`): give the repo to an agent and talk to it to make AAA MetaHumans for Unreal and web
 - [Strawhat homelab dashboard](topics/design/2026-11-16-strawhat-homelab-dashboard.md) (`style-ref`): clean dark dashboard design for a personal tool that tracks machines and AI subscriptions
 - [Cloudflare Computer](topics/ai/2026-11-16-cloudflare-computer-agent-sandbox.md) (`tool`): Cloudflare computer
 - [Unslop UI skill](topics/design/2026-11-15-unslop-ui-skill.md) (`tool`): the skill repo from the AI slop vs senior designer reel, turns AI-looking UI into a designed interface
