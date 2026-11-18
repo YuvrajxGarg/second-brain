@@ -23,6 +23,7 @@ Read TASTE.md first for the gist, then the catalog for what you need. Live graph
 ## Notes
 
 - [MetaHuman Maker addon](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-18-metahuman-maker-agent-addon.md): `tool` · gamedev · give the repo to an agent and talk to it to make AAA MetaHumans for Unreal and web
+- [Agent mistakes prompt](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-18-agent-mistakes-to-checks.md): `technique` · ai · turn a coding agent's repeat mistakes into lint rules, tests and types instead of more CLAUDE.md lines
 - [Strawhat homelab dashboard](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/2026-11-16-strawhat-homelab-dashboard.md): `style-ref` · design · clean dark dashboard design for a personal tool that tracks machines and AI subscriptions
 - [Cloudflare Computer](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-16-cloudflare-computer-agent-sandbox.md): `tool` · ai · Cloudflare computer
 - [Claude Code reactive theme](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-16-claude-code-reactive-theme.md): `technique` · ai · Insane use case for custom theme or mods.
