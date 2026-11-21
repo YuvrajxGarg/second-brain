@@ -110,7 +110,7 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 107 entries, 52 with style notes. Rebuilt on every filing._
+_From 108 entries, 53 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -119,7 +119,7 @@ _From 107 entries, 52 with style notes. Rebuilt on every filing._
 - `style-ref`: 10
 - `website-ref`: 5
 - `game-ref`: 4
-- `tool`: 10
+- `tool`: 11
 - `technique`: 16
 - `advice`: 6
 - `idea`: 4
@@ -130,7 +130,7 @@ _From 107 entries, 52 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (21), #inspiration (19), #desktop-app (16), #agents (15), #claude (15), #open-source (15), #browser-game (13), #reference (13), #pxlvzn (12), #video-editing (11), #ui (10), #revolio-labs (9), #visual-design (9), #animation (8), #mcp (8), #revolio (8), #video-generation (7), #3d-art (6), #game-inspiration (6)
+#own-project (42), #to-try (22), #inspiration (19), #desktop-app (16), #agents (15), #claude (15), #open-source (15), #reference (14), #browser-game (13), #pxlvzn (12), #video-editing (11), #ui (10), #revolio-labs (9), #visual-design (9), #animation (8), #mcp (8), #revolio (8), #video-generation (7), #3d-art (6), #game-inspiration (6)
 
 ### Style notes and where they come from
 
@@ -193,6 +193,7 @@ _From 107 entries, 52 with style notes. Rebuilt on every filing._
 - **dark night map**: [Flat Finder map](topics/design/2026-11-21-flat-finder-map.md)
 - **dark slate grid floor**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **dark slate theme**: [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md)
+- **dark ui with bold white headline**: [Tabworthy site directory](topics/tech/2026-11-21-tabworthy-site-directory.md)
 - **dense dots squares and crosses**: [Neural network data viz](topics/design/2026-11-15-neural-network-data-viz.md)
 - **desi street shopfront**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
 - **dither**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
@@ -216,6 +217,7 @@ _From 107 entries, 52 with style notes. Rebuilt on every filing._
 - **glyph-grid data viz**: [Neural network data viz](topics/design/2026-11-15-neural-network-data-viz.md)
 - **golden hour window light**: [Revolio Labs site](topics/gamedev/2026-11-12-revolio-labs-site.md)
 - **graffiti street court**: [Bonk Court game](topics/gamedev/2026-11-12-bonk-court-game.md)
+- **grid of category cards with counts**: [Tabworthy site directory](topics/tech/2026-11-21-tabworthy-site-directory.md)
 - **gritty scarred skin detail**: [MetaHuman Maker addon](topics/gamedev/2026-11-18-metahuman-maker-agent-addon.md)
 - **hairline strokes**: [PXLVZN label](topics/tech/2026-11-12-pxlvzn-label.md)
 - **halftone**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
@@ -232,6 +234,7 @@ _From 107 entries, 52 with style notes. Rebuilt on every filing._
 - **minimal dark sidebar filters**: [Flat Finder map](topics/design/2026-11-21-flat-finder-map.md)
 - **minimal hud**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **misty desaturated battlefield**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
+- **monospace tags**: [Tabworthy site directory](topics/tech/2026-11-21-tabworthy-site-directory.md)
 - **monospace type**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
 - **mumbai kaali-peeli illustration**: [Meter Down concept](topics/gamedev/2026-11-12-meter-down-concept.md)
 - **node map of servers**: [Strawhat homelab dashboard](topics/design/2026-11-16-strawhat-homelab-dashboard.md)
@@ -270,6 +273,7 @@ _From 107 entries, 52 with style notes. Rebuilt on every filing._
 - **single blue accent**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
 - **single-blue swirl on white**: [Neural network data viz](topics/design/2026-11-15-neural-network-data-viz.md)
 - **sky blue to sand gradient**: [Wedding co-op game](topics/gamedev/2026-11-12-wedding-co-op-game.md)
+- **small green accent button**: [Tabworthy site directory](topics/tech/2026-11-21-tabworthy-site-directory.md)
 - **soft serif headline**: [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md)
 - **spray paint type**: [Bonk Court game](topics/gamedev/2026-11-12-bonk-court-game.md)
 - **stamps and highlighter swipes**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
@@ -301,6 +305,7 @@ _From 107 entries, 52 with style notes. Rebuilt on every filing._
 
 ### Every reference with his reason
 
+- [Tabworthy site directory](topics/tech/2026-11-21-tabworthy-site-directory.md) (`tool`): directory of hidden-gem websites to explore
 - [Flat Finder map](topics/design/2026-11-21-flat-finder-map.md) (`website-ref`): map web app built with Claude, nice dark map with glowing buildings
 - [MetaHuman Maker addon](topics/gamedev/2026-11-18-metahuman-maker-agent-addon.md) (`tool`): give the repo to an agent and talk to it to make AAA MetaHumans for Unreal and web
 - [Strawhat homelab dashboard](topics/design/2026-11-16-strawhat-homelab-dashboard.md) (`style-ref`): clean dark dashboard design for a personal tool that tracks machines and AI subscriptions
