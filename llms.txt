@@ -22,6 +22,7 @@ Read TASTE.md first for the gist, then the catalog for what you need. Live graph
 
 ## Notes
 
+- [Flat Finder map](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/2026-11-21-flat-finder-map.md): `website-ref` · design · map web app built with Claude, nice dark map with glowing buildings
 - [MetaHuman Maker addon](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/2026-11-18-metahuman-maker-agent-addon.md): `tool` · gamedev · give the repo to an agent and talk to it to make AAA MetaHumans for Unreal and web
 - [Claude video edit](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-18-claude-video-edit.md): `technique` · ai · a full YouTube video edited and rendered entirely with Claude (360 GB of footage)
 - [Agent mistakes prompt](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/2026-11-18-agent-mistakes-to-checks.md): `technique` · ai · turn a coding agent's repeat mistakes into lint rules, tests and types instead of more CLAUDE.md lines

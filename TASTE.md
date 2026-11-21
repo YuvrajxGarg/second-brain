@@ -110,14 +110,14 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 106 entries, 51 with style notes. Rebuilt on every filing._
+_From 107 entries, 52 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
 - `library`: 5
 - `asset-source`: 2
 - `style-ref`: 10
-- `website-ref`: 4
+- `website-ref`: 5
 - `game-ref`: 4
 - `tool`: 10
 - `technique`: 16
@@ -130,7 +130,7 @@ _From 106 entries, 51 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (21), #inspiration (18), #desktop-app (16), #agents (15), #claude (14), #open-source (14), #browser-game (13), #reference (13), #pxlvzn (12), #video-editing (11), #ui (10), #revolio-labs (9), #visual-design (9), #animation (8), #mcp (8), #revolio (8), #video-generation (7), #3d-art (6), #game-inspiration (6)
+#own-project (42), #to-try (21), #inspiration (19), #desktop-app (16), #agents (15), #claude (15), #open-source (15), #browser-game (13), #reference (13), #pxlvzn (12), #video-editing (11), #ui (10), #revolio-labs (9), #visual-design (9), #animation (8), #mcp (8), #revolio (8), #video-generation (7), #3d-art (6), #game-inspiration (6)
 
 ### Style notes and where they come from
 
@@ -142,6 +142,7 @@ _From 106 entries, 51 with style notes. Rebuilt on every filing._
 - **r mark with animated eyes** ×2: [Revolio Labs app](topics/ai/2026-11-12-revolio-labs-app.md), [Revolio Labs](topics/business/2026-11-12-revolio-labs.md)
 - **red accent** ×2: [TV Stack toy](topics/gamedev/2026-11-12-tv-stack-music-toy.md), [NPCs on Strike](topics/gamedev/2026-11-12-npcs-on-strike-concept.md)
 - **single lime accent** ×2: [PXLVZN label](topics/tech/2026-11-12-pxlvzn-label.md), [PXL app hub](topics/tech/2026-11-12-pxl-app-hub.md)
+- **3d extruded towers**: [Flat Finder map](topics/design/2026-11-21-flat-finder-map.md)
 - **3d vinyl peel on hover**: [Stick It Up stickers](topics/design/2026-11-13-stick-it-up-stickers.md)
 - **acid green on near-black**: [Idea Archive site](topics/business/2026-11-12-idea-archive-site.md)
 - **airy off-white layouts**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
@@ -189,6 +190,7 @@ _From 106 entries, 51 with style notes. Rebuilt on every filing._
 - **dark menu bar popover**: [DIT offload checker](topics/tech/2026-11-13-dit-offload-checker-idea.md)
 - **dark minimal dashboard**: [Strawhat homelab dashboard](topics/design/2026-11-16-strawhat-homelab-dashboard.md)
 - **dark minimal ui**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
+- **dark night map**: [Flat Finder map](topics/design/2026-11-21-flat-finder-map.md)
 - **dark slate grid floor**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **dark slate theme**: [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md)
 - **dense dots squares and crosses**: [Neural network data viz](topics/design/2026-11-15-neural-network-data-viz.md)
@@ -209,6 +211,7 @@ _From 106 entries, 51 with style notes. Rebuilt on every filing._
 - **gloved hands with pistol**: [Unity bodycam hands](topics/gamedev/2026-11-13-unity-bodycam-ik-hands.md)
 - **glowing cards**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
 - **glowing dot-matrix storage bar**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
+- **glowing gold building clusters**: [Flat Finder map](topics/design/2026-11-21-flat-finder-map.md)
 - **glowing particles**: [Pixel-art gaussian splats](topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md)
 - **glyph-grid data viz**: [Neural network data viz](topics/design/2026-11-15-neural-network-data-viz.md)
 - **golden hour window light**: [Revolio Labs site](topics/gamedev/2026-11-12-revolio-labs-site.md)
@@ -226,6 +229,7 @@ _From 106 entries, 51 with style notes. Rebuilt on every filing._
 - **low-poly**: [Polyfork 3D assets](topics/gamedev/2026-11-10-polyfork-3d-assets.md)
 - **masked characters**: [Lens focal length guide](topics/ai/2026-11-12-lens-focal-length-guide.md)
 - **metallic gold and rose gold**: [ARC 3D art dataset](topics/design/2026-11-10-arc-3d-art-dataset.md)
+- **minimal dark sidebar filters**: [Flat Finder map](topics/design/2026-11-21-flat-finder-map.md)
 - **minimal hud**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
 - **misty desaturated battlefield**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
 - **monospace type**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
@@ -279,6 +283,7 @@ _From 106 entries, 51 with style notes. Rebuilt on every filing._
 - **teal and lime on deep crimson**: [Blender painterly leaf shader](topics/gamedev/2026-11-16-blender-painterly-leaf-shader.md)
 - **testimonial wall**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
 - **textured pastel brushwork**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
+- **thin gold road lines**: [Flat Finder map](topics/design/2026-11-21-flat-finder-map.md)
 - **thin usage bars**: [Strawhat homelab dashboard](topics/design/2026-11-16-strawhat-homelab-dashboard.md)
 - **tick ruler numerals**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
 - **top-down camera**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
@@ -296,6 +301,7 @@ _From 106 entries, 51 with style notes. Rebuilt on every filing._
 
 ### Every reference with his reason
 
+- [Flat Finder map](topics/design/2026-11-21-flat-finder-map.md) (`website-ref`): map web app built with Claude, nice dark map with glowing buildings
 - [MetaHuman Maker addon](topics/gamedev/2026-11-18-metahuman-maker-agent-addon.md) (`tool`): give the repo to an agent and talk to it to make AAA MetaHumans for Unreal and web
 - [Strawhat homelab dashboard](topics/design/2026-11-16-strawhat-homelab-dashboard.md) (`style-ref`): clean dark dashboard design for a personal tool that tracks machines and AI subscriptions
 - [Cloudflare Computer](topics/ai/2026-11-16-cloudflare-computer-agent-sandbox.md) (`tool`): Cloudflare computer
