@@ -21,4 +21,4 @@ Add polyfork.dev. It's an open source three js library that can be used. It also
 ## Notes
 - Licence: free for commercial use in games, no attribution; free mesh files are CC BY 4.0. Can't resell the .mjs source or HD editions. Paid plans: Pro $15/mo, Lifetime $200.
 - Catalog repo: https://github.com/lucas-martinic/polyfork-catalog
-- Related: [[patch-gamedev-platform]], [[arc-3d-art-dataset]]
+- Related: [[patch-gamedev-platform]]
