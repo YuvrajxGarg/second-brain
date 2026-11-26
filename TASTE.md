@@ -110,7 +110,7 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 108 entries, 53 with style notes. Rebuilt on every filing._
+_From 109 entries, 53 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -119,7 +119,7 @@ _From 108 entries, 53 with style notes. Rebuilt on every filing._
 - `style-ref`: 10
 - `website-ref`: 5
 - `game-ref`: 4
-- `tool`: 11
+- `tool`: 12
 - `technique`: 16
 - `advice`: 6
 - `idea`: 4
@@ -130,7 +130,7 @@ _From 108 entries, 53 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (22), #inspiration (19), #desktop-app (16), #agents (15), #claude (15), #open-source (15), #reference (14), #browser-game (13), #pxlvzn (12), #video-editing (11), #ui (10), #revolio-labs (9), #visual-design (9), #animation (8), #mcp (8), #revolio (8), #video-generation (7), #3d-art (6), #game-inspiration (6)
+#own-project (42), #to-try (23), #inspiration (19), #agents (16), #desktop-app (16), #claude (15), #open-source (15), #reference (14), #browser-game (13), #pxlvzn (12), #video-editing (11), #ui (10), #revolio-labs (9), #visual-design (9), #animation (8), #mcp (8), #revolio (8), #video-generation (7), #3d-art (6), #game-inspiration (6)
 
 ### Style notes and where they come from
 
@@ -305,6 +305,7 @@ _From 108 entries, 53 with style notes. Rebuilt on every filing._
 
 ### Every reference with his reason
 
+- [Skillsync skills marketplace](topics/ai/2026-11-26-skillsync-skills-marketplace.md) (`tool`): a place to publish agent skills and get paid when people or agents use them
 - [Tabworthy site directory](topics/tech/2026-11-21-tabworthy-site-directory.md) (`tool`): directory of hidden-gem websites to explore
 - [Flat Finder map](topics/design/2026-11-21-flat-finder-map.md) (`website-ref`): map web app built with Claude, nice dark map with glowing buildings
 - [MetaHuman Maker addon](topics/gamedev/2026-11-18-metahuman-maker-agent-addon.md) (`tool`): give the repo to an agent and talk to it to make AAA MetaHumans for Unreal and web
