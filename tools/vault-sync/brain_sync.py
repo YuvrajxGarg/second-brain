@@ -111,6 +111,8 @@ One folder per project. Each one has:
     context.md    context for AI tools: stack, conventions, decisions.
     todo.md       open tasks.
     log.md        dated status, learnings, mistakes, taste (the log-to-brain skill writes here).
+    checks.md     mistakes that repeated, each turned into a check (mistakes-to-checks skill).
+                  Agents read it before working on the project.
     notes/        anything else (.md, .txt, small images).
     _private/     never leaves this computer.
 

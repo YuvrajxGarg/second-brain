@@ -200,6 +200,7 @@ CLAUDE.md          the rules Claude follows (the heart of the system)
 README.md          short human overview
 AGENTS.md          entry point for other AIs: what to read, the fields, how to connect
 TASTE.md           taste profile: curated top part + generated evidence block
+CHECKS.md          mistakes agents made, each turned into a check
 ME.md              your own page: curated read + generated stats
 IDEAS.md           generated: your ideas and to-dos by stage
 catalog/           generated: notes grouped by kind (libraries, style-refs, tools...)
@@ -421,7 +422,7 @@ These come for free once the site is deployed:
 - `llms.txt`, `llms-full.txt`: the whole brain in plain text for any chat.
 - **MCP server** at `https://<site-domain>/mcp`: read-only, no auth, tools
   `get_taste_profile`, `search`, `fetch`, `list_notes`, `get_catalog`,
-  `recall_ideas`. Add it as a custom connector in Claude (or any MCP client:
+  `recall_ideas`, `get_checks`. Add it as a custom connector in Claude (or any MCP client:
   Cursor, Claude Code, etc.) and every AI you use can pull your taste and notes.
 - The MCP outputs are kept **lean** so a chat doesn't burn its context on your
   brain: `get_taste_profile` returns only the curated part of `TASTE.md` (pass
@@ -510,6 +511,7 @@ Documents/Vault/
     context.md   stack, conventions, decisions (for AI tools)
     todo.md      open tasks
     log.md       dated status, learnings, mistakes (log-to-brain writes here)
+    checks.md    repeat mistakes turned into checks (mistakes-to-checks writes here)
     notes/       anything else
     _private/    never leaves the computer
 ```
@@ -557,6 +559,28 @@ taste to that project's `log.md`. Without file access it writes
 `projects/<slug>/log.md` through GitHub and the next sync brings it down into the
 vault. Inside the brain project itself, "log this" means the same thing: a project
 log entry, not a new note.
+
+### 3.10 Mistakes to checks (optional)
+
+When an AI keeps making the same mistake, adding another line to its rules file rarely
+sticks. This turns each repeat into a **check** instead: the strongest fix that stops
+it, from a fix ladder (make it impossible with a type or config, catch it with a lint
+or CI check, make the agent prove it with a test, and only then a written rule).
+
+- `tools/mistakes-to-checks/SKILL.md` is a Claude skill. Add it like log-to-brain.
+  When you say "you did that again" or "turn my mistakes into checks", it looks up the
+  mistake in the project's `log.md`, and on the second sighting adds a check: a row in
+  the project's vault `checks.md` (or in `CHECKS.md` for checks every agent needs),
+  plus the actual lint rule or test when it's working in the code.
+- Review mode ("turn my mistakes into checks" for a whole project) reads the log's
+  "Mistakes and fixes", reverts and fix commits, groups repeats, and shows a table and
+  diffs. Nothing changes until you say yes.
+- Agents load the checks before working: the MCP tool `get_checks` (with a project
+  slug) or the files. `AGENTS.md` tells them to.
+- The brain checks itself too: `scripts/check_notes.py` enforces the filing rules
+  (short titles, required fields, tags, slugs, `## Raw`), and the filing steps run it
+  before each commit. Start your copy's `CHECKS.md` with only its intro and empty
+  tables; rows come from your own mistakes.
 
 ---
 

@@ -12,6 +12,7 @@ CLAUDE.md          these rules
 README.md          short human overview
 AGENTS.md          entry point for other AIs: what to read, fields, access (hand-written)
 TASTE.md           taste profile for agents: curated top part + generated evidence block
+CHECKS.md          mistakes agents made, each turned into a check (hand-curated, see below)
 HANDOFF.md         guide for a friend to set up this system for themselves (hand-written)
 ME.md              Yuvraj's own page: curated personality read + insights, generated stats
 IDEAS.md           generated: his ideas and to-dos by stage
@@ -28,6 +29,8 @@ topics/<topic>/    one folder per group, created on demand
 templates/entry.md the frontmatter template
 scripts/build_index.py  regenerates INDEX, TAGS, IDEAS, catalog/, llms*.txt, TASTE evidence, LINKS.md
 scripts/link_doctor.py  scores and audits [[slug]] links; --fix applies the safe fixes
+scripts/check_notes.py  checks notes against the filing rules (CHECKS.md B1-B7)
+tools/mistakes-to-checks/  the skill that turns repeat agent mistakes into checks
 tools/quick-capture/    browser extension that drops captures into inbox/
 tools/social-reader/    source of the Social Reader MCP connector (Instagram/X), shared via HANDOFF.md
 tools/vault-sync/       brain_sync.py: syncs Documents/Vault on his Mac + PC into projects/ daily
@@ -87,6 +90,7 @@ log**, not a dump. Use the `log-to-brain` skill if it's loaded; if not, follow
    GENERATED marker) and its "Last curated" line. Then run
    `python3 scripts/link_doctor.py --fix` (adds backlinks, fixes old or partial links) and
    `python3 scripts/build_index.py`; it refreshes every generated file.
+6b. Run `python3 scripts/check_notes.py --changed` and fix every error before committing.
 7. Commit with message `add: <short title>` (or `add: N entries` for a batch) and
    push to `main` right away. See "Auto-merge" below (deploys are batched).
 8. Reply to Yuvraj with one line per entry: title, topic, tags.
@@ -237,6 +241,23 @@ each note panel stay fresh.
 - A weekly scheduled task (Sundays ~9:42 AM IST) runs the fixes, rewrites machine reasons,
   prunes junk proposals and pings him. Its steps live in `links/README.md`.
 
+## Mistakes to checks (Yuvraj's ask 2026-11-26)
+
+When an agent repeats a mistake, the fix is a **check**, not another line here: if code
+can check it, code does it (from the note [[agent-mistakes-to-checks]]). The
+`mistakes-to-checks` skill (`tools/mistakes-to-checks/SKILL.md`) does it:
+
+- Evidence stays in project logs ("Mistakes and fixes" in `log.md`, written by log-to-brain).
+- A mistake seen twice becomes a row in `CHECKS.md` (every agent, and this repo) or in the
+  project's vault `checks.md` (synced to `projects/<slug>/checks.md`), with the strongest
+  fix: impossible, caught (lint/CI), proved (test before "done"), rule, human.
+- Agents load checks before working: MCP `get_checks` (pass `project`), or the files.
+- The brain's own filing rules are enforced by `scripts/check_notes.py` (step 6b above).
+  When you add a rule to this file that code could check, add it to `check_notes.py` and
+  a row to `CHECKS.md` instead.
+- "Turn my mistakes into checks" for a project = the skill's review mode: show a table and
+  diffs, change nothing until he says yes.
+
 ## Finding things later
 
 When Yuvraj asks "what was that thing about X":
@@ -278,14 +299,14 @@ deploy, so they lag by the same batch.
 
 - MCP server: `api/mcp.js`, a dependency-free, read-only Streamable HTTP server at
   `https://brainy.pxlvzn.in/mcp` (tools: get_taste_profile, search, fetch,
-  list_notes, get_catalog, recall_ideas). It reads `/data/brain.json`, which
+  list_notes, get_catalog, recall_ideas, get_checks). It reads `/data/brain.json`, which
   `scripts/build_graph.mjs` writes on every deploy, so new notes show up on their own.
 - MCP outputs stay lean (Yuvraj's ask 2026-11-26, a chat spent ~12% of its tokens on
   one taste read): `get_taste_profile` returns only the curated part of TASTE.md unless
   `evidence` is passed, `get_catalog` is one line per note unless `detail: "full"`, lists
   use short ids and clipped text, and `fetch` has the full note. Keep it that way, and
   keep the curated part of TASTE.md short since every agent reads it first.
-- The build also copies `llms.txt`, `llms-full.txt`, `AGENTS.md`, `TASTE.md`,
+- The build also copies `llms.txt`, `llms-full.txt`, `AGENTS.md`, `TASTE.md`, `CHECKS.md`,
   `IDEAS.md` and `ME.md` to the site root. `site/me.html` renders ME.md with charts.
 - If you add a new `kind`, add it to `CATALOGS` in `scripts/build_index.py`,
   `KINDS` in `api/mcp.js`, and the table in `AGENTS.md`.

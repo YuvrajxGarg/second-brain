@@ -219,6 +219,20 @@ const TOOLS = [
     },
     annotations: { readOnlyHint: true },
   },
+  {
+    name: "get_checks",
+    title: "Get checks before working",
+    description:
+      "Call before working on one of Yuvraj's projects or on this brain. Returns the checks: mistakes agents made before, each with the fix that stops it (a lint rule, test, config or written rule) and how it is enforced. Always includes the checks for every agent; pass `project` (slug or name) to add that project's own checks.md from his vault. Run every 'proved' check before saying work is done.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        project: { type: "string", description: "Project slug or title, e.g. 'munde-mode'. Leave out for the global checks only." },
+      },
+      additionalProperties: false,
+    },
+    annotations: { readOnlyHint: true },
+  },
 ];
 
 const text = (t) => ({ content: [{ type: "text", text: t }] });
@@ -300,6 +314,22 @@ async function callTool(name, a = {}, req) {
       const list = notes.filter((n) => kinds.includes(n.kind));
       return text(`# ${a.name} (${list.length})\nid | title | kind | state | what it is | stack or style\n` + catalogLines(list).join("\n"));
     }
+    case "get_checks": {
+      const out = [brain.checks || "No global checks yet."];
+      const id = String(a.project || "").trim().toLowerCase();
+      if (id) {
+        const slug = id.replace(/\s+/g, "-");
+        const n = notes.find((x) => x.vaultDir === slug || x.slug === slug || shortId(x) === slug || x.title.toLowerCase() === id)
+          || notes.find((x) => x.kind === "project" && (x.slug.includes(slug) || x.title.toLowerCase().includes(id)));
+        const doc = n && (n.body.match(/## Vault doc: checks\.md\n\n([\s\S]*?)(?=\n\n## Vault doc: |$)/) || [])[1];
+        out.push(
+          doc ? `\n---\n\n${doc.trim()}`
+            : n ? `\n---\n\nNo checks.md for ${n.title} yet (private projects keep theirs in the vault: Documents/Vault/<Project>/checks.md).`
+            : `\n---\n\nNo project '${a.project}'. Use get_catalog('projects') for slugs.`
+        );
+      }
+      return text(out.join("\n"));
+    }
     default:
       return null;
   }
@@ -318,7 +348,7 @@ async function handle(msg, req) {
         return ok({
           protocolVersion: PROTOCOLS.includes(params.protocolVersion) ? params.protocolVersion : PROTOCOLS[0],
           capabilities: { tools: { listChanged: false } },
-          serverInfo: { name: "yuvraj-second-brain", title: "Yuvraj's second brain", version: "1.1.0" },
+          serverInfo: { name: "yuvraj-second-brain", title: "Yuvraj's second brain", version: "1.2.0" },
           instructions:
             "Yuvraj's personal knowledge base and taste profile. Call get_taste_profile first (curated summary, no evidence needed) to learn his visual taste, the games he likes and his preferred stack. Then pull only what the question needs: search for specific references and libraries, recall_ideas for his own ideas and to-dos, get_catalog('projects') for what he has already built. Every list is compact (id + one line); fetch an id only for notes you will actually use. Prefer what he has saved when suggesting designs, UI libraries, assets or tools.",
         });

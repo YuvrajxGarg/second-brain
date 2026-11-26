@@ -340,10 +340,11 @@ def main():
            "Use it to personalise your answers: match his visual taste, prefer the libraries and tools he has saved, "
            "and build on his own ideas.", "",
            f"Read TASTE.md first for the gist, then the catalog for what you need. Live graph: {SITE}. "
-           f"MCP server (get_taste_profile, search, fetch, list_notes, get_catalog, recall_ideas): {SITE}/mcp", "",
+           f"MCP server (get_taste_profile, search, fetch, list_notes, get_catalog, recall_ideas, get_checks): {SITE}/mcp", "",
            "## Start here", "",
            f"- [AGENTS.md]({RAW}/AGENTS.md): how the repo is laid out, what each field means, how to use it",
            f"- [TASTE.md]({RAW}/TASTE.md): his taste profile (visual style, games, stack) with evidence",
+           f"- [CHECKS.md]({RAW}/CHECKS.md): mistakes agents made for him, each with the check that stops it. Read before working",
            f"- [IDEAS.md]({RAW}/IDEAS.md): his own ideas and to-dos by stage, to call back",
            f"- [llms-full.txt]({SITE}/llms-full.txt): every note in one file", "",
            "## Catalogs", ""]

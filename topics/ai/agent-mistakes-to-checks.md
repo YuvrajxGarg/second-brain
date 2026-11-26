@@ -7,7 +7,7 @@ kind: technique
 why: turn a coding agent's repeat mistakes into lint rules, tests and types instead of more CLAUDE.md lines
 source: https://x.com/LimestoneHQ/status/2122729161999688139
 added: 2026-11-18
-status: unread
+status: done
 ---
 
 ## Summary
@@ -17,6 +17,8 @@ A thread by Limestone Digital (@LimestoneHQ) with a Claude Code prompt that revi
 https://x.com/limestonehq/status/2122729161999688139?a=96N6mzDcfb5cbhtP_ZM&s=46
 
 ## Notes
+Built into the brain on 2026-11-26 as the `mistakes-to-checks` skill (`tools/mistakes-to-checks/SKILL.md`): repeat mistakes become rows in `CHECKS.md` or a project's vault `checks.md`, agents load them with the MCP tool `get_checks`, and `scripts/check_notes.py` enforces the brain's own filing rules.
+
 How to run (from the thread): `claude --permission-mode plan` with the GitHub CLI signed in, approve edits manually, rerun each quarter.
 
 The prompt, verbatim:

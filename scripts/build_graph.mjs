@@ -97,6 +97,7 @@ for (const pm of projectFiles.filter((f) => path.basename(f) === "project.md" &&
   const target = bySlug.get(field("note").replace(/^\d{4}-\d\d-\d\d-/, ""));
   if (target) {
     target.docs = [...(target.docs || []), ...docs];
+    target.vaultDir = path.basename(dir);
     continue;
   }
   p.slug = path.basename(dir);
@@ -249,6 +250,7 @@ const brain = {
   repo: graph.repo,
   agents: readRoot("AGENTS.md"),
   taste: readRoot("TASTE.md"),
+  checks: readRoot("CHECKS.md"),
   ideas: readRoot("IDEAS.md"),
   catalogs,
   notes: notes
@@ -261,7 +263,7 @@ const brain = {
     .sort((a, b) => (b.added || "").localeCompare(a.added || "")),
 };
 fs.writeFileSync(path.join(OUT, "brain.json"), JSON.stringify(brain));
-for (const f of ["llms.txt", "llms-full.txt", "AGENTS.md", "TASTE.md", "IDEAS.md", "ME.md"]) {
+for (const f of ["llms.txt", "llms-full.txt", "AGENTS.md", "TASTE.md", "IDEAS.md", "ME.md", "CHECKS.md"]) {
   if (fs.existsSync(path.join(ROOT, f))) fs.copyFileSync(path.join(ROOT, f), path.join(ROOT, "site", f));
 }
 console.log(`brain: ${brain.notes.length} notes, ${Object.keys(catalogs).length} catalogs`);

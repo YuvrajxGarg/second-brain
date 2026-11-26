@@ -22,8 +22,11 @@ generic defaults.
 3. **[IDEAS.md](IDEAS.md)**: his own ideas and to-dos by stage. Call these back
    when they're relevant ("you had an idea for X on Nov 10, want to pick it up?").
 4. **Project docs** in `projects/<slug>/`: `project.md` plus his working docs for that
-   project (context.md, todo.md, log.md with dated status, learnings and mistakes),
-   synced from his own vault. Read these before working on one of his projects.
+   project (context.md, todo.md, log.md with dated status, learnings and mistakes,
+   checks.md), synced from his own vault. Read these before working on one of his projects.
+   **Checks first:** [CHECKS.md](CHECKS.md) lists mistakes agents already made for him and
+   the check that stops each one; a project's `checks.md` adds its own. MCP:
+   `get_checks` with the project slug. Run every `proved` check before saying "done".
 5. **Notes** in `topics/<topic>/<slug>.md` for full detail. Images sit
    next to their note with the same name and are described in words.
 6. **Moodboards** in `canvases/*.canvas` (JSON Canvas: cards point at note paths, with
@@ -39,13 +42,13 @@ topic, [TAGS.md](TAGS.md) by tag.
 | How | Where |
 |---|---|
 | MCP server (Streamable HTTP, no auth, read-only) | `https://brainy.pxlvzn.in/mcp` |
-| Plain text for any chat | `https://brainy.pxlvzn.in/llms.txt`, `/llms-full.txt`, `/TASTE.md`, `/IDEAS.md` |
+| Plain text for any chat | `https://brainy.pxlvzn.in/llms.txt`, `/llms-full.txt`, `/TASTE.md`, `/IDEAS.md`, `/CHECKS.md` |
 | Raw files | `https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/<path>` |
 | JSON of everything | `https://brainy.pxlvzn.in/data/brain.json` |
 | Graph website | `https://brainy.pxlvzn.in` |
 
 MCP tools: `get_taste_profile`, `search`, `fetch`, `list_notes`, `get_catalog`,
-`recall_ideas`.
+`recall_ideas`, `get_checks`.
 
 They return compact results to save tokens: `get_taste_profile` gives the curated
 profile only (pass `evidence` for the generated block), lists and catalogs are one

@@ -2,12 +2,13 @@
 
 > Personal knowledge base and taste profile of Yuvraj Garg, a video editor and builder at Revolio Media (Mumbai) who makes games, desktop apps and AI tools, many of them shipped (see catalog/projects.md). Every link, reference, library, tool and idea he saves is one markdown note with YAML frontmatter. Use it to personalise your answers: match his visual taste, prefer the libraries and tools he has saved, and build on his own ideas.
 
-Read TASTE.md first for the gist, then the catalog for what you need. Live graph: https://brainy.pxlvzn.in. MCP server (get_taste_profile, search, fetch, list_notes, get_catalog, recall_ideas): https://brainy.pxlvzn.in/mcp
+Read TASTE.md first for the gist, then the catalog for what you need. Live graph: https://brainy.pxlvzn.in. MCP server (get_taste_profile, search, fetch, list_notes, get_catalog, recall_ideas, get_checks): https://brainy.pxlvzn.in/mcp
 
 ## Start here
 
 - [AGENTS.md](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/AGENTS.md): how the repo is laid out, what each field means, how to use it
 - [TASTE.md](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/TASTE.md): his taste profile (visual style, games, stack) with evidence
+- [CHECKS.md](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/CHECKS.md): mistakes agents made for him, each with the check that stops it. Read before working
 - [IDEAS.md](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/IDEAS.md): his own ideas and to-dos by stage, to call back
 - [llms-full.txt](https://brainy.pxlvzn.in/llms-full.txt): every note in one file
 
@@ -55,7 +56,7 @@ Read TASTE.md first for the gist, then the catalog for what you need. Live graph
 - [pxlengine 3D engine](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/tech/pxlengine-3d-engine.md): `project` · tech · so AI agents can make 3D and VFX shots by writing JSON, with no editor
 - [Wedding co-op game](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/wedding-co-op-game.md): `project` · gamedev · a custom co-op game made as a wedding gift for a couple
 - [Vinyl for Windows](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/tech/vinyl-for-windows.md): `project` · tech · to bring the Vinyl for Mac now-playing turntable wallpaper to Windows; sold as a paid app
-- [Tukaram Munde game](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/tukaram-munde-game.md): `idea` · gamedev · his own game idea; collecting art style references for it
+- [Tukaram Munde game](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/tukaram-munde-game.md): `idea` · gamedev · own game idea; collecting art style references for it
 - [Try orchestrator workflow](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/try-orchestrator-workflow.md): `todo` · ai · test this workflow on one of my next projects
 - [The Outsider concept](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/the-outsider-concept.md): `project` · gamedev · a social deduction party game idea: blend in or get voted out
 - [TapMac trackpad app](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/tapmac-trackpad-app.md): `website-ref` · design · This is a cool app, and the website is also cool for building something similar

@@ -60,7 +60,7 @@ _Rebuilt on every filing from 110 notes._
 | Notes with his own comment | 51 (46%) |
 | Open ideas and to-dos | 6 |
 | Tagged to-try | 23 |
-| Marked read or done | 43 of 110 |
+| Marked read or done | 45 of 110 |
 
 ### Saves per day
 

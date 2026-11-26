@@ -48,7 +48,7 @@ Review them on the graph site (LINK DOCTOR, bottom left) or say "apply links 1, 
 2. [ ] Meter Down concept <-> Tukaram Munde game · 0.701 · both game-idea, indian-setting  `meter-down-concept` `tukaram-munde-game`
 3. [ ] Agent mistakes prompt <-> Try orchestrator workflow · 0.697 · both agents, claude  `agent-mistakes-to-checks` `try-orchestrator-workflow`
 4. [ ] PXL app hub <-> DIT offload checker · 0.679 · both pxlvzn, desktop-app  `pxl-app-hub` `dit-offload-checker-idea`
-5. [ ] Agent mistakes prompt <-> Orchestrator subagent prompt · 0.673 · both prompting, workflow, claude  `agent-mistakes-to-checks` `model-routing-orchestrator-prompt`
+5. [ ] Agent mistakes prompt <-> Orchestrator subagent prompt · 0.673 · both prompting, workflow, agents  `agent-mistakes-to-checks` `model-routing-orchestrator-prompt`
 6. [ ] Runaway Light Rig <-> TV Stack toy · 0.664 · both rhythm-game, music, browser-game  `runaway-light-rig` `tv-stack-music-toy`
 7. [ ] DIT offload checker <-> Dwn downloader · 0.652 · both video-editing, pxlvzn, desktop-app  `dit-offload-checker-idea` `dwn-downloader`
 8. [ ] Cricle game <-> SLANGDAQ game · 0.65 · both daily-challenge, browser-game  `cricle-daily-cricket-guessing-game` `slangdaq-game`

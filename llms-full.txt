@@ -312,7 +312,7 @@ type: link
 topic: ai
 added: 2026-11-18
 source: https://x.com/LimestoneHQ/status/2122729161999688139
-status: unread
+status: done
 why: turn a coding agent's repeat mistakes into lint rules, tests and types instead of more CLAUDE.md lines
 tags: claude, agents, prompting, workflow, to-try
 
@@ -323,6 +323,8 @@ A thread by Limestone Digital (@LimestoneHQ) with a Claude Code prompt that revi
 https://x.com/limestonehq/status/2122729161999688139?a=96N6mzDcfb5cbhtP_ZM&s=46
 
 ## Notes
+Built into the brain on 2026-11-26 as the `mistakes-to-checks` skill (`tools/mistakes-to-checks/SKILL.md`): repeat mistakes become rows in `CHECKS.md` or a project's vault `checks.md`, agents load them with the MCP tool `get_checks`, and `scripts/check_notes.py` enforces the brain's own filing rules.
+
 How to run (from the thread): `claude --permission-mode plan` with the GitHub CLI signed in, approve edits manually, rerun each quarter.
 
 The prompt, verbatim:
@@ -781,7 +783,7 @@ type: tool
 topic: design
 added: 2026-11-13
 source: https://stickitupx.com
-status: unread
+status: read
 why: cool component to add to my websites, stickers for personality
 tags: react, ui, open-source, to-try
 style: hand-drawn pastel stickers, 3d vinyl peel on hover, chrome emblems, pixel-art decals
@@ -1062,7 +1064,7 @@ type: idea
 topic: gamedev
 added: 2026-11-12
 status: unread
-why: his own game idea; collecting art style references for it
+why: own game idea; collecting art style references for it
 tags: own-thought, game-idea, indian-setting
 
 ## Summary

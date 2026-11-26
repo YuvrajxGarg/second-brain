@@ -61,6 +61,12 @@ Entry format (leave out empty sections, keep each bullet one line, plain words):
 - ...
 ```
 
+**Repeat mistakes.** For each "Mistakes and fixes" bullet, grep this project's `log.md`
+and `checks.md` for 2 or 3 key words of it. If it happened before, follow the
+`mistakes-to-checks` skill (if it isn't loaded: `tools/mistakes-to-checks/SKILL.md` in
+YuvrajxGarg/second-brain) to turn it into a check in `checks.md`. First sightings stay
+only in the log.
+
 Also, only when it changed:
 - `context.md`: durable facts (stack, conventions, key decisions). Edit the relevant section; don't append a diary there.
 - `todo.md`: tick done items, add new ones.

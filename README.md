@@ -13,6 +13,7 @@ one small markdown file, grouped by topic and tagged so it can be found again.
 | Index of everything (llmstxt.org) | https://brainy.pxlvzn.in/llms.txt |
 | Every note in one file | https://brainy.pxlvzn.in/llms-full.txt |
 | Taste profile / ideas | https://brainy.pxlvzn.in/TASTE.md, https://brainy.pxlvzn.in/IDEAS.md |
+| Checks for agents | https://brainy.pxlvzn.in/CHECKS.md (mistakes agents made, each turned into a check) |
 | JSON of everything | https://brainy.pxlvzn.in/data/brain.json |
 
 - **Browse:** [INDEX.md](INDEX.md) by topic, [TAGS.md](TAGS.md) by tag.
