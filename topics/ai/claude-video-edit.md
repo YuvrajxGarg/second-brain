@@ -20,3 +20,6 @@ Screenshot: a dark-mode WhatsApp chat with a YouTube link preview. The thumbnail
 
 ## Raw
 https://x.com/udayan_w/status/2122732735496355860?a=yTiNqG_pZrV5YODXZKA&s=46
+
+## Notes
+- [[opus-presentation-prompt]]: both claude
