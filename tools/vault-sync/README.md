@@ -100,7 +100,7 @@ private repo once is enough) and Python: `winget install Python.Python.3.12`. In
 ```powershell
 iwr https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/tools/vault-sync/brain_sync.py -OutFile $HOME\.brain_sync.py
 python $HOME\.brain_sync.py init
-python $HOME\.brain-sync\second-brain\tools\vault-sync\brain_sync.py schedule --time 21:30
+python $HOME\.brain-sync\second-brain\tools\vault-sync\brain_sync.py schedule --time 22:00
 python $HOME\.brain-sync\second-brain\tools\vault-sync\brain_sync.py run
 ```
 
