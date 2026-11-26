@@ -116,7 +116,44 @@ brain_sync.py new "Project Name"   new project folder with the standard files
 brain_sync.py status               what the next run would do
 brain_sync.py run [--dry-run]      sync now
 brain_sync.py unschedule           stop the daily job
+brain_sync.py search pixel art     search the brain + this vault, offline
+brain_sync.py shortcut             add a `brain` command (then just: brain pixel art)
+brain_sync.py backup               write a backup bundle now
 ```
+
+## Offline search
+
+The daily run leaves a fresh clone of the whole brain in `~/.brain-sync/second-brain`, so
+search works on a plane. Run `shortcut` once per computer (adds `alias brain=...` to
+`~/.zshrc` on the Mac, a `brain` function to your PowerShell profile on Windows), open a
+new terminal, then:
+
+```
+brain pixel art                     best matches (title > tags/kind > summary > body)
+brain "sprite stacking"             exact phrase
+brain shader kind:technique tag:godot   filters: kind: topic: tag: type: status: stage:
+brain -n 2                          read result 2 in full
+brain --open 2 [--link]             open the file (or its source link)
+brain                               interactive: type queries, a number reads that note
+```
+
+It also reads `Documents/Vault` directly (not `_private/` or `_template/`), so today's
+project notes are found before they sync. On the iPhone, use the site instead: open
+brainy.pxlvzn.in/search.html in Safari once, Share > Add to Home Screen, and the Brain
+app works offline from the last copy it saw.
+
+## Health and backups
+
+Every run writes `projects/.sync/<machine>.health.json` (last good sync, failures from the
+last 14 days, last backup) for the Sunday health report (`health/README.md`). With nothing
+else to sync it pushes that file at most every 2 days (`sync: heartbeat from <machine>`),
+and those commits never trigger a deploy. A failed run keeps its error in
+`~/.brain-sync/health.json` until the next good run can push it.
+
+Once a week the run also writes a full git bundle of the brain to
+`Vault/.backups/second-brain-<date>.bundle` (newest 6 kept; skipped by the sync itself).
+If Documents is in iCloud or OneDrive, the backups go off-machine too. Restore:
+`git clone ~/Documents/Vault/.backups/second-brain-<date>.bundle second-brain`.
 
 Use two different times on the two machines (say 21:30 Mac, 22:00 PC) so they don't race.
 

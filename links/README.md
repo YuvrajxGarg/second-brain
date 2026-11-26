@@ -15,7 +15,9 @@
 ## How the weekly check works
 
 A scheduled Claude task runs every Sunday morning (9:42 AM IST) and follows these
-steps. Edit them here to change its behaviour.
+steps. It also sends the weekly brain health report (backups, deploys, MCP cost, vault
+sync per computer: see `health/README.md`) in the same message, so there is one Sunday
+notification, not two. Edit them here to change its behaviour.
 
 1. `git pull` on `main`.
 2. `python3 scripts/link_doctor.py --fix`: relinks old date-first or partial links and adds
@@ -30,9 +32,18 @@ steps. Edit them here to change its behaviour.
      to `dismissed.json` with `"judge: <why>"`. This only stops the proposal.
    - Yes or unsure: leave it for Yuvraj to answer on the site.
    Do not add or remove links between notes yourself. Only he says yes to those.
-5. `python3 scripts/build_index.py` (refreshes LINKS.md and the rest), commit
-   `links: weekly check` and push to `main` (one deploy). Retry the push up to 4 times.
-6. End with a short message (it becomes the phone notification):
-   `Link health <old> -> <new>/100. <N> backlinks added, <N> reasons rewritten,
-   <N> proposals waiting: brainy.pxlvzn.in (LINK DOCTOR)`, plus the single best
-   proposal in one line.
+5. `python3 scripts/build_index.py` (refreshes LINKS.md and the rest).
+6. Health report (see `health/README.md`): if the Vercel connector is available, count
+   this week's production deploys of project `second-brain` (team `revolio`) with
+   `list_deployments` and pass it as `--deploys N`; otherwise skip that flag and the
+   script estimates. Run
+   `python3 scripts/health_report.py --save --link-before <health from step 1>`.
+   It writes `health/latest.md`, appends `health/history.jsonl` and prints three lines.
+7. Commit `links: weekly check` (links, notes, generated files and `health/`) and push to
+   `main` (one deploy). Retry the push up to 4 times.
+8. End with one short message (it becomes the phone notification), no headers:
+   the three lines the health report printed, then
+   `<N> backlinks added, <N> reasons rewritten, <N> proposals waiting. Best: <Note> <-> <Note> (<why>)`
+   and `Review: brainy.pxlvzn.in (LINK DOCTOR, or press D) · full report: health/latest.md`.
+   If the report flagged something you can fix inside these rules (an unsorted inbox
+   capture is not one: leave filing to Yuvraj's threads), say what, don't fix it.

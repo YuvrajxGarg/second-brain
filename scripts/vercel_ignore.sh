@@ -19,9 +19,11 @@ git cat-file -e "$PREV^{commit}" 2>/dev/null || build "previous sha not in clone
 [ "$PREV" = "$(git rev-parse HEAD)" ] && build "redeploy of same commit"
 
 # 3. Anything other than notes and generated files (site, api, scripts, config): build.
+#    Vault-sync heartbeats (projects/.sync/<machine>.health.json) never deploy on their own.
 OTHER=$(git diff --name-only "$PREV" HEAD -- . \
   ':(exclude)topics' ':(exclude)inbox' ':(exclude)suggestions' \
-  ':(exclude)catalog' ':(exclude,glob)*.md' ':(exclude)llms.txt' ':(exclude)llms-full.txt')
+  ':(exclude)catalog' ':(exclude,glob)*.md' ':(exclude)llms.txt' ':(exclude)llms-full.txt' \
+  ':(exclude,glob)projects/.sync/*.health.json')
 [ -n "$OTHER" ] && build "non-note changes: $(echo $OTHER | head -c 200)"
 
 # 4. Notes added or changed since the last deploy.

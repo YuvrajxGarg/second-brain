@@ -32,6 +32,10 @@ templates/entry.md the frontmatter template
 scripts/build_index.py  regenerates INDEX, TAGS, IDEAS, catalog/, llms*.txt, TASTE evidence, LINKS.md
 scripts/link_doctor.py  scores and audits [[slug]] links; --fix applies the safe fixes
 scripts/check_notes.py  checks notes against the filing rules (CHECKS.md B1-B7)
+scripts/brain_search.py offline search over the brain + local Vault (`brain` command on his Mac/PC)
+scripts/health_report.py weekly health report: links, deploys, MCP cost, vault sync, backups
+scripts/mcp_cost.mjs    measures MCP output size in tokens against the local brain.json
+health/                 latest.md + history.jsonl from the Sunday health report (see its README)
 tools/mistakes-to-checks/  the skill that turns repeat agent mistakes into checks
 tools/capture-to-brain/    the skill that files notes from ANY chat (MCP capture / GitHub / shell)
 tools/quick-capture/    browser extension that drops captures into inbox/
@@ -302,7 +306,10 @@ each note panel stay fresh.
   each (`api/edit.js` actions `link`, `unlink`, `dismiss`); QUALITY (key Q) colours links
   by score. Pairs he says no to live in `links/dismissed.json` and are never proposed again.
 - A weekly scheduled task (Sundays ~9:42 AM IST) runs the fixes, rewrites machine reasons,
-  prunes junk proposals and pings him. Its steps live in `links/README.md`.
+  prunes junk proposals and pings him. Its steps live in `links/README.md`. The same run
+  sends the weekly **health report** (`scripts/health_report.py`, see `health/README.md`):
+  link health, deploys vs the batch rule, MCP token cost, vault sync per machine, backups.
+  One Sunday message; don't add a separate health notification.
 
 ## Mistakes to checks (Yuvraj's ask 2026-11-26)
 
@@ -322,6 +329,12 @@ can check it, code does it (from the note [[agent-mistakes-to-checks]]). The
   diffs, change nothing until he says yes.
 
 ## Finding things later
+
+Offline (Yuvraj's ask 2026-11-26): on his Mac/PC the `brain <words>` command
+(`scripts/brain_search.py`, from the vault-sync clone) searches notes + his Vault with no
+internet; on the iPhone, `brainy.pxlvzn.in/search.html` added to the home screen works
+offline (`site/sw.js` keeps the last copy). Same query syntax: words, "phrase", `kind:`,
+`topic:`, `tag:`. If you change note fields, keep both search tools in step.
 
 When Yuvraj asks "what was that thing about X":
 
@@ -349,6 +362,7 @@ when a batch is ready. `scripts/vercel_ignore.sh` (the `ignoreCommand` in
   config, tools), when the commit message has `[deploy]`, or for edits made on the
   graph site (`(from site)`).
 - **Daily flush**: the ~9 AM `suggest:` commit deploys whatever notes are pending.
+- Vault-sync heartbeats (`projects/.sync/*.health.json` only) never deploy.
 - Otherwise it skips, so a single dump waits at most until the next morning.
 
 When filing: commit and push as usual (one commit per dump, or one per batch when

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Brain search</title>
+  <meta name="description" content="Search the second brain, online or offline." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23050505'/%3E%3Cpath d='M6 26 Q16 -2 26 26' stroke='white' stroke-width='1.6' fill='none'/%3E%3Crect x='13' y='9' width='6' height='6' fill='%2339ff6a'/%3E%3C/svg%3E" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icon-180.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Brain" />
+  <meta name="theme-color" content="#050505" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #050505; --fg: #f2f2f2; --dim: rgba(242,242,242,.5); --faint: rgba(242,242,242,.14);
+      --line: rgba(242,242,242,.1); --accent: #39ff6a;
+      --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      --sans: "Inter Tight", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    body { padding: env(safe-area-inset-top) 16px calc(24px + env(safe-area-inset-bottom)); max-width: 760px; margin: 0 auto; }
+    header { position: sticky; top: 0; background: var(--bg); padding: 14px 0 10px; z-index: 2; }
+    .row { display: flex; align-items: center; gap: 10px; }
+    .brand { font: 500 12px var(--mono); letter-spacing: .12em; color: var(--dim); text-decoration: none; }
+    .brand b { color: var(--accent); font-weight: 500; }
+    .brand { white-space: nowrap; }
+    #state { margin-left: auto; text-align: right; font: 11px var(--mono); color: var(--dim); }
+    #state.off { color: #ffb44d; }
+    #q { width: 100%; margin-top: 10px; padding: 12px 14px; font: 16px var(--mono); color: var(--fg);
+         background: #0d0d0d; border: 1px solid var(--faint); border-radius: 10px; outline: none; }
+    #q:focus { border-color: var(--accent); }
+    .chips { display: flex; gap: 6px; overflow-x: auto; padding-top: 10px; scrollbar-width: none; }
+    .chips::-webkit-scrollbar { display: none; }
+    .chip { flex: none; font: 11px var(--mono); padding: 6px 10px; border: 1px solid var(--faint); border-radius: 999px;
+            background: none; color: var(--dim); cursor: pointer; }
+    .chip.on { color: var(--bg); background: var(--fg); border-color: var(--fg); }
+    #count { font: 11px var(--mono); color: var(--dim); margin: 6px 0 4px; }
+    ul { list-style: none; margin: 0; padding: 0; }
+    li { padding: 12px 0; border-bottom: 1px solid var(--line); cursor: pointer; }
+    li .t { font-weight: 500; display: flex; gap: 8px; align-items: baseline; }
+    li .sq { width: 8px; height: 8px; flex: none; transform: translateY(-1px); }
+    li .m { font: 11px var(--mono); color: var(--dim); margin-top: 3px; }
+    li .s { font-size: 14px; color: rgba(242,242,242,.78); margin-top: 5px; line-height: 1.45;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    mark { background: none; color: var(--accent); }
+    #note { display: none; }
+    body.reading #list, body.reading #count, body.reading .chips, body.reading #q { display: none; }
+    body.reading #note { display: block; }
+    #back { font: 12px var(--mono); color: var(--accent); background: none; border: 0; padding: 8px 0; cursor: pointer; }
+    #note h1 { font-size: 22px; font-weight: 500; margin: 8px 0 4px; }
+    #note .meta { font: 11px var(--mono); color: var(--dim); line-height: 1.7; }
+    #note .meta a, #note .body a { color: var(--accent); word-break: break-all; }
+    #note .body { line-height: 1.6; font-size: 15px; }
+    #note .body img { max-width: 100%; border-radius: 6px; }
+    #note .body h2 { font: 500 12px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--dim); margin-top: 26px; }
+    #note .body pre, #note .body code { font-family: var(--mono); font-size: 13px; white-space: pre-wrap; }
+    .open { display: inline-block; margin-top: 10px; font: 11px var(--mono); color: var(--dim); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="row">
+      <a class="brand" href="./">SECOND <b>BRAIN</b> / SEARCH</a>
+      <span id="state">loading…</span>
+    </div>
+    <input id="q" type="search" placeholder="search notes, tags, kind:tool, topic:gamedev" autocomplete="off" autocapitalize="off" spellcheck="false" />
+    <div class="chips" id="chips"></div>
+    <button id="back" hidden>← results</button>
+  </header>
+  <div id="count"></div>
+  <ul id="list"></ul>
+  <article id="note"></article>
+  <script src="vendor/marked.min.js"></script>
+  <script src="vendor/purify.min.js"></script>
+  <script src="search.js"></script>
+</body>
+</html>

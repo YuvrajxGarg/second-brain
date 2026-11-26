@@ -9,7 +9,8 @@ vault sync), not anyone's notes.
 _Last updated 2026-11-26: Link Doctor, Board / Timeline / Canvas / Gallery views,
 command palette, project vault sync and the log-to-brain skill, batched deploys,
 name-first file names, leaner MCP outputs, phone and desktop capture (iPhone Share
-Sheet and Action Button, Mac and Windows hotkeys)._
+Sheet and Action Button, Mac and Windows hotkeys), offline search (desktop + phone),
+weekly health report and backups._
 
 Placeholders used below:
 
@@ -217,13 +218,17 @@ projects/<slug>/   synced from your Documents/Vault: one project.md + its docs e
 canvases/          moodboards as JSON Canvas files (open in Obsidian too)
 views/             saved gallery/table views as JSON
 links/             Link Doctor: dismissed.json + the weekly check's steps (README)
+health/            weekly health report: latest.md, history.jsonl, README
 templates/entry.md the frontmatter template
 scripts/build_index.py   regenerates everything marked "generated" above
 scripts/link_doctor.py   scores and audits [[slug]] links; --fix applies safe fixes
 scripts/build_graph.mjs  builds site/data/graph.json + brain.json for the site and MCP
 scripts/vercel_ignore.sh decides whether a push deploys (batched deploys)
+scripts/brain_search.py  offline search (terminal) over notes + your local vault
+scripts/health_report.py weekly health report; scripts/mcp_cost.mjs measures MCP tokens
 site/              the static site: graph (index.html), board, timeline, canvas,
-                   gallery, me.html; shared views.js (nav, palette, passcode)
+                   gallery, search, me.html; shared views.js (nav, palette, passcode);
+                   sw.js + manifest.webmanifest make it an offline home-screen app
 api/mcp.js         MCP server (Vercel function, no dependencies)
 api/edit.js        edit API for the site (Vercel function)
 api/capture.js     plain HTTP capture endpoint for phone and desktop (CAPTURE_KEY)
@@ -504,6 +509,15 @@ runs the fixes, rewrites machine-written link reasons into plain words, dismisse
 obvious junk proposals, commits `links: weekly check` and pings you with the health
 score and the best proposal. Edit `links/README.md` to change what it does.
 
+**Weekly health report (same run).** Step 6 of `links/README.md` runs
+`scripts/health_report.py`, so the Sunday ping also says: link health, notes added,
+deploys vs the batch rule (estimated from git, or the real count if the task has the
+Vercel connector), MCP token cost for a typical agent chat (`scripts/mcp_cost.mjs` runs
+the real server offline), and each computer's last good vault sync, failures and last
+backup. It lists anything that needs a look and keeps `health/history.jsonl` so it can
+spot growth week over week. Thresholds sit at the top of the script. Fold it into the
+link check rather than adding a second notification.
+
 ### 3.9 Project vault and "log this to my brain" (optional)
 
 For your own projects, the working docs (context, to-dos, logs) live in a normal
@@ -556,6 +570,16 @@ Documents/Vault/
    `note: <slug>` in `project.md` so the docs attach to it instead of making a copy.
 5. **If your repo is public**, set `share: summary` (only `project.md` goes up) or
    `none` for anything confidential.
+
+**Offline search and backups (comes with the sync).** After the first run, do
+`brain_sync.py shortcut` on each computer: it adds a `brain` command that searches every
+note and your local vault with no internet (`brain pixel art`, `brain shader
+kind:technique`, `brain -n 2` to read a result). Each run also writes
+`projects/.sync/<machine>.health.json` for the weekly health report (pushed at most every
+2 days when nothing else changed, never deploys), and once a week a full git bundle to
+`Documents/Vault/.backups/` (newest 6 kept). Restore with
+`git clone <file>.bundle <repo>`. On a phone, open `<site-domain>/search.html` once and
+add it to the home screen: the site's service worker keeps an offline copy.
 
 **The log-to-brain skill.** `tools/vault-sync/log-to-brain/SKILL.md` is a Claude
 skill. Add it to Claude as a skill (zip the `log-to-brain` folder and upload it in

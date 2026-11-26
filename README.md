@@ -64,6 +64,15 @@ one small markdown file, grouped by topic and tagged so it can be found again.
 - **Entries:** `topics/<topic>/<slug>.md`, named by what the thing is (no date; the
   date is in `added:`), each with YAML frontmatter (`title`, `type`, `topic`, `tags`,
   `kind`, `why`, `style`, `kit`, `source`, `added`).
+- **Offline:** `brain pixel art` on the Mac or PC searches every note and the local
+  vault with no internet ([scripts/brain_search.py](scripts/brain_search.py), set up with
+  `brain_sync.py shortcut`). On the iPhone, add
+  [brainy.pxlvzn.in/search.html](https://brainy.pxlvzn.in/search.html) to the home screen;
+  the site keeps an offline copy.
+- **Health and backups:** the Sunday link check also sends a health report (link
+  health, deploys vs the batch rule, MCP token cost, vault sync per computer, backups)
+  in the same message ([health/](health/)). Each computer writes a weekly git bundle
+  backup to `Documents/Vault/.backups/`.
 - **Deploys:** every note is pushed to `main` right away, but the site rebuilds in
   batches: once 5 notes are pending, when code changes, on the morning ideas run, or
   on a `[deploy]` commit ([scripts/vercel_ignore.sh](scripts/vercel_ignore.sh)).

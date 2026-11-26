@@ -12,6 +12,11 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="views.css" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icon-180.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Brain" />
+  <meta name="theme-color" content="#050505" />
 </head>
 <body>
   <canvas id="stage" aria-label="Graph of notes, tags and topics"></canvas>
@@ -75,7 +80,7 @@
     <div class="build" id="build"></div>
   </div>
 
-  <nav class="vnav mono hud" aria-label="Views"><a href="./" class="on" aria-current="page">GRAPH</a><a href="board.html">BOARD</a><a href="timeline.html">TIMELINE</a><a href="canvas.html">CANVAS</a><a href="gallery.html">GALLERY</a></nav>
+  <nav class="vnav mono hud" aria-label="Views"><a href="./" class="on" aria-current="page">GRAPH</a><a href="board.html">BOARD</a><a href="timeline.html">TIMELINE</a><a href="canvas.html">CANVAS</a><a href="gallery.html">GALLERY</a><a href="search.html">SEARCH</a></nav>
 
   <button id="b-hud" class="hud-restore mono" type="button" title="Show panels (H)" hidden>SHOW PANELS</button>
 

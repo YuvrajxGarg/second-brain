@@ -15,8 +15,10 @@
 
   const VIEWS = [
     ["graph", "GRAPH", "./"], ["board", "BOARD", "board.html"], ["timeline", "TIMELINE", "timeline.html"],
-    ["canvas", "CANVAS", "canvas.html"], ["gallery", "GALLERY", "gallery.html"],
+    ["canvas", "CANVAS", "canvas.html"], ["gallery", "GALLERY", "gallery.html"], ["search", "SEARCH", "search.html"],
   ];
+  // Offline copy (sw.js): add the site to the iPhone home screen and it opens without internet.
+  if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
   function nav(active) {
     const el = document.createElement("nav");
     el.className = "vnav mono";

@@ -9,6 +9,9 @@ One script for macOS and Windows, standard library only (Python 3.8+ and git).
     python3 brain_sync.py status               what a run would do, without touching anything
     python3 brain_sync.py schedule [--time 21:30]   install the daily job (launchd / Task Scheduler)
     python3 brain_sync.py unschedule           remove the daily job
+    python3 brain_sync.py search pixel art     offline search over the brain + this vault
+    python3 brain_sync.py shortcut             add a `brain` command to your shell (brain pixel art)
+    python3 brain_sync.py backup               write a git bundle backup now (runs weekly on its own)
 
 How a run works (full rules in README.md next to this file):
   1. Reset its own clone (~/.brain-sync/second-brain) to origin/main.
@@ -22,6 +25,9 @@ How a run works (full rules in README.md next to this file):
        deleted in the repo        -> moved to <Vault>/.trash/ locally
   3. Rebuild the brain's generated files, make ONE commit, push to main (or a branch with --pr).
 Running it twice in a row does nothing the second time.
+Each run also records its health in projects/.sync/<machine>.health.json (last good sync,
+recent failures, last backup) for the Sunday health report, and once a week writes a full
+git bundle of the brain to <Vault>/.backups/ (newest 6 kept).
 """
 import argparse
 import datetime as dt
@@ -43,6 +49,11 @@ CONFIG = STATE_DIR / "config.json"
 LOG = STATE_DIR / "sync.log"
 TASK_NAME = "BrainVaultSync"
 LAUNCHD_LABEL = "in.pxlvzn.brain-sync"
+LOCAL_HEALTH = STATE_DIR / "health.json"   # failures survive here until a run can push them
+BACKUP_EVERY_DAYS = 7
+BACKUP_KEEP = 6
+HEARTBEAT_DAYS = 2   # with nothing to sync, still push the health file this often
+RUNNING = False      # set by cmd_run so die() records the failure
 
 TEXT_EXT = {".md", ".markdown", ".txt"}
 IMAGE_EXT = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"}
@@ -147,7 +158,101 @@ def log(msg):
 
 def die(msg):
     log("ERROR: " + msg)
+    if RUNNING:
+        record_failure(msg)
     sys.exit(1)
+
+
+# ---------------------------------------------------------------- health + backups
+
+def now_iso():
+    return dt.datetime.now().astimezone().replace(microsecond=0).isoformat()
+
+
+def local_health():
+    try:
+        return json.loads(LOCAL_HEALTH.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def save_local_health(h):
+    try:
+        STATE_DIR.mkdir(parents=True, exist_ok=True)
+        LOCAL_HEALTH.write_text(json.dumps(h, indent=1) + "\n", encoding="utf-8")
+    except OSError:
+        pass
+
+
+def record_failure(msg):
+    h = local_health()
+    first = " ".join(str(msg).split())[:200] or "unknown error"
+    h.setdefault("failures", []).append({"at": now_iso(), "error": first})
+    h["failures"] = recent(h["failures"])
+    save_local_health(h)
+
+
+def recent(failures, days=14, keep=20):
+    cut = (dt.datetime.now().astimezone() - dt.timedelta(days=days)).isoformat()
+    return [f for f in failures if f.get("at", "") >= cut][-keep:]
+
+
+def weekly_backup(cfg, force=False):
+    """A full git bundle of main in <Vault>/.backups once a week (it rides along with
+    iCloud/OneDrive if Documents is synced). Restore: git clone <file>.bundle second-brain"""
+    h = local_health()
+    last = (h.get("backup") or {}).get("at", "")
+    if not force and last and dt.datetime.fromisoformat(last) > dt.datetime.now().astimezone() - dt.timedelta(days=BACKUP_EVERY_DAYS):
+        return h["backup"]
+    out = cfg["vault"] / ".backups"
+    try:
+        out.mkdir(parents=True, exist_ok=True)
+        f = out / f"second-brain-{dt.date.today():%Y-%m-%d}.bundle"
+        git(cfg["repo"], "bundle", "create", str(f), "main")
+        bundles = sorted(out.glob("second-brain-*.bundle"))
+        for old in bundles[:-BACKUP_KEEP]:
+            old.unlink()
+        h["backup"] = {"at": now_iso(), "file": f.name, "bytes": f.stat().st_size,
+                       "commit": git(cfg["repo"], "rev-parse", "--short", "HEAD"),
+                       "kept": min(len(bundles), BACKUP_KEEP)}
+        save_local_health(h)
+        log(f"backup written: {f} ({f.stat().st_size // 1024} KB)")
+    except (OSError, RuntimeError) as e:
+        log(f"backup failed: {e}")
+        record_failure(f"backup failed: {e}")
+    return local_health().get("backup")
+
+
+def write_health(cfg, synced):
+    """Write projects/.sync/<machine>.health.json. Returns True when it needs pushing even
+    if nothing else changed (new failure or backup, or the last heartbeat is getting old)."""
+    path = cfg["repo"] / "projects" / ".sync" / f"{cfg['machine']}.health.json"
+    try:
+        old = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        old = {}
+    h = local_health()
+    new = {
+        "machine": cfg["machine"], "os": f"{platform.system()} {platform.release()}",
+        "python": platform.python_version(), "last_ok": now_iso(),
+        "last_change": now_iso() if synced else old.get("last_change"),
+        "failures": recent(h.get("failures", [])), "backup": h.get("backup"),
+    }
+    stale = True
+    try:
+        stale = dt.datetime.fromisoformat(old["last_ok"]) < dt.datetime.now().astimezone() - dt.timedelta(days=HEARTBEAT_DAYS)
+    except Exception:
+        pass
+    news = (old.get("failures") != new["failures"]) or (old.get("backup") != new["backup"])
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(new, indent=1) + "\n", encoding="utf-8")
+    return synced or stale or news
+
+
+def mark_ok():
+    h = local_health()
+    h["last_ok"] = now_iso()
+    save_local_health(h)
 
 
 def slugify(name):
@@ -493,6 +598,8 @@ def summary_line(counts, projects, machine):
 
 
 def cmd_run(args):
+    global RUNNING
+    RUNNING = not args.dry_run
     cfg = load_config()
     if not cfg["vault"].exists():
         die(f"vault folder {cfg['vault']} is missing. Run init again or fix config.json")
@@ -504,16 +611,22 @@ def cmd_run(args):
     pr_mode = args.pr or cfg.get("mode") == "pr"
     for attempt in range(1, 4):
         fresh_clone(cfg)
+        if not args.dry_run and attempt == 1:
+            weekly_backup(cfg)
         counts, projects = apply(cfg, dry_run=args.dry_run)
         if args.dry_run:
             log("dry run, nothing written" if counts else "dry run: nothing to sync")
             return
-        if not git(cfg["repo"], "status", "--porcelain", "--", "projects"):
+        synced = bool(git(cfg["repo"], "status", "--porcelain", "--", "projects"))
+        beat = write_health(cfg, synced)
+        if not beat:
             log("nothing to sync")
+            mark_ok()
             return
-        rebuild(cfg["repo"])
+        if synced:
+            rebuild(cfg["repo"])
         git(cfg["repo"], "add", "-A")
-        msg = summary_line(counts, projects, cfg["machine"])
+        msg = summary_line(counts, projects, cfg["machine"]) if synced else f"sync: heartbeat from {cfg['machine']}"
         ident = []
         if not git(cfg["repo"], "config", "user.email", check=False):
             ident = ["-c", "user.name=brain-sync", "-c", "user.email=brain-sync@users.noreply.github.com"]
@@ -523,14 +636,65 @@ def cmd_run(args):
             git(cfg["repo"], "push", "--quiet", "--force", "origin", f"HEAD:refs/heads/{branch}")
             log(f"{msg}\npushed to branch {branch}. Open the PR: "
                 f"https://github.com/YuvrajxGarg/second-brain/compare/main...{branch}?expand=1")
+            mark_ok()
             return
         try:
             git(cfg["repo"], "push", "--quiet", "origin", "HEAD:main")
             log(msg + " -> pushed to main")
+            h = local_health()
+            h["failures"] = []  # they are in the pushed health file now
+            save_local_health(h)
+            mark_ok()
             return
         except RuntimeError as e:
             log(f"push rejected (attempt {attempt}/3), redoing the sync on top of the latest main: {e}")
     die("could not push after 3 attempts; your vault is untouched apart from pulled files. Try again later.")
+
+
+def cmd_search(args):
+    """Offline search: runs scripts/brain_search.py from the daily clone (no network)."""
+    cfg = load_config()
+    script = cfg["repo"] / "scripts" / "brain_search.py"
+    if not script.exists():
+        die(f"{script} is missing. Run `run` once while online to refresh the clone.")
+    sys.exit(subprocess.call([sys.executable, str(script), *args.query]))
+
+
+def cmd_backup(args):
+    cfg = load_config()
+    if not (cfg["repo"] / ".git").exists():
+        die("no clone yet. Run `init` first.")
+    b = weekly_backup(cfg, force=True)
+    if b:
+        print(f"{cfg['vault'] / '.backups' / b['file']}  ({b['bytes'] // 1024} KB, commit {b['commit']})")
+        print("Restore anywhere: git clone <that file> second-brain")
+
+
+SHORTCUT_MARK = "# brain-sync: offline brain search"
+
+
+def cmd_shortcut(args):
+    """Adds a `brain` command: `brain pixel art` searches offline, `brain` alone is interactive."""
+    cfg = load_config()
+    script = cfg["repo"] / "scripts" / "brain_search.py"
+    py = sys.executable
+    if os.name == "nt":
+        r = subprocess.run(["powershell", "-NoProfile", "-Command", "$PROFILE"], text=True, stdout=subprocess.PIPE)
+        prof = Path((r.stdout or "").strip() or HOME / "Documents" / "WindowsPowerShell" / "Microsoft.PowerShell_profile.ps1")
+        line = f'{SHORTCUT_MARK}\nfunction brain {{ & "{py}" "{script}" @args }}\n'
+        targets = [prof]
+    else:
+        line = f"{SHORTCUT_MARK}\nalias brain='\"{py}\" \"{script}\"'\n"
+        targets = [HOME / ".zshrc"] + [HOME / n for n in (".bashrc", ".bash_profile") if (HOME / n).exists()]
+    for t in targets:
+        text = t.read_text(encoding="utf-8") if t.exists() else ""
+        if SHORTCUT_MARK in text:
+            log(f"`brain` is already in {t}")
+            continue
+        t.parent.mkdir(parents=True, exist_ok=True)
+        with open(t, "a", encoding="utf-8") as f:
+            f.write(("\n" if text and not text.endswith("\n") else "") + line)
+        log(f"added the `brain` command to {t}. Open a new terminal, then: brain pixel art")
 
 
 def cmd_status(args):
@@ -661,11 +825,20 @@ def main():
     p.add_argument("--time", default="21:30", help="daily time, 24h HH:MM (default 21:30)")
     p.set_defaults(fn=cmd_schedule)
     sub.add_parser("unschedule").set_defaults(fn=cmd_unschedule)
+    p = sub.add_parser("search", help="offline search over the brain and this vault")
+    p.add_argument("query", nargs=argparse.REMAINDER)
+    p.set_defaults(fn=cmd_search)
+    sub.add_parser("shortcut", help="add a `brain` search command to your shell").set_defaults(fn=cmd_shortcut)
+    sub.add_parser("backup", help="write a git bundle backup to <Vault>/.backups now").set_defaults(fn=cmd_backup)
     args = ap.parse_args()
     try:
         args.fn(args)
     except RuntimeError as e:
         die(str(e))
+    except Exception as e:  # anything unexpected still shows up in the health report
+        if RUNNING:
+            record_failure(f"{type(e).__name__}: {e}")
+        raise
 
 
 if __name__ == "__main__":
