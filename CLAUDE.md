@@ -22,7 +22,8 @@ llms-full.txt      generated: every note in one file
 INDEX.md           generated: every entry, grouped by topic, newest first
 TAGS.md            generated: every tag with its entries
 LINKS.md           generated: link health report and link proposals (scripts/link_doctor.py)
-api/mcp.js         MCP server (read-only) served at https://brainy.pxlvzn.in/mcp
+api/mcp.js         MCP server served at https://brainy.pxlvzn.in/mcp (read-only; +write tools with ?key=)
+api/_write.js      the MCP write tools: capture, update_note, log_project (CAPTURE_KEY)
 api/edit.js        edit API for the graph site (passcode-locked, commits to main)
 inbox/             only when a dump is genuinely unclear; sort it later
 topics/<topic>/    one folder per group, created on demand
@@ -31,6 +32,7 @@ scripts/build_index.py  regenerates INDEX, TAGS, IDEAS, catalog/, llms*.txt, TAS
 scripts/link_doctor.py  scores and audits [[slug]] links; --fix applies the safe fixes
 scripts/check_notes.py  checks notes against the filing rules (CHECKS.md B1-B7)
 tools/mistakes-to-checks/  the skill that turns repeat agent mistakes into checks
+tools/capture-to-brain/    the skill that files notes from ANY chat (MCP capture / GitHub / shell)
 tools/quick-capture/    browser extension that drops captures into inbox/
 tools/social-reader/    source of the Social Reader MCP connector (Instagram/X), shared via HANDOFF.md
 tools/vault-sync/       brain_sync.py: syncs Documents/Vault on his Mac + PC into projects/ daily
@@ -67,6 +69,10 @@ log**, not a dump. Use the `log-to-brain` skill if it's loaded; if not, follow
 ## Filing a dump
 
 1. Split the message into separate items. One link or idea = one entry.
+1b. `git pull` first, then check it isn't already saved: `grep -ril "<domain/path or name>" topics/ inbox/`.
+   Other chats file notes straight to `main` (capture-to-brain, `captured: ... via brain MCP`),
+   so the same link may already be there. If it is, add to that note (his new words under
+   `## Raw`, a dated line under `## Notes`) instead of filing a copy.
 2. For each item, pick a **type**: `link`, `note`, `idea`, `bookmark`, `quote`,
    `video`, `tool`, `book`, `person`, `place`, `recipe`, `todo`. For things he made
    himself (kind `project`) use what it is: `game`, `app`, `tool`, `site` or
@@ -108,6 +114,28 @@ fall back to asking for a screenshot if the connector fails.
 
 Never drop what he sent. Keep his own words verbatim under `## Raw` so nothing is
 lost to summarising.
+
+## Capture from any chat (Yuvraj's ask, 2026-11-26)
+
+He can say "save / add / remember this to my brain" in **any** Claude chat, not only this
+project. The `capture-to-brain` skill (`tools/capture-to-brain/SKILL.md`) routes it:
+project work goes to log-to-brain, everything else becomes a note, filed with the same
+rules as here. It writes through, in order: the MCP `capture` tool, a shell with the repo,
+the GitHub connector, or (nothing can write) a markdown block for him to paste here.
+
+- MCP write tools (`api/_write.js`): `capture`, `update_note`, `log_project`. Listed only
+  when the connector URL has `?key=<CAPTURE_KEY>` (Vercel env, production). Add-only, one
+  commit each (`add: <title> (from chat)`, `edit: ... (from chat)`, `log: <slug> <date> (from chat)`),
+  so a bad one is a `git revert`. `capture` enforces the check_notes.py rules, refuses a link or
+  title already saved (including notes pending deploy, via GitHub compare against the
+  deployed commit) and adds backlinks to the related notes. `log_project` refuses
+  `share: summary/none` projects (their logs stay in the vault).
+- These commits are notes like any other: batched deploys apply, and the generated files
+  (INDEX, TAGS...) catch up on the next rebuild here or on Vercel's build.
+- Notes it files carry `captured: <time> via brain MCP`. Topic `inbox` gets `status:
+  unsorted`, so the inbox sort below picks it up.
+- If `CAPTURE_KEY` leaks, change it in Vercel (any 16+ characters), redeploy, and update
+  the connector URL.
 
 ## Quick-capture inbox
 
@@ -297,9 +325,10 @@ deploy, so they lag by the same batch.
 
 ## Access for other AIs
 
-- MCP server: `api/mcp.js`, a dependency-free, read-only Streamable HTTP server at
+- MCP server: `api/mcp.js`, a dependency-free Streamable HTTP server at
   `https://brainy.pxlvzn.in/mcp` (tools: get_taste_profile, search, fetch,
-  list_notes, get_catalog, recall_ideas, get_checks). It reads `/data/brain.json`, which
+  list_notes, get_catalog, recall_ideas, get_checks; plus capture, update_note,
+  log_project with `?key=`, see "Capture from any chat"). It reads `/data/brain.json`, which
   `scripts/build_graph.mjs` writes on every deploy, so new notes show up on their own.
 - MCP outputs stay lean (Yuvraj's ask 2026-11-26, a chat spent ~12% of its tokens on
   one taste read): `get_taste_profile` returns only the curated part of TASTE.md unless

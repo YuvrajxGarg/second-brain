@@ -2,6 +2,10 @@
 // Served at https://brainy.pxlvzn.in/mcp (vercel.json rewrites /mcp here).
 // No dependencies: it speaks JSON-RPC directly and reads /data/brain.json, which
 // scripts/build_graph.mjs writes on every deploy.
+// With ?key=<CAPTURE_KEY> in the URL it also lists the write tools in api/_write.js
+// (capture, update_note, log_project); without it, it stays read-only.
+
+const W = require("./_write.js");
 
 const SITE = "https://brainy.pxlvzn.in";
 const PROTOCOLS = ["2025-06-18", "2025-03-26", "2024-11-05"];
@@ -241,6 +245,10 @@ const fail = (t) => ({ content: [{ type: "text", text: t }], isError: true });
 async function callTool(name, a = {}, req) {
   const brain = await loadBrain(req);
   const notes = brain.notes;
+  if (W.WRITE_TOOLS.some((t) => t.name === name)) {
+    if (W.access(req) !== "ok") return fail("Writing needs the capture key in the connector URL (https://brainy.pxlvzn.in/mcp?key=...). This connection is read-only.");
+    return W.callWriteTool(name, a, brain, KINDS, STAGES);
+  }
   switch (name) {
     case "get_taste_profile":
       return text(tasteProfile(brain.taste, a.evidence));
@@ -348,14 +356,17 @@ async function handle(msg, req) {
         return ok({
           protocolVersion: PROTOCOLS.includes(params.protocolVersion) ? params.protocolVersion : PROTOCOLS[0],
           capabilities: { tools: { listChanged: false } },
-          serverInfo: { name: "yuvraj-second-brain", title: "Yuvraj's second brain", version: "1.2.0" },
+          serverInfo: { name: "yuvraj-second-brain", title: "Yuvraj's second brain", version: "1.3.0" },
           instructions:
+            (W.access(req) === "ok"
+              ? "Writing is on. When he says save/add/remember this to my brain: search first (extend a match with update_note), then capture one note per item; project work goes to log_project. Rules: the capture-to-brain skill, or fetch 'agents'. "
+              : "") +
             "Yuvraj's personal knowledge base and taste profile. Call get_taste_profile first (curated summary, no evidence needed) to learn his visual taste, the games he likes and his preferred stack. Then pull only what the question needs: search for specific references and libraries, recall_ideas for his own ideas and to-dos, get_catalog('projects') for what he has already built. Every list is compact (id + one line); fetch an id only for notes you will actually use. Prefer what he has saved when suggesting designs, UI libraries, assets or tools.",
         });
       case "ping":
         return ok({});
       case "tools/list":
-        return ok({ tools: TOOLS });
+        return ok({ tools: W.access(req) === "ok" ? [...TOOLS, ...W.WRITE_TOOLS] : TOOLS });
       case "tools/call": {
         const r = await callTool(params.name, params.arguments || {}, req);
         return r ? ok(r) : err(-32602, `Unknown tool: ${params.name}`);

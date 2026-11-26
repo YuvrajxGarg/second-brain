@@ -582,6 +582,31 @@ or CI check, make the agent prove it with a test, and only then a written rule).
   before each commit. Start your copy's `CHECKS.md` with only its intro and empty
   tables; rows come from your own mistakes.
 
+### 3.11 Capture from any chat (optional)
+
+Save things into the brain from **any** Claude chat (another project, a plain chat, your
+phone), not only the brain project: "save this to my brain", "add this link to my brain".
+
+1. **Turn on writing in the MCP server.** In Vercel, add `CAPTURE_KEY` (Production, any
+   random 16+ characters, e.g. `python3 -c "import secrets;print(secrets.token_urlsafe(24))"`).
+   It needs `GITHUB_TOKEN` from site editing (3.4). Redeploy.
+2. **Use the keyed URL as your connector.** In Claude, Settings > Connectors, edit your
+   brain connector (or add one) with `https://<site-domain>/mcp?key=<CAPTURE_KEY>`. The
+   tools `capture`, `update_note` and `log_project` appear next to the read tools. Keep
+   the plain `/mcp` URL for anything you share: without the key it's read-only. Treat the
+   keyed URL like a password.
+3. **Add the skill.** Zip `tools/capture-to-brain/` and upload it in Claude's skills
+   settings (like log-to-brain). It routes project work to log-to-brain and everything
+   else to a note, reads X/Instagram links with Social Reader, searches before it files
+   so nothing is saved twice, and fills the fields the same way the brain project does.
+
+The server checks every note before committing it (short title, tags, required
+fields), refuses a link that's already saved (also ones not deployed yet), and only
+ever adds: no deletes, one commit each, so anything wrong is one `git revert`.
+Notes it files carry `captured: ... via brain MCP`, and the brain project's filing
+steps check for an existing note first, so dumping the same link in both places
+doesn't make a copy.
+
 ---
 
 ## 4. The conventions (what makes it stay tidy)
@@ -750,6 +775,7 @@ About me: <one paragraph about yourself>
 - [ ] Daily ideas scheduled task created (3.7)
 - [ ] Weekly link check scheduled task created (3.8)
 - [ ] Optional: vault sync installed on each computer, log-to-brain skill added (3.9)
+- [ ] Optional: `CAPTURE_KEY` set, keyed connector URL, capture-to-brain skill added (3.11)
 - [ ] First dump filed (on the graph after the next batch or the next morning)
 
 ## 7. Troubleshooting
@@ -770,6 +796,9 @@ About me: <one paragraph about yourself>
 - **Social Reader returns 404:** the token at the end of the connector URL doesn't
   match `MCP_TOKEN` in Vercel. **Connector won't add:** make sure the URL ends in
   `/mcp/<token>`.
+- **No `capture` tool in a chat:** the connector URL is missing `?key=`, the key doesn't
+  match `CAPTURE_KEY`, or the deploy after adding it hasn't run. Connectors attach when a
+  chat starts, so open a new chat after changing it.
 - **Extension says 401/403:** the token expired or lacks Contents read/write on
   this repo.
 - **Build fails on Vercel:** run `python3 scripts/build_index.py && node

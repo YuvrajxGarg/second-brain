@@ -1,6 +1,6 @@
 ---
 name: log-to-brain
-description: Use whenever Yuvraj says "log this", "log this to my brain", "save this to my brain" or "save where this is at" about the work in the current chat. Writes status, learnings, mistakes and taste into his Vault project log (Documents/Vault, one folder per project), reusing the existing project instead of making copies or new notes.
+description: Use whenever Yuvraj says "log this", "log this to my brain" or "save where this is at" about the project work in the current chat (a build, an edit job, a client project). For a link, thought or idea, use capture-to-brain instead. Writes status, learnings, mistakes and taste into his Vault project log (Documents/Vault, one folder per project), reusing the existing project instead of making copies or new notes.
 ---
 
 # Log to brain
@@ -112,6 +112,7 @@ If the chat is inside the project's own codebase and he wants it there too (or a
 
 ## 7. No file access (plain chat)
 
+- With the Second Brain connector and writing on (the `log_project` tool is listed): call `log_project` with the project, a headline and the entry. It finds the project (or returns candidates), adds the entry newest first and refuses private (`share: summary/none`) projects. If it says the project is new, confirm with him, then call it again with `new_project`.
 - With a GitHub connector: append the entry to `projects/<slug>/log.md` in YuvrajxGarg/second-brain on `main` (commit `log: <project> <date>`). The next vault sync copies it down into the vault.
 - Otherwise: give him the entry in one block and say which file it goes in (`Documents/Vault/<Project>/log.md`).
 

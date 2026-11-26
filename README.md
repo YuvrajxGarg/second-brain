@@ -8,7 +8,8 @@ one small markdown file, grouped by topic and tagged so it can be found again.
 
 | What | Link |
 |---|---|
-| MCP server (connect it as a custom connector, no auth) | `https://brainy.pxlvzn.in/mcp` |
+| MCP server (connect it as a custom connector, no auth, read-only) | `https://brainy.pxlvzn.in/mcp` |
+| Same server with writing on (Yuvraj only, secret key) | `https://brainy.pxlvzn.in/mcp?key=<CAPTURE_KEY>` |
 | Start here, how to use the brain | https://brainy.pxlvzn.in/AGENTS.md |
 | Index of everything (llmstxt.org) | https://brainy.pxlvzn.in/llms.txt |
 | Every note in one file | https://brainy.pxlvzn.in/llms-full.txt |
@@ -45,6 +46,10 @@ one small markdown file, grouped by topic and tagged so it can be found again.
 - **Build your own:** [HANDOFF.md](HANDOFF.md) explains how to set up this whole system
   for yourself (engine only, no notes).
 - **Rules:** [CLAUDE.md](CLAUDE.md) explains how entries are filed, tagged, linked and searched.
+- **Capture from any chat:** say "save this to my brain" in any Claude chat. The
+  [capture-to-brain](tools/capture-to-brain/SKILL.md) skill files it as a note through
+  the MCP server's `capture` tool (writing is on when the connector URL carries the
+  key), the GitHub connector, or a shell. Project work goes to log-to-brain instead.
 - **Quick capture:** [tools/quick-capture](tools/quick-capture/) is a browser
   extension that saves links, notes, images and videos to `inbox/` in one click.
 - **Entries:** `topics/<topic>/<slug>.md`, named by what the thing is (no date; the

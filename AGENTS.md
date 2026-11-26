@@ -50,6 +50,13 @@ topic, [TAGS.md](TAGS.md) by tag.
 MCP tools: `get_taste_profile`, `search`, `fetch`, `list_notes`, `get_catalog`,
 `recall_ideas`, `get_checks`.
 
+**Writing** (only when Yuvraj's connector URL carries `?key=`; otherwise these aren't
+listed): `capture` files one note, `update_note` adds to an existing one (his words,
+a follow-up line, links, an idea's stage), `log_project` adds a dated entry to a
+project's `log.md`. Search first and extend a match instead of making a copy. The
+server enforces the filing rules and refuses a link that's already saved. How to fill
+the fields: [tools/capture-to-brain/SKILL.md](tools/capture-to-brain/SKILL.md).
+
 They return compact results to save tokens: `get_taste_profile` gives the curated
 profile only (pass `evidence` for the generated block), lists and catalogs are one
 line per note, and `fetch` returns a full note by id. Fetch only what you will use.
