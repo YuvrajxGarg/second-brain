@@ -17,9 +17,9 @@ From the chat: the repo or folder name, the app or game name, what he called it.
 
 Check, in order, and stop at the first match:
 
-1. **Vault folder.** Vault path: `vault` in `~/.brain-sync/config.json` if it exists, else `~/Documents/Vault` (Mac) or `%USERPROFILE%\Documents\Vault` (Windows, may be under OneDrive). List its folders (skip ones starting with `_` or `.`). Match on folder name, slug (lowercase kebab-case) and the `title:` in each `project.md`. Treat "Munde Mode", "munde-mode" and "MundeMode" as the same.
+1. **Vault folder.** Vault path: `vault` in `~/.brain-sync/config.json` if it exists, else `~/Documents/Vault` (Mac) or `%USERPROFILE%\Documents\Vault` (Windows, may be under OneDrive). List its folder names only (skip ones starting with `_` or `.`) and match on folder name and slug (lowercase kebab-case). Only if no name matches, read the first 3 lines (the `title:`) of each `project.md`, never the whole files or other docs. Treat "Munde Mode", "munde-mode" and "MundeMode" as the same.
 2. **Brain repo `projects/<slug>/`** (synced from the other computer but maybe not pulled yet): Second Brain MCP `search` / `list_notes`, or `https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/projects/<slug>/project.md`.
-3. **Existing brain note for the project** (most of his projects already have one in `topics/`): Second Brain MCP `get_catalog('projects')` or `search`. If found, remember its slug (filename without `.md`, e.g. `2026-11-12-munde-mode-game`).
+3. **Existing brain note for the project** (most of his projects already have one in `topics/`): Second Brain MCP `search` with the project name (not `get_catalog`, which returns every project). If found, remember its slug (filename without `.md`, e.g. `2026-11-12-munde-mode-game`).
 
 Then:
 - Vault folder exists: use it.
@@ -31,7 +31,7 @@ Never create a second folder or note for a project that already exists. If two c
 
 ## 3. Write the log entry
 
-Append to `<Vault>/<Project>/log.md`, newest entry at the top (under the file's heading). Create the file if missing:
+Add to `<Vault>/<Project>/log.md`, newest entry at the top (under the file's heading). Read only the first 5 lines to find where to insert; never load the whole log. Create the file if missing:
 
 ```markdown
 # <Project>: log
@@ -63,6 +63,12 @@ Also, only when it changed:
 - `context.md`: durable facts (stack, conventions, key decisions). Edit the relevant section; don't append a diary there.
 - `todo.md`: tick done items, add new ones.
 - `project.md` frontmatter: `state` (live, prototype, in progress, concept, archived) and `stack`.
+
+## Keep it cheap on tokens
+
+- Open only the one project you're logging. Never read other projects' folders, `llms-full.txt`, `catalog/` or the whole repo.
+- Only `project.md` frontmatter and the first lines of `log.md` are needed. For `context.md` and `todo.md`, search for the heading or line you're changing and edit just that part; skip them when nothing durable changed.
+- Write from what's already in the chat. Don't re-read code or files to summarise them.
 
 ## 4. New project folder
 
