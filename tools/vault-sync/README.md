@@ -56,7 +56,7 @@ files for you.
 |---|---|
 | changed only in this vault | copied up to `projects/<slug>/` |
 | changed only in the repo (other computer) | copied down into this vault |
-| changed on both | repo version kept; yours saved next to it as `name.conflict-<machine>-<date>.md` in both places. Merge, delete the copy |
+| changed on both | `log.md`: entries from both computers merged, newest first. Other files: repo version kept; yours saved next to it as `name.conflict-<machine>-<date>.md` in both places. Merge, delete the copy |
 | deleted in this vault | moved to `projects/.archive/<date>/` in the repo (never hard-deleted) |
 | deleted on the other computer | moved to `Vault/.trash/<date>/` here |
 

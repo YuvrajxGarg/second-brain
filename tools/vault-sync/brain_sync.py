@@ -362,6 +362,24 @@ def plan(cfg):
     return state_file, base, vfiles, rfiles, actions, skipped, missing
 
 
+def merge_logs(theirs, ours):
+    """Union of '## ' entries from two log.md versions, newest date first, no duplicates."""
+    def split(text):
+        text = text.replace("\r\n", "\n")
+        parts = re.split(r"(?m)^(?=## )", text)
+        return parts[0], [p.rstrip() + "\n" for p in parts[1:]]
+    head, a = split(theirs)
+    _, b = split(ours)
+    seen, entries = set(), []
+    for e in a + b:
+        key = re.sub(r"\s+", " ", e).strip()
+        if key not in seen:
+            seen.add(key)
+            entries.append(e)
+    entries.sort(key=lambda e: (re.match(r"## (\d{4}-\d\d-\d\d)", e) or [None, ""])[1], reverse=True)  # stable
+    return head.rstrip() + "\n\n" + "\n".join(entries)
+
+
 def apply(cfg, dry_run=False):
     vault, repo, machine = cfg["vault"], cfg["repo"], cfg["machine"]
     today = dt.date.today().isoformat()
@@ -409,6 +427,13 @@ def apply(cfg, dry_run=False):
             if dest_vault.exists():
                 shutil.move(str(dest_vault), str(trash))
             base.pop(rel, None)
+        elif op == "conflict" and rel.endswith("/log.md") and detail[0] and detail[1]:
+            # logs are append-only dated entries: merge both sides instead of a conflict copy
+            merged = merge_logs(rfiles[rel].read_text(encoding="utf-8"), vfiles[rel].read_text(encoding="utf-8"))
+            for dest in (dest_repo, dest_vault):
+                dest.write_text(merged, encoding="utf-8", newline="")
+            base[rel] = {"hash": sha(dest_repo), "from": machine, "at": today}
+            log(f"merged   {rel} (entries from both computers kept)")
         elif op == "conflict":
             v, r = detail
             crel = conflict_name(rel, machine, today)
