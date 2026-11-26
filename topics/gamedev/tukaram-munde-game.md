@@ -5,7 +5,7 @@ topic: gamedev
 tags: [own-thought, game-idea, indian-setting]
 kind: idea
 why: own game idea; collecting art style references for it
-stage: doing
+stage: dropped
 added: 2026-11-12
 status: unread
 ---
