@@ -36,6 +36,7 @@ scripts/build_graph.mjs builds site/data/graph.json for the graph site
 site/                   the graph website (static, deployed on Vercel)
 vercel.json             Vercel build config (runs build_index.py + build_graph.mjs, serves site/)
 suggestions/            daily build ideas from the 9 AM scheduled task (see its README)
+links/                  Link Doctor: dismissed pairs + the weekly check's steps (see its README)
 ```
 
 Starter topics: `ai`, `tech`, `business`, `design`, `productivity`, `health`,
@@ -212,6 +213,11 @@ each note panel stay fresh.
 - Never remove a link he wrote in `## Raw`. A link with a written reason is never "weak".
 - Machine reasons ("both pixel-art") are a floor; when you touch a note, feel free to
   rewrite its link reasons in plain words.
+- Review on the site: LINK DOCTOR (bottom left, key D) answers proposals with one commit
+  each (`api/edit.js` actions `link`, `unlink`, `dismiss`); QUALITY (key Q) colours links
+  by score. Pairs he says no to live in `links/dismissed.json` and are never proposed again.
+- A weekly scheduled task (Sundays ~9:42 AM IST) runs the fixes, rewrites machine reasons,
+  prunes junk proposals and pings him. Its steps live in `links/README.md`.
 
 ## Finding things later
 

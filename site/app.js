@@ -107,7 +107,7 @@
     for (const k of Object.keys(LOOK_DEFAULT)) if (JSON.stringify(look[k]) !== JSON.stringify(base[k])) out[k] = look[k];
     return out;
   }
-  let showSignals = ui.signals, showLabels = ui.labels;
+  let showSignals = ui.signals, showLabels = ui.labels, showQuality = !!ui.quality;
   let introStart = 0;
   let mouse = { x: -1, y: -1, inside: false };
   const signals = [];
@@ -170,6 +170,7 @@
       t.x = Math.cos(a) * R * 0.7; t.y = Math.sin(a) * R * 0.7;
     });
     for (const n of nodes) {
+      n.orphan = n.kind === "note" && !(n.related || []).length && !(n.backlinks || []).length;
       n.deg = adj.get(n.id).size;
       n.color = n.kind === "tag" ? "#f2f2f2" : colorOf(n.topic);
       n.r = radius(n);
@@ -355,10 +356,11 @@
       const focus = F && F.has(s.id) && F.has(t.id) && (s.id === (hoverId || selectedId) || t.id === (hoverId || selectedId));
       const base = (l.kind === "topic" ? 0.2 : l.kind === "wiki" ? 0.42 : 0.17) * look.lineAlpha;
       let a = Math.min(1, base) * Math.min(s.a, t.a);
+      if (showQuality) a *= l.kind === "wiki" ? 2 : 0.25;
       if (focus) a = 0.9;
       if (a < 0.01) continue;
       const note = s.kind === "note" ? s : t.kind === "note" ? t : null;
-      ctx.strokeStyle =
+      ctx.strokeStyle = showQuality && l.kind === "wiki" ? qualityColor(l, Math.min(1, a)) :
         look.lineColor === "rainbow" ? `hsla(${(l.seed * 360) | 0},90%,65%,${Math.min(1, a * 1.6)})` :
         (focus || look.lineColor === "topic") && note ? hexA(note.color, look.lineColor === "topic" ? Math.min(1, a * 1.6) : a) :
         `rgba(242,242,242,${a})`;
@@ -408,6 +410,13 @@
           ctx.beginPath(); ctx.moveTo(n.dx - d, py); ctx.lineTo(n.dx + d, py); ctx.moveTo(n.dx, py - d); ctx.lineTo(n.dx, py + d); ctx.stroke();
         }
       }
+      if (showQuality && n.orphan && n.a > 0.1) {
+        // Link Doctor: orphans (no links in or out) get a pulsing red ring
+        ctx.strokeStyle = `rgba(255,95,109,${0.5 + 0.3 * Math.sin(now * 0.004 + n.phase)})`;
+        ctx.lineWidth = 1.2 / k; ctx.setLineDash([2 / k, 2 / k]);
+        ctx.beginPath(); ctx.arc(n.dx, n.dy, r + 5 / Math.sqrt(k) + 2, 0, 6.2832); ctx.stroke();
+        ctx.setLineDash([]);
+      }
       if (n.id === selectedId) {
         // rotating crosshair brackets
         const o = r + 7 / Math.sqrt(k) + 2, L = 4 / Math.sqrt(k) + 1.5, rot = now * 0.0012;
@@ -426,6 +435,15 @@
 
     if (showLabels) drawLabels(now, F);
     requestAnimationFrame(frame);
+  }
+
+  // Link Doctor overlay: green = strong link, amber = ok, red = weak (see LINKS.md)
+  function qualityColor(l, a) {
+    const sc = l.score;
+    if (l.weak || (sc != null && sc < 0.15)) return `rgba(255,95,109,${a})`;
+    if (sc == null) return `rgba(242,242,242,${a * 0.6})`;
+    if (sc < 0.35) return `rgba(255,190,80,${a})`;
+    return `rgba(90,230,140,${a})`;
   }
 
   function drawBackdrop(now) {
@@ -665,6 +683,10 @@
     $("b-reset").addEventListener("click", () => { go(null); fit(); });
     $("b-signals").addEventListener("click", toggleSignals);
     $("b-labels").addEventListener("click", toggleLabels);
+    $("b-quality").addEventListener("click", toggleQuality);
+    $("b-doctor").addEventListener("click", openDoctor);
+    syncToggles();
+    if (graph.linkHealth != null) $("doctor-n").textContent = graph.linkHealth;
     $("b-random").addEventListener("click", randomNote);
     $("b-tour").addEventListener("click", () => toggleTour());
     $("b-sound").addEventListener("click", () => { look.sound = !look.sound; saveLook(); syncSoundBtn(); if (look.sound) { sfx.unlock(); sfx.play("toggle", true); } });
@@ -686,6 +708,8 @@
       else if (e.key === "r" || e.key === "R") { go(null); fit(); }
       else if (e.key === "s" || e.key === "S") toggleSignals();
       else if (e.key === "l" || e.key === "L") toggleLabels();
+      else if (e.key === "q" || e.key === "Q") toggleQuality();
+      else if (e.key === "d" || e.key === "D") openDoctor();
       else if (e.key === "n" || e.key === "N") randomNote();
       else if (e.key === "h" || e.key === "H") toggleHud();
       else if (e.key === "t" || e.key === "T") toggleDock("topics");
@@ -698,7 +722,72 @@
 
   function toggleSignals() { showSignals = !showSignals; ui.signals = showSignals; saveUi(); syncToggles(); sfx.play("toggle", showSignals); if (!showSignals) signals.length = 0; }
   function toggleLabels() { showLabels = !showLabels; ui.labels = showLabels; saveUi(); syncToggles(); sfx.play("toggle", showLabels); }
-  function syncToggles() { $("b-signals").classList.toggle("on", showSignals); $("b-labels").classList.toggle("on", showLabels); }
+  // ---------- Link Doctor review ----------
+  // Reads data/links.json (written by scripts/link_doctor.py on every build) and lets
+  // Yuvraj accept or dismiss each proposal. Every answer is one commit to main.
+  const doctor = { data: null, done: new Map() };
+  async function openDoctor() {
+    if (!doctor.data) {
+      try { doctor.data = await (await fetch("data/links.json", { cache: "no-cache" })).json(); }
+      catch { toast("No link report yet. It is built on the next deploy."); return; }
+    }
+    const d = doctor.data, rv = d.review || {}, c = d.counts || {};
+    const N = (s) => byId.get("n:" + s);
+    const T = (s) => `<a href="#/n/${encodeURIComponent(s)}" data-close>${esc(N(s)?.label || s)}</a>`;
+    const btns = (key, yes, no) => doctor.done.has(key)
+      ? `<span class="dr-done">${esc(doctor.done.get(key))}</span>`
+      : `<button type="button" data-act="${yes[0]}" data-k="${esc(key)}">${yes[1]}</button><button type="button" data-act="${no[0]}" data-k="${esc(key)}">${no[1]}</button>`;
+    const miss = (rv.missing || []).filter((m) => N(m.a) && N(m.b));
+    const weak = (rv.weak || []).filter((w) => N(w.from) && N(w.to));
+    const tags = (rv.tag_merges || []);
+    const orph = (rv.orphans || []).filter(N);
+    let h = `<div class="m-h">LINK DOCTOR · HEALTH ${d.health ?? "?"}/100</div>
+      <p class="m-p">${c.links ?? 0} links · ${c.connected ?? 0} of ${c.notes ?? 0} notes linked · ${c.one_way ?? 0} one-way · ${c.orphans ?? 0} orphans.
+      Each answer commits to main and the graph rebuilds in about a minute. NO and KEEP are remembered, so it won't ask again.</p>`;
+    h += `<div class="dr-h">SUGGESTED LINKS · ${miss.length}</div><ul class="dr">${miss.map((m) => `<li><div class="dr-t">${T(m.a)} <span class="dr-x">↔</span> ${T(m.b)}<div class="dr-why">${Math.round(m.score * 100)}% · ${esc(m.reason)}</div></div><div class="dr-b">${btns(`L|${m.a}|${m.b}`, ["link", "LINK"], ["no", "NO"])}</div></li>`).join("") || `<li class="dr-none">Nothing to suggest.</li>`}</ul>`;
+    h += `<div class="dr-h">WEAK LINKS · ${weak.length}</div><ul class="dr">${weak.map((w) => `<li><div class="dr-t">${T(w.from)} <span class="dr-x">→</span> ${T(w.to)}<div class="dr-why">${Math.round(w.score * 100)}% match and no reason written</div></div><div class="dr-b">${btns(`W|${w.from}|${w.to}`, ["unlink", "UNLINK"], ["keep", "KEEP"])}</div></li>`).join("") || `<li class="dr-none">No weak links.</li>`}</ul>`;
+    if (tags.length) h += `<div class="dr-h">TAG MERGES · ${tags.length}</div><ul class="dr">${tags.map((m) => `<li><div class="dr-t">#${esc(m.tag)} <span class="dr-x">→</span> #${esc(m.into)}<div class="dr-why">${m.uses} note${m.uses === 1 ? "" : "s"}</div></div><div class="dr-b">${btns(`T|${m.tag}|${m.into}`, ["merge", "MERGE"], ["skip", "SKIP"])}</div></li>`).join("")}</ul>`;
+    h += `<div class="dr-h">ORPHANS · ${orph.length}</div><p class="m-p">No links in or out. Open one to see what it might relate to.</p><div class="dr-chips">${orph.map((s) => T(s)).join("")}</div>`;
+    h += `<div class="m-row"><button type="submit">CLOSE</button></div>`;
+    const m = openModal(h, () => closeModal());
+    m.querySelector(".modal-card").classList.add("wide");
+    m.addEventListener("click", async (e) => {
+      if (e.target.closest("[data-close]")) { closeModal(); return; }
+      const b = e.target.closest("[data-act]");
+      if (!b) return;
+      if (!editor.pass) { closeModal(); toggleEdit(() => openDoctor()); return; }
+      const [kind, x, y] = b.dataset.k.split("|"), act = b.dataset.act;
+      const row = b.parentElement;
+      row.querySelectorAll("button").forEach((el) => (el.disabled = true));
+      try {
+        if (kind === "T") {
+          if (act === "merge") {
+            const notes = [...(adj.get("g:" + x) || [])].map((id) => byId.get(id)).filter((n) => n && n.kind === "note");
+            await api("retag", { paths: notes.map((n) => n.path), from: x, to: y });
+          }
+          doctor.done.set(b.dataset.k, act === "merge" ? "MERGED ✓" : "SKIPPED");
+        } else {
+          const A = N(x), B = N(y);
+          const why = kind === "L" ? (miss.find((mm) => mm.a === x && mm.b === y)?.reason || "related") : "";
+          if (act === "link") await api("link", { a: A.path, b: B.path, reasonA: why, reasonB: why });
+          else if (act === "unlink") await api("unlink", { a: A.path, b: B.path });
+          else await api("dismiss", { a: A.path, b: B.path, why: act === "keep" ? "kept on the site" : "not related (site)" });
+          doctor.done.set(b.dataset.k, { link: "LINKED ✓", unlink: "UNLINKED ✓", keep: "KEPT", no: "DISMISSED" }[act]);
+        }
+        sfx.play("toggle", true);
+        row.innerHTML = `<span class="dr-done">${esc(doctor.done.get(b.dataset.k))}</span>`;
+      } catch (err) {
+        row.querySelectorAll("button").forEach((el) => (el.disabled = false));
+        toast(esc(err.message || "Failed"));
+      }
+    });
+  }
+
+  function toggleQuality() {
+    showQuality = !showQuality; ui.quality = showQuality; saveUi(); syncToggles(); sfx.play("toggle", showQuality);
+    if (showQuality) toast(`LINK QUALITY · <span style="color:#5ae68c">strong</span> · <span style="color:#ffbe50">ok</span> · <span style="color:#ff5f6d">weak</span> · red rings = orphans`, 4500);
+  }
+  function syncToggles() { $("b-signals").classList.toggle("on", showSignals); $("b-labels").classList.toggle("on", showLabels); $("b-quality").classList.toggle("on", showQuality); }
 
   function randomNote() {
     const pool = nodes.filter((n) => n.kind === "note" && visible(n) && n.id !== selectedId);
@@ -716,6 +805,7 @@
       ["/", "Search notes, tags and topics"], ["Esc", "Close the note or clear search"], ["N", "Open a random note"],
       ["R", "Reset the view"], ["T", "Collapse or expand topics"], ["H", "Hide or show all panels"],
       ["S", "Signals on or off"], ["L", "Labels on or off"], ["E", "Edit mode"],
+      ["Q", "Link quality colours"], ["D", "Link Doctor review"],
       ["C", "Customise the look"], ["X", "Shake the graph"], ["P", "Tour: hop between random notes"],
       ["I", "Save the view as an image"], ["M", "Sound on or off"],
       ["Right-click", "Menu for any node or empty space (long-press on phone)"],

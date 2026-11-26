@@ -17,6 +17,9 @@
 //   { action: "create", path, content, title? }  -> { ok, commit, path }   (new note)
 //   { action: "retag", paths, from, to }         -> { ok, commit, changed } (to "" removes)
 //   { action: "look", look }                     -> { ok, commit }          (site/look.json)
+//   { action: "link", a, b, reasonA?, reasonB? } -> { ok, commit, changed } (Link Doctor: link two notes both ways)
+//   { action: "unlink", a, b }                   -> { ok, commit, changed } (remove the link both ways, ## Notes only)
+//   { action: "dismiss", a, b, why? }            -> { ok, commit }          (links/dismissed.json: stop proposing this pair)
 // Only notes under topics/<topic>/ or inbox/ can be touched. Deleting a note also
 // removes its images/videos (files with the same name). One change = one commit.
 
@@ -40,6 +43,44 @@ function retagText(text, from, to) {
     return `tags: [${next.join(", ")}]`;
   });
   return fm + text.slice(m[0].length);
+}
+
+// ---------- Link Doctor helpers (same rules as scripts/link_doctor.py) ----------
+const DISMISSED_PATH = "links/dismissed.json";
+const slugOf = (p) => p.slice(p.lastIndexOf("/") + 1, -3);
+const reEsc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const linkRe = (slug) => new RegExp("\\[\\[" + reEsc(slug) + "(\\|[^\\]]*)?\\]\\]", "g");
+const cleanReason = (r) => String(r || "").replace(/[\r\n\[\]]+/g, " ").trim().slice(0, 160);
+
+function notesSection(text) {
+  const m = /^## Notes[ \t]*\n/m.exec(text);
+  if (!m) return null;
+  const start = m.index + m[0].length;
+  const nx = text.slice(start).search(/^## /m);
+  return { start, end: nx < 0 ? text.length : start + nx };
+}
+
+// Append a bullet to ## Notes, creating the section at the end if it is missing.
+function addNoteLine(text, line) {
+  const sec = notesSection(text);
+  if (!sec) return text.replace(/\n*$/, "") + "\n\n## Notes\n" + line + "\n";
+  const body = text.slice(sec.start, sec.end).replace(/\n+$/, "");
+  const tail = text.slice(sec.end);
+  return text.slice(0, sec.start) + (body ? body + "\n" : "") + line + "\n" + (tail ? "\n" + tail : "");
+}
+
+// Remove [[slug]] from ## Notes only (his ## Raw is never touched). A line that only
+// held this link goes; a line with other links keeps them.
+function removeNoteLink(text, slug) {
+  const sec = notesSection(text);
+  if (!sec) return text;
+  const lines = text.slice(sec.start, sec.end).split("\n").flatMap((line) => {
+    if (!linkRe(slug).test(line)) return [line];
+    const others = (line.match(/\[\[[^\]]+\]\]/g) || []).length - (line.match(linkRe(slug)) || []).length;
+    if (!others) return [];
+    return [line.replace(linkRe(slug), "").replace(/,\s*,/g, ",").replace(/(:|\()\s*,\s*/g, "$1 ").replace(/,\s*(\)|$)/g, "$1").replace(/\(\s*\)/g, "").replace(/[ \t]{2,}/g, " ")];
+  });
+  return text.slice(0, sec.start) + lines.join("\n") + text.slice(sec.end);
 }
 
 // Slow down passcode guessing: failed attempts per IP, per warm instance.
@@ -179,6 +220,41 @@ module.exports = async function handler(req, res) {
       try { current = await getFile(LOOK_PATH); } catch (e) { if (e.status !== 404) throw e; }
       const r = await gh("PUT", `/contents/${LOOK_PATH}`, { message: "site: graph look (from site)", content: b64(content), sha: current?.sha, branch: BRANCH });
       return send(res, 200, { ok: true, commit: r.commit.sha });
+    }
+
+    // Link Doctor: link / unlink two notes (both ways), or dismiss a proposed pair.
+    if (action === "link" || action === "unlink" || action === "dismiss") {
+      const a = body.a, b = body.b;
+      if ([a, b].some((p) => typeof p !== "string" || !NOTE_PATH.test(p) || p.includes("..")) || a === b) {
+        return send(res, 400, { error: "Bad pair of notes." });
+      }
+      const sa = slugOf(a), sb = slugOf(b);
+      if (action === "dismiss") {
+        let cur = { pairs: {} }, fsha;
+        try { const f = await getFile(DISMISSED_PATH); cur = JSON.parse(f.content); fsha = f.sha; } catch (e) { if (e.status !== 404) throw e; }
+        cur.pairs = cur.pairs || {};
+        cur.pairs[[sa, sb].sort().join("|")] = cleanReason(body.why) || "dismissed on the site";
+        const content = JSON.stringify(cur, null, 2) + "\n";
+        const r = await gh("PUT", `/contents/${DISMISSED_PATH}`, { message: `links: dismiss ${sa} | ${sb} (from site)`, content: b64(content), sha: fsha, branch: BRANCH });
+        return send(res, 200, { ok: true, commit: r.commit.sha });
+      }
+      const [fa, fb] = [await getFile(a), await getFile(b)];
+      let ta = fa.content, tb = fb.content;
+      if (action === "link") {
+        if (!linkRe(sb).test(ta)) ta = addNoteLine(ta, `- [[${sb}]]: ${cleanReason(body.reasonA) || "related"}`);
+        if (!linkRe(sa).test(tb)) tb = addNoteLine(tb, `- [[${sa}]]: ${cleanReason(body.reasonB || body.reasonA) || "related"}`);
+      } else {
+        ta = removeNoteLink(ta, sb);
+        tb = removeNoteLink(tb, sa);
+      }
+      const writes = [];
+      if (ta !== fa.content) writes.push({ path: a, content: ta });
+      if (tb !== fb.content) writes.push({ path: b, content: tb });
+      if (!writes.length) return send(res, 200, { ok: true, commit: "", changed: 0 });
+      const t = (p, txt) => ((/^title:\s*["']?(.*?)["']?\s*$/m.exec(txt) || [])[1] || slugOf(p));
+      const msg = `links: ${action === "link" ? "link" : "unlink"} ${t(a, ta)} <-> ${t(b, tb)} (from site)`;
+      const commit = await commitTree(msg, writes, []);
+      return send(res, 200, { ok: true, commit, changed: writes.length });
     }
 
     // Rename a tag (to) or remove it (to empty) across several notes, in one commit.

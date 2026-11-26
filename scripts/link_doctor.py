@@ -65,6 +65,20 @@ like me more my of on or so that the their them then there they this to was we w
 who will with you your can not all also any one out up use used using how get very new make
 made yuvraj saved save saves want wants about our only own""".split())
 
+DISMISSED = ROOT / "links" / "dismissed.json"  # pairs Yuvraj said no to: {"pairs": {"a|b": "why"}}
+
+
+def pair_key(a, b):
+    return "|".join(sorted((a, b)))
+
+
+def load_dismissed():
+    try:
+        return set(json.loads(DISMISSED.read_text(encoding="utf-8")).get("pairs", {}))
+    except (OSError, ValueError):
+        return set()
+
+
 LINK_RE = re.compile(r"\[\[([^\]|]+)(\|[^\]]*)?\]\]")
 
 
@@ -236,6 +250,7 @@ class Scorer:
 # ---------- audit ----------
 def audit(notes):
     slugs = set(notes)
+    dismissed = load_dismissed()
     sc = Scorer(notes)
     out_links = defaultdict(dict)  # a -> {b: line}
     broken = []
@@ -263,7 +278,7 @@ def audit(notes):
             links.append(item)
             if a not in out_links.get(b, {}):
                 one_way.append({**item, "backlink": sc.reason(b, a)})
-            if p["score"] < WEAK and not reasoned:
+            if p["score"] < WEAK and not reasoned and pair_key(a, b) not in dismissed:
                 weak.append(item)
 
     degree = {s: len(set(out_links.get(s, {})) | in_links.get(s, set())) for s in notes}
@@ -272,7 +287,7 @@ def audit(notes):
     ordered = sorted(notes)
     for i, a in enumerate(ordered):
         for b in ordered[i + 1:]:
-            if frozenset((a, b)) in linked_pairs:
+            if frozenset((a, b)) in linked_pairs or pair_key(a, b) in dismissed:
                 continue
             sco = sc.score(a, b)
             floor = SUGGEST if degree[a] and degree[b] else SUGGEST - 0.1  # orphans get a lower bar
@@ -353,6 +368,7 @@ def audit(notes):
         "weak": sorted(weak, key=lambda x: x["score"]), "orphans": orphans, "missing": missing,
         "mentions": {b: sorted(a) for b, a in mentions.items()}, "dupes": dupes,
         "tag_merges": tag_merges, "links": links, "suggestions": suggestions,
+        "dismissed": len(dismissed),
     }
 
 
@@ -403,7 +419,8 @@ def write_report(notes, rep):
            "backlinks for strong one-way links). Everything under Proposals needs a yes first._", "",
            f"**Health: {rep['health']}/100** · {c['notes']} notes · {c['links']} links · "
            f"{c['connected']} notes linked · {c['broken']} broken · {c['one_way']} one-way · "
-           f"{c['orphans']} orphans · {c['weak']} weak", "",
+           f"{c['orphans']} orphans · {c['weak']} weak · {rep['dismissed']} pairs dismissed "
+           f"(`links/dismissed.json`)", "",
            f"Scores run 0 to 1: keep at {KEEP}+, weak under {WEAK} with no reason written, "
            f"suggest new links at {SUGGEST}+ ({SUGGEST - 0.1}+ for orphans).", ""]
 
@@ -421,7 +438,8 @@ def write_report(notes, rep):
     if not rep["one_way"]:
         out.append("None.")
 
-    out += ["", "## Proposals", "", "Say \"apply links 1, 3\" or \"apply all links\" in chat.", ""]
+    out += ["", "## Proposals", "", "Review them on the graph site (LINK DOCTOR, bottom left) or say "
+            "\"apply links 1, 3\" / \"apply all links\" in chat.", ""]
     i = 0
     out += ["### Add these links", ""]
     for m in rep["missing"][:MAX_PROPOSE]:
@@ -468,7 +486,10 @@ def write_report(notes, rep):
     site = {"health": rep["health"], "counts": rep["counts"],
             "scores": {f"{l['from']}|{l['to']}": l["score"] for l in rep["links"]},
             "weak": [f"{w['from']}|{w['to']}" for w in rep["weak"]],
-            "suggest": rep["suggestions"], "mentions": rep["mentions"]}
+            "suggest": rep["suggestions"], "mentions": rep["mentions"],
+            "review": {"missing": rep["missing"][:MAX_PROPOSE], "weak": rep["weak"],
+                       "tag_merges": rep["tag_merges"], "dupes": rep["dupes"],
+                       "orphans": [o["note"] for o in rep["orphans"]]}}
     (data / "links.json").write_text(json.dumps(site), encoding="utf-8")
 
 

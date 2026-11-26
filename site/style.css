@@ -488,3 +488,20 @@ body.flash::after { content: ""; position: fixed; inset: 0; z-index: 30; backgro
 @media (max-width: 720px) {
   .studio { width: 100vw; }
 }
+
+/* Link Doctor review */
+.modal-card.wide { width: min(640px, 100%); max-height: min(86vh, 900px); overflow-y: auto; }
+.dr-h { font-size: 10px; letter-spacing: 0.2em; color: var(--dim); border-bottom: 1px solid var(--line); padding-bottom: 6px; margin-top: 4px; }
+.dr { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.dr li { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.04); }
+.dr-t { flex: 1; min-width: 0; font-family: var(--sans); font-size: 13px; line-height: 1.4; }
+.dr-t a, .dr-chips a { color: var(--fg); text-decoration: none; border-bottom: 1px solid rgba(242, 242, 242, 0.2); }
+.dr-t a:hover, .dr-chips a:hover { border-color: var(--fg); }
+.dr-x { color: var(--dim); font-family: var(--mono); font-size: 11px; padding: 0 2px; }
+.dr-why { font-family: var(--mono); font-size: 10.5px; color: var(--dim); margin-top: 2px; letter-spacing: 0.02em; }
+.dr-b { display: flex; gap: 6px; flex-shrink: 0; }
+.dr-b button { padding: 6px 10px; font-size: 10px; }
+.dr-done { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: #5ae68c; }
+.dr-none { color: var(--dim); font-size: 12px; }
+.dr-chips { display: flex; flex-wrap: wrap; gap: 6px 12px; font-family: var(--sans); font-size: 12.5px; }
+@media (max-width: 520px) { .dr li { flex-direction: column; align-items: flex-start; } }
