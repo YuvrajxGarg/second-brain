@@ -28,3 +28,4 @@ I said in a game.
 
 ## Notes
 - Related: [[line-art-mocap-workflow]] (another mocap animation workflow)
+- [[cascadeur-2026-3-release]]: both motion-capture, rigging

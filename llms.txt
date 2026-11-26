@@ -24,6 +24,7 @@ Read TASTE.md first for the gist, then the catalog for what you need. Live graph
 
 ## Notes
 
+- [Cascadeur 2026.3 update](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/animation/cascadeur-2026-3-release.md): `tool` · animation · Cascadeur's big 2026.3 update with AI motion tools and an MCP, worth trying for character animation
 - [Transition plugin idea](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/video-editing/transition-plugin-idea.md): `idea` · video-editing · Plugin idea for ae/pr
 - [Sprite stacking skill](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/sprite-stacking-canvas-skill.md): `library` · gamedev · Game art style
 - [Skillsync skills marketplace](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/skillsync-skills-marketplace.md): `tool` · ai · a place to publish agent skills and get paid when people or agents use them

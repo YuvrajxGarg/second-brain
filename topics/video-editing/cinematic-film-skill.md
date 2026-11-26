@@ -28,3 +28,5 @@ This is a skill, agent skill for explainer content.
 - Install: `npx skills add Moh4696/cinematic-skill` (or Claude Code `/plugin marketplace add Moh4696/cinematic-skill`). Needs skia-python, numpy, pillow and ffmpeg.
 - Same author: Open 3D Skills (three.js scenes, scroll films).
 - Related: [[ai-tween-paint-harness]]
+- [[skillsync-skills-marketplace]]: both agents
+- [[raea-render-engine]]: both agents

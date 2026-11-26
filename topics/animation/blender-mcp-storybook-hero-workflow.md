@@ -39,3 +39,4 @@ https://x.com/rewind02/status/2119821740058546282?a=4tYjy-hUHaGuRBuPsQw&s=20
 - [[metahuman-maker-agent-addon]]: both 3d-character, blender, mcp
 - [[sharma-sweets-3d-shopfront]]: both 3d-character
 - [[impossible-weapon-knight-animation]]: both animation
+- [[cascadeur-2026-3-release]]: both 3d-character, rigging, mcp

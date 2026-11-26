@@ -48,19 +48,19 @@ _Last curated: 2026-11-12, from 73 notes (29 saves plus his own projects and com
 
 ## Stats (generated)
 
-_Rebuilt on every filing from 115 notes._
+_Rebuilt on every filing from 116 notes._
 
 | | |
 |---|---|
-| Notes saved | 115 |
-| Active days | 11 (2026-11-09 to 2026-11-26) |
-| Average per active day | 10.5 |
-| Current streak | 1 day |
+| Notes saved | 116 |
+| Active days | 12 (2026-11-09 to 2026-11-27) |
+| Average per active day | 9.7 |
+| Current streak | 2 days |
 | Longest streak | 8 days |
 | Notes with his own comment | 56 (48%) |
 | Open ideas and to-dos | 4 |
 | Tagged to-try | 24 |
-| Marked read or done | 46 of 115 |
+| Marked read or done | 46 of 116 |
 
 ### Saves per day
 
@@ -76,6 +76,7 @@ _Rebuilt on every filing from 115 notes._
 2026-11-18  █ 3
 2026-11-21  █ 2
 2026-11-26  ███ 7
+2026-11-27  █ 1
 ```
 
 ### By topic
@@ -87,7 +88,7 @@ tech          ███ 17
 design        ███ 15
 revolio       ███ 15
 video-editing ██ 12
-animation     █ 8
+animation     ██ 9
 business      █ 2
 productivity  █ 1
 learning      █ 1
@@ -103,7 +104,7 @@ asset-source  █ 2
 style-ref     ██ 10
 website-ref   █ 5
 game-ref      █ 4
-tool          ██ 12
+tool          ██ 13
 technique     ███ 18
 advice        █ 6
 idea          █ 3
@@ -117,7 +118,7 @@ project       ███████ 41
 
 ```
 web           █████████ 51
-x             █████ 31
+x             ██████ 32
 instagram     ███ 16
 own words     ██ 12
 github        █ 5

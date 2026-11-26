@@ -110,7 +110,7 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 115 entries, 55 with style notes. Rebuilt on every filing._
+_From 116 entries, 55 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -119,7 +119,7 @@ _From 115 entries, 55 with style notes. Rebuilt on every filing._
 - `style-ref`: 10
 - `website-ref`: 5
 - `game-ref`: 4
-- `tool`: 12
+- `tool`: 13
 - `technique`: 18
 - `advice`: 6
 - `idea`: 3
@@ -130,7 +130,7 @@ _From 115 entries, 55 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (24), #inspiration (20), #claude (18), #open-source (17), #agents (16), #desktop-app (16), #reference (16), #browser-game (13), #pxlvzn (12), #ui (10), #revolio-labs (9), #visual-design (9), #mcp (8), #video-generation (7), #workflow (7), #3d-art (6), #game-inspiration (6), #pixel-art (6), #threejs (6)
+#own-project (42), #to-try (24), #inspiration (20), #claude (18), #open-source (17), #agents (16), #desktop-app (16), #reference (16), #browser-game (13), #pxlvzn (12), #ui (10), #mcp (9), #revolio-labs (9), #visual-design (9), #video-generation (7), #workflow (7), #3d-art (6), #game-inspiration (6), #pixel-art (6), #threejs (6)
 
 ### Style notes and where they come from
 
@@ -312,6 +312,7 @@ _From 115 entries, 55 with style notes. Rebuilt on every filing._
 
 ### Every reference with his reason
 
+- [Cascadeur 2026.3 update](topics/animation/cascadeur-2026-3-release.md) (`tool`): Cascadeur's big 2026.3 update with AI motion tools and an MCP, worth trying for character animation
 - [Sprite stacking skill](topics/gamedev/sprite-stacking-canvas-skill.md) (`library`): Game art style
 - [Skillsync skills marketplace](topics/ai/skillsync-skills-marketplace.md) (`tool`): a place to publish agent skills and get paid when people or agents use them
 - [Tabworthy site directory](topics/tech/tabworthy-site-directory.md) (`tool`): directory of hidden-gem websites to explore

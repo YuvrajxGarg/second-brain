@@ -30,3 +30,4 @@ try w this link in a new thread'
 - Related: [[blender-mcp-storybook-hero-workflow]]
 - [[unity-bodycam-ik-hands]]: both rigging, animation
 - [[ai-tween-paint-harness]]: both animation
+- [[cascadeur-2026-3-release]]: both rigging
