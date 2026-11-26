@@ -118,3 +118,12 @@ brain_sync.py unschedule           stop the daily job
 ```
 
 Use two different times on the two machines (say 21:30 Mac, 22:00 PC) so they don't race.
+
+## Log-to-brain skill
+
+`log-to-brain/SKILL.md` is a Claude skill: say "log this to my brain" in any Claude chat
+and it writes the session's status, learnings, mistakes and taste into
+`Vault/<Project>/log.md`. It looks for the project first (vault folder, then
+`projects/`, then an existing brain note, linking with `note:`) so it never makes a
+copy. With no file access it appends to `projects/<slug>/log.md` through GitHub, and
+the next sync brings it down into the vault.
