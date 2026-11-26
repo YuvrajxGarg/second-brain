@@ -3,14 +3,18 @@
 This is a recipe for copying the system behind this repo so you can run your own
 second brain with Claude. It covers what the system is, how the pieces fit, and how
 to set each piece up. You get the **engine** (rules, scripts, graph site and its
-views, Link Doctor, capture extension, MCP server, daily ideas routine, project
-vault sync), not anyone's notes.
+views, Link Doctor, capture from the browser, phone, desktop and any Claude chat,
+MCP server, daily ideas routine, project vault sync, checks for agents), not anyone's
+notes.
 
-_Last updated 2026-11-26: Link Doctor, Board / Timeline / Canvas / Gallery views,
-command palette, project vault sync and the log-to-brain skill, batched deploys,
-name-first file names, leaner MCP outputs, phone and desktop capture (iPhone Share
-Sheet and Action Button, Mac and Windows hotkeys), offline search (desktop + phone),
-weekly health report and backups._
+_Last updated 2026-11-26 (evening): capture from any Claude chat (MCP write tools +
+the capture-to-brain skill), mistakes to checks (`CHECKS.md`, `get_checks`,
+`check_notes.py`), phone and desktop capture (iPhone Share Sheet and Action Button
+voice note, Mac and Windows hotkeys, right-click Save to Brain / Send to), project
+briefings, START AS PROJECT and the Sunday digest, the asset library (`kit`), game
+playtest logs, canvas AUTO modes (links, flows, clusters), offline search, weekly
+health report and backups, name-first file names. Earlier the same day: Link Doctor,
+Board / Timeline / Canvas / Gallery views, project vault sync, batched deploys._
 
 Placeholders used below:
 
@@ -114,7 +118,17 @@ Social Reader link, just do this and skip steps 11 to 14:
 23. If you work on projects (apps, games, client jobs) and want their notes, to-dos
     and logs in the brain, follow section 3.9. You get a `Documents/Vault` folder
     that syncs into the brain every night, and a "log this to my brain" command for
-    any Claude chat.
+    any Claude chat ("log this playtest" for games).
+
+**I. Save from anywhere (optional, 20 min)**
+
+24. **Any Claude chat:** add a `CAPTURE_KEY` in Vercel and use the keyed MCP link as
+    your connector (3.11). Then "save this to my brain" works in every chat, not
+    only this project.
+25. **iPhone, Mac, Windows:** the same key powers a Share Sheet shortcut, an Action
+    Button voice note, right-click Save to Brain on the Mac, and hotkeys plus
+    right-click Send to on Windows (3.12). Everything lands in `inbox/` and Claude
+    files it at the start of the next thread.
 
 **That's it.** From now on, just paste anything into your Claude project: links,
 thoughts, reels, screenshots. Claude files it and pushes it right away. The website
@@ -150,15 +164,27 @@ On top of the notes, the system builds:
   libraries and ideas instead of giving generic answers.
 - **A self page** (`ME.md`): a personality read, stats and nudges built from what
   you save.
-- **A browser extension** that saves a page, text, image or video in one click
-  into an `inbox/` folder for Claude to sort later.
+- **Capture from anywhere**: a browser extension (one click or right-click), an
+  iPhone Share Sheet shortcut and Action Button voice note, Mac and Windows hotkeys
+  and right-click items, and "save this to my brain" in any Claude chat. Quick
+  captures land in an `inbox/` folder for Claude to sort later.
+- **Using it while building**: one call (`get_briefing`) gives an agent a lean brief
+  on a project: where it's at, past mistakes, checks, taste and the saved notes that
+  fit. An idea becomes a project folder in one click (START AS PROJECT).
+- **Checks for agents** (`CHECKS.md`): when an AI repeats a mistake, it becomes a
+  check (a lint, a test or a rule) that every agent loads before working.
+- **An asset library**: notes tagged with a `kit` area (grading, sound, VFX, motion,
+  shoot, edit, 3D, 2D) in one searchable view for shoots, edits and game builds.
 - **A daily ideas routine**: every morning Claude reads the brain and sends you 1
   to 3 things you could build, each combining notes you saved, plus one unread
   save from your pile.
 - **A project vault** (optional): a `Documents/Vault` folder on your computers, one
   subfolder per project, synced nightly into `projects/` in the brain. Saying "log
   this to my brain" at the end of a work session writes a dated entry into that
-  project's `log.md`.
+  project's `log.md`; "log this playtest" logs a game build.
+- **Offline search and health**: a `brain` command on your computers and an offline
+  search page on your phone, plus a Sunday report (link health, deploys, MCP cost,
+  sync, backups) and a weekly digest in one notification.
 
 Why it works: saving costs nothing (just paste), every note is plain text in git
 (greppable, portable, never locked in), and the AI does the boring part (titles,
@@ -172,6 +198,7 @@ tags, summaries, links, indexes).
  you ──paste──▶ Claude project chat ──files──┐
  you ──click──▶ quick-capture extension ──commits──▶ inbox/ ──Claude sorts──┐
  you ──share / hotkey / voice──▶ /api/capture ──commits──▶ inbox/ ───────────┤
+ any Claude chat ──"save this"──▶ MCP capture (?key=) ──commits──▶ topics/ ───┤
                                               ▼                              ▼
                               GitHub repo  topics/<topic>/<slug>.md
  Documents/Vault (Mac, PC) ──brain_sync.py nightly──▶ projects/<slug>/
@@ -189,12 +216,13 @@ tags, summaries, links, indexes).
             Vercel build: build_index.py + scripts/build_graph.mjs
                                               ▼
      <site-domain>          graph site (site/), me.html
-     <site-domain>/mcp      read-only MCP server (api/mcp.js)
+     <site-domain>/mcp      MCP server (api/mcp.js; write tools with ?key=)
+     <site-domain>/api/capture  phone/desktop capture (api/capture.js, CAPTURE_KEY)
      <site-domain>/api/edit passcode-locked edit API (api/edit.js)
      <site-domain>/llms.txt, /TASTE.md, /IDEAS.md, /data/brain.json
 
  scheduled Claude task (every morning) ──reads brain──▶ suggestions/YYYY-MM-DD.md + phone ping
- scheduled Claude task (Sundays) ──link_doctor --fix, judges proposals──▶ links: weekly check
+ scheduled Claude task (Sundays) ──link fixes, health report, digest──▶ links/, health/, digests/ + one ping
 ```
 
 ### Repo layout
@@ -224,6 +252,7 @@ digests/           weekly digests written by the Sunday run (README)
 templates/entry.md the frontmatter template
 scripts/build_index.py   regenerates everything marked "generated" above
 scripts/link_doctor.py   scores and audits [[slug]] links; --fix applies safe fixes
+scripts/check_notes.py   checks notes against the filing rules before each commit
 scripts/brain.mjs        brief <project> / pick / digest / start <idea> (api/_brief.js)
 scripts/build_graph.mjs  builds site/data/graph.json + brain.json for the site and MCP
 scripts/vercel_ignore.sh decides whether a push deploys (batched deploys)
@@ -233,10 +262,17 @@ site/              the static site: graph (index.html), board, timeline, canvas,
                    gallery, search, me.html; shared views.js (nav, palette, passcode);
                    sw.js + manifest.webmanifest make it an offline home-screen app
 api/mcp.js         MCP server (Vercel function, no dependencies)
+api/_write.js      MCP write tools: capture, update_note, log_project, log_playtest,
+                   start_project (only with ?key=<CAPTURE_KEY>)
+api/_brief.js      shared logic: project briefing, resurfacing, idea -> project
 api/edit.js        edit API for the site (Vercel function)
 api/capture.js     plain HTTP capture endpoint for phone and desktop (CAPTURE_KEY)
 tools/quick-capture/     the browser extension
-tools/device-capture/    iPhone shortcuts (build steps), Mac and Windows hotkey scripts
+tools/device-capture/    iPhone shortcuts (build steps), Mac and Windows hotkey and
+                         right-click scripts
+tools/capture-to-brain/  skill: "save this to my brain" from any Claude chat
+tools/project-briefing/  skill: brief before building, idea -> project
+tools/mistakes-to-checks/ skill: repeat agent mistakes -> checks
 tools/social-reader/     the Instagram/X link reader (MCP connector, deploys on its own)
 tools/vault-sync/        brain_sync.py (vault sync) + the log-to-brain skill
 suggestions/       daily build ideas, one file per day, plus the routine's README
@@ -262,7 +298,8 @@ the old notes in its first session. With a terminal:
 git clone --depth 1 https://github.com/YuvrajxGarg/second-brain.git <repo>
 cd <repo>
 rm -rf .git topics inbox catalog projects site/look.json
-rm -f suggestions/2*.md canvases/*.canvas views/*.json LINKS.md
+rm -f suggestions/2*.md digests/2*.md canvases/*.canvas views/*.json LINKS.md
+rm -f health/latest.md health/history.jsonl
 echo '{ "pairs": {} }' > links/dismissed.json
 for t in ai tech business design productivity health finance learning life misc; do
   mkdir -p topics/$t && touch topics/$t/.gitkeep
@@ -400,8 +437,9 @@ a fallback colour.
 | Graph (`/`) | the map. Note panels show Links, Unlinked mentions and Might relate. **D** opens Link Doctor, **Q** colours links by quality. A card brings back one unread save a day |
 | Board (`/board.html`) | Kanban: IDEAS by `stage`, PROJECTS by `state`, READING by `status`. Dragging a card rewrites that one field (passcode needed) |
 | Timeline (`/timeline.html`) | every note on its `added` day, one track per topic, NLE-style playhead (J/K/L, drag the ruler) |
-| Canvas (`/canvas.html`) | moodboards saved as `canvases/<id>.canvas` (JSON Canvas, opens in Obsidian too). AUTO builds one from a tag or kind; SAVE commits it |
-| Gallery (`/gallery.html`) | saved views in `views/<id>.json` (filter by kind, topic, status, tags, text; gallery or table). SAVE VIEW commits a new one |
+| Canvas (`/canvas.html`) | moodboards saved as `canvases/<id>.canvas` (JSON Canvas, opens in Obsidian too). AUTO builds one five ways: TAG or KIND (grid), LINKS (a note plus 1-2 hops of its links, thicker = stronger), FLOW (a technique's numbered steps as a flow) and CLUSTERS (densely linked groups). A note's panel has OPEN AS CANVAS. SAVE commits it |
+| Search (`/search.html`) | fast search over every note (`kind:`, `topic:`, `tag:`); add it to your phone's home screen and it works offline |
+| Gallery (`/gallery.html`) | saved views in `views/<id>.json` (filter by kind, topic, status, tags, text, kit area, look; gallery or table). SAVE VIEW commits a new one. `views/asset-library.json` is the asset library |
 
 **Ctrl/Cmd+K** on any page opens a palette to jump to a note, tag, view or action.
 Board drags, canvas saves and saved views all commit through `api/edit.js`, so they
@@ -671,12 +709,25 @@ copy-paste setup for:
 - **iPhone:** a *Save to Brain* Share Sheet shortcut (links, text, screenshots) and a
   *Brain voice note* shortcut for the Action Button (dictate, transcribe, save). Built
   in the free Shortcuts app; no developer account.
-- **Mac:** `install.sh` plus two Shortcuts-app hotkeys (clipboard, screenshot).
-- **Windows:** `install.ps1` makes Ctrl+Alt+B / Ctrl+Alt+Shift+B hotkeys and a tray icon.
+- **Mac:** `install.sh` plus two Shortcuts-app hotkeys (clipboard, screenshot). The
+  iPhone *Save to Brain* shortcut syncs over iCloud: tick **Use as Quick Action** in its
+  details and it becomes a right-click item (Services for selected text and links,
+  Quick Actions for image files in Finder).
+- **Windows:** `install.ps1` makes Ctrl+Alt+B (clipboard) / Ctrl+Alt+Shift+B (snip)
+  hotkeys, an orange **B** tray icon at startup, and a right-click **Send to → Second
+  Brain** for image and text files in File Explorer.
+- **Browser:** pages, links, images and selected text are covered by the extension's
+  right-click *Save to Second Brain* (3.5).
 
 Replace `brainy.pxlvzn.in` and `YuvrajxGarg/second-brain` in that folder with your own
 site and repo. The key lives only on your devices (inside the shortcut, or a file in
 your home folder).
+
+Two iPhone gotchas: keep exactly one header row in *Get Contents of URL* (an empty
+extra row fails with "network connection was lost"), and keep the image steps inside
+the "If URLs does not have any value" branch, because looking up images on a shared
+link follows app redirects.
+
 ### 3.13 Use what you saved while building (optional)
 
 Saving is half of it; these make the brain show up while you work. All share one piece
@@ -765,7 +816,13 @@ sync.
   confirmation. One commit per dump (or per batch); the site deploys in batches
   (3.4).
 - **"Log this" is a project log**, not a dump: it goes into the project's
-  `log.md`, never a new note (3.9).
+  `log.md`, never a new note (3.9). "Log this playtest" goes to `playtests.md`.
+- **Search before filing.** Other chats and devices file straight to `main`, so
+  Claude `git pull`s and greps for the link first and adds to an existing note
+  instead of making a copy.
+- **Code checks the rules.** `python3 scripts/check_notes.py --changed` runs before
+  every commit; a rule code can check goes there (and in `CHECKS.md`), not just in
+  `CLAUDE.md`.
 - **Never edit generated files by hand**; run `python3 scripts/build_index.py`.
 
 **Finding things:** ask Claude "what was that thing about X". It greps `topics/`,
@@ -804,6 +861,9 @@ Follow CLAUDE.md in that repo for every filing, search and edit.
   summary, link and file path.
 - When I say "log this" at the end of a work session, it's a project log: add a
   dated entry to that project's log.md (see the log-to-brain skill), not a new note.
+  "Log this playtest" adds an entry to the game's playtests.md.
+- Before working on one of my projects, read its briefing (MCP get_briefing or
+  node scripts/brain.mjs brief <project>) and treat its mistakes and checks as rules.
 - When I say "deploy now", push an empty commit with [deploy] in the message.
 ```
 
@@ -818,14 +878,17 @@ will be) at https://<site-domain>, and my time zone is <tz>.
 
 0. If the old notes are still here (topics/*/ files other than .gitkeep, inbox/
    captures, catalog/, projects/, canvases/*.canvas, views/*.json, LINKS.md,
-   suggestions/YYYY-MM-DD.md day files, site/look.json), delete them, and reset
-   links/dismissed.json to { "pairs": {} }. Keep the empty topic folders with a
+   suggestions/ and digests/ day files, health/latest.md and history.jsonl,
+   site/look.json), delete them, and reset links/dismissed.json to { "pairs": {} }.
+   Empty the rows of CHECKS.md (keep its intro and table headers). Keep the empty topic folders with a
    .gitkeep in each.
 1. Replace the previous owner's name, repo, site URL and company/personal details
    everywhere: CLAUDE.md, README.md, AGENTS.md, HANDOFF.md links, scripts/build_index.py
    (SITE, RAW and the description strings), scripts/build_graph.mjs, api/mcp.js
    (SITE, tool descriptions, serverInfo), api/edit.js (default GITHUB_REPO and
-   comments), site/*.html, site/views.js, site/me.html, tools/quick-capture/lib.js
+   comments), api/_write.js, api/_brief.js, api/capture.js, site/*.html, site/*.js,
+   tools/capture-to-brain/, tools/project-briefing/, tools/mistakes-to-checks/,
+   scripts/link_doctor.py, tools/quick-capture/lib.js
    (DEFAULTS), tools/device-capture/ (site and repo in the scripts and README), tools/vault-sync/brain_sync.py (REPO_URL and the compare link),
    tools/vault-sync/README.md, tools/vault-sync/log-to-brain/SKILL.md,
    suggestions/README.md and links/README.md.
@@ -866,7 +929,9 @@ About me: <one paragraph about yourself>
 - [ ] Weekly link check scheduled task created (3.8)
 - [ ] Optional: vault sync installed on each computer, log-to-brain skill added (3.9)
 - [ ] Optional: `CAPTURE_KEY` set, keyed connector URL, capture-to-brain skill added (3.11)
-- [ ] Optional: iPhone shortcuts, Mac and Windows hotkeys set up (3.12)
+- [ ] Optional: iPhone shortcuts, Mac and Windows hotkeys and right-click items set up (3.12)
+- [ ] Optional: mistakes-to-checks skill added (3.10)
+- [ ] Optional: `brain_sync.py shortcut` run on each computer, search page on your phone's home screen (3.9)
 - [ ] Optional: project-briefing skill added (3.13)
 - [ ] First dump filed (on the graph after the next batch or the next morning)
 
@@ -891,6 +956,11 @@ About me: <one paragraph about yourself>
 - **No `capture` tool in a chat:** the connector URL is missing `?key=`, the key doesn't
   match `CAPTURE_KEY`, or the deploy after adding it hasn't run. Connectors attach when a
   chat starts, so open a new chat after changing it.
+- **iPhone shortcut says "network connection was lost":** an empty extra header row in
+  *Get Contents of URL*. Keep only `Authorization`. **"Not saved: wrong key":** the key after
+  `Bearer ` doesn't match `CAPTURE_KEY` (too many wrong tries locks it for 15 minutes).
+- **Captures sit in `inbox/`:** that's by design; they're filed at the start of the next
+  thread in the brain project, or when you say "sort my inbox".
 - **Extension says 401/403:** the token expired or lacks Contents read/write on
   this repo.
 - **Build fails on Vercel:** run `python3 scripts/build_index.py && node

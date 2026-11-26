@@ -23,7 +23,8 @@ one small markdown file, grouped by topic and tagged so it can be found again.
   Kanban of ideas, projects and reading (drag a card to change its stage; project cards
   show their next steps and playtests), **Timeline**
   replays every note on the day it was saved, **Canvas** holds moodboards
-  ([canvases/](canvases/), JSON Canvas) and **Gallery** shows saved views
+  ([canvases/](canvases/), JSON Canvas; AUTO builds one from a tag, a kind, a note's
+  links, a technique's steps as a flow, or clusters of linked notes) and **Gallery** shows saved views
   ([views/](views/)), including the **Asset library**: everything tagged with a `kit`
   area (LUTs and grading, sound, VFX, motion, shoot and DIT, edit tools, 3D, 2D),
   searchable by look. Ctrl/Cmd+K opens a command palette on every page, and the graph
@@ -59,15 +60,22 @@ one small markdown file, grouped by topic and tagged so it can be found again.
 - **Build your own:** [HANDOFF.md](HANDOFF.md) explains how to set up this whole system
   for yourself (engine only, no notes).
 - **Rules:** [CLAUDE.md](CLAUDE.md) explains how entries are filed, tagged, linked and searched.
+- **Checks:** when an agent repeats a mistake it becomes a check, not another rule
+  line: [CHECKS.md](CHECKS.md) for every agent, a project's `checks.md` for one
+  project (MCP `get_checks`). The [mistakes-to-checks](tools/mistakes-to-checks/SKILL.md)
+  skill adds them, and [scripts/check_notes.py](scripts/check_notes.py) enforces the
+  filing rules before every commit.
 - **Capture from any chat:** say "save this to my brain" in any Claude chat. The
   [capture-to-brain](tools/capture-to-brain/SKILL.md) skill files it as a note through
   the MCP server's `capture` tool (writing is on when the connector URL carries the
   key), the GitHub connector, or a shell. Project work goes to log-to-brain instead.
 - **Quick capture:** [tools/quick-capture](tools/quick-capture/) is a browser
-  extension that saves links, notes, images and videos to `inbox/` in one click.
+  extension that saves links, notes, images and videos to `inbox/` in one click or
+  from the right-click menu.
 - **Phone and desktop capture:** [tools/device-capture](tools/device-capture/) has an
   iPhone Share Sheet shortcut, an Action Button voice note, and clipboard/screenshot
-  hotkeys for Mac and Windows. They post to `https://brainy.pxlvzn.in/api/capture`
+  hotkeys for Mac and Windows, plus right-click items (Save to Brain on the Mac, Send
+  to → Second Brain on Windows). They post to `https://brainy.pxlvzn.in/api/capture`
   (locked by the capture key), which drops each capture into `inbox/` to be filed.
 - **Entries:** `topics/<topic>/<slug>.md`, named by what the thing is (no date; the
   date is in `added:`), each with YAML frontmatter (`title`, `type`, `topic`, `tags`,
