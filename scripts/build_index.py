@@ -370,9 +370,8 @@ def main():
         if e["style"]:
             out.append("style: " + ", ".join(e["style"]))
         out += ["", e["body"], ""]
-        for d in e.get("docs", []):
-            body = d["body"] if len(d["body"]) <= 20000 else d["body"][:20000] + "\n[... cut, full file: " + d["path"] + "]"
-            out += [f"--- vault doc: {d['path']} ---", "", body, ""]
+        if e.get("docs"):  # listed, not inlined, so this file doesn't grow with every log entry
+            out += ["vault docs (full text via MCP fetch or " + RAW + "/<path>): " + ", ".join(d["path"] for d in e["docs"]), ""]
     write(ROOT / "llms-full.txt", out)
 
     print(f"Indexed {len(entries)} entries, {len(by_tag)} tags, {len(style_counts)} style notes.")
