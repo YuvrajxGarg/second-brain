@@ -1,8 +1,8 @@
 ---
 title: Ladybug VFX app
 type: tool
-topic: design
-tags: [vfx, video-editing, browser-tool, reference]
+topic: video-editing
+tags: [vfx, browser-tool, reference]
 kind: tool
 why: benchmark for the Revolio Labs VFX feature
 style: [halftone, ascii, dither, glitch]

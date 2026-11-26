@@ -1,8 +1,8 @@
 ---
 title: Dwn downloader
 type: app
-topic: tech
-tags: [pxlvzn, own-project, desktop-app, video-editing]
+topic: video-editing
+tags: [pxlvzn, own-project, desktop-app]
 kind: project
 why: to grab videos, songs and transcripts from any site in edit-ready formats, without sketchy download sites
 kit: [edit]

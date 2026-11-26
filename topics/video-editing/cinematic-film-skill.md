@@ -1,8 +1,8 @@
 ---
 title: Cinematic film skill
 type: tool
-topic: ai
-tags: [agents, claude, video-editing, open-source, to-try]
+topic: video-editing
+tags: [agents, claude, open-source, to-try]
 kind: tool
 why: agent skill for explainer content
 style: [cork evidence wall, archive photos with red string, stamps and highlighter swipes, rolling counters, one continuous camera move]

@@ -1,8 +1,8 @@
 ---
 title: Frame Tracker dashboard
 type: tool
-topic: tech
-tags: [own-project, video-editing, adobe, plugin]
+topic: video-editing
+tags: [own-project, adobe, plugin]
 kind: project
 why: to see how much time goes into Premiere Pro and After Effects
 state: live

@@ -1,8 +1,8 @@
 ---
 title: Claude video edit
 type: link
-topic: ai
-tags: [claude, video-editing, agents, inspiration]
+topic: video-editing
+tags: [claude, agents, inspiration]
 kind: technique
 why: a full YouTube video edited and rendered entirely with Claude (360 GB of footage)
 kit: [edit]

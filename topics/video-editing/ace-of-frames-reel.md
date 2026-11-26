@@ -1,7 +1,7 @@
 ---
 title: Ace Of Frames reel
 type: video
-topic: design
+topic: video-editing
 tags: [visual-design, video-editing, inspiration]
 kind: style-ref
 why: cool visual design

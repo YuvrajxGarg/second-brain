@@ -1,8 +1,8 @@
 ---
 title: Transition plugin idea
 type: idea
-topic: tech
-tags: [plugin, video-editing, product-idea, adobe]
+topic: video-editing
+tags: [plugin, product-idea, adobe]
 kind: idea
 why: Plugin idea for ae/pr
 style: [pastel pink hardware knob, lime green go button, chunky skeuomorphic panel]

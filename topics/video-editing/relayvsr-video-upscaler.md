@@ -1,8 +1,8 @@
 ---
 title: RelayVSR video upscaler
 type: video
-topic: ai
-tags: [video-generation, video-editing, hugging-face, open-source, to-try]
+topic: video-editing
+tags: [video-generation, hugging-face, open-source, to-try]
 kind: tool
 why: open weight video upscaler available in ComfyUI
 kit: [vfx]

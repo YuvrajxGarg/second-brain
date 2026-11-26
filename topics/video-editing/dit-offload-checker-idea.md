@@ -1,8 +1,8 @@
 ---
 title: DIT offload checker
 type: app
-topic: tech
-tags: [pxlvzn, product-idea, desktop-app, video-editing]
+topic: video-editing
+tags: [pxlvzn, product-idea, desktop-app]
 kind: project
 why: app idea for PXL, a data transfer system checker for when DIT is happening on a shoot
 style: [dark menu bar popover, blue primary button, plain status sentence]

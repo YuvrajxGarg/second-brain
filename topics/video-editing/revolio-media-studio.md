@@ -1,8 +1,8 @@
 ---
 title: Revolio Media studio
 type: company
-topic: business
-tags: [revolio, own-project, video-editing, content-studio]
+topic: video-editing
+tags: [revolio, own-project, content-studio]
 kind: org
 why: the creative studio where the day job is: video editing and the studio's tech
 state: active

@@ -1,6 +1,17 @@
 {
   "mode": "propose",
-  "colors": {},
+  "colors": {
+    "video-editing": "#3dffd0"
+  },
   "dismissed": {},
-  "created": {}
+  "created": {
+    "video-editing": {
+      "date": "2026-11-26",
+      "tags": [
+        "video-editing"
+      ],
+      "notes": 12,
+      "kept": []
+    }
+  }
 }
