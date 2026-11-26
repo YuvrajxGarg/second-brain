@@ -65,3 +65,16 @@ html.view, html.view body { overflow: auto; height: auto; min-height: 100%; }
 .menu-mv button.cur { color: var(--fg); }
 .empty { font-family: var(--mono); font-size: 10px; color: var(--faint); letter-spacing: 0.12em; padding: 6px 2px; }
 @media (max-width: 760px) { .board { grid-auto-columns: 82vw; padding-bottom: 80px; } .vsearch { width: 100%; } .vhead { padding: 18px 16px 0; } .vhead > div:first-child { position: static; } .board { padding-left: 16px; padding-right: 16px; } }
+
+/* command palette (Ctrl/Cmd+K) */
+.pal-wrap { position: fixed; inset: 0; z-index: 40; background: rgba(0, 0, 0, 0.55); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); display: flex; justify-content: center; align-items: flex-start; padding: 14vh 16px 0; }
+.pal { width: min(560px, 100%); background: linear-gradient(180deg, rgba(14,14,14,0.97), rgba(6,6,6,0.99)); border: 1px solid var(--line); box-shadow: 0 30px 90px rgba(0,0,0,0.7); }
+.pal input { width: 100%; background: none; border: 0; border-bottom: 1px solid var(--line); color: var(--fg); font-family: var(--mono); font-size: 13px; padding: 15px 16px; outline: none; }
+.pal ul { list-style: none; margin: 0; padding: 4px 0; max-height: 52vh; overflow: auto; }
+.pal li { display: flex; align-items: center; gap: 10px; padding: 9px 16px; cursor: pointer; }
+.pal li.on { background: rgba(255,255,255,0.06); }
+.pal li .sq { width: 8px; height: 8px; flex-shrink: 0; }
+.pal li .t { font-family: var(--sans); font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pal li .k { margin-left: auto; font-size: 9.5px; letter-spacing: 0.16em; color: var(--dim); flex-shrink: 0; }
+.pal li.none { color: var(--dim); font-size: 11px; cursor: default; }
+.pal-f { border-top: 1px solid var(--line); font-size: 9.5px; letter-spacing: 0.16em; color: var(--faint); padding: 8px 16px; }

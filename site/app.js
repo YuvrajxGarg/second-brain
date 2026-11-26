@@ -203,6 +203,7 @@
     setupSim();
     setupHud();
     setBar(1);
+    setTimeout(resurface, 2600);
   }
 
   function setupSim() {
@@ -722,6 +723,47 @@
 
   function toggleSignals() { showSignals = !showSignals; ui.signals = showSignals; saveUi(); syncToggles(); sfx.play("toggle", showSignals); if (!showSignals) signals.length = 0; }
   function toggleLabels() { showLabels = !showLabels; ui.labels = showLabels; saveUi(); syncToggles(); sfx.play("toggle", showLabels); }
+  // ---------- resurface: one saved thing from the unread pile, once a day ----------
+  const RS_KEY = "sb-resurface";
+  function resurface(force) {
+    const today = new Date().toISOString().slice(0, 10);
+    let seen = ""; try { seen = localStorage.getItem(RS_KEY) || ""; } catch {}
+    if (!force && seen === today) return;
+    const SKIP = new Set(["project", "org", "idea", "todo", "thought"]);
+    const old = (n) => (Date.now() - Date.parse(n.added || today)) / 86400000 >= 5;
+    const pile = nodes.filter((n) => n.kind === "note" && !SKIP.has(n.noteKind) && (n.status || "unread") === "unread" && old(n));
+    if (!pile.length) return;
+    // same pick all day, a different one tomorrow; NEXT walks the pile
+    resurface.i = force ? (resurface.i + 1) % pile.length : hash(today) % pile.length;
+    const n = pile[resurface.i];
+    const weekAgo = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
+    const otd = nodes.filter((m) => m.kind === "note" && m.added === weekAgo);
+    let card = $("resurface");
+    if (!card) { card = document.createElement("aside"); card.id = "resurface"; card.className = "resurface hud"; document.body.appendChild(card); }
+    card.style.setProperty("--c", n.color);
+    card.innerHTML = `<div class="rs-k mono">FROM YOUR PILE · ${pile.length} UNREAD<button class="rs-x" type="button" aria-label="Hide for today">✕</button></div>
+      <div class="rs-t">${esc(n.label)}</div>${n.why ? `<div class="rs-w">${esc(n.why)}</div>` : ""}
+      <div class="rs-k mono">${esc([n.noteKind, n.topic, n.added].filter(Boolean).join(" · "))}</div>
+      <div class="rs-b mono"><button type="button" data-rs="open">OPEN</button><button type="button" data-rs="read">MARK READ</button><button type="button" data-rs="next">NEXT</button></div>
+      ${otd.length ? `<div class="rs-otd mono">A WEEK AGO TODAY: ${otd.slice(0, 3).map((m) => `<a href="#/n/${encodeURIComponent(m.slug)}">${esc(m.label)}</a>`).join(", ")}</div>` : ""}`;
+    card.hidden = false;
+    card.onclick = async (e) => {
+      const b = e.target.closest("[data-rs], .rs-x");
+      if (!b) return;
+      if (b.classList.contains("rs-x")) { try { localStorage.setItem(RS_KEY, today); } catch {} card.hidden = true; return; }
+      const act = b.dataset.rs;
+      if (act === "open") go(n);
+      else if (act === "next") resurface(true);
+      else if (act === "read") {
+        b.disabled = true;
+        try {
+          if (await window.SB.saveField(n, "status", "read")) { n.status = "read"; toast(`Marked <b>${esc(n.label)}</b> read.`); resurface(true); }
+        } catch (err) { toast(esc(err.message)); }
+        b.disabled = false;
+      }
+    };
+  }
+
   // ---------- Link Doctor review ----------
   // Reads data/links.json (written by scripts/link_doctor.py on every build) and lets
   // Yuvraj accept or dismiss each proposal. Every answer is one commit to main.
@@ -805,7 +847,7 @@
       ["/", "Search notes, tags and topics"], ["Esc", "Close the note or clear search"], ["N", "Open a random note"],
       ["R", "Reset the view"], ["T", "Collapse or expand topics"], ["H", "Hide or show all panels"],
       ["S", "Signals on or off"], ["L", "Labels on or off"], ["E", "Edit mode"],
-      ["Q", "Link quality colours"], ["D", "Link Doctor review"],
+      ["Q", "Link quality colours"], ["D", "Link Doctor review"], ["Ctrl/⌘ K", "Command palette: jump anywhere"],
       ["C", "Customise the look"], ["X", "Shake the graph"], ["P", "Tour: hop between random notes"],
       ["I", "Save the view as an image"], ["M", "Sound on or off"],
       ["Right-click", "Menu for any node or empty space (long-press on phone)"],
@@ -859,6 +901,7 @@
     if (location.hash === h) route(); else location.hash = h;
   }
   function route() {
+    if (location.hash === "#/doctor") { history.replaceState(null, "", "#/"); select(null); openDoctor(); return; }
     const m = location.hash.match(/^#\/(n|g|t)\/(.+)$/);
     if (!m) { select(null); return; }
     const id = (m[1] === "n" ? "n:" : m[1] === "g" ? "g:" : "t:") + decodeURIComponent(m[2]);

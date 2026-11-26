@@ -111,5 +111,76 @@
     return true;
   }
 
-  window.SB = { PALETTE, colorOf, esc, $, nav, notes, api, unlock, modal, closeModal, toast, saveField, store };
+  // ---------- command palette (Ctrl/Cmd+K on every page) ----------
+  // Jump to any note, tag, topic, view, moodboard or saved view, or run an action.
+  let pal = null, palItems = null;
+  async function paletteItems() {
+    if (palItems) return palItems;
+    const [g, cv, vw] = await Promise.all([
+      fetch("data/graph.json", { cache: "no-cache" }).then((r) => r.json()),
+      fetch("data/canvases.json", { cache: "no-cache" }).then((r) => r.json()).catch(() => []),
+      fetch("data/views.json", { cache: "no-cache" }).then((r) => r.json()).catch(() => []),
+    ]);
+    const notesL = g.nodes.filter((n) => n.kind === "note");
+    const unread = notesL.filter((n) => (n.status || "unread") === "unread" && !["project", "org", "idea", "todo", "thought"].includes(n.noteKind));
+    const rnd = (l) => l[(Math.random() * l.length) | 0];
+    palItems = [
+      ...VIEWS.map(([id, label, href]) => ({ k: "VIEW", t: label.charAt(0) + label.slice(1).toLowerCase(), href, c: "#f2f2f2" })),
+      { k: "VIEW", t: "Ideas board", href: "board.html#ideas" }, { k: "VIEW", t: "Projects board", href: "board.html#projects" },
+      { k: "VIEW", t: "Reading board", href: "board.html#reading" }, { k: "VIEW", t: "Me: stats and personality", href: "me.html" },
+      { k: "ACTION", t: "Link Doctor: review links", href: "./#/doctor" },
+      { k: "ACTION", t: "Random note", run: () => (location.href = "./#/n/" + encodeURIComponent(rnd(notesL).slug)) },
+      { k: "ACTION", t: "Resurface something unread", run: () => (location.href = "./#/n/" + encodeURIComponent(rnd(unread).slug)) },
+      ...cv.map((b) => ({ k: "CANVAS", t: b.id.replace(/-/g, " "), href: "canvas.html#" + b.id })),
+      ...vw.map((v) => ({ k: "SAVED VIEW", t: v.data.name || v.id, href: "gallery.html#" + v.id })),
+      ...notesL.map((n) => ({ k: (n.noteKind || "note").toUpperCase(), t: n.label, sub: n.why, href: "./#/n/" + encodeURIComponent(n.slug), c: colorOf(n.topic) })),
+      ...g.nodes.filter((n) => n.kind === "topic").map((n) => ({ k: "TOPIC", t: n.label, href: "./#/t/" + encodeURIComponent(n.label), c: colorOf(n.label) })),
+      ...g.nodes.filter((n) => n.kind === "tag").map((n) => ({ k: "TAG", t: "#" + n.label, href: "./#/g/" + encodeURIComponent(n.label) })),
+    ];
+    return palItems;
+  }
+  function score(q, t) {
+    t = t.toLowerCase();
+    const i = t.indexOf(q);
+    if (i >= 0) return 100 - i - t.length * 0.05 + (i === 0 ? 20 : 0);
+    let j = 0, gaps = 0, last = -1;
+    for (let k = 0; k < t.length && j < q.length; k++) if (t[k] === q[j]) { if (last >= 0) gaps += k - last - 1; last = k; j++; }
+    return j === q.length ? 40 - gaps - t.length * 0.05 : -1;
+  }
+  async function openPalette() {
+    if (pal) { pal.remove(); pal = null; return; }
+    pal = document.createElement("div");
+    pal.className = "pal-wrap";
+    pal.innerHTML = `<div class="pal mono" role="dialog" aria-label="Command palette"><input placeholder="jump to a note, tag, view or action" autocomplete="off" spellcheck="false" /><ul></ul><div class="pal-f">↑↓ MOVE · ENTER OPEN · ESC CLOSE</div></div>`;
+    document.body.appendChild(pal);
+    const input = pal.querySelector("input"), ul = pal.querySelector("ul");
+    input.focus();
+    const items = await paletteItems();
+    let hits = [], on = 0;
+    const show = () => {
+      const q = input.value.trim().toLowerCase();
+      hits = q ? items.map((it) => [score(q, it.t), it]).filter(([s]) => s >= 0).sort((a, b) => b[0] - a[0]).slice(0, 40).map(([, it]) => it)
+        : items.filter((it) => it.k === "VIEW" || it.k === "ACTION");
+      on = Math.max(0, Math.min(on, hits.length - 1));
+      ul.innerHTML = hits.map((it, i) => `<li data-i="${i}" class="${i === on ? "on" : ""}"><span class="sq" style="background:${it.c || "transparent"};${it.c ? "" : "border:1px solid var(--dim)"}"></span><span class="t">${esc(it.t)}</span><span class="k">${esc(it.k)}</span></li>`).join("") || `<li class="none">Nothing found</li>`;
+      ul.querySelector(".on")?.scrollIntoView({ block: "nearest" });
+    };
+    const go = (it) => { if (!it) return; pal.remove(); pal = null; if (it.run) it.run(); else location.href = it.href; };
+    input.addEventListener("input", () => { on = 0; show(); });
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowDown") { on++; show(); e.preventDefault(); }
+      else if (e.key === "ArrowUp") { on--; show(); e.preventDefault(); }
+      else if (e.key === "Enter") go(hits[on]);
+      else if (e.key === "Escape") { pal.remove(); pal = null; }
+      e.stopPropagation();
+    });
+    ul.addEventListener("click", (e) => { const li = e.target.closest("[data-i]"); if (li) go(hits[+li.dataset.i]); });
+    pal.addEventListener("click", (e) => { if (e.target === pal) { pal.remove(); pal = null; } });
+    show();
+  }
+  addEventListener("keydown", (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") { e.preventDefault(); e.stopPropagation(); openPalette(); }
+  }, true);
+
+  window.SB = { PALETTE, colorOf, esc, $, nav, notes, api, unlock, modal, closeModal, toast, saveField, store, openPalette };
 })();

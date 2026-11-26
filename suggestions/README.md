@@ -35,8 +35,14 @@ The scheduled task follows these steps. Edit them here to change its behaviour.
    Quality over count: one great idea beats three padded ones.
 5. Write `suggestions/YYYY-MM-DD.md` in the format below, commit
    `suggest: N build ideas for YYYY-MM-DD` and push to `main`.
-6. Finish with a short message (it becomes the phone notification): one line per
-   idea, `Name: what to build, from <note> + <note>`.
+6. Resurface one thing from his unread pile (Yuvraj's ask 2026-11-26): pick one note
+   with `status: unread` (or no status) that is a saved ref (not kind project, org, idea,
+   todo or thought), at least 5 days old, and not already listed under `resurfaced:` in
+   an earlier day file. Prefer one that fits today's ideas. Add `resurfaced: <slug>` to
+   the day file's frontmatter. Don't change the note.
+7. Finish with a short message (it becomes the phone notification): one line per
+   idea, `Name: what to build, from <note> + <note>`, then
+   `From your pile: <title>, <why> (brainy.pxlvzn.in/#/n/<slug>)`.
 
 ## Day file format
 
@@ -44,6 +50,7 @@ The scheduled task follows these steps. Edit them here to change its behaviour.
 ---
 date: 2026-11-12
 ideas: 2
+resurfaced: 2026-11-10-polyfork-3d-assets
 ---
 
 ## 1. Short idea name
