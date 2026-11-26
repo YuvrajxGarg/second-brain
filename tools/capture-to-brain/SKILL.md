@@ -15,6 +15,8 @@ rules are in the repo's `CLAUDE.md`; this is the short version that every chat c
   mistakes of a build, an edit job, a client project): use the `log-to-brain` skill
   instead (if it isn't loaded: `tools/vault-sync/log-to-brain/SKILL.md` in the repo). With
   only the brain connector, it's the `log_project` tool.
+- **Starting to build one of his saved ideas** ("let's build the X idea"): not a new note.
+  Use the `project-briefing` skill (`start_project` tool) so the idea becomes a project.
 - **Everything else** (a link, a thought, an idea, a to-do, a quote, a tool, a game, a
   person, a screenshot): a note. Carry on below.
 - Both in one message (he logs a session and also wants a link he found kept): do both,

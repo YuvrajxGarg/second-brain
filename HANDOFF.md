@@ -106,7 +106,8 @@ Social Reader link, just do this and skip steps 11 to 14:
     ideas as a notification."* Each morning you also get one old unread save
     back ("From your pile").
 22. Then send: *"Set up a weekly scheduled task for Sunday mornings that follows
-    the steps in links/README.md."* It tidies the links between your notes.
+    the steps in links/README.md."* It tidies the links between your notes and sends
+    a weekly digest (what you saved, your unread pile, ideas you haven't touched).
 
 **H. Project folders on your computer (optional, 15 min)**
 
@@ -219,9 +220,11 @@ canvases/          moodboards as JSON Canvas files (open in Obsidian too)
 views/             saved gallery/table views as JSON
 links/             Link Doctor: dismissed.json + the weekly check's steps (README)
 health/            weekly health report: latest.md, history.jsonl, README
+digests/           weekly digests written by the Sunday run (README)
 templates/entry.md the frontmatter template
 scripts/build_index.py   regenerates everything marked "generated" above
 scripts/link_doctor.py   scores and audits [[slug]] links; --fix applies safe fixes
+scripts/brain.mjs        brief <project> / pick / digest / start <idea> (api/_brief.js)
 scripts/build_graph.mjs  builds site/data/graph.json + brain.json for the site and MCP
 scripts/vercel_ignore.sh decides whether a push deploys (batched deploys)
 scripts/brain_search.py  offline search (terminal) over notes + your local vault
@@ -433,7 +436,7 @@ These come for free once the site is deployed:
 - `llms.txt`, `llms-full.txt`: the whole brain in plain text for any chat.
 - **MCP server** at `https://<site-domain>/mcp`: read-only, no auth, tools
   `get_taste_profile`, `search`, `fetch`, `list_notes`, `get_catalog`,
-  `recall_ideas`, `get_checks`. Add it as a custom connector in Claude (or any MCP client:
+  `recall_ideas`, `get_briefing`, `get_checks`. Add it as a custom connector in Claude (or any MCP client:
   Cursor, Claude Code, etc.) and every AI you use can pull your taste and notes.
 - The MCP outputs are kept **lean** so a chat doesn't burn its context on your
   brain: `get_taste_profile` returns only the curated part of `TASTE.md` (pass
@@ -479,7 +482,9 @@ insights every 15 to 20 new notes (or when you ask). It renders with charts at
    business ideas, recipes.
 
 Step 6 of `suggestions/README.md` also resurfaces one unread save at least 5 days
-old as a "From your pile" line, and never repeats one. The morning `suggest:` commit
+old as a "From your pile" line, and never repeats one. `node scripts/brain.mjs pick`
+chooses it: saves that fit a project you're working on (one with recent `log.md`
+entries, 3.9) come first, so the pile feeds what you're building. The morning `suggest:` commit
 doubles as the daily deploy flush (3.4).
 
 Tip: if notifications don't buzz your phone, check notification permissions for
@@ -517,6 +522,11 @@ the real server offline), and each computer's last good vault sync, failures and
 backup. It lists anything that needs a look and keeps `health/history.jsonl` so it can
 spot growth week over week. Thresholds sit at the top of the script. Fold it into the
 link check rather than adding a second notification.
+
+The same Sunday run writes a **weekly digest** to `digests/YYYY-MM-DD.md` (`node
+scripts/brain.mjs digest --write`): what you saved, the unread pile, ideas nobody
+touched in 3 weeks, which projects moved, unread saves that fit them, and link health.
+Its summary lines lead the same Sunday notification.
 
 ### 3.9 Project vault and "log this to my brain" (optional)
 
@@ -635,7 +645,7 @@ phone), not only the brain project: "save this to my brain", "add this link to m
    It needs `GITHUB_TOKEN` from site editing (3.4). Redeploy.
 2. **Use the keyed URL as your connector.** In Claude, Settings > Connectors, edit your
    brain connector (or add one) with `https://<site-domain>/mcp?key=<CAPTURE_KEY>`. The
-   tools `capture`, `update_note`, `log_project` and `log_playtest` appear next to the read tools. Keep
+   tools `capture`, `update_note`, `log_project`, `log_playtest` and `start_project` appear next to the read tools. Keep
    the plain `/mcp` URL for anything you share: without the key it's read-only. Treat the
    keyed URL like a password.
 3. **Add the skill.** Zip `tools/capture-to-brain/` and upload it in Claude's skills
@@ -667,6 +677,25 @@ copy-paste setup for:
 Replace `brainy.pxlvzn.in` and `YuvrajxGarg/second-brain` in that folder with your own
 site and repo. The key lives only on your devices (inside the shortcut, or a file in
 your home folder).
+### 3.13 Use what you saved while building (optional)
+
+Saving is half of it; these make the brain show up while you work. All share one piece
+of logic, `api/_brief.js`.
+
+- **Project briefing.** Before an agent works on a project, it calls the MCP tool
+  `get_briefing` with the project's slug (or `about: "<what you're starting>"` for new
+  work). One call, about 1k tokens: the last log entry and next steps, open to-dos,
+  mistakes made on it before, its checks plus the global ones, the taste lines that
+  apply, and the saved notes that fit, grouped (how-tos, looks, libraries and tools,
+  ideas, past projects). In a shell: `node scripts/brain.mjs brief <project>`.
+- **Idea to project.** On the site, an idea's panel has START AS PROJECT (passcode). Or
+  the MCP tool `start_project` (writing on, 3.11), or `node scripts/brain.mjs start
+  <idea>`. It makes `projects/<slug>/` with project.md (related notes pre-linked),
+  context.md (saved notes to start from), todo.md (from the idea's steps) and log.md,
+  and sets the idea to `doing`. The vault sync (3.9) copies it to your computers.
+- **Context-aware resurfacing** (3.7) and the **weekly digest** (3.8).
+- **Skill.** Zip `tools/project-briefing/` and upload it like the others: when you say
+  "let's work on X" or "let's build the Y idea" in any chat, it runs the above.
 
 ---
 
@@ -838,6 +867,7 @@ About me: <one paragraph about yourself>
 - [ ] Optional: vault sync installed on each computer, log-to-brain skill added (3.9)
 - [ ] Optional: `CAPTURE_KEY` set, keyed connector URL, capture-to-brain skill added (3.11)
 - [ ] Optional: iPhone shortcuts, Mac and Windows hotkeys set up (3.12)
+- [ ] Optional: project-briefing skill added (3.13)
 - [ ] First dump filed (on the graph after the next batch or the next morning)
 
 ## 7. Troubleshooting

@@ -6,6 +6,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { execSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { createRequire } from "node:module";
+
+const BR = createRequire(import.meta.url)("../api/_brief.js");
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(ROOT, "site", "data");
@@ -243,12 +246,27 @@ for (const l of links) {
   if (weakSet.has(a + "|" + b) || weakSet.has(b + "|" + a)) l.weak = true;
 }
 
+// Notes as the MCP server and api/_brief.js see them (vault docs folded into the body).
+const summaryOf = (body) => ((body.match(/## Summary\n+([\s\S]*?)(\n\n|\n##|$)/) || [])[1] || "").trim().replace(/\n/g, " ");
+const brainNotes = notes
+  .map(({ body, docs, ...n }) => ({
+    ...n,
+    summary: summaryOf(body),
+    // vault docs ride along in the body so MCP search and fetch see them
+    body: (body.trim() + (docs || []).map((d) => `\n\n## Vault doc: ${d.name}\n\n${d.body.slice(0, 20000)}`).join("")).trim(),
+  }))
+  .sort((a, b) => (b.added || "").localeCompare(a.added || ""));
+// Context-aware resurfacing: unread saves that fit what he is building now (projects with
+// recent log entries). The site's FROM YOUR PILE card shows these first.
+const focus = BR.focusPicks(brainNotes).map(({ slug, project, projectSlug, score }) => ({ slug, project, projectSlug, score }));
+
 const graph = {
   generated: new Date().toISOString(),
   commit: sha(),
   repo: "https://github.com/YuvrajxGarg/second-brain",
   counts: { notes: notes.length, topics: Object.keys(topicCount).length, tags: Object.keys(tagCount).length, links: links.length },
   linkHealth: doctor.health,
+  focus,
   nodes,
   links,
 };
@@ -265,13 +283,13 @@ fs.writeFileSync(path.join(OUT, "canvases.json"), JSON.stringify(canvases));
 const savedViews = readJsonDir("views", ".json");
 fs.writeFileSync(path.join(OUT, "views.json"), JSON.stringify(savedViews));
 console.log(`canvases: ${canvases.length}, saved views: ${savedViews.length}`);
+console.log(`focus: ${focus.length} unread saves fit active projects`);
 console.log(`graph: ${notes.length} notes, ${graph.counts.topics} topics, ${graph.counts.tags} tags, ${links.length} links`);
 
 // ---------- AI-facing files ----------
 // brain.json feeds the MCP server (api/mcp.js); the text files are served at the
 // site root so any agent can fetch /llms.txt, /AGENTS.md, /TASTE.md.
 const readRoot = (f) => (fs.existsSync(path.join(ROOT, f)) ? fs.readFileSync(path.join(ROOT, f), "utf8") : "");
-const summaryOf = (body) => ((body.match(/## Summary\n+([\s\S]*?)(\n\n|\n##|$)/) || [])[1] || "").trim().replace(/\n/g, " ");
 const catalogs = {};
 for (const f of fs.existsSync(path.join(ROOT, "catalog")) ? fs.readdirSync(path.join(ROOT, "catalog")) : []) {
   if (f.endsWith(".md")) catalogs[f.replace(/\.md$/, "")] = readRoot(path.join("catalog", f));
@@ -286,14 +304,7 @@ const brain = {
   checks: readRoot("CHECKS.md"),
   ideas: readRoot("IDEAS.md"),
   catalogs,
-  notes: notes
-    .map(({ body, docs, ...n }) => ({
-      ...n,
-      summary: summaryOf(body),
-      // vault docs ride along in the body so MCP search and fetch see them
-      body: (body.trim() + (docs || []).map((d) => `\n\n## Vault doc: ${d.name}\n\n${d.body.slice(0, 20000)}`).join("")).trim(),
-    }))
-    .sort((a, b) => (b.added || "").localeCompare(a.added || "")),
+  notes: brainNotes,
 };
 fs.writeFileSync(path.join(OUT, "brain.json"), JSON.stringify(brain));
 for (const f of ["llms.txt", "llms-full.txt", "AGENTS.md", "TASTE.md", "IDEAS.md", "ME.md", "CHECKS.md"]) {

@@ -12,6 +12,7 @@
 // can check are enforced here (CHECKS.md B1-B7), so a chat can't file a bad note.
 
 const crypto = require("node:crypto");
+const BR = require("./_brief.js");
 
 const REPO = process.env.GITHUB_REPO || "YuvrajxGarg/second-brain";
 const BRANCH = process.env.GITHUB_BRANCH || "main";
@@ -358,7 +359,27 @@ const PLAYTEST = {
   annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false },
 };
 
-const WRITE_TOOLS = [CAPTURE, UPDATE, LOG, PLAYTEST];
+const START = {
+  name: "start_project",
+  title: "Turn an idea into a project",
+  description:
+    "When he says he's starting to build one of his idea notes ('let's build X', 'start this as a project'): creates projects/<slug>/ with project.md, context.md (the saved notes to start from, pre-linked), todo.md (the idea's steps) and log.md, sets the idea's stage to doing and links it to the project. One commit; the daily vault sync creates Documents/Vault/<slug>/ on his Mac and PC. Refuses if the idea already became a project (log to that one). Then call get_briefing with the new project.",
+  inputSchema: {
+    type: "object",
+    properties: {
+      idea: { type: "string", description: "Id of the idea or to-do note (from recall_ideas or search)." },
+      title: { type: "string", description: "Project name if it differs from the idea's title, 2-4 words." },
+      type: { type: "string", enum: ["game", "app", "tool", "site", "concept"] },
+      stack: { type: "array", items: { type: "string" } },
+      share: { type: "string", enum: ["full", "summary", "none"], default: "full", description: "summary for confidential work (the repo is public)." },
+    },
+    required: ["idea"],
+    additionalProperties: false,
+  },
+  annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false },
+};
+
+const WRITE_TOOLS = [CAPTURE, UPDATE, LOG, PLAYTEST, START];
 const ok = (t) => ({ content: [{ type: "text", text: t }] });
 const no = (t) => ({ content: [{ type: "text", text: t }], isError: true });
 
@@ -616,12 +637,32 @@ async function doLog(a, brain) {
   return ok(`Logged to ${logPath} (commit ${sha.slice(0, 7)}). It reaches Documents/Vault/${dir}/log.md on the next daily sync.`);
 }
 
+async function doStart(a, brain) {
+  const { paths } = await tree();
+  const path = findNote(a.idea, brain, paths);
+  if (!path) return no(`No note '${a.idea}'. Use recall_ideas to find its id.`);
+  const slug = slugOf(path);
+  const idea = brain.notes.find((n) => n.slug === slug);
+  // A note filed since the last deploy isn't in brain.json yet: read it from GitHub.
+  const text = await getFile(path);
+  const note = idea || { slug, path, title: field(text, "title") || slug, kind: field(text, "kind"), topic: path.split("/")[1], tags: list(String(field(text, "tags") || "").replace(/^\[|\]$/g, "")), why: field(text, "why"), body: text.replace(/^---\n[\s\S]*?\n---\n?/, "") };
+  const taken = [...new Set(paths.filter((p) => /^projects\/[^./][^/]*\/project\.md$/.test(p)).map((p) => p.split("/")[1]))];
+  const r = BR.ideaToProject(note, brain.notes, { title: a.title, type: a.type, stack: a.stack, share: a.share, takenDirs: taken, today: today() });
+  if (r.error) return no(r.error);
+  const sha = await commit(`add: project ${oneLine(r.title).slice(0, 50)} from idea (from chat)\n\nStarted with the brain MCP start_project tool; the vault sync creates Documents/Vault/${r.dir}/.`, [
+    ...r.files,
+    { path, content: BR.markIdeaStarted(text, r.dir, today()) },
+  ]);
+  return ok(`Started ${r.title}: projects/${r.dir}/ (project.md, context.md, todo.md, log.md), ${r.refs.length} notes pre-linked, idea set to doing (commit ${sha.slice(0, 7)}). The next daily vault sync creates Documents/Vault/${r.dir}/. Next: get_briefing with project "${r.dir}".`);
+}
+
 async function callWriteTool(name, a, brain, kinds, stages) {
   try {
     if (name === "capture") return await doCapture(a, brain, kinds, stages);
     if (name === "update_note") return await doUpdate(a, brain, stages);
     if (name === "log_project") return await doLog(a, brain);
     if (name === "log_playtest") return await doPlaytest(a, brain);
+    if (name === "start_project") return await doStart(a, brain);
   } catch (e) {
     return no(`GitHub error, nothing was written: ${e.message}. Try once more; if it fails again, give him the note as text.`);
   }

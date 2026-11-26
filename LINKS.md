@@ -44,19 +44,19 @@ Review them on the graph site (LINK DOCTOR, bottom left) or say "apply links 1, 
 
 ### Add these links
 
-1. [ ] Claude Code agent tree <-> Try orchestrator workflow · 0.72 · both claude, agents  `claude-code-agent-tree` `try-orchestrator-workflow`
+1. [ ] Claude Code agent tree <-> Try orchestrator workflow · 0.72 · both agents, claude  `claude-code-agent-tree` `try-orchestrator-workflow`
 2. [ ] Meter Down concept <-> Tukaram Munde game · 0.701 · both game-idea, indian-setting  `meter-down-concept` `tukaram-munde-game`
-3. [ ] Agent mistakes prompt <-> Try orchestrator workflow · 0.696 · both claude, agents  `agent-mistakes-to-checks` `try-orchestrator-workflow`
+3. [ ] Agent mistakes prompt <-> Try orchestrator workflow · 0.696 · both agents, claude  `agent-mistakes-to-checks` `try-orchestrator-workflow`
 4. [ ] Agent mistakes prompt <-> Orchestrator subagent prompt · 0.673 · both prompting, workflow, agents  `agent-mistakes-to-checks` `model-routing-orchestrator-prompt`
 5. [ ] Runaway Light Rig <-> TV Stack toy · 0.664 · both rhythm-game, music, browser-game  `runaway-light-rig` `tv-stack-music-toy`
 6. [ ] Cricle game <-> SLANGDAQ game · 0.65 · both daily-challenge, browser-game  `cricle-daily-cricket-guessing-game` `slangdaq-game`
-7. [ ] Claude video edit <-> Try orchestrator workflow · 0.645 · both claude, agents  `claude-video-edit` `try-orchestrator-workflow`
-8. [ ] Cinematic film skill <-> Try orchestrator workflow · 0.639 · both claude, agents  `cinematic-film-skill` `try-orchestrator-workflow`
+7. [ ] Claude video edit <-> Try orchestrator workflow · 0.645 · both agents, claude  `claude-video-edit` `try-orchestrator-workflow`
+8. [ ] Cinematic film skill <-> Try orchestrator workflow · 0.639 · both agents, claude  `cinematic-film-skill` `try-orchestrator-workflow`
 9. [ ] Claude live UI comments <-> Try orchestrator workflow · 0.629 · both claude  `claude-live-ui-comments` `try-orchestrator-workflow`
-10. [ ] Cinematic film skill <-> Escapement Blender film · 0.626 · both claude, agents  `cinematic-film-skill` `escapement-blender-short-film`
-11. [ ] Escapement Blender film <-> Try orchestrator workflow · 0.623 · both claude, agents  `escapement-blender-short-film` `try-orchestrator-workflow`
+10. [ ] Cinematic film skill <-> Escapement Blender film · 0.626 · both agents, claude  `cinematic-film-skill` `escapement-blender-short-film`
+11. [ ] Escapement Blender film <-> Try orchestrator workflow · 0.623 · both agents, claude  `escapement-blender-short-film` `try-orchestrator-workflow`
 12. [ ] Saturday off tracker <-> Revolio SSD Desk · 0.616 · both internal-tool, revolio  `saturday-off-tracker` `revolio-ssd-desk`
-13. [ ] Claude Code agent tree <-> Orchestrator subagent prompt · 0.613 · both workflow, claude, agents  `claude-code-agent-tree` `model-routing-orchestrator-prompt`
+13. [ ] Claude Code agent tree <-> Orchestrator subagent prompt · 0.613 · both workflow, agents, claude  `claude-code-agent-tree` `model-routing-orchestrator-prompt`
 14. [ ] PXL app hub <-> Lut colour matcher · 0.613 · both pxlvzn, desktop-app  `pxl-app-hub` `lut-colour-matcher`
 15. [ ] PXL app hub <-> Stm stem splitter · 0.609 · both pxlvzn, desktop-app  `pxl-app-hub` `stm-stem-splitter`
 16. [ ] PXL app hub <-> Tag AI-tag remover · 0.602 · both pxlvzn, desktop-app  `pxl-app-hub` `tag-ai-tag-remover`
@@ -65,7 +65,7 @@ Review them on the graph site (LINK DOCTOR, bottom left) or say "apply links 1, 
 19. [ ] Dwn downloader <-> PXL app hub · 0.594 · both pxlvzn, desktop-app  `dwn-downloader` `pxl-app-hub`
 20. [ ] Bonk Court game <-> Sixer cricket game · 0.592 · both threejs, browser-game  `bonk-court-game` `sixer-cricket-game`
 21. [ ] Toyxyz retarget add-on <-> Blender storybook hero · 0.582 · both rigging, blender, animation  `toyxyz-blender-retargeter` `blender-mcp-storybook-hero-workflow`
-22. [ ] Agent mistakes prompt <-> Claude Code agent tree · 0.58 · both workflow, claude, agents  `agent-mistakes-to-checks` `claude-code-agent-tree`
+22. [ ] Agent mistakes prompt <-> Claude Code agent tree · 0.58 · both workflow, agents, claude  `agent-mistakes-to-checks` `claude-code-agent-tree`
 23. [ ] Revolio website <-> Tabworthy site directory · 0.58 · both website  `revolio-website` `tabworthy-site-directory`
 24. [ ] Skillsync skills marketplace <-> Try orchestrator workflow · 0.58 · both agents  `skillsync-skills-marketplace` `try-orchestrator-workflow`
 25. [ ] Claude Code reactive theme <-> Try orchestrator workflow · 0.579 · both claude  `claude-code-reactive-theme` `try-orchestrator-workflow`

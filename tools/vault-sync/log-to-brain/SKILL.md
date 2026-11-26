@@ -25,7 +25,7 @@ Then:
 - Vault folder exists: use it.
 - Only in the repo: create the vault folder with that exact slug as its name, so the next sync links them instead of duplicating.
 - Only a brain note exists: create the vault folder and set `note: <that slug>` in its `project.md`, so the docs attach to the existing note.
-- Nothing exists: create a new project (step 4).
+- Nothing exists: create a new project (step 4). If the work started from one of his idea notes, make it from the idea instead (step 4, first bullet).
 
 Never create a second folder or note for a project that already exists. If two candidates look plausible, ask which.
 
@@ -115,6 +115,8 @@ Also, only when it changed:
 - Write from what's already in the chat. Don't re-read code or files to summarise them.
 
 ## 4. New project folder
+
+If the project is one of his saved ideas (`recall_ideas` finds it), make it from the idea: the `start_project` tool, or `node scripts/brain.mjs start <idea-id>` in the repo. It pre-links the related notes, fills context.md and todo.md from the idea and sets the idea to doing (see the `project-briefing` skill). Then add your log entry to its `log.md`. Otherwise:
 
 If `brain_sync.py` is available (`~/.brain-sync/second-brain/tools/vault-sync/brain_sync.py`), run `python3 <that> new "<Project Name>"`. Otherwise create the folder with `project.md`, `context.md`, `todo.md`, `log.md`. `project.md`:
 

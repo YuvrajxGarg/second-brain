@@ -35,14 +35,18 @@ The scheduled task follows these steps. Edit them here to change its behaviour.
    Quality over count: one great idea beats three padded ones.
 5. Write `suggestions/YYYY-MM-DD.md` in the format below, commit
    `suggest: N build ideas for YYYY-MM-DD` and push to `main`.
-6. Resurface one thing from his unread pile (Yuvraj's ask 2026-11-26): pick one note
-   with `status: unread` (or no status) that is a saved ref (not kind project, org, idea,
-   todo or thought), at least 5 days old, and not already listed under `resurfaced:` in
-   an earlier day file. Prefer one that fits today's ideas. Add `resurfaced: <slug>` to
-   the day file's frontmatter. Don't change the note.
+6. Resurface one thing from his unread pile (Yuvraj's ask 2026-11-26), matched to what
+   he is building now: run `node scripts/brain.mjs pick`. It ranks unread saved refs
+   (5+ days old, not resurfaced before) by how well they fit his active projects (the
+   ones with recent `log.md` entries in `projects/`) and prints
+   `<slug>  <title>  fits <project>  <why>`. Use that pick. Only if it says nothing fits,
+   pick any unread saved ref (not kind project, org, idea, todo or thought), 5+ days old,
+   not listed under `resurfaced:` in an earlier day file, preferring one that fits
+   today's ideas. Add `resurfaced: <slug>` to the day file's frontmatter. Don't change the note.
 7. Finish with a short message (it becomes the phone notification): one line per
    idea, `Name: what to build, from <note> + <note>`, then
-   `From your pile: <title>, <why> (brainy.pxlvzn.in/#/n/<slug>)`.
+   `From your pile: <title>, <why> (brainy.pxlvzn.in/#/n/<slug>)`, adding
+   `, for <project>` when the pick fits a project.
 
 ## Day file format
 

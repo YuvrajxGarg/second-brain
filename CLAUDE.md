@@ -23,9 +23,13 @@ INDEX.md           generated: every entry, grouped by topic, newest first
 TAGS.md            generated: every tag with its entries
 LINKS.md           generated: link health report and link proposals (scripts/link_doctor.py)
 api/mcp.js         MCP server served at https://brainy.pxlvzn.in/mcp (read-only; +write tools with ?key=)
-api/_write.js      the MCP write tools: capture, update_note, log_project, log_playtest (CAPTURE_KEY)
+api/_write.js      the MCP write tools: capture, update_note, log_project, log_playtest, start_project (CAPTURE_KEY)
 api/edit.js        edit API for the graph site (passcode-locked, commits to main)
 api/capture.js     plain HTTP capture for iPhone/Mac/Windows (CAPTURE_KEY), writes inbox/
+api/_brief.js      shared logic: project briefing, resurface ranking, idea -> project
+scripts/brain.mjs  CLI on _brief.js: brief <project> | pick | digest [--write] | start <idea>
+digests/           weekly digests from the Sunday run (see its README)
+tools/project-briefing/ the skill: brief before building, idea -> project
 inbox/             only when a dump is genuinely unclear; sort it later
 topics/<topic>/    one folder per group, created on demand
 templates/entry.md the frontmatter template
@@ -78,6 +82,28 @@ log**, not a dump. Use the `log-to-brain` skill if it's loaded; if not, follow
   (open `- [ ]` checkboxes) lists. The newest entry's open fixes become the game's next
   steps on the board. From another chat: MCP `log_playtest`. A game with only a
   `topics/` note gets `projects/<slug>/project.md` with `note: <note-slug>` (no copy).
+
+## Using what's saved (Yuvraj's ask 2026-11-26)
+
+All four run on `api/_brief.js` (pure functions over brain.json notes), so the MCP
+server, the site API and `scripts/brain.mjs` give the same answers:
+
+- **Project briefing**: MCP `get_briefing` (`project` or `about`), or `node
+  scripts/brain.mjs brief <project>`. Before working on one of his projects, read it and
+  treat its mistakes and checks as rules. The `project-briefing` skill does this in any chat.
+- **Idea -> project**: MCP `start_project` (write key), site START AS PROJECT
+  (`api/edit.js` action `project`), or `node scripts/brain.mjs start <idea>`. Writes
+  `projects/<slug>/` (project.md with related notes pre-linked, context.md, todo.md,
+  log.md) and sets the idea to `stage: doing` with a link to the project. This is the one
+  sanctioned way a thread creates a `projects/` folder besides log_project's new_project;
+  refuses ideas that already became a project.
+- **Context-aware resurfacing**: projects with a `log.md` entry in the last 30 days (or
+  in progress and added lately) are "active"; unread saved refs are ranked by fit with
+  them. `build_graph.mjs` puts the ranking in `graph.json` (`focus`) for the site's FROM
+  YOUR PILE card; the morning run uses `node scripts/brain.mjs pick`.
+- **Weekly digest**: step 6 of `links/README.md` (Sunday run), `digests/YYYY-MM-DD.md`.
+  Scheduled tasks: "Daily build ideas" and "Weekly link check and digest" (recreated
+  2026-11-26; fresh-session tasks can only be changed by delete + recreate).
 
 ## Filing a dump
 
@@ -306,10 +332,10 @@ each note panel stay fresh.
   each (`api/edit.js` actions `link`, `unlink`, `dismiss`); QUALITY (key Q) colours links
   by score. Pairs he says no to live in `links/dismissed.json` and are never proposed again.
 - A weekly scheduled task (Sundays ~9:42 AM IST) runs the fixes, rewrites machine reasons,
-  prunes junk proposals and pings him. Its steps live in `links/README.md`. The same run
+  prunes junk proposals, writes the weekly digest (`digests/`) and pings him. Its steps live in `links/README.md`. The same run
   sends the weekly **health report** (`scripts/health_report.py`, see `health/README.md`):
   link health, deploys vs the batch rule, MCP token cost, vault sync per machine, backups.
-  One Sunday message; don't add a separate health notification.
+  One Sunday message; don't add a separate health or digest notification.
 
 ## Mistakes to checks (Yuvraj's ask 2026-11-26)
 
@@ -377,7 +403,8 @@ deploy, so they lag by the same batch.
 - MCP server: `api/mcp.js`, a dependency-free Streamable HTTP server at
   `https://brainy.pxlvzn.in/mcp` (tools: get_taste_profile, search, fetch,
   list_notes, get_catalog, recall_ideas, get_checks; plus capture, update_note,
-  log_project with `?key=`, see "Capture from any chat"). It reads `/data/brain.json`, which
+  log_project, start_project with `?key=`, see "Capture from any chat"; get_briefing, see
+  "Using what's saved"). It reads `/data/brain.json`, which
   `scripts/build_graph.mjs` writes on every deploy, so new notes show up on their own.
 - MCP outputs stay lean (Yuvraj's ask 2026-11-26, a chat spent ~12% of its tokens on
   one taste read): `get_taste_profile` returns only the curated part of TASTE.md unless

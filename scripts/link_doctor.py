@@ -33,6 +33,9 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
 DIRS = [ROOT / "topics", ROOT / "inbox"]
+# Vault projects are graph nodes too ([[<slug>]] = projects/<slug>/), e.g. an idea note
+# linking the project it became. They count as valid link targets, nothing more.
+VAULT_PROJECTS = {p.parent.name for p in (ROOT / "projects").glob("*/project.md")} if (ROOT / "projects").exists() else set()
 
 KEEP = 0.35      # a link at or above this is healthy
 WEAK = 0.15      # a link below this with no reason written next to it is flagged
@@ -260,6 +263,8 @@ def audit(notes):
     for s, n in notes.items():
         for target, line in link_lines(n):
             full, fixable = resolve(target, slugs)
+            if full is None and target.strip() in VAULT_PROJECTS:
+                continue  # a vault project (projects/<slug>/): valid, but not scored here
             if full is None:
                 broken.append({"note": s, "link": target, "fix": None})
             elif fixable:

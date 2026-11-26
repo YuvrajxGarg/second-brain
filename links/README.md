@@ -16,8 +16,9 @@
 
 A scheduled Claude task runs every Sunday morning (9:42 AM IST) and follows these
 steps. It also sends the weekly brain health report (backups, deploys, MCP cost, vault
-sync per computer: see `health/README.md`) in the same message, so there is one Sunday
-notification, not two. Edit them here to change its behaviour.
+sync per computer: see `health/README.md`) and the weekly digest (what he saved, unread
+pile, untouched ideas: see `digests/README.md`) in the same message, so there is one
+Sunday notification, not three. Edit them here to change its behaviour.
 
 1. `git pull` on `main`.
 2. `python3 scripts/link_doctor.py --fix`: relinks old date-first or partial links and adds
@@ -39,11 +40,15 @@ notification, not two. Edit them here to change its behaviour.
    script estimates. Run
    `python3 scripts/health_report.py --save --link-before <health from step 1>`.
    It writes `health/latest.md`, appends `health/history.jsonl` and prints three lines.
-7. Commit `links: weekly check` (links, notes, generated files and `health/`) and push to
-   `main` (one deploy). Retry the push up to 4 times.
-8. End with one short message (it becomes the phone notification), no headers:
-   the three lines the health report printed, then
+7. Weekly digest (Yuvraj's ask 2026-11-26): `node scripts/brain.mjs digest --write`. It
+   writes `digests/YYYY-MM-DD.md` (saved this week, unread pile, ideas untouched for 3+
+   weeks, project activity, unread saves that fit what he's building, link health) and
+   prints a 2-3 line summary. See `digests/README.md`.
+8. Commit `links: weekly check` (links, notes, generated files, `health/` and `digests/`)
+   and push to `main` (one deploy). Retry the push up to 4 times.
+9. End with one short message (it becomes the phone notification), no headers:
+   the digest's summary lines, then the three lines the health report printed, then
    `<N> backlinks added, <N> reasons rewritten, <N> proposals waiting. Best: <Note> <-> <Note> (<why>)`
-   and `Review: brainy.pxlvzn.in (LINK DOCTOR, or press D) · full report: health/latest.md`.
+   and `Review: brainy.pxlvzn.in (LINK DOCTOR, or press D) · report: health/latest.md · digest: digests/<date>.md`.
    If the report flagged something you can fix inside these rules (an unsorted inbox
    capture is not one: leave filing to Yuvraj's threads), say what, don't fix it.

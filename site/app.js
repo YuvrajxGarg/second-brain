@@ -733,15 +733,22 @@
     const old = (n) => (Date.now() - Date.parse(n.added || today)) / 86400000 >= 5;
     const pile = nodes.filter((n) => n.kind === "note" && !SKIP.has(n.noteKind) && (n.status || "unread") === "unread" && old(n));
     if (!pile.length) return;
-    // same pick all day, a different one tomorrow; NEXT walks the pile
-    resurface.i = force ? (resurface.i + 1) % pile.length : hash(today) % pile.length;
-    const n = pile[resurface.i];
+    // Saves that fit what he is building now come first (graph.focus, from active
+    // projects' logs, api/_brief.js); the rest of the pile after them.
+    const inPile = new Map(pile.map((p) => [p.slug, p]));
+    const fx = (graph.focus || []).filter((f) => inPile.has(f.slug));
+    const fits = new Map(fx.map((f) => [f.slug, f.project]));
+    const order = [...fx.map((f) => inPile.get(f.slug)), ...pile.filter((p) => !fits.has(p.slug))];
+    // same pick all day (one of the top 3 fits), a different one tomorrow; NEXT walks the list
+    resurface.i = force ? (resurface.i + 1) % order.length : hash(today) % (fx.length ? Math.min(3, fx.length) : order.length);
+    const n = order[resurface.i];
+    const fit = fits.get(n.slug);
     const weekAgo = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
     const otd = nodes.filter((m) => m.kind === "note" && m.added === weekAgo);
     let card = $("resurface");
     if (!card) { card = document.createElement("aside"); card.id = "resurface"; card.className = "resurface hud"; document.body.appendChild(card); }
     card.style.setProperty("--c", n.color);
-    card.innerHTML = `<div class="rs-k mono">FROM YOUR PILE · ${pile.length} UNREAD<button class="rs-x" type="button" aria-label="Hide for today">✕</button></div>
+    card.innerHTML = `<div class="rs-k mono">${fit ? `FOR ${esc(fit.toUpperCase())}` : "FROM YOUR PILE"} · ${pile.length} UNREAD<button class="rs-x" type="button" aria-label="Hide for today">✕</button></div>
       <div class="rs-t">${esc(n.label)}</div>${n.why ? `<div class="rs-w">${esc(n.why)}</div>` : ""}
       <div class="rs-k mono">${esc([n.noteKind, n.topic, n.added].filter(Boolean).join(" · "))}</div>
       <div class="rs-b mono"><button type="button" data-rs="open">OPEN</button><button type="button" data-rs="read">MARK READ</button><button type="button" data-rs="next">NEXT</button></div>
@@ -762,6 +769,34 @@
         b.disabled = false;
       }
     };
+  }
+
+  // ---------- idea -> project ----------
+  // One commit makes projects/<slug>/ (project.md, context.md with the saved notes to
+  // start from, todo.md, log.md) and sets the idea to doing; the vault sync copies the
+  // folder into Documents/Vault on the Mac and PC.
+  async function startProject(n) {
+    if (!n || !(await window.SB.unlock())) return;
+    const types = ["game", "app", "tool", "site", "concept"];
+    const guess = n.topic === "gamedev" || (n.tags || []).some((t) => /game/.test(t)) ? "game" : "app";
+    openModal(`<div class="m-h">START ${esc(n.label.toUpperCase())} AS A PROJECT</div>
+      <p class="m-p">Makes a project folder with the notes that fit already linked, a to-do list from the idea, and a first log entry. It reaches Documents/Vault on the next daily sync. The idea moves to DOING.</p>
+      <label class="f"><span>PROJECT NAME</span><input name="title" value="${esc(n.label)}" autocomplete="off" /></label>
+      <label class="f"><span>TYPE</span><select name="type">${types.map((t) => `<option ${t === guess ? "selected" : ""}>${t}</option>`).join("")}</select></label>
+      <label class="f"><span>STACK <i>comma separated, optional</i></span><input name="stack" autocomplete="off" placeholder="threejs, vite" /></label>
+      <div class="m-err" hidden></div>
+      <div class="m-row"><button type="button" data-cancel>CANCEL</button><button type="submit">START</button></div>`, async (m) => {
+      const f = new FormData(m.querySelector("form"));
+      const btn = m.querySelector("button[type=submit]");
+      btn.disabled = true;
+      try {
+        const r = await window.SB.api("project", { path: n.path, title: f.get("title"), type: f.get("type"), stack: String(f.get("stack") || "").split(",").map((s) => s.trim()).filter(Boolean) });
+        closeModal();
+        toast(`Started <b>${esc(f.get("title"))}</b>: projects/${esc(r.dir)}, ${r.refs} notes linked. On the graph after the rebuild (about a minute).`, 8000);
+      } catch (err) {
+        const e = m.querySelector(".m-err"); e.hidden = false; e.textContent = err.message; btn.disabled = false;
+      }
+    });
   }
 
   // ---------- Link Doctor review ----------
@@ -972,7 +1007,10 @@
       // build a canvas from this note: its links, or (techniques, processes) its steps
       const slugQ = encodeURIComponent(n.slug);
       const flowy = n.noteKind === "technique" || (n.tags || []).some((t) => /^(workflow|process|pipeline|tutorial|how-to)$/.test(t)) || /^\s*\d+[.)]\s/m.test((n.body || "").split(/\n## Raw\b/)[0]);
-      html += `<div class="p-canvas mono"><a href="canvas.html#auto=links:${slugQ}">OPEN AS CANVAS ↗</a>${flowy ? `<a href="canvas.html#auto=flow:${slugQ}">STEPS AS A FLOW ↗</a>` : ""}</div>`;
+      // an open idea that no project links yet can become one (api/edit.js action "project")
+      const becameProject = (n.backlinks || []).some((s) => { const m = byId.get("n:" + s); return m && (m.vault || m.noteKind === "project"); });
+      const startable = (n.noteKind === "idea" || n.noteKind === "todo") && !/^(done|dropped)$/.test(n.stage || "") && !becameProject;
+      html += `<div class="p-canvas mono"><a href="canvas.html#auto=links:${slugQ}">OPEN AS CANVAS ↗</a>${flowy ? `<a href="canvas.html#auto=flow:${slugQ}">STEPS AS A FLOW ↗</a>` : ""}${startable ? `<button type="button" data-startproj>START AS PROJECT ↗</button>` : ""}</div>`;
       html += `<article class="md">${raw}</article>`;
       // links both ways (backlinks), unlinked mentions and Link Doctor suggestions
       const out = new Set(n.related || []), back = new Set(n.backlinks || []);
@@ -1019,6 +1057,7 @@
   panelInner.addEventListener("click", (e) => {
     const ed = e.target.closest("[data-edit]");
     if (ed) { onEditAction(ed.dataset.edit, ed); return; }
+    if (e.target.closest("[data-startproj]")) { startProject(byId.get(selectedId)); return; }
     const el = e.target.closest("[data-go]");
     if (el) go(byId.get(el.dataset.go));
   });

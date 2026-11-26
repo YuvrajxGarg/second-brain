@@ -523,5 +523,5 @@ body.flash::after { content: ""; position: fixed; inset: 0; z-index: 30; backgro
 body.panel-open .resurface { display: none; }
 @media (max-width: 760px) { .resurface { right: 16px; left: 16px; width: auto; top: auto; bottom: 150px; } }
 .p-canvas { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 18px; }
-.p-canvas a { font-size: 10px; letter-spacing: 0.14em; color: var(--dim); text-decoration: none; border: 1px solid var(--line); padding: 7px 10px; background: rgba(255, 255, 255, 0.02); transition: color 0.2s, border-color 0.2s; }
-.p-canvas a:hover { color: var(--fg); border-color: rgba(242, 242, 242, 0.4); }
+.p-canvas a, .p-canvas button { font: inherit; cursor: pointer; font-size: 10px; letter-spacing: 0.14em; color: var(--dim); text-decoration: none; border: 1px solid var(--line); padding: 7px 10px; background: rgba(255, 255, 255, 0.02); transition: color 0.2s, border-color 0.2s; }
+.p-canvas a:hover, .p-canvas button:hover { color: var(--fg); border-color: rgba(242, 242, 242, 0.4); }

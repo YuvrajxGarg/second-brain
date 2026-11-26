@@ -21,10 +21,13 @@
 //   { action: "unlink", a, b }                   -> { ok, commit, changed } (remove the link both ways, ## Notes only)
 //   { action: "dismiss", a, b, why? }            -> { ok, commit }          (links/dismissed.json: stop proposing this pair)
 //   { action: "board", path, content, sha? }     -> { ok, commit, sha }     (canvases/<id>.canvas or views/<id>.json)
+//   { action: "project", path, title?, type?, stack?, share? }
+//                                                -> { ok, commit, dir }     (idea note -> projects/<slug>/, api/_brief.js)
 // Only notes under topics/<topic>/ or inbox/ can be touched. Deleting a note also
 // removes its images/videos (files with the same name). One change = one commit.
 
 const crypto = require("node:crypto");
+const BR = require("./_brief.js");
 
 const REPO = process.env.GITHUB_REPO || "YuvrajxGarg/second-brain";
 const BRANCH = process.env.GITHUB_BRANCH || "main";
@@ -237,6 +240,27 @@ module.exports = async function handler(req, res) {
       const kind = p.startsWith("canvases/") ? "canvas" : "view";
       const r = await gh("PUT", `/contents/${enc(p)}`, { message: `${kind}: ${label(body.title, p.split("/").pop())} (from site)`, content: b64(content), sha: cur?.sha, branch: BRANCH });
       return send(res, 200, { ok: true, commit: r.commit.sha, sha: r.content.sha });
+    }
+
+    // Idea -> project: projects/<slug>/ (project.md, context.md, todo.md, log.md) with the
+    // related notes pre-linked, and the idea set to stage doing. Same builder as the MCP
+    // start_project tool. The vault sync copies the folder into Documents/Vault.
+    if (action === "project") {
+      const p = String(body.path || "");
+      if (!NOTE_PATH.test(p) || p.includes("..")) return send(res, 400, { error: "Pick an idea note." });
+      const host = req.headers["x-forwarded-host"] || req.headers.host;
+      const brain = await (await fetch(`https://${host}/data/brain.json`)).json();
+      const f = await getFile(p);
+      const slug = slugOf(p);
+      const idea = brain.notes.find((n) => n.slug === slug);
+      if (!idea) return send(res, 409, { error: "This note isn't on the site yet (waiting for the next deploy). Try after it shows up." });
+      const taken = brain.notes.filter((n) => n.vaultDir || n.vault).map((n) => n.vaultDir || n.slug);
+      const r = BR.ideaToProject(idea, brain.notes, { title: body.title, type: body.type, stack: body.stack, share: body.share, takenDirs: taken });
+      if (r.error) return send(res, 409, { error: r.error });
+      try { await getFile(`projects/${r.dir}/project.md`); return send(res, 409, { error: `projects/${r.dir}/ already exists. Pick another title.` }); }
+      catch (e) { if (e.status !== 404) throw e; }
+      const commit = await commitTree(`add: project ${label(r.title, r.dir)} from idea (from site)`, [...r.files, { path: p, content: BR.markIdeaStarted(f.content, r.dir) }], []);
+      return send(res, 200, { ok: true, commit, dir: r.dir, refs: r.refs.length });
     }
 
     // Link Doctor: link / unlink two notes (both ways), or dismiss a proposed pair.

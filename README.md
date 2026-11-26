@@ -38,6 +38,14 @@ one small markdown file, grouped by topic and tagged so it can be found again.
   [tools/vault-sync](tools/vault-sync/). Saying "log this to my brain" adds a dated
   entry to that project's `log.md`; "log this playtest" adds one entry per build played
   to a game's `playtests.md` (what worked, broke, felt, and what to fix next).
+- **Using it while building:** before working on a project, an agent calls the MCP tool
+  `get_briefing` (or `node scripts/brain.mjs brief <project>`) and gets one lean brief:
+  where it's at, past mistakes, checks, the taste that applies and the saved notes that
+  fit. An idea becomes a project in one step (START AS PROJECT on the site, the MCP tool
+  `start_project`, or `node scripts/brain.mjs start <idea>`), with the related notes
+  pre-linked. The daily unread pick and the site's FROM YOUR PILE card prefer saves that
+  fit what he's building now, and every Sunday a digest ([digests/](digests/)) arrives
+  with the link check as one notification. Skill: [tools/project-briefing](tools/project-briefing/SKILL.md).
 - **For AI tools:** start at [AGENTS.md](AGENTS.md). [TASTE.md](TASTE.md) is the
   taste profile, [catalog/](catalog/) groups notes by kind ([kit.md](catalog/kit.md) is
   the asset library), [IDEAS.md](IDEAS.md)
@@ -47,7 +55,7 @@ one small markdown file, grouped by topic and tagged so it can be found again.
   (with charts at [brainy.pxlvzn.in/me.html](https://brainy.pxlvzn.in/me.html)).
 - **Daily ideas:** [suggestions/](suggestions/) holds the build ideas a scheduled
   task sends Yuvraj every morning, made from combinations of his saved notes, plus one
-  unread save from his pile.
+  unread save from his pile (one that fits an active project when there is one).
 - **Build your own:** [HANDOFF.md](HANDOFF.md) explains how to set up this whole system
   for yourself (engine only, no notes).
 - **Rules:** [CLAUDE.md](CLAUDE.md) explains how entries are filed, tagged, linked and searched.

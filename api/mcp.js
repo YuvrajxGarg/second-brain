@@ -6,6 +6,7 @@
 // (capture, update_note, log_project); without it, it stays read-only.
 
 const W = require("./_write.js");
+const BR = require("./_brief.js");
 
 const SITE = "https://brainy.pxlvzn.in";
 const PROTOCOLS = ["2025-06-18", "2025-03-26", "2024-11-05"];
@@ -229,6 +230,21 @@ const TOOLS = [
     annotations: { readOnlyHint: true },
   },
   {
+    name: "get_briefing",
+    title: "Brief me before working",
+    description:
+      "Call when starting or resuming work on one of Yuvraj's projects (or something new). One lean read (~1k tokens) instead of many: where the project is at (last log, next steps, open to-dos), mistakes made on it before, its checks plus the global ones, the bits of his taste that apply, and the saved notes that fit (how-tos, looks, libraries and tools, related ideas, past projects), each as an id to fetch. Pass `project` (slug or name; get_catalog('projects') lists them) or, for new work with no project yet, `about` (a few words on what is being built).",
+    inputSchema: {
+      type: "object",
+      properties: {
+        project: { type: "string", description: "Project slug or name, e.g. 'munde-mode-game'." },
+        about: { type: "string", description: "New work with no project yet, e.g. 'pixel-art browser racing game in three.js'." },
+      },
+      additionalProperties: false,
+    },
+    annotations: { readOnlyHint: true },
+  },
+  {
     name: "get_checks",
     title: "Get checks before working",
     description:
@@ -336,6 +352,10 @@ async function callTool(name, a = {}, req) {
       const list = notes.filter((n) => kinds.includes(n.kind));
       return text(`# ${a.name} (${list.length})\nid | title | kind | state | what it is | stack or style\n` + catalogLines(list).join("\n"));
     }
+    case "get_briefing": {
+      const r = BR.briefing(brain, { project: a.project, about: a.about });
+      return r.error ? fail(r.error) : text(r.text);
+    }
     case "get_checks": {
       const out = [brain.checks || "No global checks yet."];
       const id = String(a.project || "").trim().toLowerCase();
@@ -370,12 +390,12 @@ async function handle(msg, req) {
         return ok({
           protocolVersion: PROTOCOLS.includes(params.protocolVersion) ? params.protocolVersion : PROTOCOLS[0],
           capabilities: { tools: { listChanged: false } },
-          serverInfo: { name: "yuvraj-second-brain", title: "Yuvraj's second brain", version: "1.3.0" },
+          serverInfo: { name: "yuvraj-second-brain", title: "Yuvraj's second brain", version: "1.4.0" },
           instructions:
             (W.access(req) === "ok"
               ? "Writing is on. When he says save/add/remember this to my brain: search first (extend a match with update_note), then capture one note per item; project work goes to log_project. Rules: the capture-to-brain skill, or fetch 'agents'. "
               : "") +
-            "Yuvraj's personal knowledge base and taste profile. Call get_taste_profile first (curated summary, no evidence needed) to learn his visual taste, the games he likes and his preferred stack. Then pull only what the question needs: search for specific references and libraries, recall_ideas for his own ideas and to-dos, get_catalog('projects') for what he has already built. Every list is compact (id + one line); fetch an id only for notes you will actually use. Prefer what he has saved when suggesting designs, UI libraries, assets or tools.",
+            "Yuvraj's personal knowledge base and taste profile. Starting work on a project? get_briefing (project or about) gives the brief in one call. Otherwise call get_taste_profile first (curated summary, no evidence needed) to learn his visual taste, the games he likes and his preferred stack. Then pull only what the question needs: search for specific references and libraries, recall_ideas for his own ideas and to-dos, get_catalog('projects') for what he has already built. Every list is compact (id + one line); fetch an id only for notes you will actually use. Prefer what he has saved when suggesting designs, UI libraries, assets or tools.",
         });
       case "ping":
         return ok({});
@@ -418,7 +438,7 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({
       name: "Yuvraj's second brain MCP server",
       usage: `Add ${SITE}/mcp as a remote MCP server (Streamable HTTP, no auth). Tools: ${TOOLS.map((t) => t.name).join(", ")}.`,
-      writing: { ok: "on (capture, update_note, log_project)", bad: "wrong key", none: "off (read-only; add ?key=<CAPTURE_KEY> to write)" }[W.access(req)],
+      writing: { ok: "on (capture, update_note, log_project, start_project)", bad: "wrong key", none: "off (read-only; add ?key=<CAPTURE_KEY> to write)" }[W.access(req)],
     });
   }
   if (req.method !== "POST") return res.status(405).end();

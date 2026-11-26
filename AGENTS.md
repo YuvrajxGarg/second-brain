@@ -31,6 +31,9 @@ generic defaults.
    **Checks first:** [CHECKS.md](CHECKS.md) lists mistakes agents already made for him and
    the check that stops each one; a project's `checks.md` adds its own. MCP:
    `get_checks` with the project slug. Run every `proved` check before saying "done".
+   **Starting work on a project?** `get_briefing` with the project slug (or `about` for
+   new work) gives all of this in one lean call: where it's at, past mistakes, checks, the
+   taste that applies and the saved notes that fit.
 5. **Notes** in `topics/<topic>/<slug>.md` for full detail. Images sit
    next to their note with the same name and are described in words.
 6. **Moodboards** in `canvases/*.canvas` (JSON Canvas: cards point at note paths, with
@@ -53,13 +56,14 @@ topic, [TAGS.md](TAGS.md) by tag.
 
 MCP tools: `get_taste_profile`, `search`, `fetch`, `list_notes`, `get_catalog`
 (including `kit`, the asset library, with an optional `area`), `recall_ideas` (also
-returns build ideas tracked as concept projects), `get_checks`.
+returns build ideas tracked as concept projects), `get_briefing` (one lean brief before working on a project), `get_checks`.
 
 **Writing** (only when Yuvraj's connector URL carries `?key=`; otherwise these aren't
 listed): `capture` files one note, `update_note` adds to an existing one (his words,
 a follow-up line, links, an idea's stage), `log_project` adds a dated entry to a
 project's `log.md`, `log_playtest` adds one entry per build played to a game's
-`playtests.md` (build, who played, worked, broke, felt, fix next). Search first and extend a match instead of making a copy. The
+`playtests.md` (build, who played, worked, broke, felt, fix next). `start_project` turns an idea note into a project folder (related notes pre-linked,
+idea set to doing). Search first and extend a match instead of making a copy. The
 server enforces the filing rules and refuses a link that's already saved. How to fill
 the fields: [tools/capture-to-brain/SKILL.md](tools/capture-to-brain/SKILL.md).
 
