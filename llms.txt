@@ -24,6 +24,7 @@ Read TASTE.md first for the gist, then the catalog for what you need. Live graph
 ## Notes
 
 - [Skillsync skills marketplace](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/skillsync-skills-marketplace.md): `tool` · ai · a place to publish agent skills and get paid when people or agents use them
+- [Claude Code usage snapshot](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/tech/claude-code-usage-snapshot.md): `thought` · tech · keep track of my Claude Code usage
 - [AI group shot retouch](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/ai-group-shot-retouch.md): `technique` · ai · what worked (and what didn't) fixing a 4-person album-cover group shot with Claude Code and Higgsfield
 - [Tabworthy site directory](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/tech/tabworthy-site-directory.md): `tool` · tech · directory of hidden-gem websites to explore
 - [Flat Finder map](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/flat-finder-map.md): `website-ref` · design · map web app built with Claude, nice dark map with glowing buildings
