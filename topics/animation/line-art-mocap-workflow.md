@@ -1,8 +1,8 @@
 ---
 title: Line art mocap workflow
 type: video
-topic: gamedev
-tags: [animation, motion-capture, mixamo, creative-coding, inspiration]
+topic: animation
+tags: [motion-capture, mixamo, creative-coding, inspiration]
 kind: technique
 why: cool line art animation workflow with motion capture and Mixamo integration also
 style: [wobbly hand-drawn black line art, beak-nosed stick characters, cream paper cards on yellow grid paper]

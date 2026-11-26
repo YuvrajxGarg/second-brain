@@ -1,8 +1,8 @@
 ---
 title: AI tween harness
 type: video
-topic: design
-tags: [animation, 2d, claude, workflow]
+topic: animation
+tags: [2d, claude, workflow]
 kind: technique
 why: AI-assisted 2D tweening and colouring workflow
 style: [painted 2d backgrounds, hand-drawn animation]

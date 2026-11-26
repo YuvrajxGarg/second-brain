@@ -1,8 +1,8 @@
 ---
 title: Blooming flowers site
 type: video
-topic: design
-tags: [website, visual-design, animation, inspiration]
+topic: animation
+tags: [website, visual-design, inspiration]
 kind: website-ref
 why: nice calm website style with growing flower animation
 style: [cream paper card with torn edges, painterly landscape backdrop, hand-drawn flowers growing on a dot grid, soft serif headline]

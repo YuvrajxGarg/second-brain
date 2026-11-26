@@ -1,7 +1,8 @@
 {
   "mode": "propose",
   "colors": {
-    "video-editing": "#3dffd0"
+    "video-editing": "#3dffd0",
+    "animation": "#ffc8a0"
   },
   "dismissed": {},
   "created": {
@@ -11,6 +12,14 @@
         "video-editing"
       ],
       "notes": 12,
+      "kept": []
+    },
+    "animation": {
+      "date": "2026-11-26",
+      "tags": [
+        "animation"
+      ],
+      "notes": 8,
       "kept": []
     }
   }

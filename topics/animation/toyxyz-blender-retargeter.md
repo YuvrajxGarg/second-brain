@@ -1,8 +1,8 @@
 ---
 title: Toyxyz retarget add-on
 type: tool
-topic: gamedev
-tags: [blender, animation, motion-capture, rigging, game-inspiration]
+topic: animation
+tags: [blender, motion-capture, rigging, game-inspiration]
 kind: tool
 why: cool plugin, and also cool way to retarget motion between characters with different body proportions; also a very cool art style for showing prototype models in a game
 style: [blocky segmented mannequins, one flat pastel colour per character, dark grey blender viewport grid]

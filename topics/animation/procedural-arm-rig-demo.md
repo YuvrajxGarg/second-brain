@@ -1,8 +1,8 @@
 ---
 title: Procedural arm rig
 type: bookmark
-topic: gamedev
-tags: [rigging, animation, open-source, to-try]
+topic: animation
+tags: [rigging, open-source, to-try]
 kind: library
 why: open-source rigged arm to reuse in my games
 kit: [3d]

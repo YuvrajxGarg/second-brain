@@ -1,8 +1,8 @@
 ---
 title: Unity bodycam hands
 type: video
-topic: gamedev
-tags: [unity, rigging, animation, tutorial]
+topic: animation
+tags: [unity, rigging, tutorial]
 kind: technique
 why: tips for hand animation in a first person view in Unity
 style: [bodycam first person view, gloved hands with pistol, striped test room]

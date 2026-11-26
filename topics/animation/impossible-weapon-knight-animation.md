@@ -1,8 +1,8 @@
 ---
 title: Impossible Weapon animation
 type: video
-topic: design
-tags: [animation, video-generation, 3d-art, inspiration]
+topic: animation
+tags: [video-generation, 3d-art, inspiration]
 kind: style-ref
 why: Brilliant art style for animations
 style: [painterly stylised 3d, chunky armoured knights, misty desaturated battlefield, red ink outline accents, bold red and blue colour pops]
