@@ -35,7 +35,6 @@ https://x.com/rewind02/status/2119821740058546282?a=4tYjy-hUHaGuRBuPsQw&s=20
 (with a screenshot of the post, saved above)
 
 ## Notes
-- Related: [[godot-waterfall-texture-array-shader]]
 - [[procedural-arm-rig-demo]]: both rigging, animation
 - [[metahuman-maker-agent-addon]]: both 3d-character, blender, mcp
 - [[sharma-sweets-3d-shopfront]]: both 3d-character
