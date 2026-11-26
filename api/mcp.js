@@ -7,7 +7,17 @@ const SITE = "https://brainy.pxlvzn.in";
 const PROTOCOLS = ["2025-06-18", "2025-03-26", "2024-11-05"];
 const KINDS = ["style-ref", "website-ref", "game-ref", "library", "asset-source", "tool", "technique", "advice", "idea", "thought", "todo", "project", "org"];
 const STAGES = ["new", "exploring", "doing", "done", "dropped"];
-const CATALOGS = ["libraries", "style-refs", "tools", "techniques", "ideas", "projects"];
+// catalog name -> kinds, mirrors CATALOGS in scripts/build_index.py
+const CATALOG_KINDS = {
+  libraries: ["library", "asset-source"],
+  "style-refs": ["style-ref", "website-ref", "game-ref"],
+  tools: ["tool"],
+  techniques: ["technique", "advice"],
+  ideas: ["idea", "thought", "todo"],
+  projects: ["org", "project"],
+};
+const CATALOGS = Object.keys(CATALOG_KINDS);
+const EVIDENCE = { kinds: "What he saves", tags: "Top tags", styles: "Style notes", references: "Every reference" };
 
 let cache = { at: 0, brain: null };
 
@@ -27,6 +37,41 @@ async function loadBrain(req) {
     }
   }
   throw lastErr;
+}
+
+// Outputs are read by other AIs on every call, so they stay compact: short ids
+// (fetch accepts the slug without its date), clipped text, no pretty-printed JSON.
+const shortId = (n) => n.slug.replace(/^\d{4}-\d{2}-\d{2}-/, "");
+const clip = (s, max) => {
+  s = String(s || "").replace(/\s+/g, " ").trim();
+  return s.length > max ? s.slice(0, max - 1).replace(/\s+\S*$/, "") + "…" : s;
+};
+
+// TASTE.md = curated profile, then a generated evidence block. The curated part is
+// what shapes answers; the evidence (~3/4 of the file) is only sent when asked for.
+function tasteProfile(taste, evidence = "none") {
+  const start = taste.indexOf("<!-- GENERATED:START");
+  if (start < 0) return taste;
+  const curated = taste.slice(0, start).trim();
+  const gen = taste.slice(start).replace(/<!--[^>]*-->/g, "").trim();
+  if (evidence === "all") return curated + "\n\n" + gen;
+  if (EVIDENCE[evidence]) {
+    const sec = gen.split(/\n(?=### )/).find((x) => x.startsWith("### " + EVIDENCE[evidence]));
+    return curated + "\n\n## Evidence (generated)\n\n" + (sec || "(section not found)").trim();
+  }
+  return (
+    curated +
+    `\n\n_Evidence block left out (~${Math.round(gen.length / 4 / 100) * 100} tokens). Only if you need sources: get_taste_profile with evidence = styles (each style note and its notes), references (every reference with his reason), kinds, tags or all._`
+  );
+}
+
+// One line per note: id | title | status | what it is | stack or style.
+function catalogLines(list) {
+  return list.map((n) => {
+    const status = n.state || n.stage || "";
+    const extra = n.stack?.length ? `stack: ${n.stack.join(", ")}` : n.style?.length ? `style: ${n.style.slice(0, 3).join(", ")}` : "";
+    return [shortId(n), n.title, n.kind, status, clip(n.why, 110), extra].filter(Boolean).join(" | ");
+  });
 }
 
 const noteUrl = (n) => `${SITE}/#/n/${encodeURIComponent(n.slug)}`;
@@ -77,22 +122,33 @@ const TOOLS = [
     name: "get_taste_profile",
     title: "Get Yuvraj's taste profile",
     description:
-      "Read this first. Returns TASTE.md: Yuvraj's visual taste (art and design styles he likes), the games he likes, the libraries, tools and stack he prefers, and how to use that when helping him, with evidence links. Use it to personalise any design, UI, game or content suggestion.",
-    inputSchema: { type: "object", properties: {}, additionalProperties: false },
+      "Read this first. Returns the curated taste profile (~1.7k tokens): who Yuvraj is, his visual taste, the games he likes, the libraries, tools and stack he prefers, and how to use that when helping him. Enough for most answers. The generated evidence block is left out unless you pass `evidence`; ask for it only when you need to cite which notes back a taste.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        evidence: {
+          type: "string",
+          enum: ["none", ...Object.keys(EVIDENCE), "all"],
+          default: "none",
+          description: "Extra generated evidence to append: styles (style notes and the notes behind each), references (every reference with his reason), kinds, tags, or all (~6k tokens).",
+        },
+      },
+      additionalProperties: false,
+    },
     annotations: { readOnlyHint: true },
   },
   {
     name: "search",
     title: "Search the second brain",
     description:
-      "Full-text search over every saved note (links, style references, libraries, tools, techniques, ideas). Matches title, tags, style notes, his reason for saving, and the body. Returns ids to pass to `fetch`. Optional filters: kind, topic.",
+      "Full-text search over every saved note (links, style references, libraries, tools, techniques, ideas). Matches title, tags, style notes, his reason for saving, and the body. Returns ids with a short snippet; `fetch` an id only when you need the full note. Optional filters: kind, topic.",
     inputSchema: {
       type: "object",
       properties: {
         query: { type: "string", description: "What to look for, e.g. 'pixel art', 'three.js assets', 'launch film'." },
         kind: { type: "string", enum: KINDS, description: "Only this kind of note." },
         topic: { type: "string", description: "Only this topic folder, e.g. design, gamedev, ai." },
-        limit: { type: "integer", minimum: 1, maximum: 30, default: 8 },
+        limit: { type: "integer", minimum: 1, maximum: 30, default: 6 },
       },
       required: ["query"],
       additionalProperties: false,
@@ -103,7 +159,7 @@ const TOOLS = [
     name: "fetch",
     title: "Fetch a note",
     description:
-      "Return the full markdown of one note by id (its slug, from `search` or `list_notes`), including his own words under ## Raw. Special ids: 'taste' (TASTE.md), 'ideas' (IDEAS.md), 'agents' (AGENTS.md), 'catalog:<name>' where name is one of libraries, style-refs, tools, techniques, ideas, projects.",
+      "Return the full markdown of one note by id (from `search`, `list_notes`, `get_catalog` or `recall_ideas`), including his own words under ## Raw. Use it for the few notes you actually need. Special ids: 'taste' (all of TASTE.md with evidence), 'ideas' (IDEAS.md), 'agents' (AGENTS.md), 'catalog:<name>' (the long markdown catalog with every summary).",
     inputSchema: {
       type: "object",
       properties: { id: { type: "string" } },
@@ -116,14 +172,15 @@ const TOOLS = [
     name: "list_notes",
     title: "List notes",
     description:
-      "List notes newest first as one line each (id, title, kind, topic, why saved). Filter by kind (e.g. library for UI and code libraries, style-ref for visual references, game-ref for games he likes), topic or tag.",
+      "List notes newest first as one short line each (id, title, kind, topic, why saved). Filter by kind (e.g. library for UI and code libraries, style-ref for visual references, game-ref for games he likes), topic or tag. Prefer `search` when you know what you are looking for.",
     inputSchema: {
       type: "object",
       properties: {
         kind: { type: "string", enum: KINDS },
         topic: { type: "string" },
         tag: { type: "string" },
-        limit: { type: "integer", minimum: 1, maximum: 200, default: 50 },
+        limit: { type: "integer", minimum: 1, maximum: 200, default: 30 },
+        offset: { type: "integer", minimum: 0, default: 0 },
       },
       additionalProperties: false,
     },
@@ -133,13 +190,14 @@ const TOOLS = [
     name: "recall_ideas",
     title: "Recall his ideas and to-dos",
     description:
-      "Call back Yuvraj's own ideas and to-dos (product ideas, game ideas, captions, tasks). By default returns open ones (new, exploring, doing), newest first, with his reason and summary. Filter by stage, topic or a query. Use it when he asks 'what ideas did I have about X', or to suggest picking an old idea back up.",
+      "Call back Yuvraj's own ideas and to-dos (product ideas, game ideas, captions, tasks). By default returns open ones (new, exploring, doing), newest first, with his reason and a short summary (fetch an id for the full note). Filter by stage, topic or a query. Use it when he asks 'what ideas did I have about X', or to suggest picking an old idea back up.",
     inputSchema: {
       type: "object",
       properties: {
         query: { type: "string", description: "Optional words to match, e.g. 'revolio', 'game', 'caption'." },
         stage: { type: "string", enum: [...STAGES, "open", "all"], default: "open" },
         topic: { type: "string" },
+        limit: { type: "integer", minimum: 1, maximum: 100, default: 20 },
       },
       additionalProperties: false,
     },
@@ -149,10 +207,13 @@ const TOOLS = [
     name: "get_catalog",
     title: "Get a catalog",
     description:
-      "Return one generated catalog with a short entry per note: libraries (UI libraries, design systems, asset sources), style-refs (visual, website and game references), tools, techniques, ideas, projects (games, apps and tools he has built himself, plus Revolio and Revolio Labs, the companies he works in).",
+      "Return one catalog as one line per note (id | title | kind | state | what it is | stack or style): libraries (UI libraries, design systems, asset sources), style-refs (visual, website and game references), tools, techniques, ideas, projects (games, apps and tools he has built himself, plus Revolio and Revolio Labs, the companies he works in). `fetch` the ids you need for details; detail 'full' returns every summary and costs about 4x more.",
     inputSchema: {
       type: "object",
-      properties: { name: { type: "string", enum: CATALOGS } },
+      properties: {
+        name: { type: "string", enum: CATALOGS },
+        detail: { type: "string", enum: ["compact", "full"], default: "compact" },
+      },
       required: ["name"],
       additionalProperties: false,
     },
@@ -168,7 +229,7 @@ async function callTool(name, a = {}, req) {
   const notes = brain.notes;
   switch (name) {
     case "get_taste_profile":
-      return text(brain.taste);
+      return text(tasteProfile(brain.taste, a.evidence));
     case "search": {
       const terms = words(a.query);
       if (!terms.length) return fail("Give a query with at least one word.");
@@ -176,18 +237,18 @@ async function callTool(name, a = {}, req) {
         .map((n) => ({ n, s: score(n, terms) }))
         .filter((h) => h.s > 0)
         .sort((x, y) => y.s - x.s || (y.n.added || "").localeCompare(x.n.added || ""))
-        .slice(0, a.limit || 8)
+        .slice(0, a.limit || 6)
         .map(({ n }) => ({
           id: n.slug,
           title: n.title,
           url: noteUrl(n),
           kind: n.kind,
           topic: n.topic,
-          why: n.why,
-          style: n.style,
-          snippet: (n.summary || "").slice(0, 280),
+          why: clip(n.why, 120),
+          ...(n.style?.length ? { style: n.style.join(", ") } : {}),
+          snippet: clip(n.summary, 180),
         }));
-      return text(JSON.stringify({ results: hits }, null, 2));
+      return text(JSON.stringify({ results: hits }));
     }
     case "fetch": {
       const id = String(a.id || "").trim();
@@ -201,19 +262,17 @@ async function callTool(name, a = {}, req) {
       const n = notes.find((x) => x.slug === id || x.slug.endsWith(id) || x.title.toLowerCase() === id.toLowerCase());
       if (!n) return fail(`No note with id '${id}'. Use search or list_notes to find ids.`);
       return text(
-        JSON.stringify({
-          id: n.slug,
-          title: n.title,
-          url: noteUrl(n),
-          text: noteText(n),
-          metadata: { kind: n.kind, topic: n.topic, tags: n.tags, style: n.style, why: n.why, source: n.source, added: n.added },
-        })
+        // kind, tags, why, style and source are already in the text header
+        JSON.stringify({ id: n.slug, title: n.title, url: noteUrl(n), text: noteText(n) })
       );
     }
     case "list_notes": {
-      const list = filterNotes(notes, a).slice(0, a.limit || 50);
+      const all = filterNotes(notes, a);
+      const off = a.offset || 0;
+      const list = all.slice(off, off + (a.limit || 30));
       if (!list.length) return text("No notes match.");
-      return text(list.map((n) => `${n.slug} | ${n.title} | ${n.kind || "?"} | ${n.topic} | ${n.why || ""}`).join("\n"));
+      const more = all.length > off + list.length ? `\n(${off + 1}-${off + list.length} of ${all.length}; pass offset ${off + list.length} for more)` : "";
+      return text(list.map((n) => `${shortId(n)} | ${n.title} | ${n.kind || "?"} | ${n.topic} | ${clip(n.why, 90)}`).join("\n") + more);
     }
     case "recall_ideas": {
       const want = a.stage || "open";
@@ -227,15 +286,19 @@ async function callTool(name, a = {}, req) {
         })
         .filter((n) => !terms.length || score(n, terms) > 0);
       if (!list.length) return text(`No ${want} ideas${a.query ? ` matching '${a.query}'` : ""}.`);
+      const shown = list.slice(0, a.limit || 20);
       return text(
-        list
-          .map((n) => `## ${n.title} (${n.kind}, ${n.stage || "new"}, ${n.topic}, ${n.added})\nid: ${n.slug}\nwhy: ${n.why || ""}\n${n.summary}`)
-          .join("\n\n")
+        shown
+          .map((n) => `## ${n.title} (${n.kind}, ${n.stage || "new"}, ${n.topic}, ${n.added})\nid: ${shortId(n)}\nwhy: ${clip(n.why, 140)}\n${clip(n.summary, 220)}`)
+          .join("\n\n") + (list.length > shown.length ? `\n\n(${shown.length} of ${list.length}; raise limit for more)` : "")
       );
     }
     case "get_catalog": {
-      const c = brain.catalogs[a.name];
-      return c ? text(c) : fail(`No catalog '${a.name}'. Use one of: ${CATALOGS.join(", ")}.`);
+      const kinds = CATALOG_KINDS[a.name];
+      if (!kinds) return fail(`No catalog '${a.name}'. Use one of: ${CATALOGS.join(", ")}.`);
+      if (a.detail === "full") return text(brain.catalogs[a.name] || "Empty catalog.");
+      const list = notes.filter((n) => kinds.includes(n.kind));
+      return text(`# ${a.name} (${list.length})\nid | title | kind | state | what it is | stack or style\n` + catalogLines(list).join("\n"));
     }
     default:
       return null;
@@ -255,9 +318,9 @@ async function handle(msg, req) {
         return ok({
           protocolVersion: PROTOCOLS.includes(params.protocolVersion) ? params.protocolVersion : PROTOCOLS[0],
           capabilities: { tools: { listChanged: false } },
-          serverInfo: { name: "yuvraj-second-brain", title: "Yuvraj's second brain", version: "1.0.0" },
+          serverInfo: { name: "yuvraj-second-brain", title: "Yuvraj's second brain", version: "1.1.0" },
           instructions:
-            "Yuvraj's personal knowledge base and taste profile. Call get_taste_profile first to learn his visual taste, the games he likes and his preferred stack, then use search / list_notes / fetch to pull specific references and libraries, recall_ideas to call back his own ideas and to-dos, and get_catalog('projects') for what he has already built (his games, apps and stack). Prefer what he has saved when suggesting designs, UI libraries, assets or tools.",
+            "Yuvraj's personal knowledge base and taste profile. Call get_taste_profile first (curated summary, no evidence needed) to learn his visual taste, the games he likes and his preferred stack. Then pull only what the question needs: search for specific references and libraries, recall_ideas for his own ideas and to-dos, get_catalog('projects') for what he has already built. Every list is compact (id + one line); fetch an id only for notes you will actually use. Prefer what he has saved when suggesting designs, UI libraries, assets or tools.",
         });
       case "ping":
         return ok({});

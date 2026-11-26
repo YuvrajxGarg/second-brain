@@ -264,6 +264,11 @@ deploy, so they lag by the same batch.
   `https://brainy.pxlvzn.in/mcp` (tools: get_taste_profile, search, fetch,
   list_notes, get_catalog, recall_ideas). It reads `/data/brain.json`, which
   `scripts/build_graph.mjs` writes on every deploy, so new notes show up on their own.
+- MCP outputs stay lean (Yuvraj's ask 2026-11-26, a chat spent ~12% of its tokens on
+  one taste read): `get_taste_profile` returns only the curated part of TASTE.md unless
+  `evidence` is passed, `get_catalog` is one line per note unless `detail: "full"`, lists
+  use short ids and clipped text, and `fetch` has the full note. Keep it that way, and
+  keep the curated part of TASTE.md short since every agent reads it first.
 - The build also copies `llms.txt`, `llms-full.txt`, `AGENTS.md`, `TASTE.md`,
   `IDEAS.md` and `ME.md` to the site root. `site/me.html` renders ME.md with charts.
 - If you add a new `kind`, add it to `CATALOGS` in `scripts/build_index.py`,

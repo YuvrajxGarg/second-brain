@@ -47,6 +47,10 @@ topic, [TAGS.md](TAGS.md) by tag.
 MCP tools: `get_taste_profile`, `search`, `fetch`, `list_notes`, `get_catalog`,
 `recall_ideas`.
 
+They return compact results to save tokens: `get_taste_profile` gives the curated
+profile only (pass `evidence` for the generated block), lists and catalogs are one
+line per note, and `fetch` returns a full note by id. Fetch only what you will use.
+
 ## Note format
 
 ```yaml
