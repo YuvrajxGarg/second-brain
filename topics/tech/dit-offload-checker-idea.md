@@ -39,3 +39,4 @@ Suggested first steps (edit freely):
 - Reference app: backed (@backed_app), early access via comments. Caption: "See what's missing before you copy a thing. Then backed copies just that into the right shoot folder and checks every clip."
 - Related PXLVZN file tools: [[hop-file-transfer]], [[ferry-file-manager]]
 - Label: [[pxlvzn-label]]
+- [[transition-plugin-idea]]: both product-idea, video-editing

@@ -21,3 +21,4 @@ Frame Tracker: a dashboard for an Adobe plugin that tracks time spent in Premier
 
 ## Notes
 - Vercel project name: framelink. Built for an editor's workflow, like the rest of his video tooling.
+- [[transition-plugin-idea]]: both adobe, plugin, video-editing

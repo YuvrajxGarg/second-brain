@@ -48,19 +48,19 @@ _Last curated: 2026-11-12, from 73 notes (29 saves plus his own projects and com
 
 ## Stats (generated)
 
-_Rebuilt on every filing from 113 notes._
+_Rebuilt on every filing from 116 notes._
 
 | | |
 |---|---|
-| Notes saved | 113 |
+| Notes saved | 116 |
 | Active days | 11 (2026-11-09 to 2026-11-26) |
-| Average per active day | 10.3 |
+| Average per active day | 10.5 |
 | Current streak | 1 day |
 | Longest streak | 8 days |
-| Notes with his own comment | 54 (47%) |
-| Open ideas and to-dos | 4 |
+| Notes with his own comment | 55 (47%) |
+| Open ideas and to-dos | 5 |
 | Tagged to-try | 24 |
-| Marked read or done | 46 of 113 |
+| Marked read or done | 46 of 116 |
 
 ### Saves per day
 
@@ -75,7 +75,7 @@ _Rebuilt on every filing from 113 notes._
 2026-11-16  ██ 4
 2026-11-18  █ 3
 2026-11-21  █ 2
-2026-11-26  ██ 5
+2026-11-26  ███ 8
 ```
 
 ### By topic
@@ -83,9 +83,10 @@ _Rebuilt on every filing from 113 notes._
 ```
 gamedev       ██████ 35
 ai            ████ 22
+tech          ████ 21
 design        ████ 21
-tech          ████ 20
 business      ██ 10
+inbox         █ 2
 life          █ 2
 productivity  █ 1
 learning      █ 1
@@ -103,7 +104,7 @@ game-ref      █ 4
 tool          ██ 12
 technique     ███ 17
 advice        █ 6
-idea          █ 2
+idea          █ 3
 thought       █ 3
 todo          █ 2
 org           █ 3
@@ -115,8 +116,8 @@ project       ███████ 41
 ```
 web           █████████ 51
 x             █████ 30
-instagram     ███ 15
-own words     ██ 12
+instagram     ███ 16
+own words     ██ 14
 github        █ 5
 ```
 
@@ -124,7 +125,7 @@ github        █ 5
 
 - doing: 1
 - exploring: 0
-- new: 3
+- new: 4
 - done: 0
 - dropped: 0
 

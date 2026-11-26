@@ -110,7 +110,7 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 113 entries, 54 with style notes. Rebuilt on every filing._
+_From 116 entries, 55 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -122,7 +122,7 @@ _From 113 entries, 54 with style notes. Rebuilt on every filing._
 - `tool`: 12
 - `technique`: 17
 - `advice`: 6
-- `idea`: 2
+- `idea`: 3
 - `thought`: 3
 - `todo`: 2
 - `org`: 3
@@ -130,7 +130,7 @@ _From 113 entries, 54 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (24), #inspiration (19), #claude (17), #open-source (17), #agents (16), #desktop-app (16), #reference (16), #browser-game (13), #pxlvzn (12), #video-editing (11), #ui (10), #revolio-labs (9), #visual-design (9), #animation (8), #mcp (8), #revolio (8), #video-generation (7), #workflow (7), #3d-art (6)
+#own-project (42), #to-try (24), #inspiration (19), #claude (17), #open-source (17), #agents (16), #desktop-app (16), #reference (16), #browser-game (13), #pxlvzn (12), #video-editing (12), #ui (10), #revolio-labs (9), #visual-design (9), #animation (8), #mcp (8), #revolio (8), #video-generation (7), #workflow (7), #3d-art (6)
 
 ### Style notes and where they come from
 
@@ -173,6 +173,7 @@ _From 113 entries, 54 with style notes. Rebuilt on every filing._
 - **chunky pixel art cars**: [Sprite stacking technique](topics/gamedev/sprite-stacking-pixel-art.md)
 - **chunky pixel art tanks and props**: [Sprite stacking skill](topics/gamedev/sprite-stacking-canvas-skill.md)
 - **chunky props**: [Lastmaglab shooter style](topics/gamedev/lastmaglab-top-down-shooter.md)
+- **chunky skeuomorphic panel**: [Transition plugin idea](topics/tech/transition-plugin-idea.md)
 - **cinematic letterbox grade**: [Escapement Blender film](topics/ai/escapement-blender-short-film.md)
 - **clean sans type**: [Revolio Labs](topics/business/revolio-labs.md)
 - **clean stylised 3d**: [Lastmaglab shooter style](topics/gamedev/lastmaglab-top-down-shooter.md)
@@ -231,6 +232,7 @@ _From 113 entries, 54 with style notes. Rebuilt on every filing._
 - **invented artist styles**: [Claude code paintings](topics/ai/claude-code-paintings.md)
 - **launch film motion**: [Captcha launch film](topics/design/captcha-launch-film.md)
 - **lime accent on dark**: [Punchline party game](topics/gamedev/punchline-party-game.md)
+- **lime green go button**: [Transition plugin idea](topics/tech/transition-plugin-idea.md)
 - **low-poly**: [Polyfork 3D assets](topics/gamedev/polyfork-3d-assets.md)
 - **masked characters**: [Lens focal length guide](topics/ai/lens-focal-length-guide.md)
 - **metallic gold and rose gold**: [ARC 3D art dataset](topics/design/arc-3d-art-dataset.md)
@@ -252,6 +254,7 @@ _From 113 entries, 54 with style notes. Rebuilt on every filing._
 - **painterly stylised 3d**: [Impossible Weapon animation](topics/design/impossible-weapon-knight-animation.md)
 - **particle dissolve on delete**: [Storage scanner UI](topics/design/storage-scanner-ui.md)
 - **pastel blocks**: [ARC 3D art dataset](topics/design/arc-3d-art-dataset.md)
+- **pastel pink hardware knob**: [Transition plugin idea](topics/tech/transition-plugin-idea.md)
 - **photoreal metahuman faces**: [MetaHuman Maker addon](topics/gamedev/metahuman-maker-agent-addon.md)
 - **pixel cursors and ui**: [Captcha launch film](topics/design/captcha-launch-film.md)
 - **pixel-art 3d dioramas**: [Pixel-art gaussian splats](topics/gamedev/pixel-art-gaussian-splats.md)
