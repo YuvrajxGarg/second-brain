@@ -8,7 +8,7 @@ why: cool component to add to my websites, stickers for personality
 style: [hand-drawn pastel stickers, 3d vinyl peel on hover, chrome emblems, pixel-art decals]
 source: https://stickitupx.com
 added: 2026-11-13
-status: unread
+status: read
 ---
 
 ## Summary
