@@ -42,6 +42,7 @@ scripts/mcp_cost.mjs    measures MCP output size in tokens against the local bra
 health/                 latest.md + history.jsonl from the Sunday health report (see its README)
 tools/mistakes-to-checks/  the skill that turns repeat agent mistakes into checks
 tools/capture-to-brain/    the skill that files notes from ANY chat (MCP capture / GitHub / shell)
+tools/inbox-sort/       steps for the twice-daily Inbox sort scheduled task
 tools/quick-capture/    browser extension that drops captures into inbox/
 tools/device-capture/   iPhone Share Sheet + Action Button shortcuts, Mac/Windows hotkeys (to api/capture.js)
 tools/social-reader/    source of the Social Reader MCP connector (Instagram/X), shared via HANDOFF.md
@@ -188,6 +189,8 @@ notes, hotkeys, all through `api/capture.js`). Both commit straight to `inbox/` 
 `thought`. A `Note:` line under `## Raw` is his reason for saving it: use it for `why`.
 These never show up in chat, so:
 
+- A scheduled task "Inbox sort" (~8:50 AM and ~5:50 PM IST) does this on its own,
+  following `tools/inbox-sort/README.md` (silent unless an item needs him).
 - At the start of every thread in this project, `git pull` and check `inbox/`
   for `status: unsorted` files. Also do it whenever Yuvraj says "sort my inbox".
 - File each one like a normal dump: pick topic, type, tags, write the summary
