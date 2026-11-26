@@ -23,3 +23,4 @@ The Idea Archive ("Make some noise"): a visual archive of 25 original concepts a
 ## Notes
 - Vercel project name: godrej-futures-worth-making, so likely made for a brand pitch.
 - Deep dives: [[2026-11-12-npcs-on-strike-concept]], [[2026-11-12-the-outsider-concept]].
+- [[2026-11-12-revolio-media-studio]]: made under Revolio Media studio; both revolio

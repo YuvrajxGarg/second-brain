@@ -22,3 +22,4 @@ insane idea , cool website
 ## Notes
 - Read via a page fetch, which only returned the page text (no screenshot: the 3D scene couldn't be opened in a browser from here). Dark slate theme, "PEOPLE OF / BENGALURU" set big in uppercase.
 - Related: [[2026-11-12-sharma-sweets-3d-shopfront]] (stylised 3D Indian street look), [[2026-11-12-perfolios-portfolio-directory]] (another people/portfolio directory)
+- [[2026-11-13-mohamed-siddique-flower-site]]: both website

@@ -21,4 +21,4 @@ The frame shows the green lab: a tall central glass tank with a pink brain, ring
 https://x.com/JungleSilicon/status/2121782359901212987
 
 ## Notes
-Related: [[sprite-stacking-pixel-art]] (another way to give pixel art a 3D turn).
+Related: [[2026-11-15-sprite-stacking-pixel-art]] (another way to give pixel art a 3D turn).

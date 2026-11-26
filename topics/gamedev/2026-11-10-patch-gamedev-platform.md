@@ -23,3 +23,4 @@ https://x.com/rehan_shei/status/2119855388988518794?a=qlXTpSq4hRphE0FQXIw&s=46
 
 ## Notes
 Related: [[2026-11-09-pixel-search-sprite-database]], [[2026-11-09-blender-mcp-storybook-hero-workflow]]
+- [[2026-11-10-polyfork-3d-assets]]: both game-assets, mcp

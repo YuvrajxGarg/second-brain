@@ -21,4 +21,4 @@ This is the GitHub repo he was talking about in the latest reel link I sent.
 (screenshot of a comment: https://github.com/heydamir/unslop)
 
 ## Notes
-From the reel: [[ai-slop-design-rules]]
+From the reel: [[2026-11-15-ai-slop-design-rules]]

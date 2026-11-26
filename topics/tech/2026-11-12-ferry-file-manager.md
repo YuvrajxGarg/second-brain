@@ -20,3 +20,4 @@ Ferry: a two-pane file manager for moving files between his Mac and Windows PC o
 
 ## Notes
 - He works across a Mac and a Windows PC. Related: [[2026-11-12-hop-file-transfer]].
+- [[2026-11-13-dit-offload-checker-idea]]: both desktop-app

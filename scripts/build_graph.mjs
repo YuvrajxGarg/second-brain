@@ -76,6 +76,9 @@ const files = ["topics", "inbox"].flatMap((d) => walk(path.join(ROOT, d)));
 const notes = files.filter((f) => f.endsWith(".md")).map(parse);
 const bySlug = new Map(notes.map((n) => [n.slug, n]));
 
+// keep links.json (written by scripts/link_doctor.py just before this) across the wipe
+let linksJson = null;
+try { linksJson = fs.readFileSync(path.join(OUT, "links.json"), "utf8"); } catch {}
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(OUT, { recursive: true });
 
@@ -106,6 +109,12 @@ for (const n of notes) {
 
 for (const [t, c] of Object.entries(topicCount)) nodes.push({ id: "t:" + t, kind: "topic", label: t, topic: t, count: c });
 for (const [t, c] of Object.entries(tagCount)) nodes.push({ id: "g:" + t, kind: "tag", label: t, count: c });
+
+// link health from scripts/link_doctor.py (run by build_index.py just before this)
+let doctor = { scores: {}, weak: [], suggest: {}, mentions: {}, health: null, counts: null };
+try { if (linksJson) { doctor = { ...doctor, ...JSON.parse(linksJson) }; fs.writeFileSync(path.join(OUT, "links.json"), linksJson); } } catch {}
+const weakSet = new Set(doctor.weak);
+const backlinks = new Map();
 
 for (const n of notes) {
   const dir = path.posix.dirname(n.path);
@@ -140,10 +149,24 @@ for (const n of notes) {
     stack: n.stack,
     body,
     related: [...related],
+    suggest: (doctor.suggest[n.slug] || []).filter((x) => bySlug.has(x.to)).map((x) => [x.to, x.score, x.reason]),
+    mentions: (doctor.mentions[n.slug] || []).filter((s) => bySlug.has(s)),
   });
+  for (const s of related) {
+    if (!backlinks.has(s)) backlinks.set(s, []);
+    backlinks.get(s).push(n.slug);
+  }
   addLink(n.id, "t:" + n.topic, "topic");
   for (const t of n.tags) addLink(n.id, "g:" + t, "tag");
   for (const s of related) addLink(n.id, "n:" + s, "wiki");
+}
+for (const node of nodes) if (node.kind === "note") node.backlinks = backlinks.get(node.slug) || [];
+for (const l of links) {
+  if (l.kind !== "wiki") continue;
+  const a = l.source.slice(2), b = l.target.slice(2);
+  const sc = doctor.scores[a + "|" + b] ?? doctor.scores[b + "|" + a];
+  if (sc != null) l.score = sc;
+  if (weakSet.has(a + "|" + b) || weakSet.has(b + "|" + a)) l.weak = true;
 }
 
 const graph = {
@@ -151,6 +174,7 @@ const graph = {
   commit: sha(),
   repo: "https://github.com/YuvrajxGarg/second-brain",
   counts: { notes: notes.length, topics: Object.keys(topicCount).length, tags: Object.keys(tagCount).length, links: links.length },
+  linkHealth: doctor.health,
   nodes,
   links,
 };

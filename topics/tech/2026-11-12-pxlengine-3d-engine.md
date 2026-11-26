@@ -21,3 +21,5 @@ For context, should we add like all the projects that I've already made with the
 ## Notes
 - Possibly the "Pixel utility engine" he mentioned. Has a Blender integration and Python/TS packages.
 - Fits his agent-native way of working: [[2026-11-09-blender-mcp-storybook-hero-workflow]].
+- [[2026-11-12-pxlvzn-label]]: made under PXLVZN label; both pxlvzn
+- [[2026-11-12-pxl-app-hub]]: both pxlvzn

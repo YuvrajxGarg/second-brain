@@ -20,3 +20,4 @@ https://huggingface.co/spaces/cfahlgren1/pixel-search
 found this cool sprites database for games i build
 
 ## Notes
+- [[2026-11-15-sprite-stacking-pixel-art]]: both sprites, pixel-art

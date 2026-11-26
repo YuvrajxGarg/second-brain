@@ -20,3 +20,4 @@ fun cricket browser games
 
 ## Notes
 - Related: [[2026-11-09-cricle-daily-cricket-guessing-game]], [[2026-11-09-my-country-mogs-yours]]
+- [[2026-11-12-sixer-cricket-game]]: both cricket, browser-game

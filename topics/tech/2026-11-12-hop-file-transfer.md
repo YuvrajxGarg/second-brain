@@ -21,3 +21,4 @@ Hop: AirDrop for every device. Send files between Mac, PC and any phone's browse
 
 ## Notes
 - Related: [[2026-11-12-ferry-file-manager]]. Label: [[2026-11-12-pxlvzn-label]].
+- [[2026-11-13-dit-offload-checker-idea]]: both pxlvzn, desktop-app

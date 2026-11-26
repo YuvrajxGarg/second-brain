@@ -25,3 +25,4 @@ For context, should we add like all the projects that I've already made with the
 ## Notes
 - The idea and art refs: [[2026-11-12-tukaram-munde-game]], [[2026-11-12-sharma-sweets-3d-shopfront]].
 - Next up (from its TODO): waiter tray pose, fuller kitchens and storage, a room-focus camera, kitchen sounds.
+- [[2026-11-12-revolio-labs]]: made under Revolio Labs; both revolio-labs, browser-game

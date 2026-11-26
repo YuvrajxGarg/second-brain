@@ -22,3 +22,4 @@ A fan-made pixel game: the Kasauli Tigers teach Rohit basketball the hard way. Y
 
 ## Notes
 - Riffs on the film Koi... Mil Gaya (Rohit, Jadoo, Kasauli).
+- [[2026-11-12-revolio-labs]]: made under Revolio Labs; both revolio-labs, browser-game

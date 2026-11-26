@@ -21,3 +21,5 @@ this was a cool browser game i found
 not misc
 
 ## Notes
+- [[2026-11-09-thechase500-cricket-chase-game]]: both game-inspiration, browser-game
+- [[2026-11-09-cricle-daily-cricket-guessing-game]]: both game-inspiration, browser-game

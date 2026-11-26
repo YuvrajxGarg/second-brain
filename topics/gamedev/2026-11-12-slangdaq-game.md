@@ -22,3 +22,4 @@ SLANGDAQ, "the culture exchange": a stock market for internet slang. Players get
 
 ## Notes
 - Listed as a Revolio Labs game. Sister game: [[2026-11-12-peakd-game]].
+- [[2026-11-12-revolio-labs]]: made under Revolio Labs; both revolio-labs, browser-game

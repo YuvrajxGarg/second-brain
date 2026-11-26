@@ -21,4 +21,4 @@ https://www.instagram.com/reel/DfvLYbgqpb2/?exln=MTIzcjkxOGZraGk1aw==
 https://raea.io/?utm_source=ig&utm_medium=social&utm_content=link_in_bio They are talking about this in the reel.
 
 ## Notes
-Related: [[cinematic-film-skill]], [[escapement-blender-short-film]]
+Related: [[2026-11-13-cinematic-film-skill]], [[2026-11-14-escapement-blender-short-film]]

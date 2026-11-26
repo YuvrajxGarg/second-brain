@@ -35,3 +35,7 @@ https://x.com/rewind02/status/2119821740058546282?a=4tYjy-hUHaGuRBuPsQw&s=20
 
 ## Notes
 - Related: [[2026-11-09-godot-waterfall-texture-array-shader]], [[2026-11-09-pixel-search-sprite-database]]
+- [[2026-11-11-procedural-arm-rig-demo]]: both rigging, animation
+- [[2026-11-18-metahuman-maker-agent-addon]]: both 3d-character, blender, mcp
+- [[2026-11-12-sharma-sweets-3d-shopfront]]: both 3d-character
+- [[2026-11-12-impossible-weapon-knight-animation]]: both animation

@@ -19,3 +19,4 @@ Saved as the reference for [[2026-11-10-revolio-labs-vfx-feature]]: "Like ladybu
 
 ## Notes
 Real URL is theladybug.app (not ladybug.app). Benchmark for [[2026-11-10-revolio-labs-vfx-feature]].
+- [[2026-11-11-ace-of-frames-reel]]: both video-editing

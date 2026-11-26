@@ -27,3 +27,4 @@ Brilliant art style for animations
 - Caption: "THE IMPOSSIBLE WEAPON. Made with @krea_ai. By INK and @pascal_gautier"
 - Read via Social Reader (caption + 4 video frames).
 - Related look: [[2026-11-09-blender-mcp-storybook-hero-workflow]]
+- [[2026-11-12-lens-focal-length-guide]]: both video-generation

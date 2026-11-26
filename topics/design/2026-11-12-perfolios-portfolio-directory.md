@@ -18,3 +18,5 @@ https://directoryyy.com/ A website directory. For inspiration, design, layouts, 
 
 ## Notes
 - Read via a page fetch (no screenshot: the site couldn't be opened in a browser from here). The directory itself is dark and minimal, with a chrome paperclip "p" logo.
+- [[2026-11-21-tabworthy-site-directory]]: both website
+- [[2026-11-12-people-of-bengaluru-site]]: both website

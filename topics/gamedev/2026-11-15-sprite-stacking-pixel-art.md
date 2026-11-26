@@ -21,4 +21,5 @@ The frame shows the car's top, side, front and back views with the caption "Each
 https://x.com/asynkimo/status/2121716250820964431
 
 ## Notes
-Related: [[pixel-search-sprite-database]], [[godot-waterfall-texture-array-shader]]
+Related: [[2026-11-09-pixel-search-sprite-database]], [[2026-11-09-godot-waterfall-texture-array-shader]]
+- [[2026-11-15-pixel-art-gaussian-splats]]: both pixel-art

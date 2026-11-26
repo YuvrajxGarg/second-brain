@@ -18,3 +18,7 @@ This second brain: every link, idea and reference he dumps in chat filed as one 
 
 ## Raw
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
+
+## Notes
+- [[2026-11-12-social-reader-mcp]]: names this note; both mcp, agents
+- [[2026-11-12-pxlvzn-label]]: made under PXLVZN label

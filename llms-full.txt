@@ -461,7 +461,7 @@ This is the GitHub repo he was talking about in the latest reel link I sent.
 (screenshot of a comment: https://github.com/heydamir/unslop)
 
 ## Notes
-From the reel: [[ai-slop-design-rules]]
+From the reel: [[2026-11-15-ai-slop-design-rules]]
 
 ============================================================
 Sprite stacking technique  (topics/gamedev/2026-11-15-sprite-stacking-pixel-art.md)
@@ -486,7 +486,8 @@ The frame shows the car's top, side, front and back views with the caption "Each
 https://x.com/asynkimo/status/2121716250820964431
 
 ## Notes
-Related: [[pixel-search-sprite-database]], [[godot-waterfall-texture-array-shader]]
+Related: [[2026-11-09-pixel-search-sprite-database]], [[2026-11-09-godot-waterfall-texture-array-shader]]
+- [[2026-11-15-pixel-art-gaussian-splats]]: both pixel-art
 
 ============================================================
 Raea render engine  (topics/ai/2026-11-15-raea-render-engine.md)
@@ -511,7 +512,7 @@ https://www.instagram.com/reel/DfvLYbgqpb2/?exln=MTIzcjkxOGZraGk1aw==
 https://raea.io/?utm_source=ig&utm_medium=social&utm_content=link_in_bio They are talking about this in the reel.
 
 ## Notes
-Related: [[cinematic-film-skill]], [[escapement-blender-short-film]]
+Related: [[2026-11-13-cinematic-film-skill]], [[2026-11-14-escapement-blender-short-film]]
 
 ============================================================
 Pixel-art gaussian splats  (topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md)
@@ -536,7 +537,7 @@ The frame shows the green lab: a tall central glass tank with a pink brain, ring
 https://x.com/JungleSilicon/status/2121782359901212987
 
 ## Notes
-Related: [[sprite-stacking-pixel-art]] (another way to give pixel art a 3D turn).
+Related: [[2026-11-15-sprite-stacking-pixel-art]] (another way to give pixel art a 3D turn).
 
 ============================================================
 Neural network data viz  (topics/design/2026-11-15-neural-network-data-viz.md)
@@ -589,7 +590,7 @@ The frame shows him holding up a dark "Morning run" app mockup: a big dot-matrix
 https://www.instagram.com/reel/Dfu-teMSFrr/?xtok=MW45cXQ1b3c2enB4aw==
 
 ## Notes
-The skill repo from the reel is [[unslop-ui-skill]] (github.com/heydamir/unslop). Related: [[astryx-design-system]], [[cinematic-film-skill]]
+The skill repo from the reel is [[2026-11-15-unslop-ui-skill]] (github.com/heydamir/unslop). Related: [[2026-11-10-astryx-design-system]], [[2026-11-13-cinematic-film-skill]]
 
 ============================================================
 Escapement Blender film  (topics/ai/2026-11-14-escapement-blender-short-film.md)
@@ -618,6 +619,7 @@ This is a cool 3D short film skill. It also has a link of the repo in the captio
 
 ## Notes
 Repo: https://github.com/Leonxlnx/escapement
+- [[2026-11-15-raea-render-engine]]: both agents
 
 ============================================================
 Viggle Remake model  (topics/ai/2026-11-13-viggle-remake-open-model.md)
@@ -647,6 +649,7 @@ Wiggle AI's open waits to recast anybody in a video.
 - Open weights: https://huggingface.co/Viggle/Viggle-Remake
 - Reel by @asharasjad; caption: "RECAST ANYONE IN YOUR VIDEO. FREE MODEL."
 - Useful for his video editing work (character swaps in footage).
+- [[2026-11-13-relayvsr-video-upscaler]]: both hugging-face, video-generation, video-editing
 
 ============================================================
 Unity bodycam hands  (topics/gamedev/2026-11-13-unity-bodycam-ik-hands.md)
@@ -947,6 +950,8 @@ For context, should we add like all the projects that I've already made with the
 ## Notes
 - Possibly the "Pixel utility engine" he mentioned. Has a Blender integration and Python/TS packages.
 - Fits his agent-native way of working: [[2026-11-09-blender-mcp-storybook-hero-workflow]].
+- [[2026-11-12-pxlvzn-label]]: made under PXLVZN label; both pxlvzn
+- [[2026-11-12-pxl-app-hub]]: both pxlvzn
 
 ============================================================
 Wedding co-op game  (topics/gamedev/2026-11-12-wedding-co-op-game.md)
@@ -1143,6 +1148,8 @@ If I ever make a disk utility app to remove cache and disk cleanup, this UI is r
 ## Notes
 - Read via Social Reader (post text + 4 video frames, 18.6 s video).
 - For: [[2026-11-12-disk-cleanup-app]]
+- [[2026-11-13-sleep-alarm-ui]]: both visual-design, ui
+- [[2026-11-12-tapmac-trackpad-app]]: both desktop-app
 
 ============================================================
 Stm stem splitter  (topics/tech/2026-11-12-stm-stem-splitter.md)
@@ -1237,6 +1244,8 @@ Art style reference for Tukaram Munde game.
 - Read via Social Reader (caption + one video frame).
 - For: [[2026-11-12-tukaram-munde-game]]
 - Related look: [[2026-11-09-blender-mcp-storybook-hero-workflow]]
+- [[2026-11-12-people-of-bengaluru-site]]: both indian-setting, 3d-art
+- [[2026-11-12-munde-mode-game]]: both indian-setting
 
 ============================================================
 Second Brain repo  (topics/productivity/2026-11-12-second-brain-repo.md)
@@ -1255,6 +1264,10 @@ This second brain: every link, idea and reference he dumps in chat filed as one 
 
 ## Raw
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
+
+## Notes
+- [[2026-11-12-social-reader-mcp]]: names this note; both mcp, agents
+- [[2026-11-12-pxlvzn-label]]: made under PXLVZN label
 
 ============================================================
 Saturday off tracker  (topics/business/2026-11-12-saturday-off-tracker.md)
@@ -1298,6 +1311,7 @@ SLANGDAQ, "the culture exchange": a stock market for internet slang. Players get
 
 ## Notes
 - Listed as a Revolio Labs game. Sister game: [[2026-11-12-peakd-game]].
+- [[2026-11-12-revolio-labs]]: made under Revolio Labs; both revolio-labs, browser-game
 
 ============================================================
 Runaway Light Rig  (topics/gamedev/2026-11-12-runaway-light-rig.md)
@@ -1338,6 +1352,7 @@ Rookwise ("chess, understood"): a local-first chess improvement workspace. Impor
 
 ## Notes
 - His workspace name on it is YuvrajXIX.
+- [[2026-11-12-pxlvzn-label]]: made under PXLVZN label; both pxlvzn
 
 ============================================================
 Rohit Learns Ball  (topics/gamedev/2026-11-12-rohit-learns-ball.md)
@@ -1360,6 +1375,7 @@ A fan-made pixel game: the Kasauli Tigers teach Rohit basketball the hard way. Y
 
 ## Notes
 - Riffs on the film Koi... Mil Gaya (Rohit, Jadoo, Kasauli).
+- [[2026-11-12-revolio-labs]]: made under Revolio Labs; both revolio-labs, browser-game
 
 ============================================================
 Revolio website  (topics/design/2026-11-12-revolio-website.md)
@@ -1584,6 +1600,8 @@ https://directoryyy.com/ A website directory. For inspiration, design, layouts, 
 
 ## Notes
 - Read via a page fetch (no screenshot: the site couldn't be opened in a browser from here). The directory itself is dark and minimal, with a chrome paperclip "p" logo.
+- [[2026-11-21-tabworthy-site-directory]]: both website
+- [[2026-11-12-people-of-bengaluru-site]]: both website
 
 ============================================================
 People of Bengaluru  (topics/design/2026-11-12-people-of-bengaluru-site.md)
@@ -1609,6 +1627,7 @@ insane idea , cool website
 ## Notes
 - Read via a page fetch, which only returned the page text (no screenshot: the 3D scene couldn't be opened in a browser from here). Dark slate theme, "PEOPLE OF / BENGALURU" set big in uppercase.
 - Related: [[2026-11-12-sharma-sweets-3d-shopfront]] (stylised 3D Indian street look), [[2026-11-12-perfolios-portfolio-directory]] (another people/portfolio directory)
+- [[2026-11-13-mohamed-siddique-flower-site]]: both website
 
 ============================================================
 PXLVZN label  (topics/tech/2026-11-12-pxlvzn-label.md)
@@ -1632,6 +1651,7 @@ PXLVZN (pxlvzn.in) is Yuvraj's own label for free, open-source desktop apps and 
 ## Notes
 - Apps: [[2026-11-12-pxl-app-hub]], [[2026-11-12-dwn-downloader]], [[2026-11-12-tag-ai-tag-remover]], [[2026-11-12-stm-stem-splitter]], [[2026-11-12-lut-colour-matcher]], [[2026-11-12-hop-file-transfer]], [[2026-11-12-canvasflow-whiteboard]], [[2026-11-12-pxlengine-3d-engine]].
 - Web: [[2026-11-12-punchline-party-game]], [[2026-11-12-rookwise-chess-app]], [[2026-11-12-bulkbros-gym-app]], [[2026-11-12-second-brain-repo]].
+- [[2026-11-13-dit-offload-checker-idea]]: both pxlvzn, desktop-app
 
 ============================================================
 PXL app hub  (topics/tech/2026-11-12-pxl-app-hub.md)
@@ -1753,6 +1773,7 @@ For context, should we add like all the projects that I've already made with the
 ## Notes
 - The idea and art refs: [[2026-11-12-tukaram-munde-game]], [[2026-11-12-sharma-sweets-3d-shopfront]].
 - Next up (from its TODO): waiter tray pose, fuller kitchens and storage, a room-focus camera, kitchen sounds.
+- [[2026-11-12-revolio-labs]]: made under Revolio Labs; both revolio-labs, browser-game
 
 ============================================================
 Meter Down concept  (topics/gamedev/2026-11-12-meter-down-concept.md)
@@ -1854,6 +1875,7 @@ Brilliant art style for animations
 - Caption: "THE IMPOSSIBLE WEAPON. Made with @krea_ai. By INK and @pascal_gautier"
 - Read via Social Reader (caption + 4 video frames).
 - Related look: [[2026-11-09-blender-mcp-storybook-hero-workflow]]
+- [[2026-11-12-lens-focal-length-guide]]: both video-generation
 
 ============================================================
 Idea Archive site  (topics/business/2026-11-12-idea-archive-site.md)
@@ -1877,6 +1899,7 @@ The Idea Archive ("Make some noise"): a visual archive of 25 original concepts a
 ## Notes
 - Vercel project name: godrej-futures-worth-making, so likely made for a brand pitch.
 - Deep dives: [[2026-11-12-npcs-on-strike-concept]], [[2026-11-12-the-outsider-concept]].
+- [[2026-11-12-revolio-media-studio]]: made under Revolio Media studio; both revolio
 
 ============================================================
 Hop file transfer  (topics/tech/2026-11-12-hop-file-transfer.md)
@@ -1898,6 +1921,7 @@ Hop: AirDrop for every device. Send files between Mac, PC and any phone's browse
 
 ## Notes
 - Related: [[2026-11-12-ferry-file-manager]]. Label: [[2026-11-12-pxlvzn-label]].
+- [[2026-11-13-dit-offload-checker-idea]]: both pxlvzn, desktop-app
 
 ============================================================
 Frame Tracker dashboard  (topics/tech/2026-11-12-frame-tracker-dashboard.md)
@@ -1939,6 +1963,7 @@ Ferry: a two-pane file manager for moving files between his Mac and Windows PC o
 
 ## Notes
 - He works across a Mac and a Windows PC. Related: [[2026-11-12-hop-file-transfer]].
+- [[2026-11-13-dit-offload-checker-idea]]: both desktop-app
 
 ============================================================
 Emergent pitch deck  (topics/business/2026-11-12-emergent-pitch-deck.md)
@@ -2160,6 +2185,8 @@ try w this link in a new thread'
 - Repo: https://github.com/apekshik/procedural-arm-rig
 - Read via the Social Reader connector (post text, 2-post thread, video frames).
 - Related: [[2026-11-09-blender-mcp-storybook-hero-workflow]]
+- [[2026-11-13-unity-bodycam-ik-hands]]: both rigging, animation
+- [[2026-11-11-ai-tween-paint-harness]]: both animation
 
 ============================================================
 Native Swift tip  (topics/tech/2026-11-11-native-swift-app-tip.md)
@@ -2238,6 +2265,7 @@ https://x.com/voxyz_ai/status/2120199820887593304?a=b908V0171pUheO52HyM&s=46
 ## Notes
 - Read via Social Reader (single post + image).
 - Related: [[2026-11-10-ship-mcp-server-tip]]
+- [[2026-11-13-claude-live-ui-comments]]: both workflow, claude
 
 ============================================================
 Captcha launch film  (topics/design/2026-11-11-captcha-launch-film.md)
@@ -2310,6 +2338,7 @@ Distribution:
 - Built ONE feature so good that people screenshot it without you asking?
 
 Related: [[2026-11-11-native-swift-app-tip]]
+- [[2026-11-11-tiktok-slideshow-app-marketing]]: both growth, mobile-app, marketing
 
 ============================================================
 Ace Of Frames reel  (topics/design/2026-11-11-ace-of-frames-reel.md)
@@ -2340,6 +2369,7 @@ cool visual design
 - Studio site: https://aceoframes.com
 - Read via Social Reader (2-post thread + video frames).
 - Related: [[2026-11-10-ladybug-vfx-app]]
+- [[2026-11-11-captcha-launch-film]]: both visual-design
 
 ============================================================
 AI tween harness  (topics/design/2026-11-11-ai-tween-paint-harness.md)
@@ -2445,6 +2475,8 @@ Add this to my ideas or a to-do list for Revolio Labs. I need to make a ladybug.
 ## Notes
 - Reference: [[2026-11-10-ladybug-vfx-app]] (theladybug.app)
 - Features worth copying first: effect layers (halftone, ASCII, dither, glitch), keyframes, webcam/hand tracking, 4K and transparent export.
+- [[2026-11-12-revolio-labs]]: both revolio-labs
+- [[2026-11-12-revolio-labs-app]]: both revolio-labs
 
 ============================================================
 Polyfork 3D assets  (topics/gamedev/2026-11-10-polyfork-3d-assets.md)
@@ -2495,6 +2527,7 @@ https://x.com/rehan_shei/status/2119855388988518794?a=qlXTpSq4hRphE0FQXIw&s=46
 
 ## Notes
 Related: [[2026-11-09-pixel-search-sprite-database]], [[2026-11-09-blender-mcp-storybook-hero-workflow]]
+- [[2026-11-10-polyfork-3d-assets]]: both game-assets, mcp
 
 ============================================================
 Ladybug VFX app  (topics/design/2026-11-10-ladybug-vfx-app.md)
@@ -2517,6 +2550,7 @@ Saved as the reference for [[2026-11-10-revolio-labs-vfx-feature]]: "Like ladybu
 
 ## Notes
 Real URL is theladybug.app (not ladybug.app). Benchmark for [[2026-11-10-revolio-labs-vfx-feature]].
+- [[2026-11-11-ace-of-frames-reel]]: both video-editing
 
 ============================================================
 Intelligence is adaptability  (topics/life/2026-11-10-intelligence-is-adaptability.md)
@@ -2666,6 +2700,7 @@ https://huggingface.co/spaces/cfahlgren1/pixel-search
 found this cool sprites database for games i build
 
 ## Notes
+- [[2026-11-15-sprite-stacking-pixel-art]]: both sprites, pixel-art
 
 ============================================================
 MyCountryMogsYours game  (topics/gamedev/2026-11-09-my-country-mogs-yours.md)
@@ -2690,6 +2725,8 @@ this was a cool browser game i found
 not misc
 
 ## Notes
+- [[2026-11-09-thechase500-cricket-chase-game]]: both game-inspiration, browser-game
+- [[2026-11-09-cricle-daily-cricket-guessing-game]]: both game-inspiration, browser-game
 
 ============================================================
 Godot waterfall shader  (topics/gamedev/2026-11-09-godot-waterfall-texture-array-shader.md)
@@ -2717,6 +2754,8 @@ https://x.com/ushadersbible/status/2119673988464922969?a=s-74g2GGB1j52MU2CyE&s=2
 ## Notes
 - Book: Complete Godot VFX Handbook, jettelly.com/store
 - Related: [[2026-11-09-pixel-search-sprite-database]] (2D game assets)
+- [[2026-11-11-lastmaglab-top-down-shooter]]: both godot, vfx
+- [[2026-11-15-sprite-stacking-pixel-art]]: both godot, tutorial
 
 ============================================================
 Goalkeeper editor joke  (topics/life/2026-11-09-goalkeeper-saving-things-in-post.md)
@@ -2759,6 +2798,8 @@ fun cricket browser games
 
 ## Notes
 - Related: [[2026-11-09-thechase500-cricket-chase-game]], [[2026-11-09-my-country-mogs-yours]]
+- [[2026-11-12-sixer-cricket-game]]: both cricket, browser-game
+- [[2026-11-12-peakd-game]]: both daily-challenge, browser-game
 
 ============================================================
 Blender storybook hero  (topics/gamedev/2026-11-09-blender-mcp-storybook-hero-workflow.md)
@@ -2797,6 +2838,10 @@ https://x.com/rewind02/status/2119821740058546282?a=4tYjy-hUHaGuRBuPsQw&s=20
 
 ## Notes
 - Related: [[2026-11-09-godot-waterfall-texture-array-shader]], [[2026-11-09-pixel-search-sprite-database]]
+- [[2026-11-11-procedural-arm-rig-demo]]: both rigging, animation
+- [[2026-11-18-metahuman-maker-agent-addon]]: both 3d-character, blender, mcp
+- [[2026-11-12-sharma-sweets-3d-shopfront]]: both 3d-character
+- [[2026-11-12-impossible-weapon-knight-animation]]: both animation
 
 ============================================================
 500-0 game  (topics/gamedev/2026-11-09-thechase500-cricket-chase-game.md)
@@ -2820,3 +2865,4 @@ fun cricket browser games
 
 ## Notes
 - Related: [[2026-11-09-cricle-daily-cricket-guessing-game]], [[2026-11-09-my-country-mogs-yours]]
+- [[2026-11-12-sixer-cricket-game]]: both cricket, browser-game

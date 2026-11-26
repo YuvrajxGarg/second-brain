@@ -20,4 +20,4 @@ The frame shows him holding up a dark "Morning run" app mockup: a big dot-matrix
 https://www.instagram.com/reel/Dfu-teMSFrr/?xtok=MW45cXQ1b3c2enB4aw==
 
 ## Notes
-The skill repo from the reel is [[unslop-ui-skill]] (github.com/heydamir/unslop). Related: [[astryx-design-system]], [[cinematic-film-skill]]
+The skill repo from the reel is [[2026-11-15-unslop-ui-skill]] (github.com/heydamir/unslop). Related: [[2026-11-10-astryx-design-system]], [[2026-11-13-cinematic-film-skill]]

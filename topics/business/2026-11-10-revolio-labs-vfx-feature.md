@@ -20,3 +20,5 @@ Add this to my ideas or a to-do list for Revolio Labs. I need to make a ladybug.
 ## Notes
 - Reference: [[2026-11-10-ladybug-vfx-app]] (theladybug.app)
 - Features worth copying first: effect layers (halftone, ASCII, dither, glitch), keyframes, webcam/hand tracking, 4K and transparent export.
+- [[2026-11-12-revolio-labs]]: both revolio-labs
+- [[2026-11-12-revolio-labs-app]]: both revolio-labs

@@ -24,3 +24,5 @@ https://x.com/ushadersbible/status/2119673988464922969?a=s-74g2GGB1j52MU2CyE&s=2
 ## Notes
 - Book: Complete Godot VFX Handbook, jettelly.com/store
 - Related: [[2026-11-09-pixel-search-sprite-database]] (2D game assets)
+- [[2026-11-11-lastmaglab-top-down-shooter]]: both godot, vfx
+- [[2026-11-15-sprite-stacking-pixel-art]]: both godot, tutorial

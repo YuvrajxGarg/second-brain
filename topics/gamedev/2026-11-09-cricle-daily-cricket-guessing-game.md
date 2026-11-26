@@ -20,3 +20,5 @@ fun cricket browser games
 
 ## Notes
 - Related: [[2026-11-09-thechase500-cricket-chase-game]], [[2026-11-09-my-country-mogs-yours]]
+- [[2026-11-12-sixer-cricket-game]]: both cricket, browser-game
+- [[2026-11-12-peakd-game]]: both daily-challenge, browser-game

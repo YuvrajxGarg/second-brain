@@ -23,3 +23,4 @@ https://x.com/voxyz_ai/status/2120199820887593304?a=b908V0171pUheO52HyM&s=46
 ## Notes
 - Read via Social Reader (single post + image).
 - Related: [[2026-11-10-ship-mcp-server-tip]]
+- [[2026-11-13-claude-live-ui-comments]]: both workflow, claude

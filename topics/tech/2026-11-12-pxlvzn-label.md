@@ -23,3 +23,4 @@ PXLVZN (pxlvzn.in) is Yuvraj's own label for free, open-source desktop apps and 
 ## Notes
 - Apps: [[2026-11-12-pxl-app-hub]], [[2026-11-12-dwn-downloader]], [[2026-11-12-tag-ai-tag-remover]], [[2026-11-12-stm-stem-splitter]], [[2026-11-12-lut-colour-matcher]], [[2026-11-12-hop-file-transfer]], [[2026-11-12-canvasflow-whiteboard]], [[2026-11-12-pxlengine-3d-engine]].
 - Web: [[2026-11-12-punchline-party-game]], [[2026-11-12-rookwise-chess-app]], [[2026-11-12-bulkbros-gym-app]], [[2026-11-12-second-brain-repo]].
+- [[2026-11-13-dit-offload-checker-idea]]: both pxlvzn, desktop-app

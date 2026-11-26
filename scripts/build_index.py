@@ -12,6 +12,7 @@ Writes:
                       profile above it is written by hand (by Claude) and kept
   llms.txt            entry point for AI tools (llmstxt.org format)
   llms-full.txt       the whole brain in one file, for pasting into any chat
+  LINKS.md            link health report, via scripts/link_doctor.py (report only)
 """
 import re
 from collections import Counter, defaultdict
@@ -337,3 +338,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # link health report (LINKS.md + site/data/links.json); report only, never edits notes
+    try:
+        import link_doctor
+        link_doctor.main()
+    except Exception as err:  # never block a build on the report
+        print("link doctor skipped:", err)

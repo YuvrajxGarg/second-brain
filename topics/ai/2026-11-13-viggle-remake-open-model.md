@@ -26,3 +26,4 @@ Wiggle AI's open waits to recast anybody in a video.
 - Open weights: https://huggingface.co/Viggle/Viggle-Remake
 - Reel by @asharasjad; caption: "RECAST ANYONE IN YOUR VIDEO. FREE MODEL."
 - Useful for his video editing work (character swaps in footage).
+- [[2026-11-13-relayvsr-video-upscaler]]: both hugging-face, video-generation, video-editing

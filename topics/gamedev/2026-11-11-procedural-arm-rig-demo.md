@@ -27,3 +27,5 @@ try w this link in a new thread'
 - Repo: https://github.com/apekshik/procedural-arm-rig
 - Read via the Social Reader connector (post text, 2-post thread, video frames).
 - Related: [[2026-11-09-blender-mcp-storybook-hero-workflow]]
+- [[2026-11-13-unity-bodycam-ik-hands]]: both rigging, animation
+- [[2026-11-11-ai-tween-paint-harness]]: both animation

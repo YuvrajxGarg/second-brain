@@ -26,3 +26,5 @@ If I ever make a disk utility app to remove cache and disk cleanup, this UI is r
 ## Notes
 - Read via Social Reader (post text + 4 video frames, 18.6 s video).
 - For: [[2026-11-12-disk-cleanup-app]]
+- [[2026-11-13-sleep-alarm-ui]]: both visual-design, ui
+- [[2026-11-12-tapmac-trackpad-app]]: both desktop-app

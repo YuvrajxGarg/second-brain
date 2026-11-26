@@ -28,3 +28,5 @@ Art style reference for Tukaram Munde game.
 - Read via Social Reader (caption + one video frame).
 - For: [[2026-11-12-tukaram-munde-game]]
 - Related look: [[2026-11-09-blender-mcp-storybook-hero-workflow]]
+- [[2026-11-12-people-of-bengaluru-site]]: both indian-setting, 3d-art
+- [[2026-11-12-munde-mode-game]]: both indian-setting

@@ -21,3 +21,4 @@ Rookwise ("chess, understood"): a local-first chess improvement workspace. Impor
 
 ## Notes
 - His workspace name on it is YuvrajXIX.
+- [[2026-11-12-pxlvzn-label]]: made under PXLVZN label; both pxlvzn

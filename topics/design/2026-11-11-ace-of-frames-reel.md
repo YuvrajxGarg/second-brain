@@ -27,3 +27,4 @@ cool visual design
 - Studio site: https://aceoframes.com
 - Read via Social Reader (2-post thread + video frames).
 - Related: [[2026-11-10-ladybug-vfx-app]]
+- [[2026-11-11-captcha-launch-film]]: both visual-design

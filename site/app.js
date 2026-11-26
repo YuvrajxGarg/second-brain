@@ -806,10 +806,10 @@
     document.body.classList.remove("panel-open");
     panel.setAttribute("aria-hidden", "true");
   }
-  function noteRow(id, extra) {
+  function noteRow(id, extra, tip) {
     const n = byId.get(id);
     if (!n) return "";
-    return `<li data-go="${esc(n.id)}"><span class="sq" style="background:${n.color}"></span><span class="l-t">${esc(n.label)}</span><span class="l-k">${esc(extra || n.code)}</span></li>`;
+    return `<li data-go="${esc(n.id)}"${tip ? ` title="${esc(tip)}"` : ""}><span class="sq" style="background:${n.color}"></span><span class="l-t">${esc(n.label)}</span><span class="l-k">${esc(extra || n.code)}</span></li>`;
   }
   function openPanel(n) {
     editor.node = null; editor.file = null;
@@ -834,8 +834,22 @@
       </dl>`;
       html += `<div class="chips">${n.tags.map((t) => `<button class="chip" data-go="g:${esc(t)}"><span class="c">#</span>${esc(t)}</button>`).join("")}</div>`;
       html += `<article class="md">${raw}</article>`;
-      if (n.near && n.near.length) {
-        html += `<div class="md"><h2>Connected</h2></div><ul class="list">${n.near.map(([id, s]) => noteRow(id, s >= 3 ? "LINKED" : `${s} SHARED`)).join("")}</ul>`;
+      // links both ways (backlinks), unlinked mentions and Link Doctor suggestions
+      const out = new Set(n.related || []), back = new Set(n.backlinks || []);
+      const linked = [...new Set([...out, ...back])].filter((s) => byId.has("n:" + s));
+      if (linked.length) {
+        const dir = (s) => (out.has(s) && back.has(s) ? "BOTH WAYS" : out.has(s) ? "LINKS TO" : "LINKED FROM");
+        html += `<div class="md"><h2>Links</h2></div><ul class="list">${linked.map((s) => noteRow("n:" + s, dir(s))).join("")}</ul>`;
+      }
+      const ment = (n.mentions || []).filter((s) => byId.has("n:" + s) && !out.has(s) && !back.has(s));
+      if (ment.length) html += `<div class="md"><h2>Unlinked mentions</h2></div><ul class="list">${ment.map((s) => noteRow("n:" + s, "NAMES THIS")).join("")}</ul>`;
+      const sug = (n.suggest || []).filter(([s]) => byId.has("n:" + s));
+      if (sug.length) {
+        html += `<div class="md"><h2>Might relate</h2></div><ul class="list">${sug.map(([s, sc, why]) => noteRow("n:" + s, `${Math.round(sc * 100)}% MATCH`, why)).join("")}</ul>`;
+      } else {
+        const shown = new Set([...linked, ...ment].map((s) => "n:" + s));
+        const near = (n.near || []).filter(([id]) => !shown.has(id)).slice(0, 6);
+        if (near.length) html += `<div class="md"><h2>Shares tags with</h2></div><ul class="list">${near.map(([id, sc]) => noteRow(id, `${sc} SHARED`)).join("")}</ul>`;
       }
     } else {
       const notes = [...adj.get(n.id)].map((id) => byId.get(id)).filter((m) => m.kind === "note").sort((a, b) => (b.added || "").localeCompare(a.added || ""));
