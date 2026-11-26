@@ -4,6 +4,8 @@
 #   brain-capture.ps1 -Mode snip     opens the Snipping Tool overlay, sends the snip
 #   brain-capture.ps1 -Mode type     a box to type a thought
 #   brain-capture.ps1 -Mode test     check the key works
+#   brain-capture.ps1 -Mode file <paths>   used by Explorer's "Send to > Second Brain":
+#                                    images are sent as images, text files as text
 # Add -NoNote to skip the "Add a note" box.
 #
 # Needs Windows PowerShell 5.1 (built in) in STA mode, which is its default. The key is
@@ -11,8 +13,9 @@
 # writes it). The tray app (brain-tray.ps1) dot-sources this file and calls Send-Brain.
 
 param(
-  [ValidateSet("clip", "snip", "type", "test", "none")] [string] $Mode = "none",
-  [switch] $NoNote
+  [ValidateSet("clip", "snip", "type", "test", "file", "none")] [string] $Mode = "none",
+  [switch] $NoNote,
+  [Parameter(ValueFromRemainingArguments = $true)] [string[]] $Paths
 )
 
 Add-Type -AssemblyName System.Windows.Forms, System.Drawing, Microsoft.VisualBasic
@@ -110,9 +113,35 @@ function Send-Brain {
   }
 }
 
-function Invoke-BrainCapture([string] $Mode, [switch] $NoNote, [switch] $Quiet) {
+# One capture per file: images as images, text-like files as their text, anything else by name.
+function Send-BrainFiles([string[]] $Paths, [switch] $NoNote) {
+  $files = @($Paths | Where-Object { $_ -and (Test-Path -LiteralPath $_ -PathType Leaf) })
+  if (-not $files.Count) { return "Nothing to save." }
+  $note = if ($NoNote) { "" } else { Read-BrainNote ("Add a note for " + $(if ($files.Count -eq 1) { [IO.Path]::GetFileName($files[0]) } else { "$($files.Count) files" }) + " (optional).") }
+  $msgs = foreach ($f in $files) {
+    $name = [IO.Path]::GetFileName($f)
+    if ($f -match '\.(png|jpe?g|gif|bmp|webp|tiff?)$') {
+      $img = [System.Drawing.Image]::FromFile($f)
+      try { Send-Brain -Text "" -Image $img -Note $note -Via "Windows Send to" } finally { $img.Dispose() }
+    } elseif ($f -match '\.(txt|md|markdown|url|csv|json|log)$') {
+      $t = Get-Content -LiteralPath $f -Raw -Encoding UTF8
+      if ($f -match '\.url$' -and $t -match 'URL=(\S+)') { $t = $Matches[1] }
+      Send-Brain -Text $t -Note $note -Via "Windows Send to"
+    } else {
+      Send-Brain -Text "File: $name" -Note $note -Via "Windows Send to"
+    }
+  }
+  return ($msgs -join "`n")
+}
+
+function Invoke-BrainCapture([string] $Mode, [switch] $NoNote, [switch] $Quiet, [string[]] $Paths) {
   $text = ""; $img = $null; $via = "Windows hotkey"
   switch ($Mode) {
+    "file" {
+      $msg = Send-BrainFiles -Paths $Paths -NoNote:$NoNote
+      if (-not $Quiet) { Show-BrainToast $msg }
+      return $msg
+    }
     "test" {
       try {
         $r = Invoke-WebRequest -Uri $script:BrainEndpoint -UseBasicParsing -TimeoutSec 15 -Headers @{ Authorization = "Bearer $(Get-BrainKey)" }
@@ -135,4 +164,4 @@ function Invoke-BrainCapture([string] $Mode, [switch] $NoNote, [switch] $Quiet) 
   return $msg
 }
 
-if ($Mode -ne "none") { Invoke-BrainCapture -Mode $Mode -NoNote:$NoNote }
+if ($Mode -ne "none") { Invoke-BrainCapture -Mode $Mode -NoNote:$NoNote -Paths $Paths }

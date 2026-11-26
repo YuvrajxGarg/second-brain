@@ -14,7 +14,8 @@ is filed; your note gets added to the existing one instead.
 | iPhone | **Save to Brain** in the Share Sheet (links, text, screenshots, photos) | 5 min |
 | iPhone | **Brain voice note** on the Action Button (speak, it's transcribed and saved) | 3 min |
 | Mac | ⌃⌥⌘B saves the clipboard, ⌃⌥⇧⌘B takes a screenshot and saves it | 5 min |
-| Windows | Ctrl+Alt+B saves the clipboard, Ctrl+Alt+Shift+B snips, orange **B** tray icon | 3 min |
+| Mac | Right-click → **Save to Brain** in any app (selected text, links, images in Finder) | 1 min |
+| Windows | Ctrl+Alt+B saves the clipboard, Ctrl+Alt+Shift+B snips, orange **B** tray icon, right-click → **Send to → Second Brain** for files | 3 min |
 
 ## Your key
 
@@ -156,6 +157,23 @@ switches to picking a window).
 
 Other modes: `brain-capture.sh text "some thought"` and `--no-note` to skip the box.
 
+## Mac: right-click "Save to Brain" (no hotkey needed)
+
+Your iPhone **Save to Brain** shortcut syncs to the Mac through iCloud. Turn it into a
+right-click item:
+
+1. Open the **Shortcuts** app on the Mac, double-click **Save to Brain**, click **ⓘ**
+   (Shortcut Details, top right) and tick **Use as Quick Action**, then **Finder** and
+   **Services Menu**.
+2. Use it:
+   - **Selected text or a link in any app:** select it → right-click → **Services → Save
+     to Brain** (on some apps it's listed straight in the menu).
+   - **An image file in Finder:** right-click → **Quick Actions → Save to Brain**.
+   - **Safari / Chrome page:** Share → Save to Brain, or the browser extension's
+     right-click *Save to Second Brain*.
+3. If Save to Brain doesn't show under Services: **System Settings → Keyboard → Keyboard
+   Shortcuts → Services → Text** and tick it.
+
 ## Windows: hotkeys and tray icon
 
 1. Open **PowerShell** (Start → type PowerShell) and paste, one time:
@@ -176,6 +194,13 @@ Other modes: `brain-capture.sh text "some thought"` and `--no-note` to skip the 
 
    A small box asks for an optional note each time (Enter to skip). A notification says
    "Saved to inbox: ...".
+
+**Right-click files:** in File Explorer, right-click an image or a text file → **Send to →
+Second Brain** (Windows 11: **Show more options** first, or Shift+right-click). Images go
+as images, `.txt`/`.md`/`.url` files as their text. For pages, links, images and selected
+text in the browser, use the browser extension's right-click *Save to Second Brain*
+([tools/quick-capture](../quick-capture/)). Windows has no right-click menu that works
+in every app, so the clipboard hotkey covers the rest.
 
 The hotkeys are Start Menu shortcuts (Start → Second Brain), so to change one,
 right-click it → Open file location → Properties → Shortcut key. Hotkeys can take a

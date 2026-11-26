@@ -1,7 +1,8 @@
 # One-time Windows setup. In PowerShell:
 #   powershell -ExecutionPolicy Bypass -File install.ps1
 # Copies the scripts to %LOCALAPPDATA%\BrainCapture, saves your capture key, makes the
-# hotkeys (Start Menu shortcuts) and starts the tray icon now and at every login.
+# hotkeys (Start Menu shortcuts), adds "Send to > Second Brain" to Explorer's right-click
+# menu, and starts the tray icon now and at every login.
 
 $ErrorActionPreference = "Stop"
 $dest = Join-Path $env:LOCALAPPDATA "BrainCapture"
@@ -37,6 +38,8 @@ New-Link (Join-Path $start "Brain - save clipboard.lnk") "-File `"$dest\brain-ca
 New-Link (Join-Path $start "Brain - snip.lnk") "-File `"$dest\brain-capture.ps1`" -Mode snip" "CTRL+ALT+SHIFT+B"
 New-Link (Join-Path $start "Brain - tray.lnk") "-File `"$dest\brain-tray.ps1`"" ""
 New-Link (Join-Path ([Environment]::GetFolderPath("Startup")) "Brain tray.lnk") "-File `"$dest\brain-tray.ps1`"" ""
+# Right-click a file in Explorer > Send to > Second Brain (Windows 11: "Show more options" first).
+New-Link (Join-Path ([Environment]::GetFolderPath("SendTo")) "Second Brain.lnk") "-File `"$dest\brain-capture.ps1`" -Mode file" ""
 
 Write-Host "Testing the key..."
 & $ps -NoProfile -ExecutionPolicy Bypass -STA -File "$dest\brain-capture.ps1" -Mode test
