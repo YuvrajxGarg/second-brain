@@ -38,24 +38,48 @@ actions in order (search for each name in the action search bar):
    Sheet**. Back in the editor, the first block now reads *Receive **Any** input from
    **Share Sheet***. Tap **Any** and keep only **Images**, **Text** and **URLs**. Tap
    *If there's no input: **Continue*** and pick **Get Clipboard**.
-2. **Get Images from Input** (input: *Shortcut Input*).
-3. **Get Item from List**: *First Item* from *Images*.
-4. **If** *Item from List* **has any value**:
-   - **Convert Image**: *Item from List* to **JPEG** (tap the arrow: Quality about 0.7,
-     Preserve Metadata off).
-   - **Resize Image**: *Converted Image* to width **1600** (height *Auto*).
-   - **Base64 Encode**: *Resized Image*. Tap the arrow → Line Breaks: **None**.
-   - **Otherwise**: leave empty. **End If**.
+2. **Get URLs from Input** (input: *Shortcut Input*). This only reads a shared link;
+   it doesn't open it.
+3. **If** *URLs* **does not have any value** (so a shared link never gets opened to look
+   for pictures: Instagram, X and YouTube links bounce to their apps and the shortcut
+   fails with "Redirection to URL with a scheme that is not HTTP(S)"). Inside it:
+   - **Get Images from Input** (input: *Shortcut Input*).
+   - **Get Item from List**: *First Item* from *Images*.
+   - **If** *Item from List* **has any value**:
+     - **Convert Image**: *Item from List* to **JPEG** (tap the arrow: Quality about 0.7,
+       Preserve Metadata off).
+     - **Resize Image**: *Converted Image* to width **1600** (height *Auto*).
+     - **Base64 Encode**: *Resized Image*. Tap the arrow → Line Breaks: **None**.
+     - **Otherwise**: leave empty. **End If**.
+4. **Otherwise**: leave empty. **End If** (the outer one).
+
+   It reads:
+   ```
+   Get URLs from Shortcut Input
+   If URLs does not have any value
+      Get Images from Shortcut Input
+      Get First Item from Images
+      If Item from List has any value
+         Convert Item from List to JPEG
+         Resize Converted Image to 1600 x Auto
+         Base64 Encode Resized Image
+      Otherwise
+      End If
+   Otherwise
+   End If
+   ```
 5. **Ask for Input**: Text, prompt `Why save this? (optional)`. You can leave it blank
    when it asks.
 6. **Get Contents of URL**: URL `https://brainy.pxlvzn.in/api/capture`. Tap the arrow:
    - Method: **POST**
    - Headers → Add new header: Key `Authorization`, Text `Bearer YOUR_KEY`
-     (the word Bearer, a space, then your key)
+     (the word Bearer, a space, then your key). Only this one header: an empty
+     extra header row makes the request fail with "network connection was lost".
    - Request Body: **JSON**, then add four Text fields:
      - `text` → *Shortcut Input* (pick it from the variables bar)
      - `note` → *Provided Input*
-     - `image` → *If Result*
+     - `image` → *If Result* of the inner If (tap **Select Variable**, then the inner
+       **End If** block)
      - `via` → `iPhone share sheet`
 7. **Show Notification**: *Contents of URL*.
 
