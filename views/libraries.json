@@ -1,0 +1,12 @@
+{
+  "name": "Libraries and assets",
+  "about": "UI kits, packages and asset sources to build with.",
+  "layout": "table",
+  "filter": {
+    "kind": [
+      "library",
+      "asset-source"
+    ]
+  },
+  "sort": "added-desc"
+}

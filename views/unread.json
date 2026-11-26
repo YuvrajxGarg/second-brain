@@ -1,0 +1,11 @@
+{
+  "name": "Unread",
+  "about": "Saved but not looked at again yet.",
+  "layout": "gallery",
+  "filter": {
+    "status": [
+      "unread"
+    ]
+  },
+  "sort": "added-asc"
+}

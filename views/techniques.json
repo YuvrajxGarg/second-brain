@@ -1,0 +1,12 @@
+{
+  "name": "Techniques",
+  "about": "How-tos, workflows and advice to reuse.",
+  "layout": "table",
+  "filter": {
+    "kind": [
+      "technique",
+      "advice"
+    ]
+  },
+  "sort": "added-desc"
+}

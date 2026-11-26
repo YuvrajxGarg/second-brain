@@ -20,6 +20,7 @@
 //   { action: "link", a, b, reasonA?, reasonB? } -> { ok, commit, changed } (Link Doctor: link two notes both ways)
 //   { action: "unlink", a, b }                   -> { ok, commit, changed } (remove the link both ways, ## Notes only)
 //   { action: "dismiss", a, b, why? }            -> { ok, commit }          (links/dismissed.json: stop proposing this pair)
+//   { action: "board", path, content, sha? }     -> { ok, commit, sha }     (canvases/<id>.canvas or views/<id>.json)
 // Only notes under topics/<topic>/ or inbox/ can be touched. Deleting a note also
 // removes its images/videos (files with the same name). One change = one commit.
 
@@ -220,6 +221,22 @@ module.exports = async function handler(req, res) {
       try { current = await getFile(LOOK_PATH); } catch (e) { if (e.status !== 404) throw e; }
       const r = await gh("PUT", `/contents/${LOOK_PATH}`, { message: "site: graph look (from site)", content: b64(content), sha: current?.sha, branch: BRANCH });
       return send(res, 200, { ok: true, commit: r.commit.sha });
+    }
+
+    // Canvas moodboards and saved gallery/table views: small JSON files, one commit each.
+    if (action === "board") {
+      const p = String(body.path || "");
+      if (!/^(canvases\/[a-z0-9][a-z0-9-]{0,60}\.canvas|views\/[a-z0-9][a-z0-9-]{0,60}\.json)$/.test(p)) return send(res, 400, { error: "Bad board path." });
+      let data;
+      try { data = JSON.parse(String(body.content || "")); } catch { return send(res, 400, { error: "Board is not valid JSON." }); }
+      const content = JSON.stringify(data, null, 2) + "\n";
+      if (Buffer.byteLength(content) > MAX_BYTES) return send(res, 413, { error: "Board is too big." });
+      let cur = null;
+      try { cur = await getFile(p); } catch (e) { if (e.status !== 404) throw e; }
+      if (cur && body.sha && cur.sha !== body.sha) return send(res, 409, { error: "This board changed on GitHub since you opened it. Reload and try again." });
+      const kind = p.startsWith("canvases/") ? "canvas" : "view";
+      const r = await gh("PUT", `/contents/${enc(p)}`, { message: `${kind}: ${label(body.title, p.split("/").pop())} (from site)`, content: b64(content), sha: cur?.sha, branch: BRANCH });
+      return send(res, 200, { ok: true, commit: r.commit.sha, sha: r.content.sha });
     }
 
     // Link Doctor: link / unlink two notes (both ways), or dismiss a proposed pair.

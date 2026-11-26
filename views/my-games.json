@@ -1,0 +1,14 @@
+{
+  "name": "My games",
+  "about": "Games you built or planned.",
+  "layout": "gallery",
+  "filter": {
+    "kind": [
+      "project"
+    ],
+    "topic": [
+      "gamedev"
+    ]
+  },
+  "sort": "added-desc"
+}

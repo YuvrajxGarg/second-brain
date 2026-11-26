@@ -26,6 +26,9 @@ generic defaults.
    synced from his own vault. Read these before working on one of his projects.
 5. **Notes** in `topics/<topic>/YYYY-MM-DD-<slug>.md` for full detail. Images sit
    next to their note with the same name and are described in words.
+6. **Moodboards** in `canvases/*.canvas` (JSON Canvas: cards point at note paths, with
+   his own text cards and arrows) and **saved views** in `views/*.json` (filters he uses
+   to slice the brain). A moodboard is the clearest picture of a look he is going for.
 
 Other entry points: [llms.txt](llms.txt) (index in llmstxt.org format),
 `llms-full.txt` (everything in one file, generated), [INDEX.md](INDEX.md) by

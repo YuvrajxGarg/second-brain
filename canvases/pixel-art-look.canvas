@@ -1,0 +1,133 @@
+{
+  "nodes": [
+    {
+      "id": "g-look",
+      "type": "group",
+      "label": "THE LOOK",
+      "x": -40,
+      "y": -80,
+      "width": 1060,
+      "height": 420,
+      "color": "6"
+    },
+    {
+      "id": "captcha",
+      "type": "file",
+      "file": "topics/design/2026-11-11-captcha-launch-film.md",
+      "x": 0,
+      "y": -20,
+      "width": 300,
+      "height": 260
+    },
+    {
+      "id": "ace",
+      "type": "file",
+      "file": "topics/design/2026-11-11-ace-of-frames-reel.md",
+      "x": 340,
+      "y": -20,
+      "width": 300,
+      "height": 260
+    },
+    {
+      "id": "splats",
+      "type": "file",
+      "file": "topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md",
+      "x": 680,
+      "y": -20,
+      "width": 300,
+      "height": 260
+    },
+    {
+      "id": "g-how",
+      "type": "group",
+      "label": "HOW TO BUILD IT",
+      "x": -40,
+      "y": 400,
+      "width": 1060,
+      "height": 360,
+      "color": "4"
+    },
+    {
+      "id": "stack",
+      "type": "file",
+      "file": "topics/gamedev/2026-11-15-sprite-stacking-pixel-art.md",
+      "x": 680,
+      "y": 460,
+      "width": 300,
+      "height": 260
+    },
+    {
+      "id": "sprites",
+      "type": "file",
+      "file": "topics/gamedev/2026-11-09-pixel-search-sprite-database.md",
+      "x": 340,
+      "y": 460,
+      "width": 300,
+      "height": 200
+    },
+    {
+      "id": "stickers",
+      "type": "file",
+      "file": "topics/design/2026-11-13-stick-it-up-stickers.md",
+      "x": 0,
+      "y": 460,
+      "width": 300,
+      "height": 200
+    },
+    {
+      "id": "g-made",
+      "type": "group",
+      "label": "ALREADY MADE",
+      "x": 1080,
+      "y": 400,
+      "width": 380,
+      "height": 360,
+      "color": "5"
+    },
+    {
+      "id": "rohit",
+      "type": "file",
+      "file": "topics/gamedev/2026-11-12-rohit-learns-ball.md",
+      "x": 1120,
+      "y": 460,
+      "width": 300,
+      "height": 200
+    },
+    {
+      "id": "palette",
+      "type": "text",
+      "x": 1080,
+      "y": -80,
+      "width": 380,
+      "height": 420,
+      "color": "2",
+      "text": "## Palette and rules\n\n- Chunky, flat pixel art\n- Two or three colours: **orange, blue, periwinkle**\n- Pixel cursors and UI bits\n- In 3D: tiny dioramas on black, one hue + one accent, still crisp while the camera orbits\n\n_From TASTE.md. Drag notes in from + NOTE to grow this board._"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "fromNode": "stack",
+      "fromSide": "top",
+      "toNode": "splats",
+      "toSide": "bottom",
+      "label": "same 3D pixel look"
+    },
+    {
+      "id": "e2",
+      "fromNode": "sprites",
+      "fromSide": "right",
+      "toNode": "rohit",
+      "toSide": "left",
+      "label": "assets for the next one"
+    },
+    {
+      "id": "e3",
+      "fromNode": "captcha",
+      "fromSide": "right",
+      "toNode": "ace",
+      "toSide": "left",
+      "label": "same mascots"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Tools",
+  "about": "Apps and services you saved to use or benchmark.",
+  "layout": "table",
+  "filter": {
+    "kind": [
+      "tool"
+    ]
+  },
+  "sort": "added-desc"
+}

@@ -37,6 +37,8 @@ site/                   the graph website (static, deployed on Vercel)
 vercel.json             Vercel build config (runs build_index.py + build_graph.mjs, serves site/)
 suggestions/            daily build ideas from the 9 AM scheduled task (see its README)
 links/                  Link Doctor: dismissed pairs + the weekly check's steps (see its README)
+canvases/               moodboards as JSON Canvas files (site/canvas.html)
+views/                  saved gallery/table views as JSON (site/gallery.html)
 ```
 
 Starter topics: `ai`, `tech`, `business`, `design`, `productivity`, `health`,
@@ -290,7 +292,16 @@ from the GRAPH / BOARD / TIMELINE tabs at the top (`site/views.js` + `views.css`
 - `site/timeline.html`: every note on its `added` day, one track per topic, with an
   NLE-style playhead (J/K/L, drag the ruler) that replays how the brain grew.
 
+- `site/canvas.html`: moodboards in `canvases/<id>.canvas` (JSON Canvas, the open format
+  Obsidian uses, so they open there too). Cards are notes (`type: file` with the note's
+  repo path), text, links and groups. Edits stay as a browser draft until SAVE commits
+  (`/api/edit` action `board`). AUTO builds a board from a tag or kind.
+- `site/gallery.html`: saved views in `views/<id>.json` (`name`, `about`, `layout`
+  gallery|table, `filter` {kind, topic, status, tags, q}, `sort`), Obsidian Bases-style.
+  SAVE VIEW commits a new one. Agents can read these files to see how he slices the brain.
+
 New views go in the `VIEWS` list in `site/views.js` and the nav in `site/index.html`.
+`build_graph.mjs` copies `canvases/` and `views/` to `site/data/canvases.json` and `views.json`.
 
 ## Editing from the site
 

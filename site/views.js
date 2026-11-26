@@ -15,6 +15,7 @@
 
   const VIEWS = [
     ["graph", "GRAPH", "./"], ["board", "BOARD", "board.html"], ["timeline", "TIMELINE", "timeline.html"],
+    ["canvas", "CANVAS", "canvas.html"], ["gallery", "GALLERY", "gallery.html"],
   ];
   function nav(active) {
     const el = document.createElement("nav");

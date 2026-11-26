@@ -1,0 +1,13 @@
+{
+  "name": "Style refs",
+  "about": "Every look you saved: art, motion, sites and games.",
+  "layout": "gallery",
+  "filter": {
+    "kind": [
+      "style-ref",
+      "website-ref",
+      "game-ref"
+    ]
+  },
+  "sort": "added-desc"
+}

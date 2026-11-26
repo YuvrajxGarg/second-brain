@@ -218,6 +218,18 @@ const graph = {
   links,
 };
 fs.writeFileSync(path.join(OUT, "graph.json"), JSON.stringify(graph));
+
+// Canvas moodboards (canvases/*.canvas, JSON Canvas format) and saved views (views/*.json)
+// for site/canvas.html and site/gallery.html. Bad JSON is skipped, never fatal.
+const readJsonDir = (dir, ext) => walk(path.join(ROOT, dir)).filter((f) => f.endsWith(ext)).sort().flatMap((f) => {
+  try { return [{ id: path.basename(f, ext), path: path.relative(ROOT, f).split(path.sep).join("/"), data: JSON.parse(fs.readFileSync(f, "utf8")) }]; }
+  catch { console.warn("skipped bad JSON:", f); return []; }
+});
+const canvases = readJsonDir("canvases", ".canvas");
+fs.writeFileSync(path.join(OUT, "canvases.json"), JSON.stringify(canvases));
+const savedViews = readJsonDir("views", ".json");
+fs.writeFileSync(path.join(OUT, "views.json"), JSON.stringify(savedViews));
+console.log(`canvases: ${canvases.length}, saved views: ${savedViews.length}`);
 console.log(`graph: ${notes.length} notes, ${graph.counts.topics} topics, ${graph.counts.tags} tags, ${links.length} links`);
 
 // ---------- AI-facing files ----------
