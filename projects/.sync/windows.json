@@ -1,0 +1,15 @@
+{
+ "machine": "windows",
+ "files": {
+  "projects/album-cover-composite/log.md": {
+   "hash": "c6e6ac4108190052",
+   "from": "repo",
+   "at": "2026-11-26"
+  },
+  "projects/album-cover-composite/project.md": {
+   "hash": "251297ca682d25bb",
+   "from": "repo",
+   "at": "2026-11-26"
+  }
+ }
+}
