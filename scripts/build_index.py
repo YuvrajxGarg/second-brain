@@ -20,6 +20,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DIRS = [ROOT / "topics", ROOT / "inbox"]
+PROJECTS = ROOT / "projects"  # synced from his Documents/Vault by tools/vault-sync
 SITE = "https://brainy.pxlvzn.in"
 RAW = "https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main"
 GEN_START = "<!-- GENERATED:START (scripts/build_index.py rewrites this block) -->"
@@ -72,6 +73,43 @@ def parse(path):
     return meta
 
 
+def load_projects(entries):
+    """projects/<slug>/project.md is one entry; every other .md/.txt in that folder is a
+    doc attached to it (not its own entry, so the brain doesn't flood). If project.md has
+    `note: <slug>` pointing at an existing note, the docs attach to that note instead."""
+    by_slug = {e["slug"]: e for e in entries}
+    out = []
+    for pm in sorted(PROJECTS.glob("*/project.md")) if PROJECTS.exists() else []:
+        d = pm.parent
+        e = parse(pm)
+        e["slug"] = d.name
+        e["topic"] = e.get("topic") or "tech"
+        e.setdefault("kind", "project")
+        docs = []
+        for f in sorted(d.rglob("*")):
+            parts = f.relative_to(d).parts
+            if f.is_file() and f != pm and f.suffix.lower() in (".md", ".txt") and not any(x.startswith(".") for x in parts):
+                body = f.read_text(encoding="utf-8", errors="replace").replace("\r\n", "\n").strip()
+                docs.append({"path": f.relative_to(ROOT).as_posix(), "name": "/".join(parts), "body": body})
+        target = by_slug.get(e.get("note") or "")
+        if target:
+            target["docs"] = target.get("docs", []) + docs
+            target["vault"] = d.relative_to(ROOT).as_posix()
+            continue
+        e["docs"] = docs
+        e["vault"] = d.relative_to(ROOT).as_posix()
+        out.append(e)
+    return out
+
+
+def group_of(e):
+    if e["path"].startswith("inbox/"):
+        return "inbox"
+    if e["path"].startswith("projects/"):
+        return e["topic"]
+    return e["path"].split("/")[1]
+
+
 def link(e):
     return f"[{e['title']}]({e['path']})"
 
@@ -105,6 +143,8 @@ def catalog_entry(e, rel="../"):
         out.append(f"- **Repo:** {e['repo']}")
     if e["style"]:
         out.append(f"- **Style:** {', '.join(e['style'])}")
+    if e.get("docs"):
+        out.append("- **Vault docs:** " + ", ".join(f"[{d['name']}]({rel}{d['path']})" for d in e["docs"]))
     if e["tags"]:
         out.append(f"- **Tags:** {' '.join('#' + t for t in e['tags'])}")
     if e["summary"]:
@@ -207,13 +247,14 @@ def write_me(entries, by_topic, by_tag, by_kind, by_stage):
 
 def main():
     entries = [parse(p) for d in DIRS if d.exists() for p in d.rglob("*.md")]
+    entries += load_projects(entries)
     entries.sort(key=lambda e: (e["added"], e["title"]), reverse=True)
     for e in entries:
         e.setdefault("topic", "inbox" if e["path"].startswith("inbox/") else e["path"].split("/")[1])
 
     by_topic, by_tag, by_kind = defaultdict(list), defaultdict(list), defaultdict(list)
     for e in entries:
-        group = "inbox" if e["path"].startswith("inbox/") else e["path"].split("/")[1]
+        group = group_of(e)
         by_topic[group].append(e)
         for t in e["tags"]:
             by_tag[t].append(e)
@@ -329,6 +370,9 @@ def main():
         if e["style"]:
             out.append("style: " + ", ".join(e["style"]))
         out += ["", e["body"], ""]
+        for d in e.get("docs", []):
+            body = d["body"] if len(d["body"]) <= 20000 else d["body"][:20000] + "\n[... cut, full file: " + d["path"] + "]"
+            out += [f"--- vault doc: {d['path']} ---", "", body, ""]
     write(ROOT / "llms-full.txt", out)
 
     print(f"Indexed {len(entries)} entries, {len(by_tag)} tags, {len(style_counts)} style notes.")

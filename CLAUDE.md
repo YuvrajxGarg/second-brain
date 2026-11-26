@@ -30,6 +30,8 @@ scripts/build_index.py  regenerates INDEX, TAGS, IDEAS, catalog/, llms*.txt, TAS
 scripts/link_doctor.py  scores and audits [[slug]] links; --fix applies the safe fixes
 tools/quick-capture/    browser extension that drops captures into inbox/
 tools/social-reader/    source of the Social Reader MCP connector (Instagram/X), shared via HANDOFF.md
+tools/vault-sync/       brain_sync.py: syncs Documents/Vault on his Mac + PC into projects/ daily
+projects/<slug>/        synced from his vault (one entry per project); edit in the vault, not here
 scripts/build_graph.mjs builds site/data/graph.json for the graph site
 site/                   the graph website (static, deployed on Vercel)
 vercel.json             Vercel build config (runs build_index.py + build_graph.mjs, serves site/)
@@ -265,6 +267,24 @@ localStorage). Notes added from the site have a short summary, so tidy them
 only). Because of these commits, always `git pull --rebase` before you push. The
 Vercel build also runs `build_index.py`, so the served llms/TASTE/IDEAS files stay
 fresh after site edits; the committed copies catch up the next time you rebuild.
+
+## Project vault (Yuvraj's rule, 2026-11-26)
+
+Project docs (context, to-dos, logs) live in `Documents/Vault/<Project>/` on his Mac
+and Windows PC. `tools/vault-sync/brain_sync.py` (scheduled daily on each machine,
+rules in its README) syncs them both ways with `projects/<slug>/` and pushes one
+commit to `main`. To keep the brain uncluttered:
+
+- Each project is ONE entry: `projects/<slug>/project.md` (kind `project`). Its other
+  files are "vault docs" attached to it (catalog, graph panel, llms-full, MCP), never
+  separate notes. `note: <slug>` in project.md attaches them to an existing note instead.
+- Don't file vault docs into `topics/`, and don't hand-edit `projects/` from a thread:
+  the vault is the source of truth. A thread with no vault access may append to
+  `projects/<slug>/log.md`; the next sync copies it down into the vault.
+- `share:` in project.md: `full`, `summary` (only project.md) or `none`. The repo is
+  public, so private projects stay `summary`.
+- When a new vault project duplicates an existing project note, set `note:` in its
+  project.md rather than keeping two entries.
 
 ## Daily build ideas
 

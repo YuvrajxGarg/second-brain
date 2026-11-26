@@ -21,7 +21,10 @@ generic defaults.
      sites) and the companies he works in, with status, stack and links
 3. **[IDEAS.md](IDEAS.md)**: his own ideas and to-dos by stage. Call these back
    when they're relevant ("you had an idea for X on Nov 10, want to pick it up?").
-4. **Notes** in `topics/<topic>/YYYY-MM-DD-<slug>.md` for full detail. Images sit
+4. **Project docs** in `projects/<slug>/`: `project.md` plus his working docs for that
+   project (context.md, todo.md, log.md with dated status, learnings and mistakes),
+   synced from his own vault. Read these before working on one of his projects.
+5. **Notes** in `topics/<topic>/YYYY-MM-DD-<slug>.md` for full detail. Images sit
    next to their note with the same name and are described in words.
 
 Other entry points: [llms.txt](llms.txt) (index in llmstxt.org format),

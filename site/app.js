@@ -820,7 +820,9 @@
       const raw = DOMPurify.sanitize(marked.parse(n.body || ""), { ADD_ATTR: ["target"] });
       html += `<div class="p-kicker"><span class="sq" style="background:${n.color}"></span>${esc(n.topic)} · ${esc(typeLabel(n))}</div>`;
       html += `<h1 class="p-title" data-title>${esc(n.label)}</h1>`;
-      html += `<div class="p-edit mono${editor.pass ? "" : " locked"}"><button data-edit="edit">EDIT NOTE</button><button data-edit="delete" class="danger">DELETE</button></div>`;
+      html += n.vault || (n.path || "").startsWith("projects/")
+        ? `<div class="p-edit mono locked"><span class="dim">SYNCED FROM YOUR VAULT · EDIT IT IN DOCUMENTS/VAULT</span></div>`
+        : `<div class="p-edit mono${editor.pass ? "" : " locked"}"><button data-edit="edit">EDIT NOTE</button><button data-edit="delete" class="danger">DELETE</button></div>`;
       html += `<dl class="p-meta">
         ${n.why ? `<dt>${n.noteKind === "project" ? "MADE FOR" : n.noteKind === "org" ? "WHAT" : "WHY"}</dt><dd class="wrap">${esc(n.why)}</dd>` : ""}
         ${n.state ? `<dt>STATE</dt><dd>${esc(n.state)}</dd>` : ""}

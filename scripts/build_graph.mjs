@@ -76,6 +76,41 @@ const files = ["topics", "inbox"].flatMap((d) => walk(path.join(ROOT, d)));
 const notes = files.filter((f) => f.endsWith(".md")).map(parse);
 const bySlug = new Map(notes.map((n) => [n.slug, n]));
 
+// Vault projects (tools/vault-sync): projects/<slug>/project.md is ONE node; the other
+// docs in that folder hang off it instead of becoming nodes. `note: <slug>` in project.md
+// attaches the docs to an existing note instead.
+const GH = "https://github.com/YuvrajxGarg/second-brain/blob/main/";
+const PROJ = path.join(ROOT, "projects");
+const projectFiles = walk(PROJ).filter((f) => !path.relative(PROJ, f).split(path.sep).some((p) => p.startsWith(".")));
+for (const pm of projectFiles.filter((f) => path.basename(f) === "project.md" && path.dirname(path.dirname(f)) === PROJ)) {
+  const dir = path.dirname(pm);
+  const p = parse(pm);
+  const meta = (fs.readFileSync(pm, "utf8").replace(/\r\n/g, "\n").match(/^---\n([\s\S]*?)\n---/) || [, ""])[1];
+  const field = (k) => ((meta.match(new RegExp(`^${k}:\\s*(.*)$`, "m")) || [, ""])[1].split(" #")[0].trim().replace(/^["']|["']$/g, ""));
+  const docs = projectFiles
+    .filter((f) => f !== pm && f.startsWith(dir + path.sep) && /\.(md|txt)$/i.test(f))
+    .map((f) => ({
+      path: path.relative(ROOT, f).split(path.sep).join("/"),
+      name: path.relative(dir, f).split(path.sep).join("/"),
+      body: fs.readFileSync(f, "utf8").replace(/\r\n/g, "\n").trim(),
+    }));
+  const target = bySlug.get(field("note"));
+  if (target) {
+    target.docs = [...(target.docs || []), ...docs];
+    continue;
+  }
+  p.slug = path.basename(dir);
+  p.id = "n:" + p.slug;
+  p.topic = field("topic") || "tech";
+  p.kind = p.kind || "project";
+  p.added = field("added") || p.added;
+  p.docs = docs;
+  p.vault = true;
+  notes.push(p);
+  bySlug.set(p.slug, p);
+}
+for (const f of projectFiles.filter((f) => MEDIA_EXT.test(f))) files.push(f);
+
 // keep links.json (written by scripts/link_doctor.py just before this) across the wipe
 let linksJson = null;
 try { linksJson = fs.readFileSync(path.join(OUT, "links.json"), "utf8"); } catch {}
@@ -129,6 +164,9 @@ for (const n of notes) {
       if (target) related.add(s);
       return `[${label || (target ? target.title : s)}](#/n/${encodeURIComponent(s)})`;
     });
+  if (n.docs?.length) {
+    body += "\n\n## Vault docs\n\n" + n.docs.map((d) => `- [${d.name}](${GH}${d.path})`).join("\n") + "\n";
+  }
   nodes.push({
     id: n.id,
     kind: "note",
@@ -151,6 +189,7 @@ for (const n of notes) {
     related: [...related],
     suggest: (doctor.suggest[n.slug] || []).filter((x) => bySlug.has(x.to)).map((x) => [x.to, x.score, x.reason]),
     mentions: (doctor.mentions[n.slug] || []).filter((s) => bySlug.has(s)),
+    vault: !!n.vault,
   });
   for (const s of related) {
     if (!backlinks.has(s)) backlinks.set(s, []);
@@ -200,7 +239,12 @@ const brain = {
   ideas: readRoot("IDEAS.md"),
   catalogs,
   notes: notes
-    .map(({ body, ...n }) => ({ ...n, summary: summaryOf(body), body: body.trim() }))
+    .map(({ body, docs, ...n }) => ({
+      ...n,
+      summary: summaryOf(body),
+      // vault docs ride along in the body so MCP search and fetch see them
+      body: (body.trim() + (docs || []).map((d) => `\n\n## Vault doc: ${d.name}\n\n${d.body.slice(0, 20000)}`).join("")).trim(),
+    }))
     .sort((a, b) => (b.added || "").localeCompare(a.added || "")),
 };
 fs.writeFileSync(path.join(OUT, "brain.json"), JSON.stringify(brain));
