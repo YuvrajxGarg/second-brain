@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="views.css" />
 </head>
 <body>
   <canvas id="stage" aria-label="Graph of notes, tags and topics"></canvas>
@@ -73,6 +74,8 @@
     </div>
     <div class="build" id="build"></div>
   </div>
+
+  <nav class="vnav mono hud" aria-label="Views"><a href="./" class="on" aria-current="page">GRAPH</a><a href="board.html">BOARD</a><a href="timeline.html">TIMELINE</a></nav>
 
   <button id="b-hud" class="hud-restore mono" type="button" title="Show panels (H)" hidden>SHOW PANELS</button>
 

@@ -279,6 +279,19 @@ push other branches expecting a preview. Note-only pushes are batched; see "Batc
 Add a colour for a new topic in `PALETTE` at the top of `site/app.js` (unknown
 topics get a fallback colour automatically).
 
+## Views (Yuvraj's ask 2026-11-26)
+
+Besides the graph, the site has views that read the same `data/graph.json`, switched
+from the GRAPH / BOARD / TIMELINE tabs at the top (`site/views.js` + `views.css` are shared):
+
+- `site/board.html`: Kanban boards. IDEAS by `stage`, PROJECTS by `state` (concept /
+  building / live / archived), READING (saved refs) by `status`. Dragging a card (or its ⋯
+  menu) rewrites that one field via `/api/edit` `save`, so keep those fields tidy.
+- `site/timeline.html`: every note on its `added` day, one track per topic, with an
+  NLE-style playhead (J/K/L, drag the ruler) that replays how the brain grew.
+
+New views go in the `VIEWS` list in `site/views.js` and the nav in `site/index.html`.
+
 ## Editing from the site
 
 Yuvraj can edit or delete notes on the graph site (EDIT button, or EDIT NOTE in a

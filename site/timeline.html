@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" class="view">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Brain Timeline</title>
+  <meta name="description" content="Everything Yuvraj saved on an editing-style timeline, one track per topic." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23050505'/%3E%3Cpath d='M6 26 Q16 -2 26 26' stroke='white' stroke-width='1.6' fill='none'/%3E%3Crect x='13' y='9' width='6' height='6' fill='%2339ff6a'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="views.css" />
+  <link rel="stylesheet" href="timeline.css" />
+</head>
+<body>
+  <header class="vhead">
+    <div>
+      <a class="brand" href="./" style="text-decoration:none;color:inherit"><span class="brand-mark"></span><span class="brand-name">SECOND BRAIN</span><span class="brand-sub mono">/ timeline</span></a>
+      <div class="vtitle">EVERY NOTE ON THE DAY YOU SAVED IT</div>
+    </div>
+    <div class="vtools">
+      <div class="tc mono" id="tc">--</div>
+      <div class="vtabs" id="transport">
+        <button type="button" data-t="start" title="Start (Home)">|◀</button>
+        <button type="button" data-t="back" title="Back a day (J)">◀</button>
+        <button type="button" data-t="play" title="Play / pause (K or space)">▶</button>
+        <button type="button" data-t="fwd" title="Forward a day (L)">▶▶</button>
+        <button type="button" data-t="end" title="Today (End)">▶|</button>
+      </div>
+      <div class="vtabs" id="zoom">
+        <button type="button" data-z="-1" title="Zoom out (-)">−</button>
+        <button type="button" data-z="0" title="Fit (0)">FIT</button>
+        <button type="button" data-z="1" title="Zoom in (+)">+</button>
+      </div>
+      <input class="vsearch" id="q" type="search" placeholder="highlight notes" autocomplete="off" spellcheck="false" />
+    </div>
+  </header>
+  <div class="vhint">J K L to scrub and play, like your editor. Drag on the ruler to move the playhead. Click a clip to inspect it.</div>
+  <main class="tl" id="tl">
+    <div class="tl-heads" id="heads"></div>
+    <div class="tl-scroll" id="scroll"><div class="tl-inner" id="inner"><div class="ruler" id="ruler"></div><div class="lanes" id="lanes"></div><div class="playhead" id="ph"><span></span></div></div></div>
+  </main>
+  <aside class="insp" id="insp" hidden></aside>
+  <script src="views.js"></script>
+  <script src="timeline.js"></script>
+</body>
+</html>
