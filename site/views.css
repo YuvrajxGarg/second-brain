@@ -1,7 +1,8 @@
 /* Shared styles for the extra views (board, timeline...). Loads after style.css. */
 html.view, html.view body { overflow: auto; height: auto; min-height: 100%; }
 .vnav {
-  position: fixed; top: 18px; left: 50%; transform: translateX(-50%); z-index: 15;
+  /* centred with margins, not a transform: the graph's .hud animation resets transform */
+  position: fixed; top: 18px; left: 0; right: 0; margin: 0 auto; width: max-content; max-width: calc(100vw - 32px); z-index: 15;
   display: flex; gap: 2px; padding: 3px; background: var(--glass); border: 1px solid var(--line);
   backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
 }
@@ -11,7 +12,10 @@ html.view, html.view body { overflow: auto; height: auto; min-height: 100%; }
 }
 .vnav a:hover { color: var(--fg); }
 .vnav a.on { color: var(--bg); background: var(--fg); }
-@media (max-width: 760px) { .vnav { top: auto; bottom: 12px; } .vnav.hud { top: 94px; bottom: auto; left: 16px; transform: none; } }
+/* graph page: between phone and wide, the centre collides with the search box and stats */
+@media (max-width: 1180px) { .vnav:not(.hud) { right: 24px; left: auto; margin: 0; } .vnav.hud { top: 94px; left: 24px; right: auto; margin: 0; } }
+@media (max-width: 900px) { .vnav:not(.hud) { top: auto; bottom: 12px; left: 0; right: 0; margin: 0 auto; } }
+@media (max-width: 760px) { .vnav { top: auto; bottom: 12px; overflow-x: auto; scrollbar-width: none; } .vnav.hud { top: 94px; bottom: auto; left: 16px; } }
 
 .vhead { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 70px 24px 0; }
 .vhead > div:first-child { position: absolute; top: 22px; left: 24px; }
