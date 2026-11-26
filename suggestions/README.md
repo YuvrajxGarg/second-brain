@@ -7,8 +7,9 @@ grounded in them. It sends the ideas to his phone and saves them here as
 `suggestions/YYYY-MM-DD.md`, so they are never repeated.
 
 This folder is not part of the brain's notes (not in INDEX, the graph or the MCP
-server). Commits that only touch `suggestions/` skip the Vercel deploy
-(`ignoreCommand` in `vercel.json`).
+server). The daily commit must start with `suggest:`: it skips the Vercel deploy
+unless notes are pending, in which case it ships them as the daily flush
+(`scripts/vercel_ignore.sh`, see "Batched deploys" in CLAUDE.md).
 
 If he likes a suggestion and says so, file it as a normal `kind: idea` note
 (`stage: new`) and mark it `picked` in the day's file.

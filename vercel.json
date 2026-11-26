@@ -4,7 +4,7 @@
   "installCommand": "",
   "buildCommand": "(python3 scripts/build_index.py || true) && node scripts/build_graph.mjs",
   "outputDirectory": "site",
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- . ':(exclude)suggestions'",
+  "ignoreCommand": "bash scripts/vercel_ignore.sh",
   "headers": [
     {
       "source": "/data/(.*)",

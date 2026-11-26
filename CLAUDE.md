@@ -70,7 +70,7 @@ topic over a new one. Topic names are short, lowercase, kebab-case.
    `python3 scripts/link_doctor.py --fix` (adds backlinks, fixes dateless links) and
    `python3 scripts/build_index.py`; it refreshes every generated file.
 7. Commit with message `add: <short title>` (or `add: N entries` for a batch) and
-   push to `main` right away. See "Auto-merge" below.
+   push to `main` right away. See "Auto-merge" below (deploys are batched).
 8. Reply to Yuvraj with one line per entry: title, topic, tags.
 
 Screenshots and images: save them next to the entry with the same name
@@ -235,6 +235,27 @@ Nothing in this repo is sensitive. Every change (new entries, edits, moves,
 index rebuilds, rule tweaks) is committed and pushed straight to `main` as soon
 as it's done. No branches, no PRs, no asking for confirmation first.
 
+### Batched deploys (Yuvraj's rule, 2026-11-26)
+
+Every push to `main` used to be a production deploy. Now notes are still pushed
+to `main` right away (so nothing is ever lost), but Vercel only rebuilds the site
+when a batch is ready. `scripts/vercel_ignore.sh` (the `ignoreCommand` in
+`vercel.json`) decides, comparing against the last deployed commit:
+
+- **Deploys** when 5 or more notes under `topics/` changed since the last deploy,
+  when anything other than notes and generated files changed (site, api, scripts,
+  config, tools), when the commit message has `[deploy]`, or for edits made on the
+  graph site (`(from site)`).
+- **Daily flush**: the ~9 AM `suggest:` commit deploys whatever notes are pending.
+- Otherwise it skips, so a single dump waits at most until the next morning.
+
+When filing: commit and push as usual (one commit per dump, or one per batch when
+several arrive together) and confirm it's filed. Say "filed, goes live with the
+next batch" only if he asks why it isn't on the site yet. If he says "deploy now",
+run `git commit --allow-empty -m "chore: deploy pending notes [deploy]"` and push. The batch size is `BRAIN_DEPLOY_BATCH`
+(Vercel env var, default 5). The MCP server and llms files also update only on
+deploy, so they lag by the same batch.
+
 ## Access for other AIs
 
 - MCP server: `api/mcp.js`, a dependency-free, read-only Streamable HTTP server at
@@ -254,7 +275,7 @@ topics as nodes; links from tags, topics and `[[slug]]` references). Vercel runs
 their own; nothing to do when filing. `site/data/` is generated and gitignored.
 Only `main` deploys: preview builds are off (`git.deploymentEnabled` in
 `vercel.json`, Yuvraj's rule 2026-11-12) because they eat the deploy limit. Never
-push other branches expecting a preview, and batch filings into one push where you can.
+push other branches expecting a preview. Note-only pushes are batched; see "Batched deploys".
 Add a colour for a new topic in `PALETTE` at the top of `site/app.js` (unknown
 topics get a fallback colour automatically).
 
@@ -296,8 +317,8 @@ commit to `main`. To keep the brain uncluttered:
 
 A scheduled task runs every morning (~9 AM IST), follows `suggestions/README.md`,
 sends Yuvraj 1 to 3 build ideas combining his saved notes, and logs them in
-`suggestions/YYYY-MM-DD.md` so nothing repeats. Commits touching only
-`suggestions/` skip the Vercel deploy. If he says he likes one, file it as a
+`suggestions/YYYY-MM-DD.md` so nothing repeats. Its `suggest:` commit skips the
+Vercel deploy unless notes are pending, in which case it ships them (daily flush). If he says he likes one, file it as a
 `kind: idea` note and set its `**Status:**` to `picked` in the day file.
 
 ## Housekeeping
