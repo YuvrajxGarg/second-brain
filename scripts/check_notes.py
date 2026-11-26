@@ -10,6 +10,7 @@ code does it. No dependencies.
 
 Errors break a rule outright. Warnings are worth a look but can be right.
 """
+import json
 import re
 import subprocess
 import sys
@@ -23,6 +24,12 @@ TYPES = {"link", "note", "idea", "bookmark", "quote", "video", "tool", "book", "
          "recipe", "todo", "game", "app", "site", "concept", "company"}
 KEBAB = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 DATE_SLUG = re.compile(r"^\d{4}-\d{2}-\d{2}")
+try:  # categories grown from busy tags (scripts/categories.mjs): tag -> category
+    _made = json.loads((ROOT / "categories.json").read_text(encoding="utf-8")).get("created", {})
+except (OSError, ValueError):
+    _made = {}
+CATEGORY_OF = {t: name for name, c in _made.items() for t in (c.get("tags") or [name])}
+KEPT = {s for c in _made.values() for s in (c.get("kept") or [])}
 THIRD_PERSON = re.compile(r"\b(his own|yuvraj'?s|added as context)\b", re.I)
 
 
@@ -92,6 +99,10 @@ def check(path):
         folder = path.parent.name
         if meta.get("topic") != folder:
             err("topic", f"topic {meta.get('topic')!r} does not match folder {folder!r}")
+        home = {CATEGORY_OF[t] for t in tags if t in CATEGORY_OF} - {folder}
+        if home and path.stem not in KEPT and folder not in CATEGORY_OF.values():
+            warn("category", f"tagged for the {'/'.join(sorted(home))} category but filed in {folder}: "
+                 f"node scripts/categories.mjs promote {sorted(home)[0]} pulls it in")
         if DATE_SLUG.match(path.stem):
             err("slug", "slug starts with a date; the date lives in added:")
         if "## Raw" not in text:

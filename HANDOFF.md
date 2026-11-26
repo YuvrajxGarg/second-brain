@@ -241,6 +241,7 @@ llms-full.txt      generated: every note in one file
 INDEX.md           generated: every note by topic, newest first
 TAGS.md            generated: every tag with its notes
 LINKS.md           generated: link health, broken/one-way links, proposed links
+categories.json    categories grown from busy tags: mode (propose/auto), colours, no's
 inbox/             unsorted captures from the extension
 topics/<topic>/    one folder per topic, one file per note
 projects/<slug>/   synced from your Documents/Vault: one project.md + its docs each
@@ -254,6 +255,7 @@ scripts/build_index.py   regenerates everything marked "generated" above
 scripts/link_doctor.py   scores and audits [[slug]] links; --fix applies safe fixes
 scripts/check_notes.py   checks notes against the filing rules before each commit
 scripts/brain.mjs        brief <project> / pick / digest / start <idea> (api/_brief.js)
+scripts/categories.mjs   check / promote <name> / dismiss <name>: busy tags -> topics (api/_categories.js)
 scripts/build_graph.mjs  builds site/data/graph.json + brain.json for the site and MCP
 scripts/vercel_ignore.sh decides whether a push deploys (batched deploys)
 scripts/brain_search.py  offline search (terminal) over notes + your local vault
@@ -440,8 +442,9 @@ read (a dead link, an X post without `SOCIAL_READER_URL`) stays in `inbox/` with
 question; type the answer in the same window and press SORT again. Because of that, Claude must `git pull --rebase`
 before pushing (the rules already say so).
 
-New topic colours live in `PALETTE` at the top of `site/app.js`; unknown topics get
-a fallback colour.
+Starter topic colours live in `PALETTE` at the top of `site/app.js`. Categories that
+grew from busy tags (3.8) get a colour in `categories.json` when they're made; anything
+else gets a fallback colour.
 
 **The views** (tabs at the top of the site, all reading the same `data/graph.json`):
 
@@ -574,6 +577,18 @@ the real server offline), and each computer's last good vault sync, failures and
 backup. It lists anything that needs a look and keeps `health/history.jsonl` so it can
 spot growth week over week. Thresholds sit at the top of the script. Fold it into the
 link check rather than adding a second notification.
+
+**Categories grow from busy tags (same run).** Topics don't have to be planned up
+front. When one tag (with its family, e.g. `revolio` + `revolio-labs`) reaches 8 notes,
+or 6 when it names one of your own orgs or projects, and it's spread across topics,
+`api/_categories.js` proposes it as its own folder. Start with `"mode": "propose"` in
+`categories.json`: the Sunday ping lists the top proposals, LINK DOCTOR has MAKE
+CATEGORY / NO, and "promote revolio" in your project does it from chat (`node
+scripts/categories.mjs promote revolio`, with `--keep slug,slug` for notes that should
+stay). Promoting moves every tagged note and its images into `topics/<name>/` in one
+commit, gives it a colour, and keeps links working (slugs don't change). After that,
+captures tagged for it are filed there. Set `"mode": "auto"` if you'd rather it just
+happen. Tune the thresholds and the `GENERIC` tag list at the top of `api/_categories.js`.
 
 The same Sunday run writes a **weekly digest** to `digests/YYYY-MM-DD.md` (`node
 scripts/brain.mjs digest --write`): what you saved, the unread pile, ideas nobody

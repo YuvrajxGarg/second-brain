@@ -78,6 +78,13 @@ one small markdown file, grouped by topic and tagged so it can be found again.
   hotkeys for Mac and Windows, plus right-click items (Save to Brain on the Mac, Send
   to → Second Brain on Windows). They post to `https://brainy.pxlvzn.in/api/capture`
   (locked by the capture key), which drops each capture into `inbox/` to be filed.
+- **Categories grow on their own:** when a tag gets busy (8 notes, or 6 for one of his
+  own orgs like Revolio), it's proposed as its own topic folder. Say yes (MAKE CATEGORY
+  in LINK DOCTOR, or "promote revolio" in chat) and every note with that tag moves in,
+  with its own colour; links keep working. The Sunday check lists new proposals, and
+  captures tagged for a category are filed into it. Logic: [api/_categories.js](api/_categories.js),
+  shell: `node scripts/categories.mjs check | promote <name> | dismiss <name>`,
+  settings: [categories.json](categories.json).
 - **Entries:** `topics/<topic>/<slug>.md`, named by what the thing is (no date; the
   date is in `added:`), each with YAML frontmatter (`title`, `type`, `topic`, `tags`,
   `kind`, `why`, `style`, `kit`, `source`, `added`).

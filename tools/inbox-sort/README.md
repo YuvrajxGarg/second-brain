@@ -31,6 +31,8 @@ refreshes the generated files) and adds backlinks itself.
    - Search first: `grep -ril "<domain/path or name>" topics/`. Already saved: add his
      new words under that note's `## Raw` and a dated line under `## Notes`, then
      `git rm` the capture. Don't file a copy.
+   - Category first: if `categories.json` `created` has a category whose tags the note
+     gets (e.g. `revolio-labs` -> `revolio`), file it in that category, even a game.
    - Short 2-4 word title, the right `type` and `kind`, one topic, 3-6 accurate tags
      reused from `TAGS.md`, `why` (his `Note:` line when there is one), `style` for
      visual things, `stage: new` for ideas/to-dos, `kit` when it fits.
@@ -38,7 +40,11 @@ refreshes the generated files) and adds backlinks itself.
    - `git mv` the `.md` and its attachments to `topics/<topic>/<slug>.md` (drop the
      date/time prefix, fix image embeds).
    - Link 2-3 really related notes under `## Notes` with short reasons.
-5. `python3 scripts/link_doctor.py --fix`, `python3 scripts/build_index.py`, then
+5. `node scripts/categories.mjs check`. A stray of an existing category: `promote
+   <name>` (already approved). A new proposal: with `"mode": "propose"` (his choice)
+   leave it for the Sunday message and the site; with `"mode": "auto"` promote it and
+   name it in the end line. Never ask about it in chat.
+   Then `python3 scripts/link_doctor.py --fix`, `python3 scripts/build_index.py`, then
    `python3 scripts/check_notes.py --changed` and fix every error.
 6. **Can't read it, or the type/topic isn't obvious** (dead link, JS-only page,
    connector failed): don't guess. Leave it in `inbox/` (still `unsorted`) and add one
@@ -52,5 +58,5 @@ refreshes the generated files) and adds backlinks itself.
    end with the same lines. Otherwise end with one plain line (`Filed N: <titles>`)
    and send nothing.
 
-Touch only `inbox/`, `topics/` and generated files. Never edit `projects/`, never
+Touch only `inbox/`, `topics/`, `categories.json`, `canvases/` (paths fixed by a promote) and generated files. Never edit `projects/`, never
 remove a link he wrote in `## Raw`, never ask questions in chat.

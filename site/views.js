@@ -29,6 +29,7 @@
 
   async function notes() {
     const g = await (await fetch("data/graph.json", { cache: "no-cache" })).json();
+    Object.assign(PALETTE, g.topicColors || {}); // categories made from busy tags (categories.json)
     const list = g.nodes.filter((n) => n.kind === "note");
     for (const n of list) n.color = colorOf(n.topic);
     return { graph: g, notes: list };

@@ -28,6 +28,9 @@ api/edit.js        edit API for the graph site (passcode-locked, commits to main
 api/capture.js     plain HTTP capture for iPhone/Mac/Windows (CAPTURE_KEY), writes inbox/
 api/sort.js        the site's INBOX button: sorts inbox/ with the Claude API, one commit (EDIT_PASSCODE)
 api/_brief.js      shared logic: project briefing, resurface ranking, idea -> project
+api/_categories.js shared logic: busy tags -> category proposals and moves (see "Categories")
+categories.json    categories made from busy tags: mode, colours, dismissed, created
+scripts/categories.mjs check | promote <name> | dismiss <name> (on _categories.js)
 scripts/brain.mjs  CLI on _brief.js: brief <project> | pick | digest [--write] | start <idea>
 digests/           weekly digests from the Sunday run (see its README)
 tools/project-briefing/ the skill: brief before building, idea -> project
@@ -61,7 +64,43 @@ views/                  saved gallery/table views as JSON (site/gallery.html)
 Starter topics: `ai`, `tech`, `business`, `design`, `productivity`, `health`,
 `finance`, `learning`, `life`, `misc`, plus `gamedev` (game building, assets). Create a new topic folder when 3 or more
 entries clearly share a theme that no existing topic fits. Prefer an existing
-topic over a new one. Topic names are short, lowercase, kebab-case.
+topic over a new one. Topic names are short, lowercase, kebab-case. Topics also grow
+out of busy tags (e.g. `revolio`), see "Categories grow from busy tags". When a category
+exists for the thing itself, it beats the broad topic: a Revolio Labs game goes in
+`revolio`, not `gamedev`.
+
+## Categories grow from busy tags (Yuvraj's ask 2026-11-26)
+
+"If there is a lot of things around Revolio, then Revolio doesn't stay a link or a tag,
+it becomes a category in itself." `api/_categories.js` (constants at its top) finds them:
+
+- **Proposed** when a tag, together with its family (`revolio` + `revolio-labs`), has
+  `THRESHOLD` (8) notes, or `ENTITY_THRESHOLD` (6) when it names one of his own orgs or
+  projects (an org/project note whose slug starts with it: revolio, pxlvzn). A plain tag
+  with 70%+ of its notes in one topic is a sub-theme and isn't proposed, unless that topic
+  has `SPLIT_AT` (50) notes, then it's a split proposal. `GENERIC` tags (to-try,
+  own-project, desktop-app...) never are. Topics past 50 with no clear split are flagged.
+- **Propose, then approve** (his choice, 2026-11-26; `"mode": "propose"` in
+  `categories.json`): nothing moves until he says yes. He answers on the site (LINK
+  DOCTOR, key D: MAKE CATEGORY / NO, `api/edit.js` actions `category` / `category-no`,
+  one `move: ... (from site)` commit) or in a thread ("promote revolio", "make revolio a
+  category but keep the games in gamedev"). In a thread: `node scripts/categories.mjs
+  promote <name> [--keep slug,slug] [--tags a,b]`, then one commit `move: <name> becomes a
+  category (N notes)` and push. "No" = `node scripts/categories.mjs dismiss <name>`.
+  With `"mode": "auto"` the Sunday run and the inbox sort promote on their own.
+- **Promoting** makes `topics/<name>/`, `git mv`s every note with a family tag and its
+  images, sets `topic:`, drops the `<name>` tag where 3+ tags stay (sub-tags like
+  `revolio-labs` stay), rewrites canvas paths, and records the colour in
+  `categories.json` (every site view reads it from `graph.json`/`brain.json`
+  `topicColors`). Slugs don't change, so `[[slug]]` links and `#/n/<slug>` URLs keep
+  working. Notes he keeps elsewhere are remembered (`kept`) and never nagged about.
+- **After a category exists**, captures tagged for it are filed there: MCP `capture`
+  reroutes them on its own, the SORT INBOX prompt and the inbox-sort task know it. A
+  note filed elsewhere later is a **stray**: `check_notes.py` warns, the Link Doctor
+  shows MOVE, and `promote <name>` again pulls strays in (already approved, so the
+  Sunday run does that without asking).
+- `node scripts/categories.mjs check` lists everything; the build logs it and puts it in
+  `graph.json` (`categories`).
 
 ## "Log this to my brain" = project log, not a dump (Yuvraj's rule, 2026-11-26)
 
@@ -319,8 +358,9 @@ every note carries these, and `AGENTS.md` explains them to outside agents:
 - If the content can't be read (JS-only site, X post without a screenshot) and
   the type or topic isn't obvious, **ask Yuvraj in one line** before guessing.
   File it in `inbox/` meanwhile, then move it once he answers.
-- Games, game tools, game assets and game-dev techniques all go in `gamedev`.
-  Never park something in `misc` when a real topic fits.
+- Games, game tools, game assets and game-dev techniques all go in `gamedev`,
+  unless a category exists for the thing itself (a Revolio Labs game goes in `revolio`
+  once that category exists). Never park something in `misc` when a real topic fits.
 - Fewer, accurate tags beat six padded ones. 3 tags is fine.
 
 ## Links between notes (Link Doctor, Yuvraj's ask 2026-11-26)
@@ -436,8 +476,9 @@ their own; nothing to do when filing. `site/data/` is generated and gitignored.
 Only `main` deploys: preview builds are off (`git.deploymentEnabled` in
 `vercel.json`, Yuvraj's rule 2026-11-12) because they eat the deploy limit. Never
 push other branches expecting a preview. Note-only pushes are batched; see "Batched deploys".
-Add a colour for a new topic in `PALETTE` at the top of `site/app.js` (unknown
-topics get a fallback colour automatically).
+Starter topics have colours in `PALETTE` at the top of `site/app.js`; categories made
+from busy tags get theirs from `categories.json` (`colors`, picked on promotion, change
+the hex there to recolour one). Anything else gets a fallback colour automatically.
 
 ## Views (Yuvraj's ask 2026-11-26)
 
@@ -516,7 +557,8 @@ Vercel deploy unless notes are pending, in which case it ships them (daily flush
 ## Housekeeping
 
 - If a topic grows past ~50 entries, suggest splitting it (e.g. `ai` into
-  `ai-tools` and `ai-research`) and move files with `git mv`.
+  `ai-tools` and `ai-research`). The detector flags it and proposes the busiest tag
+  inside it; `scripts/categories.mjs promote` does the moves.
 - Empty `inbox/` whenever you can by moving entries to a topic.
 - Never edit `INDEX.md`, `TAGS.md`, `IDEAS.md`, `catalog/`, `llms*.txt` or the
   generated blocks of `TASTE.md` and `ME.md` by hand; regenerate them.

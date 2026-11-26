@@ -256,7 +256,7 @@ const CAPTURE = {
     properties: {
       title: { type: "string", description: "2-4 words: the name plus what it is, e.g. 'Godot waterfall shader'. No colons, commas or subtitles." },
       type: { type: "string", enum: TYPES },
-      topic: { type: "string", description: "Existing topic folder (ai, tech, business, design, productivity, health, finance, learning, life, misc, gamedev...) or 'inbox' if unsure. Games, game tools, assets and game-dev techniques go in gamedev." },
+      topic: { type: "string", description: "Existing topic folder (ai, tech, business, design, productivity, health, finance, learning, life, misc, gamedev, plus categories grown from busy tags, e.g. revolio) or 'inbox' if unsure. Games, game tools, assets and game-dev techniques go in gamedev, unless a category exists for the thing itself (a Revolio Labs game goes in revolio). A note tagged for a category is filed there automatically." },
       tags: { type: "array", items: { type: "string" }, description: "3-6 lowercase kebab-case singular tags for what it IS and what it's for (to-try, reference, inspiration). Never from words that just happen to be in a name or URL. Reuse existing tags." },
       kind: { type: "string", description: "What it is useful as: style-ref, website-ref, game-ref, library, asset-source, tool, technique, advice, idea, thought, todo, project, org." },
       why: { type: "string", description: "His reason for saving it, in his words when he gave one. Never third person." },
@@ -410,6 +410,16 @@ async function doCapture(a, brain, kinds, stages) {
   const dup = all.find((n) => (src && n.source && normUrl(n.source) === src) || n.title.toLowerCase() === oneLine(a.title).toLowerCase());
   if (dup && paths.includes(dup.path)) {
     return ok(`Already in the brain, not filed again: ${dup.slug} ("${dup.title}", ${dup.path}). If he added something new, call update_note with id "${dup.slug}". If it's genuinely a different thing, give it a different title.`);
+  }
+
+  // A category grown from a busy tag (categories.json, e.g. revolio) wins over a broad
+  // topic: a capture tagged revolio-labs goes to topics/revolio/, whatever topic was picked.
+  const made = brain.categoriesMade || {};
+  const home = a.topic !== "inbox" && Object.entries(made).find(([n, c]) => topics.includes(n) && list(a.tags).some((t) => (c.tags || [n]).includes(t)));
+  if (home && home[0] !== a.topic) {
+    a = { ...a, topic: home[0] };
+    const left = list(a.tags).filter((t) => t !== home[0]);
+    if (left.length >= 3) a.tags = left;
   }
 
   const base = slugify(a.title).replace(/^\d{4}-\d{2}-\d{2}-?/, "") || "note";

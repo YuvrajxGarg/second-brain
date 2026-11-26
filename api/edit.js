@@ -23,11 +23,15 @@
 //   { action: "board", path, content, sha? }     -> { ok, commit, sha }     (canvases/<id>.canvas or views/<id>.json)
 //   { action: "project", path, title?, type?, stack?, share? }
 //                                                -> { ok, commit, dir }     (idea note -> projects/<slug>/, api/_brief.js)
+//   { action: "category", name, keep?, tags? }   -> { ok, commit, moved }   (busy tag -> topics/<name>/, api/_categories.js)
+//   { action: "category-no", name, why? }        -> { ok, commit }          (categories.json: stop proposing it)
 // Only notes under topics/<topic>/ or inbox/ can be touched. Deleting a note also
 // removes its images/videos (files with the same name). One change = one commit.
 
 const crypto = require("node:crypto");
 const BR = require("./_brief.js");
+const CAT = require("./_categories.js");
+const CAT_PATH = "categories.json";
 
 const REPO = process.env.GITHUB_REPO || "YuvrajxGarg/second-brain";
 const BRANCH = process.env.GITHUB_BRANCH || "main";
@@ -261,6 +265,54 @@ module.exports = async function handler(req, res) {
       catch (e) { if (e.status !== 404) throw e; }
       const commit = await commitTree(`add: project ${label(r.title, r.dir)} from idea (from site)`, [...r.files, { path: p, content: BR.markIdeaStarted(f.content, r.dir) }], []);
       return send(res, 200, { ok: true, commit, dir: r.dir, refs: r.refs.length });
+    }
+
+    // Busy tag -> category (Yuvraj's ask 2026-11-26, propose-then-approve): MAKE CATEGORY
+    // in the Link Doctor moves every note tagged <name> (or its family, revolio-labs) into
+    // topics/<name>/ with its images, fixes canvas paths and records the colour, in one
+    // commit. Notes not deployed yet are missed here and show up as strays later.
+    if (action === "category" || action === "category-no") {
+      const name = String(body.name || "").trim().toLowerCase();
+      if (!TAG.test(name)) return send(res, 400, { error: "Bad category name." });
+      let cfg = {}, csha;
+      try { const f = await getFile(CAT_PATH); cfg = JSON.parse(f.content); csha = f.sha; } catch (e) { if (e.status !== 404) throw e; }
+      const day = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(new Date());
+      if (action === "category-no") {
+        const content = JSON.stringify(CAT.recordDismissed(cfg, name, cleanReason(body.why) || "no (site)", day), null, 2) + "\n";
+        const r = await gh("PUT", `/contents/${CAT_PATH}`, { message: `categories: not ${name} (from site)`, content: b64(content), sha: csha, branch: BRANCH });
+        return send(res, 200, { ok: true, commit: r.commit.sha });
+      }
+      const host = req.headers["x-forwarded-host"] || req.headers.host;
+      const brain = await (await fetch(`https://${host}/data/brain.json`)).json();
+      const keep = Array.isArray(body.keep) ? body.keep.map(String) : [];
+      const tags = Array.isArray(body.tags) ? body.tags.map(String).filter((t) => TAG.test(t)) : [];
+      const p = CAT.plan(brain.notes, name, cfg, { keep, tags, once: !!body.once });
+      if (p.error) return send(res, 409, { error: p.error });
+      if (p.moves.length > 60) return send(res, 413, { error: `${p.moves.length} notes is too many for one site commit. Run node scripts/categories.mjs promote ${name} in a thread.` });
+      const writes = [], removes = [], moved = [];
+      for (const m of p.moves) {
+        let f;
+        try { f = await getFile(m.from); } catch (e) { if (e.status === 404) continue; throw e; }
+        if (!p.tags.some((t) => new RegExp(`^tags:.*\\b${t}\\b`, "m").test(f.content))) continue; // retagged since the last deploy
+        writes.push({ path: m.to, content: CAT.retopic(f.content, name, name) });
+        removes.push(m.from);
+        for (const a of await attachments(m.from)) {
+          writes.push({ path: `topics/${name}/${a.path.split("/").pop()}`, sha: a.sha });
+          removes.push(a.path);
+        }
+        moved.push(m);
+      }
+      if (!moved.length) return send(res, 409, { error: "None of those notes are still tagged that way." });
+      for (const c of await gh("GET", `/contents/canvases?ref=${BRANCH}`).catch(() => [])) {
+        if (!/\.canvas$/.test(c.name)) continue;
+        const f = await getFile(c.path);
+        const out = CAT.fixCanvas(f.content, moved);
+        if (out) writes.push({ path: c.path, content: out });
+      }
+      const next = CAT.recordCreated(cfg, { ...p, moves: moved }, day);
+      writes.push({ path: CAT_PATH, content: JSON.stringify(next, null, 2) + "\n" });
+      const commit = await commitTree(`move: ${name} becomes a category, ${moved.length} notes (from site)`, writes, removes);
+      return send(res, 200, { ok: true, commit, moved: moved.length, color: p.color });
     }
 
     // Link Doctor: link / unlink two notes (both ways), or dismiss a proposed pair.

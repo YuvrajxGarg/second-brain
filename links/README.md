@@ -33,6 +33,15 @@ Sunday notification, not three. Edit them here to change its behaviour.
      to `dismissed.json` with `"judge: <why>"`. This only stops the proposal.
    - Yes or unsure: leave it for Yuvraj to answer on the site.
    Do not add or remove links between notes yourself. Only he says yes to those.
+4b. Categories (busy tags that could be their own topic, see CLAUDE.md "Categories grow
+   from busy tags"): `node scripts/categories.mjs check`.
+   - Strays (notes tagged for a category that already exists, filed elsewhere):
+     `node scripts/categories.mjs promote <name>` for each such category. Already
+     approved, so no need to ask.
+   - New proposals: `categories.json` `"mode": "propose"` (his choice) = don't promote.
+     Put the top 3 in the message (step 9). A clear no (the tag is a format or a vibe,
+     not a thing he'd browse as a folder): `node scripts/categories.mjs dismiss <name>
+     --why "judge: <why>"`. `"mode": "auto"`: promote each one and say so in the message.
 5. `python3 scripts/build_index.py` (refreshes LINKS.md and the rest).
 6. Health report (see `health/README.md`): if the Vercel connector is available, count
    this week's production deploys of project `second-brain` (team `revolio`) with
@@ -48,7 +57,8 @@ Sunday notification, not three. Edit them here to change its behaviour.
    and push to `main` (one deploy). Retry the push up to 4 times.
 9. End with one short message (it becomes the phone notification), no headers:
    the digest's summary lines, then the three lines the health report printed, then
-   `<N> backlinks added, <N> reasons rewritten, <N> proposals waiting. Best: <Note> <-> <Note> (<why>)`
+   `<N> backlinks added, <N> reasons rewritten, <N> proposals waiting. Best: <Note> <-> <Note> (<why>)`,
+   then, when step 4b found any, `Could be its own category: revolio (16 notes), pxlvzn (12). Say "promote revolio", or MAKE CATEGORY in LINK DOCTOR.`
    and `Review: brainy.pxlvzn.in (LINK DOCTOR, or press D) · report: health/latest.md · digest: digests/<date>.md`.
    If the report flagged something you can fix inside these rules (an unsorted inbox
    capture is not one: leave filing to Yuvraj's threads), say what, don't fix it.

@@ -77,7 +77,7 @@ line per note, and `fetch` returns a full note by id. Fetch only what you will u
 ---
 title: Polyfork 3D assets       # 2-4 words: name + what it is
 type: tool                      # format: link, bookmark, video, tool, note, idea, quote, todo...
-topic: gamedev                  # folder: ai, tech, business, design, gamedev, life...
+topic: gamedev                  # folder: ai, tech, business, design, gamedev, life..., or a category grown from a busy tag (revolio)
 tags: [game-assets, low-poly, threejs]
 kind: library                   # what it's useful as (see below)
 why: open-source three.js asset library agents can use over MCP

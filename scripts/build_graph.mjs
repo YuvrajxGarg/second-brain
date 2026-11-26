@@ -9,6 +9,7 @@ import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
 
 const BR = createRequire(import.meta.url)("../api/_brief.js");
+const CAT = createRequire(import.meta.url)("../api/_categories.js");
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = path.join(ROOT, "site", "data");
@@ -260,6 +261,13 @@ const brainNotes = notes
 // recent log entries). The site's FROM YOUR PILE card shows these first.
 const focus = BR.focusPicks(brainNotes).map(({ slug, project, projectSlug, score }) => ({ slug, project, projectSlug, score }));
 
+// Busy tags that could become categories (api/_categories.js), and the colours of the
+// categories already made (categories.json), so every view colours them the same.
+let catConfig = {};
+try { catConfig = JSON.parse(fs.readFileSync(path.join(ROOT, "categories.json"), "utf8")); } catch {}
+const categories = CAT.detect(brainNotes, catConfig);
+const topicColors = catConfig.colors || {};
+
 const graph = {
   generated: new Date().toISOString(),
   commit: sha(),
@@ -267,6 +275,8 @@ const graph = {
   counts: { notes: notes.length, topics: Object.keys(topicCount).length, tags: Object.keys(tagCount).length, links: links.length },
   linkHealth: doctor.health,
   focus,
+  categories,
+  topicColors,
   nodes,
   links,
 };
@@ -284,6 +294,7 @@ const savedViews = readJsonDir("views", ".json");
 fs.writeFileSync(path.join(OUT, "views.json"), JSON.stringify(savedViews));
 console.log(`canvases: ${canvases.length}, saved views: ${savedViews.length}`);
 console.log(`focus: ${focus.length} unread saves fit active projects`);
+console.log(`categories: ${categories.proposals.length} proposed${categories.proposals.length ? ` (${categories.proposals.map((c) => c.name).join(", ")})` : ""}, ${categories.strays.length} strays`);
 console.log(`graph: ${notes.length} notes, ${graph.counts.topics} topics, ${graph.counts.tags} tags, ${links.length} links`);
 
 // ---------- AI-facing files ----------
@@ -304,6 +315,8 @@ const brain = {
   checks: readRoot("CHECKS.md"),
   ideas: readRoot("IDEAS.md"),
   catalogs,
+  topicColors,
+  categoriesMade: catConfig.created || {},
   notes: brainNotes,
 };
 fs.writeFileSync(path.join(OUT, "brain.json"), JSON.stringify(brain));

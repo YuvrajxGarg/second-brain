@@ -26,6 +26,7 @@
 
 const crypto = require("node:crypto");
 const W = require("./_write.js");
+const CAT = require("./_categories.js");
 
 const SITE = "https://brainy.pxlvzn.in";
 const MODEL = process.env.SORT_MODEL || "claude-opus-5-5";
@@ -164,7 +165,7 @@ async function attachmentImages(item) {
 
 // ---------- Claude ----------
 
-function rulesPrompt(topics, tags, notes) {
+function rulesPrompt(topics, tags, notes, made = {}) {
   return [
     `You file quick captures into Yuvraj's second brain, a public GitHub repo of markdown notes. He is a video editor who also builds games. Each capture is something he saved from his phone, Mac or browser. You decide how it is filed; code writes the file. Follow these rules exactly (they come from the repo's CLAUDE.md):`,
     "",
@@ -181,6 +182,7 @@ function rulesPrompt(topics, tags, notes) {
     `- type: one of ${TYPES.join(", ")}. Things he made himself use game/app/tool/site/concept, a company is company, never note for those.`,
     `- kind (what it's useful as): one of ${KINDS.join(", ")}. style-ref = art/design/motion he likes the look of. idea/thought/todo = his own words. project = something he built.`,
     `- topic: exactly one of: ${topics.join(", ")}. Games, game tools, game assets and game-dev techniques ALWAYS go in gamedev. Never park something in misc when a real topic fits.`,
+    ...(Object.keys(made).length ? [`- Some topics are categories that grew out of a busy tag: ${Object.entries(made).map(([n, c]) => `${n} (everything tagged ${(c.tags || [n]).join(" / ")})`).join("; ")}. A capture that is about that thing goes in that category, even a game, and doesn't also get the category's own name as a tag.`] : []),
     "- tags: 3 to 6, lowercase kebab-case, singular. Tag what it actually IS and what it's for (to-try, reference, inspiration). Reuse the existing tags below whenever one fits; invent one only when nothing fits. Fewer accurate tags beat padded ones.",
     "- why: his reason for saving it. Use his own words when he gave any (a `Note:` line in Raw is his reason, keep it close to verbatim). Otherwise a short plain reason. Write it the way he would; never about him in the third person (no \"his\", \"Yuvraj's\").",
     "- style: only for visual things (art, design, motion, games with a look): 2 to 5 short descriptors of what's actually there in the images, no commas inside one. Empty otherwise.",
@@ -421,7 +423,7 @@ module.exports = async function handler(req, res) {
     const tagCount = {};
     for (const n of notes) for (const t of n.tags || []) tagCount[t] = (tagCount[t] || 0) + 1;
     const tags = Object.entries(tagCount).sort((a, b) => b[1] - a[1]);
-    const system = rulesPrompt(topics, tags, notes);
+    const system = rulesPrompt(topics, tags, notes, brain.categoriesMade || {});
     const bySource = new Map(notes.filter((n) => n.source).map((n) => [W.normUrl(n.source), n]));
 
     const results = await pool(todo, PARALLEL, async (item) => {
@@ -536,7 +538,11 @@ module.exports = async function handler(req, res) {
     const sha = await commitAll(msg, [...writes].map(([path, w]) => ({ path, ...w })), [...new Set(removes)]);
     statusCache = { at: 0, data: null };
     console.log(`sort: filed ${filed.length}, merged ${merged.length}, asked ${asked.length}, failed ${failed.length}, commit ${sha.slice(0, 7)}`);
-    return send(res, 200, { ok: true, commit: sha, filed, merged, asked, failed, left, more: all.filter((i) => !i.needs || i.answer).length > PER_PRESS });
+    // Busy tags that could now be a category (with what was just filed). Proposed only:
+    // MAKE CATEGORY in the Link Doctor applies one (Yuvraj chose propose-then-approve).
+    const cats = CAT.detect([...notes, ...filed.map((f) => ({ ...f, kind: "" }))], { created: brain.categoriesMade || {} });
+    const categories = cats.proposals.filter((p) => filed.some((f) => f.tags.some((t) => p.tags.includes(t)))).map(({ name, count, from, tags }) => ({ name, count, from, tags }));
+    return send(res, 200, { ok: true, commit: sha, filed, merged, asked, failed, left, categories, more: all.filter((i) => !i.needs || i.answer).length > PER_PRESS });
   } catch (e) {
     console.error(`sort failed: ${e.message}`);
     return send(res, 502, { error: e.fatal ? `Claude API: ${e.message}. Check ANTHROPIC_API_KEY and billing at console.anthropic.com.` : `Nothing was changed: ${e.message}` });

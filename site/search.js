@@ -33,6 +33,7 @@
       $("state").textContent = "offline, and no saved copy yet: open this page once online";
       return;
     }
+    Object.assign(PALETTE, data.topicColors || {}); // categories made from busy tags
     notes = data.notes.map((n) => {
       const tags = arr(n.tags);
       return {

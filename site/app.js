@@ -36,6 +36,7 @@
   const hash = (s) => { let h = 2166136261; for (const c of s) h = Math.imul(h ^ c.charCodeAt(0), 16777619); return h >>> 0; };
   const colorOf = (topic) => {
     if (look.colors[topic]) return look.colors[topic];
+    if (graph && graph.topicColors && graph.topicColors[topic] && TOPIC_ORDER.indexOf(topic) < 0) return graph.topicColors[topic];
     const pr = PRESETS[look.preset] || PRESETS.signal;
     const i = TOPIC_ORDER.indexOf(topic);
     return i >= 0 ? pr.colors[i] : pr.colors[(hash(topic || "") % (pr.colors.length - 1))];
@@ -821,6 +822,15 @@
     let h = `<div class="m-h">LINK DOCTOR · HEALTH ${d.health ?? "?"}/100</div>
       <p class="m-p">${c.links ?? 0} links · ${c.connected ?? 0} of ${c.notes ?? 0} notes linked · ${c.one_way ?? 0} one-way · ${c.orphans ?? 0} orphans.
       Each answer commits to main and the graph rebuilds in about a minute. NO and KEEP are remembered, so it won't ask again.</p>`;
+    // Busy tags that could become their own category (api/_categories.js, Yuvraj's ask
+    // 2026-11-26). MAKE CATEGORY moves the notes into topics/<name>/ in one commit.
+    const cat = graph.categories || { proposals: [], strays: [] };
+    const from = (o) => Object.entries(o || {}).map(([t, c]) => `${t} ${c}`).join(", ");
+    if (cat.proposals.length || cat.strays.length) {
+      h += `<div class="dr-h">NEW CATEGORIES · ${cat.proposals.length}</div><p class="m-p">Tags with ${cat.threshold}+ notes (${cat.entityThreshold}+ for your own orgs and projects) spread across topics. MAKE CATEGORY moves every note with that tag into its own folder, with its own colour. Links keep working.</p>`;
+      h += `<ul class="dr">${cat.proposals.map((p) => `<li><div class="dr-t">#${esc(p.tags.join(" + #"))} <span class="dr-x">→</span> ${esc(p.name.toUpperCase())}<div class="dr-why">${p.count} notes · from ${esc(from(p.from))}${p.split ? ` · splits ${esc(p.split)}` : ""}</div></div><div class="dr-b">${btns(`C|${p.name}`, ["promote", "MAKE CATEGORY"], ["nocat", "NO"])}</div></li>`).join("")}`;
+      h += cat.strays.map((s) => `<li><div class="dr-t">${T(s.slug)} <span class="dr-x">→</span> ${esc(s.into.toUpperCase())}<div class="dr-why">tagged for ${esc(s.into)}, filed in ${esc(s.topic)}</div></div><div class="dr-b">${btns(`C|${s.into}|${s.slug}`, ["promote", "MOVE"], ["skip", "SKIP"])}</div></li>`).join("") + `</ul>`;
+    }
     h += `<div class="dr-h">SUGGESTED LINKS · ${miss.length}</div><ul class="dr">${miss.map((m) => `<li><div class="dr-t">${T(m.a)} <span class="dr-x">↔</span> ${T(m.b)}<div class="dr-why">${Math.round(m.score * 100)}% · ${esc(m.reason)}</div></div><div class="dr-b">${btns(`L|${m.a}|${m.b}`, ["link", "LINK"], ["no", "NO"])}</div></li>`).join("") || `<li class="dr-none">Nothing to suggest.</li>`}</ul>`;
     h += `<div class="dr-h">WEAK LINKS · ${weak.length}</div><ul class="dr">${weak.map((w) => `<li><div class="dr-t">${T(w.from)} <span class="dr-x">→</span> ${T(w.to)}<div class="dr-why">${Math.round(w.score * 100)}% match and no reason written</div></div><div class="dr-b">${btns(`W|${w.from}|${w.to}`, ["unlink", "UNLINK"], ["keep", "KEEP"])}</div></li>`).join("") || `<li class="dr-none">No weak links.</li>`}</ul>`;
     if (tags.length) h += `<div class="dr-h">TAG MERGES · ${tags.length}</div><ul class="dr">${tags.map((m) => `<li><div class="dr-t">#${esc(m.tag)} <span class="dr-x">→</span> #${esc(m.into)}<div class="dr-why">${m.uses} note${m.uses === 1 ? "" : "s"}</div></div><div class="dr-b">${btns(`T|${m.tag}|${m.into}`, ["merge", "MERGE"], ["skip", "SKIP"])}</div></li>`).join("")}</ul>`;
@@ -837,7 +847,17 @@
       const row = b.parentElement;
       row.querySelectorAll("button").forEach((el) => (el.disabled = true));
       try {
-        if (kind === "T") {
+        if (kind === "C") {
+          if (act === "promote") {
+            // a stray row moves just that note: the other strays of the category stay put
+            const keep = y ? cat.strays.filter((s) => s.into === x && s.slug !== y).map((s) => s.slug) : [];
+            const r = await api("category", { name: x, keep, once: !!y });
+            doctor.done.set(b.dataset.k, `MOVED ${r.moved} ✓`);
+          } else if (act === "nocat") {
+            await api("category-no", { name: x });
+            doctor.done.set(b.dataset.k, "WON'T ASK AGAIN");
+          } else doctor.done.set(b.dataset.k, "SKIPPED");
+        } else if (kind === "T") {
           if (act === "merge") {
             const notes = [...(adj.get("g:" + x) || [])].map((id) => byId.get(id)).filter((n) => n && n.kind === "note");
             await api("retag", { paths: notes.map((n) => n.path), from: x, to: y });
@@ -1406,6 +1426,7 @@
       part(`ADDED TO A NOTE YOU ALREADY HAD · ${r.merged.length}`, r.merged.map((x) => row(x.title || x.into, ""))),
       part(`WAITING ON YOU · ${r.asked.length}`, r.asked.map((x) => row(x.title || x.path, x.question))),
       part(`COULDN'T SORT · ${r.failed.length}`, r.failed.map((x) => row(x.title || x.path, x.error))),
+      part(`COULD BE ITS OWN CATEGORY · ${(r.categories || []).length}`, (r.categories || []).map((c) => row(`#${c.name}`, `${c.count} notes · answer in LINK DOCTOR (D) after the rebuild`))),
     ].join("") || `<p class="m-p">${esc(r.message || "Nothing to do.")}</p>`;
     const link = r.commit ? `<p class="m-p">Committed <a href="${esc(graph.repo)}/commit/${esc(r.commit)}" target="_blank" rel="noopener">${esc(r.commit.slice(0, 7))}</a>${r.filed.length + r.merged.length ? ". The graph rebuilds in about a minute." : "."}${r.more ? " More are waiting: press SORT again." : ""}</p>` : "";
     openModal(`<div class="m-h">INBOX SORTED</div>${html}${link}<div class="m-row"><button type="submit">OK</button></div>`, closeModal);
