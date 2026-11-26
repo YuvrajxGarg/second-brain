@@ -68,14 +68,14 @@ A short demo from keshav (@kshvbgde) of a Mac storage scanner: "storage scanner 
 
 A reel from @thesoloentrepreneur.yt showing a "₹1 lakh website": a 3D web scene of an old Indian sweet shop, "Sharma Sweets, since 1965", with a stylised cartoon Lala ji (big moustache, white Gandhi cap, purple Nehru jacket, white kurta) standing in front of the shuttered shop. Saved as the art style reference for his Tukaram Munde game: stylised cartoon 3D, everyday Indian street settings, caricature characters.
 
-### [Impossible Weapon animation](../topics/design/impossible-weapon-knight-animation.md)
+### [Impossible Weapon animation](../topics/animation/impossible-weapon-knight-animation.md)
 
-`style-ref` · design · <https://www.instagram.com/reel/Dfm8H07Pohc/>
+`style-ref` · animation · <https://www.instagram.com/reel/Dfm8H07Pohc/>
 
 - **Why saved:** Brilliant art style for animations
 - **Style:** painterly stylised 3d, chunky armoured knights, misty desaturated battlefield, red ink outline accents, bold red and blue colour pops
 - **Kit:** motion
-- **Tags:** #animation #video-generation #3d-art #inspiration
+- **Tags:** #video-generation #3d-art #inspiration
 
 "The Impossible Weapon", a ~34-second animated short by INK (@ink.industries_) and Pascal Gautier, made with Krea AI. Two stylised armoured knights face off on a misty, grassy battlefield: a hulking dark knight with a blue plume and a nimble silver knight with a red cape who leaps in with a sword. Saved for its art style for animation: painterly stylised 3D that feels like a hand-made animated feature.
 
@@ -90,9 +90,9 @@ A reel from @thesoloentrepreneur.yt showing a "₹1 lakh website": a 3D web scen
 
 A 17-second animated launch film shared by Austin Bauwens, titled "Captchas aren't what you think they are". It argues that solving captchas has been unpaid AI training, from labelling people to steering self-driving cars. The look is flat chunky pixel-art in orange, blue and periwinkle, with captcha grids, bounding boxes, pixel cursors and a car driving a top-down map. Directed by Sam Essanoussi, with design and animation by Justin De Leon and Connor Roy-Shaw. Saved as motion and visual design inspiration.
 
-### [Ace Of Frames reel](../topics/design/ace-of-frames-reel.md)
+### [Ace Of Frames reel](../topics/video-editing/ace-of-frames-reel.md)
 
-`style-ref` · design · <https://x.com/aceoframes/status/2120280507778777140>
+`style-ref` · video-editing · <https://x.com/aceoframes/status/2120280507778777140>
 
 - **Why saved:** cool visual design
 - **Style:** bold type, ui mockups in motion, pixel-art mascots, glowing cards, product launch video
@@ -123,13 +123,13 @@ Ayush Soni's (@ayushsoni_io) brand identity for "Second", an app that keeps the 
 
 ![screenshot](./flat-finder-map.jpg)
 
-### [Blooming flowers site](../topics/design/mohamed-siddique-flower-site.md)
+### [Blooming flowers site](../topics/animation/mohamed-siddique-flower-site.md)
 
-`website-ref` · design · <https://x.com/msiddique26/status/2120936635856752710>
+`website-ref` · animation · <https://x.com/msiddique26/status/2120936635856752710>
 
 - **Why saved:** nice calm website style with growing flower animation
 - **Style:** cream paper card with torn edges, painterly landscape backdrop, hand-drawn flowers growing on a dot grid, soft serif headline
-- **Tags:** #website #visual-design #animation #inspiration
+- **Tags:** #website #visual-design #inspiration
 
 ![screenshot](./mohamed-siddique-flower-site.jpg)
 

@@ -27,13 +27,13 @@ Daniel White (@dwhitedesign) shows a top-down pixel-art tank scene with a shockw
 
 Stick It Up is an open-source (MIT, free for commercial use) npm package of React components that drop animated SVG stickers onto a site: 65+ of them, which visitors can drag, tilt and pop, with a 3D vinyl peel on hover. Works with React and Next.js (`npm i stick-it-up@latest`); meant for heroes, cards, empty states and 404 pages to give a site personality. It is a component library, not a Claude skill or plugin. Shared on X by Sam (@samirande_) with "stop making your site boring".
 
-### [Procedural arm rig](../topics/gamedev/procedural-arm-rig-demo.md)
+### [Procedural arm rig](../topics/animation/procedural-arm-rig-demo.md)
 
-`library` · gamedev · <https://x.com/apekshik/status/2120224530367119758>
+`library` · animation · <https://x.com/apekshik/status/2120224530367119758>
 
 - **Why saved:** open-source rigged arm to reuse in my games
 - **Kit:** 3d
-- **Tags:** #rigging #animation #open-source #to-try
+- **Tags:** #rigging #open-source #to-try
 
 @apekshik used an AI model to build one highly detailed, open-source rigged arm instead of "one-shotting" a whole game: realistic bone armature, weight-painted mesh, volume-preserving joints and muscles that swell as the fist tightens. The arm uses two-bone IK (you set the hand target, it solves shoulder and elbow) while the 38-bone fingers use FK, curling joint by joint and stopping on contact, so it can reach, grab and place a ball on a table. Live demo at procedural-arm-rig.vercel.app, code at github.com/apekshik/procedural-arm-rig, free to reuse in your own games.
 

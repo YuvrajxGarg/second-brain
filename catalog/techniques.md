@@ -26,13 +26,13 @@ Nikita (@fluxxrider) posted a Claude artifact made by Opus 5.6 on xhigh effort: 
 
 How Claude Code and Higgsfield (FLUX 3, Nano Banana Pro) were used to finish a photoreal group shot for a Revolio Media album-cover job, from an approved base frame through 134 versions. The rules below came out of his corrections along the way. Client and artist names are left out because this repo is public.
 
-### [Claude video edit](../topics/ai/claude-video-edit.md)
+### [Claude video edit](../topics/video-editing/claude-video-edit.md)
 
-`technique` · ai · <https://x.com/udayan_w/status/2122732735496355860>
+`technique` · video-editing · <https://x.com/udayan_w/status/2122732735496355860>
 
 - **Why saved:** a full YouTube video edited and rendered entirely with Claude (360 GB of footage)
 - **Kit:** edit
-- **Tags:** #claude #video-editing #agents #inspiration
+- **Tags:** #claude #agents #inspiration
 
 Udayan Walvekar (@udayan_w) says a polished GrowthX YouTube video, "I Read This 417 Page Anthropic IPO Filing, So You Don't Have To", was edited entirely in Claude, with 360 GB of files rendered through it. Proof point that an agent can drive a real long-form edit end to end. The post shares no workflow details, only the claim and a screenshot.
 
@@ -89,25 +89,25 @@ Kimo (@asynkimo) shows sprite stacking: slice a pixel-art object row by row from
 
 ![screenshot](./escapement-blender-short-film.jpg)
 
-### [Unity bodycam hands](../topics/gamedev/unity-bodycam-ik-hands.md)
+### [Unity bodycam hands](../topics/animation/unity-bodycam-ik-hands.md)
 
-`technique` · gamedev · <https://www.instagram.com/reel/DfpPiVxiVWy/>
+`technique` · animation · <https://www.instagram.com/reel/DfpPiVxiVWy/>
 
 - **Why saved:** tips for hand animation in a first person view in Unity
 - **Style:** bodycam first person view, gloved hands with pistol, striped test room
 - **Kit:** motion, 3d
-- **Tags:** #unity #rigging #animation #tutorial
+- **Tags:** #unity #rigging #tutorial
 
 ![screenshot](./unity-bodycam-ik-hands.jpg)
 
-### [Line art mocap workflow](../topics/gamedev/line-art-mocap-workflow.md)
+### [Line art mocap workflow](../topics/animation/line-art-mocap-workflow.md)
 
-`technique` · gamedev · <https://www.instagram.com/reel/DfoIiH5R7Mo/>
+`technique` · animation · <https://www.instagram.com/reel/DfoIiH5R7Mo/>
 
 - **Why saved:** cool line art animation workflow with motion capture and Mixamo integration also
 - **Style:** wobbly hand-drawn black line art, beak-nosed stick characters, cream paper cards on yellow grid paper
 - **Kit:** motion
-- **Tags:** #animation #motion-capture #mixamo #creative-coding #inspiration
+- **Tags:** #motion-capture #mixamo #creative-coding #inspiration
 
 Reel by @shubhastudios showing how they built the animation system for two characters, "little lady & little dude", in an ongoing series of interactive storytelling projects. The characters are animated from motion capture with Mixamo integration and drawn as hand-drawn line art.
 
@@ -149,14 +149,14 @@ A ~39-second AI-film reel from @lemon_carpet (made with Seedance) explaining how
 
 A Claude Code tip from @Voxyz_ai: a cost-efficient agent tree where Fable 5.2 (medium effort) is the root orchestrator and only delegates on demand, Haiku 5.5 handles finding files and running tests, and Opus 5.5 (medium) edits code. Fable then integrates and verifies the results, and switches to high effort only if it gets stuck. It follows Anthropic's new model selection guide, and the image is meant to be handed to Claude Code to set it up.
 
-### [AI tween harness](../topics/design/ai-tween-paint-harness.md)
+### [AI tween harness](../topics/animation/ai-tween-paint-harness.md)
 
-`technique` · design · <https://x.com/araminta_k/status/2120216869005324667>
+`technique` · animation · <https://x.com/araminta_k/status/2120216869005324667>
 
 - **Why saved:** AI-assisted 2D tweening and colouring workflow
 - **Style:** painted 2d backgrounds, hand-drawn animation
 - **Kit:** motion, 2d
-- **Tags:** #animation #2d #claude #workflow
+- **Tags:** #2d #claude #workflow
 
 Araminta (Alvdansen Studio) shows in a 2-minute video how she uses her "AI Assisted Tween & Paint" harnesses for 2D hand-drawn animation. She starts from a key drawing (line art over a painted background), the agent works directly inside Toon Boom Harmony to tween and colour the shot, and she gives notes in plain words that it fixes, like colour bleed in the hands. The workbook is on the studio's Patreon, and more videos are coming on their YouTube.
 
@@ -182,14 +182,14 @@ Jake Eaton (@jkeatn) has been painting with Fable 5.2 in code. To answer the cri
 
 Shaders Bible Series (@ushadersbible) shows an animated 2D waterfall in Godot: a Sprite2D with a ShaderMaterial (`using_texture`) that takes a tiled waterfall texture array, a `noise_64.png` noise texture and a `speed` parameter (2.0). It's a teaser for their Complete Godot VFX Handbook at jettelly.com. Handy reference for stylised water in Yuvraj's games.
 
-### [Blender storybook hero](../topics/gamedev/blender-mcp-storybook-hero-workflow.md)
+### [Blender storybook hero](../topics/animation/blender-mcp-storybook-hero-workflow.md)
 
-`technique` · gamedev · <https://x.com/rewind02/status/2119821740058546282>
+`technique` · animation · <https://x.com/rewind02/status/2119821740058546282>
 
 - **Why saved:** repeatable Blender MCP character workflow for my games
 - **Style:** stylised storybook 3d, big-head proportions
 - **Kit:** 3d
-- **Tags:** #blender #mcp #3d-character #animation #rigging #workflow
+- **Tags:** #blender #mcp #3d-character #rigging #workflow
 
 @rewind02 built and animated a stylised storybook hero (curly-haired boy, green tunic, brown boots, long orange scarf) in Blender by driving it with Claude Opus 5.5 through the Blender MCP. The key trick: give the scarf its own bone chain so it trails and swings behind every step. Saved as a repeatable 8-step character workflow for Yuvraj's games.
 

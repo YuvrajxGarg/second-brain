@@ -63,23 +63,23 @@ _VFX: effects, overlays, compositing, AI video and upscalers_
 
 How Claude Code and Higgsfield (FLUX 3, Nano Banana Pro) were used to finish a photoreal group shot for a Revolio Media album-cover job, from an approved base frame through 134 versions. The rules below came out of his corrections along the way. Client and artist names are left out because this repo is public.
 
-### [Viggle Remake model](../topics/ai/viggle-remake-open-model.md)
+### [Viggle Remake model](../topics/video-editing/viggle-remake-open-model.md)
 
-`tool` · ai · <https://www.instagram.com/reel/DfpPt63MPOT/>
+`tool` · video-editing · <https://www.instagram.com/reel/DfpPt63MPOT/>
 
 - **Why saved:** Viggle AI's open weights to recast anybody in a video
 - **Kit:** vfx
-- **Tags:** #video-generation #video-editing #hugging-face #open-source #to-try
+- **Tags:** #video-generation #hugging-face #open-source #to-try
 
 ![screenshot](./viggle-remake-open-model.jpg)
 
-### [RelayVSR video upscaler](../topics/ai/relayvsr-video-upscaler.md)
+### [RelayVSR video upscaler](../topics/video-editing/relayvsr-video-upscaler.md)
 
-`tool` · ai · <https://www.instagram.com/reel/DfpWJb0BauP/>
+`tool` · video-editing · <https://www.instagram.com/reel/DfpWJb0BauP/>
 
 - **Why saved:** open weight video upscaler available in ComfyUI
 - **Kit:** vfx
-- **Tags:** #video-generation #video-editing #hugging-face #open-source #to-try
+- **Tags:** #video-generation #hugging-face #open-source #to-try
 
 ![screenshot](./relayvsr-video-upscaler.jpg)
 
@@ -93,14 +93,14 @@ How Claude Code and Higgsfield (FLUX 3, Nano Banana Pro) were used to finish a p
 
 `reid` is an open-source (Apache 2.0) Python package from Roboflow that turns a crop of a person into an appearance embedding, so the same person can be matched across frames, clips or cameras. It loads pretrained OSNet and FastReID models, works with `supervision` detections from any detector (e.g. RF-DETR), and includes benchmarks for re-identification. Install with `pip install -U reid`; docs at reid.roboflow.com.
 
-### [Ladybug VFX app](../topics/design/ladybug-vfx-app.md)
+### [Ladybug VFX app](../topics/video-editing/ladybug-vfx-app.md)
 
-`tool` · design · <https://theladybug.app/>
+`tool` · video-editing · <https://theladybug.app/>
 
 - **Why saved:** benchmark for the Revolio Labs VFX feature
 - **Style:** halftone, ascii, dither, glitch
 - **Kit:** vfx
-- **Tags:** #vfx #video-editing #browser-tool #reference
+- **Tags:** #vfx #browser-tool #reference
 
 Ladybug is a browser-based effects studio for images, video, type and sound: 60+ effects and 300+ looks (halftone, ASCII, dither, glass, glitch, glow, depth), keyframe animation, sound reactivity, and object, face and hand tracking. Exports 4K video, high-res stills, transparent video, PNG sequences and SVG; media stays on your machine. Free tier has no watermark, commercial use needs a Pro licence.
 
@@ -118,58 +118,58 @@ _Motion: animation, mocap, retargeting and motion-design refs_
 
 raea ("Render Anything Engine") is a Mac desktop studio where AI agents write React and TypeScript code for videos, motion graphics, 3D and games, then render the result on your own GPU with no per-render fees. You can bring your own model (Claude, ChatGPT, Kimi or a local one), and it claims faster renders than Remotion and HyperFrames. The engine is free; Pro adds synced storage, version history and publishing to YouTube and other platforms.
 
-### [Unity bodycam hands](../topics/gamedev/unity-bodycam-ik-hands.md)
+### [Unity bodycam hands](../topics/animation/unity-bodycam-ik-hands.md)
 
-`technique` · gamedev · <https://www.instagram.com/reel/DfpPiVxiVWy/>
+`technique` · animation · <https://www.instagram.com/reel/DfpPiVxiVWy/>
 
 - **Why saved:** tips for hand animation in a first person view in Unity
 - **Style:** bodycam first person view, gloved hands with pistol, striped test room
 - **Kit:** motion, 3d
-- **Tags:** #unity #rigging #animation #tutorial
+- **Tags:** #unity #rigging #tutorial
 
 ![screenshot](./unity-bodycam-ik-hands.jpg)
 
-### [Toyxyz retarget add-on](../topics/gamedev/toyxyz-blender-retargeter.md)
+### [Toyxyz retarget add-on](../topics/animation/toyxyz-blender-retargeter.md)
 
-`tool` · gamedev · <https://x.com/toyxyz3/status/2120734403605500312>
+`tool` · animation · <https://x.com/toyxyz3/status/2120734403605500312>
 
 - **Why saved:** cool plugin, and also cool way to retarget motion between characters with different body proportions; also a very cool art style for showing prototype models in a game
 - **Style:** blocky segmented mannequins, one flat pastel colour per character, dark grey blender viewport grid
 - **Kit:** motion, 3d
-- **Tags:** #blender #animation #motion-capture #rigging #game-inspiration
+- **Tags:** #blender #motion-capture #rigging #game-inspiration
 
 A free Blender add-on by @toyxyz3 that retargets mocap between characters with very different body proportions (tall, short, stocky). It copies joint rotations with FK, then adjusts the root motion for each rig's limb lengths, so feet don't slide and you avoid the IK popping of IK-based retargeting. Code: https://github.com/toyxyz/toyxyz-blender-retargeter
 
-### [Line art mocap workflow](../topics/gamedev/line-art-mocap-workflow.md)
+### [Line art mocap workflow](../topics/animation/line-art-mocap-workflow.md)
 
-`technique` · gamedev · <https://www.instagram.com/reel/DfoIiH5R7Mo/>
+`technique` · animation · <https://www.instagram.com/reel/DfoIiH5R7Mo/>
 
 - **Why saved:** cool line art animation workflow with motion capture and Mixamo integration also
 - **Style:** wobbly hand-drawn black line art, beak-nosed stick characters, cream paper cards on yellow grid paper
 - **Kit:** motion
-- **Tags:** #animation #motion-capture #mixamo #creative-coding #inspiration
+- **Tags:** #motion-capture #mixamo #creative-coding #inspiration
 
 Reel by @shubhastudios showing how they built the animation system for two characters, "little lady & little dude", in an ongoing series of interactive storytelling projects. The characters are animated from motion capture with Mixamo integration and drawn as hand-drawn line art.
 
-### [Cinematic film skill](../topics/ai/cinematic-film-skill.md)
+### [Cinematic film skill](../topics/video-editing/cinematic-film-skill.md)
 
-`tool` · ai · <https://github.com/Moh4696/cinematic-skill>
+`tool` · video-editing · <https://github.com/Moh4696/cinematic-skill>
 
 - **Why saved:** agent skill for explainer content
 - **Style:** cork evidence wall, archive photos with red string, stamps and highlighter swipes, rolling counters, one continuous camera move
 - **Kit:** motion, edit
-- **Tags:** #agents #claude #video-editing #open-source #to-try
+- **Tags:** #agents #claude #open-source #to-try
 
 ![screenshot](./cinematic-film-skill.webp)
 
-### [Impossible Weapon animation](../topics/design/impossible-weapon-knight-animation.md)
+### [Impossible Weapon animation](../topics/animation/impossible-weapon-knight-animation.md)
 
-`style-ref` · design · <https://www.instagram.com/reel/Dfm8H07Pohc/>
+`style-ref` · animation · <https://www.instagram.com/reel/Dfm8H07Pohc/>
 
 - **Why saved:** Brilliant art style for animations
 - **Style:** painterly stylised 3d, chunky armoured knights, misty desaturated battlefield, red ink outline accents, bold red and blue colour pops
 - **Kit:** motion
-- **Tags:** #animation #video-generation #3d-art #inspiration
+- **Tags:** #video-generation #3d-art #inspiration
 
 "The Impossible Weapon", a ~34-second animated short by INK (@ink.industries_) and Pascal Gautier, made with Krea AI. Two stylised armoured knights face off on a misty, grassy battlefield: a hulking dark knight with a blue plume and a nimble silver knight with a red cape who leaps in with a sword. Saved for its art style for animation: painterly stylised 3D that feels like a hand-made animated feature.
 
@@ -184,9 +184,9 @@ Reel by @shubhastudios showing how they built the animation system for two chara
 
 A 17-second animated launch film shared by Austin Bauwens, titled "Captchas aren't what you think they are". It argues that solving captchas has been unpaid AI training, from labelling people to steering self-driving cars. The look is flat chunky pixel-art in orange, blue and periwinkle, with captcha grids, bounding boxes, pixel cursors and a car driving a top-down map. Directed by Sam Essanoussi, with design and animation by Justin De Leon and Connor Roy-Shaw. Saved as motion and visual design inspiration.
 
-### [Ace Of Frames reel](../topics/design/ace-of-frames-reel.md)
+### [Ace Of Frames reel](../topics/video-editing/ace-of-frames-reel.md)
 
-`style-ref` · design · <https://x.com/aceoframes/status/2120280507778777140>
+`style-ref` · video-editing · <https://x.com/aceoframes/status/2120280507778777140>
 
 - **Why saved:** cool visual design
 - **Style:** bold type, ui mockups in motion, pixel-art mascots, glowing cards, product launch video
@@ -195,14 +195,14 @@ A 17-second animated launch film shared by Austin Bauwens, titled "Captchas aren
 
 A 14-second showreel from Ace Of Frames, a studio that makes product launch videos for startups (aceoframes.com). It plays four launch videos at once in a 2x2 grid, mixing bold type, UI mockups, pixel-art mascots, glowing cards and photo backdrops, and the caption jokes that even AI can't match their taste. Saved as visual design inspiration.
 
-### [AI tween harness](../topics/design/ai-tween-paint-harness.md)
+### [AI tween harness](../topics/animation/ai-tween-paint-harness.md)
 
-`technique` · design · <https://x.com/araminta_k/status/2120216869005324667>
+`technique` · animation · <https://x.com/araminta_k/status/2120216869005324667>
 
 - **Why saved:** AI-assisted 2D tweening and colouring workflow
 - **Style:** painted 2d backgrounds, hand-drawn animation
 - **Kit:** motion, 2d
-- **Tags:** #animation #2d #claude #workflow
+- **Tags:** #2d #claude #workflow
 
 Araminta (Alvdansen Studio) shows in a 2-minute video how she uses her "AI Assisted Tween & Paint" harnesses for 2D hand-drawn animation. She starts from a key drawing (line art over a painted background), the agent works directly inside Toon Boom Harmony to tween and colour the shot, and she gives notes in plain words that it fixes, like colour bleed in the hands. The workbook is on the studio's Patreon, and more videos are coming on their YouTube.
 
@@ -210,16 +210,16 @@ Araminta (Alvdansen Studio) shows in a 2-minute video how she uses her "AI Assis
 
 _Shoot: camera, lenses, lighting, DIT and card offloads_
 
-### [DIT offload checker](../topics/tech/dit-offload-checker-idea.md)
+### [DIT offload checker](../topics/video-editing/dit-offload-checker-idea.md)
 
-`project` · tech · **concept** · <https://www.instagram.com/reel/DfkvaoETdCl/>
+`project` · video-editing · **concept** · <https://www.instagram.com/reel/DfkvaoETdCl/>
 
 - **Made for:** app idea for PXL, a data transfer system checker for when DIT is happening on a shoot
 - **Repo:** none
 - **Style:** dark menu bar popover, blue primary button, plain status sentence
 - **Kit:** shoot
 - **Next:** Write down what "safe to format" means: every clip on the card is on the drive with the same size and checksum; Prototype the compare step against a real card offload and a T7-style working drive; Sketch the menu bar popover from the backed reference (card, working drive, one plain status sentence)
-- **Tags:** #pxlvzn #product-idea #desktop-app #video-editing
+- **Tags:** #pxlvzn #product-idea #desktop-app
 
 ![screenshot](./dit-offload-checker-idea.jpg)
 
@@ -238,24 +238,24 @@ A ~39-second AI-film reel from @lemon_carpet (made with Seedance) explaining how
 
 _Edit: editing workflows and footage tools_
 
-### [Claude video edit](../topics/ai/claude-video-edit.md)
+### [Claude video edit](../topics/video-editing/claude-video-edit.md)
 
-`technique` · ai · <https://x.com/udayan_w/status/2122732735496355860>
+`technique` · video-editing · <https://x.com/udayan_w/status/2122732735496355860>
 
 - **Why saved:** a full YouTube video edited and rendered entirely with Claude (360 GB of footage)
 - **Kit:** edit
-- **Tags:** #claude #video-editing #agents #inspiration
+- **Tags:** #claude #agents #inspiration
 
 Udayan Walvekar (@udayan_w) says a polished GrowthX YouTube video, "I Read This 417 Page Anthropic IPO Filing, So You Don't Have To", was edited entirely in Claude, with 360 GB of files rendered through it. Proof point that an agent can drive a real long-form edit end to end. The post shares no workflow details, only the claim and a screenshot.
 
-### [Cinematic film skill](../topics/ai/cinematic-film-skill.md)
+### [Cinematic film skill](../topics/video-editing/cinematic-film-skill.md)
 
-`tool` · ai · <https://github.com/Moh4696/cinematic-skill>
+`tool` · video-editing · <https://github.com/Moh4696/cinematic-skill>
 
 - **Why saved:** agent skill for explainer content
 - **Style:** cork evidence wall, archive photos with red string, stamps and highlighter swipes, rolling counters, one continuous camera move
 - **Kit:** motion, edit
-- **Tags:** #agents #claude #video-editing #open-source #to-try
+- **Tags:** #agents #claude #open-source #to-try
 
 ![screenshot](./cinematic-film-skill.webp)
 
@@ -271,15 +271,15 @@ Udayan Walvekar (@udayan_w) says a polished GrowthX YouTube video, "I Read This 
 
 Stm: split any song into vocals, drums, bass and other stems with the Demucs model on your own GPU. macOS and Windows.
 
-### [Dwn downloader](../topics/tech/dwn-downloader.md)
+### [Dwn downloader](../topics/video-editing/dwn-downloader.md)
 
-`project` · tech · **live** · <https://dwn.pxlvzn.in>
+`project` · video-editing · **live** · <https://dwn.pxlvzn.in>
 
 - **Made for:** to grab videos, songs and transcripts from any site in edit-ready formats, without sketchy download sites
 - **Stack:** swiftui, electron, yt-dlp, ffmpeg
 - **Repo:** https://github.com/YuvrajxGarg/dwn
 - **Kit:** edit
-- **Tags:** #pxlvzn #own-project #desktop-app #video-editing
+- **Tags:** #pxlvzn #own-project #desktop-app
 
 Dwn: download videos, songs, playlists and transcripts from YouTube, TikTok, Instagram, X, SoundCloud and 1,000+ sites. Native SwiftUI on macOS, Electron on Windows, on a local yt-dlp + FFmpeg engine. H.264/HEVC/ProRes up to 8K, trim before download on a filmstrip timeline, cloud drives via rclone, one-click updates.
 
@@ -352,25 +352,25 @@ Silicon Jungle (@JungleSilicon) shows small 3D scenes rendered as pixel-art gaus
 
 ![screenshot](./escapement-blender-short-film.jpg)
 
-### [Unity bodycam hands](../topics/gamedev/unity-bodycam-ik-hands.md)
+### [Unity bodycam hands](../topics/animation/unity-bodycam-ik-hands.md)
 
-`technique` · gamedev · <https://www.instagram.com/reel/DfpPiVxiVWy/>
+`technique` · animation · <https://www.instagram.com/reel/DfpPiVxiVWy/>
 
 - **Why saved:** tips for hand animation in a first person view in Unity
 - **Style:** bodycam first person view, gloved hands with pistol, striped test room
 - **Kit:** motion, 3d
-- **Tags:** #unity #rigging #animation #tutorial
+- **Tags:** #unity #rigging #tutorial
 
 ![screenshot](./unity-bodycam-ik-hands.jpg)
 
-### [Toyxyz retarget add-on](../topics/gamedev/toyxyz-blender-retargeter.md)
+### [Toyxyz retarget add-on](../topics/animation/toyxyz-blender-retargeter.md)
 
-`tool` · gamedev · <https://x.com/toyxyz3/status/2120734403605500312>
+`tool` · animation · <https://x.com/toyxyz3/status/2120734403605500312>
 
 - **Why saved:** cool plugin, and also cool way to retarget motion between characters with different body proportions; also a very cool art style for showing prototype models in a game
 - **Style:** blocky segmented mannequins, one flat pastel colour per character, dark grey blender viewport grid
 - **Kit:** motion, 3d
-- **Tags:** #blender #animation #motion-capture #rigging #game-inspiration
+- **Tags:** #blender #motion-capture #rigging #game-inspiration
 
 A free Blender add-on by @toyxyz3 that retargets mocap between characters with very different body proportions (tall, short, stocky). It copies joint rotations with FK, then adjusts the root motion for each rig's limb lengths, so feet don't slide and you avoid the IK popping of IK-based retargeting. Code: https://github.com/toyxyz/toyxyz-blender-retargeter
 
@@ -385,13 +385,13 @@ A free Blender add-on by @toyxyz3 that retargets mocap between characters with v
 
 A reel from @thesoloentrepreneur.yt showing a "₹1 lakh website": a 3D web scene of an old Indian sweet shop, "Sharma Sweets, since 1965", with a stylised cartoon Lala ji (big moustache, white Gandhi cap, purple Nehru jacket, white kurta) standing in front of the shuttered shop. Saved as the art style reference for his Tukaram Munde game: stylised cartoon 3D, everyday Indian street settings, caricature characters.
 
-### [Procedural arm rig](../topics/gamedev/procedural-arm-rig-demo.md)
+### [Procedural arm rig](../topics/animation/procedural-arm-rig-demo.md)
 
-`library` · gamedev · <https://x.com/apekshik/status/2120224530367119758>
+`library` · animation · <https://x.com/apekshik/status/2120224530367119758>
 
 - **Why saved:** open-source rigged arm to reuse in my games
 - **Kit:** 3d
-- **Tags:** #rigging #animation #open-source #to-try
+- **Tags:** #rigging #open-source #to-try
 
 @apekshik used an AI model to build one highly detailed, open-source rigged arm instead of "one-shotting" a whole game: realistic bone armature, weight-painted mesh, volume-preserving joints and muscles that swell as the fist tightens. The arm uses two-bone IK (you set the hand target, it solves shoulder and elbow) while the 38-bone fingers use FK, curling joint by joint and stopping on contact, so it can reach, grab and place a ball on a table. Live demo at procedural-arm-rig.vercel.app, code at github.com/apekshik/procedural-arm-rig, free to reuse in your own games.
 
@@ -427,14 +427,14 @@ Patch (patch.gg), launched by Rehan Sheikh (@rehan_shei), is a platform to build
 
 3D artist ARC (@arc4g) released all of their 3D art project files for free under Creative Commons, inviting people to remix them by hand or with AI agents. Their disability makes it hard to keep making art, so this lets the work keep growing. The previews show glossy abstract 3D renders: gold and rose-gold metallic shapes, pastel blocks, pink and blue scenes.
 
-### [Blender storybook hero](../topics/gamedev/blender-mcp-storybook-hero-workflow.md)
+### [Blender storybook hero](../topics/animation/blender-mcp-storybook-hero-workflow.md)
 
-`technique` · gamedev · <https://x.com/rewind02/status/2119821740058546282>
+`technique` · animation · <https://x.com/rewind02/status/2119821740058546282>
 
 - **Why saved:** repeatable Blender MCP character workflow for my games
 - **Style:** stylised storybook 3d, big-head proportions
 - **Kit:** 3d
-- **Tags:** #blender #mcp #3d-character #animation #rigging #workflow
+- **Tags:** #blender #mcp #3d-character #rigging #workflow
 
 @rewind02 built and animated a stylised storybook hero (curly-haired boy, green tunic, brown boots, long orange scarf) in Blender by driving it with Claude Opus 5.5 through the Blender MCP. The key trick: give the scarf its own bone chain so it trails and swings behind every step. Saved as a repeatable 8-step character workflow for Yuvraj's games.
 
@@ -475,14 +475,14 @@ Kimo (@asynkimo) shows sprite stacking: slice a pixel-art object row by row from
 
 A 17-second animated launch film shared by Austin Bauwens, titled "Captchas aren't what you think they are". It argues that solving captchas has been unpaid AI training, from labelling people to steering self-driving cars. The look is flat chunky pixel-art in orange, blue and periwinkle, with captcha grids, bounding boxes, pixel cursors and a car driving a top-down map. Directed by Sam Essanoussi, with design and animation by Justin De Leon and Connor Roy-Shaw. Saved as motion and visual design inspiration.
 
-### [AI tween harness](../topics/design/ai-tween-paint-harness.md)
+### [AI tween harness](../topics/animation/ai-tween-paint-harness.md)
 
-`technique` · design · <https://x.com/araminta_k/status/2120216869005324667>
+`technique` · animation · <https://x.com/araminta_k/status/2120216869005324667>
 
 - **Why saved:** AI-assisted 2D tweening and colouring workflow
 - **Style:** painted 2d backgrounds, hand-drawn animation
 - **Kit:** motion, 2d
-- **Tags:** #animation #2d #claude #workflow
+- **Tags:** #2d #claude #workflow
 
 Araminta (Alvdansen Studio) shows in a 2-minute video how she uses her "AI Assisted Tween & Paint" harnesses for 2D hand-drawn animation. She starts from a key drawing (line art over a painted background), the agent works directly inside Toon Boom Harmony to tween and colour the shot, and she gives notes in plain words that it fixes, like colour bleed in the hands. The workbook is on the studio's Patreon, and more videos are coming on their YouTube.
 

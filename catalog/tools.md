@@ -64,45 +64,45 @@ unslop by Damir Sokolovsky (@heydamir) is an open-source skill for Claude Code a
 
 raea ("Render Anything Engine") is a Mac desktop studio where AI agents write React and TypeScript code for videos, motion graphics, 3D and games, then render the result on your own GPU with no per-render fees. You can bring your own model (Claude, ChatGPT, Kimi or a local one), and it claims faster renders than Remotion and HyperFrames. The engine is free; Pro adds synced storage, version history and publishing to YouTube and other platforms.
 
-### [Viggle Remake model](../topics/ai/viggle-remake-open-model.md)
+### [Viggle Remake model](../topics/video-editing/viggle-remake-open-model.md)
 
-`tool` · ai · <https://www.instagram.com/reel/DfpPt63MPOT/>
+`tool` · video-editing · <https://www.instagram.com/reel/DfpPt63MPOT/>
 
 - **Why saved:** Viggle AI's open weights to recast anybody in a video
 - **Kit:** vfx
-- **Tags:** #video-generation #video-editing #hugging-face #open-source #to-try
+- **Tags:** #video-generation #hugging-face #open-source #to-try
 
 ![screenshot](./viggle-remake-open-model.jpg)
 
-### [Toyxyz retarget add-on](../topics/gamedev/toyxyz-blender-retargeter.md)
+### [Toyxyz retarget add-on](../topics/animation/toyxyz-blender-retargeter.md)
 
-`tool` · gamedev · <https://x.com/toyxyz3/status/2120734403605500312>
+`tool` · animation · <https://x.com/toyxyz3/status/2120734403605500312>
 
 - **Why saved:** cool plugin, and also cool way to retarget motion between characters with different body proportions; also a very cool art style for showing prototype models in a game
 - **Style:** blocky segmented mannequins, one flat pastel colour per character, dark grey blender viewport grid
 - **Kit:** motion, 3d
-- **Tags:** #blender #animation #motion-capture #rigging #game-inspiration
+- **Tags:** #blender #motion-capture #rigging #game-inspiration
 
 A free Blender add-on by @toyxyz3 that retargets mocap between characters with very different body proportions (tall, short, stocky). It copies joint rotations with FK, then adjusts the root motion for each rig's limb lengths, so feet don't slide and you avoid the IK popping of IK-based retargeting. Code: https://github.com/toyxyz/toyxyz-blender-retargeter
 
-### [RelayVSR video upscaler](../topics/ai/relayvsr-video-upscaler.md)
+### [RelayVSR video upscaler](../topics/video-editing/relayvsr-video-upscaler.md)
 
-`tool` · ai · <https://www.instagram.com/reel/DfpWJb0BauP/>
+`tool` · video-editing · <https://www.instagram.com/reel/DfpWJb0BauP/>
 
 - **Why saved:** open weight video upscaler available in ComfyUI
 - **Kit:** vfx
-- **Tags:** #video-generation #video-editing #hugging-face #open-source #to-try
+- **Tags:** #video-generation #hugging-face #open-source #to-try
 
 ![screenshot](./relayvsr-video-upscaler.jpg)
 
-### [Cinematic film skill](../topics/ai/cinematic-film-skill.md)
+### [Cinematic film skill](../topics/video-editing/cinematic-film-skill.md)
 
-`tool` · ai · <https://github.com/Moh4696/cinematic-skill>
+`tool` · video-editing · <https://github.com/Moh4696/cinematic-skill>
 
 - **Why saved:** agent skill for explainer content
 - **Style:** cork evidence wall, archive photos with red string, stamps and highlighter swipes, rolling counters, one continuous camera move
 - **Kit:** motion, edit
-- **Tags:** #agents #claude #video-editing #open-source #to-try
+- **Tags:** #agents #claude #open-source #to-try
 
 ![screenshot](./cinematic-film-skill.webp)
 
@@ -116,13 +116,13 @@ A free Blender add-on by @toyxyz3 that retargets mocap between characters with v
 
 Patch (patch.gg), launched by Rehan Sheikh (@rehan_shei), is a platform to build and play games. It bundles every game dev tool into one CLI and MCP, ships 50,000+ open-source assets, lets you remix any game on patch or mod games on your PC, and publishes them open source to everyone on patch.
 
-### [Ladybug VFX app](../topics/design/ladybug-vfx-app.md)
+### [Ladybug VFX app](../topics/video-editing/ladybug-vfx-app.md)
 
-`tool` · design · <https://theladybug.app/>
+`tool` · video-editing · <https://theladybug.app/>
 
 - **Why saved:** benchmark for the Revolio Labs VFX feature
 - **Style:** halftone, ascii, dither, glitch
 - **Kit:** vfx
-- **Tags:** #vfx #video-editing #browser-tool #reference
+- **Tags:** #vfx #browser-tool #reference
 
 Ladybug is a browser-based effects studio for images, video, type and sound: 60+ effects and 300+ looks (halftone, ASCII, dither, glass, glitch, glow, depth), keyframe animation, sound reactivity, and object, face and hand tracking. Exports 4K video, high-res stills, transparent video, PNG sequences and SVG; media stays on your machine. Free tier has no watermark, commercial use needs a Pro licence.

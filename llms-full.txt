@@ -115,17 +115,17 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 - Use his own words in each note's `why` and `## Raw` as the strongest signal.
 
 ============================================================
-Transition plugin idea  (topics/tech/transition-plugin-idea.md)
+Transition plugin idea  (topics/video-editing/transition-plugin-idea.md)
 ============================================================
 kind: idea
 stage: new
 type: idea
-topic: tech
+topic: video-editing
 added: 2026-11-26
 source: https://www.instagram.com/reel/DgNBSZoP1or/?lqvp=MTE0dmpkNzBvYzl5Mw==
 status: unread
 why: Plugin idea for ae/pr
-tags: plugin, video-editing, product-idea, adobe
+tags: plugin, product-idea, adobe
 style: pastel pink hardware knob, lime green go button, chunky skeuomorphic panel
 
 ## Summary
@@ -416,16 +416,16 @@ https://x.com/joshuajohnsonai/status/2122836076515799287?a=tpNaFMTm4-1G6dSP2vc&s
 Related: [[blender-mcp-storybook-hero-workflow]] (another agent-driven Blender character workflow).
 
 ============================================================
-Claude video edit  (topics/ai/claude-video-edit.md)
+Claude video edit  (topics/video-editing/claude-video-edit.md)
 ============================================================
 kind: technique
 type: link
-topic: ai
+topic: video-editing
 added: 2026-11-18
 source: https://x.com/udayan_w/status/2122732735496355860
 status: unread
 why: a full YouTube video edited and rendered entirely with Claude (360 GB of footage)
-tags: claude, video-editing, agents, inspiration
+tags: claude, agents, inspiration
 kit: edit
 
 ## Summary
@@ -831,16 +831,16 @@ Repo: https://github.com/Leonxlnx/escapement
 - [[raea-render-engine]]: both agents
 
 ============================================================
-Viggle Remake model  (topics/ai/viggle-remake-open-model.md)
+Viggle Remake model  (topics/video-editing/viggle-remake-open-model.md)
 ============================================================
 kind: tool
 type: video
-topic: ai
+topic: video-editing
 added: 2026-11-13
 source: https://www.instagram.com/reel/DfpPt63MPOT/
 status: unread
 why: Viggle AI's open weights to recast anybody in a video
-tags: video-generation, video-editing, hugging-face, open-source, to-try
+tags: video-generation, hugging-face, open-source, to-try
 kit: vfx
 
 ## Summary
@@ -862,16 +862,16 @@ Wiggle AI's open waits to recast anybody in a video.
 - [[relayvsr-video-upscaler]]: both hugging-face, video-generation, video-editing
 
 ============================================================
-Unity bodycam hands  (topics/gamedev/unity-bodycam-ik-hands.md)
+Unity bodycam hands  (topics/animation/unity-bodycam-ik-hands.md)
 ============================================================
 kind: technique
 type: video
-topic: gamedev
+topic: animation
 added: 2026-11-13
 source: https://www.instagram.com/reel/DfpPiVxiVWy/
 status: unread
 why: tips for hand animation in a first person view in Unity
-tags: unity, rigging, animation, tutorial
+tags: unity, rigging, tutorial
 style: bodycam first person view, gloved hands with pistol, striped test room
 kit: motion, 3d
 
@@ -891,16 +891,16 @@ The link I just shared is tips for hand animation in a first person view in Unit
 - Related: [[procedural-arm-rig-demo]]
 
 ============================================================
-Toyxyz retarget add-on  (topics/gamedev/toyxyz-blender-retargeter.md)
+Toyxyz retarget add-on  (topics/animation/toyxyz-blender-retargeter.md)
 ============================================================
 kind: tool
 type: tool
-topic: gamedev
+topic: animation
 added: 2026-11-13
 source: https://x.com/toyxyz3/status/2120734403605500312
 status: unread
 why: cool plugin, and also cool way to retarget motion between characters with different body proportions; also a very cool art style for showing prototype models in a game
-tags: blender, animation, motion-capture, rigging, game-inspiration
+tags: blender, motion-capture, rigging, game-inspiration
 style: blocky segmented mannequins, one flat pastel colour per character, dark grey blender viewport grid
 kit: motion, 3d
 
@@ -973,16 +973,16 @@ https://x.com/PostiauxCharles/status/2121248954260267411?a=dqYMENsunRd2qlnudcQ&s
 - Related: [[storage-scanner-ui]] (same dark dot-matrix data-viz look)
 
 ============================================================
-RelayVSR video upscaler  (topics/ai/relayvsr-video-upscaler.md)
+RelayVSR video upscaler  (topics/video-editing/relayvsr-video-upscaler.md)
 ============================================================
 kind: tool
 type: video
-topic: ai
+topic: video-editing
 added: 2026-11-13
 source: https://www.instagram.com/reel/DfpWJb0BauP/
 status: unread
 why: open weight video upscaler available in ComfyUI
-tags: video-generation, video-editing, hugging-face, open-source, to-try
+tags: video-generation, hugging-face, open-source, to-try
 kit: vfx
 
 ## Summary
@@ -1002,16 +1002,16 @@ Open weight video upscaler available at ConfUI.
 - Reel by @asharasjad (same creator as [[viggle-remake-open-model]]).
 
 ============================================================
-Line art mocap workflow  (topics/gamedev/line-art-mocap-workflow.md)
+Line art mocap workflow  (topics/animation/line-art-mocap-workflow.md)
 ============================================================
 kind: technique
 type: video
-topic: gamedev
+topic: animation
 added: 2026-11-13
 source: https://www.instagram.com/reel/DfoIiH5R7Mo/
 status: unread
 why: cool line art animation workflow with motion capture and Mixamo integration also
-tags: animation, motion-capture, mixamo, creative-coding, inspiration
+tags: motion-capture, mixamo, creative-coding, inspiration
 style: wobbly hand-drawn black line art, beak-nosed stick characters, cream paper cards on yellow grid paper
 kit: motion
 
@@ -1031,16 +1031,16 @@ Cool line art animation workflow with motion capture and Mixamo integration also
 - Related: [[toyxyz-blender-retargeter]] (mocap retargeting in Blender)
 
 ============================================================
-DIT offload checker  (topics/tech/dit-offload-checker-idea.md)
+DIT offload checker  (topics/video-editing/dit-offload-checker-idea.md)
 ============================================================
 kind: project
 type: app
-topic: tech
+topic: video-editing
 added: 2026-11-13
 source: https://www.instagram.com/reel/DfkvaoETdCl/
 status: unread
 why: app idea for PXL, a data transfer system checker for when DIT is happening on a shoot
-tags: pxlvzn, product-idea, desktop-app, video-editing
+tags: pxlvzn, product-idea, desktop-app
 style: dark menu bar popover, blue primary button, plain status sentence
 kit: shoot
 
@@ -1099,16 +1099,16 @@ Claude using trick
 - Related: [[claude-code-agent-tree]]
 
 ============================================================
-Cinematic film skill  (topics/ai/cinematic-film-skill.md)
+Cinematic film skill  (topics/video-editing/cinematic-film-skill.md)
 ============================================================
 kind: tool
 type: tool
-topic: ai
+topic: video-editing
 added: 2026-11-13
 source: https://github.com/Moh4696/cinematic-skill
 status: unread
 why: agent skill for explainer content
-tags: agents, claude, video-editing, open-source, to-try
+tags: agents, claude, open-source, to-try
 style: cork evidence wall, archive photos with red string, stamps and highlighter swipes, rolling counters, one continuous camera move
 kit: motion, edit
 
@@ -1130,16 +1130,16 @@ This is a skill, agent skill for explainer content.
 - Related: [[ai-tween-paint-harness]]
 
 ============================================================
-Blooming flowers site  (topics/design/mohamed-siddique-flower-site.md)
+Blooming flowers site  (topics/animation/mohamed-siddique-flower-site.md)
 ============================================================
 kind: website-ref
 type: video
-topic: design
+topic: animation
 added: 2026-11-13
 source: https://x.com/msiddique26/status/2120936635856752710
 status: unread
 why: nice calm website style with growing flower animation
-tags: website, visual-design, animation, inspiration
+tags: website, visual-design, inspiration
 style: cream paper card with torn edges, painterly landscape backdrop, hand-drawn flowers growing on a dot grid, soft serif headline
 
 ## Summary
@@ -1496,11 +1496,11 @@ This second brain: every link, idea and reference he dumps in chat filed as one 
 - [[pxlvzn-label]]: made under PXLVZN label
 
 ============================================================
-Saturday off tracker  (topics/business/saturday-off-tracker.md)
+Saturday off tracker  (topics/revolio/saturday-off-tracker.md)
 ============================================================
 kind: project
 type: tool
-topic: business
+topic: revolio
 added: 2026-11-12
 source: https://project-3pgsr.vercel.app
 status: read
@@ -1517,11 +1517,11 @@ Revolio Saturday Off Tracker: a small internal web app for planning which team m
 - Internal tool for [[revolio-media-studio]].
 
 ============================================================
-SLANGDAQ game  (topics/gamedev/slangdaq-game.md)
+SLANGDAQ game  (topics/revolio/slangdaq-game.md)
 ============================================================
 kind: project
 type: game
-topic: gamedev
+topic: revolio
 added: 2026-11-12
 source: https://slangdaq.vercel.app
 status: read
@@ -1581,11 +1581,11 @@ Rookwise ("chess, understood"): a local-first chess improvement workspace. Impor
 - [[pxlvzn-label]]: made under PXLVZN label; both pxlvzn
 
 ============================================================
-Rohit Learns Ball  (topics/gamedev/rohit-learns-ball.md)
+Rohit Learns Ball  (topics/revolio/rohit-learns-ball.md)
 ============================================================
 kind: project
 type: game
-topic: gamedev
+topic: revolio
 added: 2026-11-12
 source: https://rlb.revolio.media
 status: read
@@ -1604,16 +1604,16 @@ A fan-made pixel game: the Kasauli Tigers teach Rohit basketball the hard way. Y
 - [[revolio-labs]]: made under Revolio Labs; both revolio-labs, browser-game
 
 ============================================================
-Revolio website  (topics/design/revolio-website.md)
+Revolio website  (topics/revolio/revolio-website.md)
 ============================================================
 kind: project
 type: site
-topic: design
+topic: revolio
 added: 2026-11-12
 source: https://revolio.in
 status: read
 why: the Revolio Media portfolio site, to show the studio's work
-tags: revolio, own-project, portfolio, website
+tags: own-project, portfolio, website
 
 ## Summary
 revolio.in, the Revolio Media agency portfolio: 20 project stories, a filterable work wall and index, studio positioning, Revolio Mag, Dumb Biryani and an email-draft enquiry flow. Dependency-free static site generated by a Python script, built from the 43-page Revolio Media Deck 2026 and verified public sources.
@@ -1625,11 +1625,11 @@ revolio.in, the Revolio Media agency portfolio: 20 project stories, a filterable
 - Company: [[revolio-media-studio]].
 
 ============================================================
-Revolio Studio v1  (topics/ai/revolio-studio-v1.md)
+Revolio Studio v1  (topics/revolio/revolio-studio-v1.md)
 ============================================================
 kind: project
 type: app
-topic: ai
+topic: revolio
 added: 2026-11-12
 source: https://studio.revolio.media
 status: read
@@ -1646,16 +1646,16 @@ For context, should we add like all the projects that I've already made with the
 - Superseded by [[revolio-labs-app]].
 
 ============================================================
-Revolio SSD Desk  (topics/business/revolio-ssd-desk.md)
+Revolio SSD Desk  (topics/revolio/revolio-ssd-desk.md)
 ============================================================
 kind: project
 type: tool
-topic: business
+topic: revolio
 added: 2026-11-12
 source: https://revolio-ssd-desk.vercel.app
 status: read
 why: to always know who has which Revolio SSD and log handoffs with a tap
-tags: revolio, own-project, internal-tool, nfc
+tags: own-project, internal-tool, nfc
 
 ## Summary
 SSD Desk: an equipment tracker for Revolio's shared SSDs. Tap a drive's NFC tag or scan its QR label to see who has it and log a handoff; an overview shows available, checked-out and overdue drives plus an activity log.
@@ -1667,16 +1667,16 @@ SSD Desk: an equipment tracker for Revolio's shared SSDs. Tap a drive's NFC tag 
 - Internal tool for [[revolio-media-studio]].
 
 ============================================================
-Revolio Media studio  (topics/business/revolio-media-studio.md)
+Revolio Media studio  (topics/video-editing/revolio-media-studio.md)
 ============================================================
 kind: org
 type: company
-topic: business
+topic: video-editing
 added: 2026-11-12
 source: https://revolio.in
 status: read
 why: the creative studio where the day job is: video editing and the studio's tech
-tags: revolio, own-project, video-editing, content-studio
+tags: revolio, own-project, content-studio
 
 ## Summary
 Revolio Media is the Mumbai creative studio Yuvraj works at. It brings production, marketing and storytelling into one room: films, branded series, editorial platforms and original IP for clients like CRED, Prime Video, Netflix, District, Rolling Loud India, Aspora and Simba, plus its own originals (Revolio Mag, Dumb Biryani, Revolio Originals). Yuvraj edits video and builds the studio's tech: Revolio Labs, internal tools and the website.
@@ -1691,16 +1691,16 @@ Also for context, you can add like what Rivolio is, where it's a company that I 
 - Instagram: revoliomedia, revoliomag.
 
 ============================================================
-Revolio Ledger app  (topics/business/revolio-ledger-app.md)
+Revolio Ledger app  (topics/revolio/revolio-ledger-app.md)
 ============================================================
 kind: project
 type: app
-topic: business
+topic: revolio
 added: 2026-11-12
 source: https://ledger.revolio.media
 status: read
 why: to replace the messy post-shoot expense and invoice process at Revolio
-tags: revolio, own-project, automation, internal-tool
+tags: own-project, automation, internal-tool
 
 ## Summary
 Ledger: Revolio's post-shoot expense app for a production house. Invoices are collected (including a Gmail scan), checked against the house billing format with LLM extraction, sent through multi-tier approval, dispatched to accounts and confirmed as paid, all built around the closing sheet. Vendors, reimbursements and email reminders too.
@@ -1712,11 +1712,11 @@ Ledger: Revolio's post-shoot expense app for a production house. Invoices are co
 - Internal tool for [[revolio-media-studio]].
 
 ============================================================
-Revolio Labs site  (topics/gamedev/revolio-labs-site.md)
+Revolio Labs site  (topics/revolio/revolio-labs-site.md)
 ============================================================
 kind: project
 type: site
-topic: gamedev
+topic: revolio
 added: 2026-11-12
 source: https://games.revolio.media
 status: read
@@ -1734,11 +1734,11 @@ games.revolio.media: the Revolio Labs home as a scroll-driven three.js side-scro
 - Company: [[revolio-labs]].
 
 ============================================================
-Revolio Labs app  (topics/ai/revolio-labs-app.md)
+Revolio Labs app  (topics/revolio/revolio-labs-app.md)
 ============================================================
 kind: project
 type: app
-topic: ai
+topic: revolio
 added: 2026-11-12
 source: https://studio.revolio.media
 status: read
@@ -1760,16 +1760,16 @@ Also for context, you can add like what Rivolio is, where it's a company that I 
 - Wanted feature: [[revolio-labs-vfx-feature]].
 
 ============================================================
-Revolio Labs  (topics/business/revolio-labs.md)
+Revolio Labs  (topics/revolio/revolio-labs.md)
 ============================================================
 kind: org
 type: company
-topic: business
+topic: revolio
 added: 2026-11-12
 source: https://labs.revolio.media
 status: read
 why: the experiments company under Revolio, for games, tools and toys ('Work in play')
-tags: revolio-labs, revolio, own-project, browser-game, ai
+tags: revolio-labs, own-project, browser-game, ai
 style: black and yellow, r mark with animated eyes, clean sans type
 
 ## Summary
@@ -1904,11 +1904,11 @@ For context, should we add like all the projects that I've already made with the
 - [[disk-cleanup-app]]: both desktop-app
 
 ============================================================
-PEAKD game  (topics/gamedev/peakd-game.md)
+PEAKD game  (topics/revolio/peakd-game.md)
 ============================================================
 kind: project
 type: game
-topic: gamedev
+topic: revolio
 added: 2026-11-12
 source: https://peakd.revolio.media
 status: read
@@ -1977,11 +1977,11 @@ A concept bible for a contained detective game: you have one night to find Niko,
 - Part of [[idea-archive-site]].
 
 ============================================================
-Munde Mode game  (topics/gamedev/munde-mode-game.md)
+Munde Mode game  (topics/revolio/munde-mode-game.md)
 ============================================================
 kind: project
 type: game
-topic: gamedev
+topic: revolio
 added: 2026-11-12
 source: https://munde-mode.vercel.app
 status: read
@@ -2082,16 +2082,16 @@ https://www.instagram.com/reel/DfnLpaPoNIf/?exln=NGpjOXc5NGVnaTB4
 - Related: [[impossible-weapon-knight-animation]]
 
 ============================================================
-Impossible Weapon animation  (topics/design/impossible-weapon-knight-animation.md)
+Impossible Weapon animation  (topics/animation/impossible-weapon-knight-animation.md)
 ============================================================
 kind: style-ref
 type: video
-topic: design
+topic: animation
 added: 2026-11-12
 source: https://www.instagram.com/reel/Dfm8H07Pohc/
 status: unread
 why: Brilliant art style for animations
-tags: animation, video-generation, 3d-art, inspiration
+tags: video-generation, 3d-art, inspiration
 style: painterly stylised 3d, chunky armoured knights, misty desaturated battlefield, red ink outline accents, bold red and blue colour pops
 kit: motion
 
@@ -2114,16 +2114,16 @@ Brilliant art style for animations
 - [[lens-focal-length-guide]]: both video-generation
 
 ============================================================
-Idea Archive site  (topics/business/idea-archive-site.md)
+Idea Archive site  (topics/revolio/idea-archive-site.md)
 ============================================================
 kind: project
 type: site
-topic: business
+topic: revolio
 added: 2026-11-12
 source: https://revoliox.vercel.app
 status: read
 why: to keep original concepts in one place and move the best ones toward production
-tags: revolio, own-project, concept, interactive-film
+tags: own-project, concept, interactive-film
 style: acid green on near-black, film grain, serif italic accents
 
 ## Summary
@@ -2160,16 +2160,16 @@ Hop: AirDrop for every device. Send files between Mac, PC and any phone's browse
 - [[dit-offload-checker-idea]]: both pxlvzn, desktop-app
 
 ============================================================
-Frame Tracker dashboard  (topics/tech/frame-tracker-dashboard.md)
+Frame Tracker dashboard  (topics/video-editing/frame-tracker-dashboard.md)
 ============================================================
 kind: project
 type: tool
-topic: tech
+topic: video-editing
 added: 2026-11-12
 source: https://frametrackadobe.vercel.app
 status: read
 why: to see how much time goes into Premiere Pro and After Effects
-tags: own-project, video-editing, adobe, plugin
+tags: own-project, adobe, plugin
 
 ## Summary
 Frame Tracker: a dashboard for an Adobe plugin that tracks time spent in Premiere Pro and After Effects, with sign-in.
@@ -2203,16 +2203,16 @@ Ferry: a two-pane file manager for moving files between his Mac and Windows PC o
 - [[dit-offload-checker-idea]]: both desktop-app
 
 ============================================================
-Emergent pitch deck  (topics/business/emergent-pitch-deck.md)
+Emergent pitch deck  (topics/revolio/emergent-pitch-deck.md)
 ============================================================
 kind: project
 type: site
-topic: business
+topic: revolio
 added: 2026-11-12
 source: https://emergent-revolio-pitch.vercel.app
 status: read
 why: to pitch a content strategy to Emergent as an interactive web deck
-tags: revolio, own-project, pitch, content-strategy
+tags: own-project, pitch, content-strategy
 
 ## Summary
 An interactive web pitch deck, "Emergent x Revolio": a content strategy built on three pillars (Proof, The Builders and Culture), with slide overview, keyboard navigation and full screen.
@@ -2244,16 +2244,16 @@ His first coding projects (2021 to 2023): Discord bots in discord.js, including 
 - Same era, small web experiments: an Image editor (HTML/JS filters, 2022), a Notion widget and a Twitter customer-finder script.
 
 ============================================================
-Dwn downloader  (topics/tech/dwn-downloader.md)
+Dwn downloader  (topics/video-editing/dwn-downloader.md)
 ============================================================
 kind: project
 type: app
-topic: tech
+topic: video-editing
 added: 2026-11-12
 source: https://dwn.pxlvzn.in
 status: read
 why: to grab videos, songs and transcripts from any site in edit-ready formats, without sketchy download sites
-tags: pxlvzn, own-project, desktop-app, video-editing
+tags: pxlvzn, own-project, desktop-app
 kit: edit
 
 ## Summary
@@ -2402,16 +2402,16 @@ Read via Social Reader (8-post thread, text only). Steps in his words:
 Related: [[app-growth-checklist]]
 
 ============================================================
-Procedural arm rig  (topics/gamedev/procedural-arm-rig-demo.md)
+Procedural arm rig  (topics/animation/procedural-arm-rig-demo.md)
 ============================================================
 kind: library
 type: bookmark
-topic: gamedev
+topic: animation
 added: 2026-11-11
 source: https://x.com/apekshik/status/2120224530367119758
 status: unread
 why: open-source rigged arm to reuse in my games
-tags: rigging, animation, open-source, to-try
+tags: rigging, open-source, to-try
 kit: 3d
 
 ## Summary
@@ -2584,15 +2584,14 @@ Distribution:
 - Ran Apple Search Ads on competitor names and intent keywords?
 - Built ONE feature so good that people screenshot it without you asking?
 
-Related: [[native-swift-app-tip]]
 - [[tiktok-slideshow-app-marketing]]: both growth, mobile-app, marketing
 
 ============================================================
-Ace Of Frames reel  (topics/design/ace-of-frames-reel.md)
+Ace Of Frames reel  (topics/video-editing/ace-of-frames-reel.md)
 ============================================================
 kind: style-ref
 type: video
-topic: design
+topic: video-editing
 added: 2026-11-11
 source: https://x.com/aceoframes/status/2120280507778777140
 status: unread
@@ -2620,16 +2619,16 @@ cool visual design
 - [[captcha-launch-film]]: both visual-design
 
 ============================================================
-AI tween harness  (topics/design/ai-tween-paint-harness.md)
+AI tween harness  (topics/animation/ai-tween-paint-harness.md)
 ============================================================
 kind: technique
 type: video
-topic: design
+topic: animation
 added: 2026-11-11
 source: https://x.com/araminta_k/status/2120216869005324667
 status: unread
 why: AI-assisted 2D tweening and colouring workflow
-tags: animation, 2d, claude, workflow
+tags: 2d, claude, workflow
 style: painted 2d backgrounds, hand-drawn animation
 kit: motion, 2d
 
@@ -2704,12 +2703,12 @@ https://x.com/AlexBodner_/status/2119869708832805344?a=HlVPKugADUb2xcnfk1k&s=20
 Could be handy for sports video edits: tracking one player across clips.
 
 ============================================================
-Revolio VFX feature  (topics/business/revolio-labs-vfx-feature.md)
+Revolio VFX feature  (topics/revolio/revolio-labs-vfx-feature.md)
 ============================================================
 kind: todo
 stage: new
 type: todo
-topic: business
+topic: revolio
 added: 2026-11-10
 source: https://theladybug.app/
 status: unread
@@ -2751,7 +2750,7 @@ Add polyfork.dev. It's an open source three js library that can be used. It also
 ## Notes
 - Licence: free for commercial use in games, no attribution; free mesh files are CC BY 4.0. Can't resell the .mjs source or HD editions. Paid plans: Pro $15/mo, Lifetime $200.
 - Catalog repo: https://github.com/lucas-martinic/polyfork-catalog
-- Related: [[patch-gamedev-platform]], [[arc-3d-art-dataset]]
+- Related: [[patch-gamedev-platform]]
 
 ============================================================
 Patch gamedev tool  (topics/gamedev/patch-gamedev-platform.md)
@@ -2782,16 +2781,16 @@ Related: [[pixel-search-sprite-database]], [[blender-mcp-storybook-hero-workflow
 - [[polyfork-3d-assets]]: both game-assets, mcp
 
 ============================================================
-Ladybug VFX app  (topics/design/ladybug-vfx-app.md)
+Ladybug VFX app  (topics/video-editing/ladybug-vfx-app.md)
 ============================================================
 kind: tool
 type: tool
-topic: design
+topic: video-editing
 added: 2026-11-10
 source: https://theladybug.app/
 status: unread
 why: benchmark for the Revolio Labs VFX feature
-tags: vfx, video-editing, browser-tool, reference
+tags: vfx, browser-tool, reference
 style: halftone, ascii, dither, glitch
 kit: vfx
 
@@ -3015,15 +3014,15 @@ https://x.com/ushadersbible/status/2119673988464922969?a=s-74g2GGB1j52MU2CyE&s=2
 - [[sprite-stacking-pixel-art]]: both godot, tutorial
 
 ============================================================
-Goalkeeper editor joke  (topics/life/goalkeeper-saving-things-in-post.md)
+Goalkeeper editor joke  (topics/video-editing/goalkeeper-saving-things-in-post.md)
 ============================================================
 kind: idea
 stage: new
 type: idea
-topic: life
+topic: video-editing
 added: 2026-11-09
 why: my own editor joke, could be a caption or bio line
-tags: joke, video-editing, pun, own-thought
+tags: joke, pun, own-thought
 
 ## Summary
 Yuvraj's own joke as a video editor: "fixing it in post" means saving a shot or edit in post-production, and saving things is also a goalkeeper's job. Could work as a caption, bio line or post.
@@ -3059,16 +3058,16 @@ fun cricket browser games
 - [[peakd-game]]: both daily-challenge, browser-game
 
 ============================================================
-Blender storybook hero  (topics/gamedev/blender-mcp-storybook-hero-workflow.md)
+Blender storybook hero  (topics/animation/blender-mcp-storybook-hero-workflow.md)
 ============================================================
 kind: technique
 type: bookmark
-topic: gamedev
+topic: animation
 added: 2026-11-09
 source: https://x.com/rewind02/status/2119821740058546282
 status: unread
 why: repeatable Blender MCP character workflow for my games
-tags: blender, mcp, 3d-character, animation, rigging, workflow
+tags: blender, mcp, 3d-character, rigging, workflow
 style: stylised storybook 3d, big-head proportions
 kit: 3d
 
@@ -3095,7 +3094,6 @@ https://x.com/rewind02/status/2119821740058546282?a=4tYjy-hUHaGuRBuPsQw&s=20
 (with a screenshot of the post, saved above)
 
 ## Notes
-- Related: [[godot-waterfall-texture-array-shader]], [[pixel-search-sprite-database]]
 - [[procedural-arm-rig-demo]]: both rigging, animation
 - [[metahuman-maker-agent-addon]]: both 3d-character, blender, mcp
 - [[sharma-sweets-3d-shopfront]]: both 3d-character

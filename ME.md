@@ -81,15 +81,18 @@ _Rebuilt on every filing from 115 notes._
 ### By topic
 
 ```
-gamedev       ██████ 35
-ai            ████ 23
-tech          ████ 21
-design        ████ 21
-business      ██ 10
-life          █ 2
+gamedev       ████ 25
+ai            ███ 17
+tech          ███ 17
+design        ███ 15
+revolio       ███ 15
+video-editing ██ 12
+animation     █ 8
+business      █ 2
 productivity  █ 1
 learning      █ 1
 health        █ 1
+life          █ 1
 ```
 
 ### By kind
