@@ -404,6 +404,7 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({
       name: "Yuvraj's second brain MCP server",
       usage: `Add ${SITE}/mcp as a remote MCP server (Streamable HTTP, no auth). Tools: ${TOOLS.map((t) => t.name).join(", ")}.`,
+      writing: { ok: "on (capture, update_note, log_project)", bad: "wrong key", none: "off (read-only; add ?key=<CAPTURE_KEY> to write)" }[W.access(req)],
     });
   }
   if (req.method !== "POST") return res.status(405).end();
