@@ -33,7 +33,7 @@ state: prototype
 stack: [threejs]
 repo: private
 share: full        # full = every doc, summary = only project.md, none = stays local
-note: 2026-11-12-munde-mode-game   # optional: existing brain note to attach the docs to
+note: munde-mode-game   # optional: existing brain note to attach the docs to
 added: 2026-11-26
 ```
 

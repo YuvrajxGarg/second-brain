@@ -17,7 +17,7 @@ variants of an existing tag.
 
 --fix only does things that can't lose information:
   - rewrites a broken dateless link to the full slug ([[sprite-stacking-pixel-art]] ->
-    [[2026-11-15-sprite-stacking-pixel-art]])
+    [[sprite-stacking-pixel-art]])
   - adds a backlink line to the target's `## Notes` for one-way links that score as
     strong: `- [[source-slug]]: <reason>`
 Removing links, adding new links between unlinked notes, and merges are proposals only:
@@ -118,6 +118,9 @@ def resolve(target, slugs):
     target = target.strip()
     if target in slugs:
         return target, False
+    undated = re.sub(r"^\d{4}-\d\d-\d\d-", "", target)  # old date-first slugs (renamed 2026-11-26)
+    if undated in slugs:
+        return undated, True
     hits = [s for s in slugs if s.endswith("-" + target) or s[11:] == target]
     return (hits[0], True) if len(hits) == 1 else (None, False)
 

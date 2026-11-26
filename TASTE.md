@@ -134,214 +134,214 @@ _From 110 entries, 53 with style notes. Rebuilt on every filing._
 
 ### Style notes and where they come from
 
-- **film grain** ×3: [Runaway Light Rig](topics/gamedev/2026-11-12-runaway-light-rig.md), [NPCs on Strike](topics/gamedev/2026-11-12-npcs-on-strike-concept.md), [Idea Archive site](topics/business/2026-11-12-idea-archive-site.md)
-- **black and yellow** ×2: [Revolio Labs app](topics/ai/2026-11-12-revolio-labs-app.md), [Revolio Labs](topics/business/2026-11-12-revolio-labs.md)
-- **dark teal and paper** ×2: [NPCs on Strike](topics/gamedev/2026-11-12-npcs-on-strike-concept.md), [Meter Down concept](topics/gamedev/2026-11-12-meter-down-concept.md)
-- **near-black surfaces** ×2: [PXLVZN label](topics/tech/2026-11-12-pxlvzn-label.md), [PXL app hub](topics/tech/2026-11-12-pxl-app-hub.md)
-- **pixel art** ×2: [Rohit Learns Ball](topics/gamedev/2026-11-12-rohit-learns-ball.md), [Pixel sprite search](topics/gamedev/2026-11-09-pixel-search-sprite-database.md)
-- **r mark with animated eyes** ×2: [Revolio Labs app](topics/ai/2026-11-12-revolio-labs-app.md), [Revolio Labs](topics/business/2026-11-12-revolio-labs.md)
-- **red accent** ×2: [TV Stack toy](topics/gamedev/2026-11-12-tv-stack-music-toy.md), [NPCs on Strike](topics/gamedev/2026-11-12-npcs-on-strike-concept.md)
-- **single lime accent** ×2: [PXLVZN label](topics/tech/2026-11-12-pxlvzn-label.md), [PXL app hub](topics/tech/2026-11-12-pxl-app-hub.md)
-- **3d extruded towers**: [Flat Finder map](topics/design/2026-11-21-flat-finder-map.md)
-- **3d vinyl peel on hover**: [Stick It Up stickers](topics/design/2026-11-13-stick-it-up-stickers.md)
-- **acid green on near-black**: [Idea Archive site](topics/business/2026-11-12-idea-archive-site.md)
-- **airy off-white layouts**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
-- **animated snowfall**: [Claude Code reactive theme](topics/ai/2026-11-16-claude-code-reactive-theme.md)
-- **anton display type**: [Runaway Light Rig](topics/gamedev/2026-11-12-runaway-light-rig.md)
-- **archive photos with red string**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
-- **ascii**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
-- **beak-nosed stick characters**: [Line art mocap workflow](topics/gamedev/2026-11-13-line-art-mocap-workflow.md)
-- **big uppercase heading**: [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md)
-- **big-head proportions**: [Blender storybook hero](topics/gamedev/2026-11-09-blender-mcp-storybook-hero-workflow.md)
-- **black minimal landing page**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
-- **black stage**: [TV Stack toy](topics/gamedev/2026-11-12-tv-stack-music-toy.md)
-- **blocky segmented mannequins**: [Toyxyz retarget add-on](topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md)
-- **blue primary button**: [DIT offload checker](topics/tech/2026-11-13-dit-offload-checker-idea.md)
-- **bodycam first person view**: [Unity bodycam hands](topics/gamedev/2026-11-13-unity-bodycam-ik-hands.md)
-- **bold display type**: [Punchline party game](topics/gamedev/2026-11-12-punchline-party-game.md)
-- **bold headlines with italic emphasis**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
-- **bold orange focal length type**: [Lens focal length guide](topics/ai/2026-11-12-lens-focal-length-guide.md)
-- **bold red and blue colour pops**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
-- **bold type**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
-- **bottle green and marigold yellow**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
-- **bright multicolour on charcoal**: [Neural network data viz](topics/design/2026-11-15-neural-network-data-viz.md)
-- **caricature character big head**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
-- **caricature indian characters**: [Munde Mode game](topics/gamedev/2026-11-12-munde-mode-game.md)
-- **chrome emblems**: [Stick It Up stickers](topics/design/2026-11-13-stick-it-up-stickers.md)
-- **chunky armoured knights**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
-- **chunky flat pixel art**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
-- **chunky pixel art cars**: [Sprite stacking technique](topics/gamedev/2026-11-15-sprite-stacking-pixel-art.md)
-- **chunky props**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
-- **cinematic letterbox grade**: [Escapement Blender film](topics/ai/2026-11-14-escapement-blender-short-film.md)
-- **clean sans type**: [Revolio Labs](topics/business/2026-11-12-revolio-labs.md)
-- **clean stylised 3d**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
-- **colour-coded categories**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
-- **comedy club poster**: [Punchline party game](topics/gamedev/2026-11-12-punchline-party-game.md)
-- **condensed ink serif**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
-- **cork evidence wall**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
-- **cozy 3d desk diorama**: [Revolio Labs site](topics/gamedev/2026-11-12-revolio-labs-site.md)
-- **cozy winter night scene**: [Claude Code reactive theme](topics/ai/2026-11-16-claude-code-reactive-theme.md)
-- **cream paper card with torn edges**: [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md)
-- **cream paper cards on yellow grid paper**: [Line art mocap workflow](topics/gamedev/2026-11-13-line-art-mocap-workflow.md)
-- **cream paper editorial**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
-- **dark compact utility card**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
-- **dark grey blender viewport grid**: [Toyxyz retarget add-on](topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md)
-- **dark macro clockwork**: [Escapement Blender film](topics/ai/2026-11-14-escapement-blender-short-film.md)
-- **dark menu bar popover**: [DIT offload checker](topics/tech/2026-11-13-dit-offload-checker-idea.md)
-- **dark minimal dashboard**: [Strawhat homelab dashboard](topics/design/2026-11-16-strawhat-homelab-dashboard.md)
-- **dark minimal ui**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
-- **dark night map**: [Flat Finder map](topics/design/2026-11-21-flat-finder-map.md)
-- **dark slate grid floor**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
-- **dark slate theme**: [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md)
-- **dark ui with bold white headline**: [Tabworthy site directory](topics/tech/2026-11-21-tabworthy-site-directory.md)
-- **dense dots squares and crosses**: [Neural network data viz](topics/design/2026-11-15-neural-network-data-viz.md)
-- **desi street shopfront**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
-- **dither**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
-- **dot-matrix data viz**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
-- **dusk orange canyon**: [Escapement Blender film](topics/ai/2026-11-14-escapement-blender-short-film.md)
-- **dystopian concert stage**: [Runaway Light Rig](topics/gamedev/2026-11-12-runaway-light-rig.md)
-- **expressive mascot**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
-- **fake 3d from 2d slices**: [Sprite stacking technique](topics/gamedev/2026-11-15-sprite-stacking-pixel-art.md)
-- **floating islands on black**: [Pixel-art gaussian splats](topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md)
-- **frosted glass chat panel**: [Claude Code reactive theme](topics/ai/2026-11-16-claude-code-reactive-theme.md)
-- **georgia serif**: [Wedding co-op game](topics/gamedev/2026-11-12-wedding-co-op-game.md)
-- **giant planet skies**: [Lens focal length guide](topics/ai/2026-11-12-lens-focal-length-guide.md)
-- **glass panel ui**: [TV Stack toy](topics/gamedev/2026-11-12-tv-stack-music-toy.md)
-- **glitch**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
-- **glossy abstract 3d**: [ARC 3D art dataset](topics/design/2026-11-10-arc-3d-art-dataset.md)
-- **gloved hands with pistol**: [Unity bodycam hands](topics/gamedev/2026-11-13-unity-bodycam-ik-hands.md)
-- **glowing cards**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
-- **glowing dot-matrix storage bar**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
-- **glowing gold building clusters**: [Flat Finder map](topics/design/2026-11-21-flat-finder-map.md)
-- **glowing particles**: [Pixel-art gaussian splats](topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md)
-- **glyph-grid data viz**: [Neural network data viz](topics/design/2026-11-15-neural-network-data-viz.md)
-- **golden hour window light**: [Revolio Labs site](topics/gamedev/2026-11-12-revolio-labs-site.md)
-- **graffiti street court**: [Bonk Court game](topics/gamedev/2026-11-12-bonk-court-game.md)
-- **grid of category cards with counts**: [Tabworthy site directory](topics/tech/2026-11-21-tabworthy-site-directory.md)
-- **gritty scarred skin detail**: [MetaHuman Maker addon](topics/gamedev/2026-11-18-metahuman-maker-agent-addon.md)
-- **hairline strokes**: [PXLVZN label](topics/tech/2026-11-12-pxlvzn-label.md)
-- **halftone**: [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md)
-- **hand-drawn animation**: [AI tween harness](topics/design/2026-11-11-ai-tween-paint-harness.md)
-- **hand-drawn flowers growing on a dot grid**: [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md)
-- **hand-drawn pastel stickers**: [Stick It Up stickers](topics/design/2026-11-13-stick-it-up-stickers.md)
-- **hand-painted 3d look**: [Blender painterly leaf shader](topics/gamedev/2026-11-16-blender-painterly-leaf-shader.md)
-- **invented artist styles**: [Claude code paintings](topics/ai/2026-11-10-claude-code-paintings.md)
-- **launch film motion**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
-- **lime accent on dark**: [Punchline party game](topics/gamedev/2026-11-12-punchline-party-game.md)
-- **low-poly**: [Polyfork 3D assets](topics/gamedev/2026-11-10-polyfork-3d-assets.md)
-- **masked characters**: [Lens focal length guide](topics/ai/2026-11-12-lens-focal-length-guide.md)
-- **metallic gold and rose gold**: [ARC 3D art dataset](topics/design/2026-11-10-arc-3d-art-dataset.md)
-- **minimal dark sidebar filters**: [Flat Finder map](topics/design/2026-11-21-flat-finder-map.md)
-- **minimal hud**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
-- **misty desaturated battlefield**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
-- **monospace tags**: [Tabworthy site directory](topics/tech/2026-11-21-tabworthy-site-directory.md)
-- **monospace type**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
-- **mumbai kaali-peeli illustration**: [Meter Down concept](topics/gamedev/2026-11-12-meter-down-concept.md)
-- **node map of servers**: [Strawhat homelab dashboard](topics/design/2026-11-16-strawhat-homelab-dashboard.md)
-- **one continuous camera move**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
-- **one flat pastel colour per character**: [Toyxyz retarget add-on](topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md)
-- **one-hue monochrome palettes**: [Pixel-art gaussian splats](topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md)
-- **orange and blue palette**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
-- **painted 2d backgrounds**: [AI tween harness](topics/design/2026-11-11-ai-tween-paint-harness.md)
-- **painterly brushstroke leaves**: [Blender painterly leaf shader](topics/gamedev/2026-11-16-blender-painterly-leaf-shader.md)
-- **painterly brushwork**: [Claude code paintings](topics/ai/2026-11-10-claude-code-paintings.md)
-- **painterly landscape backdrop**: [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md)
-- **painterly stylised 3d**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
-- **particle dissolve on delete**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
-- **pastel blocks**: [ARC 3D art dataset](topics/design/2026-11-10-arc-3d-art-dataset.md)
-- **photoreal metahuman faces**: [MetaHuman Maker addon](topics/gamedev/2026-11-18-metahuman-maker-agent-addon.md)
-- **pixel cursors and ui**: [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md)
-- **pixel-art 3d dioramas**: [Pixel-art gaussian splats](topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md)
-- **pixel-art decals**: [Stick It Up stickers](topics/design/2026-11-13-stick-it-up-stickers.md)
-- **pixel-art mascots**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
-- **plain status sentence**: [DIT offload checker](topics/tech/2026-11-13-dit-offload-checker-idea.md)
-- **plain-language helper copy**: [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md)
-- **poster typography**: [SLANGDAQ game](topics/gamedev/2026-11-12-slangdaq-game.md)
-- **product launch video**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
-- **real people as characters**: [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md)
-- **receipt cards**: [Meter Down concept](topics/gamedev/2026-11-12-meter-down-concept.md)
-- **red and black**: [Runaway Light Rig](topics/gamedev/2026-11-12-runaway-light-rig.md)
-- **red ink outline accents**: [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md)
-- **rolling counters**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
-- **scroll side-scroller**: [Revolio Labs site](topics/gamedev/2026-11-12-revolio-labs-site.md)
-- **scrubbable timeline**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
-- **serif headings with mono stats**: [Strawhat homelab dashboard](topics/design/2026-11-16-strawhat-homelab-dashboard.md)
-- **serif italic accents**: [Idea Archive site](topics/business/2026-11-12-idea-archive-site.md)
-- **serif plus grotesk type**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
-- **serif titles with small caps labels**: [Neural network data viz](topics/design/2026-11-15-neural-network-data-viz.md)
-- **shared kit palettes**: [Polyfork 3D assets](topics/gamedev/2026-11-10-polyfork-3d-assets.md)
-- **single blue accent**: [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md)
-- **single-blue swirl on white**: [Neural network data viz](topics/design/2026-11-15-neural-network-data-viz.md)
-- **sky blue to sand gradient**: [Wedding co-op game](topics/gamedev/2026-11-12-wedding-co-op-game.md)
-- **small green accent button**: [Tabworthy site directory](topics/tech/2026-11-21-tabworthy-site-directory.md)
-- **soft serif headline**: [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md)
-- **spray paint type**: [Bonk Court game](topics/gamedev/2026-11-12-bonk-court-game.md)
-- **stamps and highlighter swipes**: [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md)
-- **stock ticker ui**: [SLANGDAQ game](topics/gamedev/2026-11-12-slangdaq-game.md)
-- **striped test room**: [Unity bodycam hands](topics/gamedev/2026-11-13-unity-bodycam-ik-hands.md)
-- **stylised 2d water**: [Godot waterfall shader](topics/gamedev/2026-11-09-godot-waterfall-texture-array-shader.md)
-- **stylised cartoon 3d**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
-- **stylised storybook 3d**: [Blender storybook hero](topics/gamedev/2026-11-09-blender-mcp-storybook-hero-workflow.md)
-- **surreal pastel wide fields**: [Lens focal length guide](topics/ai/2026-11-12-lens-focal-length-guide.md)
-- **tap-count diagram**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
-- **teal and lime on deep crimson**: [Blender painterly leaf shader](topics/gamedev/2026-11-16-blender-painterly-leaf-shader.md)
-- **testimonial wall**: [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md)
-- **textured pastel brushwork**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
-- **thin gold road lines**: [Flat Finder map](topics/design/2026-11-21-flat-finder-map.md)
-- **thin usage bars**: [Strawhat homelab dashboard](topics/design/2026-11-16-strawhat-homelab-dashboard.md)
-- **tick ruler numerals**: [PEAKD game](topics/gamedev/2026-11-12-peakd-game.md)
-- **top-down camera**: [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
-- **top-down racing track**: [Sprite stacking technique](topics/gamedev/2026-11-15-sprite-stacking-pixel-art.md)
-- **ui mockups in motion**: [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md)
-- **unreal editor viewport**: [MetaHuman Maker addon](topics/gamedev/2026-11-18-metahuman-maker-agent-addon.md)
-- **walkable stylised 3d city**: [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md)
-- **warm painterly palette**: [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md)
-- **warm soft lighting**: [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
-- **warm toy diorama 3d**: [Munde Mode game](topics/gamedev/2026-11-12-munde-mode-game.md)
-- **wine red accent**: [Wedding co-op game](topics/gamedev/2026-11-12-wedding-co-op-game.md)
-- **wobbly hand-drawn black line art**: [Line art mocap workflow](topics/gamedev/2026-11-13-line-art-mocap-workflow.md)
-- **wooden sign hud**: [Claude Code reactive theme](topics/ai/2026-11-16-claude-code-reactive-theme.md)
-- **yellow accent**: [SLANGDAQ game](topics/gamedev/2026-11-12-slangdaq-game.md)
+- **film grain** ×3: [Runaway Light Rig](topics/gamedev/runaway-light-rig.md), [NPCs on Strike](topics/gamedev/npcs-on-strike-concept.md), [Idea Archive site](topics/business/idea-archive-site.md)
+- **black and yellow** ×2: [Revolio Labs app](topics/ai/revolio-labs-app.md), [Revolio Labs](topics/business/revolio-labs.md)
+- **dark teal and paper** ×2: [NPCs on Strike](topics/gamedev/npcs-on-strike-concept.md), [Meter Down concept](topics/gamedev/meter-down-concept.md)
+- **near-black surfaces** ×2: [PXLVZN label](topics/tech/pxlvzn-label.md), [PXL app hub](topics/tech/pxl-app-hub.md)
+- **pixel art** ×2: [Rohit Learns Ball](topics/gamedev/rohit-learns-ball.md), [Pixel sprite search](topics/gamedev/pixel-search-sprite-database.md)
+- **r mark with animated eyes** ×2: [Revolio Labs app](topics/ai/revolio-labs-app.md), [Revolio Labs](topics/business/revolio-labs.md)
+- **red accent** ×2: [TV Stack toy](topics/gamedev/tv-stack-music-toy.md), [NPCs on Strike](topics/gamedev/npcs-on-strike-concept.md)
+- **single lime accent** ×2: [PXLVZN label](topics/tech/pxlvzn-label.md), [PXL app hub](topics/tech/pxl-app-hub.md)
+- **3d extruded towers**: [Flat Finder map](topics/design/flat-finder-map.md)
+- **3d vinyl peel on hover**: [Stick It Up stickers](topics/design/stick-it-up-stickers.md)
+- **acid green on near-black**: [Idea Archive site](topics/business/idea-archive-site.md)
+- **airy off-white layouts**: [Second brand identity](topics/design/ayush-soni-visual-design-post.md)
+- **animated snowfall**: [Claude Code reactive theme](topics/ai/claude-code-reactive-theme.md)
+- **anton display type**: [Runaway Light Rig](topics/gamedev/runaway-light-rig.md)
+- **archive photos with red string**: [Cinematic film skill](topics/ai/cinematic-film-skill.md)
+- **ascii**: [Ladybug VFX app](topics/design/ladybug-vfx-app.md)
+- **beak-nosed stick characters**: [Line art mocap workflow](topics/gamedev/line-art-mocap-workflow.md)
+- **big uppercase heading**: [People of Bengaluru](topics/design/people-of-bengaluru-site.md)
+- **big-head proportions**: [Blender storybook hero](topics/gamedev/blender-mcp-storybook-hero-workflow.md)
+- **black minimal landing page**: [TapMac trackpad app](topics/design/tapmac-trackpad-app.md)
+- **black stage**: [TV Stack toy](topics/gamedev/tv-stack-music-toy.md)
+- **blocky segmented mannequins**: [Toyxyz retarget add-on](topics/gamedev/toyxyz-blender-retargeter.md)
+- **blue primary button**: [DIT offload checker](topics/tech/dit-offload-checker-idea.md)
+- **bodycam first person view**: [Unity bodycam hands](topics/gamedev/unity-bodycam-ik-hands.md)
+- **bold display type**: [Punchline party game](topics/gamedev/punchline-party-game.md)
+- **bold headlines with italic emphasis**: [TapMac trackpad app](topics/design/tapmac-trackpad-app.md)
+- **bold orange focal length type**: [Lens focal length guide](topics/ai/lens-focal-length-guide.md)
+- **bold red and blue colour pops**: [Impossible Weapon animation](topics/design/impossible-weapon-knight-animation.md)
+- **bold type**: [Ace Of Frames reel](topics/design/ace-of-frames-reel.md)
+- **bottle green and marigold yellow**: [Sharma Sweets 3D style](topics/gamedev/sharma-sweets-3d-shopfront.md)
+- **bright multicolour on charcoal**: [Neural network data viz](topics/design/neural-network-data-viz.md)
+- **caricature character big head**: [Sharma Sweets 3D style](topics/gamedev/sharma-sweets-3d-shopfront.md)
+- **caricature indian characters**: [Munde Mode game](topics/gamedev/munde-mode-game.md)
+- **chrome emblems**: [Stick It Up stickers](topics/design/stick-it-up-stickers.md)
+- **chunky armoured knights**: [Impossible Weapon animation](topics/design/impossible-weapon-knight-animation.md)
+- **chunky flat pixel art**: [Captcha launch film](topics/design/captcha-launch-film.md)
+- **chunky pixel art cars**: [Sprite stacking technique](topics/gamedev/sprite-stacking-pixel-art.md)
+- **chunky props**: [Lastmaglab shooter style](topics/gamedev/lastmaglab-top-down-shooter.md)
+- **cinematic letterbox grade**: [Escapement Blender film](topics/ai/escapement-blender-short-film.md)
+- **clean sans type**: [Revolio Labs](topics/business/revolio-labs.md)
+- **clean stylised 3d**: [Lastmaglab shooter style](topics/gamedev/lastmaglab-top-down-shooter.md)
+- **colour-coded categories**: [Storage scanner UI](topics/design/storage-scanner-ui.md)
+- **comedy club poster**: [Punchline party game](topics/gamedev/punchline-party-game.md)
+- **condensed ink serif**: [PEAKD game](topics/gamedev/peakd-game.md)
+- **cork evidence wall**: [Cinematic film skill](topics/ai/cinematic-film-skill.md)
+- **cozy 3d desk diorama**: [Revolio Labs site](topics/gamedev/revolio-labs-site.md)
+- **cozy winter night scene**: [Claude Code reactive theme](topics/ai/claude-code-reactive-theme.md)
+- **cream paper card with torn edges**: [Blooming flowers site](topics/design/mohamed-siddique-flower-site.md)
+- **cream paper cards on yellow grid paper**: [Line art mocap workflow](topics/gamedev/line-art-mocap-workflow.md)
+- **cream paper editorial**: [PEAKD game](topics/gamedev/peakd-game.md)
+- **dark compact utility card**: [Storage scanner UI](topics/design/storage-scanner-ui.md)
+- **dark grey blender viewport grid**: [Toyxyz retarget add-on](topics/gamedev/toyxyz-blender-retargeter.md)
+- **dark macro clockwork**: [Escapement Blender film](topics/ai/escapement-blender-short-film.md)
+- **dark menu bar popover**: [DIT offload checker](topics/tech/dit-offload-checker-idea.md)
+- **dark minimal dashboard**: [Strawhat homelab dashboard](topics/design/strawhat-homelab-dashboard.md)
+- **dark minimal ui**: [Sleep alarm UI](topics/design/sleep-alarm-ui.md)
+- **dark night map**: [Flat Finder map](topics/design/flat-finder-map.md)
+- **dark slate grid floor**: [Lastmaglab shooter style](topics/gamedev/lastmaglab-top-down-shooter.md)
+- **dark slate theme**: [People of Bengaluru](topics/design/people-of-bengaluru-site.md)
+- **dark ui with bold white headline**: [Tabworthy site directory](topics/tech/tabworthy-site-directory.md)
+- **dense dots squares and crosses**: [Neural network data viz](topics/design/neural-network-data-viz.md)
+- **desi street shopfront**: [Sharma Sweets 3D style](topics/gamedev/sharma-sweets-3d-shopfront.md)
+- **dither**: [Ladybug VFX app](topics/design/ladybug-vfx-app.md)
+- **dot-matrix data viz**: [Sleep alarm UI](topics/design/sleep-alarm-ui.md)
+- **dusk orange canyon**: [Escapement Blender film](topics/ai/escapement-blender-short-film.md)
+- **dystopian concert stage**: [Runaway Light Rig](topics/gamedev/runaway-light-rig.md)
+- **expressive mascot**: [TapMac trackpad app](topics/design/tapmac-trackpad-app.md)
+- **fake 3d from 2d slices**: [Sprite stacking technique](topics/gamedev/sprite-stacking-pixel-art.md)
+- **floating islands on black**: [Pixel-art gaussian splats](topics/gamedev/pixel-art-gaussian-splats.md)
+- **frosted glass chat panel**: [Claude Code reactive theme](topics/ai/claude-code-reactive-theme.md)
+- **georgia serif**: [Wedding co-op game](topics/gamedev/wedding-co-op-game.md)
+- **giant planet skies**: [Lens focal length guide](topics/ai/lens-focal-length-guide.md)
+- **glass panel ui**: [TV Stack toy](topics/gamedev/tv-stack-music-toy.md)
+- **glitch**: [Ladybug VFX app](topics/design/ladybug-vfx-app.md)
+- **glossy abstract 3d**: [ARC 3D art dataset](topics/design/arc-3d-art-dataset.md)
+- **gloved hands with pistol**: [Unity bodycam hands](topics/gamedev/unity-bodycam-ik-hands.md)
+- **glowing cards**: [Ace Of Frames reel](topics/design/ace-of-frames-reel.md)
+- **glowing dot-matrix storage bar**: [Storage scanner UI](topics/design/storage-scanner-ui.md)
+- **glowing gold building clusters**: [Flat Finder map](topics/design/flat-finder-map.md)
+- **glowing particles**: [Pixel-art gaussian splats](topics/gamedev/pixel-art-gaussian-splats.md)
+- **glyph-grid data viz**: [Neural network data viz](topics/design/neural-network-data-viz.md)
+- **golden hour window light**: [Revolio Labs site](topics/gamedev/revolio-labs-site.md)
+- **graffiti street court**: [Bonk Court game](topics/gamedev/bonk-court-game.md)
+- **grid of category cards with counts**: [Tabworthy site directory](topics/tech/tabworthy-site-directory.md)
+- **gritty scarred skin detail**: [MetaHuman Maker addon](topics/gamedev/metahuman-maker-agent-addon.md)
+- **hairline strokes**: [PXLVZN label](topics/tech/pxlvzn-label.md)
+- **halftone**: [Ladybug VFX app](topics/design/ladybug-vfx-app.md)
+- **hand-drawn animation**: [AI tween harness](topics/design/ai-tween-paint-harness.md)
+- **hand-drawn flowers growing on a dot grid**: [Blooming flowers site](topics/design/mohamed-siddique-flower-site.md)
+- **hand-drawn pastel stickers**: [Stick It Up stickers](topics/design/stick-it-up-stickers.md)
+- **hand-painted 3d look**: [Blender painterly leaf shader](topics/gamedev/blender-painterly-leaf-shader.md)
+- **invented artist styles**: [Claude code paintings](topics/ai/claude-code-paintings.md)
+- **launch film motion**: [Captcha launch film](topics/design/captcha-launch-film.md)
+- **lime accent on dark**: [Punchline party game](topics/gamedev/punchline-party-game.md)
+- **low-poly**: [Polyfork 3D assets](topics/gamedev/polyfork-3d-assets.md)
+- **masked characters**: [Lens focal length guide](topics/ai/lens-focal-length-guide.md)
+- **metallic gold and rose gold**: [ARC 3D art dataset](topics/design/arc-3d-art-dataset.md)
+- **minimal dark sidebar filters**: [Flat Finder map](topics/design/flat-finder-map.md)
+- **minimal hud**: [Lastmaglab shooter style](topics/gamedev/lastmaglab-top-down-shooter.md)
+- **misty desaturated battlefield**: [Impossible Weapon animation](topics/design/impossible-weapon-knight-animation.md)
+- **monospace tags**: [Tabworthy site directory](topics/tech/tabworthy-site-directory.md)
+- **monospace type**: [Sleep alarm UI](topics/design/sleep-alarm-ui.md)
+- **mumbai kaali-peeli illustration**: [Meter Down concept](topics/gamedev/meter-down-concept.md)
+- **node map of servers**: [Strawhat homelab dashboard](topics/design/strawhat-homelab-dashboard.md)
+- **one continuous camera move**: [Cinematic film skill](topics/ai/cinematic-film-skill.md)
+- **one flat pastel colour per character**: [Toyxyz retarget add-on](topics/gamedev/toyxyz-blender-retargeter.md)
+- **one-hue monochrome palettes**: [Pixel-art gaussian splats](topics/gamedev/pixel-art-gaussian-splats.md)
+- **orange and blue palette**: [Captcha launch film](topics/design/captcha-launch-film.md)
+- **painted 2d backgrounds**: [AI tween harness](topics/design/ai-tween-paint-harness.md)
+- **painterly brushstroke leaves**: [Blender painterly leaf shader](topics/gamedev/blender-painterly-leaf-shader.md)
+- **painterly brushwork**: [Claude code paintings](topics/ai/claude-code-paintings.md)
+- **painterly landscape backdrop**: [Blooming flowers site](topics/design/mohamed-siddique-flower-site.md)
+- **painterly stylised 3d**: [Impossible Weapon animation](topics/design/impossible-weapon-knight-animation.md)
+- **particle dissolve on delete**: [Storage scanner UI](topics/design/storage-scanner-ui.md)
+- **pastel blocks**: [ARC 3D art dataset](topics/design/arc-3d-art-dataset.md)
+- **photoreal metahuman faces**: [MetaHuman Maker addon](topics/gamedev/metahuman-maker-agent-addon.md)
+- **pixel cursors and ui**: [Captcha launch film](topics/design/captcha-launch-film.md)
+- **pixel-art 3d dioramas**: [Pixel-art gaussian splats](topics/gamedev/pixel-art-gaussian-splats.md)
+- **pixel-art decals**: [Stick It Up stickers](topics/design/stick-it-up-stickers.md)
+- **pixel-art mascots**: [Ace Of Frames reel](topics/design/ace-of-frames-reel.md)
+- **plain status sentence**: [DIT offload checker](topics/tech/dit-offload-checker-idea.md)
+- **plain-language helper copy**: [Storage scanner UI](topics/design/storage-scanner-ui.md)
+- **poster typography**: [SLANGDAQ game](topics/gamedev/slangdaq-game.md)
+- **product launch video**: [Ace Of Frames reel](topics/design/ace-of-frames-reel.md)
+- **real people as characters**: [People of Bengaluru](topics/design/people-of-bengaluru-site.md)
+- **receipt cards**: [Meter Down concept](topics/gamedev/meter-down-concept.md)
+- **red and black**: [Runaway Light Rig](topics/gamedev/runaway-light-rig.md)
+- **red ink outline accents**: [Impossible Weapon animation](topics/design/impossible-weapon-knight-animation.md)
+- **rolling counters**: [Cinematic film skill](topics/ai/cinematic-film-skill.md)
+- **scroll side-scroller**: [Revolio Labs site](topics/gamedev/revolio-labs-site.md)
+- **scrubbable timeline**: [Sleep alarm UI](topics/design/sleep-alarm-ui.md)
+- **serif headings with mono stats**: [Strawhat homelab dashboard](topics/design/strawhat-homelab-dashboard.md)
+- **serif italic accents**: [Idea Archive site](topics/business/idea-archive-site.md)
+- **serif plus grotesk type**: [Second brand identity](topics/design/ayush-soni-visual-design-post.md)
+- **serif titles with small caps labels**: [Neural network data viz](topics/design/neural-network-data-viz.md)
+- **shared kit palettes**: [Polyfork 3D assets](topics/gamedev/polyfork-3d-assets.md)
+- **single blue accent**: [Sleep alarm UI](topics/design/sleep-alarm-ui.md)
+- **single-blue swirl on white**: [Neural network data viz](topics/design/neural-network-data-viz.md)
+- **sky blue to sand gradient**: [Wedding co-op game](topics/gamedev/wedding-co-op-game.md)
+- **small green accent button**: [Tabworthy site directory](topics/tech/tabworthy-site-directory.md)
+- **soft serif headline**: [Blooming flowers site](topics/design/mohamed-siddique-flower-site.md)
+- **spray paint type**: [Bonk Court game](topics/gamedev/bonk-court-game.md)
+- **stamps and highlighter swipes**: [Cinematic film skill](topics/ai/cinematic-film-skill.md)
+- **stock ticker ui**: [SLANGDAQ game](topics/gamedev/slangdaq-game.md)
+- **striped test room**: [Unity bodycam hands](topics/gamedev/unity-bodycam-ik-hands.md)
+- **stylised 2d water**: [Godot waterfall shader](topics/gamedev/godot-waterfall-texture-array-shader.md)
+- **stylised cartoon 3d**: [Sharma Sweets 3D style](topics/gamedev/sharma-sweets-3d-shopfront.md)
+- **stylised storybook 3d**: [Blender storybook hero](topics/gamedev/blender-mcp-storybook-hero-workflow.md)
+- **surreal pastel wide fields**: [Lens focal length guide](topics/ai/lens-focal-length-guide.md)
+- **tap-count diagram**: [TapMac trackpad app](topics/design/tapmac-trackpad-app.md)
+- **teal and lime on deep crimson**: [Blender painterly leaf shader](topics/gamedev/blender-painterly-leaf-shader.md)
+- **testimonial wall**: [TapMac trackpad app](topics/design/tapmac-trackpad-app.md)
+- **textured pastel brushwork**: [Second brand identity](topics/design/ayush-soni-visual-design-post.md)
+- **thin gold road lines**: [Flat Finder map](topics/design/flat-finder-map.md)
+- **thin usage bars**: [Strawhat homelab dashboard](topics/design/strawhat-homelab-dashboard.md)
+- **tick ruler numerals**: [PEAKD game](topics/gamedev/peakd-game.md)
+- **top-down camera**: [Lastmaglab shooter style](topics/gamedev/lastmaglab-top-down-shooter.md)
+- **top-down racing track**: [Sprite stacking technique](topics/gamedev/sprite-stacking-pixel-art.md)
+- **ui mockups in motion**: [Ace Of Frames reel](topics/design/ace-of-frames-reel.md)
+- **unreal editor viewport**: [MetaHuman Maker addon](topics/gamedev/metahuman-maker-agent-addon.md)
+- **walkable stylised 3d city**: [People of Bengaluru](topics/design/people-of-bengaluru-site.md)
+- **warm painterly palette**: [Second brand identity](topics/design/ayush-soni-visual-design-post.md)
+- **warm soft lighting**: [Sharma Sweets 3D style](topics/gamedev/sharma-sweets-3d-shopfront.md)
+- **warm toy diorama 3d**: [Munde Mode game](topics/gamedev/munde-mode-game.md)
+- **wine red accent**: [Wedding co-op game](topics/gamedev/wedding-co-op-game.md)
+- **wobbly hand-drawn black line art**: [Line art mocap workflow](topics/gamedev/line-art-mocap-workflow.md)
+- **wooden sign hud**: [Claude Code reactive theme](topics/ai/claude-code-reactive-theme.md)
+- **yellow accent**: [SLANGDAQ game](topics/gamedev/slangdaq-game.md)
 
 ### Every reference with his reason
 
-- [Skillsync skills marketplace](topics/ai/2026-11-26-skillsync-skills-marketplace.md) (`tool`): a place to publish agent skills and get paid when people or agents use them
-- [Tabworthy site directory](topics/tech/2026-11-21-tabworthy-site-directory.md) (`tool`): directory of hidden-gem websites to explore
-- [Flat Finder map](topics/design/2026-11-21-flat-finder-map.md) (`website-ref`): map web app built with Claude, nice dark map with glowing buildings
-- [MetaHuman Maker addon](topics/gamedev/2026-11-18-metahuman-maker-agent-addon.md) (`tool`): give the repo to an agent and talk to it to make AAA MetaHumans for Unreal and web
-- [Strawhat homelab dashboard](topics/design/2026-11-16-strawhat-homelab-dashboard.md) (`style-ref`): clean dark dashboard design for a personal tool that tracks machines and AI subscriptions
-- [Cloudflare Computer](topics/ai/2026-11-16-cloudflare-computer-agent-sandbox.md) (`tool`): Cloudflare computer
-- [Unslop UI skill](topics/design/2026-11-15-unslop-ui-skill.md) (`tool`): the skill repo from the AI slop vs senior designer reel, turns AI-looking UI into a designed interface
-- [Raea render engine](topics/ai/2026-11-15-raea-render-engine.md) (`tool`): AI agents write the code and it renders videos, motion graphics, 3D and games on your own Mac
-- [Pixel-art gaussian splats](topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md) (`style-ref`): pixel-art gaussian splats look mesmerising
-- [Neural network data viz](topics/design/2026-11-15-neural-network-data-viz.md) (`style-ref`): data visualization for a neural network brand exploration
-- [Viggle Remake model](topics/ai/2026-11-13-viggle-remake-open-model.md) (`tool`): Viggle AI's open weights to recast anybody in a video
-- [Toyxyz retarget add-on](topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md) (`tool`): cool plugin, and also cool way to retarget motion between characters with different body proportions; also a very cool art style for showing prototype models in a game
-- [Stick It Up stickers](topics/design/2026-11-13-stick-it-up-stickers.md) (`library`): cool component to add to my websites, stickers for personality
-- [Sleep alarm UI](topics/design/2026-11-13-sleep-alarm-ui.md) (`style-ref`): cool design
-- [RelayVSR video upscaler](topics/ai/2026-11-13-relayvsr-video-upscaler.md) (`tool`): open weight video upscaler available in ComfyUI
-- [Cinematic film skill](topics/ai/2026-11-13-cinematic-film-skill.md) (`tool`): agent skill for explainer content
-- [Blooming flowers site](topics/design/2026-11-13-mohamed-siddique-flower-site.md) (`website-ref`): nice calm website style with growing flower animation
-- [TapMac trackpad app](topics/design/2026-11-12-tapmac-trackpad-app.md) (`website-ref`): This is a cool app, and the website is also cool for building something similar
-- [Storage scanner UI](topics/design/2026-11-12-storage-scanner-ui.md) (`style-ref`): If I ever make a disk utility app to remove cache and disk cleanup, this UI is really nice for it.
-- [Sharma Sweets 3D style](topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md) (`style-ref`): Art style reference for Tukaram Munde game
-- [Perfolios portfolio directory](topics/design/2026-11-12-perfolios-portfolio-directory.md) (`website-ref`): A website directory. For inspiration, design, layouts, etc.
-- [People of Bengaluru](topics/design/2026-11-12-people-of-bengaluru-site.md) (`website-ref`): insane idea, cool website
-- [Impossible Weapon animation](topics/design/2026-11-12-impossible-weapon-knight-animation.md) (`style-ref`): Brilliant art style for animations
-- [Procedural arm rig](topics/gamedev/2026-11-11-procedural-arm-rig-demo.md) (`library`): open-source rigged arm to reuse in my games
-- [Lastmaglab shooter style](topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md) (`game-ref`): cool game visual style, art style
-- [Captcha launch film](topics/design/2026-11-11-captcha-launch-film.md) (`style-ref`): cool visuals, launch film
-- [Ace Of Frames reel](topics/design/2026-11-11-ace-of-frames-reel.md) (`style-ref`): cool visual design
-- [Roboflow re-ID tool](topics/ai/2026-11-10-roboflow-reid-tool.md) (`library`): track one player across clips for sports video edits
-- [Polyfork 3D assets](topics/gamedev/2026-11-10-polyfork-3d-assets.md) (`library`): open-source three.js asset library agents can use over MCP
-- [Patch gamedev tool](topics/gamedev/2026-11-10-patch-gamedev-platform.md) (`tool`): game dev tools as one CLI and MCP, plus open-source assets
-- [Ladybug VFX app](topics/design/2026-11-10-ladybug-vfx-app.md) (`tool`): benchmark for the Revolio Labs VFX feature
-- [Astryx design system](topics/design/2026-11-10-astryx-design-system.md) (`library`): hand to coding agents so they build better UI
-- [ARC 3D art dataset](topics/design/2026-11-10-arc-3d-art-dataset.md) (`asset-source`): free Creative Commons 3D art files to remix
-- [Second brand identity](topics/design/2026-11-09-ayush-soni-visual-design-post.md) (`style-ref`): cool visual design
-- [Pixel sprite search](topics/gamedev/2026-11-09-pixel-search-sprite-database.md) (`asset-source`): sprites database for games I build
-- [MyCountryMogsYours game](topics/gamedev/2026-11-09-my-country-mogs-yours.md) (`game-ref`): cool browser game I found
-- [Cricle game](topics/gamedev/2026-11-09-cricle-daily-cricket-guessing-game.md) (`game-ref`): fun cricket browser games
-- [500-0 game](topics/gamedev/2026-11-09-thechase500-cricket-chase-game.md) (`game-ref`): fun cricket browser games
+- [Skillsync skills marketplace](topics/ai/skillsync-skills-marketplace.md) (`tool`): a place to publish agent skills and get paid when people or agents use them
+- [Tabworthy site directory](topics/tech/tabworthy-site-directory.md) (`tool`): directory of hidden-gem websites to explore
+- [Flat Finder map](topics/design/flat-finder-map.md) (`website-ref`): map web app built with Claude, nice dark map with glowing buildings
+- [MetaHuman Maker addon](topics/gamedev/metahuman-maker-agent-addon.md) (`tool`): give the repo to an agent and talk to it to make AAA MetaHumans for Unreal and web
+- [Strawhat homelab dashboard](topics/design/strawhat-homelab-dashboard.md) (`style-ref`): clean dark dashboard design for a personal tool that tracks machines and AI subscriptions
+- [Cloudflare Computer](topics/ai/cloudflare-computer-agent-sandbox.md) (`tool`): Cloudflare computer
+- [Unslop UI skill](topics/design/unslop-ui-skill.md) (`tool`): the skill repo from the AI slop vs senior designer reel, turns AI-looking UI into a designed interface
+- [Raea render engine](topics/ai/raea-render-engine.md) (`tool`): AI agents write the code and it renders videos, motion graphics, 3D and games on your own Mac
+- [Pixel-art gaussian splats](topics/gamedev/pixel-art-gaussian-splats.md) (`style-ref`): pixel-art gaussian splats look mesmerising
+- [Neural network data viz](topics/design/neural-network-data-viz.md) (`style-ref`): data visualization for a neural network brand exploration
+- [Viggle Remake model](topics/ai/viggle-remake-open-model.md) (`tool`): Viggle AI's open weights to recast anybody in a video
+- [Toyxyz retarget add-on](topics/gamedev/toyxyz-blender-retargeter.md) (`tool`): cool plugin, and also cool way to retarget motion between characters with different body proportions; also a very cool art style for showing prototype models in a game
+- [Stick It Up stickers](topics/design/stick-it-up-stickers.md) (`library`): cool component to add to my websites, stickers for personality
+- [Sleep alarm UI](topics/design/sleep-alarm-ui.md) (`style-ref`): cool design
+- [RelayVSR video upscaler](topics/ai/relayvsr-video-upscaler.md) (`tool`): open weight video upscaler available in ComfyUI
+- [Cinematic film skill](topics/ai/cinematic-film-skill.md) (`tool`): agent skill for explainer content
+- [Blooming flowers site](topics/design/mohamed-siddique-flower-site.md) (`website-ref`): nice calm website style with growing flower animation
+- [TapMac trackpad app](topics/design/tapmac-trackpad-app.md) (`website-ref`): This is a cool app, and the website is also cool for building something similar
+- [Storage scanner UI](topics/design/storage-scanner-ui.md) (`style-ref`): If I ever make a disk utility app to remove cache and disk cleanup, this UI is really nice for it.
+- [Sharma Sweets 3D style](topics/gamedev/sharma-sweets-3d-shopfront.md) (`style-ref`): Art style reference for Tukaram Munde game
+- [Perfolios portfolio directory](topics/design/perfolios-portfolio-directory.md) (`website-ref`): A website directory. For inspiration, design, layouts, etc.
+- [People of Bengaluru](topics/design/people-of-bengaluru-site.md) (`website-ref`): insane idea, cool website
+- [Impossible Weapon animation](topics/design/impossible-weapon-knight-animation.md) (`style-ref`): Brilliant art style for animations
+- [Procedural arm rig](topics/gamedev/procedural-arm-rig-demo.md) (`library`): open-source rigged arm to reuse in my games
+- [Lastmaglab shooter style](topics/gamedev/lastmaglab-top-down-shooter.md) (`game-ref`): cool game visual style, art style
+- [Captcha launch film](topics/design/captcha-launch-film.md) (`style-ref`): cool visuals, launch film
+- [Ace Of Frames reel](topics/design/ace-of-frames-reel.md) (`style-ref`): cool visual design
+- [Roboflow re-ID tool](topics/ai/roboflow-reid-tool.md) (`library`): track one player across clips for sports video edits
+- [Polyfork 3D assets](topics/gamedev/polyfork-3d-assets.md) (`library`): open-source three.js asset library agents can use over MCP
+- [Patch gamedev tool](topics/gamedev/patch-gamedev-platform.md) (`tool`): game dev tools as one CLI and MCP, plus open-source assets
+- [Ladybug VFX app](topics/design/ladybug-vfx-app.md) (`tool`): benchmark for the Revolio Labs VFX feature
+- [Astryx design system](topics/design/astryx-design-system.md) (`library`): hand to coding agents so they build better UI
+- [ARC 3D art dataset](topics/design/arc-3d-art-dataset.md) (`asset-source`): free Creative Commons 3D art files to remix
+- [Second brand identity](topics/design/ayush-soni-visual-design-post.md) (`style-ref`): cool visual design
+- [Pixel sprite search](topics/gamedev/pixel-search-sprite-database.md) (`asset-source`): sprites database for games I build
+- [MyCountryMogsYours game](topics/gamedev/my-country-mogs-yours.md) (`game-ref`): cool browser game I found
+- [Cricle game](topics/gamedev/cricle-daily-cricket-guessing-game.md) (`game-ref`): fun cricket browser games
+- [500-0 game](topics/gamedev/thechase500-cricket-chase-game.md) (`game-ref`): fun cricket browser games
 
 <!-- GENERATED:END -->

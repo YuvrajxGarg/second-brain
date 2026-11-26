@@ -259,7 +259,7 @@ async function callTool(name, a = {}, req) {
         const c = brain.catalogs[id.slice(8)];
         return c ? text(JSON.stringify({ id, title: id, url: `${brain.repo}/blob/main/catalog/${id.slice(8)}.md`, text: c })) : fail(`No catalog ${id}. Use one of: ${CATALOGS.join(", ")}.`);
       }
-      const n = notes.find((x) => x.slug === id || x.slug.endsWith(id) || x.title.toLowerCase() === id.toLowerCase());
+      const n = notes.find((x) => x.slug === id || x.slug === id.replace(/^\d{4}-\d{2}-\d{2}-/, "") || x.slug.endsWith(id) || x.title.toLowerCase() === id.toLowerCase());
       if (!n) return fail(`No note with id '${id}'. Use search or list_notes to find ids.`);
       return text(
         // kind, tags, why, style and source are already in the text header

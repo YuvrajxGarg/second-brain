@@ -7,7 +7,7 @@ Dated entries, newest first: status, what was learned, mistakes and fixes, taste
 **Status:** v134 delivered in three wall colours (beige, cream, light pistachio) with shoot-matched faces, skin and hair. Files in "Composite photo" on the revolio 2 SSD (JPG / PNG / Misc by version).
 
 **Learned**
-- Generate at 2K in small batches, FLUX 3 first for people, never chain AI passes; full rules in [[2026-11-26-ai-group-shot-retouch]].
+- Generate at 2K in small batches, FLUX 3 first for people, never chain AI passes; full rules in [[ai-group-shot-retouch]].
 - Score likeness with a face-embedding model against one "original" shoot frame per person.
 
 **Mistakes and fixes**

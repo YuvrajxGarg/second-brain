@@ -18,7 +18,7 @@ A scheduled Claude task runs every Sunday morning (9:42 AM IST) and follows thes
 steps. Edit them here to change its behaviour.
 
 1. `git pull` on `main`.
-2. `python3 scripts/link_doctor.py --fix`: relinks broken dateless links and adds
+2. `python3 scripts/link_doctor.py --fix`: relinks old date-first or partial links and adds
    backlinks for strong one-way links. These are lossless, so they need no approval.
 3. Rewrite machine reasons into plain words. Every link line the Doctor added has a
    reason like `both pixel-art, sprites` or `made under Revolio Labs`. Read both notes and

@@ -44,40 +44,40 @@ Review them on the graph site (LINK DOCTOR, bottom left) or say "apply links 1, 
 
 ### Add these links
 
-1. [ ] Claude Code agent tree <-> Try orchestrator workflow · 0.72 · both agents, claude  `2026-11-11-claude-code-agent-tree` `2026-11-12-try-orchestrator-workflow`
-2. [ ] Meter Down concept <-> Tukaram Munde game · 0.701 · both game-idea, indian-setting  `2026-11-12-meter-down-concept` `2026-11-12-tukaram-munde-game`
-3. [ ] Try orchestrator workflow <-> Agent mistakes prompt · 0.697 · both claude, agents  `2026-11-12-try-orchestrator-workflow` `2026-11-18-agent-mistakes-to-checks`
-4. [ ] PXL app hub <-> DIT offload checker · 0.679 · both pxlvzn, desktop-app  `2026-11-12-pxl-app-hub` `2026-11-13-dit-offload-checker-idea`
-5. [ ] Orchestrator subagent prompt <-> Agent mistakes prompt · 0.673 · both prompting, workflow, claude  `2026-11-12-model-routing-orchestrator-prompt` `2026-11-18-agent-mistakes-to-checks`
-6. [ ] Runaway Light Rig <-> TV Stack toy · 0.664 · both rhythm-game, music, browser-game  `2026-11-12-runaway-light-rig` `2026-11-12-tv-stack-music-toy`
-7. [ ] DIT offload checker <-> Dwn downloader · 0.652 · both video-editing, pxlvzn, desktop-app  `2026-11-13-dit-offload-checker-idea` `2026-11-12-dwn-downloader`
-8. [ ] Cricle game <-> SLANGDAQ game · 0.65 · both daily-challenge, browser-game  `2026-11-09-cricle-daily-cricket-guessing-game` `2026-11-12-slangdaq-game`
-9. [ ] Claude video edit <-> Try orchestrator workflow · 0.646 · both agents, claude  `2026-11-18-claude-video-edit` `2026-11-12-try-orchestrator-workflow`
-10. [ ] Cinematic film skill <-> Try orchestrator workflow · 0.64 · both claude, agents  `2026-11-13-cinematic-film-skill` `2026-11-12-try-orchestrator-workflow`
-11. [ ] Claude live UI comments <-> Try orchestrator workflow · 0.63 · both claude  `2026-11-13-claude-live-ui-comments` `2026-11-12-try-orchestrator-workflow`
-12. [ ] Cinematic film skill <-> Escapement Blender film · 0.626 · both agents, claude  `2026-11-13-cinematic-film-skill` `2026-11-14-escapement-blender-short-film`
-13. [ ] Escapement Blender film <-> Try orchestrator workflow · 0.623 · both claude, agents  `2026-11-14-escapement-blender-short-film` `2026-11-12-try-orchestrator-workflow`
-14. [ ] Saturday off tracker <-> Revolio SSD Desk · 0.616 · both internal-tool, revolio  `2026-11-12-saturday-off-tracker` `2026-11-12-revolio-ssd-desk`
-15. [ ] Claude Code agent tree <-> Orchestrator subagent prompt · 0.615 · both workflow, agents, claude  `2026-11-11-claude-code-agent-tree` `2026-11-12-model-routing-orchestrator-prompt`
-16. [ ] PXL app hub <-> Lut colour matcher · 0.613 · both pxlvzn, desktop-app  `2026-11-12-pxl-app-hub` `2026-11-12-lut-colour-matcher`
-17. [ ] PXL app hub <-> Stm stem splitter · 0.608 · both pxlvzn, desktop-app  `2026-11-12-pxl-app-hub` `2026-11-12-stm-stem-splitter`
-18. [ ] Hop file transfer <-> PXL app hub · 0.602 · both pxlvzn, desktop-app  `2026-11-12-hop-file-transfer` `2026-11-12-pxl-app-hub`
-19. [ ] Tag AI-tag remover <-> PXL app hub · 0.601 · both pxlvzn, desktop-app  `2026-11-12-tag-ai-tag-remover` `2026-11-12-pxl-app-hub`
-20. [ ] SLANGDAQ game <-> Punchline party game · 0.595 · both daily-challenge, browser-game  `2026-11-12-slangdaq-game` `2026-11-12-punchline-party-game`
-21. [ ] Dwn downloader <-> PXL app hub · 0.594 · both pxlvzn, desktop-app  `2026-11-12-dwn-downloader` `2026-11-12-pxl-app-hub`
-22. [ ] Bonk Court game <-> Sixer cricket game · 0.591 · both threejs, browser-game  `2026-11-12-bonk-court-game` `2026-11-12-sixer-cricket-game`
-23. [ ] Toyxyz retarget add-on <-> Blender storybook hero · 0.582 · both rigging, blender, animation  `2026-11-13-toyxyz-blender-retargeter` `2026-11-09-blender-mcp-storybook-hero-workflow`
-24. [ ] Claude Code agent tree <-> Agent mistakes prompt · 0.58 · both workflow, agents, claude  `2026-11-11-claude-code-agent-tree` `2026-11-18-agent-mistakes-to-checks`
-25. [ ] Revolio website <-> Tabworthy site directory · 0.58 · both website  `2026-11-12-revolio-website` `2026-11-21-tabworthy-site-directory`
+1. [ ] Claude Code agent tree <-> Try orchestrator workflow · 0.72 · both agents, claude  `claude-code-agent-tree` `try-orchestrator-workflow`
+2. [ ] Meter Down concept <-> Tukaram Munde game · 0.701 · both game-idea, indian-setting  `meter-down-concept` `tukaram-munde-game`
+3. [ ] Agent mistakes prompt <-> Try orchestrator workflow · 0.697 · both agents, claude  `agent-mistakes-to-checks` `try-orchestrator-workflow`
+4. [ ] PXL app hub <-> DIT offload checker · 0.679 · both pxlvzn, desktop-app  `pxl-app-hub` `dit-offload-checker-idea`
+5. [ ] Agent mistakes prompt <-> Orchestrator subagent prompt · 0.673 · both prompting, workflow, claude  `agent-mistakes-to-checks` `model-routing-orchestrator-prompt`
+6. [ ] Runaway Light Rig <-> TV Stack toy · 0.664 · both rhythm-game, music, browser-game  `runaway-light-rig` `tv-stack-music-toy`
+7. [ ] DIT offload checker <-> Dwn downloader · 0.652 · both video-editing, pxlvzn, desktop-app  `dit-offload-checker-idea` `dwn-downloader`
+8. [ ] Cricle game <-> SLANGDAQ game · 0.65 · both daily-challenge, browser-game  `cricle-daily-cricket-guessing-game` `slangdaq-game`
+9. [ ] Claude video edit <-> Try orchestrator workflow · 0.646 · both agents, claude  `claude-video-edit` `try-orchestrator-workflow`
+10. [ ] Cinematic film skill <-> Try orchestrator workflow · 0.64 · both agents, claude  `cinematic-film-skill` `try-orchestrator-workflow`
+11. [ ] Claude live UI comments <-> Try orchestrator workflow · 0.63 · both claude  `claude-live-ui-comments` `try-orchestrator-workflow`
+12. [ ] Cinematic film skill <-> Escapement Blender film · 0.626 · both agents, claude  `cinematic-film-skill` `escapement-blender-short-film`
+13. [ ] Escapement Blender film <-> Try orchestrator workflow · 0.623 · both agents, claude  `escapement-blender-short-film` `try-orchestrator-workflow`
+14. [ ] Saturday off tracker <-> Revolio SSD Desk · 0.616 · both internal-tool, revolio  `saturday-off-tracker` `revolio-ssd-desk`
+15. [ ] Claude Code agent tree <-> Orchestrator subagent prompt · 0.615 · both workflow, agents, claude  `claude-code-agent-tree` `model-routing-orchestrator-prompt`
+16. [ ] PXL app hub <-> Lut colour matcher · 0.613 · both pxlvzn, desktop-app  `pxl-app-hub` `lut-colour-matcher`
+17. [ ] PXL app hub <-> Stm stem splitter · 0.608 · both pxlvzn, desktop-app  `pxl-app-hub` `stm-stem-splitter`
+18. [ ] Hop file transfer <-> PXL app hub · 0.602 · both pxlvzn, desktop-app  `hop-file-transfer` `pxl-app-hub`
+19. [ ] Tag AI-tag remover <-> PXL app hub · 0.601 · both pxlvzn, desktop-app  `tag-ai-tag-remover` `pxl-app-hub`
+20. [ ] SLANGDAQ game <-> Punchline party game · 0.595 · both daily-challenge, browser-game  `slangdaq-game` `punchline-party-game`
+21. [ ] Dwn downloader <-> PXL app hub · 0.594 · both pxlvzn, desktop-app  `dwn-downloader` `pxl-app-hub`
+22. [ ] Bonk Court game <-> Sixer cricket game · 0.591 · both threejs, browser-game  `bonk-court-game` `sixer-cricket-game`
+23. [ ] Toyxyz retarget add-on <-> Blender storybook hero · 0.582 · both rigging, blender, animation  `toyxyz-blender-retargeter` `blender-mcp-storybook-hero-workflow`
+24. [ ] Agent mistakes prompt <-> Claude Code agent tree · 0.58 · both workflow, agents, claude  `agent-mistakes-to-checks` `claude-code-agent-tree`
+25. [ ] Claude Code reactive theme <-> Try orchestrator workflow · 0.58 · both claude  `claude-code-reactive-theme` `try-orchestrator-workflow`
 
 ### Remove or explain these weak links
 
 Low score and no reason written next to the link. Either say why they belong or drop them.
 
-26. [ ] Polyfork 3D assets -> ARC 3D art dataset · 0.012  `2026-11-10-polyfork-3d-assets` `2026-11-10-arc-3d-art-dataset`
-27. [ ] Blender storybook hero -> Pixel sprite search · 0.06  `2026-11-09-blender-mcp-storybook-hero-workflow` `2026-11-09-pixel-search-sprite-database`
-28. [ ] Blender storybook hero -> Godot waterfall shader · 0.082  `2026-11-09-blender-mcp-storybook-hero-workflow` `2026-11-09-godot-waterfall-texture-array-shader`
-29. [ ] App growth checklist -> Native Swift tip · 0.091  `2026-11-11-app-growth-checklist` `2026-11-11-native-swift-app-tip`
+26. [ ] Polyfork 3D assets -> ARC 3D art dataset · 0.012  `polyfork-3d-assets` `arc-3d-art-dataset`
+27. [ ] Blender storybook hero -> Pixel sprite search · 0.06  `blender-mcp-storybook-hero-workflow` `pixel-search-sprite-database`
+28. [ ] Blender storybook hero -> Godot waterfall shader · 0.082  `blender-mcp-storybook-hero-workflow` `godot-waterfall-texture-array-shader`
+29. [ ] App growth checklist -> Native Swift tip · 0.091  `app-growth-checklist` `native-swift-app-tip`
 
 ### Merge tags
 
@@ -92,24 +92,24 @@ None.
 Notes with no links in or out, with their best matches.
 
 - Second brand identity: Ace Of Frames reel (0.543), Captcha launch film (0.48)
-- Goalkeeper editor joke: nothing close yet
-- Intelligence is adaptability: nothing close yet
-- Roboflow re-ID tool: nothing close yet
 - Bonk Court game: Sixer cricket game (0.591), Munde Mode game (0.512)
+- Claude Code reactive theme: Try orchestrator workflow (0.58), Claude live UI comments (0.573), Unslop UI skill (0.472)
+- Claude video edit: Try orchestrator workflow (0.646), Cinematic film skill (0.54), Ace Of Frames reel (0.531)
+- Cloudflare Computer: Try orchestrator workflow (0.577)
 - DriveDesk file manager: Ferry file manager (0.545), PXLVZN label (0.544)
 - Early Discord bots: nothing close yet
+- Flat Finder map: nothing close yet
+- Goalkeeper editor joke: nothing close yet
+- Intelligence is adaptability: nothing close yet
+- Neural network data viz: Sleep alarm UI (0.462), Claude code paintings (0.457)
+- Roboflow re-ID tool: nothing close yet
 - Runaway Light Rig: TV Stack toy (0.664)
+- Stick It Up stickers: Astryx design system (0.565)
+- Strawhat homelab dashboard: Sleep alarm UI (0.562), Saturday off tracker (0.511)
 - TV Stack toy: Runaway Light Rig (0.664)
+- Vibe-coded app security: nothing close yet
 - Vinyl for Windows: PXLVZN label (0.529)
 - Wedding co-op game: nothing close yet
-- Stick It Up stickers: Astryx design system (0.565)
-- Neural network data viz: Sleep alarm UI (0.462), Claude code paintings (0.457)
-- Vibe-coded app security: nothing close yet
-- Claude Code reactive theme: Try orchestrator workflow (0.58), Claude live UI comments (0.573), Unslop UI skill (0.472)
-- Cloudflare Computer: Try orchestrator workflow (0.577)
-- Strawhat homelab dashboard: Sleep alarm UI (0.562), Saturday off tracker (0.511)
-- Claude video edit: Try orchestrator workflow (0.646), Cinematic film skill (0.54), Ace Of Frames reel (0.531)
-- Flat Finder map: nothing close yet
 
 ## Unlinked mentions
 

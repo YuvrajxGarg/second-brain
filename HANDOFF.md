@@ -140,7 +140,7 @@ tags, summaries, indexes).
  you ──paste──▶ Claude project chat ──files──┐
  you ──click──▶ quick-capture extension ──commits──▶ inbox/ ──Claude sorts──┐
                                               ▼                              ▼
-                              GitHub repo  topics/<topic>/YYYY-MM-DD-<slug>.md
+                              GitHub repo  topics/<topic>/<slug>.md
                                               │
                python3 scripts/build_index.py │ (Claude runs it on every filing)
                                               ▼
@@ -385,7 +385,7 @@ the Claude app on your phone.
 
 All of this is in `CLAUDE.md`, so Claude follows it automatically. Summary:
 
-**One item, one file.** `topics/<topic>/YYYY-MM-DD-<slug>.md`, slug is 3 to 6
+**One item, one file.** `topics/<topic>/<slug>.md`, slug is 3 to 6
 kebab-case words. Images and video frames sit next to the note with the same name
 and are described in words so they're searchable.
 

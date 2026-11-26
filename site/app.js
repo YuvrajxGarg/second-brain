@@ -904,7 +904,8 @@
     if (location.hash === "#/doctor") { history.replaceState(null, "", "#/"); select(null); openDoctor(); return; }
     const m = location.hash.match(/^#\/(n|g|t)\/(.+)$/);
     if (!m) { select(null); return; }
-    const id = (m[1] === "n" ? "n:" : m[1] === "g" ? "g:" : "t:") + decodeURIComponent(m[2]);
+    let id = (m[1] === "n" ? "n:" : m[1] === "g" ? "g:" : "t:") + decodeURIComponent(m[2]);
+    if (m[1] === "n" && !byId.has(id)) id = id.replace(/^n:\d{4}-\d\d-\d\d-/, "n:"); // old date-first links
     const n = byId.get(id);
     if (!n || n.deleted) {
       toast(`Couldn't find <b>${esc(decodeURIComponent(m[2]))}</b>. It may have been renamed or deleted.`, 5000);
@@ -1597,7 +1598,9 @@
       const topic = v("topic"), kind = v("kind"), text = v("text"), source = v("source");
       const tags = [...new Set(v("tags").split(",").map(kebab).filter(Boolean))];
       const today = new Date().toISOString().slice(0, 10);
-      const slug = `${today}-${kebab(title).split("-").slice(0, 6).join("-") || "note"}`;
+      const base = kebab(title).split("-").slice(0, 6).join("-") || "note";
+      let slug = base;
+      for (let i = 2; nodes.some((x) => x.slug === slug); i++) slug = `${base}-${i}`;
       const type = kind === "idea" ? "idea" : kind === "todo" ? "todo" : kind === "thought" ? "note" : source ? "link" : "note";
       const fm = [
         `title: ${yamlScalar(title)}`, `type: ${type}`, `topic: ${topic}`, `tags: [${tags.join(", ")}]`, `kind: ${kind}`,

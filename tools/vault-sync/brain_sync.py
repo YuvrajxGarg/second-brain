@@ -71,7 +71,7 @@ state: in progress        # live, prototype, in progress, concept, archived
 stack: []
 repo: private             # GitHub link, or private
 share: full               # full = all docs go to the brain, summary = only this file, none = stays local
-note:                     # optional: slug of an existing brain note for this project, e.g. 2026-11-12-dwn-downloader
+note:                     # optional: slug of an existing brain note for this project, e.g. dwn-downloader
 added: {today}
 ---
 

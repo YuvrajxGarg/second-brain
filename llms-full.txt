@@ -115,7 +115,7 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 - Use his own words in each note's `why` and `## Raw` as the strongest signal.
 
 ============================================================
-Skillsync skills marketplace  (topics/ai/2026-11-26-skillsync-skills-marketplace.md)
+Skillsync skills marketplace  (topics/ai/skillsync-skills-marketplace.md)
 ============================================================
 kind: tool
 type: tool
@@ -129,7 +129,7 @@ tags: agents, marketplace, to-try
 ## Summary
 Skillsync, launched by Nars (@narsagna) on X on 2026-11-24, pitches itself as "the substack for skills": a place to publish the skills you build for your AI agents and have people and agents pay to use them, instead of leaving them scattered across GitHub, Slack and Google Drive. You claim a username at skillsync.com (profile URLs look like skillsync.com/nars).
 
-![frame](./2026-11-26-skillsync-skills-marketplace.jpg)
+![frame](./skillsync-skills-marketplace.jpg)
 
 The 53-second launch video is the founder talking to camera in front of the Golden Gate Bridge, cut with kinetic type (a clean sans mixed with a big white italic serif, "is stuck."), a glassy dark card for a skill called "write-like-me", a floating "skills_final_v3.zip" Slack attachment, and a frosted URL bar reading "skillsync.com/nars" with an orange arrow button and "Claim your username."
 
@@ -140,10 +140,10 @@ Post text (via Social Reader): "The skills you build for your agents are your re
 Thread reply: "claim your username: https://skillsync.com"
 
 ## Notes
-Related skills already saved: [[2026-11-15-unslop-ui-skill]], [[2026-11-13-cinematic-film-skill]].
+Related skills already saved: [[unslop-ui-skill]], [[cinematic-film-skill]].
 
 ============================================================
-AI group shot retouch  (topics/ai/2026-11-26-ai-group-shot-retouch.md)
+AI group shot retouch  (topics/ai/ai-group-shot-retouch.md)
 ============================================================
 kind: technique
 type: note
@@ -200,13 +200,13 @@ whether to smooth the hair texture.
 "log this to my brain" (said at the end of the session, after v134).
 
 ## Notes
-- [[2026-11-12-revolio-media-studio]]: the studio this job was for
-- [[2026-11-18-agent-mistakes-to-checks]]: same idea of turning agent mistakes into standing checks
+- [[revolio-media-studio]]: the studio this job was for
+- [[agent-mistakes-to-checks]]: same idea of turning agent mistakes into standing checks
 
 vault docs (full text via MCP fetch or https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/<path>): projects/album-cover-composite/log.md
 
 ============================================================
-Tabworthy site directory  (topics/tech/2026-11-21-tabworthy-site-directory.md)
+Tabworthy site directory  (topics/tech/tabworthy-site-directory.md)
 ============================================================
 kind: tool
 type: video
@@ -219,7 +219,7 @@ tags: website, reference, to-try
 style: dark ui with bold white headline, grid of category cards with counts, monospace tags, small green accent button
 
 ## Summary
-![screenshot](./2026-11-21-tabworthy-site-directory.jpg)
+![screenshot](./tabworthy-site-directory.jpg)
 
 A reel by @prafull_codes showing Tabworthy, a hand-checked directory of about 564 websites "you probably didn't know existed": useful tools, AI resources, developer utilities, browser games and odd finds, with no accounts, ads or algorithm. The dark homepage reads "Worth a new tab." with a "Surprise me" button, a search bar, and category cards (Developer, Design & Type, Learn, Fun & Weird, Games & Play, Music & Audio, Maps & Earth, Read & Archive, Everyday Tools, Science & Space), popular tags like 3d, interactive, browser-games and visualization, plus a saved library and shuffle. The site URL isn't shown in the reel.
 
@@ -228,10 +228,10 @@ https://www.instagram.com/reel/Df9qNfxxuuu/?knvt=YTJ2cWEyNDhuYmZt
 
 ## Notes
 - Caption: "The internet is full of hidden gems, and Tabworthy helps you discover them! Explore 500+ curated websites featuring useful tools, AI resources, developer utilities, browser games, and some seriously unique finds."
-- Related: [[2026-11-12-perfolios-portfolio-directory]]
+- Related: [[perfolios-portfolio-directory]]
 
 ============================================================
-Flat Finder map  (topics/design/2026-11-21-flat-finder-map.md)
+Flat Finder map  (topics/design/flat-finder-map.md)
 ============================================================
 kind: website-ref
 type: video
@@ -244,7 +244,7 @@ tags: data-viz, web-app, claude, open-source, inspiration
 style: dark night map, glowing gold building clusters, 3d extruded towers, thin gold road lines, minimal dark sidebar filters
 
 ## Summary
-![screenshot](./2026-11-21-flat-finder-map.jpg)
+![screenshot](./flat-finder-map.jpg)
 
 A 71-second reel by @divy.kairoth ("Ep 2 claude maxxingg") showing Flat Finder (flat-finder.pages.dev), a web app he built with Claude for finding a flat in Gurugram. The screen shows a full-screen dark map where every housing society glows as gold dots and 3D tower shapes, with a dark left sidebar ("Find the flat that fits.") of filters for buy/rent, type, BHK, bedroom size, budget, amenities and distance to metro or hospital, plus a matching-societies counter. Zooming in turns the dots into extruded buildings with a detail card (price, score, unit sizes). The open-source repo (github.com/kairothq/flat-finder) README explains the data: ~2,700 projects from Magicbricks, building outlines from OpenStreetMap, and bedroom sizes read from builder brochures and HRERA plans via OCR, with colours meaning match, likely, unchecked or no match.
 
@@ -257,7 +257,7 @@ https://www.instagram.com/reel/Df7M6XfTQIy/?lqvp=MXJjMmJndDAwcm81Ng==
 - Repo: https://github.com/kairothq/flat-finder (Python, JavaScript, CSS)
 
 ============================================================
-MetaHuman Maker addon  (topics/gamedev/2026-11-18-metahuman-maker-agent-addon.md)
+MetaHuman Maker addon  (topics/gamedev/metahuman-maker-agent-addon.md)
 ============================================================
 kind: tool
 type: tool
@@ -272,7 +272,7 @@ style: photoreal metahuman faces, gritty scarred skin detail, unreal editor view
 ## Summary
 MetaHuman Maker by TREE Industries ([github.com/TREE-Ind/MetahumanMaker](https://github.com/TREE-Ind/MetahumanMaker)) is an open-source (MIT) Blender add-on that turns photos or source meshes into editable MetaHuman characters for Unreal Engine: wrap and fit the head and body, sculpt and repair regions, rebuild missing skin detail with up to 8K textures, then send rigs and grooms into Unreal. An AI agent can drive the same tools through Blender MCP. Joshua Johnson (@joshuajohnsonAI) posted it saying he context-engineered it so the agent gets better with every character you ask it for. Windows x64, Blender 5.2, Unreal 5.8; preview release v0.346.0.
 
-![screenshot](./2026-11-18-metahuman-maker-agent-addon.jpg)
+![screenshot](./metahuman-maker-agent-addon.jpg)
 
 Video frame (69s demo in the Unreal MetaHuman Character editor): close-up of a snarling, scarred middle-aged man with tied-back black hair and a goatee on a blue background, with the editor's Create Full Rig / Joints Only Rig buttons and a Preview Details panel (animation, face and body animation, grooms, outfit). Other frames zoom into very fine pore-level skin texture on the cheek and nose.
 
@@ -280,10 +280,10 @@ Video frame (69s demo in the Unreal MetaHuman Character editor): close-up of a s
 https://x.com/joshuajohnsonai/status/2122836076515799287?a=tpNaFMTm4-1G6dSP2vc&s=46
 
 ## Notes
-Related: [[2026-11-09-blender-mcp-storybook-hero-workflow]] (another agent-driven Blender character workflow).
+Related: [[blender-mcp-storybook-hero-workflow]] (another agent-driven Blender character workflow).
 
 ============================================================
-Claude video edit  (topics/ai/2026-11-18-claude-video-edit.md)
+Claude video edit  (topics/ai/claude-video-edit.md)
 ============================================================
 kind: technique
 type: link
@@ -297,7 +297,7 @@ tags: claude, video-editing, agents, inspiration
 ## Summary
 Udayan Walvekar (@udayan_w) says a polished GrowthX YouTube video, "I Read This 417 Page Anthropic IPO Filing, So You Don't Have To", was edited entirely in Claude, with 360 GB of files rendered through it. Proof point that an agent can drive a real long-form edit end to end. The post shares no workflow details, only the claim and a screenshot.
 
-![screenshot](./2026-11-18-claude-video-edit.jpg)
+![screenshot](./claude-video-edit.jpg)
 
 Screenshot: a dark-mode WhatsApp chat with a YouTube link preview. The thumbnail shows a bald, bearded host in clear glasses and a navy blazer holding a red document reading "ANTHROPIC $1.5 trillion valuation", a red sticker "Anthropic is coming for everybody", a hand-written "417 page IPO filing" arrow, and a grid of grey-toned tech CEO headshots behind him, GrowthX logo bottom left. Below it someone replied "what insane quality!".
 
@@ -305,7 +305,7 @@ Screenshot: a dark-mode WhatsApp chat with a YouTube link preview. The thumbnail
 https://x.com/udayan_w/status/2122732735496355860?a=yTiNqG_pZrV5YODXZKA&s=46
 
 ============================================================
-Agent mistakes prompt  (topics/ai/2026-11-18-agent-mistakes-to-checks.md)
+Agent mistakes prompt  (topics/ai/agent-mistakes-to-checks.md)
 ============================================================
 kind: technique
 type: link
@@ -355,10 +355,10 @@ Start a fresh subagent (not a fork) as the judge. Give it the table and the diff
 A table: mistake, times seen, examples, fix type, the CLAUDE.md lines to delete. Then the diffs. Stop and wait for my yes.
 </output>
 ```
-- [[2026-11-26-ai-group-shot-retouch]]: names this note; both workflow, claude
+- [[ai-group-shot-retouch]]: names this note; both workflow, claude
 
 ============================================================
-Strawhat homelab dashboard  (topics/design/2026-11-16-strawhat-homelab-dashboard.md)
+Strawhat homelab dashboard  (topics/design/strawhat-homelab-dashboard.md)
 ============================================================
 kind: style-ref
 type: bookmark
@@ -373,7 +373,7 @@ style: dark minimal dashboard, serif headings with mono stats, thin usage bars, 
 ## Summary
 Thanh Doan (@capythanh) vibe coded "strawhat", a personal homelab dashboard that puts all his machines and AI accounts in one place: workstations, cloud servers and sandboxes with live CPU and memory, plus every Claude and Antigravity subscription with 5-hour and weekly usage limits and pay-as-you-go credits. His point: the best side project is the one only you use.
 
-![screenshot](./2026-11-16-strawhat-homelab-dashboard.jpg)
+![screenshot](./strawhat-homelab-dashboard.jpg)
 
 Screenshot: a dark UI on a purple gradient. Left sidebar lists machines, previews, proxy, context, secrets and server groups (Tailnet, OVHcloud, Google Cloud) and sandboxes (Modal, Instabox) with CPU %. The "Machines" section is a node map: a central "strawhat hub" card with a CPU sparkline wired to laptops on the left and Singapore servers on the right, with latency labels, and a dashed sandbox area with awake/asleep boxes. Below, "Subscriptions" shows $1675.87 over 7 days split into Claude and Google columns, each account with small blue/red usage bars, reset timers and cost, and a Credits strip with yellow and blue progress bars for DeepSeek and another provider.
 
@@ -384,7 +384,7 @@ https://x.com/capythanh/status/2121965442063294958?a=VHwQFfmc4LECF2s1hrI&s=20
 Idea: a similar one-page dashboard for my own projects, deploys and AI accounts.
 
 ============================================================
-Cloudflare Computer  (topics/ai/2026-11-16-cloudflare-computer-agent-sandbox.md)
+Cloudflare Computer  (topics/ai/cloudflare-computer-agent-sandbox.md)
 ============================================================
 kind: tool
 type: tool
@@ -398,7 +398,7 @@ tags: agents, open-source, sandbox, to-try
 ## Summary
 Cloudflare open-sourced Cloudflare Computer (`@cloudflare/computer`, MIT), a persistent "computer" for AI agents: a virtual filesystem that lives inside a Durable Object with its state in SQLite, so an agent's files survive after a session ends. One `workspace.runtime.exec()` call runs code on a pluggable backend: a full Linux sandbox container (FUSE-mounted via `computerd`), a just-bash shell in a Dynamic Worker, or "codemode" JavaScript modules with git and artifact helpers. Found via an Instagram reel by @angelotrifanoff.ai.
 
-![screenshot](./2026-11-16-cloudflare-computer-agent-sandbox.jpg)
+![screenshot](./cloudflare-computer-agent-sandbox.jpg)
 
 Reel frame: a creator talking over the cloudflare/computer GitHub README, which lists the Container, Isolate shell and JavaScript backends; captions say it gives your AI a computer that keeps working after the session ends.
 
@@ -411,7 +411,7 @@ Cloudflare computer
 Reel: https://www.instagram.com/reel/Db2FJERS0N_/
 
 ============================================================
-Claude Code reactive theme  (topics/ai/2026-11-16-claude-code-reactive-theme.md)
+Claude Code reactive theme  (topics/ai/claude-code-reactive-theme.md)
 ============================================================
 kind: technique
 type: bookmark
@@ -426,7 +426,7 @@ style: cozy winter night scene, animated snowfall, frosted glass chat panel, woo
 ## Summary
 Lydia Hallie (@lydiahallie) shows that Claude Code desktop custom themes are really mods, so the background can react to the live session. She asked Claude for a theme where it snows harder as the context fills up; the mod hooks into `turn.step`. It quotes the @ClaudeDevs launch post: you can build custom themes for Claude Code on desktop with mods (colours, animated backgrounds), by describing the look to Claude or starting from the theme-examples plugin.
 
-![screenshot](./2026-11-16-claude-code-reactive-theme.jpg)
+![screenshot](./claude-code-reactive-theme.jpg)
 
 Video frame: the Claude Code desktop app over a snowy night scene with a full moon, aurora, a snow-covered Christmas tree and snowman on the left and a lit A-frame cabin on the right. A robin in a Santa hat sits on hanging wooden signs that read "14% context" and "60m cache"; the chat column is a frosted dark panel. Across the 14s clip the context climbs to 44% and 91% with snow piling up, then `/compact` drops it back to 4% and the cache sign empties.
 
@@ -439,7 +439,7 @@ Insane use case for custom theme or mods.
 Idea: a pixel-art or game-styled Claude Code theme whose scene reacts to context, cost or tool calls.
 
 ============================================================
-Blender painterly leaf shader  (topics/gamedev/2026-11-16-blender-painterly-leaf-shader.md)
+Blender painterly leaf shader  (topics/gamedev/blender-painterly-leaf-shader.md)
 ============================================================
 kind: technique
 type: bookmark
@@ -454,7 +454,7 @@ style: painterly brushstroke leaves, teal and lime on deep crimson, hand-painted
 ## Summary
 Jie (@jiehananana) shows a stylised Blender shader built around the Light Accumulation node ("light accumulation node starts making sense"). Lighting is gathered per surface and remapped through a colour ramp and overlay mix, so a pile of 3D leaves renders like a hand-painted illustration, and moving the light live repaints the scene.
 
-![screenshot](./2026-11-16-blender-painterly-leaf-shader.jpg)
+![screenshot](./blender-painterly-leaf-shader.jpg)
 
 Video frame: Blender's shader editor on top (a colour ramp feeding an Overlay mix node with a light blue B colour, wired into Light Accumulation's Diffuse Light input, then into Material Output) and the rendered viewport below: a dense bed of overlapping round leaves with visible brushstroke texture, glowing mint, teal, pale lavender and yellow-green where lit, fading to dark blue, on a deep crimson ground. Over the 13s clip the light is dragged and the leaves go from dark and muted to brightly lit.
 
@@ -462,10 +462,10 @@ Video frame: Blender's shader editor on top (a colour ramp feeding an Overlay mi
 https://x.com/jiehananana/status/2121967542499713475?a=3pHJV1sIIbB9VvTVBBI&s=46
 
 ## Notes
-Related: [[2026-11-10-claude-code-paintings]] (painterly look made in code).
+Related: [[claude-code-paintings]] (painterly look made in code).
 
 ============================================================
-Vibe-coded app security  (topics/tech/2026-11-15-vibe-coded-app-security.md)
+Vibe-coded app security  (topics/tech/vibe-coded-app-security.md)
 ============================================================
 kind: advice
 type: video
@@ -496,14 +496,14 @@ tags: security, web-app, reference
 
 The caption offers a prompt that audits an app for all 15 if you comment SECURITY; that prompt isn't in the reel.
 
-![screenshot](./2026-11-15-vibe-coded-app-security.jpg)
+![screenshot](./vibe-coded-app-security.jpg)
 The frame shows the full 15-item list next to the speaker, with a code card reading `supabase.from("users").select("*") // every user, every row` under "Turn on row level security".
 
 ## Raw
 https://www.instagram.com/reel/Dfvvp0DtB_W/?exln=MWl0N2VuZXMwZDVkdg==
 
 ============================================================
-Unslop UI skill  (topics/design/2026-11-15-unslop-ui-skill.md)
+Unslop UI skill  (topics/design/unslop-ui-skill.md)
 ============================================================
 kind: tool
 type: tool
@@ -517,7 +517,7 @@ tags: claude, ui, visual-design, open-source, to-try
 ## Summary
 unslop by Damir Sokolovsky (@heydamir) is an open-source skill for Claude Code and Codex that turns vibecoded, AI-looking UI into a designed interface. It first audits the screen for slop signs (purple gradients, glows, emoji labels, loud copy, uneven spacing), proposes a visual direction that fits the product, then revises in a fixed order: spacing, colour, icons, copy, type, layout, details, visuals, motion. It can also generate hero images through fal, Replicate, OpenAI or Higgsfield, asking before each paid generation, and render a short before/after video with Playwright and ffmpeg. It works with React, Next.js, Vue, Svelte, Tailwind or plain HTML/CSS, or from a live URL. Install it into `~/.claude/skills/` and run `/unslop`. License is CC BY 4.0; about 6.5k stars.
 
-![screenshot](./2026-11-15-unslop-ui-skill.jpeg)
+![screenshot](./unslop-ui-skill.jpeg)
 The screenshot is an Instagram comment on the reel by williams_co._ that just posts the link github.com/heydamir/unslop (57 likes).
 
 ## Raw
@@ -525,10 +525,10 @@ This is the GitHub repo he was talking about in the latest reel link I sent.
 (screenshot of a comment: https://github.com/heydamir/unslop)
 
 ## Notes
-From the reel: [[2026-11-15-ai-slop-design-rules]]
+From the reel: [[ai-slop-design-rules]]
 
 ============================================================
-Sprite stacking technique  (topics/gamedev/2026-11-15-sprite-stacking-pixel-art.md)
+Sprite stacking technique  (topics/gamedev/sprite-stacking-pixel-art.md)
 ============================================================
 kind: technique
 type: video
@@ -543,18 +543,18 @@ style: chunky pixel art cars, top-down racing track, fake 3d from 2d slices
 ## Summary
 Kimo (@asynkimo) shows sprite stacking: slice a pixel-art object row by row from its side view, stack the slices 1 px apart and rotate them together, so a 2D sprite can turn to any angle and looks 3D. The demo is a blue pixel sports car with white racing stripes drifting around a top-down track with red-and-white kerbs and green grass. A follow-up post links a full how-to with the Godot code: https://spritecook.ai/blog/sprite-stacking-pixel-art
 
-![screenshot](./2026-11-15-sprite-stacking-pixel-art.jpg)
+![screenshot](./sprite-stacking-pixel-art.jpg)
 The frame shows the car's top, side, front and back views with the caption "Each row of the side view becomes a slice"; a later frame says "Stack the slices 1 px apart and turn them".
 
 ## Raw
 https://x.com/asynkimo/status/2121716250820964431
 
 ## Notes
-Related: [[2026-11-09-pixel-search-sprite-database]], [[2026-11-09-godot-waterfall-texture-array-shader]]
-- [[2026-11-15-pixel-art-gaussian-splats]]: both pixel-art
+Related: [[pixel-search-sprite-database]], [[godot-waterfall-texture-array-shader]]
+- [[pixel-art-gaussian-splats]]: both pixel-art
 
 ============================================================
-Raea render engine  (topics/ai/2026-11-15-raea-render-engine.md)
+Raea render engine  (topics/ai/raea-render-engine.md)
 ============================================================
 kind: tool
 type: tool
@@ -576,10 +576,10 @@ https://www.instagram.com/reel/DfvLYbgqpb2/?exln=MTIzcjkxOGZraGk1aw==
 https://raea.io/?utm_source=ig&utm_medium=social&utm_content=link_in_bio They are talking about this in the reel.
 
 ## Notes
-Related: [[2026-11-13-cinematic-film-skill]], [[2026-11-14-escapement-blender-short-film]]
+Related: [[cinematic-film-skill]], [[escapement-blender-short-film]]
 
 ============================================================
-Pixel-art gaussian splats  (topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md)
+Pixel-art gaussian splats  (topics/gamedev/pixel-art-gaussian-splats.md)
 ============================================================
 kind: style-ref
 type: video
@@ -594,17 +594,17 @@ style: pixel-art 3d dioramas, one-hue monochrome palettes, floating islands on b
 ## Summary
 Silicon Jungle (@JungleSilicon) shows small 3D scenes rendered as pixel-art gaussian splats, which keep a crisp pixel-art look while the camera orbits around them. The author says they were made with Fable 5.2. The 36-second video cycles through floating dioramas on black: a vine-covered stone hand with one eye inside a ruined arch, a green lab with glass vats holding pink brains, a witch's hut in a swamp with warm orange windows and reeds, and an icy blue dragon skeleton curled around a candle-lit shrine. Each scene sticks mostly to one hue with a single accent colour.
 
-![screenshot](./2026-11-15-pixel-art-gaussian-splats.jpg)
+![screenshot](./pixel-art-gaussian-splats.jpg)
 The frame shows the green lab: a tall central glass tank with a pink brain, ringed by smaller vats on a glowing circular platform.
 
 ## Raw
 https://x.com/JungleSilicon/status/2121782359901212987
 
 ## Notes
-Related: [[2026-11-15-sprite-stacking-pixel-art]] (another way to give pixel art a 3D turn).
+Related: [[sprite-stacking-pixel-art]] (another way to give pixel art a 3D turn).
 
 ============================================================
-Neural network data viz  (topics/design/2026-11-15-neural-network-data-viz.md)
+Neural network data viz  (topics/design/neural-network-data-viz.md)
 ============================================================
 kind: style-ref
 type: video
@@ -623,7 +623,7 @@ Praveen Kumar (@praveenisomer) posted four animated vertical cards from an early
 - **Asymmetric Decryption:** a single-blue swirl of streaks that resolves into a glyph grid.
 - **Volumetric Data Mapping:** a dense treemap of number-filled boxes in green, pink and orange.
 
-![screenshot](./2026-11-15-neural-network-data-viz.jpg)
+![screenshot](./neural-network-data-viz.jpg)
 The frame shows the Neural Vectoring card: a multicolour glyph grid shaped like a branching network on a charcoal background, titled "Neural Vectoring" with a "Copy Link" button.
 
 ## Raw
@@ -633,7 +633,7 @@ https://x.com/praveenisomer/status/2121566361021530366
 The thread's second post is just the author's booking link.
 
 ============================================================
-AI slop design rules  (topics/design/2026-11-15-ai-slop-design-rules.md)
+AI slop design rules  (topics/design/ai-slop-design-rules.md)
 ============================================================
 kind: advice
 type: video
@@ -647,17 +647,17 @@ tags: ui, visual-design, prompting, reference
 ## Summary
 Reel by @anthonyalxnder comparing generic "AI slop" UI with what a senior designer gets by giving the AI design knowledge as rules. He shows polished results, like a dark running-app screen and a glassy phone UI, and covers points such as using a proper range of font weights (Thin 100 to Black 900). The caption offers his 9 design rules and the original skill repo to anyone who comments "slop", so the full list and repo aren't in the reel itself.
 
-![screenshot](./2026-11-15-ai-slop-design-rules.jpg)
+![screenshot](./ai-slop-design-rules.jpg)
 The frame shows him holding up a dark "Morning run" app mockup: a big dot-matrix 5.29 km distance on a purple gradient wave chart, pace and heart-rate cards, a weekly goal slider and a Start run button.
 
 ## Raw
 https://www.instagram.com/reel/Dfu-teMSFrr/?xtok=MW45cXQ1b3c2enB4aw==
 
 ## Notes
-The skill repo from the reel is [[2026-11-15-unslop-ui-skill]] (github.com/heydamir/unslop). Related: [[2026-11-10-astryx-design-system]], [[2026-11-13-cinematic-film-skill]]
+The skill repo from the reel is [[unslop-ui-skill]] (github.com/heydamir/unslop). Related: [[astryx-design-system]], [[cinematic-film-skill]]
 
 ============================================================
-Escapement Blender film  (topics/ai/2026-11-14-escapement-blender-short-film.md)
+Escapement Blender film  (topics/ai/escapement-blender-short-film.md)
 ============================================================
 kind: technique
 type: video
@@ -670,7 +670,7 @@ tags: claude, blender, agents, 3d-art, open-source, to-try
 style: dark macro clockwork, dusk orange canyon, cinematic letterbox grade
 
 ## Summary
-![screenshot](./2026-11-14-escapement-blender-short-film.jpg)
+![screenshot](./escapement-blender-short-film.jpg)
 
 Escapement is a 36-second cinematic short film made by Claude Code driving Blender headless from Python on a laptop with an integrated GPU. No downloaded models or textures: every object, material, light and camera move is a script. Five builder agents made the five acts in parallel, a director agent critiqued each act, and a second pass applied the fixes. Edit, grade, halation, grain and sound mix are code too (numpy + ffmpeg), cut to a 120 BPM beat grid. Open source (MIT) at https://github.com/Leonxlnx/escapement, with the brief, shot table and the agents' iteration logs; tuned for one Windows laptop and renders take hours on an iGPU.
 
@@ -683,10 +683,10 @@ This is a cool 3D short film skill. It also has a link of the repo in the captio
 
 ## Notes
 Repo: https://github.com/Leonxlnx/escapement
-- [[2026-11-15-raea-render-engine]]: both agents
+- [[raea-render-engine]]: both agents
 
 ============================================================
-Viggle Remake model  (topics/ai/2026-11-13-viggle-remake-open-model.md)
+Viggle Remake model  (topics/ai/viggle-remake-open-model.md)
 ============================================================
 kind: tool
 type: video
@@ -698,7 +698,7 @@ why: Viggle AI's open weights to recast anybody in a video
 tags: video-generation, video-editing, hugging-face, open-source, to-try
 
 ## Summary
-![screenshot](./2026-11-13-viggle-remake-open-model.jpg)
+![screenshot](./viggle-remake-open-model.jpg)
 
 Viggle Remake is Viggle AI's video-to-video "transformation agent", with open weights on Hugging Face (`Viggle/Viggle-Remake`). It recasts every character in a scene and keeps them consistent across cuts, can swap objects, change the background, restyle or add VFX, handles clips up to 2 minutes, and you keep chatting to fix a shot. The model card shows ~20B params, wan architecture, GGUF quants (4-bit ~14.3 GB, 6-bit ~17.6 GB, 8-bit ~22.3 GB) and a minimax-h3 community license. Hosted use is from $0.96 per 10 s at 720p.
 
@@ -713,10 +713,10 @@ Wiggle AI's open waits to recast anybody in a video.
 - Open weights: https://huggingface.co/Viggle/Viggle-Remake
 - Reel by @asharasjad; caption: "RECAST ANYONE IN YOUR VIDEO. FREE MODEL."
 - Useful for his video editing work (character swaps in footage).
-- [[2026-11-13-relayvsr-video-upscaler]]: both hugging-face, video-generation, video-editing
+- [[relayvsr-video-upscaler]]: both hugging-face, video-generation, video-editing
 
 ============================================================
-Unity bodycam hands  (topics/gamedev/2026-11-13-unity-bodycam-ik-hands.md)
+Unity bodycam hands  (topics/gamedev/unity-bodycam-ik-hands.md)
 ============================================================
 kind: technique
 type: video
@@ -729,7 +729,7 @@ tags: unity, rigging, animation, tutorial
 style: bodycam first person view, gloved hands with pistol, striped test room
 
 ## Summary
-![screenshot](./2026-11-13-unity-bodycam-ik-hands.jpg)
+![screenshot](./unity-bodycam-ik-hands.jpg)
 
 A @gamedevinspire reel showing bodycam-style first-person hands in Unity driven entirely by IK, "not even a single animation clip". Both arms use Unity's Animation Rigging package with IK targets; an Aim Target parented under the camera makes the gloved hands and pistol follow where you look, with the weapon lagging a few degrees for that shaky bodycam feel. The project files are offered via comment.
 
@@ -741,10 +741,10 @@ https://www.instagram.com/reel/DfpPiVxiVWy/?srtk=cjFtdWFjbW9tNXNy
 The link I just shared is tips for hand animation in a first person view in Unity.
 
 ## Notes
-- Related: [[2026-11-11-procedural-arm-rig-demo]]
+- Related: [[procedural-arm-rig-demo]]
 
 ============================================================
-Toyxyz retarget add-on  (topics/gamedev/2026-11-13-toyxyz-blender-retargeter.md)
+Toyxyz retarget add-on  (topics/gamedev/toyxyz-blender-retargeter.md)
 ============================================================
 kind: tool
 type: tool
@@ -759,7 +759,7 @@ style: blocky segmented mannequins, one flat pastel colour per character, dark g
 ## Summary
 A free Blender add-on by @toyxyz3 that retargets mocap between characters with very different body proportions (tall, short, stocky). It copies joint rotations with FK, then adjusts the root motion for each rig's limb lengths, so feet don't slide and you avoid the IK popping of IK-based retargeting. Code: https://github.com/toyxyz/toyxyz-blender-retargeter
 
-![frame](./2026-11-13-toyxyz-blender-retargeter.jpg)
+![frame](./toyxyz-blender-retargeter.jpg)
 
 The video shows four mannequins walking side by side on Blender's dark grid: a tall lilac one, a teal one, a small orange one and a white bone-only rig. All are built from simple boxy segments with black hands, one flat colour each, which is the clean prototype-character look he liked.
 
@@ -771,10 +771,10 @@ Also, this is a very cool art style for showing prototype models in a
 I said in a game.
 
 ## Notes
-- Related: [[2026-11-13-line-art-mocap-workflow]] (another mocap animation workflow)
+- Related: [[line-art-mocap-workflow]] (another mocap animation workflow)
 
 ============================================================
-Stick It Up stickers  (topics/design/2026-11-13-stick-it-up-stickers.md)
+Stick It Up stickers  (topics/design/stick-it-up-stickers.md)
 ============================================================
 kind: library
 type: tool
@@ -798,7 +798,7 @@ cool component to add to my websites. Basically it's a skill or plugin to add it
 - X post read via Social Reader (text and link only, no media). Site summary via web fetch; images not captured.
 
 ============================================================
-Sleep alarm UI  (topics/design/2026-11-13-sleep-alarm-ui.md)
+Sleep alarm UI  (topics/design/sleep-alarm-ui.md)
 ============================================================
 kind: style-ref
 type: video
@@ -813,7 +813,7 @@ style: dark minimal ui, dot-matrix data viz, monospace type, single blue accent,
 ## Summary
 A 20-second UI concept by Charles Postiaux (@PostiauxCharles) for a sleep-cycle-based alarm. A dark screen plots the last 30 nights as dot-matrix bands for awake, REM, light and deep sleep, and you drag a vertical "up by" line along the timeline; a blue line shows when it actually rings (a few minutes early, timed to light sleep). Below it, presets for weekdays, gym days and weekend each show their up-by time, ring time and why. Saved as a dark data-viz UI reference.
 
-![screenshot](./2026-11-13-sleep-alarm-ui.jpg)
+![screenshot](./sleep-alarm-ui.jpg)
 
 Video frame: near-black background, small white monospace caps "SLEEP · LAST 30 NIGHTS / USUALLY 23:32 – 07:32". Four rows (AWAKE 6 MIN, REM 1H 40M, LIGHT 4H 45M, DEEP 1H 28M) drawn as grey and white dot grids over an hourly axis from 23:00 to 09:00. A cursor drags a white line at 07:00 with a blue line just before it labelled "RINGS 06:55 UP BY 07:00". Below: a list with WEEKDAYS (selected, blue dot) up by 07:00, rings 06:55, "5 min early · usually light sleep"; GYM DAYS up by 06:15, rings 05:59; WEEKEND up by 09:00, rings 08:57, "usually REM".
 
@@ -822,10 +822,10 @@ https://x.com/PostiauxCharles/status/2121248954260267411?a=dqYMENsunRd2qlnudcQ&s
 
 ## Notes
 - Read via Social Reader (single post + video frames).
-- Related: [[2026-11-12-storage-scanner-ui]] (same dark dot-matrix data-viz look)
+- Related: [[storage-scanner-ui]] (same dark dot-matrix data-viz look)
 
 ============================================================
-RelayVSR video upscaler  (topics/ai/2026-11-13-relayvsr-video-upscaler.md)
+RelayVSR video upscaler  (topics/ai/relayvsr-video-upscaler.md)
 ============================================================
 kind: tool
 type: video
@@ -837,7 +837,7 @@ why: open weight video upscaler available in ComfyUI
 tags: video-generation, video-editing, hugging-face, open-source, to-try
 
 ## Summary
-![screenshot](./2026-11-13-relayvsr-video-upscaler.jpg)
+![screenshot](./relayvsr-video-upscaler.jpg)
 
 RelayVSR is an open-weight (Apache 2.0) diffusion model for video super-resolution, published by Comfy-Org on Hugging Face as a single file and loaded natively in ComfyUI since Nov 5, 2026. The LightX2V team also retrained it as RelayVSR X2, a native 2x upscaler (45 FPS on an H100, flicker suppression, two checkpoints) aimed at MiniMax H3 clips, e.g. 768×1344 to 1536×2688. A comparison post says it upscaled a 5-second AI video to 4K in about 50 s on a 16 GB GPU (vs ~7 min with SeedVR2), with sharp hair and eyelashes but stronger skin mottling and slightly more vivid anime colours.
 
@@ -850,10 +850,10 @@ Open weight video upscaler available at ConfUI.
 
 ## Notes
 - Model: https://huggingface.co/Comfy-Org/RelayVSR
-- Reel by @asharasjad (same creator as [[2026-11-13-viggle-remake-open-model]]).
+- Reel by @asharasjad (same creator as [[viggle-remake-open-model]]).
 
 ============================================================
-Line art mocap workflow  (topics/gamedev/2026-11-13-line-art-mocap-workflow.md)
+Line art mocap workflow  (topics/gamedev/line-art-mocap-workflow.md)
 ============================================================
 kind: technique
 type: video
@@ -868,7 +868,7 @@ style: wobbly hand-drawn black line art, beak-nosed stick characters, cream pape
 ## Summary
 Reel by @shubhastudios showing how they built the animation system for two characters, "little lady & little dude", in an ongoing series of interactive storytelling projects. The characters are animated from motion capture with Mixamo integration and drawn as hand-drawn line art.
 
-![frame](./2026-11-13-line-art-mocap-workflow.jpg)
+![frame](./line-art-mocap-workflow.jpg)
 
 The thumbnail shows six cream paper cards on yellow grid paper, each a doorway-shaped frame with a scribbly black-ink character doing everyday things: reading in an armchair, sleeping (zzz), singing next to a speaker, typing at a desk. Only the cover image could be read; the video itself didn't download.
 
@@ -878,10 +878,10 @@ https://www.instagram.com/reel/DfoIiH5R7Mo/?psln=eG8zY2RnZG1iaHFn
 Cool line art animation workflow with motion capture and Mixamo integration also.
 
 ## Notes
-- Related: [[2026-11-13-toyxyz-blender-retargeter]] (mocap retargeting in Blender)
+- Related: [[toyxyz-blender-retargeter]] (mocap retargeting in Blender)
 
 ============================================================
-DIT offload checker  (topics/tech/2026-11-13-dit-offload-checker-idea.md)
+DIT offload checker  (topics/tech/dit-offload-checker-idea.md)
 ============================================================
 kind: idea
 stage: new
@@ -895,7 +895,7 @@ tags: pxlvzn, product-idea, desktop-app, video-editing
 style: dark menu bar popover, blue primary button, plain status sentence
 
 ## Summary
-![screenshot](./2026-11-13-dit-offload-checker-idea.jpg)
+![screenshot](./dit-offload-checker-idea.jpg)
 
 Idea for a PXLVZN app: a data-transfer checker for DIT (card offloads) on shoots, so nobody formats a card before every clip is safely on the drive. Sparked by **backed**, a Mac menu bar app that compares a camera card against the working drive, shows what's missing ("131 of 131 files aren't on T7 Shield yet. Don't format."), copies only the missing clips into the right shoot folder and verifies every clip.
 
@@ -908,11 +908,11 @@ App idea for PXL, it can be a data transfer system checker, like whenever I'm li
 
 ## Notes
 - Reference app: backed (@backed_app), early access via comments. Caption: "See what's missing before you copy a thing. Then backed copies just that into the right shoot folder and checks every clip."
-- Related PXLVZN file tools: [[2026-11-12-hop-file-transfer]], [[2026-11-12-ferry-file-manager]]
-- Label: [[2026-11-12-pxlvzn-label]]
+- Related PXLVZN file tools: [[hop-file-transfer]], [[ferry-file-manager]]
+- Label: [[pxlvzn-label]]
 
 ============================================================
-Claude live UI comments  (topics/ai/2026-11-13-claude-live-ui-comments.md)
+Claude live UI comments  (topics/ai/claude-live-ui-comments.md)
 ============================================================
 kind: technique
 type: video
@@ -924,7 +924,7 @@ why: Claude using trick
 tags: claude, ui, workflow, to-try
 
 ## Summary
-![screenshot](./2026-11-13-claude-live-ui-comments.jpg)
+![screenshot](./claude-live-ui-comments.jpg)
 
 A reel from @askcatgpt showing her "newest creative obsession with Claude": she opens a UI she's building (a "Cat Labs Live" dashboard with room thumbnails, a Today schedule and a residents row) inside the Claude desktop app, clicks on a spot and leaves a comment right on the page (e.g. "overlay looks like it's on top of the table? probably a mistake?"), and Claude edits the live UI in place. In one example she asks for upcoming days and within about 30 seconds the Today list becomes a Schedule with a day picker. Point: point-and-comment UI tweaks without explaining layout in words or asking someone else.
 
@@ -937,10 +937,10 @@ Claude using trick
 
 ## Notes
 - Caption: "TLDR Claude live editing my UI with me is absolutely bananas… This stuff used to take days guys. DAYS."
-- Related: [[2026-11-11-claude-code-agent-tree]]
+- Related: [[claude-code-agent-tree]]
 
 ============================================================
-Cinematic film skill  (topics/ai/2026-11-13-cinematic-film-skill.md)
+Cinematic film skill  (topics/ai/cinematic-film-skill.md)
 ============================================================
 kind: tool
 type: tool
@@ -953,7 +953,7 @@ tags: agents, claude, video-editing, open-source, to-try
 style: cork evidence wall, archive photos with red string, stamps and highlighter swipes, rolling counters, one continuous camera move
 
 ## Summary
-![screenshot](./2026-11-13-cinematic-film-skill.webp)
+![screenshot](./cinematic-film-skill.webp)
 
 Cinematic Skill (MIT, by exploraX) is an agent skill for Claude Code, Codex, Cursor, Gemini CLI and others that makes narrated explainer and documentary films entirely from code. Ask for e.g. "a 90 second documentary about the Wright brothers" and the agent researches and writes the script, records a voice, pulls public-domain photos from Wikimedia Commons with licences, and builds one continuous camera move over a single designed world drawn in Skia (Python), so stamps, highlighters and counters hit on the exact narrated word. It then adds synthesised SFX, an optional score and burned-in captions, stopping for approval after the beat table, the look and a 30 s draft. Looks: cork evidence wall, studio, blueprint, night.
 
@@ -967,10 +967,10 @@ This is a skill, agent skill for explainer content.
 ## Notes
 - Install: `npx skills add Moh4696/cinematic-skill` (or Claude Code `/plugin marketplace add Moh4696/cinematic-skill`). Needs skia-python, numpy, pillow and ffmpeg.
 - Same author: Open 3D Skills (three.js scenes, scroll films).
-- Related: [[2026-11-11-ai-tween-paint-harness]]
+- Related: [[ai-tween-paint-harness]]
 
 ============================================================
-Blooming flowers site  (topics/design/2026-11-13-mohamed-siddique-flower-site.md)
+Blooming flowers site  (topics/design/mohamed-siddique-flower-site.md)
 ============================================================
 kind: website-ref
 type: video
@@ -983,7 +983,7 @@ tags: website, visual-design, animation, inspiration
 style: cream paper card with torn edges, painterly landscape backdrop, hand-drawn flowers growing on a dot grid, soft serif headline
 
 ## Summary
-![screenshot](./2026-11-13-mohamed-siddique-flower-site.jpg)
+![screenshot](./mohamed-siddique-flower-site.jpg)
 
 A 14-second clip from designer Mohamed Siddique "experimenting with different styles" for a personal site. A cream, paper-textured card with rough torn edges sits over a brushy painted landscape of blue sky and green-yellow hills. Inside, hand-drawn wildflowers (pink, yellow, purple) grow up from a dotted grid, sway and wither away, above a serif headline "Design you can feel." and a short line about a hand-stitched bag. A small sun icon sits top right as the theme toggle.
 
@@ -992,10 +992,10 @@ https://x.com/msiddique26/status/2120936635856752710?a=GwvEyei1_uCW0hST4Sg&s=20
 
 ## Notes
 - Post text: "Experimenting with different styles. Let's see what blooms! 🌸"
-- Related: [[2026-11-12-people-of-bengaluru-site]]
+- Related: [[people-of-bengaluru-site]]
 
 ============================================================
-pxlengine 3D engine  (topics/tech/2026-11-12-pxlengine-3d-engine.md)
+pxlengine 3D engine  (topics/tech/pxlengine-3d-engine.md)
 ============================================================
 kind: project
 type: tool
@@ -1013,12 +1013,12 @@ For context, should we add like all the projects that I've already made with the
 
 ## Notes
 - Possibly the "Pixel utility engine" he mentioned. Has a Blender integration and Python/TS packages.
-- Fits his agent-native way of working: [[2026-11-09-blender-mcp-storybook-hero-workflow]].
-- [[2026-11-12-pxlvzn-label]]: made under PXLVZN label; both pxlvzn
-- [[2026-11-12-pxl-app-hub]]: both pxlvzn
+- Fits his agent-native way of working: [[blender-mcp-storybook-hero-workflow]].
+- [[pxlvzn-label]]: made under PXLVZN label; both pxlvzn
+- [[pxl-app-hub]]: both pxlvzn
 
 ============================================================
-Wedding co-op game  (topics/gamedev/2026-11-12-wedding-co-op-game.md)
+Wedding co-op game  (topics/gamedev/wedding-co-op-game.md)
 ============================================================
 kind: project
 type: game
@@ -1037,7 +1037,7 @@ A custom co-op game made for a couple's wedding, built in Unity and exported to 
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ============================================================
-Vinyl for Windows  (topics/tech/2026-11-12-vinyl-for-windows.md)
+Vinyl for Windows  (topics/tech/vinyl-for-windows.md)
 ============================================================
 kind: project
 type: app
@@ -1054,7 +1054,7 @@ Vinyl for Windows: a live desktop wallpaper that turns whatever is playing (Spot
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ============================================================
-Tukaram Munde game  (topics/gamedev/2026-11-12-tukaram-munde-game.md)
+Tukaram Munde game  (topics/gamedev/tukaram-munde-game.md)
 ============================================================
 kind: idea
 stage: doing
@@ -1072,12 +1072,12 @@ Yuvraj's own game idea built around Tukaram Munde, the Indian IAS officer known 
 Art style reference for Tukaram Munde game.
 
 ## Notes
-- Art style refs: [[2026-11-12-sharma-sweets-3d-shopfront]]
-- Now being built as [[2026-11-12-munde-mode-game]] (Munde Mode): a parody FDA raid simulator, prototype ready and in progress.
+- Art style refs: [[sharma-sweets-3d-shopfront]]
+- Now being built as [[munde-mode-game]] (Munde Mode): a parody FDA raid simulator, prototype ready and in progress.
 - Add gameplay notes here when he shares them.
 
 ============================================================
-Try orchestrator workflow  (topics/ai/2026-11-12-try-orchestrator-workflow.md)
+Try orchestrator workflow  (topics/ai/try-orchestrator-workflow.md)
 ============================================================
 kind: todo
 stage: new
@@ -1095,10 +1095,10 @@ Test the Fable-as-orchestrator workflow (Opus subagents for hard judgment, Sonne
 I need to test this workflow on one of my next
 
 ## Notes
-- The prompt: [[2026-11-12-model-routing-orchestrator-prompt]]
+- The prompt: [[model-routing-orchestrator-prompt]]
 
 ============================================================
-The Outsider concept  (topics/gamedev/2026-11-12-the-outsider-concept.md)
+The Outsider concept  (topics/gamedev/the-outsider-concept.md)
 ============================================================
 kind: project
 type: concept
@@ -1116,10 +1116,10 @@ tags: own-project, game-idea, concept, party-game
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- Linked from [[2026-11-12-idea-archive-site]].
+- Linked from [[idea-archive-site]].
 
 ============================================================
-TapMac trackpad app  (topics/design/2026-11-12-tapmac-trackpad-app.md)
+TapMac trackpad app  (topics/design/tapmac-trackpad-app.md)
 ============================================================
 kind: website-ref
 type: tool
@@ -1143,10 +1143,10 @@ This is a cool app, and the website is also cool for building something similar
 
 ## Notes
 - Read via a page fetch (no screenshot: the site couldn't be opened in a browser from here).
-- Related: [[2026-11-12-disk-cleanup-app]] (another small Mac utility idea), [[2026-11-12-storage-scanner-ui]]
+- Related: [[disk-cleanup-app]] (another small Mac utility idea), [[storage-scanner-ui]]
 
 ============================================================
-Tag AI-tag remover  (topics/tech/2026-11-12-tag-ai-tag-remover.md)
+Tag AI-tag remover  (topics/tech/tag-ai-tag-remover.md)
 ============================================================
 kind: project
 type: tool
@@ -1163,10 +1163,10 @@ Tag: strips C2PA Content Credentials, "made with AI" labels and generator metada
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- Label: [[2026-11-12-pxlvzn-label]].
+- Label: [[pxlvzn-label]].
 
 ============================================================
-TV Stack toy  (topics/gamedev/2026-11-12-tv-stack-music-toy.md)
+TV Stack toy  (topics/gamedev/tv-stack-music-toy.md)
 ============================================================
 kind: project
 type: game
@@ -1185,7 +1185,7 @@ TV Stack: play a wall of TVs like an instrument. Every key is a note and a scree
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ============================================================
-Storage scanner UI  (topics/design/2026-11-12-storage-scanner-ui.md)
+Storage scanner UI  (topics/design/storage-scanner-ui.md)
 ============================================================
 kind: style-ref
 type: video
@@ -1200,7 +1200,7 @@ style: dark compact utility card, glowing dot-matrix storage bar, colour-coded c
 ## Summary
 A short demo from keshav (@kshvbgde) of a Mac storage scanner: "storage scanner so good you'll want to fill your disk." One dark card shows used space (e.g. 357.8 GB of 512 GB) as a glowing dot-matrix bar split into colour-coded categories (Apps, Developer, Photos, Movies, Documents, Music, System data, Caches, Trash). Hovering a category explains it in plain words and offers one action ("Clear caches", "Empty Trash"); clearing makes that segment's dots scatter away like particles. Saved as the UI to copy for a disk-cleanup app.
 
-![screenshot](./2026-11-12-storage-scanner-ui.jpg)
+![screenshot](./storage-scanner-ui.jpg)
 
 Frame: "289.1 GB of 512 GB used, Emptying the Trash ~/.Trash/Old exports". The bar's blue, green, pink, purple, teal, yellow and grey segments are made of tiny glowing dots, and the red Trash segment is bursting into particles at its right edge. Below, a three-column list of categories with icons and sizes, and a footer: "The Trash is holding 31.4 GB of things you've already deleted" with an "Empty Trash" button. Other frames show a "Calculating ~/Pictures/Photos Library/resources" scanning state and "Looking for things you can clear".
 
@@ -1211,12 +1211,12 @@ If I ever make a disk utility app to remove cache and disk cleanup, this UI is r
 
 ## Notes
 - Read via Social Reader (post text + 4 video frames, 18.6 s video).
-- For: [[2026-11-12-disk-cleanup-app]]
-- [[2026-11-13-sleep-alarm-ui]]: both visual-design, ui
-- [[2026-11-12-tapmac-trackpad-app]]: both desktop-app
+- For: [[disk-cleanup-app]]
+- [[sleep-alarm-ui]]: both visual-design, ui
+- [[tapmac-trackpad-app]]: both desktop-app
 
 ============================================================
-Stm stem splitter  (topics/tech/2026-11-12-stm-stem-splitter.md)
+Stm stem splitter  (topics/tech/stm-stem-splitter.md)
 ============================================================
 kind: project
 type: tool
@@ -1234,10 +1234,10 @@ Stm: split any song into vocals, drums, bass and other stems with the Demucs mod
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- Label: [[2026-11-12-pxlvzn-label]].
+- Label: [[pxlvzn-label]].
 
 ============================================================
-Social Reader MCP  (topics/ai/2026-11-12-social-reader-mcp.md)
+Social Reader MCP  (topics/ai/social-reader-mcp.md)
 ============================================================
 kind: project
 type: tool
@@ -1255,10 +1255,10 @@ Social Reader: his own hosted MCP connector that reads X/Twitter posts and threa
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- Used by [[2026-11-12-second-brain-repo]].
+- Used by [[second-brain-repo]].
 
 ============================================================
-Sixer cricket game  (topics/gamedev/2026-11-12-sixer-cricket-game.md)
+Sixer cricket game  (topics/gamedev/sixer-cricket-game.md)
 ============================================================
 kind: project
 type: game
@@ -1276,10 +1276,10 @@ Sixer: a quick three.js cricket batting game. Time your swing as the ball reache
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- Same cricket taste as [[2026-11-09-thechase500-cricket-chase-game]] and [[2026-11-09-cricle-daily-cricket-guessing-game]].
+- Same cricket taste as [[thechase500-cricket-chase-game]] and [[cricle-daily-cricket-guessing-game]].
 
 ============================================================
-Sharma Sweets 3D style  (topics/gamedev/2026-11-12-sharma-sweets-3d-shopfront.md)
+Sharma Sweets 3D style  (topics/gamedev/sharma-sweets-3d-shopfront.md)
 ============================================================
 kind: style-ref
 type: video
@@ -1294,7 +1294,7 @@ style: stylised cartoon 3d, desi street shopfront, caricature character big head
 ## Summary
 A reel from @thesoloentrepreneur.yt showing a "₹1 lakh website": a 3D web scene of an old Indian sweet shop, "Sharma Sweets, since 1965", with a stylised cartoon Lala ji (big moustache, white Gandhi cap, purple Nehru jacket, white kurta) standing in front of the shuttered shop. Saved as the art style reference for his Tukaram Munde game: stylised cartoon 3D, everyday Indian street settings, caricature characters.
 
-![screenshot](./2026-11-12-sharma-sweets-3d-shopfront.jpg)
+![screenshot](./sharma-sweets-3d-shopfront.jpg)
 
 Video frame: a monitor showing the 3D scene. A bottle-green signboard with Devanagari and English lettering ("शर्मा स्वीट्स / SHARMA SWEETS", "1965"), a green rolling shutter with a yellow "श" logo, a marigold garland strung across the top, milk cans on the left, a potted plant on the right and a paved footpath. The caricatured shopkeeper stands centre-right, Mixamo-style posed. Warm, soft lighting.
 
@@ -1306,13 +1306,13 @@ Art style reference for Tukaram Munde game.
 ## Notes
 - Caption: "Comment “LalaJi” for playbook" (the reel is pitched as a 3D website build; the browser tabs show Mixamo, so the character is likely rigged/animated with Mixamo).
 - Read via Social Reader (caption + one video frame).
-- For: [[2026-11-12-tukaram-munde-game]]
-- Related look: [[2026-11-09-blender-mcp-storybook-hero-workflow]]
-- [[2026-11-12-people-of-bengaluru-site]]: both indian-setting, 3d-art
-- [[2026-11-12-munde-mode-game]]: both indian-setting
+- For: [[tukaram-munde-game]]
+- Related look: [[blender-mcp-storybook-hero-workflow]]
+- [[people-of-bengaluru-site]]: both indian-setting, 3d-art
+- [[munde-mode-game]]: both indian-setting
 
 ============================================================
-Second Brain repo  (topics/productivity/2026-11-12-second-brain-repo.md)
+Second Brain repo  (topics/productivity/second-brain-repo.md)
 ============================================================
 kind: project
 type: tool
@@ -1330,11 +1330,11 @@ This second brain: every link, idea and reference he dumps in chat filed as one 
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- [[2026-11-12-social-reader-mcp]]: names this note; both mcp, agents
-- [[2026-11-12-pxlvzn-label]]: made under PXLVZN label
+- [[social-reader-mcp]]: names this note; both mcp, agents
+- [[pxlvzn-label]]: made under PXLVZN label
 
 ============================================================
-Saturday off tracker  (topics/business/2026-11-12-saturday-off-tracker.md)
+Saturday off tracker  (topics/business/saturday-off-tracker.md)
 ============================================================
 kind: project
 type: tool
@@ -1352,10 +1352,10 @@ Revolio Saturday Off Tracker: a small internal web app for planning which team m
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- Internal tool for [[2026-11-12-revolio-media-studio]].
+- Internal tool for [[revolio-media-studio]].
 
 ============================================================
-SLANGDAQ game  (topics/gamedev/2026-11-12-slangdaq-game.md)
+SLANGDAQ game  (topics/gamedev/slangdaq-game.md)
 ============================================================
 kind: project
 type: game
@@ -1374,11 +1374,11 @@ SLANGDAQ, "the culture exchange": a stock market for internet slang. Players get
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- Listed as a Revolio Labs game. Sister game: [[2026-11-12-peakd-game]].
-- [[2026-11-12-revolio-labs]]: made under Revolio Labs; both revolio-labs, browser-game
+- Listed as a Revolio Labs game. Sister game: [[peakd-game]].
+- [[revolio-labs]]: made under Revolio Labs; both revolio-labs, browser-game
 
 ============================================================
-Runaway Light Rig  (topics/gamedev/2026-11-12-runaway-light-rig.md)
+Runaway Light Rig  (topics/gamedev/runaway-light-rig.md)
 ============================================================
 kind: project
 type: game
@@ -1397,7 +1397,7 @@ Runaway Light Rig: a rhythm game where every note you hit fires a light rig in a
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ============================================================
-Rookwise chess app  (topics/learning/2026-11-12-rookwise-chess-app.md)
+Rookwise chess app  (topics/learning/rookwise-chess-app.md)
 ============================================================
 kind: project
 type: app
@@ -1416,10 +1416,10 @@ Rookwise ("chess, understood"): a local-first chess improvement workspace. Impor
 
 ## Notes
 - His workspace name on it is YuvrajXIX.
-- [[2026-11-12-pxlvzn-label]]: made under PXLVZN label; both pxlvzn
+- [[pxlvzn-label]]: made under PXLVZN label; both pxlvzn
 
 ============================================================
-Rohit Learns Ball  (topics/gamedev/2026-11-12-rohit-learns-ball.md)
+Rohit Learns Ball  (topics/gamedev/rohit-learns-ball.md)
 ============================================================
 kind: project
 type: game
@@ -1439,10 +1439,10 @@ A fan-made pixel game: the Kasauli Tigers teach Rohit basketball the hard way. Y
 
 ## Notes
 - Riffs on the film Koi... Mil Gaya (Rohit, Jadoo, Kasauli).
-- [[2026-11-12-revolio-labs]]: made under Revolio Labs; both revolio-labs, browser-game
+- [[revolio-labs]]: made under Revolio Labs; both revolio-labs, browser-game
 
 ============================================================
-Revolio website  (topics/design/2026-11-12-revolio-website.md)
+Revolio website  (topics/design/revolio-website.md)
 ============================================================
 kind: project
 type: site
@@ -1460,10 +1460,10 @@ revolio.in, the Revolio Media agency portfolio: 20 project stories, a filterable
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- Company: [[2026-11-12-revolio-media-studio]].
+- Company: [[revolio-media-studio]].
 
 ============================================================
-Revolio Studio v1  (topics/ai/2026-11-12-revolio-studio-v1.md)
+Revolio Studio v1  (topics/ai/revolio-studio-v1.md)
 ============================================================
 kind: project
 type: app
@@ -1481,10 +1481,10 @@ The first Revolio Studio: an AI creative studio for image, video and 3D generati
 For context, should we add like all the projects that I've already made with their particular tags from my GitHub, like GitHub and my Vercel account, like the Revolio Studio, Revolio Labs, the Pixel utility engine that I've made, the games I've made, Peaked, Tukaram Munde prototype that is ready, but we are currently building on it. We have a lot of games like pixel art games. Just for the context of the second brain and for the agents to pick from.
 
 ## Notes
-- Superseded by [[2026-11-12-revolio-labs-app]].
+- Superseded by [[revolio-labs-app]].
 
 ============================================================
-Revolio SSD Desk  (topics/business/2026-11-12-revolio-ssd-desk.md)
+Revolio SSD Desk  (topics/business/revolio-ssd-desk.md)
 ============================================================
 kind: project
 type: tool
@@ -1502,10 +1502,10 @@ SSD Desk: an equipment tracker for Revolio's shared SSDs. Tap a drive's NFC tag 
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- Internal tool for [[2026-11-12-revolio-media-studio]].
+- Internal tool for [[revolio-media-studio]].
 
 ============================================================
-Revolio Media studio  (topics/business/2026-11-12-revolio-media-studio.md)
+Revolio Media studio  (topics/business/revolio-media-studio.md)
 ============================================================
 kind: org
 type: company
@@ -1524,12 +1524,12 @@ Also for context, you can add like what Rivolio is, where it's a company that I 
 
 ## Notes
 - His role: video editor and visual artist who also builds the studio's software (his GitHub bio: "Visual artist and developer. Everything in between media, tech and games"). Exact job title not confirmed yet.
-- Experiments arm: [[2026-11-12-revolio-labs]].
-- Studio site he built: [[2026-11-12-revolio-website]]. Internal tools he built: [[2026-11-12-revolio-ledger-app]], [[2026-11-12-revolio-ssd-desk]], [[2026-11-12-saturday-off-tracker]], [[2026-11-12-frame-tracker-dashboard]]. Pitch work: [[2026-11-12-emergent-pitch-deck]], [[2026-11-12-idea-archive-site]].
+- Experiments arm: [[revolio-labs]].
+- Studio site he built: [[revolio-website]]. Internal tools he built: [[revolio-ledger-app]], [[revolio-ssd-desk]], [[saturday-off-tracker]], [[frame-tracker-dashboard]]. Pitch work: [[emergent-pitch-deck]], [[idea-archive-site]].
 - Instagram: revoliomedia, revoliomag.
 
 ============================================================
-Revolio Ledger app  (topics/business/2026-11-12-revolio-ledger-app.md)
+Revolio Ledger app  (topics/business/revolio-ledger-app.md)
 ============================================================
 kind: project
 type: app
@@ -1547,10 +1547,10 @@ Ledger: Revolio's post-shoot expense app for a production house. Invoices are co
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- Internal tool for [[2026-11-12-revolio-media-studio]].
+- Internal tool for [[revolio-media-studio]].
 
 ============================================================
-Revolio Labs site  (topics/gamedev/2026-11-12-revolio-labs-site.md)
+Revolio Labs site  (topics/gamedev/revolio-labs-site.md)
 ============================================================
 kind: project
 type: site
@@ -1569,10 +1569,10 @@ games.revolio.media: the Revolio Labs home as a scroll-driven three.js side-scro
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- Company: [[2026-11-12-revolio-labs]].
+- Company: [[revolio-labs]].
 
 ============================================================
-Revolio Labs app  (topics/ai/2026-11-12-revolio-labs-app.md)
+Revolio Labs app  (topics/ai/revolio-labs-app.md)
 ============================================================
 kind: project
 type: app
@@ -1594,11 +1594,11 @@ Also for context, you can add like what Rivolio is, where it's a company that I 
 
 ## Notes
 - Repo is private: keep its code, prompts, providers and model routing out of public notes.
-- Previous version: [[2026-11-12-revolio-studio-v1]]. Company: [[2026-11-12-revolio-labs]].
-- Wanted feature: [[2026-11-10-revolio-labs-vfx-feature]].
+- Previous version: [[revolio-studio-v1]]. Company: [[revolio-labs]].
+- Wanted feature: [[revolio-labs-vfx-feature]].
 
 ============================================================
-Revolio Labs  (topics/business/2026-11-12-revolio-labs.md)
+Revolio Labs  (topics/business/revolio-labs.md)
 ============================================================
 kind: org
 type: company
@@ -1619,11 +1619,11 @@ Also for context, you can add like what Rivolio is, where it's a company that I 
 ## Notes
 - Brand: black + yellow (#FFC93C), an R logo with two animated eyes, clean sans fonts. No model names or AI sample images on the waitlist page.
 - He prefers built-from-reference, hand-coded work (vector logos, hand-made meshes) over generic AI looks.
-- Projects: [[2026-11-12-revolio-labs-app]], [[2026-11-12-revolio-labs-site]], [[2026-11-12-peakd-game]], [[2026-11-12-slangdaq-game]], [[2026-11-12-rohit-learns-ball]], [[2026-11-12-munde-mode-game]], [[2026-11-12-meter-down-concept]].
-- Open to-do: [[2026-11-10-revolio-labs-vfx-feature]]. Parent: [[2026-11-12-revolio-media-studio]].
+- Projects: [[revolio-labs-app]], [[revolio-labs-site]], [[peakd-game]], [[slangdaq-game]], [[rohit-learns-ball]], [[munde-mode-game]], [[meter-down-concept]].
+- Open to-do: [[revolio-labs-vfx-feature]]. Parent: [[revolio-media-studio]].
 
 ============================================================
-Punchline party game  (topics/gamedev/2026-11-12-punchline-party-game.md)
+Punchline party game  (topics/gamedev/punchline-party-game.md)
 ============================================================
 kind: project
 type: game
@@ -1642,10 +1642,10 @@ Punchline: an online comedy party game for 2 to 8 friends on their own phones. T
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- Listed on games.pxlvzn.in. Label: [[2026-11-12-pxlvzn-label]].
+- Listed on games.pxlvzn.in. Label: [[pxlvzn-label]].
 
 ============================================================
-Perfolios portfolio directory  (topics/design/2026-11-12-perfolios-portfolio-directory.md)
+Perfolios portfolio directory  (topics/design/perfolios-portfolio-directory.md)
 ============================================================
 kind: website-ref
 type: link
@@ -1664,11 +1664,11 @@ https://directoryyy.com/ A website directory. For inspiration, design, layouts, 
 
 ## Notes
 - Read via a page fetch (no screenshot: the site couldn't be opened in a browser from here). The directory itself is dark and minimal, with a chrome paperclip "p" logo.
-- [[2026-11-21-tabworthy-site-directory]]: both website
-- [[2026-11-12-people-of-bengaluru-site]]: both website
+- [[tabworthy-site-directory]]: both website
+- [[people-of-bengaluru-site]]: both website
 
 ============================================================
-People of Bengaluru  (topics/design/2026-11-12-people-of-bengaluru-site.md)
+People of Bengaluru  (topics/design/people-of-bengaluru-site.md)
 ============================================================
 kind: website-ref
 type: link
@@ -1690,11 +1690,11 @@ insane idea , cool website
 
 ## Notes
 - Read via a page fetch, which only returned the page text (no screenshot: the 3D scene couldn't be opened in a browser from here). Dark slate theme, "PEOPLE OF / BENGALURU" set big in uppercase.
-- Related: [[2026-11-12-sharma-sweets-3d-shopfront]] (stylised 3D Indian street look), [[2026-11-12-perfolios-portfolio-directory]] (another people/portfolio directory)
-- [[2026-11-13-mohamed-siddique-flower-site]]: both website
+- Related: [[sharma-sweets-3d-shopfront]] (stylised 3D Indian street look), [[perfolios-portfolio-directory]] (another people/portfolio directory)
+- [[mohamed-siddique-flower-site]]: both website
 
 ============================================================
-PXLVZN label  (topics/tech/2026-11-12-pxlvzn-label.md)
+PXLVZN label  (topics/tech/pxlvzn-label.md)
 ============================================================
 kind: org
 type: company
@@ -1713,12 +1713,12 @@ PXLVZN (pxlvzn.in) is Yuvraj's own label for free, open-source desktop apps and 
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- Apps: [[2026-11-12-pxl-app-hub]], [[2026-11-12-dwn-downloader]], [[2026-11-12-tag-ai-tag-remover]], [[2026-11-12-stm-stem-splitter]], [[2026-11-12-lut-colour-matcher]], [[2026-11-12-hop-file-transfer]], [[2026-11-12-canvasflow-whiteboard]], [[2026-11-12-pxlengine-3d-engine]].
-- Web: [[2026-11-12-punchline-party-game]], [[2026-11-12-rookwise-chess-app]], [[2026-11-12-bulkbros-gym-app]], [[2026-11-12-second-brain-repo]].
-- [[2026-11-13-dit-offload-checker-idea]]: both pxlvzn, desktop-app
+- Apps: [[pxl-app-hub]], [[dwn-downloader]], [[tag-ai-tag-remover]], [[stm-stem-splitter]], [[lut-colour-matcher]], [[hop-file-transfer]], [[canvasflow-whiteboard]], [[pxlengine-3d-engine]].
+- Web: [[punchline-party-game]], [[rookwise-chess-app]], [[bulkbros-gym-app]], [[second-brain-repo]].
+- [[dit-offload-checker-idea]]: both pxlvzn, desktop-app
 
 ============================================================
-PXL app hub  (topics/tech/2026-11-12-pxl-app-hub.md)
+PXL app hub  (topics/tech/pxl-app-hub.md)
 ============================================================
 kind: project
 type: app
@@ -1737,11 +1737,11 @@ PXL: one desktop app (macOS and Windows) to discover, install, open and update e
 For context, should we add like all the projects that I've already made with their particular tags from my GitHub, like GitHub and my Vercel account, like the Revolio Studio, Revolio Labs, the Pixel utility engine that I've made, the games I've made, Peaked, Tukaram Munde prototype that is ready, but we are currently building on it. We have a lot of games like pixel art games. Just for the context of the second brain and for the agents to pick from.
 
 ## Notes
-- Could be the "Pixel utility" he mentioned, or that may be [[2026-11-12-pxlengine-3d-engine]].
-- Label: [[2026-11-12-pxlvzn-label]].
+- Could be the "Pixel utility" he mentioned, or that may be [[pxlengine-3d-engine]].
+- Label: [[pxlvzn-label]].
 
 ============================================================
-PEAKD game  (topics/gamedev/2026-11-12-peakd-game.md)
+PEAKD game  (topics/gamedev/peakd-game.md)
 ============================================================
 kind: project
 type: game
@@ -1760,11 +1760,11 @@ PEAKD is a daily "when did it peak?" browser game: five things a day (slang, ser
 For context, should we add like all the projects that I've already made with their particular tags from my GitHub, like GitHub and my Vercel account, like the Revolio Studio, Revolio Labs, the Pixel utility engine that I've made, the games I've made, Peaked, Tukaram Munde prototype that is ready, but we are currently building on it. We have a lot of games like pixel art games. Just for the context of the second brain and for the agents to pick from.
 
 ## Notes
-- He called it "Peaked". Sister game: [[2026-11-12-slangdaq-game]]. Company: [[2026-11-12-revolio-labs]].
-- Same daily-loop taste as [[2026-11-09-cricle-daily-cricket-guessing-game]].
+- He called it "Peaked". Sister game: [[slangdaq-game]]. Company: [[revolio-labs]].
+- Same daily-loop taste as [[cricle-daily-cricket-guessing-game]].
 
 ============================================================
-Orchestrator subagent prompt  (topics/ai/2026-11-12-model-routing-orchestrator-prompt.md)
+Orchestrator subagent prompt  (topics/ai/model-routing-orchestrator-prompt.md)
 ============================================================
 kind: technique
 type: link
@@ -1789,10 +1789,10 @@ I need to test this workflow on one of my next
 
 ## Notes
 - Read via Social Reader (text post, no media).
-- To-do: [[2026-11-12-try-orchestrator-workflow]]
+- To-do: [[try-orchestrator-workflow]]
 
 ============================================================
-NPCs on Strike  (topics/gamedev/2026-11-12-npcs-on-strike-concept.md)
+NPCs on Strike  (topics/gamedev/npcs-on-strike-concept.md)
 ============================================================
 kind: project
 type: concept
@@ -1811,10 +1811,10 @@ A concept bible for a contained detective game: you have one night to find Niko,
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- Part of [[2026-11-12-idea-archive-site]].
+- Part of [[idea-archive-site]].
 
 ============================================================
-Munde Mode game  (topics/gamedev/2026-11-12-munde-mode-game.md)
+Munde Mode game  (topics/gamedev/munde-mode-game.md)
 ============================================================
 kind: project
 type: game
@@ -1835,12 +1835,12 @@ Tukaram Munde prototype that is ready, but we are currently building on it.
 For context, should we add like all the projects that I've already made with their particular tags from my GitHub, like GitHub and my Vercel account, like the Revolio Studio, Revolio Labs, the Pixel utility engine that I've made, the games I've made, Peaked, Tukaram Munde prototype that is ready, but we are currently building on it. We have a lot of games like pixel art games. Just for the context of the second brain and for the agents to pick from.
 
 ## Notes
-- The idea and art refs: [[2026-11-12-tukaram-munde-game]], [[2026-11-12-sharma-sweets-3d-shopfront]].
+- The idea and art refs: [[tukaram-munde-game]], [[sharma-sweets-3d-shopfront]].
 - Next up (from its TODO): waiter tray pose, fuller kitchens and storage, a room-focus camera, kitchen sounds.
-- [[2026-11-12-revolio-labs]]: made under Revolio Labs; both revolio-labs, browser-game
+- [[revolio-labs]]: made under Revolio Labs; both revolio-labs, browser-game
 
 ============================================================
-Meter Down concept  (topics/gamedev/2026-11-12-meter-down-concept.md)
+Meter Down concept  (topics/gamedev/meter-down-concept.md)
 ============================================================
 kind: project
 type: concept
@@ -1862,7 +1862,7 @@ Meter Down: a daily Mumbai taxi game concept. You drive a kaali-peeli for six mi
 - Concept site, not playable yet.
 
 ============================================================
-Lut colour matcher  (topics/tech/2026-11-12-lut-colour-matcher.md)
+Lut colour matcher  (topics/tech/lut-colour-matcher.md)
 ============================================================
 kind: project
 type: tool
@@ -1880,10 +1880,10 @@ Lut: drop a reference shot and your clip, get a .cube LUT and a graded copy that
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- Label: [[2026-11-12-pxlvzn-label]].
+- Label: [[pxlvzn-label]].
 
 ============================================================
-Lens focal length guide  (topics/ai/2026-11-12-lens-focal-length-guide.md)
+Lens focal length guide  (topics/ai/lens-focal-length-guide.md)
 ============================================================
 kind: technique
 type: video
@@ -1898,7 +1898,7 @@ style: surreal pastel wide fields, masked characters, giant planet skies, bold o
 ## Summary
 A ~39-second AI-film reel from @lemon_carpet (made with Seedance) explaining how lens focal length changes a shot, so you can ask for it in AI video prompts. The point: "close-up" alone means nothing; the lens does. A 50mm medium shot is "what your eyes see", a 200mm close-up shot "from across the field" compresses the background so a giant planet looms behind the subject, and wide shots shrink the subject into a huge landscape. Useful as a cheat sheet for prompting camera language in AI video tools.
 
-![screenshot](./2026-11-12-lens-focal-length-guide.jpg)
+![screenshot](./lens-focal-length-guide.jpg)
 
 Frames: a faceless white-masked figure in chainmail and a sequinned cloak on a blue wingback chair in a green field ("Because close-up means nothing"); a person in a teddy-bear head and mint suit labelled "Medium, what your eyes see, 50mm"; the same bear at "Close-up, from across the field, 200mm" with a huge blue planet and pink clouds behind; a wide shot of the chair tiny in an empty field beside a lone petrol station under the planet. Surreal pastel look, bold white and orange labels.
 
@@ -1908,10 +1908,10 @@ https://www.instagram.com/reel/DfnLpaPoNIf/?exln=NGpjOXc5NGVnaTB4
 ## Notes
 - Caption: "Comment LENS and I'll send you my lens cheat sheet. #aivideo #seedance #aifilm #promptengineering #cinematography"
 - Read via Social Reader (caption + 4 video frames). No comment from Yuvraj, so filed as a technique.
-- Related: [[2026-11-12-impossible-weapon-knight-animation]]
+- Related: [[impossible-weapon-knight-animation]]
 
 ============================================================
-Impossible Weapon animation  (topics/design/2026-11-12-impossible-weapon-knight-animation.md)
+Impossible Weapon animation  (topics/design/impossible-weapon-knight-animation.md)
 ============================================================
 kind: style-ref
 type: video
@@ -1926,7 +1926,7 @@ style: painterly stylised 3d, chunky armoured knights, misty desaturated battlef
 ## Summary
 "The Impossible Weapon", a ~34-second animated short by INK (@ink.industries_) and Pascal Gautier, made with Krea AI. Two stylised armoured knights face off on a misty, grassy battlefield: a hulking dark knight with a blue plume and a nimble silver knight with a red cape who leaps in with a sword. Saved for its art style for animation: painterly stylised 3D that feels like a hand-made animated feature.
 
-![screenshot](./2026-11-12-impossible-weapon-knight-animation.jpg)
+![screenshot](./impossible-weapon-knight-animation.jpg)
 
 Frames: (1) the dark knight in a fur mantle and blue cape, a huge blue plume on his helmet, standing over a sword in front of rows of faded soldiers and blue banners in fog; (2) a close-up of a giant blade slamming into mud, dirt flying, with thin red ink outlines on the metal; (3) the red-caped silver knight leaping mid-air with sword raised at the still dark knight, a teal streak across the sky; (4) a low-angle shot of the silver knight with a red plume and cross belt buckle raising a fist. Muted grey-green palette, soft fog, foreground grass, punchy red and blue accents.
 
@@ -1938,11 +1938,11 @@ Brilliant art style for animations
 ## Notes
 - Caption: "THE IMPOSSIBLE WEAPON. Made with @krea_ai. By INK and @pascal_gautier"
 - Read via Social Reader (caption + 4 video frames).
-- Related look: [[2026-11-09-blender-mcp-storybook-hero-workflow]]
-- [[2026-11-12-lens-focal-length-guide]]: both video-generation
+- Related look: [[blender-mcp-storybook-hero-workflow]]
+- [[lens-focal-length-guide]]: both video-generation
 
 ============================================================
-Idea Archive site  (topics/business/2026-11-12-idea-archive-site.md)
+Idea Archive site  (topics/business/idea-archive-site.md)
 ============================================================
 kind: project
 type: site
@@ -1962,11 +1962,11 @@ The Idea Archive ("Make some noise"): a visual archive of 25 original concepts a
 
 ## Notes
 - Vercel project name: godrej-futures-worth-making, so likely made for a brand pitch.
-- Deep dives: [[2026-11-12-npcs-on-strike-concept]], [[2026-11-12-the-outsider-concept]].
-- [[2026-11-12-revolio-media-studio]]: made under Revolio Media studio; both revolio
+- Deep dives: [[npcs-on-strike-concept]], [[the-outsider-concept]].
+- [[revolio-media-studio]]: made under Revolio Media studio; both revolio
 
 ============================================================
-Hop file transfer  (topics/tech/2026-11-12-hop-file-transfer.md)
+Hop file transfer  (topics/tech/hop-file-transfer.md)
 ============================================================
 kind: project
 type: tool
@@ -1984,11 +1984,11 @@ Hop: AirDrop for every device. Send files between Mac, PC and any phone's browse
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- Related: [[2026-11-12-ferry-file-manager]]. Label: [[2026-11-12-pxlvzn-label]].
-- [[2026-11-13-dit-offload-checker-idea]]: both pxlvzn, desktop-app
+- Related: [[ferry-file-manager]]. Label: [[pxlvzn-label]].
+- [[dit-offload-checker-idea]]: both pxlvzn, desktop-app
 
 ============================================================
-Frame Tracker dashboard  (topics/tech/2026-11-12-frame-tracker-dashboard.md)
+Frame Tracker dashboard  (topics/tech/frame-tracker-dashboard.md)
 ============================================================
 kind: project
 type: tool
@@ -2009,7 +2009,7 @@ Frame Tracker: a dashboard for an Adobe plugin that tracks time spent in Premier
 - Vercel project name: framelink. Built for an editor's workflow, like the rest of his video tooling.
 
 ============================================================
-Ferry file manager  (topics/tech/2026-11-12-ferry-file-manager.md)
+Ferry file manager  (topics/tech/ferry-file-manager.md)
 ============================================================
 kind: project
 type: app
@@ -2026,11 +2026,11 @@ Ferry: a two-pane file manager for moving files between his Mac and Windows PC o
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- He works across a Mac and a Windows PC. Related: [[2026-11-12-hop-file-transfer]].
-- [[2026-11-13-dit-offload-checker-idea]]: both desktop-app
+- He works across a Mac and a Windows PC. Related: [[hop-file-transfer]].
+- [[dit-offload-checker-idea]]: both desktop-app
 
 ============================================================
-Emergent pitch deck  (topics/business/2026-11-12-emergent-pitch-deck.md)
+Emergent pitch deck  (topics/business/emergent-pitch-deck.md)
 ============================================================
 kind: project
 type: site
@@ -2048,10 +2048,10 @@ An interactive web pitch deck, "Emergent x Revolio": a content strategy built on
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- Client pitch made at [[2026-11-12-revolio-media-studio]].
+- Client pitch made at [[revolio-media-studio]].
 
 ============================================================
-Early Discord bots  (topics/tech/2026-11-12-early-discord-bots.md)
+Early Discord bots  (topics/tech/early-discord-bots.md)
 ============================================================
 kind: project
 type: tool
@@ -2071,7 +2071,7 @@ His first coding projects (2021 to 2023): Discord bots in discord.js, including 
 - Same era, small web experiments: an Image editor (HTML/JS filters, 2022), a Notion widget and a Twitter customer-finder script.
 
 ============================================================
-Dwn downloader  (topics/tech/2026-11-12-dwn-downloader.md)
+Dwn downloader  (topics/tech/dwn-downloader.md)
 ============================================================
 kind: project
 type: app
@@ -2089,10 +2089,10 @@ Dwn: download videos, songs, playlists and transcripts from YouTube, TikTok, Ins
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- Label: [[2026-11-12-pxlvzn-label]].
+- Label: [[pxlvzn-label]].
 
 ============================================================
-DriveDesk file manager  (topics/tech/2026-11-12-drivedesk-file-manager.md)
+DriveDesk file manager  (topics/tech/drivedesk-file-manager.md)
 ============================================================
 kind: project
 type: app
@@ -2109,7 +2109,7 @@ DriveDesk: a desktop file manager with side-by-side local and cloud browsing. Go
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ============================================================
-Disk cleanup app  (topics/tech/2026-11-12-disk-cleanup-app.md)
+Disk cleanup app  (topics/tech/disk-cleanup-app.md)
 ============================================================
 kind: idea
 stage: new
@@ -2127,10 +2127,10 @@ A disk utility app to scan storage, remove caches and clean up the disk. The UI 
 If I ever make a disk utility app to remove cache and disk cleanup, this UI is really nice for it.
 
 ## Notes
-- UI reference: [[2026-11-12-storage-scanner-ui]]
+- UI reference: [[storage-scanner-ui]]
 
 ============================================================
-CanvasFlow whiteboard  (topics/tech/2026-11-12-canvasflow-whiteboard.md)
+CanvasFlow whiteboard  (topics/tech/canvasflow-whiteboard.md)
 ============================================================
 kind: project
 type: app
@@ -2148,10 +2148,10 @@ CanvasFlow: an infinite-canvas desktop whiteboard for thinking, not presenting. 
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ## Notes
-- Label: [[2026-11-12-pxlvzn-label]].
+- Label: [[pxlvzn-label]].
 
 ============================================================
-BulkBros gym app  (topics/health/2026-11-12-bulkbros-gym-app.md)
+BulkBros gym app  (topics/health/bulkbros-gym-app.md)
 ============================================================
 kind: project
 type: app
@@ -2172,7 +2172,7 @@ BulkBros: a private app for Yuvraj and his roommate on a lean bulk. Shared veget
 - Says a lot about his routine: vegetarian (no eggs), gym 10:30 PM to midnight.
 
 ============================================================
-Bonk Court game  (topics/gamedev/2026-11-12-bonk-court-game.md)
+Bonk Court game  (topics/gamedev/bonk-court-game.md)
 ============================================================
 kind: project
 type: game
@@ -2191,7 +2191,7 @@ Bonk Court: a street-court basketball shooter. Drag up and release to shoot into
 (Imported from his GitHub and Vercel accounts on 2026-11-12, after he asked: "add all the projects that I've already made ... from my GitHub and my Vercel account ... for the context of the second brain and for the agents to pick from.")
 
 ============================================================
-TikTok slideshow playbook  (topics/business/2026-11-11-tiktok-slideshow-app-marketing.md)
+TikTok slideshow playbook  (topics/business/tiktok-slideshow-app-marketing.md)
 ============================================================
 kind: advice
 type: bookmark
@@ -2218,10 +2218,10 @@ Read via Social Reader (8-post thread, text only). Steps in his words:
 6. Double down on winners: study the hook, topic and engagement of the winner, make 5 variations.
 7. Takeaways: grew his own app to 14,000+ downloads this way; offers it as a service.
 
-Related: [[2026-11-11-app-growth-checklist]]
+Related: [[app-growth-checklist]]
 
 ============================================================
-Procedural arm rig  (topics/gamedev/2026-11-11-procedural-arm-rig-demo.md)
+Procedural arm rig  (topics/gamedev/procedural-arm-rig-demo.md)
 ============================================================
 kind: library
 type: bookmark
@@ -2235,7 +2235,7 @@ tags: rigging, animation, open-source, to-try
 ## Summary
 @apekshik used an AI model to build one highly detailed, open-source rigged arm instead of "one-shotting" a whole game: realistic bone armature, weight-painted mesh, volume-preserving joints and muscles that swell as the fist tightens. The arm uses two-bone IK (you set the hand target, it solves shoulder and elbow) while the 38-bone fingers use FK, curling joint by joint and stopping on contact, so it can reach, grab and place a ball on a table. Live demo at procedural-arm-rig.vercel.app, code at github.com/apekshik/procedural-arm-rig, free to reuse in your own games.
 
-![screenshot](./2026-11-11-procedural-arm-rig-demo.jpg)
+![screenshot](./procedural-arm-rig-demo.jpg)
 
 Video frame: a skin-shaded arm on a dark post reaching for a blue ball above a wooden table ("Reach & grab, two-bone IK, contact-aware fingers"), with a skeleton view below. Other frames show pick & place, a clenched fist, a finger wave, and a rainbow weight-paint view.
 
@@ -2248,12 +2248,12 @@ try w this link in a new thread'
 - Demo: http://procedural-arm-rig.vercel.app
 - Repo: https://github.com/apekshik/procedural-arm-rig
 - Read via the Social Reader connector (post text, 2-post thread, video frames).
-- Related: [[2026-11-09-blender-mcp-storybook-hero-workflow]]
-- [[2026-11-13-unity-bodycam-ik-hands]]: both rigging, animation
-- [[2026-11-11-ai-tween-paint-harness]]: both animation
+- Related: [[blender-mcp-storybook-hero-workflow]]
+- [[unity-bodycam-ik-hands]]: both rigging, animation
+- [[ai-tween-paint-harness]]: both animation
 
 ============================================================
-Native Swift tip  (topics/tech/2026-11-11-native-swift-app-tip.md)
+Native Swift tip  (topics/tech/native-swift-app-tip.md)
 ============================================================
 kind: advice
 type: quote
@@ -2275,7 +2275,7 @@ https://x.com/lazyjakee/status/2120398348972966127?a=jBFuqVuly27iz7sIIn0&s=20
 - Read via Social Reader (text-only post, no media).
 
 ============================================================
-Lastmaglab shooter style  (topics/gamedev/2026-11-11-lastmaglab-top-down-shooter.md)
+Lastmaglab shooter style  (topics/gamedev/lastmaglab-top-down-shooter.md)
 ============================================================
 kind: game-ref
 type: video
@@ -2290,7 +2290,7 @@ style: clean stylised 3d, top-down camera, dark slate grid floor, chunky props, 
 ## Summary
 A devlog reel from @lastmaglab of an indie top-down tactical shooter made in Godot. A soldier in white-and-black gear shoots oil barrels that now have physics: they tip, roll and get punched with bullet holes, while splinters and shell casings scatter. The art style is clean stylised 3D on a dark slate grid floor, with chunky wooden fences, orange plastic and white concrete barriers, a minimal HUD and a teal stamina bar. Saved for its visual and art style.
 
-![screenshot](./2026-11-11-lastmaglab-top-down-shooter.jpg)
+![screenshot](./lastmaglab-top-down-shooter.jpg)
 
 Video frame: top-down view of the soldier firing an AS VAL rifle (ammo 09/120) at three rusty blue and green barrels in front of wooden fences, with muzzle flash, a tracer, debris and brass casings on the floor. The HUD lists the controls: WASD move, shift run, double shift tactical, space vault, ctrl slide/crouch, RMB aim, LMB fire, R reload, TAB camera.
 
@@ -2302,10 +2302,10 @@ Cool game visual style, art style.
 ## Notes
 - Caption: "The barrels have physics now. They're having a blast. The barriers? Still haven't stopped a damn thing except my productivity. (yes they are plastic barriers)" #godotengine #indiegamedev
 - Read via Social Reader (caption + video frames).
-- Related: [[2026-11-09-godot-waterfall-texture-array-shader]]
+- Related: [[godot-waterfall-texture-array-shader]]
 
 ============================================================
-Claude Code agent tree  (topics/ai/2026-11-11-claude-code-agent-tree.md)
+Claude Code agent tree  (topics/ai/claude-code-agent-tree.md)
 ============================================================
 kind: technique
 type: bookmark
@@ -2319,7 +2319,7 @@ tags: claude, agents, workflow, reference
 ## Summary
 A Claude Code tip from @Voxyz_ai: a cost-efficient agent tree where Fable 5.2 (medium effort) is the root orchestrator and only delegates on demand, Haiku 5.5 handles finding files and running tests, and Opus 5.5 (medium) edits code. Fable then integrates and verifies the results, and switches to high effort only if it gets stuck. It follows Anthropic's new model selection guide, and the image is meant to be handed to Claude Code to set it up.
 
-![screenshot](./2026-11-11-claude-code-agent-tree.png)
+![screenshot](./claude-code-agent-tree.png)
 
 Image: an ASCII diagram titled "Cost-efficient Claude Code agent tree". Fable 5.2 medium is the root/orchestrator and branches to explorer (Haiku 5.5, finds files), worker (Opus 5.5 medium, edits code) and tester (Haiku 5.5, runs tests). They merge back into Fable 5.2 medium for integrate + verify, with a dashed branch to Fable 5.2 high "only if it's stuck". Footer: "Split useful work. Don't spawn every role."
 
@@ -2328,11 +2328,11 @@ https://x.com/voxyz_ai/status/2120199820887593304?a=b908V0171pUheO52HyM&s=46
 
 ## Notes
 - Read via Social Reader (single post + image).
-- Related: [[2026-11-10-ship-mcp-server-tip]]
-- [[2026-11-13-claude-live-ui-comments]]: both workflow, claude
+- Related: [[ship-mcp-server-tip]]
+- [[claude-live-ui-comments]]: both workflow, claude
 
 ============================================================
-Captcha launch film  (topics/design/2026-11-11-captcha-launch-film.md)
+Captcha launch film  (topics/design/captcha-launch-film.md)
 ============================================================
 kind: style-ref
 type: video
@@ -2347,7 +2347,7 @@ style: chunky flat pixel art, orange and blue palette, pixel cursors and ui, lau
 ## Summary
 A 17-second animated launch film shared by Austin Bauwens, titled "Captchas aren't what you think they are". It argues that solving captchas has been unpaid AI training, from labelling people to steering self-driving cars. The look is flat chunky pixel-art in orange, blue and periwinkle, with captcha grids, bounding boxes, pixel cursors and a car driving a top-down map. Directed by Sam Essanoussi, with design and animation by Justin De Leon and Connor Roy-Shaw. Saved as motion and visual design inspiration.
 
-![screenshot](./2026-11-11-captcha-launch-film.jpg)
+![screenshot](./captcha-launch-film.jpg)
 
 Video frame: a pixel-art man in a tie on an orange grid with bounding boxes and cursors around him, a hand clicking a mouse on a blue background, and an orange caption reading "You've spent years training AI for free." Other frames show "You aren't just proving you're human" over a captcha tile grid, and a blue car seen from above with a sensor cone, being steered by pixel cursors along a pale map.
 
@@ -2358,10 +2358,10 @@ cool visuals , launch film
 
 ## Notes
 - Read via Social Reader (single post + video frames).
-- Related: [[2026-11-11-ace-of-frames-reel]]
+- Related: [[ace-of-frames-reel]]
 
 ============================================================
-App growth checklist  (topics/business/2026-11-11-app-growth-checklist.md)
+App growth checklist  (topics/business/app-growth-checklist.md)
 ============================================================
 kind: advice
 type: bookmark
@@ -2401,11 +2401,11 @@ Distribution:
 - Ran Apple Search Ads on competitor names and intent keywords?
 - Built ONE feature so good that people screenshot it without you asking?
 
-Related: [[2026-11-11-native-swift-app-tip]]
-- [[2026-11-11-tiktok-slideshow-app-marketing]]: both growth, mobile-app, marketing
+Related: [[native-swift-app-tip]]
+- [[tiktok-slideshow-app-marketing]]: both growth, mobile-app, marketing
 
 ============================================================
-Ace Of Frames reel  (topics/design/2026-11-11-ace-of-frames-reel.md)
+Ace Of Frames reel  (topics/design/ace-of-frames-reel.md)
 ============================================================
 kind: style-ref
 type: video
@@ -2420,7 +2420,7 @@ style: bold type, ui mockups in motion, pixel-art mascots, glowing cards, produc
 ## Summary
 A 14-second showreel from Ace Of Frames, a studio that makes product launch videos for startups (aceoframes.com). It plays four launch videos at once in a 2x2 grid, mixing bold type, UI mockups, pixel-art mascots, glowing cards and photo backdrops, and the caption jokes that even AI can't match their taste. Saved as visual design inspiration.
 
-![screenshot](./2026-11-11-ace-of-frames-reel.jpg)
+![screenshot](./ace-of-frames-reel.jpg)
 
 Video frame: a 2x2 grid. Top left is a pixelated flight-route line over a globe with a "$349 Mexico City" price tag. Top right is a cursor dropping a blue card into a black wallet with a "your card" label. Bottom left is a wall of blue pixel blob mascots with "over 41 million combinations". Bottom right is a Gmail reply draft on an orange background. Other frames show "Let agents buy" with a glowing Agentcard, "Approve with Face ID", a Slack composer with a voice-dictation pill, and fn-key dictation shortcuts.
 
@@ -2432,11 +2432,11 @@ cool visual design
 ## Notes
 - Studio site: https://aceoframes.com
 - Read via Social Reader (2-post thread + video frames).
-- Related: [[2026-11-10-ladybug-vfx-app]]
-- [[2026-11-11-captcha-launch-film]]: both visual-design
+- Related: [[ladybug-vfx-app]]
+- [[captcha-launch-film]]: both visual-design
 
 ============================================================
-AI tween harness  (topics/design/2026-11-11-ai-tween-paint-harness.md)
+AI tween harness  (topics/design/ai-tween-paint-harness.md)
 ============================================================
 kind: technique
 type: video
@@ -2451,7 +2451,7 @@ style: painted 2d backgrounds, hand-drawn animation
 ## Summary
 Araminta (Alvdansen Studio) shows in a 2-minute video how she uses her "AI Assisted Tween & Paint" harnesses for 2D hand-drawn animation. She starts from a key drawing (line art over a painted background), the agent works directly inside Toon Boom Harmony to tween and colour the shot, and she gives notes in plain words that it fixes, like colour bleed in the hands. The workbook is on the studio's Patreon, and more videos are coming on their YouTube.
 
-![screenshot](./2026-11-11-ai-tween-paint-harness.jpg)
+![screenshot](./ai-tween-paint-harness.jpg)
 
 Video frame: a painted 2D shot of a blonde character typing at a desk by a window, next to a chat where she says "Check the hands for colour bleed" and the agent replies that it found skin colour spilling onto the keyboard on three frames and fixed it. Other frames show the key drawing, the line-art stage and the Toon Boom Harmony timeline.
 
@@ -2462,10 +2462,10 @@ https://x.com/araminta_k/status/2120216869005324667?a=FODxLrHPUf_yIp5MxOs&s=46
 - Workbook (Patreon): https://www.patreon.com/alvdansenstudio/posts/ai-assisted-174867377
 - YouTube: https://www.youtube.com/@alvdansenstudio
 - Read via Social Reader (3-post thread + video frames).
-- Related: [[2026-11-11-procedural-arm-rig-demo]]
+- Related: [[procedural-arm-rig-demo]]
 
 ============================================================
-Ship MCP server tip  (topics/ai/2026-11-10-ship-mcp-server-tip.md)
+Ship MCP server tip  (topics/ai/ship-mcp-server-tip.md)
 ============================================================
 kind: advice
 type: bookmark
@@ -2479,7 +2479,7 @@ tags: mcp, api, documentation, agents, reference
 ## Summary
 Jon C. Phillips (@joncphillips): "Whatever you're building, ship an MCP server with it, and document the API." Best replies: write the OpenAPI spec first and generate the MCP tools from it so docs and server can't drift apart, put each endpoint's description in the spec since that text becomes the tool description agents read, and return errors that explain what went wrong.
 
-![screenshot](./2026-11-10-ship-mcp-server-tip.png)
+![screenshot](./ship-mcp-server-tip.png)
 
 Screenshot of the X post (09/11/26, 5.5K views) with replies from @Madeactual (OpenAPI-first tip, which Jon endorsed: "That's the way to do it!") and @itsarunc (clear error messages).
 
@@ -2489,10 +2489,10 @@ Screenshot of the X post (09/11/26, 5.5K views) with replies from @Madeactual (O
 https://x.com/joncphillips/status/2119849328776819015?a=Z3l5nVctRmqPxIZ0jaM&s=46 link to the ss i shared
 
 ## Notes
-Related: [[2026-11-10-patch-gamedev-platform]] (ships its tools as a CLI and MCP).
+Related: [[patch-gamedev-platform]] (ships its tools as a CLI and MCP).
 
 ============================================================
-Roboflow re-ID tool  (topics/ai/2026-11-10-roboflow-reid-tool.md)
+Roboflow re-ID tool  (topics/ai/roboflow-reid-tool.md)
 ============================================================
 kind: library
 type: tool
@@ -2506,7 +2506,7 @@ tags: computer-vision, object-tracking, python, open-source, to-try
 ## Summary
 `reid` is an open-source (Apache 2.0) Python package from Roboflow that turns a crop of a person into an appearance embedding, so the same person can be matched across frames, clips or cameras. It loads pretrained OSNet and FastReID models, works with `supervision` detections from any detector (e.g. RF-DETR), and includes benchmarks for re-identification. Install with `pip install -U reid`; docs at reid.roboflow.com.
 
-![screenshot](./2026-11-10-roboflow-reid-tool.png)
+![screenshot](./roboflow-reid-tool.png)
 
 Screenshot of Alex Bodner's X post announcing reid, with a demo video: football players boxed on a pitch next to a t-SNE plot where each colour is one player's track, showing crops of the same player clustering together.
 
@@ -2518,7 +2518,7 @@ https://x.com/AlexBodner_/status/2119869708832805344?a=HlVPKugADUb2xcnfk1k&s=20
 Could be handy for sports video edits: tracking one player across clips.
 
 ============================================================
-Revolio VFX feature  (topics/business/2026-11-10-revolio-labs-vfx-feature.md)
+Revolio VFX feature  (topics/business/revolio-labs-vfx-feature.md)
 ============================================================
 kind: todo
 stage: new
@@ -2531,19 +2531,19 @@ why: build a Ladybug-style VFX feature for the Revolio Labs website
 tags: revolio-labs, vfx, product-idea
 
 ## Summary
-To-do for the Revolio Labs website: build a Ladybug-style feature that lets people create visual effects on images and video in the browser. Ladybug ([[2026-11-10-ladybug-vfx-app]]) is the reference to match.
+To-do for the Revolio Labs website: build a Ladybug-style feature that lets people create visual effects on images and video in the browser. Ladybug ([[ladybug-vfx-app]]) is the reference to match.
 
 ## Raw
 Add this to my ideas or a to-do list for Revolio Labs. I need to make a ladybug. Like ladybug is a basically a website that lets you create visual effects. You can find the link for it. I think it's ladybug.app, but you can find it. Link that also to the node that you add. I need to make the same feature for my Revolio Labs website.
 
 ## Notes
-- Reference: [[2026-11-10-ladybug-vfx-app]] (theladybug.app)
+- Reference: [[ladybug-vfx-app]] (theladybug.app)
 - Features worth copying first: effect layers (halftone, ASCII, dither, glitch), keyframes, webcam/hand tracking, 4K and transparent export.
-- [[2026-11-12-revolio-labs]]: both revolio-labs
-- [[2026-11-12-revolio-labs-app]]: both revolio-labs
+- [[revolio-labs]]: both revolio-labs
+- [[revolio-labs-app]]: both revolio-labs
 
 ============================================================
-Polyfork 3D assets  (topics/gamedev/2026-11-10-polyfork-3d-assets.md)
+Polyfork 3D assets  (topics/gamedev/polyfork-3d-assets.md)
 ============================================================
 kind: library
 type: tool
@@ -2564,10 +2564,10 @@ Add polyfork.dev. It's an open source three js library that can be used. It also
 ## Notes
 - Licence: free for commercial use in games, no attribution; free mesh files are CC BY 4.0. Can't resell the .mjs source or HD editions. Paid plans: Pro $15/mo, Lifetime $200.
 - Catalog repo: https://github.com/lucas-martinic/polyfork-catalog
-- Related: [[2026-11-10-patch-gamedev-platform]], [[2026-11-10-arc-3d-art-dataset]]
+- Related: [[patch-gamedev-platform]], [[arc-3d-art-dataset]]
 
 ============================================================
-Patch gamedev tool  (topics/gamedev/2026-11-10-patch-gamedev-platform.md)
+Patch gamedev tool  (topics/gamedev/patch-gamedev-platform.md)
 ============================================================
 kind: tool
 type: tool
@@ -2581,7 +2581,7 @@ tags: game-engine, mcp, game-assets, open-source, to-try
 ## Summary
 Patch (patch.gg), launched by Rehan Sheikh (@rehan_shei), is a platform to build and play games. It bundles every game dev tool into one CLI and MCP, ships 50,000+ open-source assets, lets you remix any game on patch or mod games on your PC, and publishes them open source to everyone on patch.
 
-![screenshot](./2026-11-10-patch-gamedev-platform.png)
+![screenshot](./patch-gamedev-platform.png)
 
 Screenshot of the X post announcing patch ("opening it to everyone today"), with a demo video still of a grey 3D dragon model next to a textured red dragon. Posted 09/11/26, 157K views, 2.1K bookmarks.
 
@@ -2590,11 +2590,11 @@ https://x.com/rehan_shei/status/2119855388988518794?a=qlXTpSq4hRphE0FQXIw&s=46
 (plus screenshot of the post)
 
 ## Notes
-Related: [[2026-11-09-pixel-search-sprite-database]], [[2026-11-09-blender-mcp-storybook-hero-workflow]]
-- [[2026-11-10-polyfork-3d-assets]]: both game-assets, mcp
+Related: [[pixel-search-sprite-database]], [[blender-mcp-storybook-hero-workflow]]
+- [[polyfork-3d-assets]]: both game-assets, mcp
 
 ============================================================
-Ladybug VFX app  (topics/design/2026-11-10-ladybug-vfx-app.md)
+Ladybug VFX app  (topics/design/ladybug-vfx-app.md)
 ============================================================
 kind: tool
 type: tool
@@ -2610,14 +2610,14 @@ style: halftone, ascii, dither, glitch
 Ladybug is a browser-based effects studio for images, video, type and sound: 60+ effects and 300+ looks (halftone, ASCII, dither, glass, glitch, glow, depth), keyframe animation, sound reactivity, and object, face and hand tracking. Exports 4K video, high-res stills, transparent video, PNG sequences and SVG; media stays on your machine. Free tier has no watermark, commercial use needs a Pro licence.
 
 ## Raw
-Saved as the reference for [[2026-11-10-revolio-labs-vfx-feature]]: "Like ladybug is a basically a website that lets you create visual effects... I think it's ladybug.app, but you can find it."
+Saved as the reference for [[revolio-labs-vfx-feature]]: "Like ladybug is a basically a website that lets you create visual effects... I think it's ladybug.app, but you can find it."
 
 ## Notes
-Real URL is theladybug.app (not ladybug.app). Benchmark for [[2026-11-10-revolio-labs-vfx-feature]].
-- [[2026-11-11-ace-of-frames-reel]]: both video-editing
+Real URL is theladybug.app (not ladybug.app). Benchmark for [[revolio-labs-vfx-feature]].
+- [[ace-of-frames-reel]]: both video-editing
 
 ============================================================
-Intelligence is adaptability  (topics/life/2026-11-10-intelligence-is-adaptability.md)
+Intelligence is adaptability  (topics/life/intelligence-is-adaptability.md)
 ============================================================
 kind: thought
 type: note
@@ -2633,7 +2633,7 @@ A thought Yuvraj heard: intelligence is adaptability, the ability to update and 
 A new thought that I heard is intelligence is adaptability. It's adaptive. It's like adapting to the new things basis the new evidence that is present.
 
 ============================================================
-Claude code paintings  (topics/ai/2026-11-10-claude-code-paintings.md)
+Claude code paintings  (topics/ai/claude-code-paintings.md)
 ============================================================
 kind: technique
 type: bookmark
@@ -2648,8 +2648,8 @@ style: painterly brushwork, invented artist styles
 ## Summary
 Jake Eaton (@jkeatn) has been painting with Fable 5.2 in code. To answer the critique that AI paintings only emulate real art, he has Claude invent artist personas with a backstory and a consistent, period-identifiable style, then steers it while it revises the brush and paint engines. Each painting is a Python program of 1-2k lines that places every stroke (usually a few thousand) through a simulated paint engine with different bristles: no image model, no pre-rendering or tracing.
 
-![screenshot](./2026-11-10-claude-code-paintings-1.png)
-![screenshot](./2026-11-10-claude-code-paintings-2.png)
+![screenshot](./claude-code-paintings-1.png)
+![screenshot](./claude-code-paintings-2.png)
 
 Screenshots of the X post text, plus two example paintings: a glossy yellow spiral tube slide on a blue-and-red tiled playground with clouds and a green climbing frame, and a huge red dragon's head looming over a crowded ice rink full of skaters. The post quotes @claudeai's launch post.
 
@@ -2661,7 +2661,7 @@ https://x.com/jkeatn/status/2119874007382299087?a=qmaQJLw2n-8etCxrBCc&s=46
 Idea worth trying for game art: procedural, code-placed brush strokes instead of image models.
 
 ============================================================
-Astryx design system  (topics/design/2026-11-10-astryx-design-system.md)
+Astryx design system  (topics/design/astryx-design-system.md)
 ============================================================
 kind: library
 type: tool
@@ -2675,7 +2675,7 @@ tags: design-system, ui, react, open-source, agents
 ## Summary
 Astryx is Meta's open-source (MIT, beta) design system, used inside Meta for eight years across 13,000+ apps. It ships 150+ accessible React components built on StyleX, brand theming, dark mode, templates and a CLI, made to be used by both people and coding agents. Saved because the tip is to hand the repo to your coding agent so it builds better UI. Docs, Storybook and sandbox at astryx.atmeta.com.
 
-![screenshot](./2026-11-10-astryx-design-system.jpeg)
+![screenshot](./astryx-design-system.jpeg)
 
 Screenshot of a justinmendez.ai video post showing the Astryx README ("An open source design system... built for how we build now: by people and the agents working alongside them"), with his caption that coding agents still suck at UI, and a pinned comment linking github.com/meta/astryx.
 
@@ -2684,10 +2684,10 @@ Link in photo
 (screenshot of the post)
 
 ## Notes
-Could help with UI for the Revolio Labs site, see [[2026-11-10-revolio-labs-vfx-feature]].
+Could help with UI for the Revolio Labs site, see [[revolio-labs-vfx-feature]].
 
 ============================================================
-ARC 3D art dataset  (topics/design/2026-11-10-arc-3d-art-dataset.md)
+ARC 3D art dataset  (topics/design/arc-3d-art-dataset.md)
 ============================================================
 kind: asset-source
 type: link
@@ -2702,7 +2702,7 @@ style: glossy abstract 3d, metallic gold and rose gold, pastel blocks
 ## Summary
 3D artist ARC (@arc4g) released all of their 3D art project files for free under Creative Commons, inviting people to remix them by hand or with AI agents. Their disability makes it hard to keep making art, so this lets the work keep growing. The previews show glossy abstract 3D renders: gold and rose-gold metallic shapes, pastel blocks, pink and blue scenes.
 
-![screenshot](./2026-11-10-arc-3d-art-dataset.png)
+![screenshot](./arc-3d-art-dataset.png)
 
 Screenshot of ARC's X post: "I'm releasing all my project files for free, under Creative Commons... Remix them and have fun, using your agents or your human brain. Download: arc.art/dataset", with a grid of render thumbnails. The page itself blocked automated fetching, so this summary is from the screenshot.
 
@@ -2714,7 +2714,7 @@ https://arc.art/dataset/
 Check the exact CC licence on the download page before reusing in a paid project.
 
 ============================================================
-Second brand identity  (topics/design/2026-11-09-ayush-soni-visual-design-post.md)
+Second brand identity  (topics/design/ayush-soni-visual-design-post.md)
 ============================================================
 kind: style-ref
 type: bookmark
@@ -2729,7 +2729,7 @@ style: textured pastel brushwork, warm painterly palette, serif plus grotesk typ
 ## Summary
 Ayush Soni's (@ayushsoni_io) brand identity for "Second", an app that keeps the context of your work ("Never explain yourself twice"). The look pairs loose, textured oil-pastel paintings of people in open fields (sky blue, orange, ochre, olive and peach) with calm white cards, a bold grotesk "Second" wordmark, elegant serif copy and faint handwritten calendar notes on an off-white background. Saved as a visual design reference.
 
-![screenshot](./2026-11-09-ayush-soni-visual-design-post.jpg)
+![screenshot](./ayush-soni-visual-design-post.jpg)
 
 Image: a painterly field scene, a man leaping on a green hill under a pale blue sky, with orange, pink and ochre crayon strokes below. A white card in the middle reads "Second / Never explain yourself twice. Second keeps the context of your work, so every project, tool and conversation starts where you left off." Other images: a woman in a blue top and white skirt twirling against an orange and blue pastel block ("Your colorful presence"), a web hero "Everything Second writes belongs to you." with stacked painted field cards, and a pastel landscape with handwritten Mon-Fri schedule times beside it.
 
@@ -2743,7 +2743,7 @@ cool visual design
 - Studio contact in the thread: hex.inc/contact
 
 ============================================================
-Pixel sprite search  (topics/gamedev/2026-11-09-pixel-search-sprite-database.md)
+Pixel sprite search  (topics/gamedev/pixel-search-sprite-database.md)
 ============================================================
 kind: asset-source
 type: tool
@@ -2764,10 +2764,10 @@ https://huggingface.co/spaces/cfahlgren1/pixel-search
 found this cool sprites database for games i build
 
 ## Notes
-- [[2026-11-15-sprite-stacking-pixel-art]]: both sprites, pixel-art
+- [[sprite-stacking-pixel-art]]: both sprites, pixel-art
 
 ============================================================
-MyCountryMogsYours game  (topics/gamedev/2026-11-09-my-country-mogs-yours.md)
+MyCountryMogsYours game  (topics/gamedev/my-country-mogs-yours.md)
 ============================================================
 kind: game-ref
 type: bookmark
@@ -2789,11 +2789,11 @@ this was a cool browser game i found
 not misc
 
 ## Notes
-- [[2026-11-09-thechase500-cricket-chase-game]]: both game-inspiration, browser-game
-- [[2026-11-09-cricle-daily-cricket-guessing-game]]: both game-inspiration, browser-game
+- [[thechase500-cricket-chase-game]]: both game-inspiration, browser-game
+- [[cricle-daily-cricket-guessing-game]]: both game-inspiration, browser-game
 
 ============================================================
-Godot waterfall shader  (topics/gamedev/2026-11-09-godot-waterfall-texture-array-shader.md)
+Godot waterfall shader  (topics/gamedev/godot-waterfall-texture-array-shader.md)
 ============================================================
 kind: technique
 type: bookmark
@@ -2808,7 +2808,7 @@ style: stylised 2d water
 ## Summary
 Shaders Bible Series (@ushadersbible) shows an animated 2D waterfall in Godot: a Sprite2D with a ShaderMaterial (`using_texture`) that takes a tiled waterfall texture array, a `noise_64.png` noise texture and a `speed` parameter (2.0). It's a teaser for their Complete Godot VFX Handbook at jettelly.com. Handy reference for stylised water in Yuvraj's games.
 
-![screenshot](./2026-11-09-godot-waterfall-texture-array-shader.png)
+![screenshot](./godot-waterfall-texture-array-shader.png)
 
 ## Raw
 https://x.com/ushadersbible/status/2119673988464922969?a=s-74g2GGB1j52MU2CyE&s=20
@@ -2817,12 +2817,12 @@ https://x.com/ushadersbible/status/2119673988464922969?a=s-74g2GGB1j52MU2CyE&s=2
 
 ## Notes
 - Book: Complete Godot VFX Handbook, jettelly.com/store
-- Related: [[2026-11-09-pixel-search-sprite-database]] (2D game assets)
-- [[2026-11-11-lastmaglab-top-down-shooter]]: both godot, vfx
-- [[2026-11-15-sprite-stacking-pixel-art]]: both godot, tutorial
+- Related: [[pixel-search-sprite-database]] (2D game assets)
+- [[lastmaglab-top-down-shooter]]: both godot, vfx
+- [[sprite-stacking-pixel-art]]: both godot, tutorial
 
 ============================================================
-Goalkeeper editor joke  (topics/life/2026-11-09-goalkeeper-saving-things-in-post.md)
+Goalkeeper editor joke  (topics/life/goalkeeper-saving-things-in-post.md)
 ============================================================
 kind: idea
 stage: new
@@ -2841,7 +2841,7 @@ A fun thought that I had recently um, because I'm an editor, no, basically the j
 ## Notes
 
 ============================================================
-Cricle game  (topics/gamedev/2026-11-09-cricle-daily-cricket-guessing-game.md)
+Cricle game  (topics/gamedev/cricle-daily-cricket-guessing-game.md)
 ============================================================
 kind: game-ref
 type: bookmark
@@ -2861,12 +2861,12 @@ https://playcricle.com ( daily challenge based )
 fun cricket browser games
 
 ## Notes
-- Related: [[2026-11-09-thechase500-cricket-chase-game]], [[2026-11-09-my-country-mogs-yours]]
-- [[2026-11-12-sixer-cricket-game]]: both cricket, browser-game
-- [[2026-11-12-peakd-game]]: both daily-challenge, browser-game
+- Related: [[thechase500-cricket-chase-game]], [[my-country-mogs-yours]]
+- [[sixer-cricket-game]]: both cricket, browser-game
+- [[peakd-game]]: both daily-challenge, browser-game
 
 ============================================================
-Blender storybook hero  (topics/gamedev/2026-11-09-blender-mcp-storybook-hero-workflow.md)
+Blender storybook hero  (topics/gamedev/blender-mcp-storybook-hero-workflow.md)
 ============================================================
 kind: technique
 type: bookmark
@@ -2881,7 +2881,7 @@ style: stylised storybook 3d, big-head proportions
 ## Summary
 @rewind02 built and animated a stylised storybook hero (curly-haired boy, green tunic, brown boots, long orange scarf) in Blender by driving it with Claude Opus 5.5 through the Blender MCP. The key trick: give the scarf its own bone chain so it trails and swings behind every step. Saved as a repeatable 8-step character workflow for Yuvraj's games.
 
-![screenshot](./2026-11-09-blender-mcp-storybook-hero-workflow.png)
+![screenshot](./blender-mcp-storybook-hero-workflow.png)
 
 ### The workflow (from the post)
 1. Connect Claude to Blender via MCP; send front, side and back concept images.
@@ -2901,14 +2901,14 @@ https://x.com/rewind02/status/2119821740058546282?a=4tYjy-hUHaGuRBuPsQw&s=20
 (with a screenshot of the post, saved above)
 
 ## Notes
-- Related: [[2026-11-09-godot-waterfall-texture-array-shader]], [[2026-11-09-pixel-search-sprite-database]]
-- [[2026-11-11-procedural-arm-rig-demo]]: both rigging, animation
-- [[2026-11-18-metahuman-maker-agent-addon]]: both 3d-character, blender, mcp
-- [[2026-11-12-sharma-sweets-3d-shopfront]]: both 3d-character
-- [[2026-11-12-impossible-weapon-knight-animation]]: both animation
+- Related: [[godot-waterfall-texture-array-shader]], [[pixel-search-sprite-database]]
+- [[procedural-arm-rig-demo]]: both rigging, animation
+- [[metahuman-maker-agent-addon]]: both 3d-character, blender, mcp
+- [[sharma-sweets-3d-shopfront]]: both 3d-character
+- [[impossible-weapon-knight-animation]]: both animation
 
 ============================================================
-500-0 game  (topics/gamedev/2026-11-09-thechase500-cricket-chase-game.md)
+500-0 game  (topics/gamedev/thechase500-cricket-chase-game.md)
 ============================================================
 kind: game-ref
 type: bookmark
@@ -2928,5 +2928,5 @@ https://500-0.com
 fun cricket browser games
 
 ## Notes
-- Related: [[2026-11-09-cricle-daily-cricket-guessing-game]], [[2026-11-09-my-country-mogs-yours]]
-- [[2026-11-12-sixer-cricket-game]]: both cricket, browser-game
+- Related: [[cricle-daily-cricket-guessing-game]], [[my-country-mogs-yours]]
+- [[sixer-cricket-game]]: both cricket, browser-game

@@ -9,7 +9,7 @@ state: in progress
 stack: [claude-code, higgsfield, flux, opencv]
 repo: private
 share: full               # keep client and artist names out: this repo is public
-note: 2026-11-26-ai-group-shot-retouch
+note: ai-group-shot-retouch
 added: 2026-11-26
 ---
 

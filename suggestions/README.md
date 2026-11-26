@@ -50,7 +50,7 @@ The scheduled task follows these steps. Edit them here to change its behaviour.
 ---
 date: 2026-11-12
 ideas: 2
-resurfaced: 2026-11-10-polyfork-3d-assets
+resurfaced: polyfork-3d-assets
 ---
 
 ## 1. Short idea name

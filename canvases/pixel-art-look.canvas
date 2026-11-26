@@ -13,7 +13,7 @@
     {
       "id": "captcha",
       "type": "file",
-      "file": "topics/design/2026-11-11-captcha-launch-film.md",
+      "file": "topics/design/captcha-launch-film.md",
       "x": 0,
       "y": -20,
       "width": 300,
@@ -22,7 +22,7 @@
     {
       "id": "ace",
       "type": "file",
-      "file": "topics/design/2026-11-11-ace-of-frames-reel.md",
+      "file": "topics/design/ace-of-frames-reel.md",
       "x": 340,
       "y": -20,
       "width": 300,
@@ -31,7 +31,7 @@
     {
       "id": "splats",
       "type": "file",
-      "file": "topics/gamedev/2026-11-15-pixel-art-gaussian-splats.md",
+      "file": "topics/gamedev/pixel-art-gaussian-splats.md",
       "x": 680,
       "y": -20,
       "width": 300,
@@ -50,7 +50,7 @@
     {
       "id": "stack",
       "type": "file",
-      "file": "topics/gamedev/2026-11-15-sprite-stacking-pixel-art.md",
+      "file": "topics/gamedev/sprite-stacking-pixel-art.md",
       "x": 680,
       "y": 460,
       "width": 300,
@@ -59,7 +59,7 @@
     {
       "id": "sprites",
       "type": "file",
-      "file": "topics/gamedev/2026-11-09-pixel-search-sprite-database.md",
+      "file": "topics/gamedev/pixel-search-sprite-database.md",
       "x": 340,
       "y": 460,
       "width": 300,
@@ -68,7 +68,7 @@
     {
       "id": "stickers",
       "type": "file",
-      "file": "topics/design/2026-11-13-stick-it-up-stickers.md",
+      "file": "topics/design/stick-it-up-stickers.md",
       "x": 0,
       "y": 460,
       "width": 300,
@@ -87,7 +87,7 @@
     {
       "id": "rohit",
       "type": "file",
-      "file": "topics/gamedev/2026-11-12-rohit-learns-ball.md",
+      "file": "topics/gamedev/rohit-learns-ball.md",
       "x": 1120,
       "y": 460,
       "width": 300,

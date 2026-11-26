@@ -19,7 +19,7 @@ Check, in order, and stop at the first match:
 
 1. **Vault folder.** Vault path: `vault` in `~/.brain-sync/config.json` if it exists, else `~/Documents/Vault` (Mac) or `%USERPROFILE%\Documents\Vault` (Windows, may be under OneDrive). List its folder names only (skip ones starting with `_` or `.`) and match on folder name and slug (lowercase kebab-case). Only if no name matches, read the first 3 lines (the `title:`) of each `project.md`, never the whole files or other docs. Treat "Munde Mode", "munde-mode" and "MundeMode" as the same.
 2. **Brain repo `projects/<slug>/`** (synced from the other computer but maybe not pulled yet): Second Brain MCP `search` / `list_notes`, or `https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/projects/<slug>/project.md`.
-3. **Existing brain note for the project** (most of his projects already have one in `topics/`): Second Brain MCP `search` with the project name (not `get_catalog`, which returns every project). If found, remember its slug (filename without `.md`, e.g. `2026-11-12-munde-mode-game`).
+3. **Existing brain note for the project** (most of his projects already have one in `topics/`): Second Brain MCP `search` with the project name (not `get_catalog`, which returns every project). If found, remember its slug (filename without `.md`, e.g. `munde-mode-game`).
 
 Then:
 - Vault folder exists: use it.

@@ -74,24 +74,25 @@ log**, not a dump. Use the `log-to-brain` skill if it's loaded; if not, follow
    `why` always, `style` for anything visual, `stage: new` for ideas and to-dos.
 4. If it's a link, fetch it when possible and write a 1 to 3 sentence summary in
    your own words, plus the page title. If it can't be fetched, say so in the body.
-5. Write the file to `topics/<topic>/YYYY-MM-DD-<slug>.md` using the template
-   below. `slug` is 3 to 6 kebab-case words from the title.
+5. Write the file to `topics/<topic>/<slug>.md` using the template below. `slug` is
+   3 to 6 kebab-case words from the title, name first, no date (the date lives in
+   `added:`; Yuvraj's rule 2026-11-26). If the slug is taken, add `-2`.
 5b. Link it: add the 2 or 3 notes it really relates to under `## Notes`, one per line,
-   each with a short reason: `- [[2026-11-15-sprite-stacking-pixel-art]]: same pixel-art-in-3D look`.
-   Always the full slug with the date. The "Might relate" list in `LINKS.md` / `python3
+   each with a short reason: `- [[sprite-stacking-pixel-art]]: same pixel-art-in-3D look`.
+   Always the exact slug (file name without `.md`). The "Might relate" list in `LINKS.md` / `python3
    scripts/link_doctor.py --json` (`suggestions`) is a good place to look; skip a suggestion
    that only shares a generic tag. See "Links between notes".
 6. If the entry adds something new to his taste (a new look, a new game type, a new
    library he'll build with), update the curated part of `TASTE.md` (above the
    GENERATED marker) and its "Last curated" line. Then run
-   `python3 scripts/link_doctor.py --fix` (adds backlinks, fixes dateless links) and
+   `python3 scripts/link_doctor.py --fix` (adds backlinks, fixes old or partial links) and
    `python3 scripts/build_index.py`; it refreshes every generated file.
 7. Commit with message `add: <short title>` (or `add: N entries` for a batch) and
    push to `main` right away. See "Auto-merge" below (deploys are batched).
 8. Reply to Yuvraj with one line per entry: title, topic, tags.
 
 Screenshots and images: save them next to the entry with the same name
-(`topics/<topic>/YYYY-MM-DD-<slug>.png`), embed with `![screenshot](./<file>)`
+(`topics/<topic>/<slug>.png`), embed with `![screenshot](./<file>)`
 in `## Summary`, and describe what's in the image in words so it's searchable.
 ### X/Twitter and Instagram links (Yuvraj's standing rule, 2026-11-11)
 
@@ -116,8 +117,8 @@ in chat, so:
 - File each one like a normal dump: pick topic, type, tags, write the summary
   (fetch the link if there is one), keep `## Raw` exactly as captured, keep the
   `captured:` line, and set `status: unread`.
-- `git mv` the `.md` and its attachments to `topics/<topic>/YYYY-MM-DD-<slug>.md`
-  (drop the time part, fix the image embeds to the new names).
+- `git mv` the `.md` and its attachments to `topics/<topic>/<slug>.md`
+  (drop the date and time part, fix the image embeds to the new names).
 - Rebuild the index, commit `file: N inbox captures`, push to `main`, and reply
   with one line per entry as usual.
 
@@ -223,8 +224,8 @@ links, proposed new links, tag merges and possible duplicates. The build runs it
 report-only mode, so the live site's "Links / Unlinked mentions / Might relate" lists in
 each note panel stay fresh.
 
-- `--fix` applies only lossless fixes, run it when filing: rewrites dateless links to the
-  full slug and adds a backlink (`- [[slug]]: reason`) for one-way links scoring 0.35+.
+- `--fix` applies only lossless fixes, run it when filing: rewrites old date-first or partial links to the
+  current slug and adds a backlink (`- [[slug]]: reason`) for one-way links scoring 0.35+.
 - Removing a link, linking two unlinked notes, merging tags or notes are **proposals**:
   numbered in `LINKS.md`. Apply them only when Yuvraj says so ("apply links 1, 3").
 - Never remove a link he wrote in `## Raw`. A link with a written reason is never "weak".

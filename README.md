@@ -20,7 +20,7 @@ one small markdown file, grouped by topic and tagged so it can be found again.
   extension that saves links, notes, images and videos to `inbox/` in one click.
 - **Graph:** [brainy.pxlvzn.in](https://brainy.pxlvzn.in). [site/](site/) is an Obsidian-style graph of every note, tag and topic,
   deployed on Vercel. It rebuilds itself from the markdown on every push to `main`.
-- **Entries:** `topics/<topic>/YYYY-MM-DD-<slug>.md`, each with YAML frontmatter
+- **Entries:** `topics/<topic>/<slug>.md`, each with YAML frontmatter
   (`title`, `type`, `topic`, `tags`, `kind`, `why`, `style`, `source`, `added`).
 
 Rebuild the index after adding entries:

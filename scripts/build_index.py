@@ -91,7 +91,7 @@ def load_projects(entries):
             if f.is_file() and f != pm and f.suffix.lower() in (".md", ".txt") and not any(x.startswith(".") for x in parts):
                 body = f.read_text(encoding="utf-8", errors="replace").replace("\r\n", "\n").strip()
                 docs.append({"path": f.relative_to(ROOT).as_posix(), "name": "/".join(parts), "body": body})
-        target = by_slug.get(e.get("note") or "")
+        target = by_slug.get(re.sub(r"^\d{4}-\d\d-\d\d-", "", e.get("note") or ""))
         if target:
             target["docs"] = target.get("docs", []) + docs
             target["vault"] = d.relative_to(ROOT).as_posix()

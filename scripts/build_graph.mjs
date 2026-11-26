@@ -94,7 +94,7 @@ for (const pm of projectFiles.filter((f) => path.basename(f) === "project.md" &&
       name: path.relative(dir, f).split(path.sep).join("/"),
       body: fs.readFileSync(f, "utf8").replace(/\r\n/g, "\n").trim(),
     }));
-  const target = bySlug.get(field("note"));
+  const target = bySlug.get(field("note").replace(/^\d{4}-\d\d-\d\d-/, ""));
   if (target) {
     target.docs = [...(target.docs || []), ...docs];
     continue;
@@ -160,6 +160,7 @@ for (const n of notes) {
     // [[slug]] -> in-app link
     .replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (_, s, label) => {
       s = s.trim();
+      if (!bySlug.has(s)) s = s.replace(/^\d{4}-\d\d-\d\d-/, ""); // old date-first slug
       const target = bySlug.get(s);
       if (target) related.add(s);
       return `[${label || (target ? target.title : s)}](#/n/${encodeURIComponent(s)})`;
