@@ -262,6 +262,8 @@ scripts/brain_search.py  offline search (terminal) over notes + your local vault
 scripts/health_report.py weekly health report; scripts/mcp_cost.mjs measures MCP tokens
 site/              the static site: graph (index.html), board, timeline, canvas,
                    gallery, search, me.html; shared views.js (nav, palette, passcode);
+                   site/base.css is loaded first by every page: colours, fonts,
+                   scrollbars, focus, brand and view tabs (change the look there)
                    sw.js + manifest.webmanifest make it an offline home-screen app
 api/mcp.js         MCP server (Vercel function, no dependencies)
 api/_write.js      MCP write tools: capture, update_note, log_project, log_playtest,
@@ -441,6 +443,10 @@ topic, tags, summary, related notes) and commits them in one go. Anything it can
 read (a dead link, an X post without `SOCIAL_READER_URL`) stays in `inbox/` with a
 question; type the answer in the same window and press SORT again. Because of that, Claude must `git pull --rebase`
 before pushing (the rules already say so).
+
+The site's shared look (colour and font tokens, thin dark scrollbars, focus rings, the
+brand and the view tabs) lives in `site/base.css`, which every page loads first. New pages
+link it before their own css so they match.
 
 Starter topic colours live in `PALETTE` at the top of `site/app.js`. Categories that
 grew from busy tags (3.8) get a colour in `categories.json` when they're made; anything

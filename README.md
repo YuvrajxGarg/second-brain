@@ -19,6 +19,7 @@ one small markdown file, grouped by topic and tagged so it can be found again.
 
 - **Browse:** [INDEX.md](INDEX.md) by topic, [TAGS.md](TAGS.md) by tag.
 - **Site:** [brainy.pxlvzn.in](https://brainy.pxlvzn.in), built from [site/](site/) on Vercel.
+  Every page loads [site/base.css](site/base.css) first (tokens, scrollbars, tabs), so it all looks like one site.
   The **Graph** is an Obsidian-style map of every note, tag and topic. **Board** is a
   Kanban of ideas, projects and reading (drag a card to change its stage; project cards
   show their next steps and playtests), **Timeline**

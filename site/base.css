@@ -1,0 +1,76 @@
+/* Shared base for every page of the site (graph, board, timeline, canvas, gallery,
+   search, me). Loads FIRST, before style.css / views.css / page css.
+   One place for the colour + font tokens, scrollbars, text selection and focus rings,
+   so every page looks like one site. Page css may add tokens but should not redefine these. */
+:root {
+  --bg: #050505;
+  --fg: #f2f2f2;
+  --dim: rgba(242, 242, 242, 0.5);
+  --faint: rgba(242, 242, 242, 0.14);
+  --line: rgba(242, 242, 242, 0.1);
+  --glass: rgba(10, 10, 10, 0.72);
+  --accent: #39ff6a;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans: "Inter Tight", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  /* scrollbars */
+  --sb-size: 8px;
+  --sb-thumb: rgba(242, 242, 242, 0.16);
+  --sb-thumb-hover: rgba(57, 255, 106, 0.55);
+  color-scheme: dark; /* dark native controls: date pickers, selects, autofill */
+}
+
+* { box-sizing: border-box; }
+.mono { font-family: var(--mono); }
+
+/* ---------- scrollbars: thin, dark, green on hover, everywhere ---------- */
+/* Firefox only: in Chrome/Edge 121+ the standard properties switch OFF the ::-webkit
+   rules below and bring back the arrow buttons on Windows, so they stay behind this test. */
+@supports not selector(::-webkit-scrollbar) {
+  * { scrollbar-width: thin; scrollbar-color: var(--sb-thumb) transparent; }
+  *:hover { scrollbar-color: rgba(242, 242, 242, 0.28) transparent; }
+}
+/* Chrome, Edge, Safari, Arc, Brave, phones: thin square thumb, no track, no arrows */
+::-webkit-scrollbar { width: var(--sb-size); height: var(--sb-size); background: transparent; }
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb); border-radius: 0;
+  border: 2px solid transparent; background-clip: padding-box; min-height: 32px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--sb-thumb-hover); background-clip: padding-box; }
+::-webkit-scrollbar-button { display: none; width: 0; height: 0; }
+
+/* ---------- selection + focus ---------- */
+::selection { background: rgba(57, 255, 106, 0.28); color: var(--fg); }
+:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+input:focus-visible, textarea:focus-visible, select:focus-visible { outline: none; }
+
+/* ---------- brand (top left on every page) ---------- */
+.brand { display: flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; }
+.brand-mark {
+  width: 9px; height: 9px; flex: none; background: var(--accent);
+  box-shadow: 0 0 14px var(--accent);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse { 50% { opacity: 0.35; box-shadow: 0 0 4px var(--accent); } }
+.brand-name { font-family: var(--mono); font-size: 12px; letter-spacing: 0.22em; font-weight: 500; white-space: nowrap; }
+.brand-sub { font-size: 11px; color: var(--dim); white-space: nowrap; }
+
+/* ---------- view switcher (GRAPH / BOARD / ... / SEARCH), built by views.js ---------- */
+.vnav {
+  /* centred with margins, not a transform: the graph's .hud animation resets transform */
+  position: fixed; top: 18px; left: 0; right: 0; margin: 0 auto; width: max-content; max-width: calc(100vw - 32px); z-index: 15;
+  display: flex; gap: 2px; padding: 3px; background: var(--glass); border: 1px solid var(--line);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.vnav a {
+  font-size: 10px; letter-spacing: 0.2em; color: var(--dim); text-decoration: none; padding: 7px 12px;
+  transition: color 0.2s, background 0.2s;
+}
+.vnav a:hover { color: var(--fg); }
+.vnav a.on { color: var(--bg); background: var(--fg); }
+/* pages without the graph HUD: tabs move to the bottom on narrow screens */
+@media (max-width: 900px) { .vnav:not(.hud) { top: auto; bottom: 12px; } }
+@media (max-width: 760px) { .vnav { overflow-x: auto; scrollbar-width: none; } .vnav::-webkit-scrollbar { display: none; } }
+
+@media (prefers-reduced-motion: reduce) { .brand-mark { animation: none; } }

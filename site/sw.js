@@ -2,10 +2,10 @@
 // Network first for pages, scripts and data, so a fresh deploy shows at once; the last
 // good copy is served when offline. Fonts, vendor libs and note images: cache first.
 // Never touches /api or /mcp. Bump VERSION to drop old caches.
-const VERSION = "brain-v1";
+const VERSION = "brain-v2";
 const SHELL = [
   "./", "index.html", "search.html", "board.html", "timeline.html", "canvas.html", "gallery.html", "me.html",
-  "style.css", "views.css", "timeline.css", "canvas.css", "gallery.css",
+  "base.css", "style.css", "views.css", "timeline.css", "canvas.css", "gallery.css",
   "app.js", "views.js", "search.js", "board.js", "timeline.js", "canvas.js", "canvas-auto.js", "gallery.js",
   "vendor/d3.min.js", "vendor/marked.min.js", "vendor/purify.min.js",
   "manifest.webmanifest", "icon-180.png", "icon-192.png", "icon-512.png",

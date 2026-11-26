@@ -1,17 +1,6 @@
 /* Shared styles for the extra views (board, timeline...). Loads after style.css. */
 html.view, html.view body { overflow: auto; height: auto; min-height: 100%; }
-.vnav {
-  /* centred with margins, not a transform: the graph's .hud animation resets transform */
-  position: fixed; top: 18px; left: 0; right: 0; margin: 0 auto; width: max-content; max-width: calc(100vw - 32px); z-index: 15;
-  display: flex; gap: 2px; padding: 3px; background: var(--glass); border: 1px solid var(--line);
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-}
-.vnav a {
-  font-size: 10px; letter-spacing: 0.2em; color: var(--dim); text-decoration: none; padding: 7px 12px;
-  transition: color 0.2s, background 0.2s;
-}
-.vnav a:hover { color: var(--fg); }
-.vnav a.on { color: var(--bg); background: var(--fg); }
+/* .vnav base look lives in base.css (shared with search.html and me.html) */
 /* graph page: between phone and wide, the centre collides with the search box and stats */
 @media (max-width: 1180px) { .vnav:not(.hud) { right: 24px; left: auto; margin: 0; } .vnav.hud { top: 94px; left: 24px; right: auto; margin: 0; } }
 @media (max-width: 900px) { .vnav:not(.hud) { top: auto; bottom: 12px; left: 0; right: 0; margin: 0 auto; } }

@@ -10,26 +10,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="base.css" />
   <style>
-    :root {
-      --bg: #050505; --fg: #f2f2f2; --dim: rgba(242,242,242,.56); --faint: rgba(242,242,242,.14);
-      --line: rgba(242,242,242,.1); --accent: #39ff6a;
-      --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
-      --sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
-    }
-    * { box-sizing: border-box; }
     html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--sans); }
     body { padding: 0 16px 80px; -webkit-font-smoothing: antialiased; }
     .wrap { max-width: 980px; margin: 0 auto; }
     a { color: var(--fg); text-underline-offset: 3px; text-decoration-color: var(--faint); }
     a:hover { text-decoration-color: var(--accent); }
-    .mono { font-family: var(--mono); }
     header { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; border-bottom: 1px solid var(--line); }
-    .brand { display: flex; gap: 10px; align-items: center; font: 500 13px/1 var(--mono); letter-spacing: .18em; }
-    .brand i { width: 10px; height: 10px; background: var(--accent); box-shadow: 0 0 12px var(--accent); }
-    .brand span { color: var(--dim); letter-spacing: .04em; font-weight: 400; }
-    nav a { font: 400 12px/1 var(--mono); letter-spacing: .12em; color: var(--dim); text-decoration: none; border: 1px solid var(--line); padding: 8px 10px; }
-    nav a:hover { color: var(--fg); border-color: var(--faint); }
     h1 { font-weight: 500; font-size: clamp(36px, 7vw, 64px); letter-spacing: -.02em; margin: 48px 0 8px; }
     .lede { color: var(--dim); max-width: 640px; line-height: 1.55; margin: 0 0 36px; }
     .k { font: 400 11px/1 var(--mono); letter-spacing: .16em; color: var(--dim); text-transform: uppercase; }
@@ -79,8 +67,7 @@
 <body>
   <div class="wrap">
     <header>
-      <div class="brand"><i></i>SECOND BRAIN <span>/ me</span></div>
-      <nav><a href="./">GRAPH ↗</a></nav>
+      <a class="brand" href="./"><span class="brand-mark"></span><span class="brand-name">SECOND BRAIN</span><span class="brand-sub mono">/ me</span></a>
     </header>
 
     <h1>Me</h1>
@@ -105,6 +92,7 @@
     <footer id="foot"></footer>
   </div>
 
+  <nav class="vnav mono" aria-label="Views"><a href="./">GRAPH</a><a href="board.html">BOARD</a><a href="timeline.html">TIMELINE</a><a href="canvas.html">CANVAS</a><a href="gallery.html">GALLERY</a><a href="search.html">SEARCH</a></nav>
   <script src="vendor/marked.min.js"></script>
   <script src="vendor/purify.min.js"></script>
   <script>

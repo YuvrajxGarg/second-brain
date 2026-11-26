@@ -1,17 +1,4 @@
-:root {
-  --bg: #050505;
-  --fg: #f2f2f2;
-  --dim: rgba(242, 242, 242, 0.48);
-  --faint: rgba(242, 242, 242, 0.14);
-  --line: rgba(242, 242, 242, 0.1);
-  --glass: rgba(10, 10, 10, 0.72);
-  --accent: #39ff6a;
-  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --sans: "Inter Tight", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --ease: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-* { box-sizing: border-box; }
+/* tokens (--bg, --fg, --accent, fonts...), scrollbars and focus live in base.css */
 html, body {
   margin: 0;
   height: 100%;
@@ -21,7 +8,6 @@ html, body {
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
 }
-.mono { font-family: var(--mono); }
 button { font: inherit; color: inherit; }
 
 #stage {
@@ -65,15 +51,7 @@ body.ready .hud-bl { transition-delay: 0.2s; }
 body.ready .hud-br { transition-delay: 0.3s; }
 
 .hud-tl { top: 22px; left: 24px; width: min(340px, calc(100vw - 48px)); }
-.brand { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-.brand-mark {
-  width: 9px; height: 9px; background: var(--accent);
-  box-shadow: 0 0 14px var(--accent);
-  animation: pulse 2.4s ease-in-out infinite;
-}
-@keyframes pulse { 50% { opacity: 0.35; box-shadow: 0 0 4px var(--accent); } }
-.brand-name { font-family: var(--mono); font-size: 12px; letter-spacing: 0.22em; font-weight: 500; }
-.brand-sub { font-size: 11px; color: var(--dim); }
+.brand { margin-bottom: 14px; } /* brand look: base.css */
 
 .search {
   display: flex; align-items: center; gap: 10px;

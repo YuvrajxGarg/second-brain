@@ -53,7 +53,7 @@ tools/social-reader/    source of the Social Reader MCP connector (Instagram/X),
 tools/vault-sync/       brain_sync.py: syncs Documents/Vault on his Mac + PC into projects/ daily
 projects/<slug>/        synced from his vault (one entry per project); edit in the vault, not here
 scripts/build_graph.mjs builds site/data/graph.json for the graph site
-site/                   the graph website (static, deployed on Vercel)
+site/                   the graph website (static, deployed on Vercel); site/base.css = shared look
 vercel.json             Vercel build config (runs build_index.py + build_graph.mjs, serves site/)
 suggestions/            daily build ideas from the 9 AM scheduled task (see its README)
 links/                  Link Doctor: dismissed pairs + the weekly check's steps (see its README)
@@ -476,6 +476,9 @@ their own; nothing to do when filing. `site/data/` is generated and gitignored.
 Only `main` deploys: preview builds are off (`git.deploymentEnabled` in
 `vercel.json`, Yuvraj's rule 2026-11-12) because they eat the deploy limit. Never
 push other branches expecting a preview. Note-only pushes are batched; see "Batched deploys".
+Every page links `site/base.css` first (colour/font tokens, thin dark scrollbars, focus,
+brand, view tabs; Yuvraj's ask 2026-11-26: one consistent UI). Don't redefine those per page,
+and link it from any new page.
 Starter topics have colours in `PALETTE` at the top of `site/app.js`; categories made
 from busy tags get theirs from `categories.json` (`colors`, picked on promotion, change
 the hex there to recolour one). Anything else gets a fallback colour automatically.
