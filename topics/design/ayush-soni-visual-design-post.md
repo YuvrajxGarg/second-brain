@@ -26,3 +26,4 @@ cool visual design
 ## Notes
 - Read via Social Reader (2-post thread, 4 images), backfilled 2026-11-12.
 - Studio contact in the thread: hex.inc/contact
+- [[chris-nijhof-ui-designer]]: both visual-design

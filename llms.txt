@@ -24,7 +24,10 @@ Read TASTE.md first for the gist, then the catalog for what you need. Live graph
 
 ## Notes
 
+- [X post](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/inbox/2026-11-27-010317-x-post.md): `?` · inbox · Quick capture, not filed yet. Claude: file this per CLAUDE.md (pick topic, tags, summary) and move it out of inbox/.
+- [X post](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/inbox/2026-11-27-010303-x-post.md): `?` · inbox · Quick capture, not filed yet. Claude: file this per CLAUDE.md (pick topic, tags, summary) and move it out of inbox/.
 - [Claude Blender samurai](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/animation/claude-blender-samurai-build.md): `technique` · animation · Claude building a fully rigged 3D character in Blender with only Python and free repos, plus a list of 10 Blender repos to build with
+- [Chris Nijhof designer](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/chris-nijhof-ui-designer.md): `style-ref` · design · His profile has some cool ui designs
 - [Cascadeur 2026.3 update](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/animation/cascadeur-2026-3-release.md): `tool` · animation · Cascadeur's big 2026.3 update with AI motion tools and an MCP, worth trying for character animation
 - [Transition plugin idea](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/video-editing/transition-plugin-idea.md): `idea` · video-editing · Plugin idea for ae/pr
 - [Sprite stacking skill](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/sprite-stacking-canvas-skill.md): `library` · gamedev · Game art style
