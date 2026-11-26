@@ -23,3 +23,4 @@ https://x.com/JungleSilicon/status/2121782359901212987
 
 ## Notes
 Related: [[sprite-stacking-pixel-art]] (another way to give pixel art a 3D turn).
+- [[4dgs-single-video-test]]: both gaussian-splat

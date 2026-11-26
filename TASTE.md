@@ -110,7 +110,7 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 120 entries, 56 with style notes. Rebuilt on every filing._
+_From 121 entries, 57 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -120,7 +120,7 @@ _From 120 entries, 56 with style notes. Rebuilt on every filing._
 - `website-ref`: 5
 - `game-ref`: 4
 - `tool`: 13
-- `technique`: 19
+- `technique`: 20
 - `advice`: 6
 - `idea`: 3
 - `thought`: 3
@@ -130,7 +130,7 @@ _From 120 entries, 56 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (24), #inspiration (21), #claude (18), #open-source (17), #agents (16), #desktop-app (16), #reference (16), #browser-game (13), #pxlvzn (12), #ui (11), #visual-design (10), #mcp (9), #revolio-labs (9), #video-generation (7), #workflow (7), #3d-art (6), #blender (6), #game-inspiration (6), #pixel-art (6)
+#own-project (42), #to-try (24), #inspiration (21), #claude (18), #open-source (17), #agents (16), #desktop-app (16), #reference (16), #browser-game (13), #pxlvzn (12), #ui (11), #visual-design (10), #mcp (9), #revolio-labs (9), #blender (7), #vfx (7), #video-generation (7), #workflow (7), #3d-art (6), #game-inspiration (6)
 
 ### Style notes and where they come from
 
@@ -180,6 +180,7 @@ _From 120 entries, 56 with style notes. Rebuilt on every filing._
 - **colour-coded categories**: [Storage scanner UI](topics/design/storage-scanner-ui.md)
 - **comedy club poster**: [Punchline party game](topics/gamedev/punchline-party-game.md)
 - **condensed ink serif**: [PEAKD game](topics/revolio/peakd-game.md)
+- **contact sheet of yaw angles**: [4DGS video test](topics/video-editing/4dgs-single-video-test.md)
 - **cork evidence wall**: [Cinematic film skill](topics/video-editing/cinematic-film-skill.md)
 - **cozy 3d desk diorama**: [Revolio Labs site](topics/revolio/revolio-labs-site.md)
 - **cozy winter night scene**: [Claude Code reactive theme](topics/ai/claude-code-reactive-theme.md)
@@ -221,6 +222,7 @@ _From 120 entries, 56 with style notes. Rebuilt on every filing._
 - **glyph-grid data viz**: [Neural network data viz](topics/design/neural-network-data-viz.md)
 - **golden hour window light**: [Revolio Labs site](topics/revolio/revolio-labs-site.md)
 - **graffiti street court**: [Bonk Court game](topics/gamedev/bonk-court-game.md)
+- **green screen studio capture**: [4DGS video test](topics/video-editing/4dgs-single-video-test.md)
 - **grid of category cards with counts**: [Tabworthy site directory](topics/tech/tabworthy-site-directory.md)
 - **gritty scarred skin detail**: [MetaHuman Maker addon](topics/gamedev/metahuman-maker-agent-addon.md)
 - **hairline strokes**: [PXLVZN label](topics/tech/pxlvzn-label.md)
@@ -284,6 +286,7 @@ _From 120 entries, 56 with style notes. Rebuilt on every filing._
 - **sky blue to sand gradient**: [Wedding co-op game](topics/gamedev/wedding-co-op-game.md)
 - **small green accent button**: [Tabworthy site directory](topics/tech/tabworthy-site-directory.md)
 - **soft serif headline**: [Blooming flowers site](topics/animation/mohamed-siddique-flower-site.md)
+- **splat performer in blender viewport**: [4DGS video test](topics/video-editing/4dgs-single-video-test.md)
 - **split screen code panel and blender viewport**: [Claude Blender samurai](topics/animation/claude-blender-samurai-build.md)
 - **spray paint type**: [Bonk Court game](topics/gamedev/bonk-court-game.md)
 - **stamps and highlighter swipes**: [Cinematic film skill](topics/video-editing/cinematic-film-skill.md)
