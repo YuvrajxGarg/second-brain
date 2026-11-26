@@ -969,6 +969,10 @@
         <dt>FILE</dt><dd><a href="${esc(graph.repo)}/blob/main/${esc(n.path)}" target="_blank" rel="noopener">${esc(n.path)}</a></dd>
       </dl>`;
       html += `<div class="chips">${n.tags.map((t) => `<button class="chip" data-go="g:${esc(t)}"><span class="c">#</span>${esc(t)}</button>`).join("")}</div>`;
+      // build a canvas from this note: its links, or (techniques, processes) its steps
+      const slugQ = encodeURIComponent(n.slug);
+      const flowy = n.noteKind === "technique" || (n.tags || []).some((t) => /^(workflow|process|pipeline|tutorial|how-to)$/.test(t)) || /^\s*\d+[.)]\s/m.test((n.body || "").split(/\n## Raw\b/)[0]);
+      html += `<div class="p-canvas mono"><a href="canvas.html#auto=links:${slugQ}">OPEN AS CANVAS ↗</a>${flowy ? `<a href="canvas.html#auto=flow:${slugQ}">STEPS AS A FLOW ↗</a>` : ""}</div>`;
       html += `<article class="md">${raw}</article>`;
       // links both ways (backlinks), unlinked mentions and Link Doctor suggestions
       const out = new Set(n.related || []), back = new Set(n.backlinks || []);

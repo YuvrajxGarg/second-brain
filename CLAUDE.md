@@ -316,7 +316,14 @@ from the GRAPH / BOARD / TIMELINE tabs at the top (`site/views.js` + `views.css`
 - `site/canvas.html`: moodboards in `canvases/<id>.canvas` (JSON Canvas, the open format
   Obsidian uses, so they open there too). Cards are notes (`type: file` with the note's
   repo path), text, links and groups. Edits stay as a browser draft until SAVE commits
-  (`/api/edit` action `board`). AUTO builds a board from a tag or kind.
+  (`/api/edit` action `board`). AUTO (`site/canvas-auto.js`) builds a board four ways: TAG / KIND
+  (grid), LINKS (a note plus 1-2 hops of links and backlinks, arrows follow the real links,
+  thicker = higher Link Doctor score, dashed = weak or suggested), FLOW (a technique or process:
+  its numbered steps as a snaking flow, or an outline from the summary, with its linked notes)
+  and CLUSTERS (densely linked notes grouped). Capped at ~30-40 cards. A note's panel has OPEN AS
+  CANVAS (and STEPS AS A FLOW for techniques); deep links `canvas.html#auto=links|flow:<slug>`,
+  `#auto=clusters:all`. Edges carry an extra `sb` object ({score, kind}) Obsidian ignores. To get
+  a clean FLOW, save a technique's steps as a numbered list in its Summary.
 - `site/gallery.html`: saved views in `views/<id>.json` (`name`, `about`, `layout`
   gallery|table, `filter` {kind, topic, status, tags, q}, `sort`), Obsidian Bases-style.
   SAVE VIEW commits a new one. Agents can read these files to see how he slices the brain.

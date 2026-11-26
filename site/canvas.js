@@ -13,13 +13,15 @@
   const uid = () => Math.random().toString(36).slice(2, 10) + Date.now().toString(36).slice(-4);
   const slugify = (s) => String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 50) || "board";
 
-  let notes = [], boards = [];
+  let notes = [], boards = [], graph = { links: [] };
   try {
-    notes = (await load()).notes;
+    ({ notes, graph } = await load());
     boards = await (await fetch("data/canvases.json", { cache: "no-cache" })).json();
   } catch { $("title").textContent = "COULD NOT LOAD"; }
   const byPath = new Map(notes.map((n) => [n.path, n]));
   const firstImg = (n) => (/!\[[^\]]*\]\((data\/media\/[^)\s]+\.(?:png|jpe?g|gif|webp))\)/i.exec(n?.body || "") || [])[1];
+  const AUTO = window.CanvasAuto({ notes, graph, firstImg, uid });
+  const bySlug = new Map(notes.map((n) => [n.slug, n]));
   for (const id of Object.keys(drafts)) if (!boards.some((b) => b.id === id)) boards.push({ id, path: `canvases/${id}.canvas`, data: drafts[id], local: true });
 
   const cv = $("cv"), world = $("world"), svg = $("edges");
@@ -121,12 +123,15 @@
       if (!a || !b) continue;
       const [fs, ts] = e.fromSide && e.toSide ? [e.fromSide, e.toSide] : autoSides(a, b);
       const p = anchor(a, fs), q = anchor(b, ts), d = curve(p, fs, q, ts);
-      const col = colorOf(e.color);
-      h += `<path d="${d}" class="${selEdge === e.id ? "sel" : ""}" ${col ? `style="stroke:${col}"` : ""} marker-end="url(#arr)"/><path d="${d}" class="hit" data-edge="${esc(e.id)}"/>`;
+      const col = colorOf(e.color), sb = e.sb || {};
+      // AUTO boards: thicker = stronger Link Doctor score, dashed = weak or suggested
+      const st = [col ? `stroke:${col}` : "", sb.score != null ? `stroke-width:${(1 + sb.score * 2.6).toFixed(2)};stroke-opacity:${(0.35 + sb.score * 0.6).toFixed(2)}` : ""].filter(Boolean).join(";");
+      const cls = [selEdge === e.id ? "sel" : "", sb.kind === "weak" || sb.kind === "suggest" ? "dash" : "", sb.kind === "step" ? "step" : ""].filter(Boolean).join(" ");
+      h += `<path d="${d}" class="${cls}" ${st ? `style="${st}"` : ""} ${e.toEnd === "none" ? "" : 'marker-end="url(#arr)"'} ${e.fromEnd === "arrow" ? 'marker-start="url(#arr)"' : ""}/><path d="${d}" class="hit" data-edge="${esc(e.id)}"/>`;
       if (e.label) h += `<text x="${(p[0] + q[0]) / 2 + 6}" y="${(p[1] + q[1]) / 2 - 6}">${esc(e.label)}</text>`;
     }
     if (temp) h += `<path class="temp" d="${temp}"/>`;
-    svg.innerHTML = `<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="rgba(242,242,242,0.6)" stroke="none"/></marker></defs>` + h;
+    svg.innerHTML = `<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="rgba(242,242,242,0.6)" stroke="none"/></marker></defs>` + h;
   }
 
   // ---------- camera ----------
@@ -286,26 +291,91 @@
   $("b-new").onclick = () => modal(`<div class="m-h">NEW MOODBOARD</div><input name="n" placeholder="name, e.g. sixer art bible" required maxlength="50" />
     <div class="m-row"><button type="button" data-cancel>CANCEL</button><button type="submit">CREATE</button></div>`, (m) => { const v = m.querySelector("input").value; closeModal(); newBoard(v); });
 
-  // AUTO: lay out every note with a tag or kind as a moodboard grid, images first
+  // AUTO: build a board from the brain itself. Four modes:
+  //   TAG / KIND  every note with a tag or kind as a moodboard grid, images first
+  //   LINKS       a note plus its neighbours 1-2 hops out, arrows follow the real links
+  //   FLOW        a technique or process as ordered steps, with the notes it uses
+  //   CLUSTERS    groups of densely linked notes (all notes, or one kind or tag)
+  // Rebuilding the same unsaved board replaces it instead of stacking copies.
+  function autoBoard(name, d) {
+    const id = slugify(name), old = boards.find((b) => b.id === id);
+    if (old && old.local) { old.data = d; drafts[id] = d; saveDrafts(); open(id); return; }
+    newBoard(name, d);
+  }
+  function tagGrid(v) {
+    const key = v.slice(2), isKind = v[0] === "k";
+    const list = notes.filter((n) => (isKind ? n.noteKind === key : (n.tags || []).includes(key)))
+      .sort((a, b) => (firstImg(b) ? 1 : 0) - (firstImg(a) ? 1 : 0) || (b.added || "").localeCompare(a.added || "")).slice(0, 36);
+    const cols = Math.ceil(Math.sqrt(list.length * 1.4)), W = 280, H = 260, G = 30;
+    const nodes = list.map((n, i) => ({ id: uid(), type: "file", file: n.path, x: (i % cols) * (W + G), y: Math.floor(i / cols) * (H + G), width: W, height: firstImg(n) ? H : 150 }));
+    const rows = Math.ceil(list.length / cols);
+    nodes.unshift({ id: uid(), type: "group", label: (isKind ? key : "#" + key).toUpperCase(), x: -30, y: -40, width: cols * (W + G) + 30, height: rows * (H + G) + 40, color: "4" });
+    autoBoard(key + " board", { nodes, edges: [] });
+    toast(`Built a board from ${list.length} notes. SAVE to keep it in the repo.`);
+  }
+  function linkBoard(n, opts) {
+    const r = AUTO.links(n, opts);
+    autoBoard(r.name, { nodes: r.nodes, edges: r.edges });
+    toast(r.count > 1 ? `<b>${esc(n.label)}</b> and ${r.count - 1} linked notes. Thicker = stronger link, dashed = weak or suggested. SAVE to keep it.`
+      : `<b>${esc(n.label)}</b> has no links yet. Turn on suggested links, or link it from the note panel.`);
+  }
+  function flowBoard(n) {
+    const r = AUTO.flow(n);
+    if (!r) { toast(`<b>${esc(n.label)}</b> has no steps to lay out, so here are its links instead.`); return linkBoard(n, { hops: 1, suggested: true }); }
+    autoBoard(r.name, { nodes: r.nodes, edges: r.edges });
+    toast(r.what === "STEPS" ? `${r.count} steps from <b>${esc(n.label)}</b>. SAVE to keep it.`
+      : `<b>${esc(n.label)}</b> has no numbered steps saved, so this is an outline from its summary.`);
+  }
+  function clusterBoard(scope) {
+    const list = scope === "all" ? notes : scope[0] === "k" ? notes.filter((n) => n.noteKind === scope.slice(2)) : notes.filter((n) => (n.tags || []).includes(scope.slice(2)));
+    const r = AUTO.clusters(list);
+    if (!r.groups) { toast("No linked notes there to cluster yet."); return; }
+    const label = scope === "all" ? "all notes" : scope.slice(2);
+    autoBoard(label + " clusters", { nodes: r.nodes, edges: r.edges });
+    toast(`${r.groups} clusters, ${r.count} notes${r.loose ? `. ${r.loose} notes with no links were left out` : ""}. SAVE to keep it.`);
+  }
+  const noteSearch = (name, ph, pool) => `<input name="${name}" list="${name}-l" class="vsearch" style="width:100%" placeholder="${ph}" autocomplete="off" />
+    <datalist id="${name}-l">${pool.map((n) => `<option value="${esc(n.label)}">${esc(n.noteKind || n.topic)}</option>`).join("")}</datalist>`;
+  const findNote = (v) => { v = v.trim().toLowerCase(); return notes.find((n) => n.label.toLowerCase() === v) || notes.find((n) => n.label.toLowerCase().includes(v) && v); };
+  let autoMode = "tag";
   $("b-auto").onclick = () => {
     const tagCount = new Map();
     for (const n of notes) for (const t of n.tags || []) tagCount.set(t, (tagCount.get(t) || 0) + 1);
     const tags = [...tagCount].filter(([, c]) => c >= 3).sort((a, b) => b[1] - a[1]);
     const kinds = [...new Set(notes.map((n) => n.noteKind).filter(Boolean))].sort();
-    modal(`<div class="m-h">AUTO MOODBOARD</div><p class="m-p">Lays out every note with this tag or kind, images first. You can rearrange it after.</p>
-      <select name="s" class="vsearch" style="width:100%">${kinds.map((k) => `<option value="k:${esc(k)}">kind: ${esc(k)}</option>`).join("")}${tags.map(([t, c]) => `<option value="t:${esc(t)}">#${esc(t)} (${c})</option>`).join("")}</select>
+    const kindTagOpts = kinds.map((k) => `<option value="k:${esc(k)}">kind: ${esc(k)}</option>`).join("") + tags.map(([t, c]) => `<option value="t:${esc(t)}">#${esc(t)} (${c})</option>`).join("");
+    const linked = [...notes].sort((a, b) => a.label.localeCompare(b.label));
+    const flows = AUTO.flowable();
+    modal(`<div class="m-h">AUTO CANVAS</div>
+      <div class="vtabs cv-modes">${[["tag", "TAG / KIND"], ["links", "LINKS"], ["flow", "FLOW"], ["clusters", "CLUSTERS"]].map(([k, l]) => `<button type="button" data-mode="${k}">${l}</button>`).join("")}</div>
+      <div data-pane="tag"><p class="m-p">Every note with this tag or kind as a moodboard grid, images first.</p>
+        <select name="s" class="vsearch" style="width:100%">${kindTagOpts}</select></div>
+      <div data-pane="links"><p class="m-p">A note in the middle, its links around it and their links further out (max ${AUTO.MAX_NODES} cards). Arrows follow the links you wrote; thicker means a stronger link.</p>
+        ${noteSearch("ln", "pick a note: type to search", linked)}
+        <div class="cv-opts"><label><input type="radio" name="hops" value="1" /> 1 hop</label><label><input type="radio" name="hops" value="2" checked /> 2 hops</label>
+        <label><input type="checkbox" name="sug" checked /> suggested links (dashed)</label></div></div>
+      <div data-pane="flow"><p class="m-p">A technique or process as ordered steps (snaking left to right), with the notes it uses underneath. Notes without numbered steps get an outline from their summary.</p>
+        <select name="f" class="vsearch" style="width:100%">${flows.map(({ n, k }) => `<option value="${esc(n.slug)}">${esc(n.label)} · ${k ? k + " steps" : "outline"}</option>`).join("")}</select></div>
+      <div data-pane="clusters"><p class="m-p">Finds groups of notes that link to each other and puts each in its own labelled group (up to 8 groups, 40 cards).</p>
+        <select name="c" class="vsearch" style="width:100%"><option value="all">all notes</option>${kindTagOpts}</select></div>
       <div class="m-row"><button type="button" data-cancel>CANCEL</button><button type="submit">BUILD</button></div>`, (m) => {
-      const v = m.querySelector("select").value, key = v.slice(2), isKind = v[0] === "k";
-      closeModal();
-      const list = notes.filter((n) => (isKind ? n.noteKind === key : (n.tags || []).includes(key)))
-        .sort((a, b) => (firstImg(b) ? 1 : 0) - (firstImg(a) ? 1 : 0) || (b.added || "").localeCompare(a.added || "")).slice(0, 36);
-      const cols = Math.ceil(Math.sqrt(list.length * 1.4)), W = 280, H = 260, G = 30;
-      const nodes = list.map((n, i) => ({ id: uid(), type: "file", file: n.path, x: (i % cols) * (W + G), y: Math.floor(i / cols) * (H + G), width: W, height: firstImg(n) ? H : 150 }));
-      const rows = Math.ceil(list.length / cols);
-      nodes.unshift({ id: uid(), type: "group", label: (isKind ? key : "#" + key).toUpperCase(), x: -30, y: -40, width: cols * (W + G) + 30, height: rows * (H + G) + 40, color: "4" });
-      newBoard((isKind ? "" : "") + key + " board", { nodes, edges: [] });
-      toast(`Built a board from ${list.length} notes. SAVE to keep it in the repo.`);
+      const val = (sel) => m.querySelector(sel)?.value || "";
+      if (autoMode === "links") {
+        const n = findNote(val('[name="ln"]'));
+        if (!n) { toast("Pick a note from the list first."); return; }
+        closeModal(); linkBoard(n, { hops: +val('[name="hops"]:checked'), suggested: m.querySelector('[name="sug"]').checked });
+      } else if (autoMode === "flow") { const n = bySlug.get(val('[name="f"]')); closeModal(); if (n) flowBoard(n); }
+      else if (autoMode === "clusters") { const v = val('[name="c"]'); closeModal(); clusterBoard(v); }
+      else { const v = val('[name="s"]'); closeModal(); tagGrid(v); }
     });
+    const m = document.querySelector(".modal-card") || document;
+    const setMode = (k) => {
+      autoMode = k;
+      m.querySelectorAll("[data-mode]").forEach((b) => b.classList.toggle("on", b.dataset.mode === k));
+      m.querySelectorAll("[data-pane]").forEach((p) => (p.hidden = p.dataset.pane !== k));
+    };
+    m.querySelectorAll("[data-mode]").forEach((b) => (b.onclick = () => setMode(b.dataset.mode)));
+    setMode(autoMode);
   };
 
   // ---------- keys, save, download ----------
@@ -344,5 +414,18 @@
   };
 
   place();
-  open(decodeURIComponent(location.hash.slice(1)) || "pixel-art-look");
+  // deep links from a note's panel: #auto=links:<slug>, #auto=flow:<slug>, #auto=clusters:all
+  function deepLink() {
+    const deep = /^auto=(links|flow|clusters):(.+)$/.exec(decodeURIComponent(location.hash.slice(1)));
+    if (!deep) return false;
+    const [, mode, arg] = deep, n = bySlug.get(arg);
+    if (!board) open(boards[0]?.id);
+    if (mode === "clusters") clusterBoard(arg);
+    else if (!n) toast("Could not find that note.");
+    else if (mode === "flow") flowBoard(n);
+    else linkBoard(n, { hops: 2, suggested: true });
+    return true;
+  }
+  addEventListener("hashchange", deepLink);
+  if (!deepLink()) open(decodeURIComponent(location.hash.slice(1)) || "pixel-art-look");
 })();
