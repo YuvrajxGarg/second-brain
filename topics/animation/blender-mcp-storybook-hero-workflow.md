@@ -40,3 +40,4 @@ https://x.com/rewind02/status/2119821740058546282?a=4tYjy-hUHaGuRBuPsQw&s=20
 - [[sharma-sweets-3d-shopfront]]: both 3d-character
 - [[impossible-weapon-knight-animation]]: both animation
 - [[cascadeur-2026-3-release]]: both 3d-character, rigging, mcp
+- [[claude-blender-samurai-build]]: both 3d-character, blender, rigging

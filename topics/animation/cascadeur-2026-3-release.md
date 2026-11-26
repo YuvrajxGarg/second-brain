@@ -25,3 +25,4 @@ https://x.com/EugeneDyabin/status/2125937757151285478?a=yTzg4f-m_aBKUJ8bC50&s=20
 - [[blender-mcp-storybook-hero-workflow]]: same idea of an AI agent driving a 3D tool over MCP for character work
 - [[toyxyz-blender-retargeter]]: another tool for getting mocap onto characters
 - [[procedural-arm-rig-demo]]: IK rigging, like Cascadeur's new IK chains
+- [[claude-blender-samurai-build]]: both 3d-character, rigging

@@ -110,7 +110,7 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 116 entries, 55 with style notes. Rebuilt on every filing._
+_From 117 entries, 56 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -120,7 +120,7 @@ _From 116 entries, 55 with style notes. Rebuilt on every filing._
 - `website-ref`: 5
 - `game-ref`: 4
 - `tool`: 13
-- `technique`: 18
+- `technique`: 19
 - `advice`: 6
 - `idea`: 3
 - `thought`: 3
@@ -130,7 +130,7 @@ _From 116 entries, 55 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (24), #inspiration (20), #claude (18), #open-source (17), #agents (16), #desktop-app (16), #reference (16), #browser-game (13), #pxlvzn (12), #ui (10), #mcp (9), #revolio-labs (9), #visual-design (9), #video-generation (7), #workflow (7), #3d-art (6), #game-inspiration (6), #pixel-art (6), #threejs (6)
+#own-project (42), #to-try (24), #inspiration (20), #claude (18), #open-source (17), #agents (16), #desktop-app (16), #reference (16), #browser-game (13), #pxlvzn (12), #ui (10), #mcp (9), #revolio-labs (9), #visual-design (9), #video-generation (7), #workflow (7), #3d-art (6), #blender (6), #game-inspiration (6), #pixel-art (6)
 
 ### Style notes and where they come from
 
@@ -196,6 +196,7 @@ _From 116 entries, 55 with style notes. Rebuilt on every filing._
 - **dark slate grid floor**: [Lastmaglab shooter style](topics/gamedev/lastmaglab-top-down-shooter.md)
 - **dark slate theme**: [People of Bengaluru](topics/design/people-of-bengaluru-site.md)
 - **dark ui with bold white headline**: [Tabworthy site directory](topics/tech/tabworthy-site-directory.md)
+- **dark ui with orange step numbers**: [Claude Blender samurai](topics/animation/claude-blender-samurai-build.md)
 - **dense dots squares and crosses**: [Neural network data viz](topics/design/neural-network-data-viz.md)
 - **desi street shopfront**: [Sharma Sweets 3D style](topics/gamedev/sharma-sweets-3d-shopfront.md)
 - **dither**: [Ladybug VFX app](topics/video-editing/ladybug-vfx-app.md)
@@ -267,6 +268,7 @@ _From 116 entries, 55 with style notes. Rebuilt on every filing._
 - **real people as characters**: [People of Bengaluru](topics/design/people-of-bengaluru-site.md)
 - **receipt cards**: [Meter Down concept](topics/gamedev/meter-down-concept.md)
 - **red and black**: [Runaway Light Rig](topics/gamedev/runaway-light-rig.md)
+- **red and black samurai armour on grey stage**: [Claude Blender samurai](topics/animation/claude-blender-samurai-build.md)
 - **red ink outline accents**: [Impossible Weapon animation](topics/animation/impossible-weapon-knight-animation.md)
 - **rolling counters**: [Cinematic film skill](topics/video-editing/cinematic-film-skill.md)
 - **sandy top-down battlefield**: [Sprite stacking skill](topics/gamedev/sprite-stacking-canvas-skill.md)
@@ -282,6 +284,7 @@ _From 116 entries, 55 with style notes. Rebuilt on every filing._
 - **sky blue to sand gradient**: [Wedding co-op game](topics/gamedev/wedding-co-op-game.md)
 - **small green accent button**: [Tabworthy site directory](topics/tech/tabworthy-site-directory.md)
 - **soft serif headline**: [Blooming flowers site](topics/animation/mohamed-siddique-flower-site.md)
+- **split screen code panel and blender viewport**: [Claude Blender samurai](topics/animation/claude-blender-samurai-build.md)
 - **spray paint type**: [Bonk Court game](topics/gamedev/bonk-court-game.md)
 - **stamps and highlighter swipes**: [Cinematic film skill](topics/video-editing/cinematic-film-skill.md)
 - **stock ticker ui**: [SLANGDAQ game](topics/revolio/slangdaq-game.md)
