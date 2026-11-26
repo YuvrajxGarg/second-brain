@@ -110,11 +110,11 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 111 entries, 53 with style notes. Rebuilt on every filing._
+_From 113 entries, 54 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
-- `library`: 5
+- `library`: 6
 - `asset-source`: 2
 - `style-ref`: 10
 - `website-ref`: 5
@@ -123,14 +123,14 @@ _From 111 entries, 53 with style notes. Rebuilt on every filing._
 - `technique`: 17
 - `advice`: 6
 - `idea`: 2
-- `thought`: 2
+- `thought`: 3
 - `todo`: 2
 - `org`: 3
 - `project`: 41
 
 ### Top tags
 
-#own-project (42), #to-try (23), #inspiration (19), #agents (16), #claude (16), #desktop-app (16), #reference (16), #open-source (15), #browser-game (13), #pxlvzn (12), #video-editing (11), #ui (10), #revolio-labs (9), #visual-design (9), #animation (8), #mcp (8), #revolio (8), #video-generation (7), #workflow (7), #3d-art (6)
+#own-project (42), #to-try (24), #inspiration (19), #claude (17), #open-source (17), #agents (16), #desktop-app (16), #reference (16), #browser-game (13), #pxlvzn (12), #video-editing (11), #ui (10), #revolio-labs (9), #visual-design (9), #animation (8), #mcp (8), #revolio (8), #video-generation (7), #workflow (7), #3d-art (6)
 
 ### Style notes and where they come from
 
@@ -171,6 +171,7 @@ _From 111 entries, 53 with style notes. Rebuilt on every filing._
 - **chunky armoured knights**: [Impossible Weapon animation](topics/design/impossible-weapon-knight-animation.md)
 - **chunky flat pixel art**: [Captcha launch film](topics/design/captcha-launch-film.md)
 - **chunky pixel art cars**: [Sprite stacking technique](topics/gamedev/sprite-stacking-pixel-art.md)
+- **chunky pixel art tanks and props**: [Sprite stacking skill](topics/gamedev/sprite-stacking-canvas-skill.md)
 - **chunky props**: [Lastmaglab shooter style](topics/gamedev/lastmaglab-top-down-shooter.md)
 - **cinematic letterbox grade**: [Escapement Blender film](topics/ai/escapement-blender-short-film.md)
 - **clean sans type**: [Revolio Labs](topics/business/revolio-labs.md)
@@ -202,6 +203,7 @@ _From 111 entries, 53 with style notes. Rebuilt on every filing._
 - **dystopian concert stage**: [Runaway Light Rig](topics/gamedev/runaway-light-rig.md)
 - **expressive mascot**: [TapMac trackpad app](topics/design/tapmac-trackpad-app.md)
 - **fake 3d from 2d slices**: [Sprite stacking technique](topics/gamedev/sprite-stacking-pixel-art.md)
+- **fake 3d from stacked 2d slices**: [Sprite stacking skill](topics/gamedev/sprite-stacking-canvas-skill.md)
 - **floating islands on black**: [Pixel-art gaussian splats](topics/gamedev/pixel-art-gaussian-splats.md)
 - **frosted glass chat panel**: [Claude Code reactive theme](topics/ai/claude-code-reactive-theme.md)
 - **georgia serif**: [Wedding co-op game](topics/gamedev/wedding-co-op-game.md)
@@ -221,6 +223,7 @@ _From 111 entries, 53 with style notes. Rebuilt on every filing._
 - **gritty scarred skin detail**: [MetaHuman Maker addon](topics/gamedev/metahuman-maker-agent-addon.md)
 - **hairline strokes**: [PXLVZN label](topics/tech/pxlvzn-label.md)
 - **halftone**: [Ladybug VFX app](topics/design/ladybug-vfx-app.md)
+- **halftone dither shadows**: [Sprite stacking skill](topics/gamedev/sprite-stacking-canvas-skill.md)
 - **hand-drawn animation**: [AI tween harness](topics/design/ai-tween-paint-harness.md)
 - **hand-drawn flowers growing on a dot grid**: [Blooming flowers site](topics/design/mohamed-siddique-flower-site.md)
 - **hand-drawn pastel stickers**: [Stick It Up stickers](topics/design/stick-it-up-stickers.md)
@@ -263,6 +266,7 @@ _From 111 entries, 53 with style notes. Rebuilt on every filing._
 - **red and black**: [Runaway Light Rig](topics/gamedev/runaway-light-rig.md)
 - **red ink outline accents**: [Impossible Weapon animation](topics/design/impossible-weapon-knight-animation.md)
 - **rolling counters**: [Cinematic film skill](topics/ai/cinematic-film-skill.md)
+- **sandy top-down battlefield**: [Sprite stacking skill](topics/gamedev/sprite-stacking-canvas-skill.md)
 - **scroll side-scroller**: [Revolio Labs site](topics/gamedev/revolio-labs-site.md)
 - **scrubbable timeline**: [Sleep alarm UI](topics/design/sleep-alarm-ui.md)
 - **serif headings with mono stats**: [Strawhat homelab dashboard](topics/design/strawhat-homelab-dashboard.md)
@@ -305,6 +309,7 @@ _From 111 entries, 53 with style notes. Rebuilt on every filing._
 
 ### Every reference with his reason
 
+- [Sprite stacking skill](topics/gamedev/sprite-stacking-canvas-skill.md) (`library`): Game art style
 - [Skillsync skills marketplace](topics/ai/skillsync-skills-marketplace.md) (`tool`): a place to publish agent skills and get paid when people or agents use them
 - [Tabworthy site directory](topics/tech/tabworthy-site-directory.md) (`tool`): directory of hidden-gem websites to explore
 - [Flat Finder map](topics/design/flat-finder-map.md) (`website-ref`): map web app built with Claude, nice dark map with glowing buildings

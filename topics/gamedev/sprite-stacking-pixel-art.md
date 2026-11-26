@@ -24,3 +24,4 @@ https://x.com/asynkimo/status/2121716250820964431
 ## Notes
 Related: [[pixel-search-sprite-database]], [[godot-waterfall-texture-array-shader]]
 - [[pixel-art-gaussian-splats]]: both pixel-art
+- [[sprite-stacking-canvas-skill]]: named here; both sprites, pixel-art
