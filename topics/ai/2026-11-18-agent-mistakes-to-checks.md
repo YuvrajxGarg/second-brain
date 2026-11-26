@@ -49,3 +49,4 @@ Start a fresh subagent (not a fork) as the judge. Give it the table and the diff
 A table: mistake, times seen, examples, fix type, the CLAUDE.md lines to delete. Then the diffs. Stop and wait for my yes.
 </output>
 ```
+- [[2026-11-26-ai-group-shot-retouch]]: names this note; both workflow, claude
