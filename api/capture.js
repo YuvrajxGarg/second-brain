@@ -113,6 +113,8 @@ const reply = (res, code, msg) => res.status(code).setHeader("Content-Type", "te
 module.exports = async function handler(req, res) {
   res.setHeader("Cache-Control", "no-store");
   const who = W.access(req);
+  // One line per request so the Vercel logs show whether a device got through (never the key).
+  console.log(`capture ${req.method} access=${who} len=${req.headers["content-length"] || "?"} ua=${String(req.headers["user-agent"] || "").slice(0, 60)}`);
   if (req.method === "GET") {
     if (who === "ok") return reply(res, 200, "Key OK. Brain capture is ready.");
     return reply(res, who === "bad" ? 403 : 401, who === "bad" ? "Wrong key (or too many tries, wait 15 minutes)." : "Brain capture endpoint. POST with Authorization: Bearer <capture key>.");
@@ -215,8 +217,10 @@ module.exports = async function handler(req, res) {
     ];
     writes.unshift({ path: `inbox/${base}.md`, content: [...fm, ...body].join("\n") });
     await W.commit(`capture: ${W.oneLine(title).slice(0, 60)} (from ${via})`, writes);
+    console.log(`capture saved ${base}`);
     return reply(res, 201, `Saved to inbox: ${W.oneLine(title).slice(0, 80)}`);
   } catch (e) {
+    console.error(`capture failed: ${e.message}`);
     return reply(res, 502, `Not saved (GitHub error: ${e.message}). Try again.`);
   }
 };
