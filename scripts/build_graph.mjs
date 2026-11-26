@@ -59,6 +59,7 @@ function parse(file) {
     state: unq(meta.state) || null,
     stack: unq(meta.stack).replace(/^\[|\]$/g, "").split(",").map((t) => unq(t)).filter(Boolean),
     style: unq(meta.style).replace(/^\[|\]$/g, "").split(",").map((t) => unq(t)).filter(Boolean),
+    kit: unq(meta.kit).replace(/^\[|\]$/g, "").split(",").map((t) => unq(t).toLowerCase()).filter(Boolean),
     body: m ? text.slice(m[0].length) : text,
   };
 }
@@ -111,6 +112,35 @@ for (const pm of projectFiles.filter((f) => path.basename(f) === "project.md" &&
   bySlug.set(p.slug, p);
 }
 for (const f of projectFiles.filter((f) => MEDIA_EXT.test(f))) files.push(f);
+
+// Next steps and playtests for projects (Board cards, MCP catalog). First match wins:
+// open items in the vault's todo.md, "Fix next" in the latest playtest, "Next" in the
+// latest log entry, then the note's own ## Next. Same order as next_steps() in build_index.py.
+const bulletsOf = (t) => (t || "").split("\n").map((l) => /^\s*[-*] (\[([ xX])\] )?(.+)/.exec(l)).filter((m) => m && !/[xX]/.test(m[2] || "")).map((m) => m[3].trim());
+const latestEntry = (t) => { const parts = (t || "").split(/^## /m); return parts.length > 1 ? "## " + parts[1] : ""; };
+function nextSteps(n) {
+  const doc = (name) => (n.docs || []).find((d) => d.name === name)?.body || "";
+  const todo = [...doc("todo.md").matchAll(/^\s*[-*] \[ \] (.+)$/gm)].map((m) => m[1].trim());
+  if (todo.length) return todo;
+  for (const [name, head] of [["playtests.md", "\\*\\*Fix next\\*\\*"], ["log.md", "\\*\\*Next\\*\\*"]]) {
+    const m = new RegExp(head + "[ \\t]*\\n([\\s\\S]*?)(?=\\n\\*\\*|\\n## |$)").exec(latestEntry(doc(name)));
+    if (m && bulletsOf(m[1]).length) return bulletsOf(m[1]);
+  }
+  const sec = /^#+ Next[ \t]*\n([\s\S]*?)(?=^#+ |(?![\s\S]))/m.exec(n.body || "");
+  return sec ? bulletsOf(sec[1]) : [];
+}
+function playtestStats(n) {
+  const t = (n.docs || []).find((d) => d.name === "playtests.md")?.body || "";
+  const heads = [...t.matchAll(/^## (\d{4}-\d\d-\d\d)(?: · ([^\n·]+))?/gm)];
+  return heads.length ? { count: heads.length, last: heads[0][1], build: (heads[0][2] || "").trim() } : null;
+}
+for (const n of notes) {
+  if (n.kind !== "project") continue;
+  const nx = nextSteps(n);
+  if (nx.length) n.next = nx.slice(0, 5);
+  const pt = playtestStats(n);
+  if (pt) n.playtests = pt;
+}
 
 // keep links.json (written by scripts/link_doctor.py just before this) across the wipe
 let linksJson = null;
@@ -187,6 +217,9 @@ for (const n of notes) {
     style: n.style,
     state: n.state,
     stack: n.stack,
+    kit: n.kit,
+    next: n.next || null,
+    playtests: n.playtests || null,
     body,
     related: [...related],
     suggest: (doctor.suggest[n.slug] || []).filter((x) => bySlug.has(x.to)).map((x) => [x.to, x.score, x.reason]),

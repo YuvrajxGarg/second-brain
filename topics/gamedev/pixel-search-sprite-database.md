@@ -6,6 +6,7 @@ tags: [pixel-art, sprites, game-assets, semantic-search, hugging-face, reference
 kind: asset-source
 why: sprites database for games I build
 style: [pixel art]
+kit: [2d]
 source: https://huggingface.co/spaces/cfahlgren1/pixel-search
 added: 2026-11-09
 status: unread

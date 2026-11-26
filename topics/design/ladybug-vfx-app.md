@@ -6,6 +6,7 @@ tags: [vfx, video-editing, browser-tool, reference]
 kind: tool
 why: benchmark for the Revolio Labs VFX feature
 style: [halftone, ascii, dither, glitch]
+kit: [vfx]
 source: https://theladybug.app/
 added: 2026-11-10
 status: unread

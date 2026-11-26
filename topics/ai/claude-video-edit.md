@@ -5,6 +5,7 @@ topic: ai
 tags: [claude, video-editing, agents, inspiration]
 kind: technique
 why: a full YouTube video edited and rendered entirely with Claude (360 GB of footage)
+kit: [edit]
 source: https://x.com/udayan_w/status/2122732735496355860
 added: 2026-11-18
 status: unread

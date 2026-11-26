@@ -22,7 +22,13 @@ Tukaram Munde prototype that is ready, but we are currently building on it.
 
 For context, should we add like all the projects that I've already made with their particular tags from my GitHub, like GitHub and my Vercel account, like the Revolio Studio, Revolio Labs, the Pixel utility engine that I've made, the games I've made, Peaked, Tukaram Munde prototype that is ready, but we are currently building on it. We have a lot of games like pixel art games. Just for the context of the second brain and for the agents to pick from.
 
+## Next
+From its TODO (playtest logs and the vault's todo.md take over once they exist):
+- Waiter tray pose
+- Fuller kitchens and storage
+- A room-focus camera
+- Kitchen sounds
+
 ## Notes
 - The idea and art refs: [[tukaram-munde-game]], [[sharma-sweets-3d-shopfront]].
-- Next up (from its TODO): waiter tray pose, fuller kitchens and storage, a room-focus camera, kitchen sounds.
 - [[revolio-labs]]: made under Revolio Labs; both revolio-labs, browser-game

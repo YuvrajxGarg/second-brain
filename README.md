@@ -20,10 +20,13 @@ one small markdown file, grouped by topic and tagged so it can be found again.
 - **Browse:** [INDEX.md](INDEX.md) by topic, [TAGS.md](TAGS.md) by tag.
 - **Site:** [brainy.pxlvzn.in](https://brainy.pxlvzn.in), built from [site/](site/) on Vercel.
   The **Graph** is an Obsidian-style map of every note, tag and topic. **Board** is a
-  Kanban of ideas, projects and reading (drag a card to change its stage), **Timeline**
+  Kanban of ideas, projects and reading (drag a card to change its stage; project cards
+  show their next steps and playtests), **Timeline**
   replays every note on the day it was saved, **Canvas** holds moodboards
   ([canvases/](canvases/), JSON Canvas) and **Gallery** shows saved views
-  ([views/](views/)). Ctrl/Cmd+K opens a command palette on every page, and the graph
+  ([views/](views/)), including the **Asset library**: everything tagged with a `kit`
+  area (LUTs and grading, sound, VFX, motion, shoot and DIT, edit tools, 3D, 2D),
+  searchable by look. Ctrl/Cmd+K opens a command palette on every page, and the graph
   brings back one unread save a day. Notes can be edited on the site (passcode).
 - **Links:** every note links 2 or 3 related notes under `## Notes`.
   [LINKS.md](LINKS.md) is the Link Doctor report (health score, broken and one-way
@@ -33,9 +36,11 @@ one small markdown file, grouped by topic and tagged so it can be found again.
 - **Projects:** [projects/](projects/) holds one folder per project of his, synced each
   night from `Documents/Vault` on his Mac (9:30 PM) and PC (10 PM) by
   [tools/vault-sync](tools/vault-sync/). Saying "log this to my brain" adds a dated
-  entry to that project's `log.md`.
+  entry to that project's `log.md`; "log this playtest" adds one entry per build played
+  to a game's `playtests.md` (what worked, broke, felt, and what to fix next).
 - **For AI tools:** start at [AGENTS.md](AGENTS.md). [TASTE.md](TASTE.md) is the
-  taste profile, [catalog/](catalog/) groups notes by kind, [IDEAS.md](IDEAS.md)
+  taste profile, [catalog/](catalog/) groups notes by kind ([kit.md](catalog/kit.md) is
+  the asset library), [IDEAS.md](IDEAS.md)
   lists ideas and to-dos, and `https://brainy.pxlvzn.in/mcp` is an MCP server any
   AI app can connect to (compact answers: taste summary first, fetch for detail).
 - **Me:** [ME.md](ME.md), a personality read, stats and insights for Yuvraj himself
@@ -58,7 +63,7 @@ one small markdown file, grouped by topic and tagged so it can be found again.
   (locked by the capture key), which drops each capture into `inbox/` to be filed.
 - **Entries:** `topics/<topic>/<slug>.md`, named by what the thing is (no date; the
   date is in `added:`), each with YAML frontmatter (`title`, `type`, `topic`, `tags`,
-  `kind`, `why`, `style`, `source`, `added`).
+  `kind`, `why`, `style`, `kit`, `source`, `added`).
 - **Deploys:** every note is pushed to `main` right away, but the site rebuilds in
   batches: once 5 notes are pending, when code changes, on the morning ideas run, or
   on a `[deploy]` commit ([scripts/vercel_ignore.sh](scripts/vercel_ignore.sh)).

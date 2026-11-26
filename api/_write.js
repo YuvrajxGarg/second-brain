@@ -19,6 +19,7 @@ const API = "https://api.github.com";
 
 const TYPES = ["link", "note", "idea", "bookmark", "quote", "video", "tool", "book", "person", "place", "recipe", "todo", "game", "app", "site", "concept", "company"];
 const KEBAB = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+const KIT = ["grade", "sound", "vfx", "motion", "shoot", "edit", "3d", "2d"]; // mirrors KIT in scripts/build_index.py
 const THIRD_PERSON = /\b(his own|yuvraj'?s|added as context)\b/i;
 const MAX_IMAGE = 4_500_000;
 
@@ -237,6 +238,8 @@ function problems(a, kinds, stages, topics) {
   if (!oneLine(a.summary)) out.push("summary is missing: 1-3 sentences in your words");
   if (!String(a.raw || "").trim()) out.push("raw is missing: exactly what he sent, never dropped");
   if (a.source && !/^https?:\/\//.test(String(a.source))) out.push("source must be a full http(s) URL");
+  const badKit = list(a.kit).filter((k) => !KIT.includes(k));
+  if (badKit.length) out.push(`kit areas must be from ${KIT.join(", ")}: got ${badKit.join(", ")}`);
   return out;
 }
 
@@ -257,6 +260,7 @@ const CAPTURE = {
       kind: { type: "string", description: "What it is useful as: style-ref, website-ref, game-ref, library, asset-source, tool, technique, advice, idea, thought, todo, project, org." },
       why: { type: "string", description: "His reason for saving it, in his words when he gave one. Never third person." },
       style: { type: "array", items: { type: "string" }, description: "Visual things only: 2-5 short descriptors of the look, no commas inside one." },
+      kit: { type: "array", items: { type: "string", enum: KIT }, description: "Only for things he'd use on a shoot, in an edit or in a game build (LUTs, SFX packs, effects, plugins, asset packs, footage tools, shoot guides): grade, sound, vfx, motion, shoot, edit, 3d, 2d. Puts it in his asset library." },
       stage: { type: "string", description: "kind idea/todo only: new, exploring, doing, done, dropped. Usually new." },
       source: { type: "string", description: "The link, if there is one." },
       summary: { type: "string", description: "1-3 sentences in your own words: what it is and why it was saved. For a link, from actually reading it; if it couldn't be read, say so. For an image, describe what's in it so it's searchable." },
@@ -329,7 +333,32 @@ const LOG = {
   annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false },
 };
 
-const WRITE_TOOLS = [CAPTURE, UPDATE, LOG];
+const PLAYTEST = {
+  name: "log_playtest",
+  title: "Log a game playtest",
+  description:
+    "For 'log this playtest' / 'playtest notes' on one of his games: adds one dated entry for a build he (or friends) played, newest first, to projects/<slug>/playtests.md; the daily vault sync copies it into Documents/Vault/<Game>/playtests.md. The newest entry's open 'Fix next' items become the game's next steps on the PROJECTS board. Finds the game by slug or name. A game that only has a brain note (no vault folder yet) gets projects/<slug>/project.md pointing at that note, so nothing is duplicated. Use his words; one line per bullet.",
+  inputSchema: {
+    type: "object",
+    properties: {
+      project: { type: "string", description: "Game slug or name, e.g. 'munde-mode' or 'Peakd'." },
+      build: { type: "string", description: "Build or version played, e.g. 'v0.4', 'web build 26 Nov', a commit or a branch." },
+      headline: { type: "string", description: "3-6 words: what this build was about, e.g. 'first full raid loop'." },
+      played_by: { type: "string", description: "Who played: 'me', 'me + 2 friends', 'Discord testers'. First names only, never contact details." },
+      platform: { type: "string", description: "Optional: web, Mac, Windows, iPhone..." },
+      worked: { type: "array", items: { type: "string" }, description: "What landed: fun moments, things that worked." },
+      broke: { type: "array", items: { type: "string" }, description: "Bugs and things that broke." },
+      felt: { type: "array", items: { type: "string" }, description: "Feel, pacing, difficulty, confusion; his words." },
+      fix_next: { type: "array", items: { type: "string" }, description: "What to fix or try in the next build (become open checkboxes)." },
+      link: { type: "string", description: "Optional: build URL, recording or clip (public links only)." },
+    },
+    required: ["project", "build", "headline"],
+    additionalProperties: false,
+  },
+  annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false },
+};
+
+const WRITE_TOOLS = [CAPTURE, UPDATE, LOG, PLAYTEST];
 const ok = (t) => ({ content: [{ type: "text", text: t }] });
 const no = (t) => ({ content: [{ type: "text", text: t }], isError: true });
 
@@ -397,6 +426,7 @@ async function doCapture(a, brain, kinds, stages) {
     `kind: ${a.kind}`,
     `why: ${yamlStr(a.why)}`,
     style.length && `style: [${style.join(", ")}]`,
+    list(a.kit).length && `kit: [${[...new Set(list(a.kit))].join(", ")}]`,
     idea && `stage: ${a.stage}`,
     a.source && `source: ${oneLine(a.source)}`,
     `added: ${today()}`,
@@ -462,18 +492,73 @@ async function doUpdate(a, brain, stages) {
   return ok(`Updated ${title} (${path}): ${done.join(", ")}${rel.warn.length ? `; ${rel.warn.join("; ")}` : ""}. commit ${sha.slice(0, 7)}`);
 }
 
-async function doLog(a, brain) {
-  const { paths } = await tree();
+// projects/<dir>/ for a slug or name, or null. Matches folder names, project.md titles
+// and note: links (a project note in topics/ that has a vault folder).
+function projectDir(project, brain, paths) {
   const dirs = [...new Set(paths.filter((p) => /^projects\/[^./][^/]*\/project\.md$/.test(p)).map((p) => p.split("/")[1]))];
-  const want = slugify(a.project, 12);
+  const want = slugify(project, 12);
   let dir = dirs.find((d) => d === want || slugify(d, 12) === want);
   if (!dir) {
-    // Match on project.md titles and on note: links (a project note in topics/).
     const vault = brain.notes.filter((n) => n.vault || n.vaultDir);
     const hit = vault.find((n) => slugify(n.title, 12) === want || n.slug.replace(/^\d{4}-\d{2}-\d{2}-/, "") === want || (n.vaultDir && slugify(n.vaultDir, 12) === want));
     dir = hit && (hit.vaultDir || hit.slug);
     if (dir && !dirs.includes(dir)) dir = null;
   }
+  return { dir, dirs, want };
+}
+
+// Prepend a dated entry to a newest-first doc (log.md, playtests.md).
+function prependEntry(doc, entry) {
+  const first = doc.search(/^## /m);
+  return (first < 0 ? doc.replace(/\n*$/, "\n\n") + entry : doc.slice(0, first) + entry + doc.slice(first)).replace(/\n{3,}/g, "\n\n");
+}
+
+async function doPlaytest(a, brain) {
+  const { paths } = await tree();
+  let { dir, dirs, want } = projectDir(a.project, brain, paths);
+  const writes = [];
+  let created = false, title = dir;
+  if (!dir) {
+    // A game with only a brain note: give it a vault folder attached to that note.
+    const games = brain.notes.filter((n) => n.kind === "project" && !n.vault);
+    const n = games.find((x) => x.slug === want || slugify(x.title, 12) === want || slugify(x.title.replace(/\b(game|concept)\b/gi, ""), 12) === want);
+    if (!n) {
+      const near = games.filter((x) => want.split("-").some((w) => w.length > 2 && (x.slug.includes(w) || x.title.toLowerCase().includes(w)))).slice(0, 6).map((x) => `${x.slug} (${x.title})`);
+      return no(`No game matches '${a.project}'. ${near.length ? `Close: ${near.join("; ")}. ` : ""}Call again with the right slug; if it's a new game, log_project with new_project first.`);
+    }
+    dir = n.slug.replace(/-(game|concept)$/, "");
+    title = oneLine(n.title);
+    if (dirs.includes(dir)) return no(`projects/${dir}/ exists but isn't linked to ${n.slug}; call again with project "${dir}".`);
+    writes.push({
+      path: `projects/${dir}/project.md`,
+      content: ["---", `title: ${yamlStr(n.title)}`, `type: ${n.type || "game"}`, `topic: ${n.topic}`, "tags: [own-project]", "kind: project",
+        `why: ${yamlStr(n.why || n.title)}`, `state: ${oneLine(n.state) || "in progress"}`, `stack: [${list(n.stack).join(", ")}]`, "repo: private",
+        "share: full               # summary for confidential work (this repo is public)", `note: ${n.slug}`, `added: ${today()}`, "---", "",
+        "## Summary", `Vault folder for ${oneLine(n.title)}; the card is the brain note ${n.slug}.`, ""].join("\n"),
+    });
+    created = true;
+  } else {
+    const pm = await getFile(`projects/${dir}/project.md`);
+    const share = (field(pm, "share") || "full").toLowerCase();
+    title = field(pm, "title") || dir;
+    if (share !== "full") return no(`${title} is share: ${share} (private), so its playtests stay in the vault. Give him the entry to paste into Documents/Vault/<Game>/playtests.md.`);
+  }
+  const path = `projects/${dir}/playtests.md`;
+  let doc = paths.includes(path) ? await getFile(path)
+    : `# ${title}: playtests\n\nOne entry per build played, newest first: what worked, what broke, how it felt, what to fix next.\n`;
+  const bl = (h, xs, box) => (list(xs).length ? `**${h}**\n${list(xs).map((x) => `- ${box ? "[ ] " : ""}${x}`).join("\n")}\n` : "");
+  const meta = [`**Build:** ${oneLine(a.build)}`, a.platform && `**Platform:** ${oneLine(a.platform)}`, a.played_by && `**Played by:** ${oneLine(a.played_by)}`, a.link && `**Link:** ${oneLine(a.link)}`].filter(Boolean).join("  \n");
+  const entry = `## ${today()} · ${oneLine(a.build)} · ${oneLine(a.headline)}\n\n${meta}\n\n` +
+    [bl("Worked", a.worked), bl("Broke", a.broke), bl("Felt", a.felt), bl("Fix next", a.fix_next, true)].filter(Boolean).join("\n") + "\n";
+  doc = prependEntry(doc, entry);
+  writes.push({ path, content: doc });
+  const sha = await commit(`playtest: ${dir} ${oneLine(a.build)} (from chat)`, writes);
+  return ok(`Logged playtest ${oneLine(a.build)} to ${path} (commit ${sha.slice(0, 7)})${created ? `; made projects/${dir}/project.md attached to the brain note` : ""}. It reaches Documents/Vault/${dir}/playtests.md on the next daily sync; open fixes show as next steps on the PROJECTS board after the next deploy.`);
+}
+
+async function doLog(a, brain) {
+  const { paths } = await tree();
+  let { dir, dirs, want } = projectDir(a.project, brain, paths);
   if (!dir && a.new_project) {
     const np = a.new_project;
     dir = slugify(np.title, 6);
@@ -536,6 +621,7 @@ async function callWriteTool(name, a, brain, kinds, stages) {
     if (name === "capture") return await doCapture(a, brain, kinds, stages);
     if (name === "update_note") return await doUpdate(a, brain, stages);
     if (name === "log_project") return await doLog(a, brain);
+    if (name === "log_playtest") return await doPlaytest(a, brain);
   } catch (e) {
     return no(`GitHub error, nothing was written: ${e.message}. Try once more; if it fails again, give him the note as text.`);
   }

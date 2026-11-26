@@ -5,6 +5,7 @@ topic: tech
 tags: [pxlvzn, own-project, desktop-app, audio]
 kind: project
 why: to split songs into vocals, drums, bass and other stems locally for edits and remixes
+kit: [sound, edit]
 state: live
 stack: [python, demucs]
 source: https://stm.pxlvzn.in

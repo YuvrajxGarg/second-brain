@@ -6,6 +6,7 @@ tags: [claude, generative-art, creative-coding, inspiration]
 kind: technique
 why: idea for game art: code-placed brush strokes instead of image models
 style: [painterly brushwork, invented artist styles]
+kit: [2d]
 source: https://x.com/jkeatn/status/2119874007382299087
 added: 2026-11-10
 status: unread

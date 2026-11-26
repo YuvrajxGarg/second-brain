@@ -5,6 +5,7 @@ topic: gamedev
 tags: [game-engine, mcp, game-assets, open-source, to-try]
 kind: tool
 why: game dev tools as one CLI and MCP, plus open-source assets
+kit: [2d, 3d]
 source: https://patch.gg
 added: 2026-11-10
 status: unread

@@ -5,6 +5,7 @@ topic: ai
 tags: [video-generation, video-editing, hugging-face, open-source, to-try]
 kind: tool
 why: open weight video upscaler available in ComfyUI
+kit: [vfx]
 source: https://www.instagram.com/reel/DfpWJb0BauP/
 added: 2026-11-13
 status: unread

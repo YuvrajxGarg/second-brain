@@ -5,6 +5,7 @@ topic: ai
 tags: [video-generation, agents, desktop-app, to-try]
 kind: tool
 why: AI agents write the code and it renders videos, motion graphics, 3D and games on your own Mac
+kit: [motion, 3d]
 source: https://raea.io/
 added: 2026-11-15
 status: unread

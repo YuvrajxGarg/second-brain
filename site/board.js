@@ -16,7 +16,7 @@
     },
     projects: {
       label: "PROJECTS", field: "state",
-      blurb: "What you have built, by where it stands",
+      blurb: "What you have built or plan to build, by where it stands, with what's next",
       test: (n) => n.noteKind === "project",
       cols: [["concept", "CONCEPT", "#f2f2f2"], ["in progress", "BUILDING", "#ffe14d"], ["live", "LIVE", "#39ff6a"], ["archived", "ARCHIVED", "#6b6b6b"]],
       colOf: (n) => {
@@ -55,6 +55,8 @@
       <div class="card-t">${esc(n.label)}</div>
       <div class="card-k">${esc(sub)}</div>
       ${n.why ? `<div class="card-w">${esc(n.why)}</div>` : ""}
+      ${mode === "projects" && n.next?.length ? `<div class="card-n"><span>NEXT</span>${n.next.slice(0, 2).map((x) => `<div>${esc(x)}</div>`).join("")}${n.next.length > 2 ? `<div class="more">+${n.next.length - 2} more</div>` : ""}</div>` : ""}
+      ${mode === "projects" && n.playtests ? `<div class="card-p">PLAYTESTS ${n.playtests.count} · LAST ${esc(n.playtests.last)}${n.playtests.build ? ` · ${esc(n.playtests.build)}` : ""}</div>` : ""}
       <button class="card-mv" type="button" title="Move to…" aria-label="Move ${esc(n.label)}">⋯</button>
     </a>`;
   }
@@ -63,7 +65,7 @@
     const B = BOARDS[mode];
     document.querySelectorAll("#tabs button").forEach((b) => b.classList.toggle("on", b.dataset.mode === mode));
     const q = $("q").value.trim().toLowerCase();
-    const list = all.filter(B.test).filter((n) => !q || [n.label, n.why, n.topic, (n.tags || []).join(" ")].join(" ").toLowerCase().includes(q))
+    const list = all.filter(B.test).filter((n) => !q || [n.label, n.why, n.topic, (n.tags || []).join(" "), (n.next || []).join(" ")].join(" ").toLowerCase().includes(q))
       .sort((a, b) => (b.added || "").localeCompare(a.added || ""));
     $("title").innerHTML = `${esc(B.blurb.toUpperCase())} · <b>${list.length}</b>`;
     $("hint").textContent = "Drag a card to another column (or use ⋯). It commits to main and needs your edit passcode. Click a card to open it in the graph.";

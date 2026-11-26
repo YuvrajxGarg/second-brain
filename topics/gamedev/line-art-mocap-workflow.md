@@ -6,6 +6,7 @@ tags: [animation, motion-capture, mixamo, creative-coding, inspiration]
 kind: technique
 why: cool line art animation workflow with motion capture and Mixamo integration also
 style: [wobbly hand-drawn black line art, beak-nosed stick characters, cream paper cards on yellow grid paper]
+kit: [motion]
 source: https://www.instagram.com/reel/DfoIiH5R7Mo/
 added: 2026-11-13
 status: unread

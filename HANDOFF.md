@@ -420,7 +420,9 @@ These come for free once the site is deployed:
 - `TASTE.md`: your taste profile for other AIs. Claude curates the top part as you
   save visual references, libraries and games; the evidence block is generated.
 - `catalog/`: notes grouped by `kind` (libraries, style refs, tools, techniques,
-  ideas, projects).
+  ideas, projects), plus `kit.md`: an asset library for your own work (LUTs, sound,
+  VFX, motion, shoot, edit, 3D, 2D) from the optional `kit` field. Rename the areas in
+  `KIT` (`scripts/build_index.py` and its mirrors) to fit your craft.
 - `IDEAS.md`: your ideas and to-dos by stage (`new`, `exploring`, `doing`, `done`,
   `dropped`).
 - `llms.txt`, `llms-full.txt`: the whole brain in plain text for any chat.
@@ -515,6 +517,7 @@ Documents/Vault/
     context.md   stack, conventions, decisions (for AI tools)
     todo.md      open tasks
     log.md       dated status, learnings, mistakes (log-to-brain writes here)
+    playtests.md games: one entry per build played (log-to-brain, playtest mode)
     checks.md    repeat mistakes turned into checks (mistakes-to-checks writes here)
     notes/       anything else
     _private/    never leaves the computer
@@ -564,6 +567,18 @@ taste to that project's `log.md`. Without file access it writes
 vault. Inside the brain project itself, "log this" means the same thing: a project
 log entry, not a new note.
 
+**Playtests (if you make games).** "Log this playtest" (or "playtest notes", "log build
+v0.4") makes the same skill write one entry to the game's `playtests.md` instead: build,
+who played, what worked, what broke, how it felt, and a `Fix next` checklist. The newest
+entry's open fixes become the game's next steps on the Board's PROJECTS tab, with a
+playtest count. From other chats the MCP tool `log_playtest` does it (3.11).
+
+**Next steps on the Board.** Each project card on the PROJECTS board shows what's next:
+open `- [ ]` items in its vault `todo.md`, else the newest playtest's fixes, else the
+newest log entry's "Next", else a `## Next` list in the note. A build idea you want to
+track can become `kind: project` with `state: concept` and a `## Next` list; it then
+sits in the CONCEPT column and still shows in `IDEAS.md`.
+
 ### 3.10 Mistakes to checks (optional)
 
 When an AI keeps making the same mistake, adding another line to its rules file rarely
@@ -596,7 +611,7 @@ phone), not only the brain project: "save this to my brain", "add this link to m
    It needs `GITHUB_TOKEN` from site editing (3.4). Redeploy.
 2. **Use the keyed URL as your connector.** In Claude, Settings > Connectors, edit your
    brain connector (or add one) with `https://<site-domain>/mcp?key=<CAPTURE_KEY>`. The
-   tools `capture`, `update_note` and `log_project` appear next to the read tools. Keep
+   tools `capture`, `update_note`, `log_project` and `log_playtest` appear next to the read tools. Keep
    the plain `/mcp` URL for anything you share: without the key it's read-only. Treat the
    keyed URL like a password.
 3. **Add the skill.** Zip `tools/capture-to-brain/` and upload it in Claude's skills

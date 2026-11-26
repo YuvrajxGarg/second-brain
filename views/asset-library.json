@@ -1,0 +1,9 @@
+{
+  "name": "Asset library",
+  "about": "What you reach for on a shoot, in an edit or a game build: LUTs, sound, VFX, motion, shoot gear, 3D and 2D assets. Narrow by KIT area, then click LOOK words to search by look.",
+  "layout": "gallery",
+  "filter": {
+    "hasKit": true
+  },
+  "sort": "added-desc"
+}

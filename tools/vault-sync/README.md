@@ -16,6 +16,7 @@ Documents/Vault/
     context.md         context for AI tools: stack, conventions, decisions
     todo.md            open tasks
     log.md             dated status, learnings, mistakes, taste (the log-to-brain skill writes here)
+    playtests.md       games: one entry per build you played (log-to-brain, playtest mode)
     notes/             anything else: .md, .txt, small images
     _private/          never leaves this computer
 ```
@@ -56,7 +57,7 @@ files for you.
 |---|---|
 | changed only in this vault | copied up to `projects/<slug>/` |
 | changed only in the repo (other computer) | copied down into this vault |
-| changed on both | `log.md`: entries from both computers merged, newest first. Other files: repo version kept; yours saved next to it as `name.conflict-<machine>-<date>.md` in both places. Merge, delete the copy |
+| changed on both | `log.md` and `playtests.md`: entries from both computers merged, newest first. Other files: repo version kept; yours saved next to it as `name.conflict-<machine>-<date>.md` in both places. Merge, delete the copy |
 | deleted in this vault | moved to `projects/.archive/<date>/` in the repo (never hard-deleted) |
 | deleted on the other computer | moved to `Vault/.trash/<date>/` here |
 
@@ -127,3 +128,11 @@ and it writes the session's status, learnings, mistakes and taste into
 `projects/`, then an existing brain note, linking with `note:`) so it never makes a
 copy. With no file access it appends to `projects/<slug>/log.md` through GitHub, and
 the next sync brings it down into the vault.
+
+**Playtests.** For a game, "log this playtest" (or "playtest notes", "log build v0.4")
+writes one entry to `Vault/<Game>/playtests.md` instead: build, who played, what worked,
+what broke, how it felt, and a `Fix next` checklist. The newest entry's open fixes show
+as the game's next steps on the brain's PROJECTS board, with a playtest count. From a
+chat without file access it goes through the MCP `log_playtest` tool; a game that only
+has a brain note gets a `projects/<slug>/` folder (with `note:` pointing at that note) so
+the sync makes its vault folder.

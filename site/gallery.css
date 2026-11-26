@@ -6,9 +6,10 @@
 .ga-side button:hover { color: var(--fg); }
 .ga-side button.on { color: var(--fg); border-left-color: var(--accent); background: rgba(255,255,255,0.03); }
 .ga-side .about { font-family: var(--sans); font-size: 12px; line-height: 1.5; color: var(--dim); padding: 12px 10px 0; letter-spacing: 0; text-transform: none; }
-.ga-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.ga-chips { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.ga-chips .row { display: flex; flex-wrap: wrap; gap: 6px; }
 .ga-chips .lbl { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.18em; color: var(--faint); align-self: center; margin: 0 4px 0 8px; }
-.ga-chips .lbl:first-child { margin-left: 0; }
+.ga-chips .lbl:first-child { margin-left: 0; min-width: 44px; }
 .ga-chips button { background: none; border: 1px solid var(--line); padding: 5px 9px; cursor: pointer; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--dim); }
 .ga-chips button.on { color: var(--fg); border-color: rgba(242,242,242,0.5); background: rgba(255,255,255,0.05); }
 .ga-chips button .sq { display: inline-block; width: 7px; height: 7px; margin-right: 6px; }

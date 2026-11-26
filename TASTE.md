@@ -122,11 +122,11 @@ _From 111 entries, 53 with style notes. Rebuilt on every filing._
 - `tool`: 12
 - `technique`: 17
 - `advice`: 6
-- `idea`: 4
+- `idea`: 2
 - `thought`: 2
 - `todo`: 2
 - `org`: 3
-- `project`: 39
+- `project`: 41
 
 ### Top tags
 

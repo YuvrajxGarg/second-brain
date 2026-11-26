@@ -5,6 +5,7 @@ Writes:
   INDEX.md            every entry by topic
   TAGS.md             every tag with its entries
   catalog/*.md        entries grouped by `kind` (libraries, style refs, tools...)
+  catalog/kit.md      the asset library: notes with a `kit` field, grouped by area
   IDEAS.md            his ideas and to-dos by stage (new/exploring/doing/done/dropped)
   ME.md               only the GENERATED block (stats); the personality read and
                       insights above it are curated by hand (by Claude)
@@ -43,6 +44,18 @@ CATALOGS = {
                  ["org", "project"]),
 }
 KINDS = [k for _, _, ks in CATALOGS.values() for k in ks]
+# `kit`: where a note goes in his shoot / edit / game-build kit (catalog/kit.md, the
+# Asset library view on the site). A note can sit in more than one area.
+KIT = {
+    "grade": "Colour: LUTs, grading and colour matching",
+    "sound": "Sound: SFX, music, stems and foley",
+    "vfx": "VFX: effects, overlays, compositing, AI video and upscalers",
+    "motion": "Motion: animation, mocap, retargeting and motion-design refs",
+    "shoot": "Shoot: camera, lenses, lighting, DIT and card offloads",
+    "edit": "Edit: editing workflows and footage tools",
+    "3d": "3D: models, shaders, rigs and 3D asset sources",
+    "2d": "2D: sprites, pixel art, textures and 2D game art",
+}
 STAGES = ["doing", "exploring", "new", "done", "dropped"]  # IDEAS.md order; open = first three
 
 
@@ -63,6 +76,7 @@ def parse(path):
     meta["tags"] = as_list(meta.get("tags", ""))
     meta["style"] = as_list(meta.get("style", ""))
     meta["stack"] = as_list(meta.get("stack", ""))
+    meta["kit"] = as_list(meta.get("kit", ""))
     meta["title"] = meta.get("title") or path.stem
     meta.setdefault("added", "")
     meta["path"] = path.relative_to(ROOT).as_posix()
@@ -100,6 +114,53 @@ def load_projects(entries):
         e["vault"] = d.relative_to(ROOT).as_posix()
         out.append(e)
     return out
+
+
+def section(text, heading):
+    m = re.search(rf"^#+ {heading}[ \t]*\n(.*?)(?=^#+ |\Z)", text, re.S | re.M)
+    return m.group(1) if m else ""
+
+
+def bullets(text):
+    """Bullet items in a block, minus ticked checkboxes."""
+    out = []
+    for line in text.splitlines():
+        m = re.match(r"\s*[-*] (\[([ xX])\] )?(.+)", line)
+        if m and m.group(2) not in ("x", "X"):
+            out.append(m.group(3).strip())
+    return out
+
+
+def latest_entry(text):
+    """First '## ' entry of a newest-first log (log.md, playtests.md)."""
+    parts = re.split(r"^## ", text, flags=re.M)
+    return ("## " + parts[1]) if len(parts) > 1 else ""
+
+
+def next_steps(e):
+    """What's next for a project, first match wins: open items in the vault's todo.md,
+    'Fix next' from the latest playtest, 'Next' from the latest log entry, then the
+    note's own ## Next section. Same order as scripts/build_graph.mjs."""
+    docs = {d["name"]: d["body"] for d in e.get("docs", [])}
+    if docs.get("todo.md"):
+        items = [m.group(1).strip() for m in re.finditer(r"^\s*[-*] \[ \] (.+)$", docs["todo.md"], re.M)]
+        if items:
+            return items
+    for name, head in (("playtests.md", r"\*\*Fix next\*\*"), ("log.md", r"\*\*Next\*\*")):
+        ent = latest_entry(docs.get(name, ""))
+        m = re.search(head + r"[ \t]*\n(.*?)(?=\n\*\*|\n## |\Z)", ent, re.S)
+        if m and bullets(m.group(1)):
+            return bullets(m.group(1))
+    return bullets(section(e["body"], "Next"))
+
+
+def playtest_stats(e):
+    docs = {d["name"]: d["body"] for d in e.get("docs", [])}
+    text = docs.get("playtests.md", "")
+    heads = re.findall(r"^## (\d{4}-\d\d-\d\d)(?: · ([^\n·]+))?", text, re.M)
+    if not heads:
+        return None
+    return {"count": len(heads), "last": heads[0][0], "build": (heads[0][1] or "").strip()}
 
 
 def group_of(e):
@@ -143,6 +204,15 @@ def catalog_entry(e, rel="../"):
         out.append(f"- **Repo:** {e['repo']}")
     if e["style"]:
         out.append(f"- **Style:** {', '.join(e['style'])}")
+    if e["kit"]:
+        out.append(f"- **Kit:** {', '.join(e['kit'])}")
+    if e.get("kind") == "project":
+        nx = next_steps(e)
+        if nx:
+            out.append(f"- **Next:** {'; '.join(nx[:3])}")
+        pt = playtest_stats(e)
+        if pt:
+            out.append(f"- **Playtests:** {pt['count']}, last {pt['last']}" + (f" ({pt['build']})" if pt["build"] else ""))
     if e.get("docs"):
         out.append("- **Vault docs:** " + ", ".join(f"[{d['name']}]({rel}{d['path']})" for d in e["docs"]))
     if e["tags"]:
@@ -285,6 +355,26 @@ def main():
             for e in group:
                 out += catalog_entry(e)
         write(cat_dir / f"{name}.md", out)
+    # catalog/kit.md: the asset library for shoots, edits and game builds, by area
+    kit_items = [e for e in entries if e["kit"]]
+    out = ["# Asset library", "",
+           "What Yuvraj reaches for on a shoot, in an edit or in a game build: LUTs and grading, sound, VFX, "
+           "motion, shoot gear and DIT, edit tools, 3D and 2D assets. Grouped by each note's `kit` field; "
+           "`style` says what the look is. A note can sit in more than one area.", "",
+           f"_{len(kit_items)} entries. Generated by `scripts/build_index.py` from each note's `kit`; do not edit by hand. "
+           f"Browse it by look on the site: {SITE}/gallery.html#asset-library_", ""]
+    for area, label in KIT.items():
+        group = [e for e in kit_items if area in e["kit"]]
+        if not group:
+            continue
+        out += [f"## {area} ({len(group)})", "", f"_{label}_", ""]
+        for e in group:
+            out += catalog_entry(e)
+    write(cat_dir / "kit.md", out)
+    bad_kit = sorted({k for e in kit_items for k in e["kit"] if k not in KIT})
+    if bad_kit:
+        print("Unknown kit values:", ", ".join(bad_kit))
+
     unsorted = by_kind.get("unsorted", []) + [e for k, v in by_kind.items() if k not in KINDS and k != "unsorted" for e in v]
 
     # IDEAS.md: idea and todo notes by stage
@@ -303,6 +393,16 @@ def main():
         out += [f"## {st} ({len(by_stage[st])})", ""]
         for e in by_stage[st]:
             out.append(f"- {link(e)} · `{e['kind']}` · {e['topic']} · {e['added']}: {e.get('why') or e['summary'][:140]}")
+        out.append("")
+    concepts = [e for e in entries if e.get("kind") == "project" and re.search(r"concept|idea", e.get("state") or "", re.I)]
+    if concepts:
+        out += [f"## Ideas being tracked as projects ({len(concepts)})", "",
+                "Build ideas promoted to `kind: project` with `state: concept`, so they sit on the PROJECTS board "
+                "with their next steps. Still ideas: nothing is built yet.", ""]
+        for e in concepts:
+            nx = next_steps(e)
+            out.append(f"- {link(e)} · `{e.get('type', 'project')}` · {e['topic']} · {e['added']}: {e.get('why') or e['summary'][:140]}"
+                       + (f" · next: {nx[0]}" if nx else ""))
         out.append("")
     write(ROOT / "IDEAS.md", out)
 
@@ -350,6 +450,7 @@ def main():
            "## Catalogs", ""]
     for name, (heading, blurb, kinds) in CATALOGS.items():
         out.append(f"- [{heading}]({RAW}/catalog/{name}.md): {blurb}")
+    out.append(f"- [Asset library]({RAW}/catalog/kit.md): what he uses on shoots, edits and game builds (LUTs, sound, VFX, motion, 3D, 2D), by area")
     out += ["", "## Notes", ""]
     for e in entries:
         desc = e.get("why") or e["summary"][:120]
@@ -370,6 +471,8 @@ def main():
             out.append("tags: " + ", ".join(e["tags"]))
         if e["style"]:
             out.append("style: " + ", ".join(e["style"]))
+        if e["kit"]:
+            out.append("kit: " + ", ".join(e["kit"]))
         out += ["", e["body"], ""]
         if e.get("docs"):  # listed, not inlined, so this file doesn't grow with every log entry
             out += ["vault docs (full text via MCP fetch or " + RAW + "/<path>): " + ", ".join(d["path"] for d in e["docs"]), ""]

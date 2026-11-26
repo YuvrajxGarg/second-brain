@@ -6,6 +6,7 @@ tags: [godot, shader, vfx, 2d, water, tutorial]
 kind: technique
 why: stylised water for my games
 style: [stylised 2d water]
+kit: [2d]
 source: https://x.com/ushadersbible/status/2119673988464922969
 added: 2026-11-09
 status: unread

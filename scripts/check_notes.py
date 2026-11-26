@@ -17,7 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_index import KINDS, STAGES, as_list  # noqa: E402
+from build_index import KINDS, KIT, STAGES, as_list  # noqa: E402
 
 TYPES = {"link", "note", "idea", "bookmark", "quote", "video", "tool", "book", "person", "place",
          "recipe", "todo", "game", "app", "site", "concept", "company"}
@@ -73,6 +73,11 @@ def check(path):
         err("stage", f"kind {kind} needs stage ({'/'.join(STAGES)}), has {stage!r}")
     if stage and kind not in ("idea", "todo"):
         warn("stage", f"stage is only for idea/todo, this is kind {kind!r}")
+
+    kit = as_list(meta.get("kit", ""))
+    unknown = [k for k in kit if k not in KIT]
+    if unknown:
+        err("kit", f"unknown kit area {unknown}, use: {', '.join(KIT)}")
 
     tags = as_list(meta.get("tags", ""))
     bad = [t for t in tags if not KEBAB.match(t)]

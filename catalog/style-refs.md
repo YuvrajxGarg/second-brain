@@ -22,6 +22,7 @@ Thanh Doan (@capythanh) vibe coded "strawhat", a personal homelab dashboard that
 
 - **Why saved:** pixel-art gaussian splats look mesmerising
 - **Style:** pixel-art 3d dioramas, one-hue monochrome palettes, floating islands on black, glowing particles
+- **Kit:** 3d
 - **Tags:** #pixel-art #gaussian-splat #claude #inspiration
 
 Silicon Jungle (@JungleSilicon) shows small 3D scenes rendered as pixel-art gaussian splats, which keep a crisp pixel-art look while the camera orbits around them. The author says they were made with Fable 5.2. The 36-second video cycles through floating dioramas on black: a vine-covered stone hand with one eye inside a ruined arch, a green lab with glass vats holding pink brains, a witch's hut in a swamp with warm orange windows and reeds, and an icy blue dragon skeleton curled around a candle-lit shrine. Each scene sticks mostly to one hue with a single accent colour.
@@ -62,6 +63,7 @@ A short demo from keshav (@kshvbgde) of a Mac storage scanner: "storage scanner 
 
 - **Why saved:** Art style reference for Tukaram Munde game
 - **Style:** stylised cartoon 3d, desi street shopfront, caricature character big head, bottle green and marigold yellow, warm soft lighting
+- **Kit:** 3d
 - **Tags:** #3d-character #3d-art #game-inspiration #indian-setting
 
 A reel from @thesoloentrepreneur.yt showing a "₹1 lakh website": a 3D web scene of an old Indian sweet shop, "Sharma Sweets, since 1965", with a stylised cartoon Lala ji (big moustache, white Gandhi cap, purple Nehru jacket, white kurta) standing in front of the shuttered shop. Saved as the art style reference for his Tukaram Munde game: stylised cartoon 3D, everyday Indian street settings, caricature characters.
@@ -72,6 +74,7 @@ A reel from @thesoloentrepreneur.yt showing a "₹1 lakh website": a 3D web scen
 
 - **Why saved:** Brilliant art style for animations
 - **Style:** painterly stylised 3d, chunky armoured knights, misty desaturated battlefield, red ink outline accents, bold red and blue colour pops
+- **Kit:** motion
 - **Tags:** #animation #video-generation #3d-art #inspiration
 
 "The Impossible Weapon", a ~34-second animated short by INK (@ink.industries_) and Pascal Gautier, made with Krea AI. Two stylised armoured knights face off on a misty, grassy battlefield: a hulking dark knight with a blue plume and a nimble silver knight with a red cape who leaps in with a sword. Saved for its art style for animation: painterly stylised 3D that feels like a hand-made animated feature.
@@ -82,6 +85,7 @@ A reel from @thesoloentrepreneur.yt showing a "₹1 lakh website": a 3D web scen
 
 - **Why saved:** cool visuals, launch film
 - **Style:** chunky flat pixel art, orange and blue palette, pixel cursors and ui, launch film motion
+- **Kit:** motion, 2d
 - **Tags:** #visual-design #pixel-art #inspiration
 
 A 17-second animated launch film shared by Austin Bauwens, titled "Captchas aren't what you think they are". It argues that solving captchas has been unpaid AI training, from labelling people to steering self-driving cars. The look is flat chunky pixel-art in orange, blue and periwinkle, with captcha grids, bounding boxes, pixel cursors and a car driving a top-down map. Directed by Sam Essanoussi, with design and animation by Justin De Leon and Connor Roy-Shaw. Saved as motion and visual design inspiration.
@@ -92,6 +96,7 @@ A 17-second animated launch film shared by Austin Bauwens, titled "Captchas aren
 
 - **Why saved:** cool visual design
 - **Style:** bold type, ui mockups in motion, pixel-art mascots, glowing cards, product launch video
+- **Kit:** motion
 - **Tags:** #visual-design #video-editing #inspiration
 
 A 14-second showreel from Ace Of Frames, a studio that makes product launch videos for startups (aceoframes.com). It plays four launch videos at once in a 2x2 grid, mixing bold type, UI mockups, pixel-art mascots, glowing cards and photo backdrops, and the caption jokes that even AI can't match their taste. Saved as visual design inspiration.

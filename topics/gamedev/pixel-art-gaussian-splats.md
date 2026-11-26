@@ -6,6 +6,7 @@ tags: [pixel-art, gaussian-splat, claude, inspiration]
 kind: style-ref
 why: pixel-art gaussian splats look mesmerising
 style: [pixel-art 3d dioramas, one-hue monochrome palettes, floating islands on black, glowing particles]
+kit: [3d]
 source: https://x.com/JungleSilicon/status/2121782359901212987
 added: 2026-11-15
 status: unread

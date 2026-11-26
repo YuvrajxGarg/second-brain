@@ -6,6 +6,7 @@ tags: [agents, claude, video-editing, open-source, to-try]
 kind: tool
 why: agent skill for explainer content
 style: [cork evidence wall, archive photos with red string, stamps and highlighter swipes, rolling counters, one continuous camera move]
+kit: [motion, edit]
 source: https://github.com/Moh4696/cinematic-skill
 added: 2026-11-13
 status: unread

@@ -6,6 +6,7 @@ tags: [pixel-art, sprites, godot, tutorial]
 kind: technique
 why: turn pixel art to any angle with sprite stacking
 style: [chunky pixel art cars, top-down racing track, fake 3d from 2d slices]
+kit: [2d]
 source: https://x.com/asynkimo/status/2121716250820964431
 added: 2026-11-15
 status: unread

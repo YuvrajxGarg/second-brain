@@ -6,6 +6,7 @@ tags: [blender, animation, motion-capture, rigging, game-inspiration]
 kind: tool
 why: cool plugin, and also cool way to retarget motion between characters with different body proportions; also a very cool art style for showing prototype models in a game
 style: [blocky segmented mannequins, one flat pastel colour per character, dark grey blender viewport grid]
+kit: [motion, 3d]
 source: https://x.com/toyxyz3/status/2120734403605500312
 added: 2026-11-13
 status: unread

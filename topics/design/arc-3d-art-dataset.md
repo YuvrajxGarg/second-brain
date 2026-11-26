@@ -6,6 +6,7 @@ tags: [3d-art, creative-commons, free-assets, inspiration]
 kind: asset-source
 why: free Creative Commons 3D art files to remix
 style: [glossy abstract 3d, metallic gold and rose gold, pastel blocks]
+kit: [3d]
 source: https://arc.art/dataset/
 added: 2026-11-10
 status: unread

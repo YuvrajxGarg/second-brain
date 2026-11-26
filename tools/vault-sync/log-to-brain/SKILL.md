@@ -1,6 +1,6 @@
 ---
 name: log-to-brain
-description: Use whenever Yuvraj says "log this", "log this to my brain" or "save where this is at" about the project work in the current chat (a build, an edit job, a client project). For a link, thought or idea, use capture-to-brain instead. Writes status, learnings, mistakes and taste into his Vault project log (Documents/Vault, one folder per project), reusing the existing project instead of making copies or new notes.
+description: Use whenever Yuvraj says "log this", "log this to my brain" or "save where this is at" about the project work in the current chat (a build, an edit job, a client project), or "log this playtest" / "playtest notes" for one of his games. For a link, thought or idea, use capture-to-brain instead. Writes status, learnings, mistakes and taste into his Vault project log (Documents/Vault, one folder per project), reusing the existing project instead of making copies or new notes.
 ---
 
 # Log to brain
@@ -32,6 +32,10 @@ Never create a second folder or note for a project that already exists. If two c
 If a plain note about this same work already exists in `topics/` (for example an earlier "log this" that was filed as a note), don't copy it: set `note: <its slug>` in `project.md` so the vault docs attach to it, keep the how-to content in that note, and put only the dated status entry in `log.md`. Never write a new `topics/` note from this skill.
 
 ## 3. Write the log entry
+
+**Playtest?** If he says "log this playtest", "playtest notes", "log build v0.4", or the
+chat is about a build of a game that someone just played, write a playtest entry
+instead (step 3b) and skip the rest of step 3.
 
 Add to `<Vault>/<Project>/log.md`, newest entry at the top (under the file's heading). Read only the first 5 lines to find where to insert; never load the whole log. Create the file if missing:
 
@@ -66,6 +70,38 @@ and `checks.md` for 2 or 3 key words of it. If it happened before, follow the
 `mistakes-to-checks` skill (if it isn't loaded: `tools/mistakes-to-checks/SKILL.md` in
 YuvrajxGarg/second-brain) to turn it into a check in `checks.md`. First sightings stay
 only in the log.
+
+### 3b. Playtest entry (games)
+
+Add to `<Vault>/<Game>/playtests.md`, newest at the top, same rules as `log.md` (read
+only the first 5 lines, create it if missing with `# <Game>: playtests` and the line
+"One entry per build played, newest first: what worked, what broke, how it felt, what to
+fix next."). One entry per build played; his words; leave out empty sections:
+
+```markdown
+## 2026-11-26 · v0.4 · <3-6 word headline>
+
+**Build:** v0.4 (web build, commit or branch)  
+**Played by:** me + 2 friends (first names only)
+
+**Worked**
+- ...
+
+**Broke**
+- ...
+
+**Felt**
+- pacing, difficulty, confusion, fun moments
+
+**Fix next**
+- [ ] ...
+```
+
+The newest entry's open `Fix next` boxes are the game's next steps on the brain's
+PROJECTS board, so keep them short and actionable, and tick (`[x]`) the ones a later
+build fixed. Bugs that came back from an earlier playtest are repeat mistakes: treat
+them like the "Repeat mistakes" step below. Don't also write a `log.md` entry for the
+same session unless he asks.
 
 Also, only when it changed:
 - `context.md`: durable facts (stack, conventions, key decisions). Edit the relevant section; don't append a diary there.
@@ -112,8 +148,9 @@ If the chat is inside the project's own codebase and he wants it there too (or a
 
 ## 7. No file access (plain chat)
 
+- Playtests with the connector: call `log_playtest` (project, build, headline, played_by, worked, broke, felt, fix_next). A game that only has a brain note gets its `projects/<slug>/` folder made for it, attached with `note:`.
 - With the Second Brain connector and writing on (the `log_project` tool is listed): call `log_project` with the project, a headline and the entry. It finds the project (or returns candidates), adds the entry newest first and refuses private (`share: summary/none`) projects. If it says the project is new, confirm with him, then call it again with `new_project`.
-- With a GitHub connector: append the entry to `projects/<slug>/log.md` in YuvrajxGarg/second-brain on `main` (commit `log: <project> <date>`). The next vault sync copies it down into the vault.
+- With a GitHub connector: append the entry to `projects/<slug>/log.md` (playtests: `projects/<slug>/playtests.md`, commit `playtest: <game> <build>`) in YuvrajxGarg/second-brain on `main` (commit `log: <project> <date>`). The next vault sync copies it down into the vault.
 - Otherwise: give him the entry in one block and say which file it goes in (`Documents/Vault/<Project>/log.md`).
 
 ## 8. Finish

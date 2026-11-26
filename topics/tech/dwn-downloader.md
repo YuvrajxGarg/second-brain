@@ -5,6 +5,7 @@ topic: tech
 tags: [pxlvzn, own-project, desktop-app, video-editing]
 kind: project
 why: to grab videos, songs and transcripts from any site in edit-ready formats, without sketchy download sites
+kit: [edit]
 state: live
 stack: [swiftui, electron, yt-dlp, ffmpeg]
 source: https://dwn.pxlvzn.in

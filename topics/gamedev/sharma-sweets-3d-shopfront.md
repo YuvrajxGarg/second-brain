@@ -6,6 +6,7 @@ tags: [3d-character, 3d-art, game-inspiration, indian-setting]
 kind: style-ref
 why: Art style reference for Tukaram Munde game
 style: [stylised cartoon 3d, desi street shopfront, caricature character big head, bottle green and marigold yellow, warm soft lighting]
+kit: [3d]
 source: https://www.instagram.com/reel/DfnlqQLS7mD/
 added: 2026-11-12
 status: unread

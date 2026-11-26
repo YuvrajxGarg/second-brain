@@ -5,6 +5,7 @@ topic: tech
 tags: [pxlvzn, own-project, desktop-app, color-grading]
 kind: project
 why: to match colour between shots fast, like AI shots to real footage or B-cam to A-cam
+kit: [grade]
 state: live
 stack: [python]
 source: https://lut.pxlvzn.in

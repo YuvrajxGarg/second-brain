@@ -175,6 +175,7 @@ added: 2026-11-26
 status: done
 why: what worked (and what didn't) fixing a 4-person album-cover group shot with Claude Code and Higgsfield
 tags: workflow, claude, photo-compositing, retouching, reference
+kit: vfx
 
 ## Summary
 How Claude Code and Higgsfield (FLUX 3, Nano Banana Pro) were used to finish a photoreal
@@ -291,6 +292,7 @@ status: unread
 why: give the repo to an agent and talk to it to make AAA MetaHumans for Unreal and web
 tags: 3d-character, blender, agents, mcp, open-source, to-try
 style: photoreal metahuman faces, gritty scarred skin detail, unreal editor viewport
+kit: 3d
 
 ## Summary
 MetaHuman Maker by TREE Industries ([github.com/TREE-Ind/MetahumanMaker](https://github.com/TREE-Ind/MetahumanMaker)) is an open-source (MIT) Blender add-on that turns photos or source meshes into editable MetaHuman characters for Unreal Engine: wrap and fit the head and body, sculpt and repair regions, rebuild missing skin detail with up to 8K textures, then send rigs and grooms into Unreal. An AI agent can drive the same tools through Blender MCP. Joshua Johnson (@joshuajohnsonAI) posted it saying he context-engineered it so the agent gets better with every character you ask it for. Windows x64, Blender 5.2, Unreal 5.8; preview release v0.346.0.
@@ -316,6 +318,7 @@ source: https://x.com/udayan_w/status/2122732735496355860
 status: unread
 why: a full YouTube video edited and rendered entirely with Claude (360 GB of footage)
 tags: claude, video-editing, agents, inspiration
+kit: edit
 
 ## Summary
 Udayan Walvekar (@udayan_w) says a polished GrowthX YouTube video, "I Read This 417 Page Anthropic IPO Filing, So You Don't Have To", was edited entirely in Claude, with 360 GB of files rendered through it. Proof point that an agent can drive a real long-form edit end to end. The post shares no workflow details, only the claim and a screenshot.
@@ -475,6 +478,7 @@ status: unread
 why: painterly stylised shading in Blender using the Light Accumulation node
 tags: blender, shader, 3d-art, reference
 style: painterly brushstroke leaves, teal and lime on deep crimson, hand-painted 3d look
+kit: 3d
 
 ## Summary
 Jie (@jiehananana) shows a stylised Blender shader built around the Light Accumulation node ("light accumulation node starts making sense"). Lighting is gathered per surface and remapped through a colour ramp and overlay mix, so a pile of 3D leaves renders like a hand-painted illustration, and moving the light live repaints the scene.
@@ -564,6 +568,7 @@ status: unread
 why: turn pixel art to any angle with sprite stacking
 tags: pixel-art, sprites, godot, tutorial
 style: chunky pixel art cars, top-down racing track, fake 3d from 2d slices
+kit: 2d
 
 ## Summary
 Kimo (@asynkimo) shows sprite stacking: slice a pixel-art object row by row from its side view, stack the slices 1 px apart and rotate them together, so a 2D sprite can turn to any angle and looks 3D. The demo is a blue pixel sports car with white racing stripes drifting around a top-down track with red-and-white kerbs and green grass. A follow-up post links a full how-to with the Godot code: https://spritecook.ai/blog/sprite-stacking-pixel-art
@@ -589,6 +594,7 @@ source: https://raea.io/
 status: unread
 why: AI agents write the code and it renders videos, motion graphics, 3D and games on your own Mac
 tags: video-generation, agents, desktop-app, to-try
+kit: motion, 3d
 
 ## Summary
 raea ("Render Anything Engine") is a Mac desktop studio where AI agents write React and TypeScript code for videos, motion graphics, 3D and games, then render the result on your own GPU with no per-render fees. You can bring your own model (Claude, ChatGPT, Kimi or a local one), and it claims faster renders than Remotion and HyperFrames. The engine is free; Pro adds synced storage, version history and publishing to YouTube and other platforms.
@@ -615,6 +621,7 @@ status: unread
 why: pixel-art gaussian splats look mesmerising
 tags: pixel-art, gaussian-splat, claude, inspiration
 style: pixel-art 3d dioramas, one-hue monochrome palettes, floating islands on black, glowing particles
+kit: 3d
 
 ## Summary
 Silicon Jungle (@JungleSilicon) shows small 3D scenes rendered as pixel-art gaussian splats, which keep a crisp pixel-art look while the camera orbits around them. The author says they were made with Fable 5.2. The 36-second video cycles through floating dioramas on black: a vine-covered stone hand with one eye inside a ruined arch, a green lab with glass vats holding pink brains, a witch's hut in a swamp with warm orange windows and reeds, and an icy blue dragon skeleton curled around a candle-lit shrine. Each scene sticks mostly to one hue with a single accent colour.
@@ -693,6 +700,7 @@ status: unread
 why: cool 3D short film skill
 tags: claude, blender, agents, 3d-art, open-source, to-try
 style: dark macro clockwork, dusk orange canyon, cinematic letterbox grade
+kit: 3d, grade
 
 ## Summary
 ![screenshot](./escapement-blender-short-film.jpg)
@@ -721,6 +729,7 @@ source: https://www.instagram.com/reel/DfpPt63MPOT/
 status: unread
 why: Viggle AI's open weights to recast anybody in a video
 tags: video-generation, video-editing, hugging-face, open-source, to-try
+kit: vfx
 
 ## Summary
 ![screenshot](./viggle-remake-open-model.jpg)
@@ -752,6 +761,7 @@ status: unread
 why: tips for hand animation in a first person view in Unity
 tags: unity, rigging, animation, tutorial
 style: bodycam first person view, gloved hands with pistol, striped test room
+kit: motion, 3d
 
 ## Summary
 ![screenshot](./unity-bodycam-ik-hands.jpg)
@@ -780,6 +790,7 @@ status: unread
 why: cool plugin, and also cool way to retarget motion between characters with different body proportions; also a very cool art style for showing prototype models in a game
 tags: blender, animation, motion-capture, rigging, game-inspiration
 style: blocky segmented mannequins, one flat pastel colour per character, dark grey blender viewport grid
+kit: motion, 3d
 
 ## Summary
 A free Blender add-on by @toyxyz3 that retargets mocap between characters with very different body proportions (tall, short, stocky). It copies joint rotations with FK, then adjusts the root motion for each rig's limb lengths, so feet don't slide and you avoid the IK popping of IK-based retargeting. Code: https://github.com/toyxyz/toyxyz-blender-retargeter
@@ -860,6 +871,7 @@ source: https://www.instagram.com/reel/DfpWJb0BauP/
 status: unread
 why: open weight video upscaler available in ComfyUI
 tags: video-generation, video-editing, hugging-face, open-source, to-try
+kit: vfx
 
 ## Summary
 ![screenshot](./relayvsr-video-upscaler.jpg)
@@ -889,6 +901,7 @@ status: unread
 why: cool line art animation workflow with motion capture and Mixamo integration also
 tags: animation, motion-capture, mixamo, creative-coding, inspiration
 style: wobbly hand-drawn black line art, beak-nosed stick characters, cream paper cards on yellow grid paper
+kit: motion
 
 ## Summary
 Reel by @shubhastudios showing how they built the animation system for two characters, "little lady & little dude", in an ongoing series of interactive storytelling projects. The characters are animated from motion capture with Mixamo integration and drawn as hand-drawn line art.
@@ -908,9 +921,8 @@ Cool line art animation workflow with motion capture and Mixamo integration also
 ============================================================
 DIT offload checker  (topics/tech/dit-offload-checker-idea.md)
 ============================================================
-kind: idea
-stage: new
-type: idea
+kind: project
+type: app
 topic: tech
 added: 2026-11-13
 source: https://www.instagram.com/reel/DfkvaoETdCl/
@@ -918,6 +930,7 @@ status: unread
 why: app idea for PXL, a data transfer system checker for when DIT is happening on a shoot
 tags: pxlvzn, product-idea, desktop-app, video-editing
 style: dark menu bar popover, blue primary button, plain status sentence
+kit: shoot
 
 ## Summary
 ![screenshot](./dit-offload-checker-idea.jpg)
@@ -931,7 +944,15 @@ https://www.instagram.com/reel/DfkvaoETdCl/?exln=MWd3YWlueW5peWR3bg==
 
 App idea for PXL, it can be a data transfer system checker, like whenever I'm like DIT is happening on a shoot or something, this app can be used.
 
+## Next
+Suggested first steps (edit freely):
+- Write down what "safe to format" means: every clip on the card is on the drive with the same size and checksum
+- Prototype the compare step against a real card offload and a T7-style working drive
+- Sketch the menu bar popover from the backed reference (card, working drive, one plain status sentence)
+- Decide Mac only first or Mac and Windows together, like the other PXLVZN apps
+
 ## Notes
+- 2026-11-26: moved from idea to a tracked project (state: concept) so it sits on the PROJECTS board with next steps.
 - Reference app: backed (@backed_app), early access via comments. Caption: "See what's missing before you copy a thing. Then backed copies just that into the right shoot folder and checks every clip."
 - Related PXLVZN file tools: [[hop-file-transfer]], [[ferry-file-manager]]
 - Label: [[pxlvzn-label]]
@@ -976,6 +997,7 @@ status: unread
 why: agent skill for explainer content
 tags: agents, claude, video-editing, open-source, to-try
 style: cork evidence wall, archive photos with red string, stamps and highlighter swipes, rolling counters, one continuous camera move
+kit: motion, edit
 
 ## Summary
 ![screenshot](./cinematic-film-skill.webp)
@@ -1251,6 +1273,7 @@ source: https://stm.pxlvzn.in
 status: read
 why: to split songs into vocals, drums, bass and other stems locally for edits and remixes
 tags: pxlvzn, own-project, desktop-app, audio
+kit: sound, edit
 
 ## Summary
 Stm: split any song into vocals, drums, bass and other stems with the Demucs model on your own GPU. macOS and Windows.
@@ -1315,6 +1338,7 @@ status: unread
 why: Art style reference for Tukaram Munde game
 tags: 3d-character, 3d-art, game-inspiration, indian-setting
 style: stylised cartoon 3d, desi street shopfront, caricature character big head, bottle green and marigold yellow, warm soft lighting
+kit: 3d
 
 ## Summary
 A reel from @thesoloentrepreneur.yt showing a "₹1 lakh website": a 3D web scene of an old Indian sweet shop, "Sharma Sweets, since 1965", with a stylised cartoon Lala ji (big moustache, white Gandhi cap, purple Nehru jacket, white kurta) standing in front of the shuttered shop. Saved as the art style reference for his Tukaram Munde game: stylised cartoon 3D, everyday Indian street settings, caricature characters.
@@ -1764,6 +1788,7 @@ For context, should we add like all the projects that I've already made with the
 ## Notes
 - Could be the "Pixel utility" he mentioned, or that may be [[pxlengine-3d-engine]].
 - Label: [[pxlvzn-label]].
+- [[disk-cleanup-app]]: both desktop-app
 
 ============================================================
 PEAKD game  (topics/gamedev/peakd-game.md)
@@ -1859,9 +1884,15 @@ Tukaram Munde prototype that is ready, but we are currently building on it.
 
 For context, should we add like all the projects that I've already made with their particular tags from my GitHub, like GitHub and my Vercel account, like the Revolio Studio, Revolio Labs, the Pixel utility engine that I've made, the games I've made, Peaked, Tukaram Munde prototype that is ready, but we are currently building on it. We have a lot of games like pixel art games. Just for the context of the second brain and for the agents to pick from.
 
+## Next
+From its TODO (playtest logs and the vault's todo.md take over once they exist):
+- Waiter tray pose
+- Fuller kitchens and storage
+- A room-focus camera
+- Kitchen sounds
+
 ## Notes
 - The idea and art refs: [[tukaram-munde-game]], [[sharma-sweets-3d-shopfront]].
-- Next up (from its TODO): waiter tray pose, fuller kitchens and storage, a room-focus camera, kitchen sounds.
 - [[revolio-labs]]: made under Revolio Labs; both revolio-labs, browser-game
 
 ============================================================
@@ -1897,6 +1928,7 @@ source: https://lut.pxlvzn.in
 status: read
 why: to match colour between shots fast, like AI shots to real footage or B-cam to A-cam
 tags: pxlvzn, own-project, desktop-app, color-grading
+kit: grade
 
 ## Summary
 Lut: drop a reference shot and your clip, get a .cube LUT and a graded copy that matches the colour. Made for matching AI shots to real footage, B-cam to A-cam, or a blue drone clip. Local, macOS and Windows.
@@ -1919,6 +1951,7 @@ status: unread
 why: cinematography lens guide for prompting AI video (no comment given)
 tags: video-generation, cinematography, prompting, reference
 style: surreal pastel wide fields, masked characters, giant planet skies, bold orange focal length type
+kit: shoot
 
 ## Summary
 A ~39-second AI-film reel from @lemon_carpet (made with Seedance) explaining how lens focal length changes a shot, so you can ask for it in AI video prompts. The point: "close-up" alone means nothing; the lens does. A 50mm medium shot is "what your eyes see", a 200mm close-up shot "from across the field" compresses the background so a giant planet looms behind the subject, and wide shots shrink the subject into a huge landscape. Useful as a cheat sheet for prompting camera language in AI video tools.
@@ -1947,6 +1980,7 @@ status: unread
 why: Brilliant art style for animations
 tags: animation, video-generation, 3d-art, inspiration
 style: painterly stylised 3d, chunky armoured knights, misty desaturated battlefield, red ink outline accents, bold red and blue colour pops
+kit: motion
 
 ## Summary
 "The Impossible Weapon", a ~34-second animated short by INK (@ink.industries_) and Pascal Gautier, made with Krea AI. Two stylised armoured knights face off on a misty, grassy battlefield: a hulking dark knight with a blue plume and a nimble silver knight with a red cape who leaps in with a sword. Saved for its art style for animation: painterly stylised 3D that feels like a hand-made animated feature.
@@ -2106,6 +2140,7 @@ source: https://dwn.pxlvzn.in
 status: read
 why: to grab videos, songs and transcripts from any site in edit-ready formats, without sketchy download sites
 tags: pxlvzn, own-project, desktop-app, video-editing
+kit: edit
 
 ## Summary
 Dwn: download videos, songs, playlists and transcripts from YouTube, TikTok, Instagram, X, SoundCloud and 1,000+ sites. Native SwiftUI on macOS, Electron on Windows, on a local yt-dlp + FFmpeg engine. H.264/HEVC/ProRes up to 8K, trim before download on a filmstrip timeline, cloud drives via rclone, one-click updates.
@@ -2136,9 +2171,8 @@ DriveDesk: a desktop file manager with side-by-side local and cloud browsing. Go
 ============================================================
 Disk cleanup app  (topics/tech/disk-cleanup-app.md)
 ============================================================
-kind: idea
-stage: new
-type: idea
+kind: project
+type: app
 topic: tech
 added: 2026-11-12
 status: unread
@@ -2151,8 +2185,16 @@ A disk utility app to scan storage, remove caches and clean up the disk. The UI 
 ## Raw
 If I ever make a disk utility app to remove cache and disk cleanup, this UI is really nice for it.
 
+## Next
+Suggested first steps (edit freely):
+- List the caches worth clearing on the Mac and the Windows PC, editing caches first (Premiere media cache, After Effects disk cache, DaVinci cache) then dev caches
+- Build the scan screen from the Storage scanner UI reference: one dark card, a dot-matrix bar by category, one clear action per category
+- Decide whether it ships inside the PXL app hub
+
 ## Notes
+- 2026-11-26: moved from idea to a tracked project (state: concept) so it sits on the PROJECTS board with next steps.
 - UI reference: [[storage-scanner-ui]]
+- [[pxl-app-hub]]: where PXLVZN apps get installed and updated, a likely home for it
 
 ============================================================
 CanvasFlow whiteboard  (topics/tech/canvasflow-whiteboard.md)
@@ -2256,6 +2298,7 @@ source: https://x.com/apekshik/status/2120224530367119758
 status: unread
 why: open-source rigged arm to reuse in my games
 tags: rigging, animation, open-source, to-try
+kit: 3d
 
 ## Summary
 @apekshik used an AI model to build one highly detailed, open-source rigged arm instead of "one-shotting" a whole game: realistic bone armature, weight-painted mesh, volume-preserving joints and muscles that swell as the fist tightens. The arm uses two-bone IK (you set the hand target, it solves shoulder and elbow) while the 38-bone fingers use FK, curling joint by joint and stopping on contact, so it can reach, grab and place a ball on a table. Live demo at procedural-arm-rig.vercel.app, code at github.com/apekshik/procedural-arm-rig, free to reuse in your own games.
@@ -2368,6 +2411,7 @@ status: unread
 why: cool visuals, launch film
 tags: visual-design, pixel-art, inspiration
 style: chunky flat pixel art, orange and blue palette, pixel cursors and ui, launch film motion
+kit: motion, 2d
 
 ## Summary
 A 17-second animated launch film shared by Austin Bauwens, titled "Captchas aren't what you think they are". It argues that solving captchas has been unpaid AI training, from labelling people to steering self-driving cars. The look is flat chunky pixel-art in orange, blue and periwinkle, with captcha grids, bounding boxes, pixel cursors and a car driving a top-down map. Directed by Sam Essanoussi, with design and animation by Justin De Leon and Connor Roy-Shaw. Saved as motion and visual design inspiration.
@@ -2441,6 +2485,7 @@ status: unread
 why: cool visual design
 tags: visual-design, video-editing, inspiration
 style: bold type, ui mockups in motion, pixel-art mascots, glowing cards, product launch video
+kit: motion
 
 ## Summary
 A 14-second showreel from Ace Of Frames, a studio that makes product launch videos for startups (aceoframes.com). It plays four launch videos at once in a 2x2 grid, mixing bold type, UI mockups, pixel-art mascots, glowing cards and photo backdrops, and the caption jokes that even AI can't match their taste. Saved as visual design inspiration.
@@ -2472,6 +2517,7 @@ status: unread
 why: AI-assisted 2D tweening and colouring workflow
 tags: animation, 2d, claude, workflow
 style: painted 2d backgrounds, hand-drawn animation
+kit: motion, 2d
 
 ## Summary
 Araminta (Alvdansen Studio) shows in a 2-minute video how she uses her "AI Assisted Tween & Paint" harnesses for 2D hand-drawn animation. She starts from a key drawing (line art over a painted background), the agent works directly inside Toon Boom Harmony to tween and colour the shot, and she gives notes in plain words that it fixes, like colour bleed in the hands. The workbook is on the studio's Patreon, and more videos are coming on their YouTube.
@@ -2527,6 +2573,7 @@ source: https://github.com/roboflow/re-ID
 status: unread
 why: track one player across clips for sports video edits
 tags: computer-vision, object-tracking, python, open-source, to-try
+kit: edit, vfx
 
 ## Summary
 `reid` is an open-source (Apache 2.0) Python package from Roboflow that turns a crop of a person into an appearance embedding, so the same person can be matched across frames, clips or cameras. It loads pretrained OSNet and FastReID models, works with `supervision` detections from any detector (e.g. RF-DETR), and includes benchmarks for re-identification. Install with `pip install -U reid`; docs at reid.roboflow.com.
@@ -2579,6 +2626,7 @@ status: unread
 why: open-source three.js asset library agents can use over MCP
 tags: game-assets, low-poly, threejs, mcp, to-try
 style: low-poly, shared kit palettes
+kit: 3d
 
 ## Summary
 Polyfork is a library of 3,000+ free low-poly 3D assets for three.js, Unity, Unreal, Godot and Blender, where each asset is a small program with knobs (colours, proportions, part counts) that rebuilds when you tweak it. Has themed kits with shared palettes, procedural terrain, configurable Mixamo-compatible characters, and exports GLB/FBX/USDZ/OBJ. Comes with a no-install MCP server at polyfork.dev/mcp (search_assets, get_kit, get_terrain, preview_scene...) so coding agents can pull assets directly.
@@ -2602,6 +2650,7 @@ source: https://patch.gg
 status: unread
 why: game dev tools as one CLI and MCP, plus open-source assets
 tags: game-engine, mcp, game-assets, open-source, to-try
+kit: 2d, 3d
 
 ## Summary
 Patch (patch.gg), launched by Rehan Sheikh (@rehan_shei), is a platform to build and play games. It bundles every game dev tool into one CLI and MCP, ships 50,000+ open-source assets, lets you remix any game on patch or mod games on your PC, and publishes them open source to everyone on patch.
@@ -2630,6 +2679,7 @@ status: unread
 why: benchmark for the Revolio Labs VFX feature
 tags: vfx, video-editing, browser-tool, reference
 style: halftone, ascii, dither, glitch
+kit: vfx
 
 ## Summary
 Ladybug is a browser-based effects studio for images, video, type and sound: 60+ effects and 300+ looks (halftone, ASCII, dither, glass, glitch, glow, depth), keyframe animation, sound reactivity, and object, face and hand tracking. Exports 4K video, high-res stills, transparent video, PNG sequences and SVG; media stays on your machine. Free tier has no watermark, commercial use needs a Pro licence.
@@ -2669,6 +2719,7 @@ status: unread
 why: idea for game art: code-placed brush strokes instead of image models
 tags: claude, generative-art, creative-coding, inspiration
 style: painterly brushwork, invented artist styles
+kit: 2d
 
 ## Summary
 Jake Eaton (@jkeatn) has been painting with Fable 5.2 in code. To answer the critique that AI paintings only emulate real art, he has Claude invent artist personas with a backstory and a consistent, period-identifiable style, then steers it while it revises the brush and paint engines. Each painting is a Python program of 1-2k lines that places every stroke (usually a few thousand) through a simulated paint engine with different bristles: no image model, no pre-rendering or tracing.
@@ -2723,6 +2774,7 @@ status: unread
 why: free Creative Commons 3D art files to remix
 tags: 3d-art, creative-commons, free-assets, inspiration
 style: glossy abstract 3d, metallic gold and rose gold, pastel blocks
+kit: 3d
 
 ## Summary
 3D artist ARC (@arc4g) released all of their 3D art project files for free under Creative Commons, inviting people to remix them by hand or with AI agents. Their disability makes it hard to keep making art, so this lets the work keep growing. The previews show glossy abstract 3D renders: gold and rose-gold metallic shapes, pastel blocks, pink and blue scenes.
@@ -2779,6 +2831,7 @@ status: unread
 why: sprites database for games I build
 tags: pixel-art, sprites, game-assets, semantic-search, hugging-face, reference
 style: pixel art
+kit: 2d
 
 ## Summary
 A Hugging Face Space by cfahlgren1 that does instant semantic search over a pixel art collection, right in the browser: describe a sprite in words and it finds matching ones. Saved as a sprite source for games Yuvraj builds. The page doesn't name the underlying dataset or license, so check usage rights before shipping any sprite.
@@ -2829,6 +2882,7 @@ status: unread
 why: stylised water for my games
 tags: godot, shader, vfx, 2d, water, tutorial
 style: stylised 2d water
+kit: 2d
 
 ## Summary
 Shaders Bible Series (@ushadersbible) shows an animated 2D waterfall in Godot: a Sprite2D with a ShaderMaterial (`using_texture`) that takes a tiled waterfall texture array, a `noise_64.png` noise texture and a `speed` parameter (2.0). It's a teaser for their Complete Godot VFX Handbook at jettelly.com. Handy reference for stylised water in Yuvraj's games.
@@ -2902,6 +2956,7 @@ status: unread
 why: repeatable Blender MCP character workflow for my games
 tags: blender, mcp, 3d-character, animation, rigging, workflow
 style: stylised storybook 3d, big-head proportions
+kit: 3d
 
 ## Summary
 @rewind02 built and animated a stylised storybook hero (curly-haired boy, green tunic, brown boots, long orange scarf) in Blender by driving it with Claude Opus 5.5 through the Blender MCP. The key trick: give the scarf its own bone chain so it trails and swings behind every step. Saved as a repeatable 8-step character workflow for Yuvraj's games.

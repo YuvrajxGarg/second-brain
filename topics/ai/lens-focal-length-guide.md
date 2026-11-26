@@ -6,6 +6,7 @@ tags: [video-generation, cinematography, prompting, reference]
 kind: technique
 why: cinematography lens guide for prompting AI video (no comment given)
 style: [surreal pastel wide fields, masked characters, giant planet skies, bold orange focal length type]
+kit: [shoot]
 source: https://www.instagram.com/reel/DfnLpaPoNIf/
 added: 2026-11-12
 status: unread

@@ -16,14 +16,14 @@ CHECKS.md          mistakes agents made, each turned into a check (hand-curated,
 HANDOFF.md         guide for a friend to set up this system for themselves (hand-written)
 ME.md              Yuvraj's own page: curated personality read + insights, generated stats
 IDEAS.md           generated: his ideas and to-dos by stage
-catalog/           generated: entries grouped by kind (libraries, style-refs, tools...)
+catalog/           generated: entries grouped by kind (libraries, style-refs, tools...) + kit.md (asset library)
 llms.txt           generated: llmstxt.org index for AI tools
 llms-full.txt      generated: every note in one file
 INDEX.md           generated: every entry, grouped by topic, newest first
 TAGS.md            generated: every tag with its entries
 LINKS.md           generated: link health report and link proposals (scripts/link_doctor.py)
 api/mcp.js         MCP server served at https://brainy.pxlvzn.in/mcp (read-only; +write tools with ?key=)
-api/_write.js      the MCP write tools: capture, update_note, log_project (CAPTURE_KEY)
+api/_write.js      the MCP write tools: capture, update_note, log_project, log_playtest (CAPTURE_KEY)
 api/edit.js        edit API for the graph site (passcode-locked, commits to main)
 api/capture.js     plain HTTP capture for iPhone/Mac/Windows (CAPTURE_KEY), writes inbox/
 inbox/             only when a dump is genuinely unclear; sort it later
@@ -67,6 +67,13 @@ log**, not a dump. Use the `log-to-brain` skill if it's loaded; if not, follow
   push; the nightly sync copies it into both vaults.
 - Reusable how-tos that came out of the session can also become one `kind: technique`
   note, linked with `note:` in the project's `project.md`. One note, not one per session.
+- **Playtests** (Yuvraj's ask 2026-11-26): "log this playtest", "playtest notes", "log
+  build v0.4" for a game = one entry in `projects/<slug>/playtests.md` (vault
+  `<Game>/playtests.md`), newest first: `## YYYY-MM-DD · <build> · <headline>`, then
+  `**Build:**`, `**Played by:**`, and `**Worked**`, `**Broke**`, `**Felt**`, `**Fix next**`
+  (open `- [ ]` checkboxes) lists. The newest entry's open fixes become the game's next
+  steps on the board. From another chat: MCP `log_playtest`. A game with only a
+  `topics/` note gets `projects/<slug>/project.md` with `note: <note-slug>` (no copy).
 
 ## Filing a dump
 
@@ -82,7 +89,8 @@ log**, not a dump. Use the `log-to-brain` skill if it's loaded; if not, follow
    graph a note means a thought he wrote, not something he built.
 3. Pick **one topic** (the folder) and **3 to 6 tags**.
 3b. Fill the AI-facing fields (see "AI-readable fields" below): `kind` always,
-   `why` always, `style` for anything visual, `stage: new` for ideas and to-dos.
+   `why` always, `style` for anything visual, `stage: new` for ideas and to-dos,
+   `kit` for anything he'd use on a shoot, in an edit or in a game build.
 4. If it's a link, fetch it when possible and write a 1 to 3 sentence summary in
    your own words, plus the page title. If it can't be fetched, say so in the body.
 5. Write the file to `topics/<topic>/<slug>.md` using the template below. `slug` is
@@ -125,7 +133,7 @@ project work goes to log-to-brain, everything else becomes a note, filed with th
 rules as here. It writes through, in order: the MCP `capture` tool, a shell with the repo,
 the GitHub connector, or (nothing can write) a markdown block for him to paste here.
 
-- MCP write tools (`api/_write.js`): `capture`, `update_note`, `log_project`. Listed only
+- MCP write tools (`api/_write.js`): `capture`, `update_note`, `log_project`, `log_playtest`. Listed only
   when the connector URL has `?key=<CAPTURE_KEY>` (Vercel env, production). Add-only, one
   commit each (`add: <title> (from chat)`, `edit: ... (from chat)`, `log: <slug> <date> (from chat)`),
   so a bad one is a `git revert`. `capture` enforces the check_notes.py rules, refuses a link or
@@ -215,6 +223,27 @@ every note carries these, and `AGENTS.md` explains them to outside agents:
   one descriptor.
 - `stage` (kind `idea` or `todo` only): `new`, `exploring`, `doing`, `done`,
   `dropped`. When he says he started, finished or dropped an idea, update it.
+- `kit` (Yuvraj's ask 2026-11-26, optional): his **asset library** for shoots, edits
+  and game builds. One or more of `grade` (LUTs, colour grading and matching), `sound`
+  (SFX, music, stems), `vfx` (effects, overlays, compositing, AI video, upscalers),
+  `motion` (animation, mocap, retargeting, motion-design refs), `shoot` (camera, lenses,
+  lighting, DIT), `edit` (edit workflows, footage tools), `3d` (models, shaders, rigs),
+  `2d` (sprites, pixel art, textures). Only when he'd actually reach for it in that work;
+  a LUT pack, SFX library, plugin, preset, asset source or shoot guide always gets one.
+  Feeds `catalog/kit.md`, the Asset library view (`site/gallery.html#asset-library`,
+  filter by KIT area and LOOK words from `style`) and MCP `get_catalog('kit')`.
+  `check_notes.py` rejects unknown areas; the list is `KIT` in `scripts/build_index.py`
+  (mirrored in `api/mcp.js`, `api/_write.js`, `site/gallery.js`).
+- **Next steps on projects:** a project's next steps show on the PROJECTS board and in
+  `get_catalog('projects')`. They come from, first match wins: open `- [ ]` items in its
+  vault `todo.md`, the newest playtest's **Fix next**, the newest `log.md` entry's
+  **Next**, then a `## Next` bullet list in the note itself. For a project with no vault
+  folder, keep a short `## Next` in the note.
+- **Build ideas he wants tracked** (2026-11-26): an idea he means to build (an app, a
+  game, a tool) can become `kind: project`, `type: app|game|tool|site`, `state: concept`
+  (drop `stage`), with a `## Next` list. It moves from the IDEAS board to PROJECTS >
+  CONCEPT, and still shows in `IDEAS.md` ("Ideas being tracked as projects") and MCP
+  `recall_ideas`. Thoughts, jokes and feature to-dos stay `kind: idea/todo`.
 - `TASTE.md`: keep the curated profile honest and short. Only claim a taste
   that at least one saved note shows; link the evidence by title.
 - `ME.md` is for **him**, not agents: a personality read, insights and nudges
@@ -364,7 +393,8 @@ Besides the graph, the site has views that read the same `data/graph.json`, swit
 from the GRAPH / BOARD / TIMELINE tabs at the top (`site/views.js` + `views.css` are shared):
 
 - `site/board.html`: Kanban boards. IDEAS by `stage`, PROJECTS by `state` (concept /
-  building / live / archived), READING (saved refs) by `status`. Dragging a card (or its ⋯
+  building / live / archived, each card with its next steps and playtest count),
+  READING (saved refs) by `status`. Dragging a card (or its ⋯
   menu) rewrites that one field via `/api/edit` `save`, so keep those fields tidy.
 - `site/timeline.html`: every note on its `added` day, one track per topic, with an
   NLE-style playhead (J/K/L, drag the ruler) that replays how the brain grew.
@@ -381,7 +411,9 @@ from the GRAPH / BOARD / TIMELINE tabs at the top (`site/views.js` + `views.css`
   `#auto=clusters:all`. Edges carry an extra `sb` object ({score, kind}) Obsidian ignores. To get
   a clean FLOW, save a technique's steps as a numbered list in its Summary.
 - `site/gallery.html`: saved views in `views/<id>.json` (`name`, `about`, `layout`
-  gallery|table, `filter` {kind, topic, status, tags, q}, `sort`), Obsidian Bases-style.
+  gallery|table, `filter` {kind, topic, status, tags, q, kit, hasKit, look}, `sort`),
+  Obsidian Bases-style. `views/asset-library.json` (`hasKit: true`) is the asset library:
+  KIT chips narrow by area and LOOK chips (words from `style`) search by look.
   SAVE VIEW commits a new one. Agents can read these files to see how he slices the brain.
 
 New views go in the `VIEWS` list in `site/views.js` and the nav in `site/index.html`.

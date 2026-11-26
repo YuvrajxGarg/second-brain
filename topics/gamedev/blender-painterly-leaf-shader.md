@@ -6,6 +6,7 @@ tags: [blender, shader, 3d-art, reference]
 kind: technique
 why: painterly stylised shading in Blender using the Light Accumulation node
 style: [painterly brushstroke leaves, teal and lime on deep crimson, hand-painted 3d look]
+kit: [3d]
 source: https://x.com/jiehananana/status/2121967542499713475
 added: 2026-11-16
 status: unread

@@ -6,6 +6,7 @@ tags: [unity, rigging, animation, tutorial]
 kind: technique
 why: tips for hand animation in a first person view in Unity
 style: [bodycam first person view, gloved hands with pistol, striped test room]
+kit: [motion, 3d]
 source: https://www.instagram.com/reel/DfpPiVxiVWy/
 added: 2026-11-13
 status: unread

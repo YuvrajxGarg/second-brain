@@ -5,6 +5,7 @@ topic: ai
 tags: [video-generation, video-editing, hugging-face, open-source, to-try]
 kind: tool
 why: Viggle AI's open weights to recast anybody in a video
+kit: [vfx]
 source: https://www.instagram.com/reel/DfpPt63MPOT/
 added: 2026-11-13
 status: unread

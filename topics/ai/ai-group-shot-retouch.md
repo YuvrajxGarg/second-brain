@@ -5,6 +5,7 @@ topic: ai
 tags: [workflow, claude, photo-compositing, retouching, reference]
 kind: technique
 why: what worked (and what didn't) fixing a 4-person album-cover group shot with Claude Code and Higgsfield
+kit: [vfx]
 added: 2026-11-26
 status: done
 ---

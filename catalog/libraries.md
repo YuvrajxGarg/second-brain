@@ -21,6 +21,7 @@ Stick It Up is an open-source (MIT, free for commercial use) npm package of Reac
 `library` · gamedev · <https://x.com/apekshik/status/2120224530367119758>
 
 - **Why saved:** open-source rigged arm to reuse in my games
+- **Kit:** 3d
 - **Tags:** #rigging #animation #open-source #to-try
 
 @apekshik used an AI model to build one highly detailed, open-source rigged arm instead of "one-shotting" a whole game: realistic bone armature, weight-painted mesh, volume-preserving joints and muscles that swell as the fist tightens. The arm uses two-bone IK (you set the hand target, it solves shoulder and elbow) while the 38-bone fingers use FK, curling joint by joint and stopping on contact, so it can reach, grab and place a ball on a table. Live demo at procedural-arm-rig.vercel.app, code at github.com/apekshik/procedural-arm-rig, free to reuse in your own games.
@@ -30,6 +31,7 @@ Stick It Up is an open-source (MIT, free for commercial use) npm package of Reac
 `library` · ai · <https://github.com/roboflow/re-ID>
 
 - **Why saved:** track one player across clips for sports video edits
+- **Kit:** edit, vfx
 - **Tags:** #computer-vision #object-tracking #python #open-source #to-try
 
 `reid` is an open-source (Apache 2.0) Python package from Roboflow that turns a crop of a person into an appearance embedding, so the same person can be matched across frames, clips or cameras. It loads pretrained OSNet and FastReID models, works with `supervision` detections from any detector (e.g. RF-DETR), and includes benchmarks for re-identification. Install with `pip install -U reid`; docs at reid.roboflow.com.
@@ -40,6 +42,7 @@ Stick It Up is an open-source (MIT, free for commercial use) npm package of Reac
 
 - **Why saved:** open-source three.js asset library agents can use over MCP
 - **Style:** low-poly, shared kit palettes
+- **Kit:** 3d
 - **Tags:** #game-assets #low-poly #threejs #mcp #to-try
 
 Polyfork is a library of 3,000+ free low-poly 3D assets for three.js, Unity, Unreal, Godot and Blender, where each asset is a small program with knobs (colours, proportions, part counts) that rebuilds when you tweak it. Has themed kits with shared palettes, procedural terrain, configurable Mixamo-compatible characters, and exports GLB/FBX/USDZ/OBJ. Comes with a no-install MCP server at polyfork.dev/mcp (search_assets, get_kit, get_terrain, preview_scene...) so coding agents can pull assets directly.
@@ -61,6 +64,7 @@ Astryx is Meta's open-source (MIT, beta) design system, used inside Meta for eig
 
 - **Why saved:** free Creative Commons 3D art files to remix
 - **Style:** glossy abstract 3d, metallic gold and rose gold, pastel blocks
+- **Kit:** 3d
 - **Tags:** #3d-art #creative-commons #free-assets #inspiration
 
 3D artist ARC (@arc4g) released all of their 3D art project files for free under Creative Commons, inviting people to remix them by hand or with AI agents. Their disability makes it hard to keep making art, so this lets the work keep growing. The previews show glossy abstract 3D renders: gold and rose-gold metallic shapes, pastel blocks, pink and blue scenes.
@@ -71,6 +75,7 @@ Astryx is Meta's open-source (MIT, beta) design system, used inside Meta for eig
 
 - **Why saved:** sprites database for games I build
 - **Style:** pixel art
+- **Kit:** 2d
 - **Tags:** #pixel-art #sprites #game-assets #semantic-search #hugging-face #reference
 
 A Hugging Face Space by cfahlgren1 that does instant semantic search over a pixel art collection, right in the browser: describe a sprite in words and it finds matching ones. Saved as a sprite source for games Yuvraj builds. The page doesn't name the underlying dataset or license, so check usage rights before shipping any sprite.

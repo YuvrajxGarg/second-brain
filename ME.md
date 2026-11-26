@@ -58,7 +58,7 @@ _Rebuilt on every filing from 111 notes._
 | Current streak | 1 day |
 | Longest streak | 8 days |
 | Notes with his own comment | 52 (46%) |
-| Open ideas and to-dos | 6 |
+| Open ideas and to-dos | 4 |
 | Tagged to-try | 23 |
 | Marked read or done | 46 of 111 |
 
@@ -103,11 +103,11 @@ game-ref      █ 4
 tool          ██ 12
 technique     ███ 17
 advice        █ 6
-idea          █ 4
+idea          █ 2
 thought       █ 2
 todo          █ 2
 org           █ 3
-project       ███████ 39
+project       ███████ 41
 ```
 
 ### Where it comes from
@@ -124,7 +124,7 @@ github        █ 5
 
 - doing: 1
 - exploring: 0
-- new: 5
+- new: 3
 - done: 0
 - dropped: 0
 

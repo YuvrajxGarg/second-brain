@@ -6,6 +6,7 @@ tags: [3d-character, blender, agents, mcp, open-source, to-try]
 kind: tool
 why: give the repo to an agent and talk to it to make AAA MetaHumans for Unreal and web
 style: [photoreal metahuman faces, gritty scarred skin detail, unreal editor viewport]
+kit: [3d]
 source: https://x.com/joshuajohnsonAI/status/2122836076515799287
 added: 2026-11-18
 status: unread

@@ -20,6 +20,7 @@ Read TASTE.md first for the gist, then the catalog for what you need. Live graph
 - [Techniques and advice](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/catalog/techniques.md): Workflows, how-tos and tips he wants to reuse.
 - [Ideas, thoughts and to-dos](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/catalog/ideas.md): His own ideas, thoughts and open to-dos.
 - [His projects and companies](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/catalog/projects.md): Things Yuvraj has built himself (games, apps, tools, sites) and the companies he works in. Use them as context: his real stack, his shipped looks, and what already exists before suggesting something new.
+- [Asset library](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/catalog/kit.md): what he uses on shoots, edits and game builds (LUTs, sound, VFX, motion, 3D, 2D), by area
 
 ## Notes
 
@@ -50,7 +51,7 @@ Read TASTE.md first for the gist, then the catalog for what you need. Live graph
 - [Sleep alarm UI](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/sleep-alarm-ui.md): `style-ref` · design · cool design
 - [RelayVSR video upscaler](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/relayvsr-video-upscaler.md): `tool` · ai · open weight video upscaler available in ComfyUI
 - [Line art mocap workflow](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/line-art-mocap-workflow.md): `technique` · gamedev · cool line art animation workflow with motion capture and Mixamo integration also
-- [DIT offload checker](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/tech/dit-offload-checker-idea.md): `idea` · tech · app idea for PXL, a data transfer system checker for when DIT is happening on a shoot
+- [DIT offload checker](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/tech/dit-offload-checker-idea.md): `project` · tech · app idea for PXL, a data transfer system checker for when DIT is happening on a shoot
 - [Claude live UI comments](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/claude-live-ui-comments.md): `technique` · ai · Claude using trick
 - [Cinematic film skill](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/cinematic-film-skill.md): `tool` · ai · agent skill for explainer content
 - [Blooming flowers site](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/mohamed-siddique-flower-site.md): `website-ref` · design · nice calm website style with growing flower animation
@@ -103,7 +104,7 @@ Read TASTE.md first for the gist, then the catalog for what you need. Live graph
 - [Early Discord bots](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/tech/early-discord-bots.md): `project` · tech · first coding projects: bots for Discord servers, where learning to code started
 - [Dwn downloader](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/tech/dwn-downloader.md): `project` · tech · to grab videos, songs and transcripts from any site in edit-ready formats, without sketchy download sites
 - [DriveDesk file manager](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/tech/drivedesk-file-manager.md): `project` · tech · to browse local files and Google Drive side by side and move things between them
-- [Disk cleanup app](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/tech/disk-cleanup-app.md): `idea` · tech · to clear caches and free up disk space, with a UI that's nice to use
+- [Disk cleanup app](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/tech/disk-cleanup-app.md): `project` · tech · to clear caches and free up disk space, with a UI that's nice to use
 - [CanvasFlow whiteboard](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/tech/canvasflow-whiteboard.md): `project` · tech · a whiteboard for thinking that sits behind your windows like a desk mat, with no account
 - [BulkBros gym app](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/health/bulkbros-gym-app.md): `project` · health · to plan meals and workouts for a lean bulk with a roommate, with an AI coach
 - [Bonk Court game](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/bonk-court-game.md): `project` · gamedev · a quick street-court basketball shooting game

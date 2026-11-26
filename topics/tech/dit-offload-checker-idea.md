@@ -1,12 +1,15 @@
 ---
 title: DIT offload checker
-type: idea
+type: app
 topic: tech
 tags: [pxlvzn, product-idea, desktop-app, video-editing]
-kind: idea
+kind: project
 why: app idea for PXL, a data transfer system checker for when DIT is happening on a shoot
 style: [dark menu bar popover, blue primary button, plain status sentence]
-stage: new
+kit: [shoot]
+state: concept
+stack: []
+repo: none
 source: https://www.instagram.com/reel/DfkvaoETdCl/
 added: 2026-11-13
 status: unread
@@ -24,7 +27,15 @@ https://www.instagram.com/reel/DfkvaoETdCl/?exln=MWd3YWlueW5peWR3bg==
 
 App idea for PXL, it can be a data transfer system checker, like whenever I'm like DIT is happening on a shoot or something, this app can be used.
 
+## Next
+Suggested first steps (edit freely):
+- Write down what "safe to format" means: every clip on the card is on the drive with the same size and checksum
+- Prototype the compare step against a real card offload and a T7-style working drive
+- Sketch the menu bar popover from the backed reference (card, working drive, one plain status sentence)
+- Decide Mac only first or Mac and Windows together, like the other PXLVZN apps
+
 ## Notes
+- 2026-11-26: moved from idea to a tracked project (state: concept) so it sits on the PROJECTS board with next steps.
 - Reference app: backed (@backed_app), early access via comments. Caption: "See what's missing before you copy a thing. Then backed copies just that into the right shoot folder and checks every clip."
 - Related PXLVZN file tools: [[hop-file-transfer]], [[ferry-file-manager]]
 - Label: [[pxlvzn-label]]

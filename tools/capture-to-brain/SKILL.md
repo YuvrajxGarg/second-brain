@@ -54,6 +54,9 @@ for linking. Don't read more than the search results; `fetch` only a note you'll
   plain reason. Never about him in the third person.
 - `style`: visual things only, 2-5 descriptors of what's actually there.
 - `stage: new` for ideas and to-dos.
+- `kit`: only for things he'd use on a shoot, in an edit or in a game build (a LUT pack,
+  SFX library, plugin, preset, effect, asset source, shoot guide): one or more of `grade`,
+  `sound`, `vfx`, `motion`, `shoot`, `edit`, `3d`, `2d`. It puts the note in his asset library.
 - `summary`: 1-3 sentences in your words. `raw`: exactly what he sent.
 - `related`: the 2-3 notes from step 2, each with a short plain reason.
 

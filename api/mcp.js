@@ -20,7 +20,9 @@ const CATALOG_KINDS = {
   ideas: ["idea", "thought", "todo"],
   projects: ["org", "project"],
 };
-const CATALOGS = Object.keys(CATALOG_KINDS);
+// asset library: notes with a `kit` field, by area (mirrors KIT in scripts/build_index.py)
+const KIT = ["grade", "sound", "vfx", "motion", "shoot", "edit", "3d", "2d"];
+const CATALOGS = [...Object.keys(CATALOG_KINDS), "kit"];
 const EVIDENCE = { kinds: "What he saves", tags: "Top tags", styles: "Style notes", references: "Every reference" };
 
 let cache = { at: 0, brain: null };
@@ -69,12 +71,14 @@ function tasteProfile(taste, evidence = "none") {
   );
 }
 
-// One line per note: id | title | status | what it is | stack or style.
+// One line per note: id | title | status | what it is | stack or style (| next step).
 function catalogLines(list) {
   return list.map((n) => {
     const status = n.state || n.stage || "";
     const extra = n.stack?.length ? `stack: ${n.stack.join(", ")}` : n.style?.length ? `style: ${n.style.slice(0, 3).join(", ")}` : "";
-    return [shortId(n), n.title, n.kind, status, clip(n.why, 110), extra].filter(Boolean).join(" | ");
+    const next = n.next?.length ? `next: ${clip(n.next[0], 80)}` : "";
+    const pt = n.playtests ? `playtests: ${n.playtests.count}, last ${n.playtests.last}` : "";
+    return [shortId(n), n.title, n.kind, status, clip(n.why, 110), extra, next, pt].filter(Boolean).join(" | ");
   });
 }
 
@@ -83,7 +87,7 @@ const words = (s) => String(s || "").toLowerCase().split(/[^a-z0-9+#.-]+/).filte
 
 function score(n, terms) {
   const title = n.title.toLowerCase();
-  const meta = [n.kind, n.topic, n.type, ...(n.tags || []), ...(n.style || []), n.why].join(" ").toLowerCase();
+  const meta = [n.kind, n.topic, n.type, ...(n.tags || []), ...(n.style || []), ...(n.kit || []), n.why].join(" ").toLowerCase();
   const body = n.body.toLowerCase();
   let s = 0;
   for (const t of terms) {
@@ -211,11 +215,12 @@ const TOOLS = [
     name: "get_catalog",
     title: "Get a catalog",
     description:
-      "Return one catalog as one line per note (id | title | kind | state | what it is | stack or style): libraries (UI libraries, design systems, asset sources), style-refs (visual, website and game references), tools, techniques, ideas, projects (games, apps and tools he has built himself, plus Revolio and Revolio Labs, the companies he works in). `fetch` the ids you need for details; detail 'full' returns every summary and costs about 4x more.",
+      "Return one catalog as one line per note (id | title | kind | state | what it is | stack or style): libraries (UI libraries, design systems, asset sources), style-refs (visual, website and game references), tools, techniques, ideas, projects (games, apps and tools he has built himself, plus Revolio and Revolio Labs, the companies he works in; with next steps and playtest counts), kit (his asset library for shoots, edits and game builds, grouped by area: grade, sound, vfx, motion, shoot, edit, 3d, 2d; pass `area` to narrow). `fetch` the ids you need for details; detail 'full' returns every summary and costs about 4x more.",
     inputSchema: {
       type: "object",
       properties: {
         name: { type: "string", enum: CATALOGS },
+        area: { type: "string", enum: KIT, description: "kit only: one area, e.g. grade for LUTs and colour, sound for SFX and music." },
         detail: { type: "string", enum: ["compact", "full"], default: "compact" },
       },
       required: ["name"],
@@ -300,10 +305,10 @@ async function callTool(name, a = {}, req) {
       const want = a.stage || "open";
       const terms = words(a.query);
       const list = notes
-        .filter((n) => n.kind === "idea" || n.kind === "todo")
+        .filter((n) => n.kind === "idea" || n.kind === "todo" || (n.kind === "project" && /concept|idea/i.test(n.state || "")))
         .filter((n) => !a.topic || n.topic === a.topic)
         .filter((n) => {
-          const st = n.stage || "new";
+          const st = n.kind === "project" ? "new" : n.stage || "new"; // concept projects count as new ideas
           return want === "all" || (want === "open" ? ["new", "exploring", "doing"].includes(st) : st === want);
         })
         .filter((n) => !terms.length || score(n, terms) > 0);
@@ -311,11 +316,20 @@ async function callTool(name, a = {}, req) {
       const shown = list.slice(0, a.limit || 20);
       return text(
         shown
-          .map((n) => `## ${n.title} (${n.kind}, ${n.stage || "new"}, ${n.topic}, ${n.added})\nid: ${shortId(n)}\nwhy: ${clip(n.why, 140)}\n${clip(n.summary, 220)}`)
+          .map((n) => `## ${n.title} (${n.kind === "project" ? "project, concept" : `${n.kind}, ${n.stage || "new"}`}, ${n.topic}, ${n.added})\nid: ${shortId(n)}\nwhy: ${clip(n.why, 140)}\n${clip(n.summary, 220)}${n.next?.length ? `\nnext: ${clip(n.next[0], 120)}` : ""}`)
           .join("\n\n") + (list.length > shown.length ? `\n\n(${shown.length} of ${list.length}; raise limit for more)` : "")
       );
     }
     case "get_catalog": {
+      if (a.name === "kit") {
+        if (a.detail === "full" && !a.area) return text(brain.catalogs.kit || "Empty catalog.");
+        const areas = a.area ? [a.area] : KIT;
+        const out = areas.map((k) => {
+          const list = notes.filter((n) => (n.kit || []).includes(k));
+          return list.length ? `## ${k} (${list.length})\n` + catalogLines(list).join("\n") : "";
+        }).filter(Boolean);
+        return text(`# kit: asset library${a.area ? ` (${a.area})` : ""}\nid | title | kind | state | what it is | stack or style\n\n` + (out.join("\n\n") || "Nothing in this area yet."));
+      }
       const kinds = CATALOG_KINDS[a.name];
       if (!kinds) return fail(`No catalog '${a.name}'. Use one of: ${CATALOGS.join(", ")}.`);
       if (a.detail === "full") return text(brain.catalogs[a.name] || "Empty catalog.");

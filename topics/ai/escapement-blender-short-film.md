@@ -6,6 +6,7 @@ tags: [claude, blender, agents, 3d-art, open-source, to-try]
 kind: technique
 why: cool 3D short film skill
 style: [dark macro clockwork, dusk orange canyon, cinematic letterbox grade]
+kit: [3d, grade]
 source: https://www.instagram.com/reel/DfpnVGBBawT/
 repo: https://github.com/Leonxlnx/escapement
 added: 2026-11-14

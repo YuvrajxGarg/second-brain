@@ -18,12 +18,16 @@ generic defaults.
    - [techniques.md](catalog/techniques.md): workflows, how-tos, advice
    - [ideas.md](catalog/ideas.md): his own ideas, thoughts, to-dos
    - [projects.md](catalog/projects.md): what he has built himself (games, apps, tools,
-     sites) and the companies he works in, with status, stack and links
+     sites) and the companies he works in, with status, stack, links, next steps and
+     playtest counts. Build ideas he is tracking sit here too, as `state: concept`
+   - [kit.md](catalog/kit.md): his **asset library** for shoots, edits and game builds,
+     grouped by area (`grade`, `sound`, `vfx`, `motion`, `shoot`, `edit`, `3d`, `2d`)
 3. **[IDEAS.md](IDEAS.md)**: his own ideas and to-dos by stage. Call these back
    when they're relevant ("you had an idea for X on Nov 10, want to pick it up?").
 4. **Project docs** in `projects/<slug>/`: `project.md` plus his working docs for that
    project (context.md, todo.md, log.md with dated status, learnings and mistakes,
-   checks.md), synced from his own vault. Read these before working on one of his projects.
+   checks.md, and for games playtests.md: one entry per build played, with open
+   "Fix next" checkboxes), synced from his own vault. Read these before working on one of his projects.
    **Checks first:** [CHECKS.md](CHECKS.md) lists mistakes agents already made for him and
    the check that stops each one; a project's `checks.md` adds its own. MCP:
    `get_checks` with the project slug. Run every `proved` check before saying "done".
@@ -47,13 +51,15 @@ topic, [TAGS.md](TAGS.md) by tag.
 | JSON of everything | `https://brainy.pxlvzn.in/data/brain.json` |
 | Graph website | `https://brainy.pxlvzn.in` |
 
-MCP tools: `get_taste_profile`, `search`, `fetch`, `list_notes`, `get_catalog`,
-`recall_ideas`, `get_checks`.
+MCP tools: `get_taste_profile`, `search`, `fetch`, `list_notes`, `get_catalog`
+(including `kit`, the asset library, with an optional `area`), `recall_ideas` (also
+returns build ideas tracked as concept projects), `get_checks`.
 
 **Writing** (only when Yuvraj's connector URL carries `?key=`; otherwise these aren't
 listed): `capture` files one note, `update_note` adds to an existing one (his words,
 a follow-up line, links, an idea's stage), `log_project` adds a dated entry to a
-project's `log.md`. Search first and extend a match instead of making a copy. The
+project's `log.md`, `log_playtest` adds one entry per build played to a game's
+`playtests.md` (build, who played, worked, broke, felt, fix next). Search first and extend a match instead of making a copy. The
 server enforces the filing rules and refuses a link that's already saved. How to fill
 the fields: [tools/capture-to-brain/SKILL.md](tools/capture-to-brain/SKILL.md).
 
@@ -105,13 +111,24 @@ visual design"). Treat it as the most direct statement of his preference.
 
 **`stage`** (ideas and to-dos): `new`, `exploring`, `doing`, `done`, `dropped`.
 
+**`kit`** (optional, any kind): where the thing goes in his working kit for shoots,
+edits and game builds, one or more of `grade` (LUTs, colour), `sound` (SFX, music,
+stems), `vfx` (effects, compositing, AI video, upscalers), `motion` (animation, mocap,
+motion-design refs), `shoot` (camera, lenses, lighting, DIT), `edit` (edit workflows,
+footage tools), `3d`, `2d`. Notes with a `kit` make up `catalog/kit.md` and the Asset
+library view on the site. When he asks for a LUT, a sound, an effect or an asset,
+look here first, and use `style` to match the look.
+
 **Project fields** (kind `project` and `org`): `type` says what it is (`game`,
 `app`, `tool`, `site`, `concept`, `company`) and `why` says what it's made for.
 `state` is where it stands in his
 words (`live`, `live (internal)`, `prototype`, `in progress`, `concept`,
 `archived`...), `stack` lists what it is built with, `source` is the live link and
 `repo` is the GitHub link or `private`. Private repos are described at product level
-only; never ask for or guess their code.
+only; never ask for or guess their code. A project's **next steps** come from, in
+order: open `- [ ]` items in its vault `todo.md`, the newest playtest's "Fix next",
+the newest log entry's "Next", then a `## Next` section in the note. They show on the
+PROJECTS board and in `get_catalog('projects')`.
 
 ## How to use it well
 
@@ -122,6 +139,10 @@ only; never ask for or guess their code.
 - He asks "what was that thing about X": `search` (or grep `topics/`), answer with
   title, summary, source link and file path.
 - Brainstorming: `recall_ideas` and mention relevant past ideas.
+- Edits and shoots: `get_catalog('kit')` (or `catalog/kit.md`) before suggesting a
+  new LUT, plugin, sound source or asset pack; he may already have one he likes.
+- Working on one of his games: read its `playtests.md` (latest entry first) for what
+  players hit and what he planned to fix.
 - Suggesting what to build: check `catalog/projects.md` (or `get_catalog('projects')`)
   first. He has shipped a lot; build on or remix his own projects before
   proposing something from scratch, and match the stack he already uses.

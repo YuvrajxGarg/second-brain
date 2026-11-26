@@ -6,6 +6,7 @@ tags: [game-assets, low-poly, threejs, mcp, to-try]
 kind: library
 why: open-source three.js asset library agents can use over MCP
 style: [low-poly, shared kit palettes]
+kit: [3d]
 source: https://polyfork.dev
 added: 2026-11-10
 status: unread
