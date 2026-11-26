@@ -1,7 +1,7 @@
 ---
 title: PEAKD game
 type: game
-topic: gamedev
+topic: revolio
 tags: [revolio-labs, own-project, browser-game, daily-challenge]
 kind: project
 why: a daily guessing game: when did this slang, show or meme peak

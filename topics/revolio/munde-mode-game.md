@@ -1,7 +1,7 @@
 ---
 title: Munde Mode game
 type: game
-topic: gamedev
+topic: revolio
 tags: [revolio-labs, own-project, browser-game, indian-setting, threejs]
 kind: project
 why: the Tukaram Munde game idea made playable: a parody Mumbai food-safety raid sim

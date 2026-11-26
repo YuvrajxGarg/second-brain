@@ -1,7 +1,7 @@
 ---
 title: Revolio Studio v1
 type: app
-topic: ai
+topic: revolio
 tags: [revolio-labs, own-project, generative-ai, video-generation]
 kind: project
 why: the first try at one AI studio for image, video and 3D generation; rebuilt as the Revolio Labs app

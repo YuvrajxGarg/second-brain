@@ -1,8 +1,8 @@
 ---
 title: Revolio Labs
 type: company
-topic: business
-tags: [revolio-labs, revolio, own-project, browser-game, ai]
+topic: revolio
+tags: [revolio-labs, own-project, browser-game, ai]
 kind: org
 why: the experiments company under Revolio, for games, tools and toys ('Work in play')
 style: [black and yellow, r mark with animated eyes, clean sans type]

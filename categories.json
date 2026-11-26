@@ -2,7 +2,8 @@
   "mode": "propose",
   "colors": {
     "video-editing": "#3dffd0",
-    "animation": "#ffc8a0"
+    "animation": "#ffc8a0",
+    "revolio": "#ff7de0"
   },
   "dismissed": {},
   "created": {
@@ -20,6 +21,15 @@
         "animation"
       ],
       "notes": 8,
+      "kept": []
+    },
+    "revolio": {
+      "date": "2026-11-26",
+      "tags": [
+        "revolio",
+        "revolio-labs"
+      ],
+      "notes": 15,
       "kept": []
     }
   }

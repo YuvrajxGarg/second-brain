@@ -1,7 +1,7 @@
 ---
 title: Saturday off tracker
 type: tool
-topic: business
+topic: revolio
 tags: [revolio, own-project, internal-tool]
 kind: project
 why: to plan who on the Revolio team takes which Saturday off

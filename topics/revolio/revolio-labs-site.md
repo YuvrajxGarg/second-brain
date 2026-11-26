@@ -1,7 +1,7 @@
 ---
 title: Revolio Labs site
 type: site
-topic: gamedev
+topic: revolio
 tags: [revolio-labs, own-project, threejs, creative-coding]
 kind: project
 why: a home for Revolio Labs: a cozy 3D desk where the games and experiments live

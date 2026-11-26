@@ -1,8 +1,8 @@
 ---
 title: Revolio SSD Desk
 type: tool
-topic: business
-tags: [revolio, own-project, internal-tool, nfc]
+topic: revolio
+tags: [own-project, internal-tool, nfc]
 kind: project
 why: to always know who has which Revolio SSD and log handoffs with a tap
 state: live (internal)

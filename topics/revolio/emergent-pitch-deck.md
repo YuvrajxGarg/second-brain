@@ -1,8 +1,8 @@
 ---
 title: Emergent pitch deck
 type: site
-topic: business
-tags: [revolio, own-project, pitch, content-strategy]
+topic: revolio
+tags: [own-project, pitch, content-strategy]
 kind: project
 why: to pitch a content strategy to Emergent as an interactive web deck
 state: done

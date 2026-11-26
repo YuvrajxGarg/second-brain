@@ -1,7 +1,7 @@
 ---
 title: Rohit Learns Ball
 type: game
-topic: gamedev
+topic: revolio
 tags: [revolio-labs, own-project, browser-game, pixel-art]
 kind: project
 why: a fan-made pixel game about the Kasauli Tigers teaching Rohit basketball

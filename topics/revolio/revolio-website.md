@@ -1,8 +1,8 @@
 ---
 title: Revolio website
 type: site
-topic: design
-tags: [revolio, own-project, portfolio, website]
+topic: revolio
+tags: [own-project, portfolio, website]
 kind: project
 why: the Revolio Media portfolio site, to show the studio's work
 state: live

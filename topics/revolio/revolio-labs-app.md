@@ -1,7 +1,7 @@
 ---
 title: Revolio Labs app
 type: app
-topic: ai
+topic: revolio
 tags: [revolio-labs, own-project, generative-ai, video-generation, mcp]
 kind: project
 why: one studio for AI image, video and games, so the team and anyone else can create from a single place

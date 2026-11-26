@@ -1,7 +1,7 @@
 ---
 title: SLANGDAQ game
 type: game
-topic: gamedev
+topic: revolio
 tags: [revolio-labs, own-project, browser-game, daily-challenge]
 kind: project
 why: a stock market for internet slang: bet on what's rising and what's cooked

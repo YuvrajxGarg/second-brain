@@ -1,8 +1,8 @@
 ---
 title: Revolio Ledger app
 type: app
-topic: business
-tags: [revolio, own-project, automation, internal-tool]
+topic: revolio
+tags: [own-project, automation, internal-tool]
 kind: project
 why: to replace the messy post-shoot expense and invoice process at Revolio
 state: live (internal)

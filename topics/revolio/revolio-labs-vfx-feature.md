@@ -1,7 +1,7 @@
 ---
 title: Revolio VFX feature
 type: todo
-topic: business
+topic: revolio
 tags: [revolio-labs, vfx, product-idea]
 kind: todo
 stage: new
