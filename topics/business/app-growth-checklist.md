@@ -39,5 +39,4 @@ Distribution:
 - Ran Apple Search Ads on competitor names and intent keywords?
 - Built ONE feature so good that people screenshot it without you asking?
 
-Related: [[native-swift-app-tip]]
 - [[tiktok-slideshow-app-marketing]]: both growth, mobile-app, marketing
