@@ -58,7 +58,7 @@ _Rebuilt on every filing from 115 notes._
 | Current streak | 1 day |
 | Longest streak | 8 days |
 | Notes with his own comment | 56 (48%) |
-| Open ideas and to-dos | 5 |
+| Open ideas and to-dos | 4 |
 | Tagged to-try | 24 |
 | Marked read or done | 46 of 115 |
 
@@ -125,11 +125,11 @@ github        █ 5
 
 ### Ideas by stage
 
-- doing: 1
+- doing: 0
 - exploring: 0
 - new: 4
 - done: 0
-- dropped: 0
+- dropped: 1
 
 Topics with nothing saved yet: finance.
 

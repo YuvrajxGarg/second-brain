@@ -1217,7 +1217,7 @@ Vinyl for Windows: a live desktop wallpaper that turns whatever is playing (Spot
 Tukaram Munde game  (topics/gamedev/tukaram-munde-game.md)
 ============================================================
 kind: idea
-stage: doing
+stage: dropped
 type: idea
 topic: gamedev
 added: 2026-11-12
