@@ -46,6 +46,21 @@ Starter topics: `ai`, `tech`, `business`, `design`, `productivity`, `health`,
 entries clearly share a theme that no existing topic fits. Prefer an existing
 topic over a new one. Topic names are short, lowercase, kebab-case.
 
+## "Log this to my brain" = project log, not a dump (Yuvraj's rule, 2026-11-26)
+
+When he says "log this", "log this to my brain", "save where this is at" or similar at
+the end of a work session (a build, an edit job, a client project), it's a **project
+log**, not a dump. Use the `log-to-brain` skill if it's loaded; if not, follow
+`tools/vault-sync/log-to-brain/SKILL.md` yourself:
+
+- Find the project first (vault folder, then `projects/<slug>/`, then an existing note) and
+  add a dated entry to its `log.md`. Never make a new `topics/` note for the session.
+- With access to his `Documents/Vault`, write there. Without it, write
+  `projects/<slug>/log.md` (plus `project.md` if the project is new) in this repo and
+  push; the nightly sync copies it into both vaults.
+- Reusable how-tos that came out of the session can also become one `kind: technique`
+  note, linked with `note:` in the project's `project.md`. One note, not one per session.
+
 ## Filing a dump
 
 1. Split the message into separate items. One link or idea = one entry.

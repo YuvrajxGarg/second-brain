@@ -1,6 +1,6 @@
 ---
 name: log-to-brain
-description: Log a project's status, context, learnings, mistakes or taste from the current chat into Yuvraj's Vault (Documents/Vault, one folder per project), reusing the existing project instead of making copies.
+description: Use whenever Yuvraj says "log this", "log this to my brain", "save this to my brain" or "save where this is at" about the work in the current chat. Writes status, learnings, mistakes and taste into his Vault project log (Documents/Vault, one folder per project), reusing the existing project instead of making copies or new notes.
 ---
 
 # Log to brain
@@ -28,6 +28,8 @@ Then:
 - Nothing exists: create a new project (step 4).
 
 Never create a second folder or note for a project that already exists. If two candidates look plausible, ask which.
+
+If a plain note about this same work already exists in `topics/` (for example an earlier "log this" that was filed as a note), don't copy it: set `note: <its slug>` in `project.md` so the vault docs attach to it, keep the how-to content in that note, and put only the dated status entry in `log.md`. Never write a new `topics/` note from this skill.
 
 ## 3. Write the log entry
 

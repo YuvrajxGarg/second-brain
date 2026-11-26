@@ -203,6 +203,8 @@ whether to smooth the hair texture.
 - [[2026-11-12-revolio-media-studio]]: the studio this job was for
 - [[2026-11-18-agent-mistakes-to-checks]]: same idea of turning agent mistakes into standing checks
 
+vault docs (full text via MCP fetch or https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/<path>): projects/album-cover-composite/log.md
+
 ============================================================
 Tabworthy site directory  (topics/tech/2026-11-21-tabworthy-site-directory.md)
 ============================================================

@@ -44,21 +44,21 @@ Review them on the graph site (LINK DOCTOR, bottom left) or say "apply links 1, 
 
 ### Add these links
 
-1. [ ] Claude Code agent tree <-> Try orchestrator workflow · 0.72 · both claude, agents  `2026-11-11-claude-code-agent-tree` `2026-11-12-try-orchestrator-workflow`
+1. [ ] Claude Code agent tree <-> Try orchestrator workflow · 0.72 · both agents, claude  `2026-11-11-claude-code-agent-tree` `2026-11-12-try-orchestrator-workflow`
 2. [ ] Meter Down concept <-> Tukaram Munde game · 0.701 · both game-idea, indian-setting  `2026-11-12-meter-down-concept` `2026-11-12-tukaram-munde-game`
-3. [ ] Try orchestrator workflow <-> Agent mistakes prompt · 0.697 · both claude, agents  `2026-11-12-try-orchestrator-workflow` `2026-11-18-agent-mistakes-to-checks`
+3. [ ] Try orchestrator workflow <-> Agent mistakes prompt · 0.697 · both agents, claude  `2026-11-12-try-orchestrator-workflow` `2026-11-18-agent-mistakes-to-checks`
 4. [ ] PXL app hub <-> DIT offload checker · 0.679 · both pxlvzn, desktop-app  `2026-11-12-pxl-app-hub` `2026-11-13-dit-offload-checker-idea`
-5. [ ] Orchestrator subagent prompt <-> Agent mistakes prompt · 0.673 · both prompting, workflow, claude  `2026-11-12-model-routing-orchestrator-prompt` `2026-11-18-agent-mistakes-to-checks`
+5. [ ] Orchestrator subagent prompt <-> Agent mistakes prompt · 0.673 · both prompting, workflow, agents  `2026-11-12-model-routing-orchestrator-prompt` `2026-11-18-agent-mistakes-to-checks`
 6. [ ] Runaway Light Rig <-> TV Stack toy · 0.664 · both rhythm-game, music, browser-game  `2026-11-12-runaway-light-rig` `2026-11-12-tv-stack-music-toy`
 7. [ ] DIT offload checker <-> Dwn downloader · 0.652 · both video-editing, pxlvzn, desktop-app  `2026-11-13-dit-offload-checker-idea` `2026-11-12-dwn-downloader`
 8. [ ] Cricle game <-> SLANGDAQ game · 0.65 · both daily-challenge, browser-game  `2026-11-09-cricle-daily-cricket-guessing-game` `2026-11-12-slangdaq-game`
-9. [ ] Claude video edit <-> Try orchestrator workflow · 0.646 · both claude, agents  `2026-11-18-claude-video-edit` `2026-11-12-try-orchestrator-workflow`
-10. [ ] Cinematic film skill <-> Try orchestrator workflow · 0.64 · both claude, agents  `2026-11-13-cinematic-film-skill` `2026-11-12-try-orchestrator-workflow`
+9. [ ] Claude video edit <-> Try orchestrator workflow · 0.646 · both agents, claude  `2026-11-18-claude-video-edit` `2026-11-12-try-orchestrator-workflow`
+10. [ ] Cinematic film skill <-> Try orchestrator workflow · 0.64 · both agents, claude  `2026-11-13-cinematic-film-skill` `2026-11-12-try-orchestrator-workflow`
 11. [ ] Claude live UI comments <-> Try orchestrator workflow · 0.63 · both claude  `2026-11-13-claude-live-ui-comments` `2026-11-12-try-orchestrator-workflow`
-12. [ ] Cinematic film skill <-> Escapement Blender film · 0.626 · both claude, agents  `2026-11-13-cinematic-film-skill` `2026-11-14-escapement-blender-short-film`
-13. [ ] Escapement Blender film <-> Try orchestrator workflow · 0.623 · both claude, agents  `2026-11-14-escapement-blender-short-film` `2026-11-12-try-orchestrator-workflow`
+12. [ ] Cinematic film skill <-> Escapement Blender film · 0.626 · both agents, claude  `2026-11-13-cinematic-film-skill` `2026-11-14-escapement-blender-short-film`
+13. [ ] Escapement Blender film <-> Try orchestrator workflow · 0.623 · both agents, claude  `2026-11-14-escapement-blender-short-film` `2026-11-12-try-orchestrator-workflow`
 14. [ ] Saturday off tracker <-> Revolio SSD Desk · 0.616 · both internal-tool, revolio  `2026-11-12-saturday-off-tracker` `2026-11-12-revolio-ssd-desk`
-15. [ ] Claude Code agent tree <-> Orchestrator subagent prompt · 0.615 · both workflow, claude, agents  `2026-11-11-claude-code-agent-tree` `2026-11-12-model-routing-orchestrator-prompt`
+15. [ ] Claude Code agent tree <-> Orchestrator subagent prompt · 0.615 · both workflow, agents, claude  `2026-11-11-claude-code-agent-tree` `2026-11-12-model-routing-orchestrator-prompt`
 16. [ ] PXL app hub <-> Lut colour matcher · 0.613 · both pxlvzn, desktop-app  `2026-11-12-pxl-app-hub` `2026-11-12-lut-colour-matcher`
 17. [ ] PXL app hub <-> Stm stem splitter · 0.608 · both pxlvzn, desktop-app  `2026-11-12-pxl-app-hub` `2026-11-12-stm-stem-splitter`
 18. [ ] Hop file transfer <-> PXL app hub · 0.602 · both pxlvzn, desktop-app  `2026-11-12-hop-file-transfer` `2026-11-12-pxl-app-hub`
@@ -67,7 +67,7 @@ Review them on the graph site (LINK DOCTOR, bottom left) or say "apply links 1, 
 21. [ ] Dwn downloader <-> PXL app hub · 0.594 · both pxlvzn, desktop-app  `2026-11-12-dwn-downloader` `2026-11-12-pxl-app-hub`
 22. [ ] Bonk Court game <-> Sixer cricket game · 0.591 · both threejs, browser-game  `2026-11-12-bonk-court-game` `2026-11-12-sixer-cricket-game`
 23. [ ] Toyxyz retarget add-on <-> Blender storybook hero · 0.582 · both rigging, blender, animation  `2026-11-13-toyxyz-blender-retargeter` `2026-11-09-blender-mcp-storybook-hero-workflow`
-24. [ ] Claude Code agent tree <-> Agent mistakes prompt · 0.58 · both workflow, claude, agents  `2026-11-11-claude-code-agent-tree` `2026-11-18-agent-mistakes-to-checks`
+24. [ ] Claude Code agent tree <-> Agent mistakes prompt · 0.58 · both workflow, agents, claude  `2026-11-11-claude-code-agent-tree` `2026-11-18-agent-mistakes-to-checks`
 25. [ ] Revolio website <-> Tabworthy site directory · 0.58 · both website  `2026-11-12-revolio-website` `2026-11-21-tabworthy-site-directory`
 
 ### Remove or explain these weak links
