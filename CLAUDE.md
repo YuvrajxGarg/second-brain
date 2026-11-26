@@ -25,6 +25,7 @@ LINKS.md           generated: link health report and link proposals (scripts/lin
 api/mcp.js         MCP server served at https://brainy.pxlvzn.in/mcp (read-only; +write tools with ?key=)
 api/_write.js      the MCP write tools: capture, update_note, log_project (CAPTURE_KEY)
 api/edit.js        edit API for the graph site (passcode-locked, commits to main)
+api/capture.js     plain HTTP capture for iPhone/Mac/Windows (CAPTURE_KEY), writes inbox/
 inbox/             only when a dump is genuinely unclear; sort it later
 topics/<topic>/    one folder per group, created on demand
 templates/entry.md the frontmatter template
@@ -34,6 +35,7 @@ scripts/check_notes.py  checks notes against the filing rules (CHECKS.md B1-B7)
 tools/mistakes-to-checks/  the skill that turns repeat agent mistakes into checks
 tools/capture-to-brain/    the skill that files notes from ANY chat (MCP capture / GitHub / shell)
 tools/quick-capture/    browser extension that drops captures into inbox/
+tools/device-capture/   iPhone Share Sheet + Action Button shortcuts, Mac/Windows hotkeys (to api/capture.js)
 tools/social-reader/    source of the Social Reader MCP connector (Instagram/X), shared via HANDOFF.md
 tools/vault-sync/       brain_sync.py: syncs Documents/Vault on his Mac + PC into projects/ daily
 projects/<slug>/        synced from his vault (one entry per project); edit in the vault, not here
@@ -139,10 +141,14 @@ the GitHub connector, or (nothing can write) a markdown block for him to paste h
 
 ## Quick-capture inbox
 
-Yuvraj also captures from a browser extension (`tools/quick-capture/`), which
-commits straight to `inbox/` as `inbox/YYYY-MM-DD-HHMMSS-<slug>.md` (plus any
-images/videos with the same name), with `status: unsorted`. These never show up
-in chat, so:
+Yuvraj also captures from a browser extension (`tools/quick-capture/`) and from his
+iPhone, Mac and Windows PC (`tools/device-capture/`: Share Sheet, Action Button voice
+notes, hotkeys, all through `api/capture.js`). Both commit straight to `inbox/` as
+`inbox/YYYY-MM-DD-HHMMSS-<slug>.md` (plus any image with the same name), with
+`status: unsorted`; the `captured:` line says where it came from (`via iPhone voice`,
+`via Mac screenshot`...). Voice notes are his own thoughts, usually `kind: idea` or
+`thought`. A `Note:` line under `## Raw` is his reason for saving it: use it for `why`.
+These never show up in chat, so:
 
 - At the start of every thread in this project, `git pull` and check `inbox/`
   for `status: unsorted` files. Also do it whenever Yuvraj says "sort my inbox".

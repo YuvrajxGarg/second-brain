@@ -35,6 +35,10 @@
   ],
   "rewrites": [
     {
+      "source": "/capture",
+      "destination": "/api/capture"
+    },
+    {
       "source": "/mcp",
       "destination": "/api/mcp"
     },

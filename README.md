@@ -52,6 +52,10 @@ one small markdown file, grouped by topic and tagged so it can be found again.
   key), the GitHub connector, or a shell. Project work goes to log-to-brain instead.
 - **Quick capture:** [tools/quick-capture](tools/quick-capture/) is a browser
   extension that saves links, notes, images and videos to `inbox/` in one click.
+- **Phone and desktop capture:** [tools/device-capture](tools/device-capture/) has an
+  iPhone Share Sheet shortcut, an Action Button voice note, and clipboard/screenshot
+  hotkeys for Mac and Windows. They post to `https://brainy.pxlvzn.in/api/capture`
+  (locked by the capture key), which drops each capture into `inbox/` to be filed.
 - **Entries:** `topics/<topic>/<slug>.md`, named by what the thing is (no date; the
   date is in `added:`), each with YAML frontmatter (`title`, `type`, `topic`, `tags`,
   `kind`, `why`, `style`, `source`, `added`).

@@ -8,7 +8,8 @@ vault sync), not anyone's notes.
 
 _Last updated 2026-11-26: Link Doctor, Board / Timeline / Canvas / Gallery views,
 command palette, project vault sync and the log-to-brain skill, batched deploys,
-name-first file names, leaner MCP outputs._
+name-first file names, leaner MCP outputs, phone and desktop capture (iPhone Share
+Sheet and Action Button, Mac and Windows hotkeys)._
 
 Placeholders used below:
 
@@ -168,6 +169,7 @@ tags, summaries, links, indexes).
 ```
  you ──paste──▶ Claude project chat ──files──┐
  you ──click──▶ quick-capture extension ──commits──▶ inbox/ ──Claude sorts──┐
+ you ──share / hotkey / voice──▶ /api/capture ──commits──▶ inbox/ ───────────┤
                                               ▼                              ▼
                               GitHub repo  topics/<topic>/<slug>.md
  Documents/Vault (Mac, PC) ──brain_sync.py nightly──▶ projects/<slug>/
@@ -224,7 +226,9 @@ site/              the static site: graph (index.html), board, timeline, canvas,
                    gallery, me.html; shared views.js (nav, palette, passcode)
 api/mcp.js         MCP server (Vercel function, no dependencies)
 api/edit.js        edit API for the site (Vercel function)
+api/capture.js     plain HTTP capture endpoint for phone and desktop (CAPTURE_KEY)
 tools/quick-capture/     the browser extension
+tools/device-capture/    iPhone shortcuts (build steps), Mac and Windows hotkey scripts
 tools/social-reader/     the Instagram/X link reader (MCP connector, deploys on its own)
 tools/vault-sync/        brain_sync.py (vault sync) + the log-to-brain skill
 suggestions/       daily build ideas, one file per day, plus the routine's README
@@ -607,6 +611,24 @@ Notes it files carry `captured: ... via brain MCP`, and the brain project's fili
 steps check for an existing note first, so dumping the same link in both places
 doesn't make a copy.
 
+### 3.12 Phone and desktop capture (optional)
+
+The same `CAPTURE_KEY` also unlocks `https://<site-domain>/api/capture`, a plain POST
+endpoint that Apple Shortcuts and shell scripts can call (MCP needs a real client). It
+drops each capture into `inbox/` like the browser extension; a link that's already
+saved gets your note appended instead of a copy. `tools/device-capture/README.md` has
+copy-paste setup for:
+
+- **iPhone:** a *Save to Brain* Share Sheet shortcut (links, text, screenshots) and a
+  *Brain voice note* shortcut for the Action Button (dictate, transcribe, save). Built
+  in the free Shortcuts app; no developer account.
+- **Mac:** `install.sh` plus two Shortcuts-app hotkeys (clipboard, screenshot).
+- **Windows:** `install.ps1` makes Ctrl+Alt+B / Ctrl+Alt+Shift+B hotkeys and a tray icon.
+
+Replace `brainy.pxlvzn.in` and `YuvrajxGarg/second-brain` in that folder with your own
+site and repo. The key lives only on your devices (inside the shortcut, or a file in
+your home folder).
+
 ---
 
 ## 4. The conventions (what makes it stay tidy)
@@ -736,7 +758,7 @@ will be) at https://<site-domain>, and my time zone is <tz>.
    (SITE, RAW and the description strings), scripts/build_graph.mjs, api/mcp.js
    (SITE, tool descriptions, serverInfo), api/edit.js (default GITHUB_REPO and
    comments), site/*.html, site/views.js, site/me.html, tools/quick-capture/lib.js
-   (DEFAULTS), tools/vault-sync/brain_sync.py (REPO_URL and the compare link),
+   (DEFAULTS), tools/device-capture/ (site and repo in the scripts and README), tools/vault-sync/brain_sync.py (REPO_URL and the compare link),
    tools/vault-sync/README.md, tools/vault-sync/log-to-brain/SKILL.md,
    suggestions/README.md and links/README.md.
    grep for the old name and domain afterwards to make sure nothing is left.
@@ -776,6 +798,7 @@ About me: <one paragraph about yourself>
 - [ ] Weekly link check scheduled task created (3.8)
 - [ ] Optional: vault sync installed on each computer, log-to-brain skill added (3.9)
 - [ ] Optional: `CAPTURE_KEY` set, keyed connector URL, capture-to-brain skill added (3.11)
+- [ ] Optional: iPhone shortcuts, Mac and Windows hotkeys set up (3.12)
 - [ ] First dump filed (on the graph after the next batch or the next morning)
 
 ## 7. Troubleshooting

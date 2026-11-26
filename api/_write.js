@@ -542,4 +542,8 @@ async function callWriteTool(name, a, brain, kinds, stages) {
   return null;
 }
 
-module.exports = { WRITE_TOOLS, access, callWriteTool, normUrl, problems, slugify };
+// Shared with api/capture.js (the plain HTTP capture endpoint for phone and desktop).
+module.exports = {
+  WRITE_TOOLS, access, callWriteTool, normUrl, problems, slugify,
+  gh, tree, getFile, commit, pendingNotes, findNote, appendToSection, today, oneLine, slugOf, isNotePath, field,
+};
