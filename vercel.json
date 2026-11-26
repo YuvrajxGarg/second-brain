@@ -65,5 +65,10 @@
       "*": false,
       "main": true
     }
+  },
+  "functions": {
+    "api/sort.js": {
+      "maxDuration": 300
+    }
   }
 }

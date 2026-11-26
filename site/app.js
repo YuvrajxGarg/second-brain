@@ -1341,6 +1341,83 @@
     });
   }
 
+  // ---------- sort inbox (api/sort.js) ----------
+  // Unsorted captures (phone, Mac, browser extension) wait in inbox/. SORT asks Claude to
+  // file them per CLAUDE.md in one commit; ones it can't read wait with a question.
+  const inboxState = { data: null };
+  async function refreshInbox() {
+    const b = $("b-sort");
+    try {
+      const r = await fetch("/api/sort", { cache: "no-store" });
+      const d = await r.json();
+      inboxState.data = d;
+      const n = d.unsorted ?? 0;
+      b.textContent = n ? `INBOX · ${n}` : "INBOX";
+      b.classList.toggle("on", n > 0);
+      b.title = n ? `${n} unsorted capture${n === 1 ? "" : "s"}${d.waiting?.length ? `, ${d.waiting.length} waiting on you` : ""}. Click to sort with Claude.` : "Inbox is empty";
+    } catch { b.textContent = "INBOX"; }
+  }
+
+  function openSort() {
+    const d = inboxState.data || {};
+    const waiting = d.waiting || [];
+    const ready = d.ready ?? 0;
+    if (d.configured && !d.configured.anthropic) {
+      openModal(`<div class="m-h">SORT INBOX</div>
+        <p class="m-p">Sorting needs a Claude API key on the site. In Vercel: project <b>second-brain</b> &gt; Settings &gt; Environment Variables, add <b>ANTHROPIC_API_KEY</b> (Production), then redeploy.</p>
+        <div class="m-row"><button type="submit">OK</button></div>`, closeModal);
+      return;
+    }
+    if (!d.unsorted) {
+      openModal(`<div class="m-h">INBOX IS EMPTY</div><p class="m-p">Nothing to sort. Captures from your phone, Mac and the browser extension land here.</p>
+        <div class="m-row"><button type="submit">OK</button></div>`, closeModal);
+      return;
+    }
+    const asks = waiting.map((w, i) => `<label class="f sort-ask"><span>${esc(w.title || w.path)}${w.source ? ` · <a href="${esc(w.source)}" target="_blank" rel="noopener">link</a>` : ""}</span>
+      <i class="dim">${esc(w.needs)}</i><input name="a${i}" data-path="${esc(w.path)}" placeholder="your answer (optional)" /></label>`).join("");
+    openModal(`<div class="m-h">SORT INBOX · ${d.unsorted}</div>
+      <p class="m-p">Claude reads ${ready ? `the ${ready} new capture${ready === 1 ? "" : "s"}` : "your answers"} (pages, X and Instagram posts, screenshots) and files each one with a title, topic, tags and links, in one commit. Anything it can't read stays here with a question.</p>
+      ${asks ? `<div class="m-p">WAITING ON YOU · answer to file them, or leave blank</div><div class="sort-list">${asks}</div>` : ""}
+      <div class="m-err" hidden></div>
+      <div class="m-row"><button type="button" data-cancel>CANCEL</button><button type="submit">SORT</button></div>`, async (m) => {
+      const btn = m.querySelector("[type=submit]"), err = m.querySelector(".m-err");
+      const answers = {};
+      m.querySelectorAll("input[data-path]").forEach((x) => { if (x.value.trim()) answers[x.dataset.path] = x.value.trim(); });
+      if (!ready && !Object.keys(answers).length) { err.hidden = false; err.textContent = "Everything here is waiting on an answer. Type one first."; return; }
+      btn.disabled = true; btn.textContent = "CLAUDE IS READING…"; err.hidden = true;
+      try {
+        const r = await fetch("/api/sort", { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${editor.pass}` }, body: JSON.stringify({ answers }) });
+        const res = await r.json().catch(() => ({}));
+        if (r.status === 401) { editor.pass = ""; store.set(""); syncEditButton(); }
+        if (!r.ok) throw new Error(res.error || `Error ${r.status}`);
+        showSortResult(res);
+      } catch (e) {
+        err.hidden = false; err.textContent = e.message; btn.disabled = false; btn.textContent = "TRY AGAIN";
+      }
+      refreshInbox();
+    });
+  }
+
+  function showSortResult(r) {
+    const row = (a, b) => `<li><b>${esc(a)}</b>${b ? ` <span class="dim">${esc(b)}</span>` : ""}</li>`;
+    const part = (h, items) => (items.length ? `<div class="m-p">${h}</div><ul class="sort-res">${items.join("")}</ul>` : "");
+    const html = [
+      part(`FILED · ${r.filed.length}`, r.filed.map((f) => row(f.title, `${f.topic} · ${f.tags.join(", ")}`))),
+      part(`ADDED TO A NOTE YOU ALREADY HAD · ${r.merged.length}`, r.merged.map((x) => row(x.title || x.into, ""))),
+      part(`WAITING ON YOU · ${r.asked.length}`, r.asked.map((x) => row(x.title || x.path, x.question))),
+      part(`COULDN'T SORT · ${r.failed.length}`, r.failed.map((x) => row(x.title || x.path, x.error))),
+    ].join("") || `<p class="m-p">${esc(r.message || "Nothing to do.")}</p>`;
+    const link = r.commit ? `<p class="m-p">Committed <a href="${esc(graph.repo)}/commit/${esc(r.commit)}" target="_blank" rel="noopener">${esc(r.commit.slice(0, 7))}</a>${r.filed.length + r.merged.length ? ". The graph rebuilds in about a minute." : "."}${r.more ? " More are waiting: press SORT again." : ""}</p>` : "";
+    openModal(`<div class="m-h">INBOX SORTED</div>${html}${link}<div class="m-row"><button type="submit">OK</button></div>`, closeModal);
+  }
+
+  $("b-sort").addEventListener("click", async () => {
+    await refreshInbox();
+    if (!editor.pass && inboxState.data?.unsorted && inboxState.data.configured?.anthropic !== false) toggleEdit(openSort);
+    else openSort();
+  });
+  refreshInbox();
+
   $("b-edit").addEventListener("click", () => toggleEdit());
   addEventListener("keydown", (e) => {
     // works after clicking any button too (it used to need focus on the page body)

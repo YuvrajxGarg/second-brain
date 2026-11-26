@@ -424,7 +424,20 @@ too, so they lag by the same batch. If you deploy rarely anyway, you can delete 
 | `GITHUB_REPO` | `<github-user>/<repo>` |
 
 The EDIT button then lets you rename, retag, move, delete and add notes; each
-change is a commit to `main`. Because of that, Claude must `git pull --rebase`
+change is a commit to `main`.
+
+**Sort the inbox from the site** (optional): the INBOX button (next to EDIT) shows how
+many captures are waiting and sorts them with Claude (`api/sort.js`). Add these too:
+
+| Variable | Value |
+|---|---|
+| `ANTHROPIC_API_KEY` | a Claude API key from console.anthropic.com (API keys; billed per use, a press costs cents) |
+| `SOCIAL_READER_URL` | optional: your full Social Reader connector URL (`https://<reader>.vercel.app/mcp/<MCP_TOKEN>`), so X and Instagram captures can be read |
+
+One press reads up to 10 captures, files each one by the CLAUDE.md rules (short title,
+topic, tags, summary, related notes) and commits them in one go. Anything it can't
+read (a dead link, an X post without `SOCIAL_READER_URL`) stays in `inbox/` with a
+question; type the answer in the same window and press SORT again. Because of that, Claude must `git pull --rebase`
 before pushing (the rules already say so).
 
 New topic colours live in `PALETTE` at the top of `site/app.js`; unknown topics get
@@ -457,7 +470,8 @@ need the same `EDIT_PASSCODE` setup above.
 
 Shortcut: ⌘⇧Y on Mac, Alt+Shift+S elsewhere, or right-click any page, link, image
 or selection. Each capture lands in `inbox/` as `status: unsorted`; Claude files
-them at the start of every thread or when you say "sort my inbox".
+them at the start of every thread, when you say "sort my inbox", or when you press
+INBOX on the site (3.4).
 
 ### 3.6 AI-context files and the MCP server
 
@@ -923,6 +937,7 @@ About me: <one paragraph about yourself>
 - [ ] Social Reader deployed on Vercel and added as a connector (3.3)
 - [ ] Vercel project deployed; custom domain if you want one (3.4)
 - [ ] Optional: `EDIT_PASSCODE`, `GITHUB_TOKEN`, `GITHUB_REPO` set for site editing
+- [ ] Optional: `ANTHROPIC_API_KEY` (and `SOCIAL_READER_URL`) set for the site's INBOX sort button
 - [ ] Quick-capture extension loaded with your token, owner and repo (3.5)
 - [ ] MCP server added to your other AI tools (3.6)
 - [ ] Daily ideas scheduled task created (3.7)
@@ -960,7 +975,8 @@ About me: <one paragraph about yourself>
   *Get Contents of URL*. Keep only `Authorization`. **"Not saved: wrong key":** the key after
   `Bearer ` doesn't match `CAPTURE_KEY` (too many wrong tries locks it for 15 minutes).
 - **Captures sit in `inbox/`:** that's by design; they're filed at the start of the next
-  thread in the brain project, or when you say "sort my inbox".
+  thread in the brain project, when you say "sort my inbox", or with INBOX on the site.
+  **INBOX says it needs a Claude API key:** add `ANTHROPIC_API_KEY` in Vercel and redeploy.
 - **Extension says 401/403:** the token expired or lacks Contents read/write on
   this repo.
 - **Build fails on Vercel:** run `python3 scripts/build_index.py && node

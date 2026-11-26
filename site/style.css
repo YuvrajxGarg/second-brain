@@ -525,3 +525,10 @@ body.panel-open .resurface { display: none; }
 .p-canvas { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 18px; }
 .p-canvas a, .p-canvas button { font: inherit; cursor: pointer; font-size: 10px; letter-spacing: 0.14em; color: var(--dim); text-decoration: none; border: 1px solid var(--line); padding: 7px 10px; background: rgba(255, 255, 255, 0.02); transition: color 0.2s, border-color 0.2s; }
 .p-canvas a:hover, .p-canvas button:hover { color: var(--fg); border-color: rgba(242, 242, 242, 0.4); }
+
+/* sort inbox window */
+.sort-list { display: grid; gap: 12px; max-height: 40vh; overflow: auto; }
+.sort-ask i { font-size: 11px; line-height: 1.5; }
+.sort-res { margin: -6px 0 0; padding: 0 0 0 14px; display: grid; gap: 6px; font-size: 11px; line-height: 1.5; max-height: 30vh; overflow: auto; }
+.sort-res .dim { color: var(--dim); }
+.modal-card .sort-list a, .modal-card .m-p a { color: var(--fg); }

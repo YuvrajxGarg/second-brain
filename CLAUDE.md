@@ -26,6 +26,7 @@ api/mcp.js         MCP server served at https://brainy.pxlvzn.in/mcp (read-only;
 api/_write.js      the MCP write tools: capture, update_note, log_project, log_playtest, start_project (CAPTURE_KEY)
 api/edit.js        edit API for the graph site (passcode-locked, commits to main)
 api/capture.js     plain HTTP capture for iPhone/Mac/Windows (CAPTURE_KEY), writes inbox/
+api/sort.js        the site's INBOX button: sorts inbox/ with the Claude API, one commit (EDIT_PASSCODE)
 api/_brief.js      shared logic: project briefing, resurface ranking, idea -> project
 scripts/brain.mjs  CLI on _brief.js: brief <project> | pick | digest [--write] | start <idea>
 digests/           weekly digests from the Sunday run (see its README)
@@ -191,6 +192,13 @@ These never show up in chat, so:
 
 - A scheduled task "Inbox sort" (~8:50 AM and ~5:50 PM IST) does this on its own,
   following `tools/inbox-sort/README.md` (silent unless an item needs him).
+- The site's **INBOX** button (`api/sort.js`, Yuvraj's ask 2026-11-26) does the same on
+  demand: Claude API (`ANTHROPIC_API_KEY`, model `claude-opus-5-5`) picks the fields, code
+  writes the notes, backlinks and removals in one `file: N inbox captures (from site)`
+  commit (deploys at once). Same `needs:` convention: unreadable items stay with a
+  question, and his answer from the site lands in `## Raw` as a `Note:` line. Its rules
+  prompt is `rulesPrompt()` in `api/sort.js`: when you change the filing rules here,
+  change it too.
 - At the start of every thread in this project, `git pull` and check `inbox/`
   for `status: unsorted` files. Also do it whenever Yuvraj says "sort my inbox".
 - File each one like a normal dump: pick topic, type, tags, write the summary

@@ -6,6 +6,14 @@ Mac/Windows hotkeys and MCP `capture` with topic `inbox` land in `inbox/` with
 ("Inbox sort", ~8:50 AM and ~5:50 PM IST, Yuvraj's ask 2026-11-26) files them.
 Edit the steps here to change its behaviour; the task just follows this file.
 
+The site's **INBOX** button (`api/sort.js`) is the on-demand twin: Claude API instead of
+a Claude thread, same rules, same `needs:` line for anything it can't read. Keep the two
+in step: a rule change here goes into `rulesPrompt()` in `api/sort.js` too. Answers he
+types in the site's sort window are added to the capture's `## Raw` as `Note: ...` and
+clear the wait, so step 2 below sees a changed `## Raw`. Differences: the button files at
+most 10 per press, doesn't run `link_doctor.py`/`build_index.py` (the Vercel build
+refreshes the generated files) and adds backlinks itself.
+
 ## How a run works
 
 1. `git checkout main && git pull --rebase`. List `inbox/*.md` with

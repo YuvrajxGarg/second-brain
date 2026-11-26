@@ -28,7 +28,8 @@ one small markdown file, grouped by topic and tagged so it can be found again.
   ([views/](views/)), including the **Asset library**: everything tagged with a `kit`
   area (LUTs and grading, sound, VFX, motion, shoot and DIT, edit tools, 3D, 2D),
   searchable by look. Ctrl/Cmd+K opens a command palette on every page, and the graph
-  brings back one unread save a day. Notes can be edited on the site (passcode).
+  brings back one unread save a day. Notes can be edited on the site (passcode), and
+  the **INBOX** button sorts unsorted captures with Claude in one commit (`api/sort.js`).
 - **Links:** every note links 2 or 3 related notes under `## Notes`.
   [LINKS.md](LINKS.md) is the Link Doctor report (health score, broken and one-way
   links, proposed links), made by `scripts/link_doctor.py`. Proposals are answered on
