@@ -23,3 +23,4 @@ Link in photo
 
 ## Notes
 Could help with UI for the Revolio Labs site, see [[revolio-labs-vfx-feature]].
+- [[agent-issue-stack-component]]: both ui, agents

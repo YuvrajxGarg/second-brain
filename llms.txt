@@ -31,6 +31,7 @@ Read TASTE.md first for the gist, then the catalog for what you need. Live graph
 - [Cascadeur 2026.3 update](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/animation/cascadeur-2026-3-release.md): `tool` · animation · Cascadeur's big 2026.3 update with AI motion tools and an MCP, worth trying for character animation
 - [AnyVFX shader skill](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/anyvfx-shader-skill.md): `tool` · gamedev · Vfx with ai
 - [Agentic toasts UI](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/agentic-toasts-ui.md): `style-ref` · design · why your AI still needs designers, a before/after of notification toasts for AI agent events
+- [Agent issue stack](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/agent-issue-stack-component.md): `style-ref` · design · a UI component showing what your agents are working on right now
 - [AI texturing addon](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/ai-texturing-blender-addon.md): `tool` · gamedev · Texture 3d
 - [4DGS video test](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/video-editing/4dgs-single-video-test.md): `technique` · video-editing · turning one ordinary video of a person into a 4D Gaussian splat you can orbit around
 - [Transition plugin idea](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/video-editing/transition-plugin-idea.md): `idea` · video-editing · Plugin idea for ae/pr

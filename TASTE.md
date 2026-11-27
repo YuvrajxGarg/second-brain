@@ -110,13 +110,13 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 124 entries, 62 with style notes. Rebuilt on every filing._
+_From 125 entries, 63 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
 - `library`: 6
 - `asset-source`: 2
-- `style-ref`: 13
+- `style-ref`: 14
 - `website-ref`: 5
 - `game-ref`: 4
 - `tool`: 15
@@ -130,7 +130,7 @@ _From 124 entries, 62 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (24), #inspiration (22), #claude (19), #open-source (19), #agents (18), #desktop-app (16), #reference (16), #browser-game (13), #ui (13), #pxlvzn (12), #visual-design (12), #blender (9), #mcp (9), #revolio-labs (9), #vfx (8), #3d-art (7), #rigging (7), #video-generation (7), #workflow (7)
+#own-project (42), #to-try (24), #inspiration (23), #agents (19), #claude (19), #open-source (19), #desktop-app (16), #reference (16), #ui (14), #browser-game (13), #visual-design (13), #pxlvzn (12), #blender (9), #mcp (9), #revolio-labs (9), #vfx (8), #3d-art (7), #rigging (7), #video-generation (7), #workflow (7)
 
 ### Style notes and where they come from
 
@@ -243,6 +243,7 @@ _From 124 entries, 62 with style notes. Rebuilt on every filing._
 - **hatched bar charts with target line**: [Tessera dashboard UI](topics/design/tessera-dark-dashboard-ui.md)
 - **invented artist styles**: [Claude code paintings](topics/ai/claude-code-paintings.md)
 - **launch film motion**: [Captcha launch film](topics/design/captcha-launch-film.md)
+- **light and dark themes**: [Agent issue stack](topics/design/agent-issue-stack-component.md)
 - **lime accent on dark**: [Punchline party game](topics/gamedev/punchline-party-game.md)
 - **lime green go button**: [Transition plugin idea](topics/video-editing/transition-plugin-idea.md)
 - **low-poly**: [Polyfork 3D assets](topics/gamedev/polyfork-3d-assets.md)
@@ -276,6 +277,7 @@ _From 124 entries, 62 with style notes. Rebuilt on every filing._
 - **pixel-art 3d dioramas**: [Pixel-art gaussian splats](topics/gamedev/pixel-art-gaussian-splats.md)
 - **pixel-art decals**: [Stick It Up stickers](topics/design/stick-it-up-stickers.md)
 - **pixel-art mascots**: [Ace Of Frames reel](topics/video-editing/ace-of-frames-reel.md)
+- **pixel-dot agent avatars**: [Agent issue stack](topics/design/agent-issue-stack-component.md)
 - **plain status sentence**: [DIT offload checker](topics/video-editing/dit-offload-checker-idea.md)
 - **plain-language helper copy**: [Storage scanner UI](topics/design/storage-scanner-ui.md)
 - **poster typography**: [SLANGDAQ game](topics/revolio/slangdaq-game.md)
@@ -302,8 +304,11 @@ _From 124 entries, 62 with style notes. Rebuilt on every filing._
 - **small coloured status pills**: [Tessera dashboard UI](topics/design/tessera-dark-dashboard-ui.md)
 - **small green accent button**: [Tabworthy site directory](topics/tech/tabworthy-site-directory.md)
 - **soft serif headline**: [Blooming flowers site](topics/animation/mohamed-siddique-flower-site.md)
+- **soft shadow cards**: [Agent issue stack](topics/design/agent-issue-stack-component.md)
 - **splat performer in blender viewport**: [4DGS video test](topics/video-editing/4dgs-single-video-test.md)
 - **spray paint type**: [Bonk Court game](topics/gamedev/bonk-court-game.md)
+- **stack and cycle toggle**: [Agent issue stack](topics/design/agent-issue-stack-component.md)
+- **stacked issue cards**: [Agent issue stack](topics/design/agent-issue-stack-component.md)
 - **stamps and highlighter swipes**: [Cinematic film skill](topics/video-editing/cinematic-film-skill.md)
 - **stock ticker ui**: [SLANGDAQ game](topics/revolio/slangdaq-game.md)
 - **striped test room**: [Unity bodycam hands](topics/animation/unity-bodycam-ik-hands.md)
@@ -340,6 +345,7 @@ _From 124 entries, 62 with style notes. Rebuilt on every filing._
 - [Cascadeur 2026.3 update](topics/animation/cascadeur-2026-3-release.md) (`tool`): Cascadeur's big 2026.3 update with AI motion tools and an MCP, worth trying for character animation
 - [AnyVFX shader skill](topics/gamedev/anyvfx-shader-skill.md) (`tool`): Vfx with ai
 - [Agentic toasts UI](topics/design/agentic-toasts-ui.md) (`style-ref`): why your AI still needs designers, a before/after of notification toasts for AI agent events
+- [Agent issue stack](topics/design/agent-issue-stack-component.md) (`style-ref`): a UI component showing what your agents are working on right now
 - [AI texturing addon](topics/gamedev/ai-texturing-blender-addon.md) (`tool`): Texture 3d
 - [Sprite stacking skill](topics/gamedev/sprite-stacking-canvas-skill.md) (`library`): Game art style
 - [Skillsync skills marketplace](topics/ai/skillsync-skills-marketplace.md) (`tool`): a place to publish agent skills and get paid when people or agents use them

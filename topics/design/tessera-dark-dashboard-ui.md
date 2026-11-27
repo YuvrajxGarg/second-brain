@@ -25,3 +25,4 @@ https://x.com/yasirahmadnoori/status/2126184712376848740?a=bucbUEoBzZ_fGlSVdXA&s
 - [[strawhat-homelab-dashboard]]: another dark dashboard reference, for a personal tool
 - [[storage-scanner-ui]]: dark compact utility UI with colour-coded bars
 - [[agentic-toasts-ui]]: same AI-in-the-UI touch as the "Your week, summarized" card
+- [[agent-issue-stack-component]]: both visual-design, ui
