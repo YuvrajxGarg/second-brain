@@ -22,3 +22,4 @@ This is the GitHub repo he was talking about in the latest reel link I sent.
 
 ## Notes
 From the reel: [[ai-slop-design-rules]]
+- [[agentic-toasts-ui]]: both visual-design, ui

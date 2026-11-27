@@ -110,13 +110,13 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 121 entries, 59 with style notes. Rebuilt on every filing._
+_From 122 entries, 60 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
 - `library`: 6
 - `asset-source`: 2
-- `style-ref`: 11
+- `style-ref`: 12
 - `website-ref`: 5
 - `game-ref`: 4
 - `tool`: 15
@@ -130,7 +130,7 @@ _From 121 entries, 59 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (24), #inspiration (21), #claude (19), #open-source (18), #agents (17), #desktop-app (16), #reference (16), #browser-game (13), #pxlvzn (12), #ui (11), #visual-design (10), #mcp (9), #revolio-labs (9), #blender (8), #vfx (8), #3d-art (7), #video-generation (7), #workflow (7), #game-inspiration (6)
+#own-project (42), #to-try (24), #inspiration (21), #claude (19), #agents (18), #open-source (18), #desktop-app (16), #reference (16), #browser-game (13), #pxlvzn (12), #ui (12), #visual-design (11), #mcp (9), #revolio-labs (9), #blender (8), #vfx (8), #3d-art (7), #video-generation (7), #workflow (7), #game-inspiration (6)
 
 ### Style notes and where they come from
 
@@ -245,6 +245,7 @@ _From 121 entries, 59 with style notes. Rebuilt on every filing._
 - **minimal dark sidebar filters**: [Flat Finder map](topics/design/flat-finder-map.md)
 - **minimal hud**: [Lastmaglab shooter style](topics/gamedev/lastmaglab-top-down-shooter.md)
 - **misty desaturated battlefield**: [Impossible Weapon animation](topics/animation/impossible-weapon-knight-animation.md)
+- **monospace detail line**: [Agentic toasts UI](topics/design/agentic-toasts-ui.md)
 - **monospace tags**: [Tabworthy site directory](topics/tech/tabworthy-site-directory.md)
 - **monospace type**: [Sleep alarm UI](topics/design/sleep-alarm-ui.md)
 - **mumbai kaali-peeli illustration**: [Meter Down concept](topics/gamedev/meter-down-concept.md)
@@ -265,6 +266,7 @@ _From 121 entries, 59 with style notes. Rebuilt on every filing._
 - **photoreal metahuman faces**: [MetaHuman Maker addon](topics/gamedev/metahuman-maker-agent-addon.md)
 - **photoreal product textures**: [AI texturing addon](topics/gamedev/ai-texturing-blender-addon.md)
 - **pixel cursors and ui**: [Captcha launch film](topics/design/captcha-launch-film.md)
+- **pixel grid status glyphs**: [Agentic toasts UI](topics/design/agentic-toasts-ui.md)
 - **pixel-art 3d dioramas**: [Pixel-art gaussian splats](topics/gamedev/pixel-art-gaussian-splats.md)
 - **pixel-art decals**: [Stick It Up stickers](topics/design/stick-it-up-stickers.md)
 - **pixel-art mascots**: [Ace Of Frames reel](topics/video-editing/ace-of-frames-reel.md)
@@ -278,6 +280,7 @@ _From 121 entries, 59 with style notes. Rebuilt on every filing._
 - **red and black samurai armour on grey stage**: [Claude Blender samurai](topics/animation/claude-blender-samurai-build.md)
 - **red ink outline accents**: [Impossible Weapon animation](topics/animation/impossible-weapon-knight-animation.md)
 - **rolling counters**: [Cinematic film skill](topics/video-editing/cinematic-film-skill.md)
+- **rounded white cards on light grey**: [Agentic toasts UI](topics/design/agentic-toasts-ui.md)
 - **sandy top-down battlefield**: [Sprite stacking skill](topics/gamedev/sprite-stacking-canvas-skill.md)
 - **scroll side-scroller**: [Revolio Labs site](topics/revolio/revolio-labs-site.md)
 - **scrubbable timeline**: [Sleep alarm UI](topics/design/sleep-alarm-ui.md)
@@ -308,6 +311,7 @@ _From 121 entries, 59 with style notes. Rebuilt on every filing._
 - **thin gold road lines**: [Flat Finder map](topics/design/flat-finder-map.md)
 - **thin usage bars**: [Strawhat homelab dashboard](topics/design/strawhat-homelab-dashboard.md)
 - **tick ruler numerals**: [PEAKD game](topics/revolio/peakd-game.md)
+- **tiny progress visualisations instead of icons**: [Agentic toasts UI](topics/design/agentic-toasts-ui.md)
 - **top-down camera**: [Lastmaglab shooter style](topics/gamedev/lastmaglab-top-down-shooter.md)
 - **top-down racing track**: [Sprite stacking technique](topics/gamedev/sprite-stacking-pixel-art.md)
 - **ui mockups in motion**: [Ace Of Frames reel](topics/video-editing/ace-of-frames-reel.md)
@@ -326,6 +330,7 @@ _From 121 entries, 59 with style notes. Rebuilt on every filing._
 - [Chris Nijhof designer](topics/design/chris-nijhof-ui-designer.md) (`style-ref`): His profile has some cool ui designs
 - [Cascadeur 2026.3 update](topics/animation/cascadeur-2026-3-release.md) (`tool`): Cascadeur's big 2026.3 update with AI motion tools and an MCP, worth trying for character animation
 - [AnyVFX shader skill](topics/gamedev/anyvfx-shader-skill.md) (`tool`): Vfx with ai
+- [Agentic toasts UI](topics/design/agentic-toasts-ui.md) (`style-ref`): why your AI still needs designers, a before/after of notification toasts for AI agent events
 - [AI texturing addon](topics/gamedev/ai-texturing-blender-addon.md) (`tool`): Texture 3d
 - [Sprite stacking skill](topics/gamedev/sprite-stacking-canvas-skill.md) (`library`): Game art style
 - [Skillsync skills marketplace](topics/ai/skillsync-skills-marketplace.md) (`tool`): a place to publish agent skills and get paid when people or agents use them

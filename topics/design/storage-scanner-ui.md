@@ -29,3 +29,4 @@ If I ever make a disk utility app to remove cache and disk cleanup, this UI is r
 - [[sleep-alarm-ui]]: both visual-design, ui
 - [[tapmac-trackpad-app]]: both desktop-app
 - [[chris-nijhof-ui-designer]]: both visual-design, ui
+- [[agentic-toasts-ui]]: both visual-design, ui
