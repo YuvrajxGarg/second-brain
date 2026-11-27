@@ -28,3 +28,4 @@ This is a cool 3D short film skill. It also has a link of the repo in the captio
 ## Notes
 Repo: https://github.com/Leonxlnx/escapement
 - [[raea-render-engine]]: both agents
+- [[claude-video-tools-compared]]: both blender, claude

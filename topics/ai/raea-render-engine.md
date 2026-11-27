@@ -23,3 +23,4 @@ https://raea.io/?utm_source=ig&utm_medium=social&utm_content=link_in_bio They ar
 
 ## Notes
 Related: [[cinematic-film-skill]], [[escapement-blender-short-film]]
+- [[claude-video-tools-compared]]: both video-generation

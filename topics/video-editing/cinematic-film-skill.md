@@ -30,3 +30,4 @@ This is a skill, agent skill for explainer content.
 - Related: [[ai-tween-paint-harness]]
 - [[skillsync-skills-marketplace]]: both agents
 - [[raea-render-engine]]: both agents
+- [[claude-video-tools-compared]]: both claude

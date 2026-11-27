@@ -110,7 +110,7 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 125 entries, 63 with style notes. Rebuilt on every filing._
+_From 126 entries, 64 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -120,7 +120,7 @@ _From 125 entries, 63 with style notes. Rebuilt on every filing._
 - `website-ref`: 5
 - `game-ref`: 4
 - `tool`: 15
-- `technique`: 21
+- `technique`: 22
 - `advice`: 6
 - `idea`: 3
 - `thought`: 3
@@ -130,7 +130,7 @@ _From 125 entries, 63 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (24), #inspiration (23), #agents (19), #claude (19), #open-source (19), #desktop-app (16), #reference (16), #ui (14), #browser-game (13), #visual-design (13), #pxlvzn (12), #blender (9), #mcp (9), #revolio-labs (9), #vfx (8), #3d-art (7), #rigging (7), #video-generation (7), #workflow (7)
+#own-project (42), #to-try (24), #inspiration (23), #claude (20), #agents (19), #open-source (19), #desktop-app (16), #reference (16), #ui (14), #browser-game (13), #visual-design (13), #pxlvzn (12), #blender (10), #mcp (9), #revolio-labs (9), #vfx (8), #video-generation (8), #3d-art (7), #rigging (7), #threejs (7)
 
 ### Style notes and where they come from
 
@@ -212,6 +212,7 @@ _From 125 entries, 63 with style notes. Rebuilt on every filing._
 - **fake 3d from 2d slices**: [Sprite stacking technique](topics/gamedev/sprite-stacking-pixel-art.md)
 - **fake 3d from stacked 2d slices**: [Sprite stacking skill](topics/gamedev/sprite-stacking-canvas-skill.md)
 - **floating islands on black**: [Pixel-art gaussian splats](topics/gamedev/pixel-art-gaussian-splats.md)
+- **four-panel side-by-side comparison**: [Claude video tools compared](topics/video-editing/claude-video-tools-compared.md)
 - **frosted glass chat panel**: [Claude Code reactive theme](topics/ai/claude-code-reactive-theme.md)
 - **game ability vfx**: [AnyVFX shader skill](topics/gamedev/anyvfx-shader-skill.md)
 - **georgia serif**: [Wedding co-op game](topics/gamedev/wedding-co-op-game.md)
@@ -238,6 +239,7 @@ _From 125 entries, 63 with style notes. Rebuilt on every filing._
 - **halftone dither shadows**: [Sprite stacking skill](topics/gamedev/sprite-stacking-canvas-skill.md)
 - **hand-drawn animation**: [AI tween harness](topics/animation/ai-tween-paint-harness.md)
 - **hand-drawn flowers growing on a dot grid**: [Blooming flowers site](topics/animation/mohamed-siddique-flower-site.md)
+- **hand-drawn grain**: [Claude video tools compared](topics/video-editing/claude-video-tools-compared.md)
 - **hand-drawn pastel stickers**: [Stick It Up stickers](topics/design/stick-it-up-stickers.md)
 - **hand-painted 3d look**: [Blender painterly leaf shader](topics/gamedev/blender-painterly-leaf-shader.md)
 - **hatched bar charts with target line**: [Tessera dashboard UI](topics/design/tessera-dark-dashboard-ui.md)
@@ -282,6 +284,7 @@ _From 125 entries, 63 with style notes. Rebuilt on every filing._
 - **plain-language helper copy**: [Storage scanner UI](topics/design/storage-scanner-ui.md)
 - **poster typography**: [SLANGDAQ game](topics/revolio/slangdaq-game.md)
 - **product launch video**: [Ace Of Frames reel](topics/video-editing/ace-of-frames-reel.md)
+- **puffy cartoon clouds**: [Claude video tools compared](topics/video-editing/claude-video-tools-compared.md)
 - **real people as characters**: [People of Bengaluru](topics/design/people-of-bengaluru-site.md)
 - **receipt cards**: [Meter Down concept](topics/gamedev/meter-down-concept.md)
 - **red and black**: [Runaway Light Rig](topics/gamedev/runaway-light-rig.md)
@@ -311,6 +314,7 @@ _From 125 entries, 63 with style notes. Rebuilt on every filing._
 - **stacked issue cards**: [Agent issue stack](topics/design/agent-issue-stack-component.md)
 - **stamps and highlighter swipes**: [Cinematic film skill](topics/video-editing/cinematic-film-skill.md)
 - **stock ticker ui**: [SLANGDAQ game](topics/revolio/slangdaq-game.md)
+- **storybook meadow with windmill**: [Claude video tools compared](topics/video-editing/claude-video-tools-compared.md)
 - **striped test room**: [Unity bodycam hands](topics/animation/unity-bodycam-ik-hands.md)
 - **stylised 2d water**: [Godot waterfall shader](topics/gamedev/godot-waterfall-texture-array-shader.md)
 - **stylised cartoon 3d**: [Sharma Sweets 3D style](topics/gamedev/sharma-sweets-3d-shopfront.md)
