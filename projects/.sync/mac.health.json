@@ -1,0 +1,15 @@
+{
+ "machine": "mac",
+ "os": "Darwin 27.2.0",
+ "python": "3.9.6",
+ "last_ok": "2026-11-27T21:30:11+05:30",
+ "last_change": null,
+ "failures": [],
+ "backup": {
+  "at": "2026-11-27T21:30:11+05:30",
+  "file": "second-brain-2026-11-27.bundle",
+  "bytes": 8486683,
+  "commit": "e07af5c",
+  "kept": 1
+ }
+}
