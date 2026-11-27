@@ -110,7 +110,7 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 126 entries, 64 with style notes. Rebuilt on every filing._
+_From 127 entries, 65 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -120,7 +120,7 @@ _From 126 entries, 64 with style notes. Rebuilt on every filing._
 - `website-ref`: 5
 - `game-ref`: 4
 - `tool`: 15
-- `technique`: 22
+- `technique`: 23
 - `advice`: 6
 - `idea`: 3
 - `thought`: 3
@@ -130,7 +130,7 @@ _From 126 entries, 64 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (24), #inspiration (23), #claude (20), #agents (19), #open-source (19), #desktop-app (16), #reference (16), #ui (14), #browser-game (13), #visual-design (13), #pxlvzn (12), #blender (10), #mcp (9), #revolio-labs (9), #vfx (8), #video-generation (8), #3d-art (7), #rigging (7), #threejs (7)
+#own-project (42), #to-try (24), #inspiration (23), #claude (20), #agents (19), #open-source (19), #desktop-app (16), #reference (16), #ui (14), #browser-game (13), #visual-design (13), #pxlvzn (12), #blender (10), #mcp (9), #revolio-labs (9), #vfx (8), #video-generation (8), #3d-art (7), #3d-character (7), #rigging (7)
 
 ### Style notes and where they come from
 
@@ -171,6 +171,7 @@ _From 126 entries, 64 with style notes. Rebuilt on every filing._
 - **chrome emblems**: [Stick It Up stickers](topics/design/stick-it-up-stickers.md)
 - **chunky armoured knights**: [Impossible Weapon animation](topics/animation/impossible-weapon-knight-animation.md)
 - **chunky flat pixel art**: [Captcha launch film](topics/design/captcha-launch-film.md)
+- **chunky grey mannequin with blue weights**: [Tiny 3D exercise animations](topics/tech/tiny-3d-exercise-animations.md)
 - **chunky pixel art cars**: [Sprite stacking technique](topics/gamedev/sprite-stacking-pixel-art.md)
 - **chunky pixel art tanks and props**: [Sprite stacking skill](topics/gamedev/sprite-stacking-canvas-skill.md)
 - **chunky props**: [Lastmaglab shooter style](topics/gamedev/lastmaglab-top-down-shooter.md)
@@ -190,6 +191,7 @@ _From 126 entries, 64 with style notes. Rebuilt on every filing._
 - **cream paper editorial**: [PEAKD game](topics/revolio/peakd-game.md)
 - **dark compact utility card**: [Storage scanner UI](topics/design/storage-scanner-ui.md)
 - **dark grey blender viewport grid**: [Toyxyz retarget add-on](topics/animation/toyxyz-blender-retargeter.md)
+- **dark ios cards**: [Tiny 3D exercise animations](topics/tech/tiny-3d-exercise-animations.md)
 - **dark macro clockwork**: [Escapement Blender film](topics/ai/escapement-blender-short-film.md)
 - **dark menu bar popover**: [DIT offload checker](topics/video-editing/dit-offload-checker-idea.md)
 - **dark minimal dashboard**: [Strawhat homelab dashboard](topics/design/strawhat-homelab-dashboard.md)
@@ -292,6 +294,7 @@ _From 126 entries, 64 with style notes. Rebuilt on every filing._
 - **red ink outline accents**: [Impossible Weapon animation](topics/animation/impossible-weapon-knight-animation.md)
 - **ring-progress workload chips**: [Tessera dashboard UI](topics/design/tessera-dark-dashboard-ui.md)
 - **rolling counters**: [Cinematic film skill](topics/video-editing/cinematic-film-skill.md)
+- **rotatable mini 3d figures as list icons**: [Tiny 3D exercise animations](topics/tech/tiny-3d-exercise-animations.md)
 - **rounded white cards on light grey**: [Agentic toasts UI](topics/design/agentic-toasts-ui.md)
 - **sandy top-down battlefield**: [Sprite stacking skill](topics/gamedev/sprite-stacking-canvas-skill.md)
 - **scroll side-scroller**: [Revolio Labs site](topics/revolio/revolio-labs-site.md)

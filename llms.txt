@@ -24,6 +24,7 @@ Read TASTE.md first for the gist, then the catalog for what you need. Live graph
 
 ## Notes
 
+- [Tiny 3D exercise animations](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/tech/tiny-3d-exercise-animations.md): `technique` · tech · ship animated 3D figures in an app at 1-3 KB each by storing only motion data and rendering at runtime
 - [Tessera dashboard UI](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/tessera-dark-dashboard-ui.md): `style-ref` · design · shared as one of the best dashboard designs, a reference for dark project and team dashboards
 - [Hollow Warden Blender repos](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/animation/hollow-warden-blender-repos.md): `technique` · animation · Claude Code driving free Blender tools to rig, texture, light and export a game character, plus a list of 13 GitHub repos to do it
 - [Claude video tools compared](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/video-editing/claude-video-tools-compared.md): `technique` · video-editing · why some Claude-made videos look like an animated film and others like a PPT; picking the right tool matters as much as the prompt

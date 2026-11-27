@@ -21,3 +21,4 @@ BulkBros: a private app for Yuvraj and his roommate on a lean bulk. Shared veget
 
 ## Notes
 - Says a lot about his routine: vegetarian (no eggs), gym 10:30 PM to midnight.
+- [[tiny-3d-exercise-animations]]: both fitness

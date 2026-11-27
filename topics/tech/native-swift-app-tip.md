@@ -19,3 +19,4 @@ https://x.com/lazyjakee/status/2120398348972966127?a=jBFuqVuly27iz7sIIn0&s=20
 ## Notes
 - Post text: "If you're building mobile apps / Tell Claude to build native swift / No user accounts / No cloud storage / This is safest way to build as a solo founder"
 - Read via Social Reader (text-only post, no media).
+- [[tiny-3d-exercise-animations]]: both ios
