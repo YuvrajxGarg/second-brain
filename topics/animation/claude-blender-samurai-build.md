@@ -38,3 +38,4 @@ https://x.com/semichenkko/status/2125295328861511851?a=vWyTF9Ih9JEiL4LxHR8&s=20
 - [[blender-mcp-storybook-hero-workflow]]: same idea, Claude driving Blender to make a rigged character
 - [[toyxyz-blender-retargeter]]: another free Blender retargeting add-on, like ReNim
 - [[cascadeur-2026-3-release]]: AI-assisted character animation tool saved the same day
+- [[hollow-warden-blender-repos]]: both claude-code, 3d-character, rigging

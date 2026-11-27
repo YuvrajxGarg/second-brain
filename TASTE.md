@@ -110,7 +110,7 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 122 entries, 60 with style notes. Rebuilt on every filing._
+_From 123 entries, 61 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -120,7 +120,7 @@ _From 122 entries, 60 with style notes. Rebuilt on every filing._
 - `website-ref`: 5
 - `game-ref`: 4
 - `tool`: 15
-- `technique`: 20
+- `technique`: 21
 - `advice`: 6
 - `idea`: 3
 - `thought`: 3
@@ -130,7 +130,7 @@ _From 122 entries, 60 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (24), #inspiration (21), #claude (19), #agents (18), #open-source (18), #desktop-app (16), #reference (16), #browser-game (13), #pxlvzn (12), #ui (12), #visual-design (11), #mcp (9), #revolio-labs (9), #blender (8), #vfx (8), #3d-art (7), #video-generation (7), #workflow (7), #game-inspiration (6)
+#own-project (42), #to-try (24), #inspiration (21), #claude (19), #open-source (19), #agents (18), #desktop-app (16), #reference (16), #browser-game (13), #pxlvzn (12), #ui (12), #visual-design (11), #blender (9), #mcp (9), #revolio-labs (9), #vfx (8), #3d-art (7), #rigging (7), #video-generation (7), #workflow (7)
 
 ### Style notes and where they come from
 
@@ -142,6 +142,7 @@ _From 122 entries, 60 with style notes. Rebuilt on every filing._
 - **r mark with animated eyes** ×2: [Revolio Labs app](topics/revolio/revolio-labs-app.md), [Revolio Labs](topics/revolio/revolio-labs.md)
 - **red accent** ×2: [TV Stack toy](topics/gamedev/tv-stack-music-toy.md), [NPCs on Strike](topics/gamedev/npcs-on-strike-concept.md)
 - **single lime accent** ×2: [PXLVZN label](topics/tech/pxlvzn-label.md), [PXL app hub](topics/tech/pxl-app-hub.md)
+- **split screen code panel and blender viewport** ×2: [Hollow Warden Blender repos](topics/animation/hollow-warden-blender-repos.md), [Claude Blender samurai](topics/animation/claude-blender-samurai-build.md)
 - **3d extruded towers**: [Flat Finder map](topics/design/flat-finder-map.md)
 - **3d vinyl peel on hover**: [Stick It Up stickers](topics/design/stick-it-up-stickers.md)
 - **acid green on near-black**: [Idea Archive site](topics/revolio/idea-archive-site.md)
@@ -197,6 +198,7 @@ _From 122 entries, 60 with style notes. Rebuilt on every filing._
 - **dark sci-fi floor**: [AnyVFX shader skill](topics/gamedev/anyvfx-shader-skill.md)
 - **dark slate grid floor**: [Lastmaglab shooter style](topics/gamedev/lastmaglab-top-down-shooter.md)
 - **dark slate theme**: [People of Bengaluru](topics/design/people-of-bengaluru-site.md)
+- **dark teal stage**: [Hollow Warden Blender repos](topics/animation/hollow-warden-blender-repos.md)
 - **dark ui with bold white headline**: [Tabworthy site directory](topics/tech/tabworthy-site-directory.md)
 - **dark ui with orange step numbers**: [Claude Blender samurai](topics/animation/claude-blender-samurai-build.md)
 - **dense dots squares and crosses**: [Neural network data viz](topics/design/neural-network-data-viz.md)
@@ -212,6 +214,7 @@ _From 122 entries, 60 with style notes. Rebuilt on every filing._
 - **frosted glass chat panel**: [Claude Code reactive theme](topics/ai/claude-code-reactive-theme.md)
 - **game ability vfx**: [AnyVFX shader skill](topics/gamedev/anyvfx-shader-skill.md)
 - **georgia serif**: [Wedding co-op game](topics/gamedev/wedding-co-op-game.md)
+- **ghostly pale cyan hooded wraith**: [Hollow Warden Blender repos](topics/animation/hollow-warden-blender-repos.md)
 - **giant planet skies**: [Lens focal length guide](topics/ai/lens-focal-length-guide.md)
 - **glass panel ui**: [TV Stack toy](topics/gamedev/tv-stack-music-toy.md)
 - **glitch**: [Ladybug VFX app](topics/video-editing/ladybug-vfx-app.md)
@@ -295,7 +298,6 @@ _From 122 entries, 60 with style notes. Rebuilt on every filing._
 - **small green accent button**: [Tabworthy site directory](topics/tech/tabworthy-site-directory.md)
 - **soft serif headline**: [Blooming flowers site](topics/animation/mohamed-siddique-flower-site.md)
 - **splat performer in blender viewport**: [4DGS video test](topics/video-editing/4dgs-single-video-test.md)
-- **split screen code panel and blender viewport**: [Claude Blender samurai](topics/animation/claude-blender-samurai-build.md)
 - **spray paint type**: [Bonk Court game](topics/gamedev/bonk-court-game.md)
 - **stamps and highlighter swipes**: [Cinematic film skill](topics/video-editing/cinematic-film-skill.md)
 - **stock ticker ui**: [SLANGDAQ game](topics/revolio/slangdaq-game.md)
@@ -314,6 +316,7 @@ _From 122 entries, 60 with style notes. Rebuilt on every filing._
 - **tiny progress visualisations instead of icons**: [Agentic toasts UI](topics/design/agentic-toasts-ui.md)
 - **top-down camera**: [Lastmaglab shooter style](topics/gamedev/lastmaglab-top-down-shooter.md)
 - **top-down racing track**: [Sprite stacking technique](topics/gamedev/sprite-stacking-pixel-art.md)
+- **torn cloak strips**: [Hollow Warden Blender repos](topics/animation/hollow-warden-blender-repos.md)
 - **ui mockups in motion**: [Ace Of Frames reel](topics/video-editing/ace-of-frames-reel.md)
 - **unreal editor viewport**: [MetaHuman Maker addon](topics/gamedev/metahuman-maker-agent-addon.md)
 - **walkable stylised 3d city**: [People of Bengaluru](topics/design/people-of-bengaluru-site.md)
