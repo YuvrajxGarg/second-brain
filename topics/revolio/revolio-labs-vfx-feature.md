@@ -22,3 +22,4 @@ Add this to my ideas or a to-do list for Revolio Labs. I need to make a ladybug.
 - Features worth copying first: effect layers (halftone, ASCII, dither, glitch), keyframes, webcam/hand tracking, 4K and transparent export.
 - [[revolio-labs]]: both revolio-labs
 - [[revolio-labs-app]]: both revolio-labs
+- [[anyvfx-shader-skill]]: both vfx

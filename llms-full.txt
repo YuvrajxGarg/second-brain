@@ -115,42 +115,6 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 - Use his own words in each note's `why` and `## Raw` as the strongest signal.
 
 ============================================================
-X post  (inbox/2026-11-27-010317-x-post.md)
-============================================================
-type: link
-topic: inbox
-added: 2026-11-27
-source: https://x.com/gokayfem/status/2125913091439497243?a=2nz3bacc7o4Tsb_gzGA&s=12
-status: unsorted
-tags: unsorted
-
-## Summary
-Quick capture, not filed yet. Claude: file this per CLAUDE.md (pick topic, tags, summary) and move it out of inbox/.
-
-## Raw
-https://x.com/gokayfem/status/2125913091439497243?a=2nz3bacc7o4Tsb_gzGA&s=12
-
-Note: Vfx with ai
-
-============================================================
-X post  (inbox/2026-11-27-010303-x-post.md)
-============================================================
-type: link
-topic: inbox
-added: 2026-11-27
-source: https://x.com/miladkambari/status/2125963905247686742?a=E0JLSZ6hvW1APc0kD0M&s=12
-status: unsorted
-tags: unsorted
-
-## Summary
-Quick capture, not filed yet. Claude: file this per CLAUDE.md (pick topic, tags, summary) and move it out of inbox/.
-
-## Raw
-https://x.com/miladkambari/status/2125963905247686742?a=E0JLSZ6hvW1APc0kD0M&s=12
-
-Note: Texture 3d
-
-============================================================
 Claude Blender samurai  (topics/animation/claude-blender-samurai-build.md)
 ============================================================
 kind: technique
@@ -243,6 +207,69 @@ https://x.com/EugeneDyabin/status/2125937757151285478?a=yTzg4f-m_aBKUJ8bC50&s=20
 - [[toyxyz-blender-retargeter]]: another tool for getting mocap onto characters
 - [[procedural-arm-rig-demo]]: IK rigging, like Cascadeur's new IK chains
 - [[claude-blender-samurai-build]]: both 3d-character, rigging
+
+============================================================
+AnyVFX shader skill  (topics/gamedev/anyvfx-shader-skill.md)
+============================================================
+kind: tool
+type: tool
+topic: gamedev
+added: 2026-11-27
+source: https://x.com/gokayfem/status/2125913091439497243?a=2nz3bacc7o4Tsb_gzGA&s=12
+status: unread
+why: Vfx with ai
+tags: vfx, shader, claude, agents, open-source
+style: glowing energy rings, dark sci-fi floor, game ability vfx
+kit: vfx
+
+## Summary
+AnyVFX by gokayfem is an open-source agent skill (one SKILL.md plus tools and 4 worked examples) that takes a 12-frame VFX GIF and rebuilds it as a single GLSL fragment shader with no textures or buffers: the agent measures the clip, paints the static scene with a light map, then recreates the effect so the shader draws every in-between frame at 60 fps. The source clips come from 256 game-ability prompts (16 categories x 16 abilities): a keyframe image, then a 12-frame GIF from an image model. Repo: https://github.com/gokayfem/anyvfx
+
+![screenshot](./anyvfx-shader-skill.jpg)
+
+Frame from the demo video: "Vortex bay", the reference GIF at 8.3 fps on the left next to the live shader at 60 fps on the right, a swirling blue energy ring on a dark sci-fi floor, mean error 15.6 out of 255.
+
+## Raw
+https://x.com/gokayfem/status/2125913091439497243?a=2nz3bacc7o4Tsb_gzGA&s=12
+
+Note: Vfx with ai
+
+## Notes
+- [[revolio-labs-vfx-feature]]: AI-made VFX, the same goal from another angle
+- [[godot-waterfall-texture-array-shader]]: stylised game effect done in a shader
+- [[ladybug-vfx-app]]: another VFX tool to compare against
+
+============================================================
+AI texturing addon  (topics/gamedev/ai-texturing-blender-addon.md)
+============================================================
+kind: tool
+type: tool
+topic: gamedev
+added: 2026-11-27
+source: https://x.com/miladkambari/status/2125963905247686742?a=E0JLSZ6hvW1APc0kD0M&s=12
+status: unread
+why: Texture 3d
+tags: blender, plugin, 3d-art, generative-ai, game-assets
+style: photoreal product textures, node-based addon ui
+kit: 3d
+
+## Summary
+A Blender addon in development by Milad Kambari (prototype 11) that textures a bare 3D model from a reference image with AI. It runs on a LoRA trained on about 25,000 3D models and 380,000 renders, and works as a node graph inside Blender: TexPro texture generation (single or multi-view, fast/balanced/ultra), upscale, a Fix Text pass that keeps printed text and fonts legible, and a PBR node that makes colour, roughness, metallic and normal maps. On a 4070 Ti one model took about 4 min to texture, 12 s to upscale, 1 min for the text fix and 30 s for PBR.
+
+![screenshot](./ai-texturing-blender-addon.jpg)
+
+Frame from the demo video: Blender with the addon's node panel on the left (TexPro PBR node showing colour, roughness, metallic and normal maps) and a cement bag model on the right, fully textured with sharp "Portland Cement" print and labels.
+
+## Raw
+https://x.com/miladkambari/status/2125963905247686742?a=E0JLSZ6hvW1APc0kD0M&s=12
+
+Note: Texture 3d
+
+## Notes
+- Not released yet as of 2026-11-26; prototype shown on X.
+- [[polyfork-3d-assets]]: another shortcut to game-ready 3D assets
+- [[metahuman-maker-agent-addon]]: another AI-driven Blender addon
+- [[blender-painterly-leaf-shader]]: Blender look-dev for game assets
 
 ============================================================
 4DGS video test  (topics/video-editing/4dgs-single-video-test.md)
@@ -761,6 +788,7 @@ https://x.com/jiehananana/status/2121967542499713475?a=3pHJV1sIIbB9VvTVBBI&s=46
 
 ## Notes
 Related: [[claude-code-paintings]] (painterly look made in code).
+- [[ai-texturing-blender-addon]]: both 3d-art, blender
 
 ============================================================
 Vibe-coded app security  (topics/tech/vibe-coded-app-security.md)
@@ -2891,6 +2919,7 @@ Add this to my ideas or a to-do list for Revolio Labs. I need to make a ladybug.
 - Features worth copying first: effect layers (halftone, ASCII, dither, glitch), keyframes, webcam/hand tracking, 4K and transparent export.
 - [[revolio-labs]]: both revolio-labs
 - [[revolio-labs-app]]: both revolio-labs
+- [[anyvfx-shader-skill]]: both vfx
 
 ============================================================
 Polyfork 3D assets  (topics/gamedev/polyfork-3d-assets.md)
@@ -3178,6 +3207,7 @@ https://x.com/ushadersbible/status/2119673988464922969?a=s-74g2GGB1j52MU2CyE&s=2
 - Related: [[pixel-search-sprite-database]] (2D game assets)
 - [[lastmaglab-top-down-shooter]]: both godot, vfx
 - [[sprite-stacking-pixel-art]]: both godot, tutorial
+- [[anyvfx-shader-skill]]: both shader, vfx
 
 ============================================================
 Goalkeeper editor joke  (topics/video-editing/goalkeeper-saving-things-in-post.md)

@@ -110,7 +110,7 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 121 entries, 57 with style notes. Rebuilt on every filing._
+_From 121 entries, 59 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -119,7 +119,7 @@ _From 121 entries, 57 with style notes. Rebuilt on every filing._
 - `style-ref`: 11
 - `website-ref`: 5
 - `game-ref`: 4
-- `tool`: 13
+- `tool`: 15
 - `technique`: 20
 - `advice`: 6
 - `idea`: 3
@@ -130,7 +130,7 @@ _From 121 entries, 57 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (24), #inspiration (21), #claude (18), #open-source (17), #agents (16), #desktop-app (16), #reference (16), #browser-game (13), #pxlvzn (12), #ui (11), #visual-design (10), #mcp (9), #revolio-labs (9), #blender (7), #vfx (7), #video-generation (7), #workflow (7), #3d-art (6), #game-inspiration (6)
+#own-project (42), #to-try (24), #inspiration (21), #claude (19), #open-source (18), #agents (17), #desktop-app (16), #reference (16), #browser-game (13), #pxlvzn (12), #ui (11), #visual-design (10), #mcp (9), #revolio-labs (9), #blender (8), #vfx (8), #3d-art (7), #video-generation (7), #workflow (7), #game-inspiration (6)
 
 ### Style notes and where they come from
 
@@ -194,6 +194,7 @@ _From 121 entries, 57 with style notes. Rebuilt on every filing._
 - **dark minimal dashboard**: [Strawhat homelab dashboard](topics/design/strawhat-homelab-dashboard.md)
 - **dark minimal ui**: [Sleep alarm UI](topics/design/sleep-alarm-ui.md)
 - **dark night map**: [Flat Finder map](topics/design/flat-finder-map.md)
+- **dark sci-fi floor**: [AnyVFX shader skill](topics/gamedev/anyvfx-shader-skill.md)
 - **dark slate grid floor**: [Lastmaglab shooter style](topics/gamedev/lastmaglab-top-down-shooter.md)
 - **dark slate theme**: [People of Bengaluru](topics/design/people-of-bengaluru-site.md)
 - **dark ui with bold white headline**: [Tabworthy site directory](topics/tech/tabworthy-site-directory.md)
@@ -209,6 +210,7 @@ _From 121 entries, 57 with style notes. Rebuilt on every filing._
 - **fake 3d from stacked 2d slices**: [Sprite stacking skill](topics/gamedev/sprite-stacking-canvas-skill.md)
 - **floating islands on black**: [Pixel-art gaussian splats](topics/gamedev/pixel-art-gaussian-splats.md)
 - **frosted glass chat panel**: [Claude Code reactive theme](topics/ai/claude-code-reactive-theme.md)
+- **game ability vfx**: [AnyVFX shader skill](topics/gamedev/anyvfx-shader-skill.md)
 - **georgia serif**: [Wedding co-op game](topics/gamedev/wedding-co-op-game.md)
 - **giant planet skies**: [Lens focal length guide](topics/ai/lens-focal-length-guide.md)
 - **glass panel ui**: [TV Stack toy](topics/gamedev/tv-stack-music-toy.md)
@@ -217,6 +219,7 @@ _From 121 entries, 57 with style notes. Rebuilt on every filing._
 - **gloved hands with pistol**: [Unity bodycam hands](topics/animation/unity-bodycam-ik-hands.md)
 - **glowing cards**: [Ace Of Frames reel](topics/video-editing/ace-of-frames-reel.md)
 - **glowing dot-matrix storage bar**: [Storage scanner UI](topics/design/storage-scanner-ui.md)
+- **glowing energy rings**: [AnyVFX shader skill](topics/gamedev/anyvfx-shader-skill.md)
 - **glowing gold building clusters**: [Flat Finder map](topics/design/flat-finder-map.md)
 - **glowing particles**: [Pixel-art gaussian splats](topics/gamedev/pixel-art-gaussian-splats.md)
 - **glyph-grid data viz**: [Neural network data viz](topics/design/neural-network-data-viz.md)
@@ -246,6 +249,7 @@ _From 121 entries, 57 with style notes. Rebuilt on every filing._
 - **monospace type**: [Sleep alarm UI](topics/design/sleep-alarm-ui.md)
 - **mumbai kaali-peeli illustration**: [Meter Down concept](topics/gamedev/meter-down-concept.md)
 - **node map of servers**: [Strawhat homelab dashboard](topics/design/strawhat-homelab-dashboard.md)
+- **node-based addon ui**: [AI texturing addon](topics/gamedev/ai-texturing-blender-addon.md)
 - **one continuous camera move**: [Cinematic film skill](topics/video-editing/cinematic-film-skill.md)
 - **one flat pastel colour per character**: [Toyxyz retarget add-on](topics/animation/toyxyz-blender-retargeter.md)
 - **one-hue monochrome palettes**: [Pixel-art gaussian splats](topics/gamedev/pixel-art-gaussian-splats.md)
@@ -259,6 +263,7 @@ _From 121 entries, 57 with style notes. Rebuilt on every filing._
 - **pastel blocks**: [ARC 3D art dataset](topics/design/arc-3d-art-dataset.md)
 - **pastel pink hardware knob**: [Transition plugin idea](topics/video-editing/transition-plugin-idea.md)
 - **photoreal metahuman faces**: [MetaHuman Maker addon](topics/gamedev/metahuman-maker-agent-addon.md)
+- **photoreal product textures**: [AI texturing addon](topics/gamedev/ai-texturing-blender-addon.md)
 - **pixel cursors and ui**: [Captcha launch film](topics/design/captcha-launch-film.md)
 - **pixel-art 3d dioramas**: [Pixel-art gaussian splats](topics/gamedev/pixel-art-gaussian-splats.md)
 - **pixel-art decals**: [Stick It Up stickers](topics/design/stick-it-up-stickers.md)
@@ -320,6 +325,8 @@ _From 121 entries, 57 with style notes. Rebuilt on every filing._
 
 - [Chris Nijhof designer](topics/design/chris-nijhof-ui-designer.md) (`style-ref`): His profile has some cool ui designs
 - [Cascadeur 2026.3 update](topics/animation/cascadeur-2026-3-release.md) (`tool`): Cascadeur's big 2026.3 update with AI motion tools and an MCP, worth trying for character animation
+- [AnyVFX shader skill](topics/gamedev/anyvfx-shader-skill.md) (`tool`): Vfx with ai
+- [AI texturing addon](topics/gamedev/ai-texturing-blender-addon.md) (`tool`): Texture 3d
 - [Sprite stacking skill](topics/gamedev/sprite-stacking-canvas-skill.md) (`library`): Game art style
 - [Skillsync skills marketplace](topics/ai/skillsync-skills-marketplace.md) (`tool`): a place to publish agent skills and get paid when people or agents use them
 - [Tabworthy site directory](topics/tech/tabworthy-site-directory.md) (`tool`): directory of hidden-gem websites to explore

@@ -82,14 +82,13 @@ _Rebuilt on every filing from 121 notes._
 ### By topic
 
 ```
-gamedev       ████ 25
+gamedev       ████ 27
 ai            ███ 17
 tech          ███ 17
 design        ███ 16
 revolio       ██ 15
 video-editing ██ 13
 animation     ██ 10
-inbox         █ 2
 business      █ 2
 productivity  █ 1
 learning      █ 1
@@ -105,7 +104,7 @@ asset-source  █ 2
 style-ref     ██ 11
 website-ref   █ 5
 game-ref      █ 4
-tool          ██ 13
+tool          ██ 15
 technique     ███ 20
 advice        █ 6
 idea          █ 3

@@ -24,3 +24,4 @@ https://x.com/jiehananana/status/2121967542499713475?a=3pHJV1sIIbB9VvTVBBI&s=46
 
 ## Notes
 Related: [[claude-code-paintings]] (painterly look made in code).
+- [[ai-texturing-blender-addon]]: both 3d-art, blender

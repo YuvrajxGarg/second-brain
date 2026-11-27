@@ -27,3 +27,4 @@ https://x.com/ushadersbible/status/2119673988464922969?a=s-74g2GGB1j52MU2CyE&s=2
 - Related: [[pixel-search-sprite-database]] (2D game assets)
 - [[lastmaglab-top-down-shooter]]: both godot, vfx
 - [[sprite-stacking-pixel-art]]: both godot, tutorial
+- [[anyvfx-shader-skill]]: both shader, vfx
