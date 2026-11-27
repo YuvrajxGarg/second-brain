@@ -24,6 +24,7 @@ Read TASTE.md first for the gist, then the catalog for what you need. Live graph
 
 ## Notes
 
+- [Tessera dashboard UI](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/tessera-dark-dashboard-ui.md): `style-ref` · design · shared as one of the best dashboard designs, a reference for dark project and team dashboards
 - [Hollow Warden Blender repos](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/animation/hollow-warden-blender-repos.md): `technique` · animation · Claude Code driving free Blender tools to rig, texture, light and export a game character, plus a list of 13 GitHub repos to do it
 - [Claude Blender samurai](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/animation/claude-blender-samurai-build.md): `technique` · animation · Claude building a fully rigged 3D character in Blender with only Python and free repos, plus a list of 10 Blender repos to build with
 - [Chris Nijhof designer](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/chris-nijhof-ui-designer.md): `style-ref` · design · His profile has some cool ui designs

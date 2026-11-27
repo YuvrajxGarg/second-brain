@@ -23,3 +23,4 @@ https://x.com/capythanh/status/2121965442063294958?a=VHwQFfmc4LECF2s1hrI&s=20
 
 ## Notes
 Idea: a similar one-page dashboard for my own projects, deploys and AI accounts.
+- [[tessera-dark-dashboard-ui]]: both data-viz, ui

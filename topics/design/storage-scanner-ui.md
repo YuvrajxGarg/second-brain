@@ -30,3 +30,4 @@ If I ever make a disk utility app to remove cache and disk cleanup, this UI is r
 - [[tapmac-trackpad-app]]: both desktop-app
 - [[chris-nijhof-ui-designer]]: both visual-design, ui
 - [[agentic-toasts-ui]]: both visual-design, ui
+- [[tessera-dark-dashboard-ui]]: both visual-design, ui

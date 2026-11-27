@@ -24,3 +24,4 @@ https://x.com/pitus_/status/2125962627822100496
 ## Notes
 - [[unslop-ui-skill]]: same point, AI-made UI needs a designer's eye
 - [[storage-scanner-ui]]: another small utility UI saved for its look
+- [[tessera-dark-dashboard-ui]]: both visual-design, ui

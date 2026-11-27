@@ -110,13 +110,13 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 123 entries, 61 with style notes. Rebuilt on every filing._
+_From 124 entries, 62 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
 - `library`: 6
 - `asset-source`: 2
-- `style-ref`: 12
+- `style-ref`: 13
 - `website-ref`: 5
 - `game-ref`: 4
 - `tool`: 15
@@ -130,7 +130,7 @@ _From 123 entries, 61 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (24), #inspiration (21), #claude (19), #open-source (19), #agents (18), #desktop-app (16), #reference (16), #browser-game (13), #pxlvzn (12), #ui (12), #visual-design (11), #blender (9), #mcp (9), #revolio-labs (9), #vfx (8), #3d-art (7), #rigging (7), #video-generation (7), #workflow (7)
+#own-project (42), #to-try (24), #inspiration (22), #claude (19), #open-source (19), #agents (18), #desktop-app (16), #reference (16), #browser-game (13), #ui (13), #pxlvzn (12), #visual-design (12), #blender (9), #mcp (9), #revolio-labs (9), #vfx (8), #3d-art (7), #rigging (7), #video-generation (7), #workflow (7)
 
 ### Style notes and where they come from
 
@@ -199,6 +199,7 @@ _From 123 entries, 61 with style notes. Rebuilt on every filing._
 - **dark slate grid floor**: [Lastmaglab shooter style](topics/gamedev/lastmaglab-top-down-shooter.md)
 - **dark slate theme**: [People of Bengaluru](topics/design/people-of-bengaluru-site.md)
 - **dark teal stage**: [Hollow Warden Blender repos](topics/animation/hollow-warden-blender-repos.md)
+- **dark three-column dashboard**: [Tessera dashboard UI](topics/design/tessera-dark-dashboard-ui.md)
 - **dark ui with bold white headline**: [Tabworthy site directory](topics/tech/tabworthy-site-directory.md)
 - **dark ui with orange step numbers**: [Claude Blender samurai](topics/animation/claude-blender-samurai-build.md)
 - **dense dots squares and crosses**: [Neural network data viz](topics/design/neural-network-data-viz.md)
@@ -227,6 +228,7 @@ _From 123 entries, 61 with style notes. Rebuilt on every filing._
 - **glowing particles**: [Pixel-art gaussian splats](topics/gamedev/pixel-art-gaussian-splats.md)
 - **glyph-grid data viz**: [Neural network data viz](topics/design/neural-network-data-viz.md)
 - **golden hour window light**: [Revolio Labs site](topics/revolio/revolio-labs-site.md)
+- **gradient profile banner**: [Tessera dashboard UI](topics/design/tessera-dark-dashboard-ui.md)
 - **graffiti street court**: [Bonk Court game](topics/gamedev/bonk-court-game.md)
 - **green screen studio capture**: [4DGS video test](topics/video-editing/4dgs-single-video-test.md)
 - **grid of category cards with counts**: [Tabworthy site directory](topics/tech/tabworthy-site-directory.md)
@@ -238,6 +240,7 @@ _From 123 entries, 61 with style notes. Rebuilt on every filing._
 - **hand-drawn flowers growing on a dot grid**: [Blooming flowers site](topics/animation/mohamed-siddique-flower-site.md)
 - **hand-drawn pastel stickers**: [Stick It Up stickers](topics/design/stick-it-up-stickers.md)
 - **hand-painted 3d look**: [Blender painterly leaf shader](topics/gamedev/blender-painterly-leaf-shader.md)
+- **hatched bar charts with target line**: [Tessera dashboard UI](topics/design/tessera-dark-dashboard-ui.md)
 - **invented artist styles**: [Claude code paintings](topics/ai/claude-code-paintings.md)
 - **launch film motion**: [Captcha launch film](topics/design/captcha-launch-film.md)
 - **lime accent on dark**: [Punchline party game](topics/gamedev/punchline-party-game.md)
@@ -282,6 +285,7 @@ _From 123 entries, 61 with style notes. Rebuilt on every filing._
 - **red and black**: [Runaway Light Rig](topics/gamedev/runaway-light-rig.md)
 - **red and black samurai armour on grey stage**: [Claude Blender samurai](topics/animation/claude-blender-samurai-build.md)
 - **red ink outline accents**: [Impossible Weapon animation](topics/animation/impossible-weapon-knight-animation.md)
+- **ring-progress workload chips**: [Tessera dashboard UI](topics/design/tessera-dark-dashboard-ui.md)
 - **rolling counters**: [Cinematic film skill](topics/video-editing/cinematic-film-skill.md)
 - **rounded white cards on light grey**: [Agentic toasts UI](topics/design/agentic-toasts-ui.md)
 - **sandy top-down battlefield**: [Sprite stacking skill](topics/gamedev/sprite-stacking-canvas-skill.md)
@@ -295,6 +299,7 @@ _From 123 entries, 61 with style notes. Rebuilt on every filing._
 - **single blue accent**: [Sleep alarm UI](topics/design/sleep-alarm-ui.md)
 - **single-blue swirl on white**: [Neural network data viz](topics/design/neural-network-data-viz.md)
 - **sky blue to sand gradient**: [Wedding co-op game](topics/gamedev/wedding-co-op-game.md)
+- **small coloured status pills**: [Tessera dashboard UI](topics/design/tessera-dark-dashboard-ui.md)
 - **small green accent button**: [Tabworthy site directory](topics/tech/tabworthy-site-directory.md)
 - **soft serif headline**: [Blooming flowers site](topics/animation/mohamed-siddique-flower-site.md)
 - **splat performer in blender viewport**: [4DGS video test](topics/video-editing/4dgs-single-video-test.md)
@@ -330,6 +335,7 @@ _From 123 entries, 61 with style notes. Rebuilt on every filing._
 
 ### Every reference with his reason
 
+- [Tessera dashboard UI](topics/design/tessera-dark-dashboard-ui.md) (`style-ref`): shared as one of the best dashboard designs, a reference for dark project and team dashboards
 - [Chris Nijhof designer](topics/design/chris-nijhof-ui-designer.md) (`style-ref`): His profile has some cool ui designs
 - [Cascadeur 2026.3 update](topics/animation/cascadeur-2026-3-release.md) (`tool`): Cascadeur's big 2026.3 update with AI motion tools and an MCP, worth trying for character animation
 - [AnyVFX shader skill](topics/gamedev/anyvfx-shader-skill.md) (`tool`): Vfx with ai
