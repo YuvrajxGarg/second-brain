@@ -1,0 +1,15 @@
+{
+ "machine": "windows",
+ "os": "Windows 11",
+ "python": "3.13.1",
+ "last_ok": "2026-11-27T22:00:09+05:30",
+ "last_change": null,
+ "failures": [],
+ "backup": {
+  "at": "2026-11-27T22:00:08+05:30",
+  "file": "second-brain-2026-11-27.bundle",
+  "bytes": 8508308,
+  "commit": "46608cf",
+  "kept": 1
+ }
+}
