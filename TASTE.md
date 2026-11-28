@@ -110,7 +110,7 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 129 entries, 66 with style notes. Rebuilt on every filing._
+_From 130 entries, 66 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -119,7 +119,7 @@ _From 129 entries, 66 with style notes. Rebuilt on every filing._
 - `style-ref`: 14
 - `website-ref`: 5
 - `game-ref`: 4
-- `tool`: 16
+- `tool`: 17
 - `technique`: 24
 - `advice`: 6
 - `idea`: 3
@@ -130,7 +130,7 @@ _From 129 entries, 66 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (25), #inspiration (23), #agents (21), #claude (20), #open-source (19), #desktop-app (16), #reference (16), #ui (14), #browser-game (13), #visual-design (13), #pxlvzn (12), #blender (10), #mcp (9), #revolio-labs (9), #threejs (8), #vfx (8), #video-generation (8), #workflow (8), #3d-art (7)
+#own-project (42), #to-try (26), #inspiration (23), #agents (21), #claude (20), #open-source (20), #desktop-app (16), #reference (16), #ui (14), #browser-game (13), #visual-design (13), #pxlvzn (12), #blender (10), #mcp (9), #revolio-labs (9), #threejs (8), #vfx (8), #video-generation (8), #workflow (8), #3d-art (7)
 
 ### Style notes and where they come from
 
@@ -353,6 +353,7 @@ _From 129 entries, 66 with style notes. Rebuilt on every filing._
 ### Every reference with his reason
 
 - [Papercraft agent skill](topics/gamedev/papercraft-agent-skill.md) (`tool`): agent skill that builds three.js games and scenes in a pop-up papercraft look
+- [Colab GLM launcher](topics/ai/colab-glm-launcher.md) (`tool`): run a big open model on the Colab GPU that comes with a Google AI plan and plug it into coding agents
 - [Tessera dashboard UI](topics/design/tessera-dark-dashboard-ui.md) (`style-ref`): shared as one of the best dashboard designs, a reference for dark project and team dashboards
 - [Chris Nijhof designer](topics/design/chris-nijhof-ui-designer.md) (`style-ref`): His profile has some cool ui designs
 - [Cascadeur 2026.3 update](topics/animation/cascadeur-2026-3-release.md) (`tool`): Cascadeur's big 2026.3 update with AI motion tools and an MCP, worth trying for character animation
