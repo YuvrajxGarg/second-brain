@@ -52,3 +52,4 @@ A table: mistake, times seen, examples, fix type, the CLAUDE.md lines to delete.
 </output>
 ```
 - [[ai-group-shot-retouch]]: names this note; both workflow, claude
+- [[obsidian-hermes-agent-workflow]]: both workflow, agents

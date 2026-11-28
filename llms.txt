@@ -25,6 +25,7 @@ Read TASTE.md first for the gist, then the catalog for what you need. Live graph
 ## Notes
 
 - [Papercraft agent skill](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/gamedev/papercraft-agent-skill.md): `tool` · gamedev · agent skill that builds three.js games and scenes in a pop-up papercraft look
+- [Obsidian agent workflow](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/ai/obsidian-hermes-agent-workflow.md): `technique` · ai · a daily work setup with one git vault plus an agent, close to how my brain runs
 - [Tiny 3D exercise animations](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/tech/tiny-3d-exercise-animations.md): `technique` · tech · ship animated 3D figures in an app at 1-3 KB each by storing only motion data and rendering at runtime
 - [Tessera dashboard UI](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/design/tessera-dark-dashboard-ui.md): `style-ref` · design · shared as one of the best dashboard designs, a reference for dark project and team dashboards
 - [Hollow Warden Blender repos](https://raw.githubusercontent.com/YuvrajxGarg/second-brain/main/topics/animation/hollow-warden-blender-repos.md): `technique` · animation · Claude Code driving free Blender tools to rig, texture, light and export a game character, plus a list of 13 GitHub repos to do it

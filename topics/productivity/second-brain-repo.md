@@ -22,3 +22,4 @@ This second brain: every link, idea and reference he dumps in chat filed as one 
 ## Notes
 - [[social-reader-mcp]]: names this note; both mcp, agents
 - [[pxlvzn-label]]: made under PXLVZN label
+- [[obsidian-hermes-agent-workflow]]: both knowledge-base, agents

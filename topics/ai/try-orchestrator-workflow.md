@@ -18,3 +18,4 @@ I need to test this workflow on one of my next
 
 ## Notes
 - The prompt: [[model-routing-orchestrator-prompt]]
+- [[obsidian-hermes-agent-workflow]]: both agents
