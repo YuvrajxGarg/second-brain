@@ -110,14 +110,14 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 130 entries, 66 with style notes. Rebuilt on every filing._
+_From 131 entries, 67 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
 - `library`: 6
 - `asset-source`: 2
 - `style-ref`: 14
-- `website-ref`: 5
+- `website-ref`: 6
 - `game-ref`: 4
 - `tool`: 17
 - `technique`: 24
@@ -130,7 +130,7 @@ _From 130 entries, 66 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (26), #inspiration (23), #agents (21), #claude (20), #open-source (20), #desktop-app (16), #reference (16), #ui (14), #browser-game (13), #visual-design (13), #pxlvzn (12), #blender (10), #mcp (9), #revolio-labs (9), #threejs (8), #vfx (8), #video-generation (8), #workflow (8), #3d-art (7)
+#own-project (42), #to-try (26), #inspiration (24), #agents (22), #claude (20), #open-source (20), #desktop-app (16), #reference (16), #ui (14), #browser-game (13), #visual-design (13), #pxlvzn (12), #blender (10), #mcp (10), #revolio-labs (9), #threejs (8), #vfx (8), #video-generation (8), #workflow (8), #3d-art (7)
 
 ### Style notes and where they come from
 
@@ -194,6 +194,7 @@ _From 130 entries, 66 with style notes. Rebuilt on every filing._
 - **dark ios cards**: [Tiny 3D exercise animations](topics/tech/tiny-3d-exercise-animations.md)
 - **dark macro clockwork**: [Escapement Blender film](topics/ai/escapement-blender-short-film.md)
 - **dark menu bar popover**: [DIT offload checker](topics/video-editing/dit-offload-checker-idea.md)
+- **dark minimal chat ui**: [Claptrap agent app](topics/ai/claptrap-agent-app.md)
 - **dark minimal dashboard**: [Strawhat homelab dashboard](topics/design/strawhat-homelab-dashboard.md)
 - **dark minimal ui**: [Sleep alarm UI](topics/design/sleep-alarm-ui.md)
 - **dark night map**: [Flat Finder map](topics/design/flat-finder-map.md)
@@ -250,6 +251,7 @@ _From 130 entries, 66 with style notes. Rebuilt on every filing._
 - **light and dark themes**: [Agent issue stack](topics/design/agent-issue-stack-component.md)
 - **lime accent on dark**: [Punchline party game](topics/gamedev/punchline-party-game.md)
 - **lime green go button**: [Transition plugin idea](topics/video-editing/transition-plugin-idea.md)
+- **live tool-step checklist**: [Claptrap agent app](topics/ai/claptrap-agent-app.md)
 - **low-poly**: [Polyfork 3D assets](topics/gamedev/polyfork-3d-assets.md)
 - **masked characters**: [Lens focal length guide](topics/ai/lens-focal-length-guide.md)
 - **metallic gold and rose gold**: [ARC 3D art dataset](topics/design/arc-3d-art-dataset.md)
@@ -279,6 +281,7 @@ _From 130 entries, 66 with style notes. Rebuilt on every filing._
 - **pixel cursors and ui**: [Captcha launch film](topics/design/captcha-launch-film.md)
 - **pixel grid status glyphs**: [Agentic toasts UI](topics/design/agentic-toasts-ui.md)
 - **pixel-art 3d dioramas**: [Pixel-art gaussian splats](topics/gamedev/pixel-art-gaussian-splats.md)
+- **pixel-art blob mascots**: [Claptrap agent app](topics/ai/claptrap-agent-app.md)
 - **pixel-art decals**: [Stick It Up stickers](topics/design/stick-it-up-stickers.md)
 - **pixel-art mascots**: [Ace Of Frames reel](topics/video-editing/ace-of-frames-reel.md)
 - **pixel-dot agent avatars**: [Agent issue stack](topics/design/agent-issue-stack-component.md)
@@ -332,6 +335,7 @@ _From 130 entries, 66 with style notes. Rebuilt on every filing._
 - **textured pastel brushwork**: [Second brand identity](topics/design/ayush-soni-visual-design-post.md)
 - **thin gold road lines**: [Flat Finder map](topics/design/flat-finder-map.md)
 - **thin usage bars**: [Strawhat homelab dashboard](topics/design/strawhat-homelab-dashboard.md)
+- **three-pane agent workspace**: [Claptrap agent app](topics/ai/claptrap-agent-app.md)
 - **tick ruler numerals**: [PEAKD game](topics/revolio/peakd-game.md)
 - **tilt-shift macro lens**: [Papercraft agent skill](topics/gamedev/papercraft-agent-skill.md)
 - **tiny progress visualisations instead of icons**: [Agentic toasts UI](topics/design/agentic-toasts-ui.md)
@@ -354,6 +358,7 @@ _From 130 entries, 66 with style notes. Rebuilt on every filing._
 
 - [Papercraft agent skill](topics/gamedev/papercraft-agent-skill.md) (`tool`): agent skill that builds three.js games and scenes in a pop-up papercraft look
 - [Colab GLM launcher](topics/ai/colab-glm-launcher.md) (`tool`): run a big open model on the Colab GPU that comes with a Google AI plan and plug it into coding agents
+- [Claptrap agent app](topics/ai/claptrap-agent-app.md) (`website-ref`): a cute, simple agent app UI with background agents and pixel mascots
 - [Tessera dashboard UI](topics/design/tessera-dark-dashboard-ui.md) (`style-ref`): shared as one of the best dashboard designs, a reference for dark project and team dashboards
 - [Chris Nijhof designer](topics/design/chris-nijhof-ui-designer.md) (`style-ref`): His profile has some cool ui designs
 - [Cascadeur 2026.3 update](topics/animation/cascadeur-2026-3-release.md) (`tool`): Cascadeur's big 2026.3 update with AI motion tools and an MCP, worth trying for character animation
