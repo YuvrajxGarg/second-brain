@@ -110,7 +110,7 @@ _Last curated: 2026-11-15 (added pixel art in 3D: gaussian splat dioramas and sp
 
 ## Evidence (generated)
 
-_From 127 entries, 65 with style notes. Rebuilt on every filing._
+_From 128 entries, 66 with style notes. Rebuilt on every filing._
 
 ### What he saves, by kind
 
@@ -119,7 +119,7 @@ _From 127 entries, 65 with style notes. Rebuilt on every filing._
 - `style-ref`: 14
 - `website-ref`: 5
 - `game-ref`: 4
-- `tool`: 15
+- `tool`: 16
 - `technique`: 23
 - `advice`: 6
 - `idea`: 3
@@ -130,7 +130,7 @@ _From 127 entries, 65 with style notes. Rebuilt on every filing._
 
 ### Top tags
 
-#own-project (42), #to-try (24), #inspiration (23), #claude (20), #agents (19), #open-source (19), #desktop-app (16), #reference (16), #ui (14), #browser-game (13), #visual-design (13), #pxlvzn (12), #blender (10), #mcp (9), #revolio-labs (9), #vfx (8), #video-generation (8), #3d-art (7), #3d-character (7), #rigging (7)
+#own-project (42), #to-try (25), #inspiration (23), #agents (20), #claude (20), #open-source (19), #desktop-app (16), #reference (16), #ui (14), #browser-game (13), #visual-design (13), #pxlvzn (12), #blender (10), #mcp (9), #revolio-labs (9), #threejs (8), #vfx (8), #video-generation (8), #3d-art (7), #3d-character (7)
 
 ### Style notes and where they come from
 
@@ -284,7 +284,9 @@ _From 127 entries, 65 with style notes. Rebuilt on every filing._
 - **pixel-dot agent avatars**: [Agent issue stack](topics/design/agent-issue-stack-component.md)
 - **plain status sentence**: [DIT offload checker](topics/video-editing/dit-offload-checker-idea.md)
 - **plain-language helper copy**: [Storage scanner UI](topics/design/storage-scanner-ui.md)
+- **pop-up papercraft diorama**: [Papercraft agent skill](topics/gamedev/papercraft-agent-skill.md)
 - **poster typography**: [SLANGDAQ game](topics/revolio/slangdaq-game.md)
+- **printed cardstock with folk-art patterns**: [Papercraft agent skill](topics/gamedev/papercraft-agent-skill.md)
 - **product launch video**: [Ace Of Frames reel](topics/video-editing/ace-of-frames-reel.md)
 - **puffy cartoon clouds**: [Claude video tools compared](topics/video-editing/claude-video-tools-compared.md)
 - **real people as characters**: [People of Bengaluru](topics/design/people-of-bengaluru-site.md)
@@ -311,6 +313,7 @@ _From 127 entries, 65 with style notes. Rebuilt on every filing._
 - **small green accent button**: [Tabworthy site directory](topics/tech/tabworthy-site-directory.md)
 - **soft serif headline**: [Blooming flowers site](topics/animation/mohamed-siddique-flower-site.md)
 - **soft shadow cards**: [Agent issue stack](topics/design/agent-issue-stack-component.md)
+- **soft tinted paper shadows**: [Papercraft agent skill](topics/gamedev/papercraft-agent-skill.md)
 - **splat performer in blender viewport**: [4DGS video test](topics/video-editing/4dgs-single-video-test.md)
 - **spray paint type**: [Bonk Court game](topics/gamedev/bonk-court-game.md)
 - **stack and cycle toggle**: [Agent issue stack](topics/design/agent-issue-stack-component.md)
@@ -330,6 +333,7 @@ _From 127 entries, 65 with style notes. Rebuilt on every filing._
 - **thin gold road lines**: [Flat Finder map](topics/design/flat-finder-map.md)
 - **thin usage bars**: [Strawhat homelab dashboard](topics/design/strawhat-homelab-dashboard.md)
 - **tick ruler numerals**: [PEAKD game](topics/revolio/peakd-game.md)
+- **tilt-shift macro lens**: [Papercraft agent skill](topics/gamedev/papercraft-agent-skill.md)
 - **tiny progress visualisations instead of icons**: [Agentic toasts UI](topics/design/agentic-toasts-ui.md)
 - **top-down camera**: [Lastmaglab shooter style](topics/gamedev/lastmaglab-top-down-shooter.md)
 - **top-down racing track**: [Sprite stacking technique](topics/gamedev/sprite-stacking-pixel-art.md)
@@ -339,6 +343,7 @@ _From 127 entries, 65 with style notes. Rebuilt on every filing._
 - **walkable stylised 3d city**: [People of Bengaluru](topics/design/people-of-bengaluru-site.md)
 - **warm painterly palette**: [Second brand identity](topics/design/ayush-soni-visual-design-post.md)
 - **warm soft lighting**: [Sharma Sweets 3D style](topics/gamedev/sharma-sweets-3d-shopfront.md)
+- **warm storybook palette**: [Papercraft agent skill](topics/gamedev/papercraft-agent-skill.md)
 - **warm toy diorama 3d**: [Munde Mode game](topics/revolio/munde-mode-game.md)
 - **wine red accent**: [Wedding co-op game](topics/gamedev/wedding-co-op-game.md)
 - **wobbly hand-drawn black line art**: [Line art mocap workflow](topics/animation/line-art-mocap-workflow.md)
@@ -347,6 +352,7 @@ _From 127 entries, 65 with style notes. Rebuilt on every filing._
 
 ### Every reference with his reason
 
+- [Papercraft agent skill](topics/gamedev/papercraft-agent-skill.md) (`tool`): agent skill that builds three.js games and scenes in a pop-up papercraft look
 - [Tessera dashboard UI](topics/design/tessera-dark-dashboard-ui.md) (`style-ref`): shared as one of the best dashboard designs, a reference for dark project and team dashboards
 - [Chris Nijhof designer](topics/design/chris-nijhof-ui-designer.md) (`style-ref`): His profile has some cool ui designs
 - [Cascadeur 2026.3 update](topics/animation/cascadeur-2026-3-release.md) (`tool`): Cascadeur's big 2026.3 update with AI motion tools and an MCP, worth trying for character animation

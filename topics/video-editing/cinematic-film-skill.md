@@ -31,3 +31,4 @@ This is a skill, agent skill for explainer content.
 - [[skillsync-skills-marketplace]]: both agents
 - [[raea-render-engine]]: both agents
 - [[claude-video-tools-compared]]: both claude
+- [[papercraft-agent-skill]]: both agents
